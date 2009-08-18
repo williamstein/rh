@@ -1,0 +1,9 @@
+cp notebook.pdf a.pdf
+#rm *.aux
+#pdflatex notebook.tex < /dev/null
+pdflatex notebook.tex < /dev/null
+if [ $? -ne 0 ]; then
+   cp a.pdf notebook.pdf
+fi
+cp notebook.pdf b.pdf
+# open notebook.pdf
