@@ -9,6 +9,7 @@
 \usetikzlibrary{matrix,arrows} 
 \include{macros}
 \DeclareMathOperator{\sss}{ss}
+\DeclareMathOperator{\Li}{Li}
 \renewcommand{\ss}{\sss}
 \renewcommand{\b}{\mathfrak{b}}
 \renewcommand{\c}{\mathfrak{c}}
@@ -248,7 +249,367 @@ on one plot.
     points at your book Imagining Numbers?
   \end{itemize}
   
-\item 
+\item Picture of Gauss  (and I really like our Gauss dates)
+
+\item ``Roughly speaking, this means that the number of primes up to X
+  is X times the reciprocal of 2.3 times the number of digits of X .''
+  I think this is confusing to read.  The reciprocal of 2.3 is kind of
+  funny, since 2.3 is already mysterious.  It's really $1/log_e(10)$,
+  which is $0.43429448190325176...$, or basically $.4$.  Maybe better
+  would be ``Very roughly speaking, this means that the number of
+  primes up to $X$ is about $X$ divided by twice the number of digits
+  of $X$.''  We can make a
+  table to illustrate this further, but also to emphasize that it's
+  not that close. Something like this:
+\begin{verbatim}
+sage: for i in [2..10]: print i, prime_pi(10^i), floor((10^i-1)/(i*2))
+....: 
+2 25 24
+3 168 166
+4 1229 1249
+5 9592 9999
+6 78498 83333
+7 664579 714285
+8 5761455 6249999
+9 50847534 55555555
+10 455052511 499999999
+\end{verbatim}
+
+  It's kind of convenient that for $99$, $999$, and $9999$, the
+  approximations got by taking ``$X$ divided by twice the number of
+  digits of $X$ are very close to $\pi(X)$.  Anyway, rounding to $0.5$
+  instead of $0.43$ makes it really simple to describe.
+
+\item We might do something to warn our reader that if they see
+  ``$\log(X)$'' they shouldn't run in fear and think ``holy crud, I
+  have no idea what log is and I never understand that in high
+  school,'' since we are about to explain it.  I'm imagining say my
+  brother as reading this -- he literally probably hasn't seen log
+  once in a decade though he is good with numbers (running five
+  businesses in San Diego).  He told me that when he sees a page with
+  a mathematical formula involving symbols he doesn't know, he'll just
+  block it out.  So if we sneak ``log'' in to a sentence or two before
+  we use it in a formula, it'll get by that filter (which is probably
+  pretty common with non-math people).   
+
+I'm imagining a solution like this:
+\begin{itemize}
+\item We figure out where logs first came from and give one sentence about
+this (I think they arose in doing arithmetic efficiently?)  
+
+\item We demystify log {\em before} using it in any formula by explaining
+that it is ``about twice the number of digits''. 
+
+\end{itemize}
+
+One other issue is that in much of math education, unfortunately $\ln$
+means natural log and $\log$ means $\log$-base-10.  It's really
+annoying... We can mention this somehow. 
+
+It might be worthwhile to remark that $e^x$ is the unique nonzero
+function that equals its own derivative -- perhaps this is a way to
+sneak in a mention of derivatives before later in the book where we
+use them a lot more.  Anyway there are two issues: (1) what are logs,
+and (2) what is this ``natural log''?
+
+\item ``the 2004 US elections'' -- this will not be in people's minds
+  for a {\em book} so much.  It may be better to remove or expand with
+  a statement about just how close they were with a reference.  E.g.,
+  ``the 2004 US elections, in which ... beat ... by a mere
+  ... votes!''  Wasn't the 2000 election even closer, or am I
+  mis-remembering?
+
+\item ``So when Gauss thought his curve missed...''  let's compute the
+  square root explicitly here, i.e., just spell this out some more
+  (instead of leaving an exercise for the reader).
+
+\item ``devil fable''  I found this graphic via an image search on google: 
+
+\url{http://blog.al.com/stantis/2007/11/Stantis-Devil%20in%20the%20Langford%20details.jpg}
+
+If the cover were modified, or the whole thing redrawn, it could be fun. The cover could say $primes up to X$.  Or it could be replaced by the checklist...
+
+\item We write ``$\pi(X)$ for various large numbers $N$'' in our devil fable. Oops.
+
+\item We should draw an illustration of the checklist in the story.
+  It would be easy.
+
+\item We make the claim ``The average error (over-counted or
+  undercounted) would be proportional to $\sqrt{N}$.''  We do not
+  justify this claim at all.  We might say that it follows from a
+  result about random walks.  (Does it really follow from the central
+  limit theorem somehow?)  Also, given that we assumed that the error
+  rate is 0.001\% can't we say what the constant in the proportion is?
+  Also, I think we could give an estimate of how far they would be off
+  for $N=3,000,000$.  We could deduce Gauss's error rate, right?
+
+\item In figure 10.1 with plots of Li, pi, and X/Log(X), I should
+put labels in the actual plot.  It is lazy putting them only
+in the caption.
+
+\item I should update the $X=4\cdot 10^{22}$ to whatever
+the current record is, I think $10^{24}$, maybe.  And also update
+the reference, which may be wrong.  Also, here is where we can possibly
+discuss how to compute $\pi(X)$, or if not we can at least point
+to an (extended) endnote.  When this is done, be sure to search and
+update all other references to $4\cdot 10^{22}$.
+
+\item We write -- `` an easier fact, which follows directly from
+  elementary calculus'' for the fact that $\Li(x)$ is asymptotic to
+  $X/\log(X)$. We should prove this rigorously in an endnote.
+
+\item ``It was proved in 1896 indepdently by Hadamard and de la Valle Poussin. ``
+
+(1) typo in  ``indepdently'';  we should say something about who these guys are, 
+and give links to Wikipedia (say).
+
+\item We write ``is much deeper than the Prime Number Theorem''.  I
+  think the phrase ``is much deeper'' is mathematical jargon, because
+  popular math books would often have a little interlude to say
+  something about what deep means to mathematicians.  It's basically
+  ``difficult and any proof will use and influence a wide range of
+  mathematics''.  So we too can add a little more to emphasize what we
+  mean by the word ``deep''.  Or we can just say that the rest of this
+  paragraph explains what we mean (indeed, it does).  Maybe everything
+  is perfect as is.
+
+\item ``It is the kind of conjecture that Frans Oort...'' let's have a
+  sentence about who Oort is.  E.g., Dutch mathematician, born 19xx,
+  student of xxx...  I might have a picture of him too.  
+
+\item We write ``A proof of RH would, therefore, fall into the applied
+  category, given our discussion above.'' But we changed our
+  discussion above, so this is no longer quite true.
+
+\item I wonder if I could draw a 3d picture of an actual staircase
+  whose side profile is the plot of $\pi(X)$, but rendered at an angle
+  to look like a real staircase.  This might be a nice illustration.
+
+\item In the section ``Tinkering with the carpentry of the staircase
+  of primes.''  I should draw several plots illustrating every single
+  one of the steps we discuss about tinkering with the staircase.
+
+\item ``These vertical dimensions might lead to a steeper ascent but
+  no great loss of information'' Maybe change to ``Since $\log(p)>1$,
+  these vertical dimensions lead to a steeper ascent but no great loss
+  of information.''
+
+\item ``Do not worry if you do not understand why our first and second
+  formulations of Riemann’s Hypothesis are equivalent.''  We should
+  either rigorously prove this in an endnote (my preference at the
+  moment) or gave a reference that totally does it.  I could imagine a
+  better student who has a more advanced background, who would benefit
+  by seeing a proof at this point.  And it might help us keep things
+  straight... e.g., we had this equivalence wrong I think in some
+  version of our notes long ago.
+
+\item ``variety of equivalent ways we have to express Riemann’s
+  propose answers to the question'' -- I think ``propose'' should be
+  ``proposed''.
+
+\item I'm worried that our second statement of RH is possibly
+  confusing because it says ``This new staircase is essentially square
+  root close''.  However, given a line and curve the notion of close
+  is vague.  What we really mean is that the function $\psi$ given by
+  the new staircase is an essentially square root approximation to the
+  function $f(x) = x$.
+
+\item Having just read ``Tinkering with the carpentry of the staircase
+  of primes.'' I think it starts out mysteriously.  I think we should
+  start with a paragraph that the point of the work (really, it feels
+  like some serious manual labor with all the carpentry)! is to give
+  an equivalent formulation of RH that simply asserts that a certain
+  function that we will construct from counting prime powers is an
+  essentially square root approximation to $f(x)=x$.
+
+\item I wonder if we should say something right before stating RH 2
+  about what it means for two mathematical statements to be
+  equivalent?  Equivalence of statements is a sort of critically
+  important basic tool in all of mathematical research, and is
+  something students encounter early on when simplifying expressions
+  and doing algebra.  It permeates math.  We touch on this also when
+  mention the multiplicative parity situation, where instead of giving
+  an equivalent statement, we give a statement that might {\em a
+    priori} be equivalent, but which turns out to only imply RH.
+  Anyway, I think there is an opportunity here.
+
+\item What are the frequence and amplitudes of pure C and E notes?
+We could say a concrete illustrations of what we're talking about 
+in the section ``What do computer music ﬁles, data-compression, and prime 
+numbers have to do with each other?''
+
+\item ``But this sampling would take an enormous amount of storage
+  space!''  Well it would if you sampled at too many points.  We might
+  say that to sound good it takes about xxx samples {\em per second}.
+  (Give the rate for audio CD's).  Heh, we do say that, so rewording
+  this slightly might help.  It might be nice to say how much space
+  44khz takes up, since CD's are actually uncompressed.  We could say
+  that we're explaining why an audio CD has only about 12 sonds on it,
+  but exactly the same audio CD can easily hold 100 MP3's.  (We say
+  this later...)
+
+\item ``Surprisingly, this seems to be roughly the way our ear
+  processes such a sound when we hear it.'' (in reference to storing
+  the spectrum, etc.)  Is this a {\em biological} statement, and if so
+  is it the result of some research in biology that we could cite?
+  Otherwise, where does this assertion come from?  Having us two
+  authors and explaining (possibly with footnotes) where all our
+  assertions come from I think will make our book vastly more solid
+  than most popular math books, which are often just full of seemingly
+  random unjustified statements.
+
+\item ``At this point we recommend to our readers that they
+  download...'' However, we don't recommend that they read it right
+  now!  They should finish our book first. :-) I want our book to be a
+  pager turner that they can't put down.  That they blow off
+  everything so they can finish reading it.  Actually, because of
+  that, we should maybe put in more foreshadowing at the beginning of
+  this section and throughout.  I want something like the paragraph at
+  the end of section 13 full of questions (top of page 33), but at the
+  beginning of section 13.
+
+\item (random comment) I love the idea of putting all the distracting
+  links in endnotes -- I'm imagining a reader that plows through our
+  whole book, not putting it down, not looking at footnotes, then says
+  ``I want to read that again'', and only on a second reading of
+  certain parts really dives into the footnotes.  Your ``Imagining
+  Numbers'' book was exactly like that and I think it really works.
+  Many popular math books are not, and it is very frustrating reading
+  them as a result (and they are often strongly criticized for just
+  this in Bulletins/Notices reviews, I think).
+
+\item ``So our CE chord'' -- do musicians really write ``CE'' to mean
+  ``some combination of C and E''?  I don't know.  If so, we might say
+  ``musicians write CE to mean ...''  If not, what do they write?
+  Should their be some notes (you know like what musicians actually
+  definitely do write) somewhere on our page?
+
+\item I think we should give lots more examples in the text like Fig
+  13.10 and Fig 13.11 and explain maybe something about why some of
+  them are valid (?).   
+
+\item ``psycho-acoustic understanding.'' replace by a sentence saying
+  what that is, e.g., that humans only here certain frequencies
+  (etc.).  Also, in that paragraph we could emphasize that a factor of
+  10 in compression is revolutionary -- it means you get 100 songs on
+  a CD instead of 12, and 200 albums on your ipod instead of 20.
+
+\item I wish we could end section 13 with {\em something} more, even
+  if it isn't at all technical. What about an illustration like Fig
+  18.4 (on page 45) and some sort of clever language that -- in a
+  nontechnical way -- explains it.  It's a vivid picture.  That image
+  shows something that looks like sound waves, and it has primes in
+  it.  That image might be on the cover of our book.  How close can we
+  get to it in Part 1???
+
+\item The Calculus Fig 15.1 -- yep, replacing it by log makes a lot of sense.
+
+\item We could also give a plot of a wiggly polynomial, maybe $2x^3 -
+  7x^2 + 5x - 2$ and its derivative $6x^2 - 14x + 5$, and note the
+  remarkable pattern that the derivative is got from the original
+  function in this case by reducing the exponents by $1$, etc.  We
+  could remark that general observations just like this are a major
+  theme in calculus.  
+
+\item Give more examples of derivatives of functions, many of which
+  we'll end up using later.  Example derivative of constant function,
+  derivative of a line, derivatives of trig functions, etc. 
+
+\item In Fig 15.2 (the graph that jumps) the axes labels are tiny.
+
+\item Who are this guy?:  ``Newton and/or Leibniz''.
+
+\item ``Notice, what is happening:''  Delete the comma?
+
+\item Add an endnote and reference(s) for the paragraph on page 35
+  about distributions.  What is a good reference (or references) for a
+  student to turn to?
+
+\item (**) I wonder if we should say what a ``function''.  We're spending a
+  lot of energy saying that $\delta$ {\em isn't} a function, but we
+  didn't say what a function is.  I didn't know an official definition
+  of function until my third year of undergraduate school, so the
+  target audience I have in mind doesn't know an ``official
+  definition'' either.  In Calculus one typically sees sloppy things
+  like ``the function $1/x$ which is infinite at $0$'', so for us to
+  go on about delta not being a function because it is infinite is
+  disigeneous.  Also, often us mathematicians do consider functions
+  $\R \to \R\cup\{\infty\}$, say.  It occurs to me that the problem
+  with $\delta$ is not that it is not a function, but that it is not a
+  function that behaves well with respect to Calculus.  The $\delta$
+  distribution is much better since e.g. $\int f \delta$ behaves so
+  sensibly.
+
+\item The caption for Figure 15.4 is totally wrong. It says ``A
+  picture of the derivative of a smooth graph approximating the graph
+  that is 1 up to some point and then 0 after that point. In each
+  case, the blue graph is 1 until 1 ε and 2 after 1 + .''
+Wrongness:  It's 4 pictures, not 1;  It doesn't immediately jump from 0 to 1;
+what is a ``smooth graph''?     Etc. It just seems sloppy/wrong.
+
+\item ``Continuous approximation to the staircase $\Psi(x)$ (in red)
+  along with a plot (in blue) of the derivative of this [[insert 'continuous']]
+  approximation''
+
+\item (**) ``As we have hinted above, we lose no information if we
+  further modify our staircase by distorting the $x$-axis, replacing
+  $x$ by $e^t$''.  We could go way slower here, and have a few
+  paragraphs (?)  about deforming the $x$ axis by a function.  We
+  could give several examples, pictures, etc., just like we did for
+  adding together two pure sounds, and I think it would help greatly
+  to clarify what is going on.  Let's give a good specific picture and
+  catalogue of examples to illustrate composition functions and
+  thinking about what happens to their graphs.  Also, in the
+  particular case of composing with $e^t$ isn't this just the
+  incredibly-familiar-in-science process of plotting data on a log
+  scale (or maybe exponential scale)?  Every science student has
+  probably seen that, so it's definitely worth making that connection.
+
+
+\item We through in a factor of $e^{t/2}$ in addition to precomposing
+with $e^t$.  It seems like we do the division by $e^{t/2}$ without even
+commenting on that.  Let's fix that.  Why is it there?
+
+\item ``We will refer to distributions with discrete support as spike
+  distributions'' This language is vivid and I like it for our
+  booklet.  Let's add an endnote though that gives the standard
+  terminology (e.g., ``discrete distrubtion'').
+
+\item ``But there are many other ways to package this vital
+  information, so we must explain our motivation'' If we had some even
+  better versions of pictures like maybe Fig 18.4 or maybe 17.4 way
+  earlier, we might say that explaining them is a big part of our
+  motivation.  This is a little bit circular... but it is actually
+  honestly what {\em our} motivation was when we wrote this stuff up
+  in the first place.
+
+\item I'm still curiuos how people knew that Riemann computed
+zeros...
+
+\item When we did this project initially there was a lot of excitement
+  as we figured out exactly who to make Figure 18.4.  I think our
+  current text fails to convey that excitement, but I really {\em
+    want} to convey it.  I think it's worth making our book longer and
+  spending more time explaining things.    
+
+\item It is also sad that we moved $R(x)$ out of the main text.  I
+  guess I really want part 3 back, or to make part 2 longer.  I
+  thinked we broke it out last time due to fatigue?  I'm not fatigued
+  anymore.
+
+\item ``That a simple geometric property of these zeroes...'' this
+  paragraph must come back into our book.  It's a very nice ending, or
+  maybe a good motivation in the middle.
+
+\item ``Our aim is not even to mention complex numbers in the text,''
+  I'm suddenly wondering if this is at all a good constraint to put on
+  ourselves.  I learned about -- and understood -- complex numbers in
+  school in 8th grade, and that was in a {\em very} small country town
+  in Texas.  I suspect a lot of people know the basics of complex
+  numbers. People don't know complex {\em analysis} though.  Maybe can
+  occassionally allow ourselves complex numbers, but definitely not
+  complex analysis?
+
 
 \end{itemize}
 
