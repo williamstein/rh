@@ -1,17 +1,18 @@
 \documentclass[11pt]{article}
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
-%\usepackage[active]{srcltx}
+
 \usepackage{endnotes}
+\usepackage{float}
 
 
 \usepackage{fancybox}
 \usepackage{graphicx}
-\usepackage{epstopdf}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
+
 \usepackage{url}
 \DeclareMathOperator{\Li}{Li}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
@@ -19,7 +20,7 @@
 \newcommand{\mycaption}[1]{\begin{quote}{\bf Figure: } \large #1\end{quote}}
 
 \newcommand{\ill}[3]{ 
-   \begin{figure}[htbp]
+   \begin{figure}[H]
    \begin{center}
    \includegraphics[width=#2\textwidth]{illustrations/#1}
    \caption{#3}
@@ -27,9 +28,8 @@
     \end{figure}
 }
 
-
 \newcommand{\illtwo}[4]{ 
-   \begin{figure}[htbp]
+   \begin{figure}[H]
    \begin{center}
    \includegraphics[width=#3\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#3\textwidth]{illustrations/#2}
    \caption{#4}
@@ -38,7 +38,7 @@
 }
 
 \newcommand{\illthree}[5]{ 
-   \begin{figure}[htbp]
+   \begin{figure}[H]
    \begin{center}
    \includegraphics[width=#4\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#2}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#3}
    \caption{#5}
@@ -158,13 +158,7 @@ that explain to the reader how to experiment with the parameters for
 the ranges of data illustrated, so as to get a vivid sense of how the
 numbers ``behave.''
  
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.3\textwidth]{illustrations/riemann}
-\caption{Bernhard Riemann (1826--1866)}
-\end{center}
-\end{figure}
-
+\ill{riemann}{.3}{Bernhard Riemann (1826--1866)}
 
 So, what {\em is} the Riemann Hypothesis? Here is a {\em first
   description} of this hypothesis, put in one ridiculously condensed
@@ -201,7 +195,7 @@ to find that key.
 \end{minipage}}
       \end{center}
       
-\begin{figure}[ht]\label{fig:bott}
+\begin{figure}[H]\label{fig:bott}
 \begin{center}
 % I got this from http://www.math.harvard.edu/history/bott/
 % Barry says there  is a good picture in the book
@@ -238,7 +232,7 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
   they obey these laws with almost military precision.''
 \end{quote}
                     
-\begin{figure}[ht]\label{fig:zagier}
+\begin{figure}[H]\label{fig:zagier}
 \begin{center}
 % I took this myself when we were hiking in Oberwolfach once...
 \includegraphics[width=0.25\textwidth]{illustrations/zagier}
@@ -399,7 +393,7 @@ Figure~\ref{fig:factor300},
 you always end up with the same collection of prime numbers:                  
                  $$300 = 2^2\times 3\times 5^2.$$   
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.47\textwidth]{illustrations/factor_tree_300_a}
 \includegraphics[width=0.47\textwidth]{illustrations/factor_tree_300_b}
@@ -463,7 +457,8 @@ every prime number smaller than or equal to $p$ divides $M$, these
 prime numbers cannot divide $N= M+1$ (since they divide $M$ evenly, if
 you tried to divide $N=M+1$ by any of them you would get a remainder
 of $1$).  So, since $P$ does divide $N$ it must not be any of the
-smaller prime numbers: it therefore has to be bigger than $p$.
+smaller prime numbers: $P$ is therefore a prime number bigger than $p=
+2^{43,112,609}-1$.
 
 You can think of this strategy as a simple game that you can
 play. Start with any finite bag of prime numbers (say the bag that
@@ -563,7 +558,7 @@ sieve out the primes up to 100, where instead of crossing out
 multiples we grey them out, and instead of circling primes we color
 their box red.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-2}
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-3}\\
@@ -598,15 +593,26 @@ the spacing of the infinite series of prime numbers.
 For example, {\em are there infinitely many pairs of primes whose
   difference is $2$?}  The sequence of primes seems to be rich in such
 pairs $$5-3 =2,\ \ \ 7-5=2,\ \ \ 13-11=2,\ \ \ 19-17 =2,$$ and we know
-that there are loads more such pairs (for example, according to
+that there are loads more such pairs\endnote{For example, according to
 \url{http://www.research.att.com/~njas/sequences/A007508} there are
 $10,\!304,\!185,\!697,\!298$ such pairs less than
-$10,\!000,\!000,\!000,\!000,\!000$) but the answer to our question,
+$10,\!000,\!000,\!000,\!000,\!000$.} but the answer to our question,
 {\em are there infinitely many?}, is not known. {\em Are there
   infinitely many pairs of primes whose difference is $4$?}  Answer:
 equally unknown. {\em Is every even number greater than $2$ a sum of
   two primes?}  Answer: unknown. {\em Are there infinitely many primes
   which are $1$ more than a perfect square?}  Answer: unknown.
+
+
+\bigskip
+
+Remember the Mersenne prime $p= 2^{43,112,609}-1$? and how we showed
+that there is a prime $P$ larger than that? Suppose, though, someone
+asked us whether there was a {\it Mersenne Prime} larger than this
+$p$: that is, {\em is there a prime number of the form $$2^{\rm some\
+  prime\ number}-1$$ bigger than $p= 2^{43,112,609}-1$?} Answer:  We don't
+know. It is possible that there are infinitely many Mersenne primes
+but we're far from being able to answer such questions.
 
 \bigskip
 
@@ -629,6 +635,28 @@ many primes are there up to $X$?''  and we have begun to get some feel
 for the numbers behind this question, and especially for the current
 ``best guesses'' about estimates.
    
+
+What is wonderful about this subject is that people attracted to it
+cannot resist asking questions that lead to interesting, and sometimes
+surprising numerical experiments. Moreover, given our current state of
+knowledge, many of the questions that come to mind are still
+unapproachable: we don't yet know enough about numbers to answer them.
+But {\it asking interesting questions} about the mathematics that you
+are studying is a high art, and is probably a necessary skill to
+acquire, in order to get the most enjoyment---and understanding---from
+mathematics.  So, we offer this challenge to you:
+
+Come up with with your own question about primes that:
+ 
+ \begin{itemize}
+ \item     is interesting to you,
+  \item    is not a question whose answer is known to you,
+ \item     is not a question that you've seen before; or at least not exactly,
+  \item    is a question about which you can begin to make numerical investigations? 
+ \end{itemize}
+ 
+\subsection{Further questions about primes} 
+
 Let us, for variety, dice the question differently by concentrating on
 the {\em gaps} between one prime and the next, rather than the tally
 of all primes. Of course, it is no fun at all to try to guess how many
@@ -637,12 +665,24 @@ odd number.  The fun, though, begins in earnest if you ask for pairs
 of primes with difference equal to $2$ (these being called {\em twin
   primes}) for it has long been guessed that there are infinitely many
 such pairs of primes, but no one has been able to prove this yet.
+
+\begin{quote} The largest known twin primes are 
+$$65516468355\cdot 2^{333333} \pm 1$$
+They have $100355$ digits and were announced by Kaiser and Klahnin
+$2009$.
+\end{quote}
+
+
 Similarly with difference $4$, or $8$, or---in fact---any even number
 $2k$. That is, people have guessed that there are infinitely many
 pairs of primes with difference $4$, with difference $6$, etc. but
 none of these guesses have yet been proved. [[maybe reference in an
 endnote something involving Green/Tao or Goldstein or some other
 recent big theorem related to the above?]]
+
+
+
+
    
 So, define $${\rm Gap}_{k}(X)$$ to be the number of pairs of primes
 less than $X$ with ``gap $k$'' (i.e., such that their difference is
@@ -652,7 +692,7 @@ See Table~\ref{tab:gap} for various values of ${\rm Gap}_{k}(X)$.
    
    \bigskip
    
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \caption{Values of ${\rm Gap}_{k}(X)$ \label{tab:gap}}
 \vspace{1em}
@@ -683,8 +723,7 @@ the spacing of prime numbers that we can't answer.
   faster? How much would you bet on the truth of your guess?
 \end{quote}
   
-We will get back to this later on in this book.  [[TODO: We do not get
-back to this later.  Later it would be natural to talk about the
+[[TODO: It would be natural to talk about the
 conjectural Hardy-Littlewood answer to this question, which is very
 much not suggested by data.  Perhaps we should also
 ask whether ${\rm Gap}_6(X)$ is always the winner, or if there is some
@@ -697,28 +736,6 @@ assume it is simply $C_k{\sqrt X}/\log(X)$ for some specific
 just trot them out in a little table, and say that this is Hardy and
 Littlewood's guess, but we haven't a clue, at present, how to prove
 such guesses.]]
-
-What is wonderful about this subject is that people attracted to it
-cannot resist asking questions that lead to interesting, and sometimes
-surprising numerical experiments. Moreover, given our current state of
-knowledge, many of the questions that come to mind are still
-unapproachable: we don't yet know enough about numbers to answer them.
-But {\it asking interesting questions} about the mathematics that you
-are studying is a high art, and is probably a necessary skill to
-acquire, in order to get the most enjoyment---and understanding---from
-mathematics.  So, we offer this challenge to you:
-
-Come up with with your own question about primes that:
- 
- \begin{itemize}
- \item     is interesting to you,
-  \item    is not a question whose answer is known to you,
- \item     is not a question that you've seen before; or at least not exactly,
-  \item    is a question about which you can begin to make numerical investigations? 
- \end{itemize}
- 
- [[A paragraph riff about the importance of being able to formulate
- questions on one's own that seem interesting to one.]]
 
 
 Here is a curious question that you can easily begin to check out for
@@ -763,7 +780,7 @@ multiplicatively odd numbers between $2$ and $N$, for $N$ equal to 10,
 100, 1000, and 10000. The above question asks whether these graphs
 would, for sufficiently large $N$, ever cross the $x$-axis.
 
- \begin{figure}[htbp]
+ \begin{figure}[H]
 \begin{center}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-10}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-100}\\
@@ -794,6 +811,8 @@ give bushels more), questions expressible in simple vocabulary, that
 we can't answer today. We have been studying numbers for over two
 millenia and yet we are indeed in the infancy of our understanding.
 
+So we'll continue our discussion by returning to the simplest counting
+question about prime numbers.
 
                            
 \section{How many primes are there?}
@@ -860,7 +879,7 @@ process.  Figure~\ref{fig:sieve3_100} contains a graph of all whole
 numbers up to 100 after we have removed the even numbers greater than
 $2$, and the multiples of $3$ greater than $3$ itself.
                                  
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{illustrations/sieves3_100}
 \caption{Sieving out multiples of $2$ and $3$.\label{fig:sieve3_100}}
@@ -873,7 +892,7 @@ $. Figure~\ref{fig:sieve7_100} contains a graph of what Eratosthenes
 sieve looks like up to 100 after sifting $2,3,5,$ and $7$.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{illustrations/sieves7_100}
 \caption{Sieving out multiples of $2$, $3$, $5$, and $7$.\label{fig:sieve7_100}}
@@ -904,7 +923,7 @@ such a smooth and elegant shape.
 
 \illtwo{PN_1000}{PN_10000}{.33}{}
 
-   \begin{figure}[htbp]
+   \begin{figure}[H]
    \begin{center}
    \includegraphics[width=.7\textwidth]{illustrations/PN_100000}
    \caption{Primes up to 100,000\label{fig:pn100000}}
@@ -1123,7 +1142,7 @@ as $\Li(X) = \int_2^X (dx/\log x)$.
 Figure~\ref{fig:threeplots} contains a graph of the three functions
 $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
  
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=.7\textwidth]{illustrations/three_plots}
 \caption{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom)\label{fig:threeplots}}
@@ -1143,7 +1162,7 @@ that is described at \url{http://numbers.computation.free.fr/Constants/Primes/Pi
 
  
 
-Since $Li(X)$ seems to start out impressively close in value to our
+Since $\Li(X)$ seems to start out impressively close in value to our
 $\pi(X)$ (at least in this range) it is natural to hope that in full
 generality it is {\it essentially a square root approximation} to
 $\pi(X)$.  This gives us our first formulation of Riemann's
@@ -1166,13 +1185,6 @@ root accurate.
 \bigskip
  
 
-The ratio of $\pi (X)$ to $\Li(X)$ tends to $1$ as $X$ gets larger and
-larger. And ditto for the ratio of $\pi (X)$ to $X/\log X$ since an
-easier fact, which follows directly from elementary calculus, tells us
-that the the ratio of $\Li(X)$ to $X/\log X$ tends to $1$ as $X$ gets
-larger and larger. These facts are known as The Prime Number Theorem,
-a very hard-won piece of mathematics!  It was proved in
-1896 independently by Hadamard and de la Vallée Poussin.
 
 \section{The Prime Number Theorem}
   
@@ -1187,7 +1199,16 @@ To answer such a question, we have to know what we mean by {\it going
   to infinity at the same rate}. So, here's a definition. Two
 functions, $A(X)$ and $B(X)$, that each go to infinity will be said to
 {\bf go to infinity at the same rate} if their {\it ratio}
-    $$A(X)/B(X)$$ tends to $1$ as $X$ goes to infinity.
+$$A(X)/B(X)$$ 
+tends to $1$ as $X$ goes to infinity.
+
+
+[[insert example plot??]]
+
+For example, two polynomials in $X$ with positive leading coefficient
+{\it go to infinity at the same rate} if and only if they have the
+same degrees and the same leading coefficient; they {\it go to
+  infinity at similar rates} if they have the same degree.
     
 While we're defining things, let us say that two functions, $A(X)$
 and $B(X)$, that each go to infinity {\bf go to infinity at
@@ -1228,6 +1249,9 @@ known for over a century. It goes under the name of
   \noindent {\bf The Prime Number Theorem:\ \ } $X/\log(X)$ and $\pi(X)$ go to infinity at the same rate.
    \vskip10pt
     
+   This fact is a very hard-won piece of mathematics!  It was proved
+   in 1896 independently by Hadamard and de la Vall\'{e}e Poussin.
+
    [William: here we can have a riff on PNT reminding people of Gauss,
    Hadamard et al, and maybe even the controversy of Selberg and
    Erd{\"o}s or maybe not. The Wiki-reference for the PNT is superb!!
@@ -1241,16 +1265,6 @@ known for over a century. It goes under the name of
         showing that (to use the terminology we introduced)
         $X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
         \vskip15pt
-
- When we talk about twin primes, is the following still the
-        current record? (I found it on the internet...)
-
-        \begin{quote} The largest known twin primes are
-          $2003663613\cdot 2^{195000} \pm 1$. They have $58711$ digits
-          and were announced by Vautier, McKibbon and Gribenko in
-          $2007$.
-      \end{quote}
-
 
 Here is one way of thinking about what it means when one says about
 two functions, say $\pi(X)$ and $\Li(X)$, that ``their ratio tends to
@@ -1266,8 +1280,8 @@ The elusive Riemann Hypothesis, however, is much deeper than the Prime
 Number Theorem, and takes its origin from some awe-inspiring,
 difficult to interpret, lines in Bernhard Riemann's magnificent 8-page
 paper, ``On the number of primes less than a given magnitude,''
-published in 1859. [[was it officially published? can we scan at all from
-the actual published version?]]
+published in 1859. \endnote{See \url{http://www.maths.tcd.ie/pub/HistMath/People/Riemann/Zeta/}
+for for the original German version and an English translation.}
  
 
 \ill{riemann_zoom}{1}{From Riemann's 1859 Manuscript\label{fig:riemamn}}
@@ -1306,7 +1320,7 @@ we do so, though, let us review in Figure~\ref{fig:staircases}
 what this staircase looks like, for
 different ranges.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=.4\textwidth]{illustrations/PN_25} 
 \includegraphics[width=.4\textwidth]{illustrations/PN_100}\\ 
@@ -1382,7 +1396,7 @@ but is constructed according to the following architectural plan.
    Although we are not quite done with our architectural work, Figure~\ref{fig:psi} shows 
    what our staircase looks like, so far.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{illustrations/psi_10}
 \includegraphics[width=0.4\textwidth]{illustrations/psi_200}
@@ -1441,7 +1455,7 @@ and measured air pressure due to this sound at that position, the
 peaks correspond to the times when the varying air pressure is maximal
 or minimal and the zeroes to the times when it is normal pressure.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin}  
 \caption{Graph of a Sine Wave\label{fig:sine}}
@@ -1470,14 +1484,14 @@ some electronic instrument that could approximate pure notes). Its
 graph would be just the {\em sum} of the graphs of each of the pure
 notes (see Figures~\ref{fig:sinetwofreq} and \ref{fig:sinetwofreqsum}).
     
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq}  
 \caption{Graph of Two Sine Waves with Different Frequencies\label{fig:sinetwofreq}}
 \end{center}
 \end{figure}  
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-sum}  
 \caption{Graph of Sum of the Two Sine Waves with Different Frequencies\label{fig:sinetwofreqsum}}
@@ -1492,7 +1506,7 @@ also ``delay'' the onset of the E note and play them with some
 different phase relationship, for example, as illustrated
 in Figures~\ref{fig:sin-twofreq-phase} and \ref{fig:sum-sin-phase}.
      
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase}  
 \caption{\label{fig:sin-twofreq-phase}Graph of two ``sine'' waves in some phase relationship one to
@@ -1502,7 +1516,7 @@ in Figures~\ref{fig:sin-twofreq-phase} and \ref{fig:sum-sin-phase}.
 \end{center}
 \end{figure}  
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase-sum}  
 \caption{Graph of the sum of the two ``sine'' waves in some phase
@@ -1527,7 +1541,7 @@ in Figures~\ref{fig:sin-twofreq-phase} and \ref{fig:sum-sin-phase}.
  one way would be to sample the amplitude of the sound at many
  different times, as for example in Figure~\ref{fig:sum-sin-phase-sample}.
   
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase-sum-points}
 \end{center}
@@ -1536,7 +1550,7 @@ in Figures~\ref{fig:sin-twofreq-phase} and \ref{fig:sum-sin-phase}.
 
 Then, fill in the rest of the points to obtain Figure~\ref{fig:sum-sin-phase-sample-fill}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase-sum-fill}
 \end{center}
@@ -1564,12 +1578,7 @@ mechanism of hearing, and of the mathematics of music.
   of the chords as built {\em just} with the five numbers giving {\em
     spectrum, amplitudes,} and {\em phase} is staggering.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.3\textwidth]{illustrations/fourier}
-\caption{Jean Baptiste Joseph Fourier (1768--1830)}
-\end{center}
-\end{figure}
+\ill{fourier}{0.3}{Jean Baptiste Joseph Fourier (1768--1830)}
 
 This type of analysis, in general, is called {\em Fourier Analysis}
 and is one of the glorious chapters of mathematics.  One way of
@@ -1582,7 +1591,7 @@ amplitude of that frequency ``in'' the sound.
 So our CE chord would have the spectral picture in
 Figure~\ref{fig:ce-spectral}.
  
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{illustrations/sound-ce-general_sum}
 \includegraphics[width=0.4\textwidth]{illustrations/sound-ce-general_sum-blips}
@@ -1622,7 +1631,7 @@ want to hear what a {\em sawtooth} wave sounds like, as in
 Figure~\ref{fig:sawtooth}, 
    
    
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{illustrations/sawtooth}
 \end{center}
@@ -1634,7 +1643,7 @@ Figure~\ref{fig:sawtooth},
  \bigskip
 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/sawtooth-spectrum}
 \end{center}
@@ -1644,7 +1653,7 @@ each integer $k$\label{fig:sawtooth-spectrum}}
   
 
        
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{illustrations/complicated-wave}
 \end{center}
@@ -1659,7 +1668,7 @@ psycho-acoustic understanding. With this, mp3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality.
  
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=.35\textwidth]{illustrations/PN_100}
 \caption{The Staircase of Primes\label{fig:staircase100}}
@@ -1755,24 +1764,31 @@ Figure~\ref{fig:jumpsmooth}.
   graph that is $1$ up to some point $x$ and then $2$ after that
   point, the smooth graph being flat mostly.\label{fig:jumpsmooth}}
 
+
 Then take the {\em derivative} of that smooth function.  Of course,
 this is just an approximation, so we might try to make a better
-approximation, which we do in each successive graph in
-Figure~\ref{fig:derivsmoothapprox}.
+approximation, which we do in each successive graph starting
+with Figure~\ref{fig:derivsmoothapprox} below.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=.4\textwidth]{illustrations/jump-smooth-deriv-point700000000000000}
-\includegraphics[width=.4\textwidth]{illustrations/jump-smooth-deriv-point200000000000000}\\
-\includegraphics[width=.4\textwidth]{illustrations/jump-smooth-deriv-point0500000000000000}
-\includegraphics[width=.4\textwidth]{illustrations/jump-smooth-deriv-point0100000000000000}\\
 
-\caption{A picture of the derivative of a smooth
-  graph approximating the graph that is $1$ up to some point and then
-  $0$ after that point.  In each case, the blue graph is $1$ until
-  $1-\varepsilon$ and $2$ after $1+\varepsilon$.\label{fig:derivsmoothapprox}}
-\end{center}
-\end{figure}
+\ill{jump-smooth-deriv-point700000000000000}{0.6}{A picture of the derivative of
+a smooth approximation to a function that jumps.}
+
+Note that---as you would expect---in the range where the initial
+function is constant, its derivative is zero. In the subsequent
+figures, our initial function will be {\it nonconstant} for smaller
+and smaller intervals about the origin. Note also that, in our series
+of pictures below, we will be successively rescaling the $y$-axis; all
+our initial functions have the value $1$ for ``large" negative numbers
+and the value $2$ for large positive numbers.
+
+\ill{jump-smooth-deriv-point200000000000000}{0.5}{Second picture of the derivative of
+a smooth approximation to a function that jumps.}
+\ill{jump-smooth-deriv-point0500000000000000}{0.5}{Third picture of the derivative of
+a smooth approximation to a function that jumps.}
+\ill{jump-smooth-deriv-point0100000000000000}{0.5}{Fourth picture of the derivative of
+a smooth approximation to a function that jumps.}
+
 
 Notice, what is happening: as the approximation gets better and
 better, the derivative will be zero mostly, with a blip at the point
@@ -1809,29 +1825,35 @@ quotation-marks for---properly speaking the Dirac $\delta$-function is
 not---as we have explained above---a bona fide function but rather a
 {\em distribution}.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.2\textwidth]{illustrations/dirac}
-\caption{Paul Adrien Maurice Dirac (1902--1984)}
-\end{center}
-\end{figure}
+\ill{dirac}{0.2}{Paul Adrien Maurice Dirac (1902--1984)}
 
    The curious aspect of the Dirac $\delta$-function that has its blip
    at the point $x$ is that it is flatly {\em zero} in any interval in
    the $t$-line that doesn't include the point $t=x$.  We say that
    this Dirac $\delta$-function has its {\bf support} at the point $x$.
 
-[[ We might also throw in a short short paragraph about why Schwartz liked these things. (Or maybe not.)]]
+\endnote{
+[[I found this comment about ``Generalized functions"
+     (which seems to be an early name for distributions) on Wikipedia:
+
+\vskip10pt
+\begin{quote} ``Generalized functions" were introduced by Sergei Sobolev in 1935. They were independently introduced in the late 1940s by Laurent Schwartz, who developed a comprehensive theory of distributions."
+\end{quote}
+
+so maybe we should look into the history of this. (But I'm not keen on
+getting too much into it: just if we need to add a short end-note
+about it, to credit Sobolev $\dots$)]]
+}
 
 \section{Finding the slopes of staircases} 
 
-[[we have to have some sort of section title above, because we added
-the new distributions section above.  This is what used to be in the
-section with title ``How Calculus manages to find the slopes of graphs
-that have no slopes.'']]
+[[I also think that there should be an ``introductory" simpler picture
+as well (simpler than, say, figure 18.2) where we have the staircase
+of primes between $1$ and $10$ and give the derivative for
+that---which just has four blips, and then move to the fuller figure
+18.2]]
 
-
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{illustrations/psi_200}
 \caption{Illustration of the  staircase $\Psi(x)$  constructed in Part I that 
@@ -1855,7 +1877,8 @@ that is, at $x=$ any power of a prime.
 
 [[Barry: I think that I'd like to add a philosophical paragraph
 (short, I promise) about performing mathematical changes that ``lose
-no information."]]
+no information."  OK. So I don't forget this, I'll call it LNI for
+``lose no information" and will try to write it.]]
   
 As we have hinted above, we lose no information if we further modify
 our staircase by distorting the $x$-axis, replacing $x$ by $e^t$ (as
@@ -1904,9 +1927,13 @@ information about the placement of prime numbers among all numbers.
 \begin{itemize}
 \item The first surprising thing about this discrete distribution is that its Fourier transform is again discrete. 
 \vskip20pt
-[[Put an array of say 6 random
-plots of discrete distributions along with their fft's which don't 
-look discrete at all.]]
+
+[[Put an array of say 6 random plots of discrete distributions along
+with their fft's which don't look discrete at all.]]  In
+Section~\ref{sec:dd} we will revisit the curious case of distributions
+with discrete support that have Fourier transforms with discrete
+support.
+
 \vskip20pt
 That is, the spectrum is given by an infinite, but discrete list of
 numbers at the spikes down in Figure~\ref{fig:phi_even_a}.
@@ -1946,14 +1973,14 @@ Figures~\ref{fig:phi_even} and \ref{fig:phi_odd} show what you get for
 graphs of these distributions ${\hat \Phi}_{\rm even}(s)$ and ${\hat
   \Phi}_{\rm odd}(s)$ if you cut off the sums above at $p^n < 100$.
   
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{illustrations/phi_even}
 \caption{Graph of an approximation to ${\hat \Phi}_{\rm even}(s)$ using $p^n<100$\label{fig:phi_even}}
 \end{center}
 \end{figure}
   
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{illustrations/phi_odd}
 \caption{Graph of an approximation to ${\hat \Phi}_{\rm odd}(s)$ using $p^n<100$\label{fig:phi_odd}}
@@ -2052,7 +2079,7 @@ function $\Psi$ obtained using $30$ frequences.}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{illustrations/phi_even}
 \caption{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
@@ -2080,12 +2107,23 @@ through Riemann's paper where he introduces Zeta, and there are no
 explicit zeros there.  Maybe somewhere else?
 ]]
 
+\begin{quote}
+  ``One now finds indeed approximately this number of real roots
+  within these limits, and it is very probable that all roots are
+  real. Certainly one would wish for a stricter proof here; I have
+  meanwhile temporarily put aside the search for this after some
+  futile attempts, as it appears unnecessary for the next objective of
+  my investigation.''
+
+-- Riemann, 1859
+\end{quote}
+
 Nowadays, these mysterious numbers, these spectral lines for the
 staircase of primes are known to great accuracy.  Here is the smallest
 one, $\theta_1$, given with over $1,\!000$ digits of its decimal
 expansion: \vskip20pt 
-$\
-14.134725141734693790457251983562470270784257115699243175685567460149\newline
+
+$14.134725141734693790457251983562470270784257115699243175685567460149\newline
 9634298092567649490103931715610127792029715487974367661426914698822545\newline
 8250536323944713778041338123720597054962195586586020055556672583601077\newline
 3700205410982661507542780517442591306254481978651072304938725629738321\newline
@@ -2401,6 +2439,12 @@ imaginary part by their real parts, going from right to left.
   zeroes of zeta.
 }}
 
+
+\bigskip
+
+\section{Distributions with discrete support that have Fourier
+  transforms with discrete support\label{sec:dd}}
+Explain, in a leisurely way, how curious this is.
 
 \newpage
 \section{Endnotes}
