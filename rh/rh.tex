@@ -140,10 +140,13 @@ this problem is all about and why it is so important. For even before
 anyone proves this {\em hypothesis} to be true (or false!), just
 getting familiar with it and with some of the the ideas behind it, is
 exciting.  Moreover, this hypothesis is of crucial importance in a
-wide range of computational mathematics, even if it is never proved,
-since it gives us an excellent sense of how long certain computer
-programs will take to run, which bolsters our confidence to initiate a
-computation that might take weeks or even months to complete.
+wide range of mathematical fields; for example it is a
+confidence-booster for computational mathematics: even if the Riemann
+Hypothesis is never proved, its truth gives us an excellent sense of
+how long certain computer programs will take to run, which, in some
+cases, gives us the assurance we need to initiate a computation that
+might take weeks or even months to complete.
+
       
 Our ``booklet'' comes in two pieces: the actual text which is a mere
 \pageref{lastpage} pages, and a web page ({\tt
@@ -176,16 +179,23 @@ of its importance and its beauty.
        \begin{center}{\bf\large What {\em sort} of Hypothesis is the Riemann Hypothesis?}\end{center}
        \medskip
 
-       Consider the seemingly innocuous question: how many prime
-       numbers ($2,3,5,7,11,13,17,\dots$) are there less than $100$?
-       less than $10,\!000$? less than $1,\!000,\!000$?  Or, more
-       generally, how many primes are there less than any given number
-       $X$?  Riemann proposed, a century and half ago, that there is a
-       strikingly simple-to-describe ``very good approximation" to
-       that number. We now see that if we could prove that {\em
-         Riemann's Hypothesis} is true, we would have the key to a
-       wealth of powerful mathematics. Mathematicians are eager to
-       find that key.
+Consider the seemingly innocuous series of questions:
+
+\begin{quote}
+How many prime numbers  (2, 3, 5, 7, 11, 13, 17, … ) are there less than 100?\\
+How many less than 10,000?\\
+How many less than 1,000,000?\vspace{-1ex}\\
+
+More generally, how many primes are there less than any given number $X$?
+\end{quote}
+
+Riemann proposed, a century and half ago, a strikingly
+simple-to-describe ``very good approximation'' to the number of
+primes less than a given number $X$. We now
+see that if we could prove this {\em Hypothesis of Riemann} we would have
+the key to a wealth of powerful mathematics. Mathematicians are eager
+to find that key.
+
 
 \vspace{1ex}
 \end{minipage}}
@@ -237,37 +247,32 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 \end{figure}
 
 \section{Thoughts about numbers: ancient, medieval, and modern}
-If we are to believe Aristotle, the early Pythagoreans thought that
-the principles governing Number are ``the principles of all things,''
-the elements of number being more basic than the Empedoclean physical
-elements {\em earth, air, fire, water}. To think about number is to
-get close to the architecture of ``what is.''
 
-\bigskip
-
+If we are to believe the ancient Greek philosopher Aristotle the early
+Pythagoreans thought that the principles governing Number are ``the
+principles of all things,'' the concept of Number being more basic than
+{\em earth, air, fire, or water}, which were according to ancient tradition
+the four building blocks of matter. To think about number is to get
+close to the architecture of ``what is.''
 
 So, how far along are we in our thoughts about numbers?
 
-\bigskip
-
-
-\begin{figure}[ht]\label{fig:zagier}
-\begin{center}
-% This is from http://en.wikipedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg
-% There is a higher resolution scan available there
-\includegraphics[width=0.3\textwidth]{illustrations/descartes}
-\caption{Ren\'e Descartes}
-\end{center}
-\end{figure}
-
-Ren{\'e} Descartes, almost four centuries ago, expressed the hope that
-there soon would be ``almost nothing more to discover in geometry.''
-Contemporary physicists dream of a ``final theory.''  But despite its
+The French philosopher and mathematician Ren\'e Descartes, almost four
+centuries ago, expressed the hope that there soon would be ``almost
+nothing more to discover in geometry.'' Contemporary physicists dream
+of a final theory\endnote{Link to Weinberg's book {\em Dreams of a
+    Final Theory: The Search for the Fundamental Laws of Nature}, by
+  Steven Weinberg (New York: Pantheon Books, 1992)}.  But despite its
 venerability and its great power and beauty, the pure mathematics of
 numbers may still be in the infancy of its development, with depths to
 be explored as endless as the human soul, and never a final theory.
 
-\bigskip
+
+% This is from http://en.wikipedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg
+% There is a higher resolution scan available there
+
+\ill{descartes}{.3}{Ren\'e Descartes}
+
 
 \ill{dulcinea1.jpg}{.2}{Don Quixote and ``his'' Dulcinea del Toboso}
 
@@ -460,6 +465,43 @@ you tried to divide $N=M+1$ by any of them you would get a remainder
 of $1$).  So, since $P$ does divide $N$ it must not be any of the
 smaller prime numbers: it therefore has to be bigger than $p$.
 
+You can think of this strategy as a simple game that you can
+play. Start with any finite bag of prime numbers (say the bag that
+only contains one prime, the prime $2$). Now each ``move'' of the game
+consists of multiplying together all the primes you have in your bag
+to get a number $M$, then adding $1$ to $M$ to get the even larger
+number $N=M+1$, then factoring $N$ into prime number factors, and then
+including all those new prime numbers in your bag. Euclid's proof
+gives us that we will---with each move of this game---be finding more
+prime numbers: the bag will increase. After, say, a million moves our
+bag will be guaranteed to contain more than a million prime numbers.
+
+For example, starting the game with your bag containing
+only one prime number $2$, here is how your bag grows with after
+successive moves of the game:
+
+$\mbox{}\qquad\{2\}$
+\newline
+$\mbox{}\qquad\{2,3\}$
+\newline
+$\mbox{}\qquad\{2,3, 7\}$
+\newline
+$\mbox{}\qquad\{2,3, 7, 43\}$
+\newline
+$\mbox{}\qquad\{2,3, 7, 43, 13, 139\}$
+\newline
+$\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443\}$
+\newline
+$\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051\}$
+\newline
+$\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051, 29881, 67003,
+9119521, 6212157481\}$
+\newline
+\mbox{}\qquad{}etc.\endnote{The sequence of prime numbers we find by this
+procedure is discussed in more detail with references at
+Sloane's table of integer sequences:
+\url{http://www.research.att.com/~njas/sequences/A126263}.}
+
 This strategy, by the way, is not very new: it is, in fact, well over
 two thousand years old, since it already occurred in Euclid's {\em
   Elements}. The Greeks did know that there are infinitely many prime
@@ -630,15 +672,16 @@ $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 
    \bigskip
    
-   Here then is a {\em challenge } to us, which will get us to throw
-   ourselves into the numbers and make some guesses.
+   Here is yet another question with deals with
+the spacing of prime numbers that we can't answer.
   
 {\em Racing Gap $2$,  Gap $4$, Gap $6$, and Gap $8$ against each other:} 
   
-{\bf Challenge:} As $X$ tends to infinity which of the three ${\rm
-  Gap}_{2}(X)$, ${\rm Gap}_{4}(X)$, ${\rm Gap}_{6}(X)$, or ${\rm
-  Gap}_{8}(X)$ do you think that will grow faster?  How much would you
-bet on the truth of your guess?
+\begin{quote}
+  Challenge: As X tends to infinity which of the three $Gap_2(X),
+  Gap_4(X), Gap_6(X),$ or $Gap_8(X)$ do you think that will grow
+  faster? How much would you bet on the truth of your guess?
+\end{quote}
   
 We will get back to this later on in this book.  [[TODO: We do not get
 back to this later.  Later it would be natural to talk about the
@@ -647,6 +690,36 @@ much not suggested by data.  Perhaps we should also
 ask whether ${\rm Gap}_6(X)$ is always the winner, or if there is some
 other $k$ such that ${\rm Gap}_k(X)$ eventually always beat ${\rm
   Gap}_6(X)$?  That's what Hardy-Littlewood predicts.]]
+
+[[Give Hardy-Littlewood's asymptotic conjecture for $Gap_k(X)$ (I
+assume it is simply $C_k{\sqrt X}/\log(X)$ for some specific
+(nonzero...)  constants $C_k$? What are these $C_k$'s???  Should we
+just trot them out in a little table, and say that this is Hardy and
+Littlewood's guess, but we haven't a clue, at present, how to prove
+such guesses.]]
+
+What is wonderful about this subject is that people attracted to it
+cannot resist asking questions that lead to interesting, and sometimes
+surprising numerical experiments. Moreover, given our current state of
+knowledge, many of the questions that come to mind are still
+unapproachable: we don't yet know enough about numbers to answer them.
+But {\it asking interesting questions} about the mathematics that you
+are studying is a high art, and is probably a necessary skill to
+acquire, in order to get the most enjoyment---and understanding---from
+mathematics.  So, we offer this challenge to you:
+
+Come up with with your own question about primes that:
+ 
+ \begin{itemize}
+ \item     is interesting to you,
+  \item    is not a question whose answer is known to you,
+ \item     is not a question that you've seen before; or at least not exactly,
+  \item    is a question about which you can begin to make numerical investigations? 
+ \end{itemize}
+ 
+ [[A paragraph riff about the importance of being able to formulate
+ questions on one's own that seem interesting to one.]]
+
 
 Here is a curious question that you can easily begin to check out for
 small numbers. We know, of course, that the {\em even} numbers and the
@@ -722,8 +795,6 @@ we can't answer today. We have been studying numbers for over two
 millenia and yet we are indeed in the infancy of our understanding.
 
 
-                                                      
-                           
                            
 \section{How many primes are there?}
 
@@ -1071,10 +1142,13 @@ The computation of $\pi(X)$ above is a major distributed computation
 that is described at \url{http://numbers.computation.free.fr/Constants/Primes/Pix/pixproject.html}.
 
  
- 
- Note that $\Li(X)$ is a ``closer fit'' to $\pi(X) $ (at least in
- this range) so it is natural to give this first formulation of
- Riemann's Hypothesis:
+
+Since $Li(X)$ seems to start out impressively close in value to our
+$\pi(X)$ (at least in this range) it is natural to hope that in full
+generality it is {\it essentially a square root approximation} to
+$\pi(X)$.  This gives us our first formulation of Riemann's
+Hypothesis:
+
       \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
@@ -1091,7 +1165,6 @@ root accurate.
  
 \bigskip
  
- 
 
 The ratio of $\pi (X)$ to $\Li(X)$ tends to $1$ as $X$ gets larger and
 larger. And ditto for the ratio of $\pi (X)$ to $X/\log X$ since an
@@ -1099,7 +1172,85 @@ easier fact, which follows directly from elementary calculus, tells us
 that the the ratio of $\Li(X)$ to $X/\log X$ tends to $1$ as $X$ gets
 larger and larger. These facts are known as The Prime Number Theorem,
 a very hard-won piece of mathematics!  It was proved in
-1896 indepdently by Hadamard and de la Vallée Poussin.
+1896 independently by Hadamard and de la Vallée Poussin.
+
+\section{The Prime Number Theorem}
+  
+Take a look at Figure 10.1 again.  All three functions, $X/\log(X)$,
+$\Li(X)$ and $\pi(X)$ are ``going to infinity with $X$'' (this means
+that for any real number $R$, if $X$ is taken to be sufficiently
+large, the values of these functions at $X$ will exceed $R$).
+
+Are these functions ``going to infinity'' at {\it the same rate}?
+
+To answer such a question, we have to know what we mean by {\it going
+  to infinity at the same rate}. So, here's a definition. Two
+functions, $A(X)$ and $B(X)$, that each go to infinity will be said to
+{\bf go to infinity at the same rate} if their {\it ratio}
+    $$A(X)/B(X)$$ tends to $1$ as $X$ goes to infinity.
+    
+While we're defining things, let us say that two functions, $A(X)$
+and $B(X)$, that each go to infinity {\bf go to infinity at
+similar rates} if there are two positive constants $c$ and $C$
+such that for $X$ sufficiently large the {\it ratio}
+$$
+      A(X)/B(X)
+$$
+is greater than $c$ and smaller than $C$.
+    
+Now a theorem from elementary calculus, tells us that the ratio of
+$\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
+That is---using the definition we've just introduced--- $\Li(X)$ and
+$X/\log(X)$ go to infinity at the same rate.\endnote{Give a proof
+of this statement in an endnote.}
+  
+The Riemann Hypothesis, as we have just formulated it, would tell us
+that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
+in comparison with the size of $X$. This information would imply (but
+would be {\it much} more precise information than) the statement that
+the {\it ratio} $\Li(X)/\pi(X)$ tends to $1$, i.e., that $\Li(X)$ and
+$\pi(X)$ go to infinity at the same rate.
+
+This last statement---giving, of course, a far less precise
+relationship between $\Li(X)$ and $\pi(X)$ than the Riemann Hypothesis
+(once it is proved!) would give us.  The advantage, though, of the
+less precise statement is that it is known, and---in fact---has been
+known for over a century. It goes under the name of
+  
+\vskip10pt
+ \noindent {\bf The Prime Number Theorem:\ \ } $\Li(X)$ and $\pi(X)$ go to infinity at the same rate.
+   \vskip10pt
+
+   Since $\Li(X)$ and $X/\log(X)$ go to infinity at the same rate could
+   equally well have expressed the ``same" theorem by saying:
+
+  \vskip10pt
+  \noindent {\bf The Prime Number Theorem:\ \ } $X/\log(X)$ and $\pi(X)$ go to infinity at the same rate.
+   \vskip10pt
+    
+   [William: here we can have a riff on PNT reminding people of Gauss,
+   Hadamard et al, and maybe even the controversy of Selberg and
+   Erd{\"o}s or maybe not. The Wiki-reference for the PNT is superb!!
+   We should rewference it (Probably written by Granville).  It may be
+   reasonable also to say:]
+
+        \vskip10pt
+        
+        A milestone in the history leading up to the proof of Prime
+        Number Theorem is the earlier work of Chebyshev [ref***]
+        showing that (to use the terminology we introduced)
+        $X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
+        \vskip15pt
+
+ When we talk about twin primes, is the following still the
+        current record? (I found it on the internet...)
+
+        \begin{quote} The largest known twin primes are
+          $2003663613\cdot 2^{195000} \pm 1$. They have $58711$ digits
+          and were announced by Vautier, McKibbon and Gribenko in
+          $2007$.
+      \end{quote}
+
 
 Here is one way of thinking about what it means when one says about
 two functions, say $\pi(X)$ and $\Li(X)$, that ``their ratio tends to
@@ -1763,7 +1914,7 @@ $$
   \theta_1, \theta_2, \theta_3,\dots
 $$
 
-This, Riemann knew!  \label{lastpage}
+This, Riemann knew!  
 
 An endnote -- decide where to hang this.\endnote{  
 {\bf Spike distributions that have discrete spectrum}
@@ -2256,6 +2407,8 @@ imaginary part by their real parts, going from right to left.
 
 
 \theendnotes
+
+\label{lastpage}
 
 \end{document}
    
