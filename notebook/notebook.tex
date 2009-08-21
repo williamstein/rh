@@ -615,6 +615,76 @@ zeros...
 
 
 
+\section{August 20, 2009}
+
+We have $\Phi(t) = \Psi'(e^t)/e^{t/2}$, and computed that the even and odd
+Fourier transforms are:
+
+$${\hat \Phi}_{\rm even}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\cos(ns \log(p))$$ 
+and the odd Fourier transform is
+$${\hat \Phi}_{\rm odd}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\sin(ns \log(p)).$$
+   
+   
+Plotting these to low precision (with few $p$) and one clearly "sees" the zeros of zeta influencing
+the plot.   Why?  This seems completely mysterious.   To much higher precision this disappears.
+Barry suggests that instead we note that really say
+${\hat \Phi}_{\rm even}(s)$ is really a distribution so it only makes sense to
+integrate it against compact functions.  In fact, we should have
+$$
+   {\hat \Phi}_{\rm even}(s) = \sum_{\theta_i} \delta_{\theta_i}
+$$
+i.e., ${\hat \Phi}_{\rm even}(s)$ is the sum of Dirac deltas at the imaginary parts
+of the zeros of the Riemann zeta function.
+
+Recall that $\delta_a$ is characterized by 
+$$
+\int f(x) \delta_a dx = f(a).
+$$
+
+So, if $f(s)$ is a function with compact support, then 
+$$
+  \int f(s) {\hat \Phi}_{\rm even}(s) = \sum_{\theta_i} f(\theta_i).
+$$
+Thus if we consider a function $f(s)$ with compact support in a set $S$, then
+$$
+  \int f(s) {\hat \Phi}_{\rm even}(s) = \sum_{\theta_i\in S} f(\theta_i).
+$$
+E.g., suppose $S=[14,15]$.  Then 
+$$
+  \int f(s) {\hat \Phi}_{\rm even}(s) = f(\theta_0).
+$$
+(all the integrals above are from $-\infty$ to $\infty$).
+ Let's say the interval $[a,b]$ contains only $\theta_0$, say.
+Then 
+$$
+\int_{\infty}^{\infty} f(s) {\hat \Phi}_{\rm even}(s)
+ = 
+\int_{a}^{b} s {\hat \Phi}_{\rm even}(s)
+= \int_{a}^{b} \sum_{p^n} {\frac{\log(p)}{p^{n/2}}} s\cos(ns \log(p))  ds.
+$$
+It seems natural to reverse the order of integration and summation:
+$$
+\int_{a}^{b} \sum_{p^n} {\frac{\log(p)}{p^{n/2}}} f(s)\cos(ns \log(p))  ds
+ = 
+ \sum_{p^n} {\frac{\log(p)}{p^{n/2}}} \int_{a}^{b} f(s)\cos(ns\log(p)) ds.
+$$
+So if we arrange that $\int_{a}^{b} f(s)\cos(s\log(p^n)) \to 0$ as
+$p^n\to\infty$, we would be set.   But is there any way to do this?
+
+
+I've tried for a while, and can't find an $f(s)$ so that this converges.
+
+But I'm just really {\em amazed} by the mystery that 
+
+$${\hat \Phi}_{\rm even}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\cos(ns \log(p))$$ 
+
+very visibly spikes at the zeros of zeta!
+
+For fun, I just tried 
+
+$$-\sum_{p^n} {\frac{\log(p)}{p^n}}\cos(ns \log(p))$$ 
+
+and it spikes even more clearly at the zeros of zeta. 
 
 
 \end{document}

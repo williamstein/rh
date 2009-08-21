@@ -1,6 +1,5 @@
-\documentclass[11pt,draft]{article}
+\documentclass[11pt]{article}
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
-
 
 \usepackage{endnotes}
 \usepackage{float}
@@ -14,6 +13,10 @@
 \usepackage{amsthm}
 
 \usepackage{url}
+
+\usepackage[hypertex]{hyperref}
+
+
 \DeclareMathOperator{\Li}{Li}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -149,8 +152,8 @@ might take weeks or even months to complete.
 
       
 Our ``booklet'' comes in two pieces: the actual text which is a mere
-\pageref{lastpage} pages, and a web page ({\tt
-  http://rh.publisher...}) which has a gallery of illustrations that
+\pageref{lastpage} pages, and a web page (\url{http://rh.publisher...}) 
+which has a gallery of illustrations that
 are meant to accompany the text.  There are very few mathematical
 equations in our text.  But for the more adventurous readers, we have
 also included at the above website something we call {\em worksheets}
@@ -461,6 +464,19 @@ of $1$).  So, since $P$ does divide $N$ it must not be any of the
 smaller prime numbers: $P$ is therefore a prime number bigger than $p=
 2^{43,112,609}-1$.
 
+This strategy, by the way, is not very new: it is, in fact, well over
+two thousand years old, since it already occurred in Euclid's {\em
+  Elements}. The Greeks did know that there are infinitely many prime
+numbers and they showed it via the same method as we showed that our
+$p = 2^{43,112,609} - 1$ is not the largest prime number.
+
+Here is the argument again, given very succinctly: Suppose there are
+only finitely many primes $p_1, \ldots, p_n$.  Let $n=p_1 p_2 \cdots
+p_n + 1$.  Then $n$ is divisible by some prime, but no $p_i$ divides
+$n$, which is contrary to our assumption that $p_1, \ldots, p_n$ is
+the complete list of primes.
+
+
 You can think of this strategy as a simple game that you can
 play. Start with any finite bag of prime numbers (say the bag that
 only contains one prime, the prime $2$). Now each ``move'' of the game
@@ -498,17 +514,6 @@ procedure is discussed in more detail with references at
 Sloane's table of integer sequences:
 \url{http://www.research.att.com/~njas/sequences/A126263}.}
 
-This strategy, by the way, is not very new: it is, in fact, well over
-two thousand years old, since it already occurred in Euclid's {\em
-  Elements}. The Greeks did know that there are infinitely many prime
-numbers and they showed it via the same method as we showed that our
-$p = 2^{43,112,609} - 1$ is not the largest prime number.
-
-Here is the argument again, given very succinctly: Suppose there are
-only finitely many primes $p_1, \ldots, p_n$.  Let $n=p_1 p_2 \cdots
-p_n + 1$.  Then $n$ is divisible by some prime, but no $p_i$ divides
-$n$, which is contrary to our assumption that $p_1, \ldots, p_n$ is
-the complete list of primes.
 
 Though there are infinitely many primes, actually finding them is a
 major challenge.  In the 1990s, the Electronic Frontier Foundation
@@ -647,8 +652,7 @@ are studying is a high art, and is probably a necessary skill to
 acquire, in order to get the most enjoyment---and understanding---from
 mathematics.  So, we offer this challenge to you:
 
-Come up with with your own question about primes that:
- 
+Come up with with your own question about primes that
  \begin{itemize}
  \item     is interesting to you,
   \item    is not a question whose answer is known to you,
@@ -689,11 +693,13 @@ So, define $${\rm Gap}_{k}(X)$$ to be the number of pairs of primes
 less than $X$ with ``gap $k$'' (i.e., such that their difference is
 $k$).  For example, ${\rm Gap}_2(10) = 2$, since the pairs $(3,5)$ and
 $(5,7)$ are the pairs less than $10$ with gap $2$.
-See Table~\ref{tab:gap} for various values of ${\rm Gap}_{k}(X)$.
+See Table~\ref{tab:gap} for various values of ${\rm Gap}_{k}(X)$
+and Figure~\ref{fig:primegapdist} for the distribution of prime gaps
+for $X=10^7$.
    
    \bigskip
    
-\begin{figure}[H]
+\begin{table}[H]
 \begin{center}
 \caption{Values of ${\rm Gap}_{k}(X)$ \label{tab:gap}}
 \vspace{1em}
@@ -709,7 +715,11 @@ $10^6$ & 8169 & 8143 & 13549 & 5569 \\\hline
 $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 \end{tabular}
 \end{center}
-\end{figure}   
+\end{table}  
+
+
+
+\ill{primegapdist}{1}{Frequency histogram showing the distribution of prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is the most popular gap in this data.\label{fig:primegapdist}}
 
    \bigskip
    
@@ -756,9 +766,9 @@ product of {\em an even number of} primes; and a {\bf multiplicatively
   number of} primes.  So, any prime is multiplicatively odd, the
 number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
 3$, $9=3\cdot 3$, and $10= 2\cdot 5$; but $12=2\cdot 2\cdot 4$ is
-multiplicatively odd.  Here is some data:
+multiplicatively odd.  Table~\ref{tab:evenodddata} gives some data:
    
-  \begin{table} \caption{Multiplicatively even and odd positive numbers $\le N$}
+  \begin{table}[H] \caption{Multiplicatively even and odd positive numbers $\le N$\label{tab:evenodddata}}
   \begin{center}
  
 \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -778,7 +788,7 @@ Multiplicatively odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 
 Each plot in Figure~\ref{fig:liouville} gives the number of
 multiplicatively even numbers between $2$ and $N$ minus the number of
 multiplicatively odd numbers between $2$ and $N$, for $N$ equal to 10,
-100, 1000, and 10000. The above question asks whether these graphs
+100, 1000, 10000, 100000, and 1000000. The above question asks whether these graphs
 would, for sufficiently large $N$, ever cross the $x$-axis.
 
  \begin{figure}[H]
@@ -787,7 +797,9 @@ would, for sufficiently large $N$, ever cross the $x$-axis.
 \includegraphics[width=.4\textwidth]{illustrations/liouville-100}\\
 \includegraphics[width=.4\textwidth]{illustrations/liouville-1000}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-10000}\\
-\caption{Racing Multiplicatively Even and Odd Numbers\label{fig:liouville}}
+\includegraphics[width=.4\textwidth]{illustrations/liouville-100000}
+\includegraphics[width=.4\textwidth]{illustrations/liouville-1000000}\\
+\caption{Racing Multiplicatively Even and Odd Numbers.\label{fig:liouville}}
 \end{center}
 \end{figure}
   
@@ -907,10 +919,11 @@ all whole numbers tends towards $0\%$ (it does).
   
 
 To get a sense of how the primes accumulate, we will take a look at
-the staircase of primes for $N= 25$, and $N=100$.
+the staircase of primes for $N= 25$ and $N=100$ in Figures~\ref{fig:staircase25}
+and \ref{fig:staircase100a}.
 
-
-\illtwo{PN_25}{PN_100}{.33}{}
+\ill{prime_pi_25_aspect1}{.8}{Staircase of primes up to 25\label{fig:staircase25}}
+\ill{prime_pi_100_aspect1}{.8}{Staircase of primes up to 100\label{fig:staircase100a}}
 
     
     
@@ -922,11 +935,11 @@ the eye. How strange and wonderful to watch, as our viewpoint zooms
 out to larger ranges of numbers, the accumulation of primes taking on
 such a smooth and elegant shape.
 
-\illtwo{PN_1000}{PN_10000}{.33}{}
+\illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircase of primes up to 1,000 and 10000\label{fig:staircases2}}
 
    \begin{figure}[H]
    \begin{center}
-   \includegraphics[width=.7\textwidth]{illustrations/PN_100000}
+   \includegraphics[width=.7\textwidth]{illustrations/prime_pi_100000}
    \caption{Primes up to 100,000\label{fig:pn100000}}
    \end{center}
     \end{figure}
@@ -1150,17 +1163,18 @@ $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
 \end{center}
 \end{figure}
  
-Let $X=4\cdot 10^{22}$.  Then \label{pili_vals}
+Let $X=10^{23}$.  Then \label{pili_vals}
 \begin{align*}
-  \pi(X) &= 783964159847056303858,\\
-  \Li(X) &= 783964159852157952242.7155276025801473\ldots, \\
-  X/(\log(X)-1)  &=  783650443647303761503.5237113087392967\ldots.\\
-  |\pi(X) - \Li(X)| &= 5101648384.71552760258014\ldots, \\
-  \sqrt{X}\log(X) &=  10408633281397.77913344605\ldots,
+  \pi(X) &= 1925320391606803968923,\\
+  \Li(X) &= 1925320391614054155138.780\ldots, \\
+  X/(\log(X)-1)  &=  1924577459166813514799.7932241\ldots.\\
+  \Li(X) - \pi(X) &= 7250186215.78002929687500\ldots, \\
+  \sqrt{X}\log(X) &= 16747250820487.142114662460299 \ldots,
 \end{align*}
-The computation of $\pi(X)$ above is a major distributed computation
-that is described at \url{http://numbers.computation.free.fr/Constants/Primes/Pix/pixproject.html}.
-
+This computation of $\pi(10^{23})$ was done on a single
+computer in 2007 by Oliveira e Silva,
+and is the largest value of $\pi(X)$ ever computed.  See
+\url{http://www.ieeta.pt/~tos/primes.html} for more details.
  
 
 Since $\Li(X)$ seems to start out impressively close in value to our
@@ -1206,11 +1220,11 @@ tends to $1$ as $X$ goes to infinity.
 
 [[insert example plot??]]
 
-For example, two polynomials in $X$ with positive leading coefficient
-{\it go to infinity at the same rate} if and only if they have the
-same degrees and the same leading coefficient; they {\it go to
-  infinity at similar rates} if they have the same degree.
-    
+Here is one way of thinking about what it means for two functions , $A(X)$ and $B(X)$, to go to infinity at the same rate. It means that  for any
+number you give us, say: a million (or a billion, or a trillion) we should be able to show that if $X$ is large enough, then the
+``top" million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same. 
+
+
 While we're defining things, let us say that two functions, $A(X)$
 and $B(X)$, that each go to infinity {\bf go to infinity at
 similar rates} if there are two positive constants $c$ and $C$
@@ -1218,13 +1232,31 @@ such that for $X$ sufficiently large the {\it ratio}
 $$
       A(X)/B(X)
 $$
-is greater than $c$ and smaller than $C$.
+is greater than $c$ and smaller than $C$.  
+
+    \ill{similar_rates}{1.0}{The polynomials $A(X)=2 X^{2} + 3 X - 5$ (bottom)
+and $B(X)=  3 X^{2} - 2 X + 1$ (top) go to infinity at similar rates.\label{fig:simrates}}
+
+
+
+For example, two polynomials in $X$ with positive leading coefficient
+{\it go to infinity at the same rate} if and only if they have the
+same degrees and the same leading coefficient; they {\it go to
+  infinity at similar rates} if they have the same degree.
+See Figure~\ref{fig:simrates}. %where we may take $c=1/2$ and $C=1$.    
+
     
+
+
 Now a theorem from elementary calculus, tells us that the ratio of
 $\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
 That is---using the definition we've just introduced--- $\Li(X)$ and
 $X/\log(X)$ go to infinity at the same rate.\endnote{Give a proof
 of this statement in an endnote.}
+
+
+Recall (on page 10 above)  that
+if $X = 1023$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top" million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
   
 The Riemann Hypothesis, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
@@ -1266,16 +1298,6 @@ known for over a century. It goes under the name of
         showing that (to use the terminology we introduced)
         $X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
         \vskip15pt
-
-Here is one way of thinking about what it means when one says about
-two functions, say $\pi(X)$ and $\Li(X)$, that ``their ratio tends to
-$1$ as $X$ gets larger and larger'': From page~\ref{pili_vals} above
-you see that if $X = 4\times 10^{22}$, the top ten digits of $\pi (X)$
-and $\Li(X)$ are the same: $7839641598$.  Well, when we say that ```the
-ratio of $\pi(X)$ to $\Li(X)$ tends to $1$ as $X$ gets larger and
-large'' we mean that for {\em any} number you give us, say: a million,
-we should be able to show that if $X$ is large enough, then the
-``top'' million digits of $\pi (X)$ and $\Li(X)$ are the same.
 
 The elusive Riemann Hypothesis, however, is much deeper than the Prime
 Number Theorem, and takes its origin from some awe-inspiring,
@@ -1430,7 +1452,7 @@ formulations of Riemann's Hypothesis are equivalent. Our aim, in
 offering the second formulation---a way of phrasing Riemann's guess
 that mathematicians know to be equivalent to the first one---is to
 celebrate the variety of equivalent ways we have to express Riemann's
-propose answers to the question ``How many primes are there?'' and to
+proposed answers to the question ``How many primes are there?'' and to
 point out that some formulations would reveal a startling
 simplicity--not immediately apparent---to the behavior of prime
 numbers, no matter how erratic primes initially appear to us to
@@ -1669,34 +1691,88 @@ psycho-acoustic understanding. With this, mp3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality.
  
+\section{Fourier analysis and the staircase of primes}
+
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=.35\textwidth]{illustrations/PN_100}
+\includegraphics[width=\textwidth]{illustrations/prime_pi_100_aspect1}
 \caption{The Staircase of Primes\label{fig:staircase100}}
 \end{center}
 \end{figure}
 
-Is there a way of using Fourier Analysis to re-express the complicated
-picture of the staircase of primes (or, perhaps, something
-  that contains the same basic information as that staircase).
-(Figure~\ref{fig:staircase100}) in a data-compressed way as a sum of
-pure ``sine waves?''  Does this ornery staircase of primes have a
-spectrum that we can compute, just as we have done for the saw-tooth
-wave above, or for the major third CE chord?  And will that spectrum
-show us {\em order} and {\em profound organization} lurking within the
-staircase?  Will our understanding of the spectrum allow us to
-reproduce all the pertinent information about the placement of primes
-among all whole numbers, elegantly and {\em faithfully}?  Of course,
-here we would not settle for ``little loss of quality." We would want,
-in the end, a perfect recording!
-  
  
-These queries represent some of the aspirations that we are tempted to
-have, as we follow through on Riemann's view. Strangely enough, it is
-towards questions like these that Riemann's Hypothesis may take us. We
-began with the simple question about primes: {\em how to count them},
-and are led to ask for profound, and hidden, regularities in
-structure.
+ In view of the amazing data-compression virtues of Fourier analysis, it isn't unnatural to ask these questions:
+
+ \begin{itemize}
+  \item Is there a way of using Fourier Analysis to better understand the complicated picture of the staircase
+of primes?
+ 
+  \item Does this ornery staircase
+of primes  (or, perhaps, some tinkered version of the staircase that contains the same basic information) have a {\it spectrum}?
+
+  \item  If  such a {\it spectrum} exists, can we compute it conveniently, just as we have done for the saw-tooth wave above,
+or for the major third CE chord?
+ 
+
+  \item  Assuming the spectrum exists, and is computable, will our understanding of this spectrum allow us to reproduce all
+the pertinent information about the placement of primes among all whole numbers, elegantly and
+faithfully? 
+
+  \item  And here is a most important question: will that spectrum show us order and organization
+lurking within the staircase that we would otherwise be blind to? 
+ 
+
+  \end{itemize}
+   
+
+ Strangely enough, it is towards questions like these that Riemann's Hypothesis  takes us. We began with the simple question about primes: how to count them, and are led to
+ask for profound, and hidden, regularities in structure.
+
+
+ In Part II of this book we will---if not explain---at least hint at how the above series of questions have been answered so far, and how the Riemann Hypothesis offers a surprise for the last question in this series. 
+ 
+ But for now, let us offer a {\it sneak preview} to the ``spectrum" alluded to in these questions!
+ 
+ 
+ To get warmed up, let's plot the positive values of this sum of (co-)sine waves:
+
+  
+  $$f(t) = -{\frac{\log(2)}{2^{1/2}}}\cos(t\log(2))- {\frac{\log(3)}{3^{1/2}}}\cos(t\log(3))-{\frac{\log(2)}{4^{1/2}}}\cos(t\log(4))-{\frac{\log(5)}{5^{1/2}}}\cos(t\log(5))$$
+
+
+\ill{mini_phihat_even}{1}{Plot of $f(t)$}
+
+
+There is nothing very impressive about this, you might think; but wait, for this is just a very ``early" piece of an infinite sum of (co-)sine waves:
+$$
+-\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))
+$$ 
+where the summation is over all powers $p^n$ of all prime numbers $p$.   
+
+Let us cut this infinite sum  off taking only finitely many terms, by choosing various ``cut-off values" $C$ and forming the finite sums
+$$
+-\sum_{p^n<C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p)),
+$$ 
+and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show
+what we get for a few values of $C$.
+ In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the Riemann Hypothesis holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  
+
+
+\ill{phihat_even-5}{1}{Plot of $-\sum_{p^n<5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with
+arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
+
+\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n<20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
+
+\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n<50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
+\ill{phihat_even-500}{1}{Plot of $-\sum_{p^n<500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
+
+  
+
+ 
+ Notice though,  how this spectrum  of red lines is so closely matched by the peaks of the graphs of the positive values of these finite sums. 
+ 
+   How this ``plays out" as we take longer  and longer finite pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, and what relationship this has to the Fourier analysis of the staircase of primes is the subject of the later parts of this book.
+
 
 \section{ To our readers of Part I. } 
 The statement of the Riemann Hypothesis---admittedly as elusive as
@@ -1773,7 +1849,7 @@ with Figure~\ref{fig:derivsmoothapprox} below.
 
 
 \ill{jump-smooth-deriv-point700000000000000}{0.6}{A picture of the derivative of
-a smooth approximation to a function that jumps.}
+a smooth approximation to a function that jumps.\label{fig:djump1}}
 
 Note that---as you would expect---in the range where the initial
 function is constant, its derivative is zero. In the subsequent
@@ -1784,36 +1860,61 @@ our initial functions have the value $1$ for ``large" negative numbers
 and the value $2$ for large positive numbers.
 
 \ill{jump-smooth-deriv-point200000000000000}{0.5}{Second picture of the derivative of
-a smooth approximation to a function that jumps.}
+a smooth approximation to a function that jumps.\label{fig:djump2}}
 \ill{jump-smooth-deriv-point0500000000000000}{0.5}{Third picture of the derivative of
-a smooth approximation to a function that jumps.}
+a smooth approximation to a function that jumps.\label{fig:djump3}}
 \ill{jump-smooth-deriv-point0100000000000000}{0.5}{Fourth picture of the derivative of
-a smooth approximation to a function that jumps.}
+a smooth approximation to a function that jumps.\label{fig:djump4}}
 
 
 Notice, what is happening: as the approximation gets better and
 better, the derivative will be zero mostly, with a blip at the point
-of discontinuity, and the blip will get higher and higher.  Now, early
-mathematicians (Newton, Leibniz)---in replacing approximate speeds by
-instantaneous velocities by {\em passing to limits}---had to wait a
-while before later mathematicians (e.g., Weierstrass) gave a rigorous
-foundation for what they were doing.  Happily however, this process we
-are discussing, of approximating discontinuous functions more and more
-exactly by smooth functions, and taking their derivatives to get the
-blip-functions as we have just seen in the graphs above led
-mathematicians (notably the French mathematician, Laurent Schwartz) to
-provide a mathematically rigorous foundation (that we needn't go into
-here) called the {\em theory of distributions.} Thanks to this theory
-you can, so to speak, {\em go all the way} to form what you can
-legitimately call the {\em derivative} of the function that is $0$
-before the point $x$ and $1$ afterwards; if we were to think of this
-as a {\em function} we would be in trouble: it would have $\infty$ as
-a value at $x$, and---worse---it would be no use to us. But the modern
-remedy is to formulate a conceptual context in which it has a genuine
-existence, and can be genuinely used in exactly the same way as the
-derivatives of smooth functions are used. The only change here is that
-the derivative of this discontinuous function has a status, not as a
-function, but rather as a {\em distribution}.  
+of discontinuity, and the blip will get higher and higher. 
+In each of these pictures,  for any interval of real numbers $[a,b]$ the total area under the red graph over that interval is equal to
+\begin{center}
+{\it the height of the blue graph at $x=b$}\\
+minus\\
+{\it  the height of the blue graph  at $a$}. 
+\end{center}
+This is a manifestation of one of the basic facts of life of Calculus relating a function to its derivative:
+  \vskip10pt
+  \begin{quote} Given any real-valued  function $F(x)$---that has a derivative---for any interval of real numbers $[a,b]$ the total area under the graph of the derivative of $F(x)$ over that interval is equal to $F(b)-F(a)$. 
+  \end{quote}  \vskip10pt
+    What happens if we take the series of figures \ref{fig:djump1}, \ref{fig:djump2}, \ref{fig:djump3}, \ref{fig:djump4}, etc. {\it to the limit}?  This is quite curious: 
+  
+  \begin{itemize}
+  \item {\bf the series of red graphs:} these are getting thinner and thinner and higher and higher: can we make any sense of what the red graph might mean in the limit (even though the only picture of it that we have at present makes it infinitely thin and infinitely high)?
+  
+   \item {\bf the series of blue graphs:} these are happily looking more and more like the tame Figure~\ref{fig:jump}. 
+   \end{itemize} 
+  
+  Each of our red graphs is the derivative of the corresponding blue graph. Wouldn't it be tempting to think of the limit of the red graphs---whatever this might construed to be---as standing for the derivative of the limit of the blue graphs, i.e., of the graph in Figure~\ref{fig:jump}?
+  
+  Well, the temptation is so great that, in fact, mathematicians and physicists of the early twentieth century struggled to give a meaning to things like {\it the limit of the red graphs}---such things were initially called {\bf generalized functions} which might be considered the derivative of {\it the limit of the blue graphs}, i.e., of the graph of Figure~\ref{fig:jump}.
+  
+  
+  Of course, to achieve progress in mathematics, all the concepts that play a role in the theory have to be unambiguously defined,  and it took a while before {\it generalized functions} such as the limit of our series of red graphs had been rigorously introduced.
+  
+     But many of the great moments in the development of mathematics occur when mathematicians---requiring some concept not yet formalized---work with the concept tentatively, dismissing---if need be---mental tortures, in hopes that the experience they acquire by working with the concept will eventually help to put that concept on sure footing. For example,  early
+mathematicians (Newton, Leibniz)|in replacing approximate speeds by instantaneous velocities
+by passing to limits|had to wait a while before later mathematicians (e.g., Weierstrass) gave a
+rigorous foundation for what they were doing.  
+   
+   Karl Weierstrass, who worked during the latter part of the nineteenth century, was known as the ``father of modern analysis.'' He oversaw one of the glorious moments of rigorization of concepts that were long in use, but never before systematically organized.  He, and other analysts of the time were interested in providing a  rigorous language to talk about {\it functions} and more specifically {\it continuous functions} and {\it smooth} (i.e., {\it differentiable}) functions. They wished to have a firm understanding of limits (i.e., of sequences of numbers, or of functions).  
+ 
+ % From http://en.wikipedia.org/wiki/Karl_Weierstrass
+ \ill{weierstrass}{.3}{Karl Weierstrass (1815--1897)} 
+   
+    For Weierstrass and his companions, even though the functions they worked with needn't be smooth, or continuous, at the very least, the functions they studied had {\it well-defined---and usually finite---values}.   But our ``limit of red graphs" is not so easily formalized as the concepts that occupied the efforts of Weierstrass. Happily however, this general process 
+of approximating discontinuous functions more and more exactly by smooth functions, and taking
+their derivatives to get the blip-functions as we have just seen in the red graphs above was eventually given a mathematically rigorous
+foundation; notably, by the French mathematician, Laurent Schwartz who provide a beautiful theory that we will not go into here, that made perfect sense of ``generalized functions'' such as our limit of the series of red graphs, and that allows mathematicians to work with these concepts with ease. These ``generalized functions''  are called {\it distributions} in Schwartz's theory.
+
+
+% From http://en.wikipedia.org/wiki/Laurent_Schwartz
+ \ill{schwartz}{.2}{Laurent Schwartz (1915--2002)} 
+
+
 
 \section{Distributions: sharpening our approximating functions even if
   we have to let them shoot out to infinity}
@@ -1966,9 +2067,9 @@ simple integration that the even Fourier transform of $$\Phi(t)=
 \Psi'(e^t)/e^{t/2}$$ 
 is given by the distribution defined by the
 formula
-$${\hat \Phi}_{\rm even}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\cos(ns \log(p))$$ 
+$${\hat \Phi}_{\rm even}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\cos(s \log(p^n))$$ 
 and the odd Fourier transform is
-$${\hat \Phi}_{\rm odd}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\sin(ns \log(p)).$$
+$${\hat \Phi}_{\rm odd}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\sin(s \log(p^n)).$$
    
    
 Figures~\ref{fig:phi_even} and \ref{fig:phi_odd} show what you get for
