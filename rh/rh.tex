@@ -830,7 +830,7 @@ question about prime numbers.
                            
 \section{How many primes are there?}
 
-\ill{sieve200}{.7}{Sieving Primes up to 200}
+\ill{sieve200}{.8}{Sieving Primes up to 200}
                                                       
 Slow as we are to understand primes, at the very least we can try to
 count them. You can see that there are $10$ primes less than $30$, so
@@ -842,13 +842,13 @@ $168$ primes less than a thousand (so we might say that among the
 numbers less than a thousand the chances that one of them is prime is
 roughly $1$ in $6$).
                                                            
-\ill{proportion_primes_100}{0.9}{Proportion of primes up to $N=100$}
+\ill{proportion_primes_100}{1}{Proportion of primes up to $N=100$}
 
 There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.4}{Proportion of primes up to $1000$ and $10000$}
+\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes up to $1000$ and $10000$}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10,000,000,000 (so we might say that the chances are down to roughly
@@ -876,7 +876,8 @@ even less.  And so it goes: with each move in our
 sieving process we are winnowing the field more extensively, reducing
 the chances that the later numbers are prime.
 
-\illtwo{sieve_2_200}{sieve1000}{.45}{Sieving by removing multiples of $2$ up to $100$ and Sieving for primes up to $1000$}
+\ill{sieve_2_200}{.8}{Sieving by removing multiples of $2$ up to $100$}
+\ill{sieve1000}{.8}{Sieving for primes up to $1000$}
           
 The red curve in these figures actually counts the primes: it is the
 beguilingly irregular {\em staircase of primes.}  Its height above any
@@ -892,12 +893,9 @@ process.  Figure~\ref{fig:sieve3_100} contains a graph of all whole
 numbers up to 100 after we have removed the even numbers greater than
 $2$, and the multiples of $3$ greater than $3$ itself.
                                  
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{illustrations/sieves3_100}
-\caption{Sieving out multiples of $2$ and $3$.\label{fig:sieve3_100}}
-\end{center}
-\end{figure}
+
+\ill{sieves3_100}{.7}{Sieving out multiples of $2$ and $3$.\label{fig:sieve3_100}}
+
 
 From this graph you can see that if you go ``out a way'' the
 likelihood that a number is a prime is less that $1$ in $3
@@ -905,12 +903,8 @@ $. Figure~\ref{fig:sieve7_100} contains a graph of what Eratosthenes
 sieve looks like up to 100 after sifting $2,3,5,$ and $7$.
 
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{illustrations/sieves7_100}
-\caption{Sieving out multiples of $2$, $3$, $5$, and $7$.\label{fig:sieve7_100}}
-\end{center}
-\end{figure}
+
+\ill{sieves7_100}{.7}{Sieving out multiples of $2$, $3$, $5$, and $7$.\label{fig:sieve7_100}}
 
 
 This data may begin to suggest to you that as you go further and
@@ -939,7 +933,7 @@ such a smooth and elegant shape.
 
    \begin{figure}[H]
    \begin{center}
-   \includegraphics[width=.7\textwidth]{illustrations/prime_pi_100000}
+   \includegraphics[width=.8\textwidth]{illustrations/prime_pi_100000}
    \caption{Primes up to 100,000\label{fig:pn100000}}
    \end{center}
     \end{figure}
@@ -1043,7 +1037,7 @@ $$
 $$   
 which is close to the correct count of $78,\!498$.
 
-\illthree{area_under_graph_30}{area_under_graph_100}{area_under_graph_1000}{.3}{The
+\illthree{area_under_log_graph_30}{area_under_log_graph_100}{area_under_log_graph_1000}{.3}{The
   expected tally of the number of primes $<X$ is approximated by the
   area underneath the graph of $1/\log(X)$ from $1$ to $X$.}
 
@@ -1158,7 +1152,7 @@ $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
  
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=.7\textwidth]{illustrations/three_plots}
+\includegraphics[width=.9\textwidth]{illustrations/three_plots}
 \caption{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom)\label{fig:threeplots}}
 \end{center}
 \end{figure}
@@ -1446,6 +1440,8 @@ but is constructed according to the following architectural plan.
    \vspace{1ex}
    \end{minipage}}
 \end{center}
+
+\ill{psi_diag_1000}{0.4}{The newly constructed staircase up to 1000 is close to the 45 degree line.}
 
 Do not worry if you do not understand why our first and second
 formulations of Riemann's Hypothesis are equivalent. Our aim, in
@@ -1758,13 +1754,13 @@ what we get for a few values of $C$.
  In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the Riemann Hypothesis holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  
 
 
-\ill{phihat_even-5}{1}{Plot of $-\sum_{p^n<5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with
+\ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with
 arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
 
-\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n<20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
+\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
 
-\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n<50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
-\ill{phihat_even-500}{1}{Plot of $-\sum_{p^n<500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
+\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
+\ill{phihat_even-500}{1}{Plot of $-\sum_{p^n\leq 500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
 
   
 
@@ -1811,13 +1807,14 @@ have no slopes}
 Differential Calculus, initially the creation of Newton and/or
 Leibniz, acquaints us with {\em slopes} of graphs,
    
+\ill{newton-leibniz}{0.5}{Isaac Newton and Gottried Leibniz}
 
 [[Is the following a suggestion to replace the picture below by something with a log function?  I don't remember what the point of this querry is: {\em a graph that is more of a log with a question: ``What is the slope
 of the tangent line?'' answer: ``here it is''; How compute?  this is
 calculus.}]] 
    
    
-\ill{graph_slope_deriv}{0.5}{A picture of a graph of a function (blue), a slope at a point (green), and the graph of the derivative (red).}
+\ill{graph_slope_deriv}{0.6}{A picture of a graph of a function (blue), a slope at a point (green), and the graph of the derivative (red).}
       
 \noindent Calculus explains to us how to calculate those slopes, and
 finally, shows us the power that we then have to answer problems we
@@ -1848,7 +1845,7 @@ approximation, which we do in each successive graph starting
 with Figure~\ref{fig:derivsmoothapprox} below.
 
 
-\ill{jump-smooth-deriv-point700000000000000}{0.6}{A picture of the derivative of
+\ill{jump-smooth-deriv-7}{0.6}{A picture of the derivative of
 a smooth approximation to a function that jumps.\label{fig:djump1}}
 
 Note that---as you would expect---in the range where the initial
@@ -1859,11 +1856,11 @@ of pictures below, we will be successively rescaling the $y$-axis; all
 our initial functions have the value $1$ for ``large" negative numbers
 and the value $2$ for large positive numbers.
 
-\ill{jump-smooth-deriv-point200000000000000}{0.5}{Second picture of the derivative of
+\ill{jump-smooth-deriv-2}{0.5}{Second picture of the derivative of
 a smooth approximation to a function that jumps.\label{fig:djump2}}
-\ill{jump-smooth-deriv-point0500000000000000}{0.5}{Third picture of the derivative of
+\ill{jump-smooth-deriv-05}{0.5}{Third picture of the derivative of
 a smooth approximation to a function that jumps.\label{fig:djump3}}
-\ill{jump-smooth-deriv-point0100000000000000}{0.5}{Fourth picture of the derivative of
+\ill{jump-smooth-deriv-01}{0.5}{Fourth picture of the derivative of
 a smooth approximation to a function that jumps.\label{fig:djump4}}
 
 
