@@ -40,7 +40,10 @@ def similar_rates():
     A = 2*X^2 + 3*X - 5
     B = 3*X^2 - 2*X + 1
     G = plot(A/B, (1,100))
+    G += text("$A(X)/B(X)$", (70,.58), rgbcolor='black', fontsize=14)
     H = plot(A, (X,1,100), rgbcolor='red') + plot(B, (X,1,100))
+    H += text("$A(X)$", (85,8000), rgbcolor='black',fontsize=14)
+    H += text("$B(X)$", (60,18000), rgbcolor='black',fontsize=14)    
     a = graphics_array([[H,G]]) 
     return a
 

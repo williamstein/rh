@@ -329,8 +329,8 @@ plane-spoken English, and I don't want to trip up our readers unnecessarily.  A
 short endnote or rephrasing or maybe a different translation could really help here.
 This might be a good opportunity to cite your Imagining Numbers book.]]
            
-\bigskip
-
+% from http://en.wikipedia.org/wiki/File:Euklid-von-Alexandria_1.jpg           
+\ill{euclid}{.3}{Euclid}           
 
 But, until Euclid, prime numbers seem not to have been singled out as
 {\em the} extraordinary mathematical concept, central to any deep
@@ -611,6 +611,9 @@ equally unknown. {\em Is every even number greater than $2$ a sum of
 
 
 \bigskip
+
+% from http://www.york.ac.uk/depts/maths/histstat/people/mersenne.gif
+\ill{mersenne}{.3}{Mersenne}
 
 Remember the Mersenne prime $p= 2^{43,112,609}-1$? and how we showed
 that there is a prime $P$ larger than that? Suppose, though, someone
@@ -1007,6 +1010,9 @@ that account for the apparent complexity of the nature of primes?
 %sure you understand the above!'']]
    
 \section{A probabilistic ``first'' guess }
+
+\ill{gauss}{.3}{Gauss}
+
 The search for such approximating curves began, in fact, two centuries
 ago when Carl Friedrich Gauss defined a certain beautiful curve that,
 experimentally, seemed to be an exceptionally good fit for the
@@ -1909,27 +1915,59 @@ foundation; notably, by the French mathematician, Laurent Schwartz who provide a
 
 
 % From http://en.wikipedia.org/wiki/Laurent_Schwartz
- \ill{schwartz}{.2}{Laurent Schwartz (1915--2002)} 
+ \ill{schwartz}{.3}{Laurent Schwartz (1915--2002)} 
 
 
 
 \section{Distributions: sharpening our approximating functions even if
   we have to let them shoot out to infinity}
-These ``blip-functions'' as we have been referring to them are more
-officially called {\em Dirac $\delta$-functions}, the adjective
-``Dirac'' being in honor of the physicist who first worked effectively
-with this concept, the $\delta$ being the symbol he assigned to these
-objects, and the noun ``function'' should properly be in
-quotation-marks for---properly speaking the Dirac $\delta$-function is
-not---as we have explained above---a bona fide function but rather a
-{\em distribution}.
+  
+The curious {\it limit of the red graphs} of the previous section, which you might  be tempted to think of as a ``blip-function" that vanishes for $t$ nonzero and is somehow ``infinite" (whatever that means) at $0$ is an example of a {\it generalized function} (in the sense of the earlier mathematicians) or a {\it distribution} in the sense of Laurent Schwartz.
 
-\ill{dirac}{0.2}{Paul Adrien Maurice Dirac (1902--1984)}
+  This particular {\it limit of the red graphs} also goes by another  name (it is officially called a Dirac $\delta$-function,
+the adjective ``Dirac" being in honor of the physicist who first worked  with this concept, the ``$\delta$" being the symbol he assigned to these objects). The noun ``function" should 
+be in quotation-marks for, properly speaking, the Dirac $\delta$-function is not---as we have explained
+above---a bona fide function but rather a distribution.
 
-   The curious aspect of the Dirac $\delta$-function that has its blip
-   at the point $x$ is that it is flatly {\em zero} in any interval in
-   the $t$-line that doesn't include the point $t=x$.  We say that
-   this Dirac $\delta$-function has its {\bf support} at the point $x$.
+
+\ill{dirac}{0.3}{Paul Adrien Maurice Dirac (1902--1984)}
+
+Now may be  a good time to summarize what the major difference is between {\it honest functions} and {\it generalized functions}  or  {\it distributions}.
+
+An honest (by which we mean {\it integrable}) function of a real variable  $f(t)$ possesses two ``features."
+
+
+\begin{itemize}
+\item  {\bf It has values.}  That is, at any real number $t$,  e.g., $t =2$ or $t =0$ or $t =\pi$ etc., our function has a definite real number value ($f(2)$ or $f(0)$ or $f(\pi)$ etc.) {\it and if we know all those values we know the function.}
+
+\item  {\bf It has areas under its graph.} If we are given any interval of real numbers, say the interval between $a$ and $b$, we can talk unambiguously about the area ``under" the graph of the function $f(t)$ over the interval  between $a$ and $b$.  That is, in the terminology of Calculus, we can talk of  {\it the integral of $f(t)$ from $a$ to $b$}.  And in the notation of Calculus, this---thanks to Leibniz---is elegantly  denoted 
+$$\int_a^bf(t)dt.$$
+\end{itemize}
+
+In contrast a {\it generalized function}  or  {\it distribution} 
+
+\begin{itemize}
+\item {\bf may not have ``definite values''} at all real numbers if it is not an honest function, nevertheless:
+
+\item  {\bf It has areas under its ``graph.''} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under" the graph of the function $f(t)$ over the interval  between $a$ and $b$.}
+\end{itemize} 
+
+For example, for the Dirac $\delta$-function we have been discussing (i.e., the limit of the red graphs of the previous section) {\it is} an honest function away from $t=0$ and ---in fact---is the ``trivial function'' zero away from the origin.  And at $0$, we may {\it say} that it has the ``value'' infinity, in honor of it being the limit of blip functions getting taller and taller at $0$ but the feature that pins it down as a distribution is given by its behavior relative to the second feature above, the area of its graph over  the open interval  between $a$ and $b$: 
+
+\begin{itemize}
+\item 
+If both $a$ and $b$  have the same sign  (i.e., if the origin is not in the open interval spanned by $a$ and $b$) then the ``area under the graph of our Dirac $\delta$-function" is $0$.
+\item If $a$ is negative and $b$ is positive then the ``area under the graph of our Dirac $\delta$-function'' is $1$---in notation $$\int_a^b\delta = 1$$.
+\end{itemize}
+
+
+ We sometimes summarize the fact that these areas vanish so long as the origin is not included in the interval we are considering by saying that the {\bf support} of this $\delta$-function is ``at the origin.'' 
+ 
+ Once you're happy with  {\it this} Dirac $\delta$-function, you'll also be happy with a Dirac $\delta$-function---call it $\delta_x$---with support concentrated at any specific real number $x$ gotten by ``translating" the one we've been talking about appropriately; $\delta_x$ vanishes for $t \ne x$ and intuitively  speaking, has an {\it infinite blip} at $t=x$.
+
+  
+
+
 
 \endnote{
 [[I found this comment about ``Generalized functions"
@@ -1943,6 +1981,9 @@ so maybe we should look into the history of this. (But I'm not keen on
 getting too much into it: just if we need to add a short end-note
 about it, to credit Sobolev $\dots$)]]
 }
+
+\section{What is the Fourier transform of a delta function?}
+[[A delicious section to be written.]]
 
 \section{Finding the slopes of staircases} 
 
