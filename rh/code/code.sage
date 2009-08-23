@@ -12,7 +12,7 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
         return
     
     if fig is None:
-        figs = [x.split('_')[1] for x in globals() if x.startswith('fig_')]
+        figs = ['_'.join(x.split('_')[1:]) for x in globals() if x.startswith('fig_')]
     elif isinstance(fig, list):
         figs = fig
     for fig in figs:
@@ -22,7 +22,177 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
 ##############################################################
 # Factorization trees
 ##############################################################
+def fig_factor_tree(dir, ext):
+    g = FactorTree(12).plot(labels={'fontsize':50},sort=True)
+    g.save(dir + '/factor_tree_12.%s'%ext, axes=False)
 
+    set_random_seed(0)
+    for w in ['a', 'b']:
+        g = FactorTree(300).plot(labels={'fontsize':40},sort=False)
+        g.save(dir + '/factor_tree_300_%s.%s'%(w,ext), axes=False)
+
+    set_random_seed(0)
+    g = FactorTree(6469693230).plot(labels={'fontsize':14},sort=False)
+    g.save(dir + '/factor_tree_big.%s'%ext, axes=False)
+    
+
+class FactorTree:
+    """
+    A factorization tree.
+
+    EXAMPLES::
+    
+        sage: FactorTree(100)
+        Factorization trees of 100
+        sage: R.<x> = QQ[]
+        sage: FactorTree(x^3-1)
+        Factorization trees of x^3 - 1
+    """
+    def __init__(self, n):
+        """
+        INPUT:
+
+            - `n` -- number of element of polynomial ring
+        """
+        self.__n = n
+
+    def value(self):
+        """
+        Return the n such that self is FactorTree(n).
+
+        EXAMPLES::
+
+            sage: FactorTree(100).value()
+            100
+        """
+        return self.__n
+
+    def __repr__(self):
+        """
+        EXAMPLES::
+        
+            sage: FactorTree(100).__repr__()
+            'Factorization trees of 100'
+        """
+        return "Factorization trees of %s"%self.__n
+
+    def plot(self, lines=None, labels=None, sort=False):
+        """
+        INPUT:
+
+            - ``lines`` -- optional dictionary of options passed
+              to the line command
+
+            - ``labels`` -- optional dictionary of options passed to
+              the text command for the divisor labels
+
+            - ``sort`` -- bool (default: False); if True, the primes
+              divisors are found in order from smallest to largest;
+              otherwise, the factor tree is draw at random
+
+        EXAMPLES::
+
+            sage: FactorTree(2009).plot(labels={'fontsize':30},sort=True)
+
+        We can make factor trees of polynomials in addition to integers::
+        
+            sage: R.<x> = QQ[]
+            sage: F = FactorTree((x^2-1)*(x^3+2)*(x-5)); F
+            Factorization trees of x^6 - 5*x^5 - x^4 + 7*x^3 - 10*x^2 - 2*x + 10
+            sage: F.plot(labels={'fontsize':15},sort=True)
+        """
+        if lines is None:
+            lines = {'rgbcolor':(.5,.5,1)}
+        if labels is None:
+            labels = {'fontsize':16}
+        n = self.__n
+        rows = []
+        v = [(n,None,0)]
+        self._ftree(rows, v, sort=sort)
+        return self._plot_ftree(rows, lines, labels)
+
+    def _ftree(self, rows, v, sort):
+        """
+        A function that is used recurssively internally by the plot function.
+
+        INPUT:
+
+            - ``rows`` -- list of lists of integers
+
+            - ``v`` -- list of triples of integers
+
+            - ``sort`` -- bool (default: False); if True, the primes
+              divisors are found in order from smallest to largest;
+              otherwise, the factor tree is draw at random
+
+        EXAMPLES::
+
+            sage: F = FactorTree(100)
+            sage: rows = []; v = [(100,None,0)]; F._ftree(rows, v, True)
+            sage: rows
+            [[(100, None, 0)],
+             [(2, 100, 0), (50, 100, 0)],
+             [(None, None, None), (2, 50, 1), (25, 50, 1)],
+             [(None, None, None), (None, None, None), (5, 25, 2), (5, 25, 2)]]
+            sage: v
+            [(100, None, 0)]
+        """
+        if len(v) > 0:
+            # add a row to g at the ith level. 
+            rows.append(v)
+        w = []
+        for i in range(len(v)):
+            k, _,_ = v[i]
+            if k is None or k.is_irreducible():
+                w.append((None,None,None))
+            else:
+                div = divisors(k)
+                if sort:
+                    d = div[1]
+                else:
+                    z = divisors(k)[1:-1]
+                    d = z[randint(0,len(z)-1)]
+                w.append((d,k,i))
+                e = k//d
+                if e == 1:
+                    w.append((None,None))
+                else:
+                    w.append((e,k,i))
+        if len(w) > len(v):
+            self._ftree(rows, w, sort=sort)
+
+    def _plot_ftree(self, rows, lines, labels):
+        """
+        Used internally by the plot method.
+
+        INPUT:
+
+            - ``rows`` -- list of lists of triples
+
+            - ``lines`` -- dictionary of options to pass to lines commands
+
+            - ``labels`` -- dictionary of options to pass to text command to label factors
+
+        EXAMPLES::
+
+            sage: F = FactorTree(100)
+            sage: rows = []; v = [(100,None,0)]; F._ftree(rows, v, True)
+            sage: F._plot_ftree(rows, {}, {})
+        """
+        g = Graphics()
+        for i in range(len(rows)):
+            cur = rows[i]
+            for j in range(len(cur)):
+                e, f, k = cur[j]
+                if not e is None:
+                    if e.is_irreducible():
+                         c = (1r,0r,0r)
+                    else:
+                         c = (0r,0r,.4r)
+                    g += text("$%s$"%latex(e), (j*2-len(cur),-i), rgbcolor=c, **labels)
+                    if not k is None and not f is None:
+                        g += line([(j*2-len(cur),-i), (k*2-len(rows[i-1]),-i+1)], axes=False, **lines) 
+        return g
 
 
 ##############################################################
