@@ -113,7 +113,7 @@
 
 
 \title{What is Riemann's Hypothesis?}
-\author{Barry Mazur \and William Stein}
+\author{Barry Mazur \and William Stein\footnote{Supported by NSF grant DMS-xxx.}}
 
 \begin{document}
 
@@ -254,6 +254,9 @@ close to the architecture of ``what is.''
 
 So, how far along are we in our thoughts about numbers?
 
+
+\ill{descartes}{.3}{Ren\'e Descartes}
+
 The French philosopher and mathematician Ren\'e Descartes, almost four
 centuries ago, expressed the hope that there soon would be ``almost
 nothing more to discover in geometry.'' Contemporary physicists dream
@@ -268,7 +271,6 @@ be explored as endless as the human soul, and never a final theory.
 % This is from http://en.wikipedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg
 % There is a higher resolution scan available there
 
-\ill{descartes}{.3}{Ren\'e Descartes}
 
 
 \ill{dulcinea1.jpg}{.2}{Don Quixote and ``his'' Dulcinea del Toboso}
@@ -1191,7 +1193,7 @@ Hypothesis:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate.
+root accurate.\label{rh:first}
 
 \vspace{1ex}
 \end{minipage}}
@@ -1201,7 +1203,7 @@ root accurate.
  
 
 
-\section{The Prime Number Theorem}
+\section{The Prime Number Theorem\label{sec:pnt}}
   
 Take a look at Figure 10.1 again.  All three functions, $X/\log(X)$,
 $\Li(X)$ and $\pi(X)$ are ``going to infinity with $X$'' (this means
@@ -1813,7 +1815,7 @@ have no slopes}
 Differential Calculus, initially the creation of Newton and/or
 Leibniz, acquaints us with {\em slopes} of graphs,
    
-\ill{newton-leibniz}{0.5}{Isaac Newton and Gottried Leibniz}
+\ill{newton-leibniz}{0.5}{Isaac Newton and Gottfried Leibniz}
 
 [[Is the following a suggestion to replace the picture below by something with a log function?  I don't remember what the point of this querry is: {\em a graph that is more of a log with a question: ``What is the slope
 of the tangent line?'' answer: ``here it is''; How compute?  this is
@@ -1922,52 +1924,70 @@ foundation; notably, by the French mathematician, Laurent Schwartz who provide a
 \section{Distributions: sharpening our approximating functions even if
   we have to let them shoot out to infinity}
   
-The curious {\it limit of the red graphs} of the previous section, which you might  be tempted to think of as a ``blip-function" that vanishes for $t$ nonzero and is somehow ``infinite" (whatever that means) at $0$ is an example of a {\it generalized function} (in the sense of the earlier mathematicians) or a {\it distribution} in the sense of Laurent Schwartz.
+
+
+The curious {\it limit of the red graphs} of the previous section, which you might think be tempted to think of as a ``blip-function'' that vanishes for $t$ nonzero and is somehow ``infinite'' (whatever that means) at $0$ is an example of a {\it generalized function} (in the sense of the earlier mathematicians) or a {\it distribution} in the sense of Laurent Schwartz.
 
   This particular {\it limit of the red graphs} also goes by another  name (it is officially called a Dirac $\delta$-function,
-the adjective ``Dirac" being in honor of the physicist who first worked  with this concept, the ``$\delta$" being the symbol he assigned to these objects). The noun ``function" should 
+the adjective ``Dirac'' being in honor of the physicist who first worked  with this concept, the ``$\delta$'' being the symbol he assigned to these objects). The noun ``function'' should 
 be in quotation-marks for, properly speaking, the Dirac $\delta$-function is not---as we have explained
 above---a bona fide function but rather a distribution.
+      
+      \ill{dirac}{0.3}{Paul Adrien Maurice Dirac (1902--1984)}
 
-
-\ill{dirac}{0.3}{Paul Adrien Maurice Dirac (1902--1984)}
-
+     
 Now may be  a good time to summarize what the major difference is between {\it honest functions} and {\it generalized functions}  or  {\it distributions}.
 
-An honest (by which we mean {\it integrable}) function of a real variable  $f(t)$ possesses two ``features."
+An honest (by which we mean {\it integrable}) function of a real variable  $f(t)$ possesses two ``features.''
 
 
 \begin{itemize}
 \item  {\bf It has values.}  That is, at any real number $t$,  e.g., $t =2$ or $t =0$ or $t =\pi$ etc., our function has a definite real number value ($f(2)$ or $f(0)$ or $f(\pi)$ etc.) {\it and if we know all those values we know the function.}
-
-\item  {\bf It has areas under its graph.} If we are given any interval of real numbers, say the interval between $a$ and $b$, we can talk unambiguously about the area ``under" the graph of the function $f(t)$ over the interval  between $a$ and $b$.  That is, in the terminology of Calculus, we can talk of  {\it the integral of $f(t)$ from $a$ to $b$}.  And in the notation of Calculus, this---thanks to Leibniz---is elegantly  denoted 
+     
+\item  {\bf It has areas under its graph.} If we are given any interval of real numbers, say the interval between $a$ and $b$, we can talk unambiguously about the area ``under'' the graph of the function $f(t)$ over the interval  between $a$ and $b$.  That is, in the terminology of Calculus, we can talk of  {\it the integral of $f(t)$ from $a$ to $b$}.  And in the notation of Calculus, this---thanks to Leibniz---is elegantly  denoted     
 $$\int_a^bf(t)dt.$$
+
 \end{itemize}
 
 In contrast a {\it generalized function}  or  {\it distribution} 
 
 \begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it is not an honest function, nevertheless:
-
-\item  {\bf It has areas under its ``graph.''} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under" the graph of the function $f(t)$ over the interval  between $a$ and $b$.}
+     
+\item  {\bf It has areas under its ``graph.''} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under'' the graph of the function $f(t)$ over the interval  between $a$ and $b$.}
 \end{itemize} 
 
 For example, for the Dirac $\delta$-function we have been discussing (i.e., the limit of the red graphs of the previous section) {\it is} an honest function away from $t=0$ and ---in fact---is the ``trivial function'' zero away from the origin.  And at $0$, we may {\it say} that it has the ``value'' infinity, in honor of it being the limit of blip functions getting taller and taller at $0$ but the feature that pins it down as a distribution is given by its behavior relative to the second feature above, the area of its graph over  the open interval  between $a$ and $b$: 
 
 \begin{itemize}
 \item 
-If both $a$ and $b$  have the same sign  (i.e., if the origin is not in the open interval spanned by $a$ and $b$) then the ``area under the graph of our Dirac $\delta$-function" is $0$.
+If both $a$ and $b$  have the same sign  (i.e., if the origin is not in the open interval spanned by $a$ and $b$) then the ``area under the graph of our Dirac $\delta$-function'' is $0$.
 \item If $a$ is negative and $b$ is positive then the ``area under the graph of our Dirac $\delta$-function'' is $1$---in notation $$\int_a^b\delta = 1$$.
 \end{itemize}
 
 
- We sometimes summarize the fact that these areas vanish so long as the origin is not included in the interval we are considering by saying that the {\bf support} of this $\delta$-function is ``at the origin.'' 
+ We sometimes summarize the fact that these areas vanish so long as the origin is not included in the interval we are considering by saying that the {\bf support} of this $\delta$-function is ``at the origin.''  
  
- Once you're happy with  {\it this} Dirac $\delta$-function, you'll also be happy with a Dirac $\delta$-function---call it $\delta_x$---with support concentrated at any specific real number $x$ gotten by ``translating" the one we've been talking about appropriately; $\delta_x$ vanishes for $t \ne x$ and intuitively  speaking, has an {\it infinite blip} at $t=x$.
+ 
+ Once you're happy with  {\it this} Dirac $\delta$-function, you'll also be happy with a Dirac $\delta$-function---call it $\delta_x$---with support concentrated at any specific real number $x$ gotten by ``translating'' the one we've been talking about appropriately; $\delta_x$ vanishes for $t \ne x$ and intuitively  speaking, has an {\it infinite blip} at $t=x$.
+     
+The theory of distributions gives a partial answer to this funny question:
+     
 
-  
+\begin{quote}  How  in the world can you ``take the derivative'' of a function $F(t)$ that doesn't have a derivative?
+\end{quote}
 
-
+The short answer to this question is that {\it this derivative $F'(t)$ which doesn't exist as a function may exist as a distribution.}  What then is the integral of that distribution? Well, it is given by the original function! 
+     
+$$\int_a^bF'(t)dt \ = \ F(b) -F(a).$$
+     
+ Let us practice this with simple staircase functions. For example, what is the {\it derivative}---in the sense of the theory of distributions---of the function in Figure~\ref{fig:simple_staircase}.   {\bf Answer} $\delta_0 + 2 \delta_1$.
+     
+ 
+\ill{simple_staircase}{.5}{The staircase function that is $0$ for $t \le 0$, $1$ for $0 <t \le 1$ and $3$ for $1< t \le 2$ has derivative $\delta_0 + 2\delta_1$.\label{fig:simple_staircase}}
+     
+      
+  We'll be dealing with much more complicated staircase functions in the next section, but the general principles discussed here will nicely apply there.
 
 \endnote{
 [[I found this comment about ``Generalized functions"
@@ -1982,10 +2002,299 @@ getting too much into it: just if we need to add a short end-note
 about it, to credit Sobolev $\dots$)]]
 }
 
+
 \section{What is the Fourier transform of a delta function?}
 [[A delicious section to be written.]]
 
-\section{Finding the slopes of staircases} 
+\section{The 45 degree staircase revisited}
+
+\section{The Fourier transform of the 45 degree staircase}
+
+\section{Distributions with discrete support that have Fourier
+  transforms with discrete support\label{sec:dd}}
+[[Explain, in a leisurely way, how curious this is.]]
+
+\section{How to compute the Spectrum knowing $\pi(X)$}
+
+\section{How to build $\pi(X)$ (Riemann's way) knowing the Spectrum}
+
+
+  We have been dealing in this Part III of our book with $\Phi(t)$ a
+  distribution that---we said---contains all the essential information
+  about the placement of primes among numbers. We have given a clean
+  restatement of Riemann's hypothesis, the third restatement so far,
+  in term of this $\Phi(t)$.  But $\Phi(t)$ was the effect of a series
+  of recalibrations and reconfigurings of the original untampered-with
+  staircase of primes.  A test of whether we have strayed from our
+  original problem---to understand this staircase---would be whether
+  we can return to the original staircase, and ``reconstruct it'' so to
+  speak, solely from the information of $\Phi(t)$---or equivalently,
+  assuming the Riemann hypothesis as formulated in the previous
+  section---can we construct the staircase of primes $\pi(X)$ solely
+  from knowledge of the sequence of real numbers $\theta_1,
+  \theta_2,\theta_3,\dots$
+  
+  
+\bigskip
+
+The answer to this  is yes (given the Riemann hypothesis), and is discussed very beautifully  by Bernhard
+Riemann himself in his famous 1859 article cited above.
+
+Bernhard Riemann used the spectrum of the prime numbers to provide an 
+exact analytic formula that analyzes and/or synthesizes the staircase of primes.  This formula is
+motivated by Fourier's analysis of functions as constituted out of
+sines.
+Riemann started with a specific smooth function, which we will refer to
+as $R(X)$, a function that Riemann offered, just as Gauss offered his
+$\Li(X)$, as a candidate smooth function approximating the staircase of
+primes.  
+Recall from Section~\ref{sec:rh1} that Gauss's guess is $\Li(X)=
+    \int_2^{X}dt/{\rm log}(t).$ 
+Riemann's guess for a better approximation to $\pi(X)$ is obtained
+from Gauss's using the Moebius function $\mu(n)$, which is defined by
+$$
+ \mu(n) = \begin{cases} 
+    1 & 
+       \mbox{if $n$ is a square-free positive integer with an even number of distinct prime factors}\\
+    -1& \mbox{if $n$ is a square-free positive integer with an odd number of distinct prime factors}\\ 
+    0 & \mbox{if $n$ is not square-free.} 
+ \end{cases} 
+ $$
+ See Figure~\ref{fig:moebius} for a plot of the Moebius function. 
+ 
+\ill{moebius}{1}{The blue dots plot the values of the Moebius function $\mu(n)$\label{fig:moebius}}
+
+
+Riemann's guess is
+$$
+R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \Li(X^{1\over n}),
+$$  
+where $\mu(n)$ is the Moebius function introduced above. 
+
+\ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript.}
+
+In Section~\ref{sec:pnt} we encountered the Prime Number Theorem which 
+asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$, 
+in the sense that both go to infinity at the same rate. 
+Our first formulation of the Riemann Hypothesis (see page~\pageref{rh:first})
+was that $\Li(X)$ is an essentially square root accurate approximation of $\pi(X)$. 
+Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate that Riemann's function $R(X)$ appears to be a better
+approximation to $\pi(X)$ than anything we have seen before. 
+
+\illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.5}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom)\label{fig:guess100}}
+
+\ill{pi_riemann_gauss_10000-11000}{0.5}{Closeup comparison of  $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom)\label{fig:guess10000}}
+
+
+Think of Riemann's smooth curve $R(X)$ as the {\em fundamental}
+approximation to $\pi(X)$.
+Riemann offered much more than just a (conjecturally) better 
+approximation to $\pi(X)$ in his wonderful 1859 article.  
+He found a way to construct what looks like a Fourier series,
+but with $\sin(X)$ replaced by $R(X)$ and spectrum the $\theta_i$, which
+conjecturally exactly equals $\pi(X)$.
+He gave an infinite sequence of improved guesses,
+$$
+R(X) = R_0(X),\quad R_1(X), \quad R_2(X), \quad R_3(X), \ldots
+$$
+and he hypothesized that one and all of them were all
+essentially square root approximations to $\pi(X)$,
+and that the sequence of these better and better approximations converge to give an exact formula
+for $\pi(X)$.
+
+Thus not only did Riemann provide a ``fundamental'' (that is, a smooth curve
+that is an astoundingly close to $\pi(X)$) but he viewed this as just a
+starting point, for he gave the recipe for providing an infinite
+sequence of corrective terms---call them Riemann's {\em harmonics}; we
+will denote the first of these ``harmonics'' $C_1(X)$, the second
+$C_2(X)$, etc.  Riemann gets his first corrected curve, $R_1(X)$, from
+$R(X)$ by adding this first harmonic to the fundamental, $$R_1(X) =
+R(X) + C_1(X),$$ he gets the second by correcting $R_1(X)$ by adding
+the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
+= R_2 (X) + C_3(X),$$ and in the limit provides us with an exact fit.
+
+\ill{riemann_Rk}{0.8}{Riemann analytic formula for $\pi(X)$.}
+
+The Riemann Hypothesis, if true, would tell us that these correction
+terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small},
+and all the successively corrected smooth curves $$R(X), R_1(X),
+R_2(X),R_3(X),\dots$$ are good approximations to $\pi(X)$.
+Moreover, [[is this right?]]
+$$
+ \pi(X) = R(X) + \sum_{k=1}^{\infty} C_k(X).
+$$
+
+The elegance of Riemann's treatment of this problem is that the
+corrective terms $C_k(X)$ are all {\em modelled on} the fundamental
+$R(X)$ and are completely described if you know the sequence of real
+numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
+
+
+{\bf [[It feels critical for completeness to just come out
+and define these $C_k(X)$.]]}
+The definition of Riemann's $C_k(X)$ requires complex numbers $a+bi$, where $i=\sqrt{-1}$, 
+and extending the function $\Li(X)$ to make sense when given complex numbers as input.   
+The Riemann correction terms $C_k(X)$ are then
+$$
+   C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}), 
+$$
+where the $\theta_1 = 4.134725142\dots, \theta_2 = 21.022039638\dots$
+are the spectrum of the prime numbers. 
+
+Riemann provided an extraordinary recipe that allows us to work
+out the harmonics, $$C_1(X),\quad C_2(X),\quad C_3(X),\dots$$ without our having
+to consult, or compute with, the actual staircase of primes. As with
+Fourier's modus operandi where both {\em fundamental} and all {\em
+  harmonics} are modeled on the sine wave, but appropriately
+calibrated, Riemann fashioned his higher harmonics, modeling them all
+on a single function, namely his initial guess $R(X)$.
+ 
+  
+\ill{Rk_1_2_100}{.9}{The function $R_{1}$ approximating the staircase of primes up to $100$}
+
+\ill{Rk_10_2_100}{.9}{The function $R_{10}$ approximating the staircase of primes up to $100$}
+
+\ill{Rk_25_2_100}{.9}{The function $R_{25}$ approximating the staircase of primes up to $100$}
+
+\ill{Rk_50_2_100}{.9}{The function $R_{50}$ approximating the staircase of primes up to $100$}
+
+
+\ill{Rk_50_2_500}{.9}{The function $R_{50}$ approximating the staircase of primes up to $500$}
+
+\ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.}
+
+
+\section{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
+
+{\bf Here we develop a tiny bit of the traditional route of exposition
+  to RH. Namely, in terms of the successive nontrivial {\em zeroes of
+    Riemann's zeta-function}.} There are infinitely many of these
+nontrivial$^4$ zeroes of the $ \zeta$-function. If you want to see
+tables of the first $100,\!000$ of these zeroes lovingly calculated to
+an accuracy within $3 \cdot 10^{-9}$, consult Andrew Odlyzko's tables:
+\url{http://www.dtc.umn.edu/~odlyzko/zeta\_tables/}. 
+
+The first three of these zeroes are:
+  $$\rho_1={1\over 2} + 14.134725\dots i\ \ \ \ \  \rho_2={1\over 2} + 21.022040\dots i\ \ \ \rho_3={1\over 2} + 25.01\dots i\ \ 
+\ {\rm etc.}.]$$ 
+\bigskip
+
+
+We hope that it is OK if we don't explain this at all, for it does
+require calculus but we can think of these ``zeroes'' as being a
+certain precious infinite sequence of quantities, that contain within
+them the secret of the exact determination of the pattern of prime
+numbers. (You can squint at the way Riemann wrote out the
+zeta-function by trying to make out the formula on the first page of
+his manuscript, in Figure~\ref{fig:riemamn}.)
+    
+\bigskip
+
+
+You will notice the curious persistence of the ${1\over 2}$'s in the
+exponents of the three zeroes listed above.  Riemann called attention
+to this phenomenon, which we now know holds for all 1029.9 billion
+zeroes that have been tabulated as of Feb.  18, 2005!  The ${1\over
+  2}$ in the exponent of a correction term is what guarantees that the
+correction term is indeed ``square- root small.'' We are ready, then,
+for another equivalent formulation of the Riemann Hypothesis, this
+being--in fact--the more traditional way of expressing it:
+ 
+\bigskip
+
+  \begin{center}
+       \shadowbox{ \begin{minipage}{0.9\textwidth}
+\mbox{}       \vspace{0.2ex}
+       \begin{center}{\bf\large The {\bf Riemann Hypothesis} (fourth formulation)}\end{center}
+       \medskip
+       The Riemann Hypothesis is equivalent to the statement that all
+       the nontrivial zeroes of the Riemann zeta-function lie on the
+       line ${1\over 2}+iy $ in the complex plane
+\vspace{1ex}
+\end{minipage}}
+      \end{center}
+
+
+\bigskip
+
+
+That a simple geometric property of these zeroes (lying on a line!) is
+directly equivalent to such profound (and more difficult to express)
+regularities among prime numbers suggests that these zeroes and the
+parade of Riemann's corrections governed by them--when we truly
+comprehend their message--may have lots more to teach us, may
+eventually allow us a more powerful understanding of arithmetic.  This
+infinite collection of complex numbers, i.e., the nontrivial zeroes of
+the Riemann zeta function, plays a role with respect to $\pi(X)$ rather
+like the role the {\em spectrum} of the Hydrogen atom, plays in
+Fourier's theory.  Are the primes themselves no more than an
+epiphenomenon, behind which there lies, still veiled from us--a
+yet-to-be-discovered, yet-to-be-hypothesized, profound conceptual key
+to their perplexing orneriness.  Are the many innocently posed, yet
+unanswered, phenomenological questions about numbers--such as in the
+ones listed earlier-- waiting for our discovery of this deeper level
+of arithmetic?  Or for layers deeper still?  Are we, in fact, just at
+the beginning?
+
+\bigskip
+
+
+These are not completely idle thoughts, for a tantalizing analogy
+relates the number theory we have been discussing to an already
+established branch of mathematics--due, largely, to the work of
+Alexander Grothendieck, and Pierre Deligne--where the corresponding
+analogue of Riemann's hypothesis has indeed been proved$\dots$
+
+
+\section{OLD: Some fragments to be either used or discarded}
+
+\noindent {\bf (2)} If $f(x)$ and $g(x)$ are real-valued functions of a real variable $x$ such that
+for any
+$\epsilon >0$ both of them take their values between $ x^{1-\epsilon}$  and $ x^{1+\epsilon}$ for 
+$x$
+sufficiently large, then say that $f(x)$ and $g(x)$ are {\bf good approximations of one another} if,
+for any positive $\epsilon$ the absolute values of their difference is less than $ x^{{1\over
+2}+\epsilon}$ for 
+$x$
+sufficiently large. The functions Li$(x)$ and $R(x)$ of end-note {\bf (1)} are good approximations of
+one another.
+
+\bigskip
+
+
+\noindent {\bf (3)} People who know that these correction terms are
+index by the nontrivial zeroes of the Riemann zeta-function may well
+ask how I propose to order them if RH is false; the following
+prescription will do: order them in terms of (the absolute value of)
+their imaginary part, and in the unlikely situation that there is more
+than one zero with the same imaginary part, order zeroes of the same
+imaginary part by their real parts, going from right to left.
+
+\bigskip
+
+{\bf Aside.  Here we will be giving all the connections with the
+  standard literature and coventional terminology that we restrained
+  ourselves from giving in the text itself. Our aim is not even to
+  mention complex numbers in the text, so no Riemann zeta function
+  either, but in this glossary we can talk about $\zeta(s)$ its
+  zeroes, and these being the {\em frequencies} mentioned in the text.
+  For the moment the list of entries is the following but it will
+  expand.
+
+  $\pi(X)= \pi_0(X)$, $Q(X)= \psi_0(X)$, $\log, \exp$, $\delta$,
+  distributions, RSA cryptography, Mersenne prime, $\Li(x)$, random
+  walk, spectrum, harmonic, fundamental, frequency, phase, amplitude,
+  band-pass, complex numbers, complex plane, Riemann Zeta function,
+  zeroes of zeta.
+}
+
+
+%\newpage\section{Endnotes}\theendnotes\label{lastpage}\end{document}
+   
+
+
+
+\section{OLD: Finding the slopes of staircases} 
 
 [[I also think that there should be an ``introductory" simpler picture
 as well (simpler than, say, figure 18.2) where we have the staircase
@@ -2169,22 +2478,17 @@ of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
 
 \bigskip
 
-\ill{cos_sum_1_30}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(s\theta_i)$, where
+\ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$, where
 $\theta_1 \sim 14.13, \ldots$ are the first $1000$ frequencies.  The red
 dots are at the prime powers $p^n$, whose size is proportional to $\log(p)$.}
 
-\ill{sum_cos_28_34}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(s\theta_i)$ in the
+\ill{phi_cos_sum_26_34_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$ in the
 neighborhood of a twin prime.  Notice how the two primes $29$ and $31$ are separated out
-by the Fourier series, and how the prime power $2^5$ appears.}
+by the Fourier series, and how the prime powers $3^3$ and $2^5$ also appear.}
 
-\ill{sum_cos_spike_plot_1000}{.7}{Fourier series illustration from $1000$ to $1030$}
+\ill{phi_cos_sum_1010_1026_15000}{.7}{Fourier series from $1,000$ to $1,030$ using 15,000 of the numbers $\theta_i$.  Note the twin primes $1019$ and $1021$ and that $1024=2^{10}$.}
 
-\ill{sum_cos_fourier_transform_near_100}{.8}{The Fourier transform of the distribution 
-    supported on prime powers, i.e., which is $\delta \frac{\log(p)}{p^{n/2}}$ at the
-    prime power $p^n$.}
-    
-   \bigskip 
-  
+ 
 %\section{Approximations versus exact descriptions: the spectral analysis of primes }
 
 %{\bf Aside. We give a ``Fourier'' reconstruction of $\psi(t)$ in terms of $\Theta$}
@@ -2318,274 +2622,10 @@ The hidden order, then, of primes is to be sought in the elegant
 structure of the zeroes of Riemann's zeta function!
 
 
-An endnote -- decide where to hang this.\endnote{
-{\bf The undistorted staircase: returning to $\pi(X)$ }
-  
-
-  We have been dealing in this Part III of our book with $\Phi(t)$ a
-  distribution that---we said---contains all the essential information
-  about the placement of primes among numbers. We have given a clean
-  restatement of Riemann's hypothesis, the third restatement so far,
-  in term of this $\Phi(t)$.  But $\Phi(t)$ was the effect of a series
-  of recalibrations and reconfigurings of the original untampered-with
-  staircase of primes.  A test of whether we have strayed from our
-  original problem---to understand this staircase---would be whether
-  we can return to the original staircase, and ``reconstruct it'' so to
-  speak, solely from the information of $\Phi(t)$---or equivalently,
-  assuming the Riemann hypothesis as formulated in the previous
-  section---can we construct the staircase of primes $\pi(X)$ solely
-  from knowledge of the sequence of real numbers $\theta_1,
-  \theta_2,\theta_3,\dots$
-  
-  
-\bigskip
-
-The answer to this  is yes (given the Riemann hypothesis), and is discussed very beautifully  by Bernhard
-Riemann himself in his famous 1859 article cited above.
-
 
 \bigskip
 
 
-\centerline{\bf WILLIAM: More facsimile photos of Riemann
-'s manuscript}
-
-  
-\bigskip
-
-
-Bernhard Riemann provided an exact formula for $\pi(X)$ (a formula
-reminiscent of Fourier's analysis of functions as constituted out of
-sines) that analyzes and/or synthesizes the staircase of primes.
-Riemann started with a specific smooth function, which we will refer to
-as $R(X)$, a function that Riemann offered, just as Gauss offered his
-$\Li(X)$, as a candidate smooth function approximating the staircase of
-primes.  Gauss's guess, usually denoted Li$(x)$, is $\Li(x)=
-    \int_2^{x}dt/{\rm log}(t),$ while Riemann's guess is
-$$R(x) = \sum_{n=1}^{\infty}{\mu(n)\over n} \Li(x^{1\over n}),$$  where $\mu(n)$ is the Moebius
-function.
-
-Think of Riemann's smooth curve $R(X)$ as the {\em fundamental}
-approximation to $\pi(X)$. Riemann offered much more than that in his
-wonderful 1859 article.
-  
-
-  Riemann's $R(X)$ seems to be a better approximation to $\pi(X)$ than Gauss's $\Li(X)$ :
-  
-   
-\bigskip
-
-{\bf WILLIAM: maybe a comparison of the three graphs $\pi(X)$, $\Li(X)$ and $R(X)$ showing $R(X)$ closer?}
-
-
-   
-\bigskip
-
-Just as Gauss's $\Li(X)$ has---in its favor--- a probabilistic
-plausibility argument that might suggest that it is a good
-approximation to the number of primes, Riemann's $R(X)$ has, in fact,
-a more refined probabilistic plausibility argument.
-
-
-   
-\bigskip
-
-{\bf NOTE: maybe a comparison of the three graphs $\pi(X)$, $\Li(X)$ and $R(X)$ showing $R(X)$ closer?}
-
-
-   
-\bigskip
-  
-\centerline{FROM HERE ON WE NEED A COMPLETE REWRITE.}
-
-\bigskip
-
-
-Not only did Riemann provide a ``fundamental'' (that is, a smooth curve
-that is an astoundingly close to $\pi(X)$) but he viewed this as just a
-starting point, for he gave the recipe for providing an infinite
-sequence of corrective terms---call them Riemann's {\em harmonics}; we
-will denote the first of these ``harmonics'' $C_1(X)$, the second
-$C_2(X)$, etc.  Riemann gets his first corrected curve, $R_1(X)$, from
-$R(X)$ by adding this first harmonic to the fundamental, $$R_1(X) =
-R(X) + C_1(X),$$ he gets the second by correcting $R_1(X)$ by adding
-the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
-= R_2 (X) + C_3(X),$$ and in the limit provides us with an exact fit.
-
-The Riemann Hypothesis, if true, would tell us that these correction
-terms $C_1(X), C_2(X),C_3(X),\dots$ are all {\em square-root small},
-and all the successively corrected smooth curves $$R(X), R_1(X),
-R_2(X),R_3(X),\dots$$ are good approximations to $\pi(X)$.
-
-\bigskip
-
-The elegance of Riemann's treatment of this problem is that the
-corrective terms $C_i(X)$ are all {\em modelled on} the fundamental
-$R(X)$ and are completely described if you know the sequence of real
-numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
-
-
-{\bf (2) }He provided an extraordinary recipe that allows us to work
-out the harmonics, $$C_1(X), C_2(X),C_3(X),\dots$$ without our having
-to consult, or compute with, the actual staircase of primes. As with
-Fourier's modus operandi where both {\em fundamental} and all {\em
-  harmonics} are modeled on the sine wave, but appropriately
-calibrated, Riemann fashioned his higher harmonics, modeling them all
-on a single function, namely his initial guess $R(X)$.
- 
-
-{\bf Aside. We use Riemann's function $R(X)$, and discuss how to
-  reconstruct the {\em original} staircase of primes by the $R_k$'s.}
-[[todo: put riemann $R_k$ worksheets 6,8,36,37 here.]]  \bigskip
-
-\ill{Rk_10_500}{.85}{The function $R_{10}$ approximating the staircase of primes up to $500$}
-
-\ill{Rk_29_100}{.85}{The function $R_{29}$ approximating the staircase of primes up to $100$}
-
-
-\centerline{\bf [*** All this needs to be written***]}
-
-\bigskip }
-
-An endnote -- decide where to hang this.\endnote{
-{\bf Here we put the $C\log X\cdot X^{-1/2}$ convergence data for $R_k$.}
-}
-
-
-An endnote -- decide where to hang this.\endnote{  
-{\bf The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}  
-
-{\bf Here we develop a tiny bit of the traditional route of exposition
-  to RH. Namely, in terms of the successive nontrivial {\em zeroes of
-    Riemann's zeta-function}.} There are infinitely many of these
-nontrivial$^4$ zeroes of the $ \zeta$-function. If you want to see
-tables of the first $100,\!000$ of these zeroes lovingly calculated to
-an accuracy within $3 \cdot 10^{-9}$, consult Andrew Odlyzko's tables:
-\url{http://www.dtc.umn.edu/~odlyzko/zeta\_tables/}. 
-
-The first three of these zeroes are:
-  $$\rho_1={1\over 2} + 14.134725\dots i\ \ \ \ \  \rho_2={1\over 2} + 21.022040\dots i\ \ \ \rho_3={1\over 2} + 25.01\dots i\ \ 
-\ {\rm etc.}.]$$ 
-\bigskip
-
-
-We hope that it is OK if we don't explain this at all, for it does
-require calculus but we can think of these ``zeroes'' as being a
-certain precious infinite sequence of quantities, that contain within
-them the secret of the exact determination of the pattern of prime
-numbers. (You can squint at the way Riemann wrote out the
-zeta-function by trying to make out the formula on the first page of
-his manuscript, in Figure~\ref{fig:riemamn}.)
-    
-\bigskip
-
-
-You will notice the curious persistence of the ${1\over 2}$'s in the
-exponents of the three zeroes listed above.  Riemann called attention
-to this phenomenon, which we now know holds for all 1029.9 billion
-zeroes that have been tabulated as of Feb.  18, 2005!  The ${1\over
-  2}$ in the exponent of a correction term is what guarantees that the
-correction term is indeed ``square- root small.'' We are ready, then,
-for another equivalent formulation of the Riemann Hypothesis, this
-being--in fact--the more traditional way of expressing it:
- 
-\bigskip
-
-  \begin{center}
-       \shadowbox{ \begin{minipage}{0.9\textwidth}
-\mbox{}       \vspace{0.2ex}
-       \begin{center}{\bf\large The {\bf Riemann Hypothesis} (fourth formulation)}\end{center}
-       \medskip
-       The Riemann Hypothesis is equivalent to the statement that all
-       the nontrivial zeroes of the Riemann zeta-function lie on the
-       line ${1\over 2}+iy $ in the complex plane
-\vspace{1ex}
-\end{minipage}}
-      \end{center}
-
-
-\bigskip
-
-
-That a simple geometric property of these zeroes (lying on a line!) is
-directly equivalent to such profound (and more difficult to express)
-regularities among prime numbers suggests that these zeroes and the
-parade of Riemann's corrections governed by them--when we truly
-comprehend their message--may have lots more to teach us, may
-eventually allow us a more powerful understanding of arithmetic.  This
-infinite collection of complex numbers, i.e., the nontrivial zeroes of
-the Riemann zeta function, plays a role with respect to $\pi(X)$ rather
-like the role the {\em spectrum} of the Hydrogen atom, plays in
-Fourier's theory.  Are the primes themselves no more than an
-epiphenomenon, behind which there lies, still veiled from us--a
-yet-to-be-discovered, yet-to-be-hypothesized, profound conceptual key
-to their perplexing orneriness.  Are the many innocently posed, yet
-unanswered, phenomenological questions about numbers--such as in the
-ones listed earlier-- waiting for our discovery of this deeper level
-of arithmetic?  Or for layers deeper still?  Are we, in fact, just at
-the beginning?
-
-\bigskip
-
-
-These are not completely idle thoughts, for a tantalizing analogy
-relates the number theory we have been discussing to an already
-established branch of mathematics--due, largely, to the work of
-Alexander Grothendieck, and Pierre Deligne--where the corresponding
-analogue of Riemann's hypothesis has indeed been proved$\dots$
-}
-
-
-An endnote -- decide where to hang this.\endnote{
-
-{\bf Some fragments to be either used or discarded}
-
-\noindent {\bf (2)} If $f(x)$ and $g(x)$ are real-valued functions of a real variable $x$ such that
-for any
-$\epsilon >0$ both of them take their values between $ x^{1-\epsilon}$  and $ x^{1+\epsilon}$ for 
-$x$
-sufficiently large, then say that $f(x)$ and $g(x)$ are {\bf good approximations of one another} if,
-for any positive $\epsilon$ the absolute values of their difference is less than $ x^{{1\over
-2}+\epsilon}$ for 
-$x$
-sufficiently large. The functions Li$(x)$ and $R(x)$ of end-note {\bf (1)} are good approximations of
-one another.
-
-\bigskip
-
-
-\noindent {\bf (3)} People who know that these correction terms are
-index by the nontrivial zeroes of the Riemann zeta-function may well
-ask how I propose to order them if RH is false; the following
-prescription will do: order them in terms of (the absolute value of)
-their imaginary part, and in the unlikely situation that there is more
-than one zero with the same imaginary part, order zeroes of the same
-imaginary part by their real parts, going from right to left.
-
-\bigskip
-
-{\bf Aside.  Here we will be giving all the connections with the
-  standard literature and coventional terminology that we restrained
-  ourselves from giving in the text itself. Our aim is not even to
-  mention complex numbers in the text, so no Riemann zeta function
-  either, but in this glossary we can talk about $\zeta(s)$ its
-  zeroes, and these being the {\em frequencies} mentioned in the text.
-  For the moment the list of entries is the following but it will
-  expand.
-
-  $\pi(X)= \pi_0(X)$, $Q(X)= \psi_0(X)$, $\log, \exp$, $\delta$,
-  distributions, RSA cryptography, Mersenne prime, $\Li(x)$, random
-  walk, spectrum, harmonic, fundamental, frequency, phase, amplitude,
-  band-pass, complex numbers, complex plane, Riemann Zeta function,
-  zeroes of zeta.
-}}
-
-
-\bigskip
-
-\section{Distributions with discrete support that have Fourier
-  transforms with discrete support\label{sec:dd}}
-Explain, in a leisurely way, how curious this is.
 
 \newpage
 \section{Endnotes}

@@ -20,6 +20,12 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
     return
 
 ##############################################################
+# Factorization trees
+##############################################################
+
+
+
+##############################################################
 # Similar rates of growth
 ##############################################################        
 
@@ -167,7 +173,7 @@ def fig_proportion_primes(dir,ext):
         g = proportion_of_primes(bound)
         g.save(dir + '/proportion_primes_%s.%s'%(bound,ext))
 
-def plot_step_function(v, **args):
+def plot_step_function(v, vertical_lines=True, **args):
     r"""
     Return the line that gives the plot of the step function f defined
     by the list v of pairs (a,b).  Here if (a,b) is in v, then f(a) = b.
@@ -184,12 +190,16 @@ def plot_step_function(v, **args):
     v = list(sorted(v))
     if len(v) <= 1:
         return line([]) # empty line
-    w = []
-    for i in range(len(v)):
-        w.append(v[i])
-        if i+1 < len(v):
-            w.append((v[i+1][0],v[i][1]))
-    return line(w, **args)
+    if vertical_lines:
+        w = []
+        for i in range(len(v)):
+            w.append(v[i])
+            if i+1 < len(v):
+                w.append((v[i+1][0],v[i][1]))
+        return line(w, **args)
+    else:
+        return sum(line([v[i],(v[i+1][0],v[i][1])], **args) for i in range(len(v)-1))
+        
 
 def proportion_of_primes(bound, **args):
     """
@@ -633,6 +643,14 @@ def plot_sawtooth_spectrum(xmax):
     # the spectrum is a spike of height 1/k at k
     return sum([line([(k,0),(k,1/k)],thickness=3) for k in [1..xmax]])
 
+##############################################################
+# Distribution section
+##############################################################
+
+def fig_simple_staircase(dir,ext):
+    v = [(-1,0), (0,1), (1,3), (2,3)]
+    g = plot_step_function(v, thickness=3, vertical_lines=True)
+    g.save(dir+'/simple_staircase.%s'%ext)
 
 
 ##############################################################
@@ -718,3 +736,253 @@ def smoothderiv(e):
     v += D
     return v
 
+##############################################################
+# Cosine sums
+##############################################################
+
+def fig_phi(dir,ext):
+    g = phi_approx_plot(2,30,1000)
+    g.save(dir+'/phi_cos_sum_2_30_1000.%s'%ext, ymin=-5,ymax=160)
+
+    g = phi_interval_plot(26, 34)
+    g.save(dir+'/phi_cos_sum_26_34_1000.%s'%ext, axes=False)
+
+    g = phi_interval_plot(1010,1026,15000,drop=60)
+    g.save(dir+'/phi_cos_sum_1010_1026_15000.%s'%ext, axes=False, ymin=-50)
+    
+def phi_interval_plot(xmin, xmax, zeros=1000,fontsize=12,drop=20):
+    g = phi_approx_plot(xmin,xmax,zeros=zeros,fontsize=fontsize,drop=drop)
+    g += line([(xmin,0),(xmax,0)],rgbcolor='black')
+    return g
+
+
+def phi_approx(m, positive_only=False, symbolic=False):
+    if symbolic:
+        assert not positive_only
+        s = var('s')
+        return -sum(cos(log(s)*t) for t in zeta_zeros()[:m])
+    
+    from math import cos, log
+    v = [float(z) for z in zeta_zeros()[:m]]
+    def f(s):
+        s = log(float(s))
+        return -sum(cos(s*t) for t in v)
+    if positive_only:
+        z = float(0)
+        def g(s):
+            return max(f(s),z)
+        return g
+    else:
+        return f
+
+def phi_approx_plot(xmin, xmax, zeros, pnts=2000, dots=True, positive_only=False,
+                    fontsize=7, drop=10, **args):
+    phi = phi_approx(zeros, positive_only)
+    g = plot(phi, xmin, xmax, alpha=0.7, 
+              plot_points=pnts, adaptive_recursion=0, **args)
+    g.xmin(xmin); g.xmax(xmax)
+    if dots: g += primepower_dots(xmin,xmax, fontsize=fontsize,drop=drop)
+    return g
+
+def primepower_dots(xmin, xmax, fontsize=7, drop=10):
+    """
+    Return plot with dots at the prime powers in the given range.
+    """
+    g = Graphics()
+    for n in range(max(xmin,2),ceil(xmax)+1):
+        F = factor(n)
+        if len(F) == 1:
+           g += point((n,0), pointsize=50*log(F[0][0]), rgbcolor=(1,0,0)) 
+           if fontsize>0: 
+               g += text(str(n),(n,-drop),fontsize=fontsize, rgbcolor='black')
+    g.xmin(xmin)
+    g.xmax(xmax)
+    return g
+
+
+##############################################################
+# Riemann's R_k
+##############################################################
+
+def fig_moebius(dir,ext):
+    g = plot(moebius,0, 50)
+    g.save(dir+'/moebius.%s'%ext,figsize=[10,2])
+    
+
+def riemann_R(terms):
+    c = [0] + [float(moebius(n))/n for n in range(1, terms+1)]
+    def f(x):
+        x = float(x)
+        s = float(0)
+        for n in range(1,terms+1):
+            y = x^float(1/n)
+            if y < 2:
+                break
+            s += c[n] * Li(y)
+        return s
+    return f
+
+def plot_pi_riemann_gauss(xmin, xmax, terms):
+    R = riemann_R(terms)
+    g = plot(R, xmin, xmax)
+    g += plot(prime_pi, xmin, xmax, rgbcolor='red')
+    g += plot(Li, xmin, xmax, rgbcolor='purple')
+    #x = var('x'); g += plot(x/(log(x)-1), xmin, xmax, rgbcolor='green')
+    return g
+
+def fig_pi_riemann_gauss(dir,ext):
+    for m in [100,1000]:
+        g = plot_pi_riemann_gauss(2,m, 100)
+        g.save(dir+'/pi_riemann_gauss_%s.%s'%(m,ext))
+    g = plot_pi_riemann_gauss(10000,11000, 100)
+    g.save(dir +'/pi_riemann_gauss_10000-11000.%s'%ext, axes=False, frame=True)
+
+    
+class RiemannPiApproximation:
+    r"""
+    Riemann's explicit formula for `\pi(X)`.
+
+    EXAMPLES::
+
+    We compute Riemann's analytic approximatin to `\pi(25)` using `R_{10}(x)`:
+    
+        sage: R = RiemannPiApproximation(10, 100); R
+        Riemann explicit formula for pi(x) for x <= 100 using R_k for k <= 10
+        sage: R.Rk(100, 10)
+        25.3364299527
+        sage: prime_pi(100)
+        25
+    
+    """
+    def __init__(self, kmax, xmax, prec=50):
+        """
+        INPUT:
+
+            - ``kmax`` -- (integer) large k allowed
+
+            - ``xmax`` -- (float) largest input x value allowed
+
+            - ``prec`` -- (default: 50) determines precision of certain series approximations
+        
+        """
+        from math import log
+        self.xmax = xmax
+        self.kmax = kmax
+        self.prec = prec
+        self.N = int(log(xmax)/log(2))
+        self.rho_k = [0] + [CDF(0.5, zeta_zeros()[k-1]) for k in range(1,kmax+1)]
+        self.rho = [[0]+[rho_k / n for n in range(1, self.N+1)]  for rho_k in self.rho_k]
+        self.mu = [float(x) for x in moebius.range(0,self.N+2)]
+        self.msum = sum([moebius(n) for n in xrange(1,self.N+1)])
+        self._init_coeffs()
+
+    def __repr__(self):
+        return "Riemann explicit formula for pi(x) for x <= %s using R_k for k <= %s"%(self.xmax, self.kmax)
+
+    def _init_coeffs(self):
+        self.coeffs = [1]
+        n_factorial = 1.0
+        for n in xrange(1, self.prec):
+            n_factorial *= n
+            zeta_value = float(abs(zeta(n+1)))
+            self.coeffs.append(float(1.0/(n_factorial*n*zeta_value)))
+    
+    def _check(self, x, k):
+        if x > self.xmax:
+             raise ValueError, "x (=%s) must be at most %s"%(x, self.xmax)
+        if k > self.kmax:
+            raise ValueError, "k (=%s) must be at most %s"%(k, self.kmax)
+
+    @cached_method
+    def R(self, x):
+        from math import log
+        y = log(x)
+        z = y
+        a = float(1)
+        for n in xrange(1,self.prec):
+            a += self.coeffs[n]*z
+            z *= y
+        return a
+
+    @cached_method
+    def Rk(self, x, k):
+        return self.R(x) + self.Sk(x, k)
+
+    @cached_method
+    def Sk(self, x, k):
+        """
+        Compute approximate correction term, so Rk(x,k) = R(x) + Sk(x,k)
+        """
+        self._check(x, k)
+
+        from math import atan, pi, log
+        log_x = log(x)  # base e
+        # This is from equation 32 on page 978 of Riesel-Gohl.
+        term1 = self.msum / (2*log_x) + \
+                   (1/pi) * atan(pi/log_x)
+    
+        # This is from equation 19 on page 975
+        term2 = sum(self.Tk(x, v) for v in xrange(1,k+1))
+        return term1 + term2
+
+    @cached_method
+    def Tk(self, x, k):
+        """
+        Compute sum from 1 to N of
+           mu(n)/n * ( -2*sqrt(x) * cos(im(rho_k/n)*log(x) \
+                - arg(rho_k/n)) / ( pi_over_2 * log(x) )
+        """
+        self._check(x, k)
+        x = float(x)
+        log_x = log(x)
+        val = float(0)
+        rho_k = self.rho_k[k]
+        rho = self.rho[k]
+        for n in xrange(1, self.N+1):
+            rho_k_over_n = rho[n]
+            mu_n = self.mu[n]
+            if mu_n != 0:
+                z = Ei( rho_k_over_n * log_x)
+                val += (mu_n/float(n)) * (2*z).real()
+        return -val
+
+    def plot_Rk(self, k, xmin=2, xmax=None, **kwds):
+        r"""
+        Plot `\pi(x)` and `R_k` between ``xmin`` and ``xmax``.  If `k`
+        is a list, also plot every `R_k`, for `k` in the list.
+
+        The **kwds are passed onto the line function, which is used
+        to draw the plot of `R_k`.
+        """
+        if not xmax:
+            xmax = self.xmax
+        else:
+            if xmax > self.xmax:
+                raise ValueError, "xmax must be at most %s"%self.xmax
+            xmax = min(self.xmax, xmax)
+        if kwds.has_key('plot_points'):
+            plot_points = kwds['plot_points']
+            del kwds['plot_points']
+        else:
+            plot_points = 100
+        eps = float(xmax-xmin)/plot_points
+        if not isinstance(k, list):
+            k = [k]
+        f = sum(line([(x,self.Rk(x,kk)) for x in [xmin,xmin+eps,..,xmax]], **kwds)
+                for kk in k)
+        g = prime_pi.plot(xmin, xmax, rgbcolor='red')
+        return g+f
+
+
+def fig_Rk(dir, ext):
+    R = RiemannPiApproximation(50, 500, 50)
+    for k,xmin,xmax in [(1,2,100), (10,2,100), (25,2,100),
+                        (50,2,100), (50,2,500) ]:
+        print "plotting k=%s"%k
+        g = R.plot_Rk(k, xmin, xmax, plot_points=300, thickness=0.65)
+        g.save(dir + '/Rk_%s_%s_%s.%s'%(k,xmin,xmax,ext))
+    # 
+    g = R.plot_Rk(50, 350, 400, plot_points=200)
+    g += plot(Li,350,400,rgbcolor='green')
+    g.save(dir + '/Rk_50_350_400.%s'%ext)
+    
