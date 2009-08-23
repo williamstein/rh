@@ -1463,7 +1463,7 @@ be. After all, what could be simpler than a 45 degree straight line?
  \bigskip
 
 
-\section{What do  computer music files,  data-compression, and prime numbers have to do with each other?}
+\section{What do  computer music files,  data-compression, and prime numbers have to do with each other?\label{sec:fourier1}}
 
 \bigskip
 
@@ -1745,15 +1745,17 @@ ask for profound, and hidden, regularities in structure.
 \ill{mini_phihat_even}{1}{Plot of $f(t)$}
 
 
-There is nothing very impressive about this, you might think; but wait, for this is just a very ``early" piece of an infinite sum of (co-)sine waves:
+Look at the peaks of this graph. There is nothing very impressive about them, you might think; but wait,
+ for this is just a very ``early'' piece of an infinite sum of (co-)sine waves:
 $$
--\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))
+-\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ 
 where the summation is over all powers $p^n$ of all prime numbers $p$.   
 
-Let us cut this infinite sum  off taking only finitely many terms, by choosing various ``cut-off values" $C$ and forming the finite sums
+Let us cut this infinite sum  off taking only finitely many terms, by choosing various 
+``cut-off values'' $C$ and forming the finite sums
 $$
--\sum_{p^n<C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p)),
+-\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n)),
 $$ 
 and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show
 what we get for a few values of $C$.
@@ -1952,24 +1954,47 @@ In contrast a {\it generalized function}  or  {\it distribution}
 \begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it is not an honest function, nevertheless:
      
-\item  {\bf It has areas under its ``graph.''} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under'' the graph of the function $f(t)$ over the interval  between $a$ and $b$.}
+\item  {\bf It has well-defined areas under portions of its ``graph."} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under" the graph of the generalized function $D(t)$ over the interval  between $a$ and $b$} and we will denote this--extending what we do in ordinary calculus---by the symbol
+$$\int_a^bD(t).$$ 
 \end{itemize} 
+\vskip15pt
 
-For example, for the Dirac $\delta$-function we have been discussing (i.e., the limit of the red graphs of the previous section) {\it is} an honest function away from $t=0$ and ---in fact---is the ``trivial function'' zero away from the origin.  And at $0$, we may {\it say} that it has the ``value'' infinity, in honor of it being the limit of blip functions getting taller and taller at $0$ but the feature that pins it down as a distribution is given by its behavior relative to the second feature above, the area of its graph over  the open interval  between $a$ and $b$: 
+ The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough--and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ \vskip10pt
+\noindent {\bf A question:}  If you've never seen distributions before, but know the Riemann integral, can you guess at what the definition of $\int_a^bc(t)D(t)$  is, and can you formulate hypotheses on $c(t)$ that would allow  you  to endow this expression with a definite meaning?
+ \vskip10pt 
+
+For example, for the Dirac $\delta$-function we have been discussing (i.e., the limit of the red graphs of the previous section) {\it is} an honest function away from $t=0$ and ---in fact---is the ``trivial function" zero away from the origin.  And at $0$, we may {\it say} that it has the ``value" infinity, in honor of it being the limit of blip functions getting taller and taller at $0$ but the feature that pins it down as a distribution is given by its behavior relative to the second feature above, the area of its graph over  the open interval  between $a$ and $b$: 
 
 \begin{itemize}
 \item 
-If both $a$ and $b$  have the same sign  (i.e., if the origin is not in the open interval spanned by $a$ and $b$) then the ``area under the graph of our Dirac $\delta$-function'' is $0$.
-\item If $a$ is negative and $b$ is positive then the ``area under the graph of our Dirac $\delta$-function'' is $1$---in notation $$\int_a^b\delta = 1$$.
+If both $a$ and $b$  have the same sign  (i.e., if the origin is not in the open interval spanned by $a$ and $b$) then the ``area under the graph of our Dirac $\delta$-function" is $0$.
+\item If $a$ is negative and $b$ is positive then the ``area under the graph of our Dirac $\delta$-function" is $1$---in notation $$\int_a^b\delta = 1$$.
 \end{itemize}
 
 
- We sometimes summarize the fact that these areas vanish so long as the origin is not included in the interval we are considering by saying that the {\bf support} of this $\delta$-function is ``at the origin.''  
+ We sometimes summarize the fact that these areas vanish so long as the origin is not included in the interval we are considering by saying that the {\bf support} of this $\delta$-function 
+ is ``at the origin.''  
  
  
- Once you're happy with  {\it this} Dirac $\delta$-function, you'll also be happy with a Dirac $\delta$-function---call it $\delta_x$---with support concentrated at any specific real number $x$ gotten by ``translating'' the one we've been talking about appropriately; $\delta_x$ vanishes for $t \ne x$ and intuitively  speaking, has an {\it infinite blip} at $t=x$.
+ Once you're happy with  {\it this} Dirac $\delta$-function, you'll also be happy with a Dirac $\delta$-function---call it $\delta_x$---with support concentrated at any specific real number $x$ gotten by ``translating" the one we've been talking about appropriately; $\delta_x$ vanishes for $t \ne x$ and intuitively  speaking, has an {\it infinite blip} at $t=x$.
+ \vskip10pt
+ So, the original delta-function we were discussing, i.e., $\delta(t)$ would be denoted $\delta_0(t)$.
+  \vskip10pt
+  
+
+\noindent {\bf A second question:} if you have not seen distributions before, and have answered the first question in this section, let $c(t)$ be an honest function for which your definition of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
+
+ Can you use your definition to compute
+ 
+ $$\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)?$$
+ 
+ 
+ The answer, by the way, is: 
+ 
+ $\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)=c(x).$ This will be useful in the later sections!     
      
-The theory of distributions gives a partial answer to this funny question:
+
+The theory of distributions gives a partial answer to the following funny question:
      
 
 \begin{quote}  How  in the world can you ``take the derivative'' of a function $F(t)$ that doesn't have a derivative?
@@ -2000,6 +2025,48 @@ getting too much into it: just if we need to add a short end-note
 about it, to credit Sobolev $\dots$)]]
 }
 
+
+\section{Fourier Transforms: second visit}
+
+In the first part of this book  (in Section~\ref{sec:fourier1} above) we wrote:
+
+\begin{quote} The operation that starts with a graph and goes to its spectral picture that records the frequencies,
+amplitudes, and phases of the pure sine waves that, together, compose the graph is called the {\bf Fourier
+transform}.
+\end{quote}
+
+
+  Now let's take a closer look at this operation {\it Fourier transform}.
+  
+  We will focus our discussion on an {\bf even} function $f(t)$ of a real variable $t$.  ``{\bf Even}" means that its graph is symmetric about the origin; that is, $f(-t)= f(t)$.
+  
+  [[insert an example plot]]
+  
+  When we get to apply this discussion to the {\it staircase of primes} $\pi(t)$ or the {\it tinkered staircase of primes} $\psi(t)$  both of which being defined only for positive values of $t$, then we would ``lose little information" in our quest to understand them  if we simply ``symmetrized their graphs" by defining their values on negative numbers $-t$ via the formulas  $\pi(-t)=\pi(t)$ and  $\psi(-t)=\psi(t)$ thereby turning each of them into {\it even functions}. 
+  
+  [[plot of symmetrized pi]] 
+    
+  The idea behind the Fourier transform is to express $f(t)$ as {\it made up out of sine and cosine wave functions}.  Since we have agreed to consider only even functions, we can dispense with the sine waves---they won't appear in our Fourier analysis---and ask how to reconstruct $f(t)$ as a {\it sum} (with coefficients) of cosine functions (if only finitely many frequencies occur in the spectrum of our function) or more generally, as an {\it integral} if the spectrum is more elaborate.  For this work, we need a little machine that tells us, for each real number $\theta$ whether or not  $\theta$ is in the spectrum of $f(t)$, and if so, what the amplitude is of the  cosine function $\cos(\theta t)$ that occurs in the Fourier expansion of $f(t)$---this amplitude  answers the awkwardly phrased question: {\it how much $\cos(\theta t)$ ``occurs in" $f(t)$?}  We will denote this amplitude by ${\hat f}(\theta)$, an refer to it as {\bf the Fourier transform} of $f(t)$.  The {\bf Spectrum}, then, of $f(t)$ is the set of all frequencies $\theta$ where the amplitude is nonzero.
+  
+  
+  {\bf William: Here we can make a little figure which is an input and output machine where the initial function  $f(t)$ is being fed into the input box and the amplitude ${\hat f}(\theta)$ of $\cos(\theta t)$ pops out of the output box? }
+  
+  [[illustrate this]]
+    
+    
+    Now in certain easy circumstances---specifically, if $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ (exists, and) is finite---the Integral Calculus provides us with an easy construction of that machine; namely:
+      
+    $${\hat f}(\theta) = \int_{-{\infty}}^{+{\infty}}f(t)\cos(-\theta t)dt.$$
+     
+     [[a picture with a caption that the integral is the (signed) area between the plot and x axis]]
+    
+    This concise machine manages to ``pick out'' just the part of $f(t)$ that has frequency $\theta$!!  It  provides for us the {\it analysis} part of the Fourier analysis of our function $f(t)$. But there is a {\it synthesis} part to our work as well, for we can reconstruct $f(t)$ from its Fourier transform, by a process intriguingly similar to the analysis part; namely:
+       
+      $$f(t)  = {\frac{1}{2\pi}}\int_{-{\infty}}^{+{\infty}}{\hat f}(\theta)\cos(\theta t)dt.$$
+       
+    We are not so lucky to have $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ finite  when we try our hand at a Fourier analysis of the staircase of primes, but we'll work around this!
+  
+  
 
 \section{What is the Fourier transform of a delta function?}
 [[A delicious section to be written.]]
@@ -2128,8 +2195,7 @@ $R(X)$ and are completely described if you know the sequence of real
 numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
 
 
-{\bf [[It feels critical for completeness to just come out
-and define these $C_k(X)$.]]}
+Here in the book will be where we refer explicitly to complex numbers for the first time!!
 The definition of Riemann's $C_k(X)$ requires complex numbers $a+bi$, where $i=\sqrt{-1}$, 
 and extending the function $\Li(X)$ to make sense when given complex numbers as input.   
 The Riemann correction terms $C_k(X)$ are then

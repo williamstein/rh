@@ -828,19 +828,29 @@ def fig_simple_staircase(dir,ext):
 ##############################################################
 
 def fig_mini_phihat_even(dir,ext):
-    f(t) = sum(-log(pn)/sqrt(pn) * cos(t*log(pn)) for pn in [2,3,4,5])
-    G = plot(f, 1, 100, plot_points=10000)
+    G = plot_symbolic_phihat(5, 1, 100, 10000, zeros=False)
     G.save(dir + "/mini_phihat_even.%s"%ext, figsize=[9,3], ymin=0)
 
 def fig_phihat_even(dir,ext):
     for bound in [5, 20, 50, 500]:
-        G = symbolic_phihat(bound, 2, 100,
+        G = plot_symbolic_phihat(bound, 2, 100,
                             plot_points=10^5)
-        G.save(dir+'/phihat_even-%s.%s'%(bound,ext), figsize=[9,3], ymin=0)    
+        G.save(dir+'/phihat_even-%s.%s'%(bound,ext), figsize=[9,3], ymin=0)
 
-def symbolic_phihat(bound, xmin, xmax, plot_points=1000):
-    f(t) = sum(-log(pn)/sqrt(pn) * cos(t*log(pn)) for pn in prime_powers(bound))
+def symbolic_phihat(bound):
+    t = var('t')
+    f = SR(0)
+    for pn in prime_powers(bound+1):
+        if pn == 1: continue
+        p, e = factor(pn)[0]
+        f += - log(p)/sqrt(pn) * cos(t*log(pn))
+    return f
+
+def plot_symbolic_phihat(bound, xmin, xmax, plot_points=1000, zeros=True):
+    f = symbolic_phihat(bound)
     P = plot(f, (t,xmin, xmax), plot_points=plot_points)
+    if not zeros:
+        return P
     ym = P.ymax()
     Z = []
     for y in zeta_zeros():
