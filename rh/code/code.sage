@@ -196,34 +196,6 @@ class FactorTree:
 
 
 ##############################################################
-# Similar rates of growth
-##############################################################        
-
-def fig_simrates(dir,ext):
-    # similar rates 
-    G = similar_rates()
-    G.save(dir + "/similar_rates.%s"%ext,figsize=[8,3])
-
-def similar_rates():
-    """
-    Draw figure fig:simrates illustrating similar rates.
-
-    EXAMPLES::
-
-        sage: similar_rates()
-    """
-    var('X')
-    A = 2*X^2 + 3*X - 5
-    B = 3*X^2 - 2*X + 1
-    G = plot(A/B, (1,100))
-    G += text("$A(X)/B(X)$", (70,.58), rgbcolor='black', fontsize=14)
-    H = plot(A, (X,1,100), rgbcolor='red') + plot(B, (X,1,100))
-    H += text("$A(X)$", (85,8000), rgbcolor='black',fontsize=14)
-    H += text("$B(X)$", (60,18000), rgbcolor='black',fontsize=14)    
-    a = graphics_array([[H,G]]) 
-    return a
-
-##############################################################
 # Bag of primes
 ##############################################################        
 
@@ -335,8 +307,43 @@ def sieve_step(p, n, gone=(1,1,1), prime=(1,0,0), \
 
 
 ##############################################################
+# Similar rates of growth
+##############################################################        
+
+def fig_simrates(dir,ext):
+    # similar rates 
+    G = similar_rates()
+    G.save(dir + "/similar_rates.%s"%ext,figsize=[8,3])
+
+def similar_rates():
+    """
+    Draw figure fig:simrates illustrating similar rates.
+
+    EXAMPLES::
+
+        sage: similar_rates()
+    """
+    var('X')
+    A = 2*X^2 + 3*X - 5
+    B = 3*X^2 - 2*X + 1
+    G = plot(A/B, (1,100))
+    G += text("$A(X)/B(X)$", (70,.58), rgbcolor='black', fontsize=14)
+    H = plot(A, (X,1,100), rgbcolor='red') + plot(B, (X,1,100))
+    H += text("$A(X)$", (85,8000), rgbcolor='black',fontsize=14)
+    H += text("$B(X)$", (60,18000), rgbcolor='black',fontsize=14)    
+    a = graphics_array([[H,G]]) 
+    return a
+
+
+
+
+##############################################################
 # Proportion of Primes to to X
 ##############################################################
+
+def fig_log(dir, ext):
+    g = plot(log, 1/3, 100, thickness=2)
+    g.save(dir + '/log.%s'%ext, figsize=[8,3], gridlines=True)
 
 def fig_proportion_primes(dir,ext):
     for bound in [100,1000,10000]:
@@ -740,11 +747,12 @@ def plot_psi(xmax, **kwds):
     return plot_step_function(v, **kwds)
 
 def fig_psi(dir,ext):
-    for m in [10,200]:
+    for m in [9,100]:
         g = plot_psi(m, thickness=2)
-        g.save(dir+'/psi_%s.%s'%(m,ext), aspect_ratio=1)
+        g.save(dir+'/psi_%s.%s'%(m,ext), aspect_ratio=1, gridlines=True,
+               fontsize=20)
     g = plot(lambda x:x,1,1000,rgbcolor='red')+plot_psi(1000,alpha=0.8)
-    g.save(dir+'/psi_diag_%s.%s'%(1000,ext),aspect_ratio=1)
+    g.save(dir+'/psi_diag_%s.%s'%(1000,ext),aspect_ratio=1, fontsize=20)
 
 
 ##############################################################
@@ -763,8 +771,11 @@ def fig_waves(dir,ext):
     g = plot(sin(x) + sin(329.0/261*x), 0, c*pi) 
     g.save(dir+'/sin-twofreq-sum.%s'%ext)
 
-    c = 5
-    g = plot(sin(x), 0, c*pi) + plot(sin(329.0/261*x + 0.4), 0, c*pi, color='red')
+    c=5
+    g = plot(sin(x), -2, c*pi) + plot(sin(x + 1.5), -2, c*pi, color='red')
+    g += text("Phase", (-2.5,.5), fontsize=14, rgbcolor='black')
+    g += arrow((-2.5,.4), (-1.5,0), width=1, rgbcolor='black')
+    g += arrow((-2,.4), (0,0), width=1, rgbcolor='black')
     g.save(dir+'/sin-twofreq-phase.%s'%ext)
 
     g = plot(sin(x) + sin(329.0/261*x + 0.4), 0, c*pi)
@@ -812,6 +823,49 @@ def plot_sawtooth(xmax):
 def plot_sawtooth_spectrum(xmax):
     # the spectrum is a spike of height 1/k at k
     return sum([line([(k,0),(k,1/k)],thickness=3) for k in [1..xmax]])
+
+##############################################################
+# Fourier Transforms: second visit 
+##############################################################
+def fig_even_function(dir, ext):
+    x = var('x')
+    f = cos(x) + sin(x^2) + sqrt(x)
+    def g(z):
+        return f(x=abs(z))
+    h = plot(g,-4,4)
+    h.save(dir + '/even_function.%s'%ext, figsize=[9,3])
+
+def fig_even_pi(dir, ext):
+    g1 = prime_pi.plot(0,50, rgbcolor='red')
+    g2 = prime_pi.plot(0,50, rgbcolor='red')
+    g2[0].xdata = [-a for a in g2[0].xdata]
+    g = g1 + g2
+    g.save(dir + '/even_pi.%s'%ext, figsize=[10,3],xmin=-49,xmax=49)
+
+def fig_oo_integral(dir, ext):
+    t = var('t')
+    f(t) = 1/(t^2+1)*cos(t)
+    a = f.find_root(1,2.5)
+    b = f.find_root(4,6)
+    c = f.find_root(7,8)
+    g = plot(f,(t,-13,13), fill='axis', fillcolor='yellow', fillalpha=1, thickness=2)
+    g += plot(f,(t,-a,a), fill='axis', fillcolor='grey', fillalpha=1, thickness=2)
+    g += plot(f,(t,-c,-b), fill='axis', fillcolor='grey', fillalpha=1, thickness=2)
+    g += plot(f,(t,b,c), fill='axis', fillcolor='grey', fillalpha=1, thickness=2)
+    g += text(r"$\int_{-\infty}^{\,\infty} f(x) dx$", (-7,0.5), rgbcolor='black', fontsize=30)
+    #g.show(figsize=[9,3], xmin=-10,xmax=10)
+    g.save(dir+'/oo_integral.%s'%ext, figsize=[9,3], xmin=-10,xmax=10)
+
+def fig_fourier_machine(dir, ext):
+    g  = text("$f(t)$", (-1/2,1/2), fontsize=20, rgbcolor='black')
+    g += text(r"$\hat{f}(\theta)$", (3/2,1/2), fontsize=20, rgbcolor='black')
+    g += line([(0,0),(0,1),(1,1),(1,0),(0,0)],rgbcolor='black',thickness=3)
+    g += arrow((-1/2+1/9,1/2), (-1/16,1/2), rgbcolor='black')
+    g += arrow((1+1/16,1/2), (1+1/2-1/9,1/2), rgbcolor='black')
+    t=var('t')
+    g += plot((1/2)*t*cos(14*t)+1/2,(t,0,1), fill='axis', thickness=0.8)
+    g.save(dir+'/fourier_machine.%s'%ext, axes=False)
+    
 
 ##############################################################
 # Distribution section
@@ -868,15 +922,20 @@ def plot_symbolic_phihat(bound, xmin, xmax, plot_points=1000, zeros=True):
 
 def fig_calculus(dir,ext):
     x = var('x')
-    f = (x-1)^2 - 1
-    f_slope = f.derivative(x)
-    P = plot(f, -1, 3, rgbcolor=(0,0,1), thickness=1.5, label="a function")
-    Q = plot(f_slope, -1, 3, rgbcolor=(1,0,0), label="derivative")
-    S = line([(2,0),(2,f_slope(x=2)),(0,f_slope(x=2))], thickness=0.5, rgbcolor='black')
-    T = line([(1,-2),(3,2)], rgbcolor=(0,0.5,0)) + text("slope line", (3.1,2), horizontal_alignment='left')
-    W = point((2,0), pointsize=40)
-    G = W + P + Q + S + T
-    G.save(dir + '/graph_slope_deriv.%s'%ext, figsize=[7,7],xmin=-2,xmax=4.5,ymin=-2,ymax=4.5)
+    t = 8; f = log(x); fprime = f.diff()
+    fontsize = 14
+    g = plot(f, (0.5,t)) 
+    g += plot(x*fprime(x=4)+(f(x=4)-4*fprime(x=4)), (.5,t), rgbcolor='black')
+    g += point((4,f(x=4)), pointsize=20, rgbcolor='black')
+    g += plot(fprime, (0.5,t), rgbcolor='red')
+    g += text("What is the slope of the tangent line?", (3.3,2.2), 
+                  fontsize=fontsize, rgbcolor='black')
+    g += text("Here it is!",(5,.9), fontsize=fontsize, rgbcolor='black')
+    g += arrow((4.7,.76), (4, fprime(x=4)), rgbcolor='black')
+    g += point((4,fprime(x=4)),rgbcolor='black', pointsize=20)
+    g += text("How compute?  This is Calculus.", (4.3, -0.7), 
+                  fontsize=fontsize, rgbcolor='black')
+    g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True)
 
 def fig_jump(dir,ext):
     # straight jump
@@ -915,6 +974,13 @@ def smoothderiv(e):
     D += plot( deriv(S, e/30), (3-e, 3+e), rgbcolor='red', thickness=2)
     v += D
     return v
+
+
+def fig_dirac(dir,ext):
+    g = line([(0,0),(0,100)],thickness=2)
+    g += line([(-1.2,0), (1.25,0)], thickness=2)
+    g.save(dir+'/dirac_delta.%s'%ext,
+           frame=True, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)    
 
 ##############################################################
 # Cosine sums
