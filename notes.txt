@@ -1,0 +1,3 @@
+notebook dir:
+
+/Users/wstein/books/riemann_hypothesis/simuw

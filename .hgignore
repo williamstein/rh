@@ -11,3 +11,11 @@ auto
 macros.tex
 out
 jpg
+dvi
+gz
+orig
+lof
+pyc
+py
+rh/code/illustrations
+bz2

@@ -1,0 +1,3 @@
+rm code.py
+sage -preparse code.sage
+sage -t code.py
