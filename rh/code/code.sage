@@ -977,10 +977,21 @@ def smoothderiv(e):
 
 
 def fig_dirac(dir,ext):
-    g = line([(0,0),(0,100)],thickness=2)
-    g += line([(-1.2,0), (1.25,0)], thickness=2)
+    g = line([(0,0),(0,100)], rgbcolor='black')
+    g += arrow((0,-1),(0,50), width=3)
+    g += line([(-1.2,0), (1.25,0)], thickness=3)    
     g.save(dir+'/dirac_delta.%s'%ext,
-           frame=True, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)    
+           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True) 
+
+def fig_two_delta(dir,ext):
+    g = line([(0,0),(0,100)], rgbcolor='black')
+    g += arrow((-1/2,-1),(-1/2,50),width=3)
+    g += arrow((1/2,-1),(1/2,50),width=3)
+    g += line([(-1.2,0), (1.25,0)], thickness=3)
+    g += text("$-x$", (-1/2-1/20,-4), rgbcolor='black', fontsize=35, horizontal_alignment='center')
+    g += text("$x$", (1/2,-4), rgbcolor='black', fontsize=35, horizontal_alignment='center')
+    g.save(dir+'/two_delta.%s'%ext,
+           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)    
 
 ##############################################################
 # Cosine sums

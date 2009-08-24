@@ -1993,7 +1993,7 @@ $$\int_a^bD(t).$$
  The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough--and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ \vskip10pt
 \noindent {\bf A question:}  If you've never seen distributions before, but know the Riemann integral, can you guess at what the definition of $\int_a^bc(t)D(t)$  is, and can you formulate hypotheses on $c(t)$ that would allow  you  to endow this expression with a definite meaning?
 
-\ill{dirac_delta}{0.5}{The Dirac $\delta$-function}
+\ill{dirac_delta}{0.5}{The Dirac $\delta$-function, where we draw a vertical arrow to illustrate the delta function with support at a given point.}
 
 For example, for the Dirac $\delta$-function we have been discussing (i.e., the limit of the red graphs of the previous section) {\it is} an honest function away from $t=0$ and ---in fact---is the ``trivial function" zero away from the origin.  And at $0$, we may {\it say} that it has the ``value" infinity, in honor of it being the limit of blip functions getting taller and taller at $0$ but the feature that pins it down as a distribution is given by its behavior relative to the second feature above, the area of its graph over  the open interval  between $a$ and $b$: 
 
@@ -2118,9 +2118,8 @@ transform}.
         \vskip15pt
     To generalize this computation let us consider for any real number $x$ the symmetrized delta-function with support at $x$ and $-x$, given by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
     
-    \vskip10pt
-    {\bf William: Should we have a picture here?}
-    \vskip10pt 
+    
+    \ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$, where we draw vertical arrows to illustrate the Dirac delta functions.}
     
     What is the Fourier transform of this $d_x(t)$?  The answer is given by making the same computation as we've just made:
     
