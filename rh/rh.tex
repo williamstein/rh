@@ -1104,7 +1104,7 @@ prior) question: what counts as a good fit?
 % I found this here: http://kr.blog.yahoo.com/kimxx168/498
 % It is referenced in http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html
 % but that link is broken.
-\ill{gauss_tables}{.78}{Gauss's Letter\label{fig:gauss_letter}}
+\ill{gauss_tables}{.78}{Gauss's Letter [[English translation]]\label{fig:gauss_letter}}
 
 
 \section{What is a ``good approximation''?}\label{sec:sqrterror}
@@ -1750,13 +1750,13 @@ what we get for a few values of $C$.
  In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the Riemann Hypothesis holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  
 
 
-\ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with
+\ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with
 arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
 
-\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
+\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}
 
-\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes}
-\ill{phihat_even-500}{1}{Plot of $-\sum_{p^n\leq 500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
+\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}
+\ill{phihat_even-500}{1}{Plot of $-\sum_{p^n\leq 500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
 
   
 
@@ -1937,11 +1937,27 @@ In contrast a {\it generalized function}  or  {\it distribution}
 \begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it is not an honest function, nevertheless:
      
-\item  {\bf It has well-defined areas under portions of its ``graph."} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under" the graph of the generalized function $D(t)$ over the interval  between $a$ and $b$} and we will denote this--extending what we do in ordinary calculus---by the symbol
+\item  {\bf It has well-defined areas under portions of its ``graph."} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under" the graph of the generalized function $D(t)$ over the interval  between $a$ and~$b$} and we will denote this--extending what we do in ordinary calculus---by the symbol
 $$\int_a^bD(t).$$ 
 \end{itemize} 
 
- The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough--and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ \vskip10pt
+ This description is important to bear in mind and it gives us a handy way of thinking about ``generalized functions" (i.e., distributions) as opposed to functions:  when we consider an (integrable) function of a real variable, $f(t)$, we may invoke its {\it value} at every real number  and  for every interval $[a,b]$ we may consider the quantity  $\int_a^bf(t)dt$. BUT when we are given a generalized function $D(t)$ we {\it only} have at our disposal the latter quantities.  In fact,  a generalized function of a real variable $D(t)$ is (formally) nothing more than a {\it rule} that assigns to any finite interval  $[a,b]$ ($a \le b$)  a quantity that we might denote   $\int_a^bD(t)dt$  and that {\it behaves as if it were the integral of a function} and in particular---for three real numbers $a\le b\le c$ we have the additivity relation
+ $$  \int_a^cD(t)dt \ = \ \int_a^bD(t)dt \ + \ \int_b^cD(t)dt.$$
+ 
+ SO, any  honest function integrable over finite intervals clearly {\it is} a distribution (forget about its values!) but $\dots$ there are many more generalized functions, and including them in our sights gives us a very important tool.
+ 
+ 
+  It is natural to talk, as well, of Cauchy sequences, and limits, of distributions. We'll say that such a sequence $D_1(t), D_2(t), D_3(t),\dots$ is a {\bf Cauchy sequence} if for every interval $[a,b]$ the quantities  $$\int_a^bD_1(t)dt,\quad \int_a^bD_2(t)dt,\quad\int_a^bD_3(t)dt,\dots$$ form a Cauchy sequence of real numbers. Now, any Cauchy sequence of distributions {\it converges to a limiting distribution} $D(t)$ which is defined by the rule that for every interval $[a,b]$,
+  \vskip5pt
+  $$ \int_a^bD(t)dt\ =\ \lim_{i \to \infty} \int_a^bD_i(t)dt.$$
+   \vskip5pt 
+  
+  If, by the way, you have an infinite  sequence---say---of honest, continuous, functions that converges uniformly to a limit (which will again be a continuous function) then that sequence certainly converges---in the above sense---to the same limit when these functions are viewed as generalized functions. BUT, there are many important occasions where your sequence of honest continuous functions doesn't have that convergence property and {\it yet} when they are viewed as generalized functions they do converge to some generalized function as a limit. We will see this soon when we get back to the ``sequence of the red graphs." This sequence {\bf does} converge (in the above sense)  to the delta-function when these red graphs are thought of as a sequence of generalized functions.
+
+
+
+
+ The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough---and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ \vskip10pt
 \noindent {\bf A question:}  If you've never seen distributions before, but know the Riemann integral, can you guess at what the definition of $\int_a^bc(t)D(t)$  is, and can you formulate hypotheses on $c(t)$ that would allow  you  to endow this expression with a definite meaning?
 
 \ill{dirac_delta}{0.5}{The Dirac $\delta$-function, where we draw a vertical arrow to illustrate the delta function with support at a given point.}
@@ -2049,7 +2065,7 @@ transform}.
   
   
 
-\section{What is the Fourier transform of a delta function?}
+\section{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
 
    Consider the $\delta$-function that we denoted $\delta(t)$  (or $\delta_0(t)$). This is also the ``generalized function" that we thought of as the ``limit of the red graphs" in Section~\ref{sec:dist} above. Even though $\delta(t)$ is  a distribution and {\it not} a bona fide function, it is symmetric about the origin, and also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is finite (its value is, in fact, $1$). All this means that, appropriately understood, the discussion of the previous section applies, and we can {\it feed} this delta-function into our Fourier Transform Machine (Figure~\ref{fig:fourier_machine}) to see what frequencies and amplitudes arise in our attempt to express---whatever this means!---the delta-function as a sum, or an integral, of cosine functions.
    
@@ -2126,13 +2142,15 @@ As we have already hinted in the previous sections, however, there are various w
 the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the function $$\Psi(t):= \psi(e^t).$$  No harm is done by this  for we can retrieve our original $\psi(x)$  as $$\psi(x) = \Psi(\log(x)).$$  Our distorted staircase has risers at ($0$ and) all positive integral multiples of logs of prime numbers.
   \vskip10pt
 
-[[{\bf A picture here of the two staircases $\psi$ and $\Psi$ side by side?}]]
+\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).}
 
 \vskip10pt
 \item  Now we'll do something that might seem a bit more brutal: {\it take the derivative of this distorted staircase) $\Psi(t)$.}   This derivative $\Psi'(t)$ is a {\it generalized} function with support  at all nonnegative  integral multiples of logs of prime numbers.
- \vskip10pt
- [[{\bf A picture here }]]
-\vskip10pt
+
+\ill{bigPsi_prime}{1}{The derivative $\Psi'(t)$}
+
+[[redo to make vertical arrows that are thick, with brightness prop to the coefficient of deltalogpn]]
+
 \item    Now ---for normalization purposes---multiply $\Psi'(t)$ by
 the function $e^{?t}$ which has no effect whatsoever on the support.
   \end{enumerate}
@@ -2195,7 +2213,39 @@ information about the placement of prime numbers among all numbers.
 
 
 
-\section{The Fourier transform of the rescaled derivative of the 45 degree staircase}
+\section{The Fourier transform of $\Phi(t)$}
+
+
+ \vskip10pt
+ 
+ 
+  We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Section~\ref{sec:ftdelta} In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
+  
+   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  the generalized function that was engineered in section 21, and that has support at all positive integral multiples of logarithms of prime numbers.
+   
+  As with any function---or generalized function---defined for non-negative values of $t$, we can ``symmetrize it" (about the $t$-axis) which means that we can define it on negative real numbers by the equation  $$\Phi(-t) = \Phi(t).$$  Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} generalized function.
+  
+  
+  \vskip20pt
+{ \bf William: It becomes more and more crucial as we write this up to talk very very clearly about limits of distributions, and I'm not sure where such a section should go, and how we can pitch it but $\dots$ what follows will depend heavily on this exposition}
+  \vskip20pt
+ We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
+ \vskip4pt
+ $$\Phi(t)\ = \ \lim_{C \to {\infty}}\Phi_{\le C}(t)$$ where $\Phi_{\le C}(t)$  is the finite linear combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
+ \vskip5pt
+ $$\Phi_{\le C}(t):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
+  \vskip5pt
+ 
+ Since the Fourier transform of each $d_{n\log(p)}(t)$ is $\cos(n\log(p)\theta)$ we compute the  Fourier transform of $\Phi_{\le C}(t)$ to be:
+  \vskip20pt
+  $${\hat \Phi}_{\le C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
+  
+  
+  We have come then---again---to the expressions graphed at the end of Part I, in section 15.
+  
+  \vskip20pt
+  {\bf WILLIAM: Maybe here we could reproduce figures 15.3,15.4,15.5, and 15.6, in a smaller size than they appear in section 15, but still where the basic features are legible?}
+    \vskip20pt
 
 
 \begin{itemize}

@@ -748,8 +748,7 @@ def fig_primes_line(dir,ext):
 # Plots of Psi function
 ##############################################################
 
-
-def plot_psi(xmax, **kwds):
+def psi_data(xmax):
     from math import log, pi
     v = [(0,0), (1,0), (1,log(2*pi))]
     y = v[-1][1]
@@ -757,16 +756,50 @@ def plot_psi(xmax, **kwds):
         y += log(factor(pn)[0][0])
         v.append( (pn,y) )
     v.append((xmax,y))
+    return v
+
+def plot_psi(xmax, **kwds):
+    v = psi_data(xmax)
     return plot_step_function(v, **kwds)
 
 def fig_psi(dir,ext):
-    for m in [9,100]:
+    for m in [9,38,100]:
         g = plot_psi(m, thickness=2)
         g.save(dir+'/psi_%s.%s'%(m,ext), aspect_ratio=1, gridlines=True,
                fontsize=20)
     g = plot(lambda x:x,1,1000,rgbcolor='red')+plot_psi(1000,alpha=0.8)
     g.save(dir+'/psi_diag_%s.%s'%(1000,ext),aspect_ratio=1, fontsize=20)
 
+def plot_Psi(xmax, **kwds):
+    v = psi_data(xmax)
+    v = [(log(a),b) for a, b in v if a]
+    return plot_step_function(v, **kwds)
+
+def fig_Psi(dir, ext):
+    m = 38
+    g = plot_Psi(m, thickness=2)
+    g.save(dir+'/bigPsi_%s.%s'%(m,ext), gridlines=True,
+           fontsize=20, figsize=[6.1,6.1])
+
+def fig_Psiprime(dir, ext):
+    g = line([(0,0),(0,100)], rgbcolor='black')
+    xmax = 30
+    for n in [1..xmax]:
+        if is_prime_power(n):
+            if n == 1:
+                h = log(2*pi)
+            else: 
+                h = log(n)
+            #g += arrow((log(n),-1/2),(log(n),10*h), width=1)
+            g += line([(log(n),-1/2),(log(n),10*h)])
+            if n <= 3 or n in [5, 8, 13, 29]:
+               g += text("log(%s)"%n, (log(n),-5), rgbcolor='black', fontsize=12)
+               g += line([(log(n),-2), (log(n),0)], rgbcolor='black')
+    g += line([(-1/2,0), (xmax+1,0)], thickness=2)
+    g.show(
+    #g.save(dir+'/bigPsi_prime.%s'%ext,
+           xmin=-1/2, xmax=log(xmax), ymax=50,  
+             axes=False, gridlines=True, figsize=[8,3])    
 
 ##############################################################
 # Sin, etc. waves
