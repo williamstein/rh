@@ -783,22 +783,22 @@ def fig_Psi(dir, ext):
 
 def fig_Psiprime(dir, ext):
     g = line([(0,0),(0,100)], rgbcolor='black')
-    xmax = 30
+    xmax = 20
+    ymax = 50 
     for n in [1..xmax]:
         if is_prime_power(n):
             if n == 1:
                 h = log(2*pi)
             else: 
-                h = log(n)
-            #g += arrow((log(n),-1/2),(log(n),10*h), width=1)
-            g += line([(log(n),-1/2),(log(n),10*h)])
-            if n <= 3 or n in [5, 8, 13, 29]:
+                h = log(factor(n)[0][0])
+            c = (float(h)/log(xmax), 0, 1-float(h)/log(xmax))
+            g += arrow((log(n),-1),(log(n),ymax), width=2, rgbcolor=c)
+            if n <= 3 or n in [5, 8, 13, 19]:
                g += text("log(%s)"%n, (log(n),-5), rgbcolor='black', fontsize=12)
                g += line([(log(n),-2), (log(n),0)], rgbcolor='black')
     g += line([(-1/2,0), (xmax+1,0)], thickness=2)
-    g.show(
-    #g.save(dir+'/bigPsi_prime.%s'%ext,
-           xmin=-1/2, xmax=log(xmax), ymax=50,  
+    g.save(dir+'/bigPsi_prime.%s'%ext,
+           xmin=-1/2, xmax=log(xmax), ymax=ymax,
              axes=False, gridlines=True, figsize=[8,3])    
 
 ##############################################################
