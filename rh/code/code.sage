@@ -572,7 +572,7 @@ def fig_prime_pi(dir,ext):
         p.save(file)
 
 def fig_prime_pi_nofill(dir,ext):
-    for n in [25,100,1000,10000,100000]:
+    for n in [25,38,100,1000,10000,100000]:
         g = plot_prime_pi(n, rgbcolor='red', thickness=2)
         g.save(dir + '/PN_%s.%s'%(n,ext))
 
@@ -730,6 +730,19 @@ def plot_li_pi_loginv(xmax=200):
     return P
 
 
+##############################################################
+# Perspective
+##############################################################
+
+def fig_primes_line(dir,ext):
+    xmin=1; xmax=38; pointsize=90
+    g = points([(p,0) for p in prime_range(xmax+1)], pointsize=pointsize, rgbcolor='red')
+    g += line([(xmin,0), (xmax,0)], rgbcolor='black')
+    eps = 1/2
+    for n in [xmin..xmax]:
+        g += line([(n,eps), (n,-eps)], rgbcolor='black', thickness=0.5)
+        g += text("$%s$"%n, (n,-6), rgbcolor='black')
+    g.save(dir + '/primes_line.%s'%ext, axes=False,figsize=[9,.7], ymin=-10)
 
 ##############################################################
 # Plots of Psi function

@@ -122,17 +122,17 @@
 
 \begin{center}
 
-A formula that counts the prime numbers ...
+%A formula that counts the prime numbers ...
 
 \includegraphics[width=.65\textwidth]{illustrations/Rk_50_2_100}
 
-... built out of their spectrum:
+%... built out of their spectrum:
 
 \includegraphics[width=.8\textwidth]{illustrations/phihat_even-500}
 
-$$
-f(t) = -\sum_{\text{prime powers }p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
-$$ 
+%$$
+%f(t) = -\sum_{\text{prime powers }p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
+%$$ 
 \end{center}
 
 
@@ -409,13 +409,8 @@ Figure~\ref{fig:factor300},
 you always end up with the same collection of prime numbers:                  
                  $$300 = 2^2\times 3\times 5^2.$$   
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.47\textwidth]{illustrations/factor_tree_300_a}
-\includegraphics[width=0.47\textwidth]{illustrations/factor_tree_300_b}
-\caption{Factor trees that illustrates the factorization of 300 as a product of primes.\label{fig:factor300}}
-\end{center}
-\end{figure}
+\illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
+{Factor trees that illustrates the factorization of 300 as a product of primes.\label{fig:factor300}}
 
 \ill{factor_tree_big}{1}{Factorization tree for the product $6469693230$ of the primes up to $29$.\label{factor.tree.big}}
  
@@ -944,14 +939,10 @@ the eye. How strange and wonderful to watch, as our viewpoint zooms
 out to larger ranges of numbers, the accumulation of primes taking on
 such a smooth and elegant shape.
 
-\illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircase of primes up to 1,000 and 10000\label{fig:staircases2}}
+\illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircase of primes up to 1,000 and 10,000\label{fig:staircases2}}
 
-   \begin{figure}[H]
-   \begin{center}
-   \includegraphics[width=.8\textwidth]{illustrations/prime_pi_100000}
-   \caption{Primes up to 100,000\label{fig:pn100000}}
-   \end{center}
-    \end{figure}
+\ill{prime_pi_100000}{.8}{Primes up to 100,000\label{fig:pn100000}.}
+
 
 But don't be fooled by the seemingly smooth shape of the curve in the
 last figure above: it is just as faithful a reproduction of the
@@ -1021,7 +1012,7 @@ that account for the apparent complexity of the nature of primes?
 %sense of what this is like in the trenches...  It says ``Warning. Make
 %sure you understand the above!'']]
    
-\section{A probabilistic ``first'' guess }
+\section{A probabilistic ``first'' guess\label{sec:firstguess} }
 
 \ill{gauss}{.3}{Gauss}
 
@@ -1034,6 +1025,8 @@ of calculus.  If you make believe that the chances that a number $N$ is
 a prime is inversely proportional to the number of digits of $N$ you
 might well hit upon Gauss's curve.   
 
+
+\ill{log}{.8}{Plot of the natural logarithm $\log(X)$}
 The (natural) logarithm function $\log(X)$ 
 is roughly proportional to the function that assigns to $X$ the 
 number of digits of $X$.\footnote{More precisely, we have
@@ -1045,19 +1038,16 @@ the logarithm of a product being equal to the sum of the logarithms
 of the factors; that is, $\log(XY) = \log(X) + \log(Y)$. 
 %FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES "
 
-\ill{log}{.8}{Plot of the natural logarithm $\log(X)$}
+% From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
+\ill{slide_rule}{.8}{A slide rule  computing $2X$ by using that $\log(2X)=\log(2)+\log(X)$\label{fig:slide_rule}}
 
-The numbers printed (on each of the slidable pieces of the rule)
+In Figure~\ref{fig:slide_rule} the numbers printed (on each of the slidable pieces of the rule)
 are spaced according to their logarithms, so that when one slides the
 rule arranging it so that the printed  number $X$ on one piece lines up
 with the printed number $1$ on the other, we get that for every number $Y$
 printed on the first piece, the printed number on the other piece that
 is  aligned with it is the product $XY$; in effect the ``slide'' adds 
 $\log(X)$ to $\log(Y)$ giving $\log(XY)$.
-
-
-% From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
-\ill{slide_rule}{.6}{A slide rule computes $XY$ using $\log(XY)=\log(X)+\log(Y)$}
 
 
 In 1791, when Gauss was 14 years old, he received a book that contained 
@@ -1226,12 +1216,7 @@ as $\Li(X) = \int_2^X (dx/\log x)$.
 Figure~\ref{fig:threeplots} contains a graph of the three functions
 $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
  
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=.9\textwidth]{illustrations/three_plots}
-\caption{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom)\label{fig:threeplots}}
-\end{center}
-\end{figure}
+\ill{three_plots}{.9}{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom).\label{fig:threeplots}}
  
 Let $X=10^{23}$.  Then \label{pili_vals}
 \begin{align*}
@@ -1403,7 +1388,7 @@ mathematics to find its proof (or, a counter-example!).  RH is
 one of the weightiest statements in all of mathematics. 
 
 
-\section{The {\em information} contained in the staircase of primes}
+\section{The {\em information} contained in the staircase of primes\label{sec:information}}
  
 \bigskip
 
@@ -1436,7 +1421,7 @@ placed. This story seems to elude any simple description.  Can we
 information?
  
 
-\section{Tinkering with the carpentry of the staircase of primes.}
+\section{Tinkering with the carpentry of the staircase of primes\label{sec:tinkering}}
 
  
 For starters, notice that all the {\em risers} of this staircase (Figure~\ref{fig:staircases} above) have
@@ -1502,21 +1487,26 @@ but is constructed according to the following architectural plan.
   nicely approximated by the $45$ degree straight line, i.e., by the
   simple function $x$. In fact, we have---by this new
   architecture---a second {\em equivalent} way of formulating
-  Riemann's hypothesis:
-    
+  Riemann's hypothesis.   For this, let $\psi(x)$ denote the 
+  function\endnote{We have $$\psi(x) =\sum_{p^n \le x}\log p$$ where the summation is over prime
+powers $p^n$ that are $\le x$.}
+  of $x$ whose graph is
+depicted in Figure~\ref{fig:psi2}.
+   
           \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
        \begin{center}{\bf\large The {\bf Riemann Hypothesis} (second formulation)}\end{center}
        \medskip
        
-   This new staircase is essentially square root close to the $45$
-   degree straight line, i.e., to the simple function $x$.
-   \vspace{1ex}
+       This new staircase is essentially square root close to the 45 degree
+straight line; i.e., the function $\psi(x)$ is essentially square root
+close to the function $f(x)=x$.
+          \vspace{1ex}
    \end{minipage}}
 \end{center}
 
-\ill{psi_diag_1000}{0.5}{The newly constructed staircase up to 1000 is very close to the 45 degree line.}
+\ill{psi_diag_1000}{0.5}{The newly constructed staircase is close to the 45 degree line.}
 
 Do not worry if you do not understand why our first and second
 formulations of Riemann's Hypothesis are equivalent. Our aim, in
@@ -1549,12 +1539,7 @@ and measured air pressure due to this sound at that position, the
 peaks correspond to the times when the varying air pressure is maximal
 or minimal and the zeroes to the times when it is normal pressure.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin}  
-\caption{Graph of a Sine Wave\label{fig:sine}}
-\end{center}
-\end{figure}  
+\ill{sin}{.6}{Graph of a Sine Wave\label{fig:sine}}
 
 You'll notice that there are two features to the graph in Figure~\ref{fig:sine}.
 
@@ -1575,19 +1560,10 @@ some electronic instrument that could approximate pure notes). Its
 graph would be just the {\em sum} of the graphs of each of the pure
 notes (see Figures~\ref{fig:sinetwofreq} and \ref{fig:sinetwofreqsum}).
     
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq}  
-\caption{Graph of Two Sine Waves with Different Frequencies\label{fig:sinetwofreq}}
-\end{center}
-\end{figure}  
+    
+\ill{sin-twofreq}{0.6}{Graph of Two Sine Waves with Different Frequencies\label{fig:sinetwofreq}}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-sum}  
-\caption{Graph of Sum of the Two Sine Waves with Different Frequencies\label{fig:sinetwofreqsum}}
-\end{center}
-\end{figure}  
+\ill{sin-twofreq-sum}{.6}{Graph of Sum of the Two Sine Waves with Different Frequencies\label{fig:sinetwofreqsum}}
 
 So the picture of the changing frequencies of this chord would be
 already a pretty complicated configuration.  What we have described in
@@ -1597,21 +1573,10 @@ also ``delay'' the onset of the E note and play them with some
 different phase relationship, for example, as illustrated
 in Figures~\ref{fig:sin-twofreq-phase} and \ref{fig:sum-sin-phase}.
      
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase}  
-\caption{\label{fig:sin-twofreq-phase}Graph of two ``sine'' waves with different phase.}
-\end{center}
-\end{figure}  
+\ill{sin-twofreq-phase}{.6}{\label{fig:sin-twofreq-phase}Graph of two ``sine'' waves with different phase.}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase-sum}  
-\caption{Graph of the sum of the two ``sine'' waves with different frequency
+\ill{sin-twofreq-phase-sum}{.6}{Graph of the sum of the two ``sine'' waves with different frequency
 and phase.\label{fig:sum-sin-phase}}
-\end{center}
-\end{figure}  
-
 
  
   So, {\em all you need} to reconstruct the chord graphed above is to
@@ -1629,23 +1594,12 @@ and phase.\label{fig:sum-sin-phase}}
  one way would be to sample the amplitude of the sound at many
  different times, as for example in Figure~\ref{fig:sum-sin-phase-sample}.
   
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase-sum-points}
-\end{center}
-\caption{Graph of sampling of a sound wave\label{fig:sum-sin-phase-sample}}
-\end{figure}
+\ill{sin-twofreq-phase-sum-points}{.6}{Graph of sampling of a sound wave\label{fig:sum-sin-phase-sample}}
 
 Then, fill in the rest of the points to obtain Figure~\ref{fig:sum-sin-phase-sample-fill}.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{illustrations/sin-twofreq-phase-sum-fill}
-\end{center}
-\caption{Graph obtained from Figure~\ref{fig:sum-sin-phase-sample} by
+\ill{sin-twofreq-phase-sum-fill}{0.6}{Graph obtained from Figure~\ref{fig:sum-sin-phase-sample} by
 filling in the rest of the points\label{fig:sum-sin-phase-sample-fill}}
-\end{figure}
-
 
 But this sampling would take an enormous amount of storage space!
 Current audio compact discs do their sampling 44,100 times a second to
@@ -1679,13 +1633,10 @@ amplitude of that frequency ``in'' the sound.
 So our CE chord would have the spectral picture in
 Figure~\ref{fig:ce-spectral}.
  
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.4\textwidth]{illustrations/sound-ce-general_sum}
-\includegraphics[width=0.4\textwidth]{illustrations/sound-ce-general_sum-blips}
-\end{center}
-\caption{Spectral Picture of a CE chord\label{fig:ce-spectral}}
-\end{figure}
+
+\illtwo{sound-ce-general_sum}{sound-ce-general_sum-blips}{.4}
+       {Spectral Picture of a CE chord\label{fig:ce-spectral}}
+
 
 This spectral picture ignores the phase but is nevertheless a very
 good portrait of the sound.  The spectral picture of a graph gets us
@@ -2092,7 +2043,7 @@ transform}.
      
     This concise machine manages to ``pick out'' just the part of $f(t)$ that has frequency $\theta$!!  It  provides for us the {\it analysis} part of the Fourier analysis of our function $f(t)$. But there is a {\it synthesis} part to our work as well, for we can reconstruct $f(t)$ from its Fourier transform, by a process intriguingly similar to the analysis part; namely:
        
-      $$f(t)  = {\frac{1}{2\pi}}\int_{-{\infty}}^{+{\infty}}{\hat f}(\theta)\cos(\theta t)dt.$$
+      $$f(t)  = {\frac{1}{2\pi}}\int_{-{\infty}}^{+{\infty}}{\hat f}(\theta)\cos(\theta t)d\theta.$$
        
     We are not so lucky to have $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ finite  when we try our hand at a Fourier analysis of the staircase of primes, but we'll work around this!
   
@@ -2141,22 +2092,68 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
   
   We'll leave this, at least for now, as a question for you. 
 
-\section{The 45 degree staircase revisited}
+\section{On losing no information}
 
+  To manage to repackage the ``same'' data in various ways---where each way brings out some features that would be kept in the shadows if the data were packaged in some different way---is a high art, in mathematics. In a sense {\it every} mathematical equation does this, for the ``equal sign'' in the middle of the equation tells us that even though the two sides of the equation may seem different, or have different shapes, they are nonetheless ``the same data.''  For example, the equation 
+  
+  $$\log(XY) = \log(X) + \log(Y)$$
 
-[[I also think that there should be an ``introductory" simpler picture
-as well (simpler than, say, figure 18.2) where we have the staircase
-of primes between $1$ and $10$ and give the derivative for
-that---which just has four blips, and then move to the fuller figure
-18.2]]
+which we encountered earlier in Section~\ref{sec:firstguess},  is just two ways of looking at 
+the same thing,  yet it was the basis for much manual calculation for several centuries.
+  
+  
+  \vskip10pt
+  
+ Now, the problem we have been concentrating on, in this book, has been---in effect---to understand the pattern, if we can call it that, given by the placement of prime numbers among the natural  line-up of all whole numbers. 
+ 
+ \ill{primes_line}{1}{Prime Numbers up to $37$}
+  
+  There are, of course, many ways for us to present this basic pattern. Our initial strategy was to focus attention on the {\it staircase of primes} which gives us a vivid portrait, if you wish, of the order of appearance of primes among all numbers.
+ 
+ \ill{PN_38}{.45}{Prime Numbers up to $37$}
+ 
+As we have already hinted in the previous sections, however, there are various ways open to us to tinker with---and significantly modify---our staircase {\it without losing  the essential information it contains}. Of course, there is always the danger of modifying things in such a way that ``retrieval" of the original data becomes difficult.  Moreover, we had better  remember every change we have made if we are to have any hope of retrieving the original data!
+ 
+ With this in mind, let us go back to Section~\ref{sec:information} (discussing the staircase of primes) and Section~\ref{sec:tinkering}, where we tinkered with the original staircase of primes---alias: the graph of $\pi(x)$---to get $\psi(x)$ whose risers look---from afar---as if they approximated 45 degree staircase.
+ 
+ \vskip10pt
+   At this point we'll do some further carpentry on $\psi(x)$:
+   
+ \vskip10pt 
+   \begin{enumerate}
+   
+\item Distort
+the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the function $$\Psi(t):= \psi(e^t).$$  No harm is done by this  for we can retrieve our original $\psi(x)$  as $$\psi(x) = \Psi(\log(x)).$$  Our distorted staircase has risers at ($0$ and) all positive integral multiples of logs of prime numbers.
+  \vskip10pt
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.7\textwidth]{illustrations/psi_200}
-\caption{Illustration of the  staircase $\Psi(x)$  constructed in Part I that 
+[[{\bf A picture here of the two staircases $\psi$ and $\Psi$ side by side?}]]
+
+\vskip10pt
+\item  Now we'll do something that might seem a bit more brutal: {\it take the derivative of this distorted staircase) $\Psi(t)$.}   This derivative $\Psi'(t)$ is a {\it generalized} function with support  at all nonnegative  integral multiples of logs of prime numbers.
+ \vskip10pt
+ [[{\bf A picture here }]]
+\vskip10pt
+\item    Now ---for normalization purposes---multiply $\Psi'(t)$ by
+the function $e^{?t}$ which has no effect whatsoever on the support.
+  \end{enumerate}
+    \vskip10pt
+{\bf William: the ``?" is just that I haven't yet recomputed the normalization factor; will do. I think that it is $\pm 1/2$ but am vague about the sign}
+\vskip10pt
+
+Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
+
+\vskip10pt  $$\Phi(t) \ = \ e^{?t}\Psi'(t)$$ \vskip10pt
+  A distribution that has a discrete set of real numbers as its support---as $\Phi(t)$ does, we sometimes like to call {\bf spike distributions} since the pictures of functions approximating them tend to look like a series of spikes.
+   
+ We have then before us  a spike distribution with support at integral multiples of logarithms of prime numbers, and this generalized function retains the essential information about the placement of prime numbers among all whole numbers, and
+ will be playing a major role in our story.
+   
+ 
+   
+    \vskip10pt  Here is a sequence of functions approximating it.
+
+\ill{psi_200}{.6}{Illustration of the  staircase $\Psi(x)$  constructed in Section~\ref{sec:tinkering} that 
 counts weighted prime powers.\label{fig:psi_200}}
-\end{center}
-\end{figure}
   
 So what happens when we take the derivative---in the sense of
 distributions---of a complicated staircase?  For example, see
@@ -2172,23 +2169,6 @@ that is, at $x=$ any power of a prime.
       
 \bigskip
 
-[[Barry: I think that I'd like to add a philosophical paragraph
-(short, I promise) about performing mathematical changes that ``lose
-no information."  OK. So I don't forget this, I'll call it LNI for
-``lose no information" and will try to write it.]]
-  
-As we have hinted above, we lose no information if we further modify
-our staircase by distorting the $x$-axis, replacing $x$ by $e^t$ (as
-long as we {\em remember what it is we have done!})  so---for reasons
-that we will {\em only} see after the next section---we reconfigure
-our distribution $\Psi'(x)$ replacing it with the distribution
-
-$$
-  \Phi(t) : = \Psi'(e^t)/e^{\frac{t}{2}}.
-$$
-
-  
-\bigskip
    
    
 \ill{phi_50}{0.6}{An approximation to the distribution $\Phi(t)$}
@@ -2196,15 +2176,7 @@ $$
 \bigskip
 
 
-This distribution $\Phi(t)$ has a ``blip'' at $t=0$ and also at each
-positive multiple of $\log p$ as $p$ runs through the primes.  It has
-its {\em support} at the discrete set of points $t=0$ and $t=$
-integer multiples of $\log p$ as $p$ runs through the primes.
 
-
-We will refer to distributions with discrete support as {\bf spike
-  distributions} because graphs of functions that approximate them
-look like they have {\em spikes} around the points in their support.
 
 The spike distribution $\Phi(t)$ is now a major player in our drama,
 because all of the crucial valuable information of placement of primes
@@ -2275,19 +2247,9 @@ Figures~\ref{fig:phi_even} and \ref{fig:phi_odd} show what you get for
 graphs of these distributions ${\hat \Phi}_{\rm even}(s)$ and ${\hat
   \Phi}_{\rm odd}(s)$ if you cut off the sums above at $p^n < 100$.
   
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.7\textwidth]{illustrations/phi_even}
-\caption{Graph of an approximation to ${\hat \Phi}_{\rm even}(s)$ using $p^n<100$\label{fig:phi_even}}
-\end{center}
-\end{figure}
+\ill{phi_even}{.7}{Graph of an approximation to ${\hat \Phi}_{\rm even}(s)$ using $p^n<100$\label{fig:phi_even}}
   
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.7\textwidth]{illustrations/phi_odd}
-\caption{Graph of an approximation to ${\hat \Phi}_{\rm odd}(s)$ using $p^n<100$\label{fig:phi_odd}}
-\end{center}
-\end{figure}
+\ill{phi_odd}{.7}{Graph of an approximation to ${\hat \Phi}_{\rm odd}(s)$ using $p^n<100$\label{fig:phi_odd}}
    
 
 {\bf [Barry: I've been trying the below and numerically it seems that
@@ -2376,13 +2338,7 @@ function $\Psi$ obtained using $30$ frequences.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{illustrations/phi_even}
-\caption{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
-\end{center}
-\end{figure}
-
+\ill{phi_even}{.5}{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
 
 \end{itemize}
 
