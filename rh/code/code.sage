@@ -223,7 +223,7 @@ def bag_of_primes(steps):
 def fig_erat(dir,ext):
     # sieving out 2,3,5,7
     for p in [2,3,5,7]:
-        sieve_step(p,100).save(dir+'/sieve100-2.%s'%ext)
+        sieve_step(p,100).save(dir+'/sieve100-%s.%s'%(p,ext))
 
     sieve_step(13,200).save(dir+'/sieve200.%s'%ext)
         
@@ -763,7 +763,7 @@ def plot_psi(xmax, **kwds):
     return plot_step_function(v, **kwds)
 
 def fig_psi(dir,ext):
-    for m in [9,38,100]:
+    for m in [9,38,100,200]:
         g = plot_psi(m, thickness=2)
         g.save(dir+'/psi_%s.%s'%(m,ext), aspect_ratio=1, gridlines=True,
                fontsize=20)
@@ -937,6 +937,12 @@ def fig_phihat_even(dir,ext):
                             plot_points=10^5)
         G.save(dir+'/phihat_even-%s.%s'%(bound,ext), figsize=[9,3], ymin=0)
 
+def fig_phihat_even_all(dir, ext):
+    p = [plot_symbolic_phihat(n, 2,100) for n in [5,20,50,500]]    
+    [a.ymin(0) for a in p]
+    g = graphics_array([[a] for a in p],4,1)
+    g.save(dir+'/phihat_even_all.%s'%ext)
+
 def symbolic_phihat(bound):
     t = var('t')
     f = SR(0)
@@ -959,8 +965,6 @@ def plot_symbolic_phihat(bound, xmin, xmax, plot_points=1000, zeros=True):
     zeros = sum([arrow((x,ym),(x,0),rgbcolor='red',width=0.5,arrowsize=2)
                  for i, x in enumerate(Z)])
     return P + zeros
-
-
 
 ##############################################################
 # Calculus pictures
@@ -1102,6 +1106,26 @@ def primepower_dots(xmin, xmax, fontsize=7, drop=10):
     g.xmax(xmax)
     return g
 
+##############################################################
+# psi waves
+##############################################################
+
+def fig_psi_waves(dir, ext):
+    theta, t = var('theta, t')
+    f = (theta*sin(t*theta) + 1/2 * cos(t*theta)) / (theta^2 + 1/4)
+    g = plot(f(theta=zeta_zeros()[0]),(t,0,pi))
+    g.save(dir + '/psi_just_waves1.%s'%ext)
+
+    g += plot(f(theta=zeta_zeros()[1]),(t,0,pi), rgbcolor='red')
+    g.save(dir + '/psi_2_waves.%s'%ext)
+
+    f = (e^(t/2)*theta*sin(t*theta) + 1/2 * e^(t/2) * cos(t*theta))/(theta^2 + 1/4)
+    g = plot(f(theta=zeta_zeros()[0]),(t,0,pi))
+    g.save(dir + '/psi_with_first_zero.%s'%ext)
+
+    g += plot(f(theta=zeta_zeros()[1]),(t,0,pi), rgbcolor='red')
+    g.save(dir + '/psi_with_exp_2.%s'%ext)
+    
 
 ##############################################################
 # Riemann's R_k

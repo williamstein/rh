@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{book}
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
 
@@ -15,7 +15,7 @@
 
 \usepackage{url}
 
-\usepackage[hypertex]{hyperref}
+\usepackage{makeidx}\makeindex
 
 
 \DeclareMathOperator{\Li}{Li}
@@ -79,15 +79,31 @@
 \numberwithin{table}{section}
 
 
-\textwidth = 6.5 in
-\textheight = 9 in
-\oddsidemargin = 0.0 in
-\evensidemargin = 0.0 in
-\topmargin = 0.0 in
-\headheight = 0.0 in
-\headsep = 0.0 in
-\parskip = 0.2in
-\parindent = 0.0in
+%\hoffset=-0.05\textwidth
+%\textwidth = 1.1\textwidth
+%\voffset=-0.05\textheight
+%\textheight = 1.1\textheight
+%
+% Set equal margins on book style
+\setlength{\oddsidemargin}{53pt}
+\setlength{\evensidemargin}{53pt}
+\setlength{\marginparwidth}{57pt}
+\setlength{\footskip}{30pt}
+
+% Dutch style of paragraph formatting, i.e. no indents. 
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
+\setcounter{tocdepth}{0}
+
+%\textheight = 9 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+%\topmargin = 0.0 in
+%\headheight = 0.0 in
+%\headsep = 0.0 in
+%\parskip = 0.2in
+%\parindent = 0.0in
 
 
 \def\GL{\mathrm{GL}}
@@ -113,45 +129,55 @@
 \def\OH{{\mathcal OH}}
 
 
-\title{What is Riemann's Hypothesis?}
-\author{Barry Mazur \and William Stein}
+
+\newcommand{\RH}{Riemann Hypothesis\index{Riemann Hypothesis}}
+
+
+\title{\Huge What is Riemann's Hypothesis?}
+\date{}
+\author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
+%\begin{center}
+%A formula that counts the prime numbers ...
+%\includegraphics[width=.65\textwidth]{illustrations/Rk_50_2_100}
+%... built out of their spectrum:
+% cover = use fractal trace with params 0.3 -0.1 0 0 
+\includegraphics[width=\textwidth]{illustrations/cover}
+%$$
+%f(t) = -\sum_{\text{prime powers }p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
+%$$ 
+%\end{center}
+}
+
+
+\usepackage[hypertex]{hyperref}
 
 \begin{document}
 
 \maketitle
 
-\begin{center}
-
-%A formula that counts the prime numbers ...
-
-\includegraphics[width=.65\textwidth]{illustrations/Rk_50_2_100}
-
-%... built out of their spectrum:
-
-\includegraphics[width=.8\textwidth]{illustrations/phihat_even-500}
-
-%$$
-%f(t) = -\sum_{\text{prime powers }p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
-%$$ 
-\end{center}
 
 
-\newpage
+% Remove parskip for toc
+\setlength{\parskip}{0ex plus 0.5ex minus 0.2ex}
+
 \tableofcontents
 
-\newpage
-\section{\label{foreword}Foreword}
 
-\bigskip
+% Dutch style of paragraph formatting, i.e. no indents.
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 
-The Riemann Hypothesis is one of the great unsolved problems of
+\chapter*{\label{foreword}Foreword}
+
+
+
+The \RH{} is one of the great unsolved problems of
 mathematics and the reward of \$1,000,000 of {\em Clay Mathematics
   Institute} prize money awaits the person who solves it. But---with
 or without money---its resolution is crucial for our understanding of
 the nature of numbers.
 
 There are at least four full-length books recently published, written
-for a general audience, that have the Riemann Hypothesis as their main
+for a general audience, that have the \RH{} as their main
 topic.  A reader of these books will get a fairly rich picture of the
 personalities engaged in the pursuit, and of related mathematical and
 historical issues.\endnote{List these four books here with some discussion of each?}
@@ -179,7 +205,7 @@ software to experiment with the parameters for
 the ranges of data illustrated, so as to get an even more
 vivid sense of how the numbers ``behave.''
  
-So, what {\em is} the Riemann Hypothesis? Here is a {\em first
+So, what {\em is} the \RH{}? Here is a {\em first
   description} of this hypothesis, put in one ridiculously condensed
 paragraph. We will be giving other quite miraculous formulations of
 this hypothesis as well; the task of our book is to expand the
@@ -189,7 +215,7 @@ of its importance and its beauty.
       \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
-       \begin{center}{\bf\large What {\em sort} of Hypothesis is the Riemann Hypothesis?}\end{center}
+       \begin{center}{\bf\large What {\em sort} of Hypothesis is the \RH{}?}\end{center}
        \medskip
 
 Consider the seemingly innocuous series of questions:
@@ -252,8 +278,10 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 \end{quote}
 
 
+\part{The \RH{}\label{part1}}
 
-\section{Thoughts about numbers: ancient, medieval, and modern}
+
+\chapter{Thoughts about numbers: ancient, medieval, and modern}
 
 If we are to believe the ancient Greek philosopher Aristotle the early
 Pythagoreans thought that the principles governing Number are ``the
@@ -283,14 +311,14 @@ be explored as endless as the human soul, and never a final theory.
 
 
 
-\ill{dulcinea1.jpg}{.2}{Don Quixote and ``his'' Dulcinea del Toboso}
+\ill{dulcinea1}{.2}{Don Quixote and ``his'' Dulcinea del Toboso}
 
 Numbers are obstreperous things. Don Quixote encountered this when he
 requested that the ``bachelor'' compose a poem to his lady Dulcinea del
 Toboso, the first letters of each line spelling out her name. The
 ``bachelor'' found
 
-\bigskip
+
 
 
 \begin{quote}
@@ -307,7 +335,7 @@ grant the imperviousness of the number $17$ to division.
 
 % http://www.jus.uio.no/sisu/don_quixote.miguel_de_cervantes/60.html#2068
 
-\bigskip
+
 
 
 {\em Seventeen} is indeed a prime number: there is no way of factoring
@@ -319,7 +347,7 @@ sort in our fields and valleys.
 \ill{cicada}{.3}{Cicadas emerge every 17 years}
 % from http://biology.clc.uc.edu/steincarter/cicadas.htm
 
-\bigskip
+
 
 
 Prime numbers, despite their {\em primary} position in our modern
@@ -349,7 +377,7 @@ But, until Euclid, prime numbers seem not to have been singled out as
 understanding of numerical phenomena, that they are now understood to
 be.
        
-\bigskip
+
 
 
 There is an extraordinary wealth of established truths about numbers;
@@ -358,9 +386,9 @@ numbers. But each of the important new discoveries we make give rise
 to a further richness of questions, educated guesses, heuristics,
 expectations, and unsolved problems.
             
-            \bigskip
             
-\section{What are prime numbers?}
+            
+\chapter{What are prime numbers?}
             
 
 \noindent {\em Primes as atoms. } To begin from the beginning, think
@@ -415,7 +443,7 @@ you always end up with the same collection of prime numbers:
 \ill{factor_tree_big}{1}{Factorization tree for the product $6469693230$ of the primes up to $29$.\label{factor.tree.big}}
  
                         
-The Riemann Hypothesis probes the question: how intimately can we know
+The \RH{} probes the question: how intimately can we know
 prime numbers, those {\em atoms} of multiplication?  Prime numbers are
 an important part of our daily lives.  For example, anytime we visit a
 website and purchase something online, prime numbers having over 150
@@ -543,7 +571,7 @@ the next prime $q$ after $p$ is a prime.  But there is no obvious way
 to efficiently compute anything interesting about $q$.  For example,
 what is the last digit of $q$ in its decimal expansion?
 
-\bigskip
+
 
 %\ill{sieve_boxes_100}{0.7}{Sieve of Eratosthenes\label{fig:erat}}
 
@@ -591,17 +619,15 @@ their box red.
 %\ \ \bullet\ \ 13\ \ \bullet\ \ \bullet\ \ \bullet\ \ 17\ \ \bullet\ \ 19\ \ \bullet\ \ \bullet\ \
 %\bullet\
 %\ 23\ \ \bullet\ \ \bullet\ \ \bullet\ \  \bullet\ \ \bullet\ 29,\dots $$ 
-%\bigskip
+%
 
-%\bigskip
+%
 
 
-\section{Questions about primes that any person might ask}
+\chapter{Questions about primes that any person might ask}
 
 We become quickly stymied when we ask quite elementary questions about
 the spacing of the infinite series of prime numbers.
-
-\bigskip
 
 For example, {\em are there infinitely many pairs of primes whose
   difference is $2$?}  The sequence of primes seems to be rich in such
@@ -617,10 +643,7 @@ equally unknown. {\em Is every even number greater than $2$ a sum of
   which are $1$ more than a perfect square?}  Answer: unknown.
 
 
-\bigskip
 
-% from http://www.york.ac.uk/depts/maths/histstat/people/mersenne.gif
-\ill{mersenne}{.3}{Mersenne}
 
 Remember the Mersenne prime $p= 2^{43,112,609}-1$? and how we showed
 that there is a prime $P$ larger than that? Suppose, though, someone
@@ -630,7 +653,9 @@ $p$: that is, {\em is there a prime number of the form $$2^{\rm some\
 know. It is possible that there are infinitely many Mersenne primes
 but we're far from being able to answer such questions.
 
-\bigskip
+% from http://www.york.ac.uk/depts/maths/histstat/people/mersenne.gif
+\ill{mersenne}{.3}{Mersenne}
+
 
 
 {\em Is there some neat formula giving the next prime?} More
@@ -641,7 +666,7 @@ specifically, {\em If I give you a number $N$, say $N=$ one million,
   the nonprimes until the first prime is encountered?}  Answer:
 unknown.
 
-\bigskip
+
 %%%%%%%%%%%%%%%
 
 One can think of many ways of ``getting at'' some understanding of the
@@ -670,7 +695,7 @@ Come up with with your own question about primes that
   \item    is a question about which you can begin to make numerical investigations? 
  \end{itemize}
  
-\subsection{Further questions about primes} 
+\section{Further questions about primes} 
 
 Let us, for variety, dice the question differently by concentrating on
 the {\em gaps} between one prime and the next, rather than the tally
@@ -707,7 +732,7 @@ See Table~\ref{tab:gap} for various values of ${\rm Gap}_{k}(X)$
 and Figure~\ref{fig:primegapdist} for the distribution of prime gaps
 for $X=10^7$.
    
-   \bigskip
+   
    
 \begin{table}[H]
 \begin{center}
@@ -731,7 +756,7 @@ $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is the most popular gap in this data.\label{fig:primegapdist}}
 
-   \bigskip
+   
    
    Here is yet another question with deals with
 the spacing of prime numbers that we can't answer.
@@ -838,7 +863,7 @@ So we'll continue our discussion by returning to the simplest counting
 question about prime numbers.
 
                            
-\section{How many primes are there?}
+\chapter{How many primes are there?}
 
 \ill{sieve200}{.8}{Sieving Primes up to 200}
                                                       
@@ -931,7 +956,7 @@ and \ref{fig:staircase100a}.
 
     
     
-\section{Prime numbers viewed from a distance}
+\chapter{Prime numbers viewed from a distance}
 The striking thing about these figures is that as the numbers get
 large enough, the jagged accumulation of primes, those
 quintessentially discrete entities, becomes smoother and smoother, to
@@ -963,7 +988,7 @@ With this warning, but very much fortified by the data of Figure~\ref{fig:pn1000
 let us ask: {\em what is a smooth curve that is a reasonable
   approximation to the staircase of primes?}
 
-\section{ Pure and applied  mathematics  }     
+\chapter{ Pure and applied  mathematics  }     
 
 Everyone seems to agree that, loosely speaking, there are two types of
 mathematics: {\em pure} and {\em applied}. Usually---when we judge
@@ -986,7 +1011,7 @@ to strike behind the mask of the mere appearance of the mathematical
 situation, and get at the hidden fundamentals that actually govern the
 phenomena), and some of these payoffs defying such simple
 classification, insofar as they provide powerful techniques in other
-branches of mathematics.  The Riemann Hypothesis---even in its current
+branches of mathematics.  The \RH{}---even in its current
 unsolved state---has already shown itself to have all three types of
 payoff.
 
@@ -1012,7 +1037,7 @@ that account for the apparent complexity of the nature of primes?
 %sense of what this is like in the trenches...  It says ``Warning. Make
 %sure you understand the above!'']]
    
-\section{A probabilistic ``first'' guess\label{sec:firstguess} }
+\chapter{A probabilistic ``first'' guess\label{sec:firstguess} }
 
 \ill{gauss}{.3}{Gauss}
 
@@ -1029,9 +1054,12 @@ might well hit upon Gauss's curve.
 \ill{log}{.8}{Plot of the natural logarithm $\log(X)$}
 The (natural) logarithm function $\log(X)$ 
 is roughly proportional to the function that assigns to $X$ the 
-number of digits of $X$.\footnote{More precisely, we have
-$a = \log(X)$ if $e^a = X$, where $e=2.71828182\ldots$ is Euler's famous
-constant.}  Before electronic calculators, logarithms were frequently used to 
+number of digits of $X$.  Euler's famous constant $e=2.71828182\ldots$ 
+is used in the precise description $\log$: 
+\begin{center}{\em $a = \log(X)$ is that 
+unique number such that $e^a = X$.}
+\end{center}
+Before electronic calculators, logarithms were frequently used to 
 speed up hand calculations, since logarithms translate difficult multiplication
 problems into easy addition problems,
 the logarithm of a product being equal to the sum of the logarithms
@@ -1049,10 +1077,45 @@ printed on the first piece, the printed number on the other piece that
 is  aligned with it is the product $XY$; in effect the ``slide'' adds 
 $\log(X)$ to $\log(Y)$ giving $\log(XY)$.
 
+% I found this here: http://kr.blog.yahoo.com/kimxx168/498
+% It is referenced in http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html
+% but that link is broken.
+\ill{gauss_tables_half}{.78}{Gauss's Letter (see Endnote~\ref{end:gauss_letter} for an English translation)\label{fig:gauss_letter}}
 
 In 1791, when Gauss was 14 years old, he received a book that contained 
 logarithms of numbers up to $7$ digits and a table of primes up to 10,009.
-Years later, in a letter written in 1849 (see Figure~\ref{fig:gauss_letter} below), Gauss
+Years later, in a letter\endnote{\label{end:gauss_letter}
+The following is an English translation of Gauss's letter (Figure~\ref{fig:gauss_letter}), taken from 
+\url{http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html}.
+
+\begin{quote}
+``My distinguished friend, 
+
+Your remarks concerning the frequency of primes were of interest to me in more 
+ways than one. You have reminded me of my own endeavors in this ﬁeld which 
+began in the very distant past, in 1792 or 1793, after I had acquired the Lambert 
+supplements to the logarithmic tables. Even before I had begun my more detailed 
+investigations into higher arithmetic, one of my ﬁrst projects was to turn my 
+attention to the decreasing frequency of primes, to which end I counted the primes in 
+several chiliads and recorded the results on the attached white pages. I soon recognized 
+that behind all of its fluctuations, this frequency is on the average inversely 
+proportional to the logarithm, so that the number of primes below a given bound $n$ 
+is approximately equal to 
+$$
+\int \frac{dn}{\log(n)},
+$$
+where the logarithm is understood to be hyperbolic. Later on, when I became acquainted 
+with the list in Vega’s tables (1796) going up to 400,031, I extended my 
+computation further, conﬁrming that estimate. In 1811, the appearance of Chernau’s 
+cribrum gave me much pleasure and I have frequently (since I lack the patience 
+for a continuous count) spent an idle quarter of an hour to count another chiliad 
+here and there; although I eventually gave it up without quite getting through a 
+million. Only some time later did I make use of the diligence of Goldschmidt to ﬁll 
+some of the remaining gaps in the ﬁrst million and to continue the computation 
+according to Burkhardt’s tables. Thus (for many years now) the ﬁrst three million 
+have been counted and checked against the integral. A small excerpt follows: ....''
+\end{quote}}
+written in 1849 (see Figure~\ref{fig:gauss_letter}), Gauss
 claimed that as early as 1792 or 1793 he had already observed that the
 density of prime numbers over intervals of numbers of a given rough
 magnitude $X$ seemed to average $1/\log(X)$.  Roughly speaking, this
@@ -1101,13 +1164,9 @@ Gauss's computation brings up two queries: will this spectacular ``good
 fit'' continue for arbitrarily large numbers? and, the (evidently
 prior) question: what counts as a good fit?
 
-% I found this here: http://kr.blog.yahoo.com/kimxx168/498
-% It is referenced in http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html
-% but that link is broken.
-\ill{gauss_tables}{.78}{Gauss's Letter [[English translation]]\label{fig:gauss_letter}}
 
 
-\section{What is a ``good approximation''?}\label{sec:sqrterror}
+\chapter{What is a ``good approximation''?}\label{sec:sqrterror}
 
 If you are trying to estimate a number, say, around ten thousand, and
 you get it right to within a hundred, let us celebrate this kind of
@@ -1147,11 +1206,11 @@ made an approximation with {\em square-root error} or synomymously, a
 This rough account almost suffices for what we will be discussing
 below, but to be more precise, the specific {\em gauge of accuracy}
 that will be important to us is not for a mere {\em single} estimate
-of a {\em single} error term, \bigskip
+of a {\em single} error term, 
  
  \centerline{Error term\ \  =\ \    Exact Value\ \   -\ \   Our ``good  approximation''}
   
- \bigskip
+ 
  
  \noindent but rather for {\em infinite sequences} of estimates of
  error terms. Generally, if you are interested in a numerical quantity
@@ -1201,9 +1260,9 @@ of a {\em single} error term, \bigskip
 
 \end{remark}
 
-\section { What is Riemann's Hypothesis?  ({\em first formulation})\label{sec:rh1}}
+\chapter { What is Riemann's Hypothesis?  ({\em first formulation})\label{sec:rh1}}
 
-\bigskip 
+ 
 
 Recall that a rough approximation to $\pi(X)$, the number of primes $<
 X$,  is given by the function $X/\log(X)$; and  Gauss's guess for an
@@ -1241,7 +1300,7 @@ Hypothesis:
       \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
-       \begin{center}{\bf\large The {\bf Riemann Hypothesis} (first formulation)}\end{center}
+       \begin{center}{\bf\large The {\bf \RH{}} (first formulation)}\end{center}
        \medskip
 
 For any real number $X$ the number of prime numbers less than $X$ is
@@ -1252,11 +1311,11 @@ root accurate.\label{rh:first}
 \end{minipage}}
       \end{center}
  
-\bigskip
+
  
 
 
-\section{The Prime Number Theorem\label{sec:pnt}}
+\chapter{The Prime Number Theorem\label{sec:pnt}}
   
 Take a look at Figure 10.1 again.  All three functions, $X/\log(X)$,
 $\Li(X)$ and $\pi(X)$ are ``going to infinity with $X$'' (this means
@@ -1310,7 +1369,7 @@ of this statement in an endnote.}
 Recall (on page 10 above)  that
 if $X = 1023$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top" million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
   
-The Riemann Hypothesis, as we have just formulated it, would tell us
+The \RH{}, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
 in comparison with the size of $X$. This information would imply (but
 would be {\it much} more precise information than) the statement that
@@ -1318,21 +1377,21 @@ the {\it ratio} $\Li(X)/\pi(X)$ tends to $1$, i.e., that $\Li(X)$ and
 $\pi(X)$ go to infinity at the same rate.
 
 This last statement---giving, of course, a far less precise
-relationship between $\Li(X)$ and $\pi(X)$ than the Riemann Hypothesis
+relationship between $\Li(X)$ and $\pi(X)$ than the \RH{}
 (once it is proved!) would give us.  The advantage, though, of the
 less precise statement is that it is known, and---in fact---has been
 known for over a century. It goes under the name of
   
-\vskip10pt
+
  \noindent {\bf The Prime Number Theorem:\ \ } $\Li(X)$ and $\pi(X)$ go to infinity at the same rate.
-   \vskip10pt
+   
 
    Since $\Li(X)$ and $X/\log(X)$ go to infinity at the same rate could
    equally well have expressed the ``same" theorem by saying:
 
-  \vskip10pt
+  
   \noindent {\bf The Prime Number Theorem:\ \ } $X/\log(X)$ and $\pi(X)$ go to infinity at the same rate.
-   \vskip10pt
+   
     
    This fact is a very hard-won piece of mathematics!  It was proved
    in 1896 independently by Hadamard and de la Vall\'{e}e Poussin.
@@ -1343,15 +1402,15 @@ known for over a century. It goes under the name of
    We should rewference it (Probably written by Granville).  It may be
    reasonable also to say:]
 
-        \vskip10pt
+        
         
         A milestone in the history leading up to the proof of Prime
         Number Theorem is the earlier work of Chebyshev [ref***]
         showing that (to use the terminology we introduced)
         $X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
-        \vskip15pt
+        
 
-The elusive Riemann Hypothesis, however, is much deeper than the Prime
+The elusive \RH{}, however, is much deeper than the Prime
 Number Theorem, and takes its origin from some awe-inspiring,
 difficult to interpret, lines in Bernhard Riemann's magnificent 8-page
 paper, ``On the number of primes less than a given magnitude,''
@@ -1375,7 +1434,7 @@ formulations being provably equivalent to any of the others.
 \ill{riemann}{.3}{Bernhard Riemann (1826--1866)}
 
 
-This Riemann Hypothesis remains unproved to this day, and therefore is
+This \RH{} remains unproved to this day, and therefore is
 ``only a hypothesis,'' as Osiander said of Copernicus's theory, but one
 for which we have overwhelming theoretical and numerical evidence in
 its support.  It is the kind of conjecture that Frans Oort might label
@@ -1388,9 +1447,9 @@ mathematics to find its proof (or, a counter-example!).  RH is
 one of the weightiest statements in all of mathematics. 
 
 
-\section{The {\em information} contained in the staircase of primes\label{sec:information}}
+\chapter{The {\em information} contained in the staircase of primes\label{sec:information}}
  
-\bigskip
+
 
 We have borrowed the phrase ``staircase of primes'' from the popular
 book {\em The Music of Primes} by Marcus du Sautoi, for we feel that
@@ -1421,7 +1480,7 @@ placed. This story seems to elude any simple description.  Can we
 information?
  
 
-\section{Tinkering with the carpentry of the staircase of primes\label{sec:tinkering}}
+\chapter{Tinkering with the carpentry of the staircase of primes\label{sec:tinkering}}
 
  
 For starters, notice that all the {\em risers} of this staircase (Figure~\ref{fig:staircases} above) have
@@ -1496,7 +1555,7 @@ depicted in Figure~\ref{fig:psi2}.
           \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
-       \begin{center}{\bf\large The {\bf Riemann Hypothesis} (second formulation)}\end{center}
+       \begin{center}{\bf\large The {\bf \RH{}} (second formulation)}\end{center}
        \medskip
        
        This new staircase is essentially square root close to the 45 degree
@@ -1519,12 +1578,12 @@ simplicity--not immediately apparent---to the behavior of prime
 numbers, no matter how erratic primes initially appear to us to
 be. After all, what could be simpler than a 45 degree straight line?
  
- \bigskip
+ 
 
 
-\section{What do  computer music files,  data-compression, and prime numbers have to do with each other?\label{sec:fourier1}}
+\chapter{What do  computer music files,  data-compression, and prime numbers have to do with each other?\label{sec:fourier1}}
 
-\bigskip
+
 
 
 Sounds of all sorts---and in particular the sounds of music---travel
@@ -1686,7 +1745,7 @@ psycho-acoustic understanding. With this, mp3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality.
  
-\section{Fourier analysis and the staircase of primes}
+\chapter{Fourier analysis and the staircase of primes\label{sec:fourier_staircase}}
 
 \ill{prime_pi_100_aspect1}{0.95}{The Staircase of Primes\label{fig:staircase100}}
 
@@ -1719,7 +1778,7 @@ lurking within the staircase that we would otherwise be blind to?
 ask for profound, and hidden, regularities in structure.
 
 
- In Part II of this book we will---if not explain---at least hint at how the above series of questions have been answered so far, and how the Riemann Hypothesis offers a surprise for the last question in this series. 
+ In Part~\ref{part2} of this book we will---if not explain---at least hint at how the above series of questions have been answered so far, and how the \RH{} offers a surprise for the last question in this series. 
  
  But for now, let us offer a {\it sneak preview} to the ``spectrum" alluded to in these questions!
  
@@ -1747,7 +1806,7 @@ $$
 $$ 
 and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show
 what we get for a few values of $C$.
- In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the Riemann Hypothesis holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  
+ In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the \RH{} holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  
 
 
 \ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with
@@ -1766,35 +1825,33 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
    How this ``plays out" as we take longer  and longer finite pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, and what relationship this has to the Fourier analysis of the staircase of primes is the subject of the later parts of this book.
 
 
-\section{ To our readers of Part I. } 
-The statement of the Riemann Hypothesis---admittedly as elusive as
+\chapter{ To our readers of Part~\ref{part1}} 
+The statement of the \RH{}---admittedly as elusive as
 before---has, at least, been expressed elegantly and more simply,
 given our new staircase that approximates (conjecturally with {\em
   essential square root accuracy}) a 45 degree straight line.
    
-We have offered two equivalent formulations of the Riemann Hypothesis,
+We have offered two equivalent formulations of the \RH{},
 both having to do with the manner in which the prime numbers are
 situated among all whole numbers.
 
 In doing this, we hope that we have convinced you that---in the words
 of Don Zagier---primes seem to obey no other law than that of chance
-and yet exhibit stunning regularity.  This is the end of part I of our
-bookf, and is largely the end of our main mission, to explain---in
+and yet exhibit stunning regularity.  This is the end of Part~\ref{part1} of our
+book, and is largely the end of our main mission, to explain---in
 elementary terms---{\em what is Riemann's Hypothesis?}
     
      
-For readers who have studied Differential Calculus and who are happy
-with complex numbers, we shall go further and show that the pursuit of
+For readers who have at some point studied Differential Calculus, we shall 
+go further and explain how the pursuit of
 Riemann's hypothesis may provide a key to some deeper structure of the
 prime number, and to the nature of the laws that they obey.
 
 
-       
-\newpage  
-\centerline{\Large\bf Part II }
+\part{The Spectrum of the Prime Numbers\label{part2}}
 
 
-\section{How Calculus manages to find the slopes of graphs that  
+\chapter{How Calculus manages to find the slopes of graphs that  
 have no slopes}   
    
 Differential Calculus, initially the creation of Newton and/or
@@ -1863,9 +1920,9 @@ minus\\
 {\it  the height of the blue graph  at $a$}. 
 \end{center}
 This is a manifestation of one of the basic facts of life of Calculus relating a function to its derivative:
-  \vskip10pt
+  
   \begin{quote} Given any real-valued  function $F(x)$---that has a derivative---for any interval of real numbers $[a,b]$ the total area under the graph of the derivative of $F(x)$ over that interval is equal to $F(b)-F(a)$. 
-  \end{quote}  \vskip10pt
+  \end{quote}  
     What happens if we take the series of figures \ref{fig:djump1}, \ref{fig:djump2}, \ref{fig:djump3}, \ref{fig:djump4}, etc. {\it to the limit}?  This is quite curious: 
   
   \begin{itemize}
@@ -1888,7 +1945,7 @@ rigorous foundation for what they were doing.
    
    
  % From http://en.wikipedia.org/wiki/Karl_Weierstrass
- \ill{weierstrass}{.23}{Karl Weierstrass (1815--1897)} 
+ \ill{weierstrass}{.27}{Karl Weierstrass (1815--1897)} 
  
    Karl Weierstrass, who worked during the latter part of the nineteenth century, was known as the ``father of modern analysis.'' He oversaw one of the glorious moments of rigorization of concepts that were long in use, but never before systematically organized.  He, and other analysts of the time were interested in providing a  rigorous language to talk about {\it functions} and more specifically {\it continuous functions} and {\it smooth} (i.e., {\it differentiable}) functions. They wished to have a firm understanding of limits (i.e., of sequences of numbers, or of functions).  
  
@@ -1904,7 +1961,7 @@ foundation; notably, by the French mathematician, Laurent Schwartz who provide a
 
 
 
-\section{Distributions: sharpening our approximating functions even if
+\chapter{Distributions: sharpening our approximating functions even if
   we have to let them shoot out to infinity\label{sec:dist}}
   
 
@@ -1948,16 +2005,16 @@ $$\int_a^bD(t).$$
  
  
   It is natural to talk, as well, of Cauchy sequences, and limits, of distributions. We'll say that such a sequence $D_1(t), D_2(t), D_3(t),\dots$ is a {\bf Cauchy sequence} if for every interval $[a,b]$ the quantities  $$\int_a^bD_1(t)dt,\quad \int_a^bD_2(t)dt,\quad\int_a^bD_3(t)dt,\dots$$ form a Cauchy sequence of real numbers. Now, any Cauchy sequence of distributions {\it converges to a limiting distribution} $D(t)$ which is defined by the rule that for every interval $[a,b]$,
-  \vskip5pt
+  
   $$ \int_a^bD(t)dt\ =\ \lim_{i \to \infty} \int_a^bD_i(t)dt.$$
-   \vskip5pt 
+    
   
   If, by the way, you have an infinite  sequence---say---of honest, continuous, functions that converges uniformly to a limit (which will again be a continuous function) then that sequence certainly converges---in the above sense---to the same limit when these functions are viewed as generalized functions. BUT, there are many important occasions where your sequence of honest continuous functions doesn't have that convergence property and {\it yet} when they are viewed as generalized functions they do converge to some generalized function as a limit. We will see this soon when we get back to the ``sequence of the red graphs." This sequence {\bf does} converge (in the above sense)  to the delta-function when these red graphs are thought of as a sequence of generalized functions.
 
 
 
 
- The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough---and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ \vskip10pt
+ The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough---and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ 
 \noindent {\bf A question:}  If you've never seen distributions before, but know the Riemann integral, can you guess at what the definition of $\int_a^bc(t)D(t)$  is, and can you formulate hypotheses on $c(t)$ that would allow  you  to endow this expression with a definite meaning?
 
 \ill{dirac_delta}{0.5}{The Dirac $\delta$-function, where we draw a vertical arrow to illustrate the delta function with support at a given point.}
@@ -2008,14 +2065,12 @@ $$\int_a^bF'(t)dt \ = \ F(b) -F(a).$$
 \ill{simple_staircase}{.5}{The staircase function that is $0$ for $t \le 0$, $1$ for $0 <t \le 1$ and $3$ for $1< t \le 2$ has derivative $\delta_0 + 2\delta_1$.\label{fig:simple_staircase}}
      
       
-  We'll be dealing with much more complicated staircase functions in the next section, but the general principles discussed here will nicely apply there.
-
-\endnote{
+  We'll be dealing with much more complicated staircase functions in the next section, but the general principles discussed here will nicely apply there.\endnote{
 [[I found this comment about ``Generalized functions"
      (which seems to be an early name for distributions) on Wikipedia:
 
-\vskip10pt
-\begin{quote} ``Generalized functions" were introduced by Sergei Sobolev in 1935. They were independently introduced in the late 1940s by Laurent Schwartz, who developed a comprehensive theory of distributions."
+
+\begin{quote} ``Generalized functions'' were introduced by Sergei Sobolev in 1935. They were independently introduced in the late 1940s by Laurent Schwartz, who developed a comprehensive theory of distributions.
 \end{quote}
 
 so maybe we should look into the history of this. (But I'm not keen on
@@ -2024,9 +2079,9 @@ about it, to credit Sobolev $\dots$)]]
 }
 
 
-\section{Fourier Transforms: second visit}
+\chapter{Fourier Transforms: second visit}
 
-In the first part of this book  (in Section~\ref{sec:fourier1} above) we wrote:
+In Part~\ref{part1} of this book  (in Section~\ref{sec:fourier1} above) we wrote:
 
 \begin{quote} The operation that starts with a graph and goes to its spectral picture that records the frequencies,
 amplitudes, and phases of the pure sine waves that, together, compose the graph is called the {\bf Fourier
@@ -2065,14 +2120,14 @@ transform}.
   
   
 
-\section{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
+\chapter{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
 
    Consider the $\delta$-function that we denoted $\delta(t)$  (or $\delta_0(t)$). This is also the ``generalized function" that we thought of as the ``limit of the red graphs" in Section~\ref{sec:dist} above. Even though $\delta(t)$ is  a distribution and {\it not} a bona fide function, it is symmetric about the origin, and also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is finite (its value is, in fact, $1$). All this means that, appropriately understood, the discussion of the previous section applies, and we can {\it feed} this delta-function into our Fourier Transform Machine (Figure~\ref{fig:fourier_machine}) to see what frequencies and amplitudes arise in our attempt to express---whatever this means!---the delta-function as a sum, or an integral, of cosine functions.
    
-   \vskip15pt
+   
      So what is the Fourier transform,  ${\hat \delta_0}(\theta)$, of the delta-function?
      
-          \vskip15pt
+          
   Well, the general formula would give us:
   
   $$ {\hat \delta_0}(\theta) = \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_0(t)dt$$
@@ -2082,7 +2137,7 @@ transform}.
     
     
     In other words, the Fourier transform of $\delta_0(t)$ is the constant function $$ {\hat \delta_0}(\theta)=1.$$ One can think of this colloquially as saying that the delta-function is a perfect example of {\it white noise} in that  {\it every} frequency occurs in its Fourier analysis and they all occur in equal amounts.
-        \vskip15pt
+        
     To generalize this computation let us consider for any real number $x$ the symmetrized delta-function with support at $x$ and $-x$, given by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
     
     
@@ -2100,7 +2155,7 @@ transform}.
   To summarize this in ridiculous (!) colloquial terms: {\it for any frequency $\theta$ the amount of $\cos(\theta t)$ you need to build up the generalized function $(\delta_x(t) + \delta_{-x}(t))/2$ is
 $\cos(x\theta).$ }
 
-    \vskip10pt
+    
 So far, so good, but remember that the theory of the Fourier transform has---like much of mathematics---two parts: an {\it analysis part} and a {\it synthesis} part.  We've just perfom the {\it analysis} part of the theory for these symmetrized delta functions $(\delta_x(t) + \delta_{-x}(t))/2$.  
 
 Can we synthesize them---i.e., build them up again---from their Fourier transforms?
@@ -2108,7 +2163,7 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
   
   We'll leave this, at least for now, as a question for you. 
 
-\section{On losing no information}
+\chapter{On losing no information}
 
   To manage to repackage the ``same'' data in various ways---where each way brings out some features that would be kept in the shadows if the data were packaged in some different way---is a high art, in mathematics. In a sense {\it every} mathematical equation does this, for the ``equal sign'' in the middle of the equation tells us that even though the two sides of the equation may seem different, or have different shapes, they are nonetheless ``the same data.''  For example, the equation 
   
@@ -2118,7 +2173,7 @@ which we encountered earlier in Section~\ref{sec:firstguess},  is just two ways 
 the same thing,  yet it was the basis for much manual calculation for several centuries.
   
   
-  \vskip10pt
+  
   
  Now, the problem we have been concentrating on, in this book, has been---in effect---to understand the pattern, if we can call it that, given by the placement of prime numbers among the natural  line-up of all whole numbers. 
  
@@ -2132,19 +2187,19 @@ As we have already hinted in the previous sections, however, there are various w
  
  With this in mind, let us go back to Section~\ref{sec:information} (discussing the staircase of primes) and Section~\ref{sec:tinkering}, where we tinkered with the original staircase of primes---alias: the graph of $\pi(x)$---to get $\psi(x)$ whose risers look---from afar---as if they approximated 45 degree staircase.
  
- \vskip10pt
+ 
    At this point we'll do some further carpentry on $\psi(x)$:
    
- \vskip10pt 
+  
    \begin{enumerate}
    
 \item Distort
 the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the function $$\Psi(t):= \psi(e^t).$$  No harm is done by this  for we can retrieve our original $\psi(x)$  as $$\psi(x) = \Psi(\log(x)).$$  Our distorted staircase has risers at ($0$ and) all positive integral multiples of logs of prime numbers.
-  \vskip10pt
+  
 
-\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ is just the plot of little $\psi$ but with the $x$-axis plotted on a logarithmic scale.}
+\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the right is just the plot of $\psi$ but with the $x$-axis plotted on a logarithmic scale.}
 
-\vskip10pt
+
 \item  Now we'll do something that might seem a bit more brutal: {\it take the derivative of this distorted staircase) $\Psi(t)$.}   This derivative $\Psi'(t)$ is a {\it generalized} function with support  at all nonnegative  integral multiples of logs of prime numbers.
 
 \ill{bigPsi_prime}{1}{The derivative $\Psi'(t)$: a sum of Dirac delta functions with at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and $\log(2\pi)$ at $0$).  The redder the arrow, the larger the weight.}
@@ -2152,13 +2207,13 @@ the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the
 \item    Now ---for normalization purposes---multiply $\Psi'(t)$ by
 the function $e^{?t}$ which has no effect whatsoever on the support.
   \end{enumerate}
-    \vskip10pt
+    
 {\bf William: the ``?" is just that I haven't yet recomputed the normalization factor; will do. I think that it is $\pm 1/2$ but am vague about the sign}
-\vskip10pt
+
 
 Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
 
-\vskip10pt  $$\Phi(t) \ = \ e^{?t}\Psi'(t)$$ \vskip10pt
+  $$\Phi(t) \ = \ e^{?t}\Psi'(t)$$ 
   A distribution that has a discrete set of real numbers as its support---as $\Phi(t)$ does, we sometimes like to call {\bf spike distributions} since the pictures of functions approximating them tend to look like a series of spikes.
    
  We have then before us  a spike distribution with support at integral multiples of logarithms of prime numbers, and this generalized function retains the essential information about the placement of prime numbers among all whole numbers, and
@@ -2166,7 +2221,7 @@ Let us denote by $\Phi(t)$ the generalized function that resulted from the above
    
  
    
-    \vskip10pt  Here is a sequence of functions approximating it.
+      Here is a sequence of functions approximating it.
 
 \ill{psi_200}{.6}{Illustration of the  staircase $\Psi(x)$  constructed in Section~\ref{sec:tinkering} that 
 counts weighted prime powers.\label{fig:psi_200}}
@@ -2177,22 +2232,14 @@ Figure~\ref{fig:psi_200}.  Well, we would have blip-functions (alias:
 Dirac $\delta$-functions) at each point of discontinuity of $\Psi(x)$;
 that is, at $x=$ any power of a prime.
   
-     \bigskip
-   
-     \ill{psi_prime}{.7}{Continuous approximation to the staircase
-       $\Psi(x)$ (in red) along with a plot (in blue) of the
-       derivative of this approximation.}
-      
-\bigskip
-
-   
-   
-\ill{phi_50}{0.6}{An approximation to the distribution $\Phi(t)$}
      
-\bigskip
-
-
-
+   
+%     \ill{psi_prime}{.7}{Continuous approximation to the staircase
+%       $\Psi(x)$ (in red) along with a plot (in blue) of the
+%       derivative of this approximation.}
+     
+%\ill{phi_50}{0.6}{An approximation to the distribution $\Phi(t)$}
+     
 
 The spike distribution $\Phi(t)$ is now a major player in our drama,
 because all of the crucial valuable information of placement of primes
@@ -2211,44 +2258,43 @@ information about the placement of prime numbers among all numbers.
 
 
 
-\section{The Fourier transform of $\Phi(t)$}
+\chapter{The Fourier transform of $\Phi(t)$}
 
 
- \vskip10pt
+ 
  
  
   We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Section~\ref{sec:ftdelta} In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
   
    Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  the generalized function that was engineered in section 21, and that has support at all positive integral multiples of logarithms of prime numbers.
    
-  As with any function---or generalized function---defined for non-negative values of $t$, we can ``symmetrize it" (about the $t$-axis) which means that we can define it on negative real numbers by the equation  $$\Phi(-t) = \Phi(t).$$  Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} generalized function.
+  As with any function---or generalized function---defined for non-negative values of $t$, we can ``symmetrize it" (about the $t$-axis) which means that we can define it on negative real numbers by the equation  
+  $$\Phi(-t) = \Phi(t).$$  
+Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} generalized function.
   
   
-  \vskip20pt
-{ \bf William: It becomes more and more crucial as we write this up to talk very very clearly about limits of distributions, and I'm not sure where such a section should go, and how we can pitch it but $\dots$ what follows will depend heavily on this exposition}
-  \vskip20pt
- We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
- \vskip4pt
+   We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
+ 
  $$\Phi(t)\ = \ \lim_{C \to {\infty}}\Phi_{\le C}(t)$$ where $\Phi_{\le C}(t)$  is the finite linear combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
- \vskip5pt
- $$\Phi_{\le C}(t):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
-  \vskip5pt
+ 
+ $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
+  
  
  Since the Fourier transform of each $d_{n\log(p)}(t)$ is $\cos(n\log(p)\theta)$ we compute the  Fourier transform of $\Phi_{\le C}(t)$ to be:
-  \vskip20pt
+  
   $${\hat \Phi}_{\le C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
   
   
-  We have come then---again---to the expressions graphed at the end of Part I, in section 15.
+  We have come then---again---to the expressions graphed at the end of Part~\ref{part1}, in 
+  Section~\ref{sec:fourier_staircase}.
   
-  \vskip20pt
-  {\bf WILLIAM: Maybe here we could reproduce figures 15.3,15.4,15.5, and 15.6, in a smaller size than they appear in section 15, but still where the basic features are legible?}
-    \vskip20pt
+  
+  \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).}
 
 
 \begin{itemize}
 \item The first surprising thing about this discrete distribution is that its Fourier transform is again discrete. 
-\vskip20pt
+
 
 [[Put an array of say 6 random plots of discrete distributions along
 with their fft's which don't look discrete at all.]]  In
@@ -2256,9 +2302,9 @@ Section~\ref{sec:dd} we will revisit the curious case of distributions
 with discrete support that have Fourier transforms with discrete
 support.
 
-\vskip20pt
+
 That is, the spectrum is given by an infinite, but discrete list of
-numbers at the spikes down in Figure~\ref{fig:phi_even_a}.
+numbers at the spikes:
 $$
   \theta_1, \theta_2, \theta_3,\dots
 $$
@@ -2278,7 +2324,7 @@ This, Riemann knew!
   need really interesting SAGE worksheets here.}
       
       
-{\bf The Spike distribution $\Phi(t)$; the Riemann Hypothesis
+{\bf The Spike distribution $\Phi(t)$; the \RH{}
   ({\em third formulation})}
   
 Here we use the basic definition of Fourier transform, and get by
@@ -2293,25 +2339,9 @@ $${\hat \Phi}_{\rm odd}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\sin(s \log(p^
    
 Figures~\ref{fig:phi_even} and \ref{fig:phi_odd} show what you get for
 graphs of these distributions ${\hat \Phi}_{\rm even}(s)$ and ${\hat
-  \Phi}_{\rm odd}(s)$ if you cut off the sums above at $p^n < 100$.
+  \Phi}_{\rm odd}(s)$ if you cut off the sums above at $p^n \leq 100$.
   
-\ill{phi_even}{.7}{Graph of an approximation to ${\hat \Phi}_{\rm even}(s)$ using $p^n<100$\label{fig:phi_even}}
-  
-\ill{phi_odd}{.7}{Graph of an approximation to ${\hat \Phi}_{\rm odd}(s)$ using $p^n<100$\label{fig:phi_odd}}
-   
 
-{\bf [Barry: I've been trying the below and numerically it seems that
-  it just doesn't work.  The issue is likely roundoff error, so I
-  suggest not doing this.]  William: We could show a series of better
-  and better approximations to the even and odd Fourier transforms of
-  $\Phi(t)$, noting that the approximations to even one seem to be
-  coalescing to spikes at (or around, at least) the real numbers
-  $14.13...$ etc.  and the approximations to the odd one seems to have
-  some strange behavior at those same real numbers $14.13...$ etc.
-  but could very well be settling down to zero. We then blurt out that
-  this is---in fact---the case, and is proven (we should check that
-  we're not overstating things, but then:}
-  
 Define the {\bf Spectrum of the Primes} the set of real numbers
 $\theta_1, \theta_2, \theta_3, \dots$ that comprise the {\em support}
 of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
@@ -2320,12 +2350,12 @@ of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
  \begin{center}
       \shadowbox{ \begin{minipage}{0.9\textwidth}
       \mbox{}       \vspace{0.2ex}
-      \begin{center}{\bf\large The Riemann Hypothesis is equivalent to the assertion that  $\Phi(t)$ is {\em equal to} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
+      \begin{center}{\bf\large The \RH{} is equivalent to the assertion that  $\Phi(t)$ is {\em equal to} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
 ...
     \vspace{1ex}
     \end{minipage}}
  \end{center}
-\bigskip
+
 
  
 {\bf Aside. Here we will motivate the above equivalent statement of RH
@@ -2338,7 +2368,7 @@ of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
   has the property that the sum of the $\cos(\theta' t)$'s for
   $\theta' \in \Theta'$ is discrete.}
 
-\bigskip
+
 
 \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$, where
 $\theta_1 \sim 14.13, \ldots$ are the first $1000$ frequencies.  The red
@@ -2351,7 +2381,7 @@ by the Fourier series, and how the prime powers $3^3$ and $2^5$ also appear.}
 \ill{phi_cos_sum_1010_1026_15000}{.7}{Fourier series from $1,000$ to $1,030$ using 15,000 of the numbers $\theta_i$.  Note the twin primes $1019$ and $1021$ and that $1024=2^{10}$.}
 
  
-%\section{Approximations versus exact descriptions: the spectral analysis of primes }
+%\chapter{Approximations versus exact descriptions: the spectral analysis of primes }
 
 %{\bf Aside. We give a ``Fourier'' reconstruction of $\psi(t)$ in terms of $\Theta$}
  
@@ -2374,29 +2404,32 @@ of $\Phi(t)$ (including the exponential factors) are
 $e^{t/2} \cdot \frac{\theta\sin(t\theta) + \frac{1}{2}\cos(t\theta)}{\theta^2 + 1/4}$
 for $\theta \sim 14.13, 21.02$}
 
-\ill{psi_approx_1_2_5_30}{0.7}{Fourier approximations to the step function 
-$\Psi$ obtained using $1$, $2$, $5$, and $30$ frequencies.}
 
-\ill{psi_approx_using_30_zeros_from4to5}{0.7}{Fourier 
-approximation to the step function $\Psi$ obtained using $30$
-frequences and graphed from $1$ to $5$}
+{\bf [[I commented out the plots of Fourier approximation to Psi, since I can't find any code to redraw them, we don't discuss this, and I don't remember how to draw them anyways.]]}
 
-\ill{psi_using_30_terms}{0.7}{Fourier approximation to the step 
-function $\Psi$ obtained using $30$ frequences.}
+%\ill{psi_approx_1_2_5_30}{0.7}{Fourier approximations to the step function 
+%$\Psi$ obtained using $1$, $2$, $5$, and $30$ frequencies.}
+
+%\ill{psi_approx_using_30_zeros_from4to5}{0.7}{Fourier 
+%approximation to the step function $\Psi$ obtained using $30$
+%frequences and graphed from $1$ to $5$}
+
+%\ill{psi_using_30_terms}{0.7}{Fourier approximation to the step 
+%function $\Psi$ obtained using $30$ frequences.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ill{phi_even}{.5}{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
+%\ill{phi_even}{.5}{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
 
 \end{itemize}
 
 
 
-\section{Distributions with discrete support that have Fourier
+\chapter{Distributions with discrete support that have Fourier
   transforms with discrete support\label{sec:dd}}
 [[Explain, in a leisurely way, how curious this is.]]
 
-\section{How to compute the Spectrum knowing $\pi(X)$}
+\chapter{How to compute the Spectrum knowing $\pi(X)$}
 
 
  We can---at least approximately---{\it compute} the $\theta_i$'s of this spectrum. Riemann knew how to compute too!  In fact, he computed to pretty good accuracy, the first few $\theta_i$'s:
@@ -2484,10 +2517,10 @@ The hidden order, then, of primes is to be sought in the elegant
 structure of the zeroes of Riemann's zeta function!
 
 
-\section{How to build $\pi(X)$ (Riemann's way) knowing the Spectrum}
+\chapter{How to build $\pi(X)$ (Riemann's way) knowing the Spectrum}
 
 
-  We have been dealing in this Part III of our book with $\Phi(t)$ a
+  We have been dealing in this Part~\ref{part2} of our book with $\Phi(t)$ a
   distribution that---we said---contains all the essential information
   about the placement of primes among numbers. We have given a clean
   restatement of Riemann's hypothesis, the third restatement so far,
@@ -2497,15 +2530,15 @@ structure of the zeroes of Riemann's zeta function!
   original problem---to understand this staircase---would be whether
   we can return to the original staircase, and ``reconstruct it'' so to
   speak, solely from the information of $\Phi(t)$---or equivalently,
-  assuming the Riemann hypothesis as formulated in the previous
+  assuming the \RH{} as formulated in the previous
   section---can we construct the staircase of primes $\pi(X)$ solely
   from knowledge of the sequence of real numbers $\theta_1,
   \theta_2,\theta_3,\dots$
   
   
-\bigskip
 
-The answer to this  is yes (given the Riemann hypothesis), and is discussed very beautifully  by Bernhard
+
+The answer to this  is yes (given the \RH{}), and is discussed very beautifully  by Bernhard
 Riemann himself in his famous 1859 article cited above.
 
 Bernhard Riemann used the spectrum of the prime numbers to provide an 
@@ -2544,7 +2577,7 @@ where $\mu(n)$ is the Moebius function introduced above.
 In Section~\ref{sec:pnt} we encountered the Prime Number Theorem which 
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$, 
 in the sense that both go to infinity at the same rate. 
-Our first formulation of the Riemann Hypothesis (see page~\pageref{rh:first})
+Our first formulation of the \RH{} (see page~\pageref{rh:first})
 was that $\Li(X)$ is an essentially square root accurate approximation of $\pi(X)$. 
 Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate that Riemann's function $R(X)$ appears to be a better
 approximation to $\pi(X)$ than anything we have seen before. 
@@ -2583,7 +2616,7 @@ the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
 
 \ill{riemann_Rk}{0.8}{Riemann analytic formula for $\pi(X)$.}
 
-The Riemann Hypothesis, if true, would tell us that these correction
+The \RH{}, if true, would tell us that these correction
 terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small},
 and all the successively corrected smooth curves $$R(X), R_1(X),
 R_2(X),R_3(X),\dots$$ are good approximations to $\pi(X)$.
@@ -2601,11 +2634,11 @@ numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
 Here in the book will be where we refer explicitly to complex numbers for the first time!!
 The definition of Riemann's $C_k(X)$ requires complex numbers $a+bi$, where $i=\sqrt{-1}$, 
 and extending the function $\Li(X)$ to make sense when given complex numbers as input.   
-Assuming the Riemann Hypothesis, the Riemann correction terms $C_k(X)$ are then
+Assuming the \RH{}, the Riemann correction terms $C_k(X)$ are then
 $$
    C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}), 
 $$
-where the $\theta_1 = 4.134725142\dots, \theta_2 = 21.022039638\dots$
+where the $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$
 are the spectrum of the prime numbers.\endnote{ People who know that these correction terms are
 index by the nontrivial zeroes of the Riemann zeta-function may well
 ask how I propose to order them if RH is false; the following
@@ -2637,7 +2670,7 @@ on a single function, namely his initial guess $R(X)$.
 \ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.}
 
 
-\section{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
+\chapter{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
 
 {\bf Here we develop a tiny bit of the traditional route of exposition
   to RH. Namely, in terms of the successive nontrivial {\em zeroes of
@@ -2650,7 +2683,7 @@ an accuracy within $3 \cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 The first three of these zeroes are:
   $$\rho_1={1\over 2} + 14.134725\dots i\ \ \ \ \  \rho_2={1\over 2} + 21.022040\dots i\ \ \ \rho_3={1\over 2} + 25.01\dots i\ \ 
 \ {\rm etc.}.]$$ 
-\bigskip
+
 
 
 We hope that it is OK if we don't explain this at all, for it does
@@ -2661,7 +2694,7 @@ numbers. (You can squint at the way Riemann wrote out the
 zeta-function by trying to make out the formula on the first page of
 his manuscript, in Figure~\ref{fig:riemamn}.)
     
-\bigskip
+
 
 
 You will notice the curious persistence of the ${1\over 2}$'s in the
@@ -2670,17 +2703,17 @@ to this phenomenon, which we now know holds for all 1029.9 billion
 zeroes that have been tabulated as of Feb.  18, 2005!  The ${1\over
   2}$ in the exponent of a correction term is what guarantees that the
 correction term is indeed ``square- root small.'' We are ready, then,
-for another equivalent formulation of the Riemann Hypothesis, this
+for another equivalent formulation of the \RH{}, this
 being--in fact--the more traditional way of expressing it:
  
-\bigskip
+
 
   \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
-       \begin{center}{\bf\large The {\bf Riemann Hypothesis} (fourth formulation)}\end{center}
+       \begin{center}{\bf\large The {\bf \RH{}} (fourth formulation)}\end{center}
        \medskip
-       The Riemann Hypothesis is equivalent to the statement that all
+       The \RH{} is equivalent to the statement that all
        the nontrivial zeroes of the Riemann zeta-function lie on the
        line ${1\over 2}+iy $ in the complex plane
 \vspace{1ex}
@@ -2688,7 +2721,7 @@ being--in fact--the more traditional way of expressing it:
       \end{center}
 
 
-\bigskip
+
 
 
 That a simple geometric property of these zeroes (lying on a line!) is
@@ -2709,7 +2742,7 @@ ones listed earlier-- waiting for our discovery of this deeper level
 of arithmetic?  Or for layers deeper still?  Are we, in fact, just at
 the beginning?
 
-\bigskip
+
 
 
 These are not completely idle thoughts, for a tantalizing analogy
@@ -2719,7 +2752,7 @@ Alexander Grothendieck, and Pierre Deligne--where the corresponding
 analogue of Riemann's hypothesis has indeed been proved$\dots$
 
 
-\section{Glossary}
+\chapter{Glossary}
 
 Here we give all the connections with the standard literature and 
 coventional terminology that we restrained
@@ -2736,11 +2769,17 @@ coventional terminology that we restrained
 
 
 
-\section{Endnotes}
+\backmatter
+
+\chapter{Endnotes}
 \theendnotes
 
-\section{List of Figures}
-\listoffigures
+
+\eject
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+
 
 \label{lastpage}
 
