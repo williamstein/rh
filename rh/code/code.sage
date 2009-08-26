@@ -801,6 +801,31 @@ def fig_Psiprime(dir, ext):
            xmin=-1/2, xmax=log(xmax), ymax=ymax,
              axes=False, gridlines=True, figsize=[8,3])    
 
+def fig_Phi(dir=0, ext=0):
+    g = line([(0,0),(0,100)], rgbcolor='black')
+    xmax = 20
+    ymax = 50 
+    for n in [1..xmax]:
+        if is_prime_power(n):
+            if n == 1:
+                h = log(2*pi)
+            else: 
+                h = log(factor(n)[0][0])
+            h *= exp(-log(n)/2)
+            c = (float(h)/log(xmax), 0, 1-float(h)/log(xmax))
+            g += arrow((log(n),-1),(log(n),ymax), width=2, rgbcolor=c)
+            g += arrow((-log(n),-1),(-log(n),ymax), width=2, rgbcolor=c)
+            if n in [2, 5, 16]:
+               g += text("log(%s)"%n, (log(n),-5), rgbcolor='black', fontsize=12)
+               g += line([(log(n),-2), (log(n),0)], rgbcolor='black')
+               g += text("log(%s)"%n, (-log(n),-5), rgbcolor='black', fontsize=12)
+               g += line([(-log(n),-2), (-log(n),0)], rgbcolor='black')
+    g += line([(-log(xmax)-1,0), (log(xmax)+1,0)], thickness=2)
+    g.save(dir+'/bigPhi.%s'%ext,
+           xmin=-log(xmax), xmax=log(xmax), ymax=ymax,
+             axes=False, gridlines=True, figsize=[8,3])    
+
+
 ##############################################################
 # Sin, etc. waves
 ##############################################################

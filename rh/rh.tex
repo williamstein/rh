@@ -1,4 +1,4 @@
-\documentclass[11pt]{book}
+\documentclass[openany]{book}
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
 
@@ -281,7 +281,7 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 \part{The \RH{}\label{part1}}
 
 
-\chapter{Thoughts about numbers: ancient, medieval, and modern}
+\chapter[Thoughts about numbers]{Thoughts about numbers: ancient, medieval, and modern}
 
 If we are to believe the ancient Greek philosopher Aristotle the early
 Pythagoreans thought that the principles governing Number are ``the
@@ -541,8 +541,8 @@ $\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443\}$
 \newline
 $\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051\}$
 \newline
-$\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051, 29881, 67003,
-9119521, 6212157481\}$
+$\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051, 29881, 67003,\\
+\mbox{}\qquad\qquad\qquad 9119521, 6212157481\}$
 \newline
 \mbox{}\qquad{}etc.\endnote{The sequence of prime numbers we find by this
 procedure is discussed in more detail with references at
@@ -558,9 +558,6 @@ digits (the record prime $p$ above will win this prize), and offers
 another \$150,000 cash prize to the first group to find a prime with
 at least 100,000,000 decimal digits.
 
-[[We could remark that there are infinitely many primes, but it
-is {\em not} known whether or not there are infinitely
-many Mersenne primes, i.e., primes of the form $2^p - 1$. ]]
 
 The number $p$ displayed above is the largest prime we know, where by
 ``know'' we mean that we know it so explicitly that we can {\em
@@ -624,7 +621,7 @@ their box red.
 %
 
 
-\chapter{Questions about primes that any person might ask}
+\chapter[Questions about primes]{Questions about primes that any person might ask}
 
 We become quickly stymied when we ask quite elementary questions about
 the spacing of the infinite series of prime numbers.
@@ -1260,7 +1257,7 @@ of a {\em single} error term,
 
 \end{remark}
 
-\chapter { What is Riemann's Hypothesis?  ({\em first formulation})\label{sec:rh1}}
+\chapter[What is Riemann's Hypothesis?] { What is Riemann's Hypothesis?  ({\em first formulation})\label{sec:rh1}}
 
  
 
@@ -1447,7 +1444,7 @@ mathematics to find its proof (or, a counter-example!).  RH is
 one of the weightiest statements in all of mathematics. 
 
 
-\chapter{The {\em information} contained in the staircase of primes\label{sec:information}}
+\chapter[The staircase of primes]{The {\em information} contained in the staircase of primes\label{sec:information}}
  
 
 
@@ -1470,6 +1467,11 @@ different ranges.
 
 \includegraphics[width=.6\textwidth]{illustrations/PN_100000}
 \end{center}
+
+
+
+
+
 \caption{The Staircase of Primes\label{fig:staircases}}
 \end{figure}
 
@@ -1479,8 +1481,10 @@ placed. This story seems to elude any simple description.  Can we
 ``tinker with'' this staircase without destroying this valuable
 information?
  
+ 
+ 
 
-\chapter{Tinkering with the carpentry of the staircase of primes\label{sec:tinkering}}
+\chapter[Tinkering with the staircase of primes]{Tinkering with the carpentry of the staircase of primes\label{sec:tinkering}}
 
  
 For starters, notice that all the {\em risers} of this staircase (Figure~\ref{fig:staircases} above) have
@@ -1581,7 +1585,7 @@ be. After all, what could be simpler than a 45 degree straight line?
  
 
 
-\chapter{What do  computer music files,  data-compression, and prime numbers have to do with each other?\label{sec:fourier1}}
+\chapter[Computer music files and prime numbers]{What do  computer music files,  data-compression, and prime numbers have to do with each other?\label{sec:fourier1}}
 
 
 
@@ -1851,7 +1855,7 @@ prime number, and to the nature of the laws that they obey.
 \part{The Spectrum of the Prime Numbers\label{part2}}
 
 
-\chapter{How Calculus manages to find the slopes of graphs that  
+\chapter[Slopes of graphs that have no slopes]{How Calculus manages to find the slopes of graphs that  
 have no slopes}   
    
 Differential Calculus, initially the creation of Newton and/or
@@ -1961,7 +1965,7 @@ foundation; notably, by the French mathematician, Laurent Schwartz who provide a
 
 
 
-\chapter{Distributions: sharpening our approximating functions even if
+\chapter[Distributions]{Distributions: sharpening our approximating functions even if
   we have to let them shoot out to infinity\label{sec:dist}}
   
 
@@ -2120,7 +2124,7 @@ transform}.
   
   
 
-\chapter{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
+\chapter[Fourier transform of delta]{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
 
    Consider the $\delta$-function that we denoted $\delta(t)$  (or $\delta_0(t)$). This is also the ``generalized function" that we thought of as the ``limit of the red graphs" in Section~\ref{sec:dist} above. Even though $\delta(t)$ is  a distribution and {\it not} a bona fide function, it is symmetric about the origin, and also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is finite (its value is, in fact, $1$). All this means that, appropriately understood, the discussion of the previous section applies, and we can {\it feed} this delta-function into our Fourier Transform Machine (Figure~\ref{fig:fourier_machine}) to see what frequencies and amplitudes arise in our attempt to express---whatever this means!---the delta-function as a sum, or an integral, of cosine functions.
    
@@ -2163,7 +2167,7 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
   
   We'll leave this, at least for now, as a question for you. 
 
-\chapter{On losing no information}
+\chapter{On losing no information\label{sec:loseno}}
 
   To manage to repackage the ``same'' data in various ways---where each way brings out some features that would be kept in the shadows if the data were packaged in some different way---is a high art, in mathematics. In a sense {\it every} mathematical equation does this, for the ``equal sign'' in the middle of the equation tells us that even though the two sides of the equation may seem different, or have different shapes, they are nonetheless ``the same data.''  For example, the equation 
   
@@ -2202,7 +2206,7 @@ the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the
 
 \item  Now we'll do something that might seem a bit more brutal: {\it take the derivative of this distorted staircase) $\Psi(t)$.}   This derivative $\Psi'(t)$ is a {\it generalized} function with support  at all nonnegative  integral multiples of logs of prime numbers.
 
-\ill{bigPsi_prime}{1}{The derivative $\Psi'(t)$: a sum of Dirac delta functions with at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and $\log(2\pi)$ at $0$).  The redder the arrow, the larger the weight.}
+\ill{bigPsi_prime}{1}{$\Psi'(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and $\log(2\pi)$ at $0$).  The more red the arrow, the larger the weight.}
 
 \item    Now ---for normalization purposes---multiply $\Psi'(t)$ by
 the function $e^{?t}$ which has no effect whatsoever on the support.
@@ -2258,20 +2262,25 @@ information about the placement of prime numbers among all numbers.
 
 
 
-\chapter{The Fourier transform of $\Phi(t)$}
+\chapter{Going from the primes to the spectrum}
 
-
+{\bf This chapter is in a very provisional  (or rather: nontempered) state and the moment, and we'll be figuring out how to deal with this, following the phone conversation we had on Tuesday}
  
  
  
-  We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Section~\ref{sec:ftdelta} In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
+  We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Section~\ref{sec:ftdelta}. In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
   
-   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  the generalized function that was engineered in section 21, and that has support at all positive integral multiples of logarithms of prime numbers.
+
+   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  the generalized function that we engineered in Section~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
+   
+
    
   As with any function---or generalized function---defined for non-negative values of $t$, we can ``symmetrize it" (about the $t$-axis) which means that we can define it on negative real numbers by the equation  
   $$\Phi(-t) = \Phi(t).$$  
 Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} generalized function.
   
+       \ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller the weight.}
+
   
    We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
  
@@ -2345,6 +2354,8 @@ graphs of these distributions ${\hat \Phi}_{\rm even}(s)$ and ${\hat
 Define the {\bf Spectrum of the Primes} the set of real numbers
 $\theta_1, \theta_2, \theta_3, \dots$ that comprise the {\em support}
 of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
+ 
+\chapter{How to build $\Phi(t)$ from the spectrum}
  
  
  \begin{center}
@@ -2422,14 +2433,6 @@ for $\theta \sim 14.13, 21.02$}
 %\ill{phi_even}{.5}{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
 
 \end{itemize}
-
-
-
-\chapter{Distributions with discrete support that have Fourier
-  transforms with discrete support\label{sec:dd}}
-[[Explain, in a leisurely way, how curious this is.]]
-
-\chapter{How to compute the Spectrum knowing $\pi(X)$}
 
 
  We can---at least approximately---{\it compute} the $\theta_i$'s of this spectrum. Riemann knew how to compute too!  In fact, he computed to pretty good accuracy, the first few $\theta_i$'s:
@@ -2517,7 +2520,7 @@ The hidden order, then, of primes is to be sought in the elegant
 structure of the zeroes of Riemann's zeta function!
 
 
-\chapter{How to build $\pi(X)$ (Riemann's way) knowing the Spectrum}
+\chapter[Building $\pi(X)$ knowing the Spectrum]{How to build $\pi(X)$ knowing the Spectrum (Riemann's way)}
 
 
   We have been dealing in this Part~\ref{part2} of our book with $\Phi(t)$ a
@@ -2670,7 +2673,7 @@ on a single function, namely his initial guess $R(X)$.
 \ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.}
 
 
-\chapter{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
+\chapter[The Riemann Zeta-Function]{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
 
 {\bf Here we develop a tiny bit of the traditional route of exposition
   to RH. Namely, in terms of the successive nontrivial {\em zeroes of
@@ -2773,6 +2776,8 @@ coventional terminology that we restrained
 
 \chapter{Endnotes}
 \theendnotes
+\vfill
+\mbox{}
 
 
 \eject
