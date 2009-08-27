@@ -706,6 +706,70 @@ $$-\sum_{p^n} {\frac{\log(p)}{p^n}}\cos(ns \log(p))$$
 
 The obvious first thing to do is think through where this came from in the first place.
 
+\section{August 26, 2009}
+
+Notes on the current draft. 
+
+\begin{enumerate}
+\item "Pure and applied" chapter title looks weird (space to left)
+\item "Fourier Transforms:..." chapter title -- don't capitalize?
+\item Compile list of popular RH books.
+\item 100 figures --> 125 figures
+\item {\tt http://wstein/rh --> http://wstein.org/rh}; also mention there that every single
+figure in the entire book can be automatically computed using a Sage script available
+at the above website.  
+\item actually post my script at http://wstein.org/rh.
+\item Write code to auto-translate our entire book to a web page with embedded interactive
+controls, with one page for each chapter (this is more longterm).
+\item We {\em have} to add the precise formulation that RH is equivalent to
+$$|\pi(x) - \Li(x)| \leq \log(x) \sqrt{x}.$$
+It's definitely my favorite formulation of RH.
+\item  "If we were to suggest some possible speciﬁc items to come home with, 
+after read our book, three key phrases – prime numbers, square-root accu- 
+rate, and error term – would head the list."    You know, a fourth would be the
+notion of "distribution", wouldn't it?
+\item Delete my comment "[[By prior does he mean ..." since the point as I see it
+is that this is just a remark that the reader doesn't have totally understand.
+\item " 150 decimal digits" --> "hundreds of decimal digits" (better to be vague)
+\item "Offer two primes, say, P and Q each with more than 100 digits"  --> few hundred digits.
+I want to be vague because I don't want to get in trouble with CCR about making any specific
+claims about the difficulty of cryptanalysis.  Also, factoring a product of two 100 digit primes
+is the sort of thing that has I think (just barely) been done by people (though it took a while and a lot of computers). 
+\item "In the 1990s, the Electronic" -- say that "as mentioned above, the first prize has been
+claimed, but the second has not"
+\item There is a standard "sketch of eratosthenes" here: http://www.teamrenzan.com/archives/writer/nagai/eratosthenes.jpg    Should we include it?
+\item "We become quickly stymied when we ask quite elementary questions about the 
+spacing of the inﬁnite series of prime numbers. " -- in the following paragraph we state
+three questions.  We should give say Richard Guy's book in an endnote as a reference, and
+also mention that two of the problems have standard names. 
+\item "[[maybe reference in an endnote 
+something involving Green/Tao or Goldstein or some other recent big theorem 
+related to the above?]]"  -- in fact, now this would be too much of a distraction. delete?
+\item put the hardy-littlewood thing in as an endnote and "answer" to the challenge, though 
+emphasize that it is only a conjecture.  the prime factorials are the most popular for  awhile.
+\item The plots fig\_prime\_pi\_aspect1 don't look perfect (figures 4.0.8, 4.0.9) since look slightly bent
+as they are plotted using sampling.  Just have to add a shade option to the function plot\_step\_function.
+\item " a mere $154 = 216,\!970  - 216,\!816$; not as close as the 2004 US
+elections, but pretty close nevertheless)" -- delete the election thing.  Was it really off
+by less than $154$?  I don't think so.
+\item Add endnote pointing to wikipedia PNT page, and reference Chebyshev.  
+\item (done) Remember to explain that we plot staircases instead of shelves, i.e., we draw a vertical riser even 
+though technically that is "wrong".
+\item (pg 67) Add An illustration of the fund. theorem of calculus, perhaps related to the 
+"This is Calculus" illustration from before. 
+\item Cite this: The Riemann hypothesis: a resource for the afficionado and virtuoso alike
+ By Peter B. Borwein, Stephen Choi, Brendan Rooney
+ \item That $$|\pi(x) - \Li(x)| \leq \log(x) \sqrt{x}.$$ is equivalent to RH 
+ (but with a big O) is Von Koch's theorem.
+ \item I think we mention Golbach in "questions about primes".  In an endnote
+ we could mention that GRH "asymptotically" implies it. From page 84 of "The riemann hypothesis: a resource"
+ it says "Hardy-Littlewood prove that GRH implies almost every even integer
+ is a sum of two primes."
+ \item "My student wrote to Silva and it turns out that the record computation
+of $\pi(10^{23})$ that he did took 2 months on a single computer that had
+2GB of RAM."
+
+\end{enumerate}
 
 
 

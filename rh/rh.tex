@@ -5,6 +5,8 @@
 \usepackage{endnotes}
 \usepackage{float}
 
+\usepackage{wrapfig}
+
 
 \usepackage{fancybox}
 \usepackage{graphicx}
@@ -23,32 +25,27 @@
 
 \newcommand{\mycaption}[1]{\begin{quote}{\bf Figure: } \large #1\end{quote}}
 
-\newcommand{\ill}[3]{ 
-   \begin{figure}[H]
-   \begin{center}
-   \includegraphics[width=#2\textwidth]{illustrations/#1}
-   \caption{#3}
-   \end{center}
-    \end{figure}
-}
+\newcommand{\ill}[3]{%
+   \begin{figure}[H]%
+   \vspace{-2ex}
+   \centering%
+   \includegraphics[width=#2\textwidth]{illustrations/#1}%
+   \caption{#3}%
+   \vspace{-2ex}
+    \end{figure}}
 
-\newcommand{\illtwo}[4]{ 
-   \begin{figure}[H]
-   \begin{center}
-   \includegraphics[width=#3\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#3\textwidth]{illustrations/#2}
-   \caption{#4}
-    \end{center}
-    \end{figure}
-}
+\newcommand{\illtwo}[4]{%
+   \begin{figure}[H]\centering%
+   \includegraphics[width=#3\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#3\textwidth]{illustrations/#2}%
+   \caption{#4}%
+    \end{figure}}
 
-\newcommand{\illthree}[5]{ 
-   \begin{figure}[H]
-   \begin{center}
-   \includegraphics[width=#4\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#2}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#3}
-   \caption{#5}
-    \end{center}
-    \end{figure}
-}
+\newcommand{\illthree}[5]{%
+   \begin{figure}[H]%
+\centering%
+   \includegraphics[width=#4\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#2}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#3}%
+   \caption{#5}%
+    \end{figure}}
 
 %%%% Theoremstyles
 \theoremstyle{plain}
@@ -180,7 +177,10 @@ There are at least four full-length books recently published, written
 for a general audience, that have the \RH{} as their main
 topic.  A reader of these books will get a fairly rich picture of the
 personalities engaged in the pursuit, and of related mathematical and
-historical issues.\endnote{List these four books here with some discussion of each?}
+historical issues.\endnote{List these four books here with some discussion of each?
+
+Music of Primes by Marcus du Sautoi
+}
      
 This is {\em not} the mission of the book that you now hold in your
 hands. We aim---instead---to explain, in as direct a manner as
@@ -389,7 +389,6 @@ expectations, and unsolved problems.
             
             
 \chapter{What are prime numbers?}
-            
 
 \noindent {\em Primes as atoms. } To begin from the beginning, think
 of the operation of multiplication as a bond that ties numbers
@@ -401,7 +400,12 @@ a product of smaller whole numbers) and, of course, we would
 eventually, if not immediately, come up with $6 = 2\times 3$ and
 discover that $2$ and $3$ factor no further; the numbers $2$ and $3$,
 then, are the indecomposable entities (atoms, if you wish) that
-comprise our number.  By definition, a {\bf prime number}
+comprise our number.  
+
+\ill{factor_tree_6}{.3}{The number $6 = 2\times 3$}
+            
+
+By definition, a {\bf prime number}
 (colloquially, {\em a prime}) is a whole number, bigger than $1$, that
 cannot be factored into a product of two smaller whole numbers. So,
 $2$ and $3$ are the first two prime numbers. The next number along the
@@ -424,7 +428,7 @@ case after changing the ordering of the factors we arrive at:
 $$
    12= 2 \times 2 \times 3.
 $$
-\ill{factor_tree_12}{0.5}{Factorization of $12$}
+\illtwo{factor_tree_12}{factor_tree_12b}{0.3}{Factorizations of $12$}
 
 If you try to factor the number $300$, there are many
 ways to begin:
@@ -440,7 +444,7 @@ you always end up with the same collection of prime numbers:
 \illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
 {Factor trees that illustrates the factorization of 300 as a product of primes.\label{fig:factor300}}
 
-\ill{factor_tree_big}{1}{Factorization tree for the product $6469693230$ of the primes up to $29$.\label{factor.tree.big}}
+\ill{factor_tree_big}{1}{Factorization tree for the product of the primes up to $29$.\label{factor.tree.big}}
  
                         
 The \RH{} probes the question: how intimately can we know
@@ -597,13 +601,12 @@ multiples we grey them out, and instead of circling primes we color
 their box red.
 
 \begin{figure}[H]
-\begin{center}
+\centering
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-2}
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-3}\\
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-5}
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-7}\\
 \caption{Using the Primes 2,3,5,7 to Sieve out the Primes up to 100\label{fig:erat}}
-\end{center}
 \end{figure}
 
 
@@ -710,7 +713,8 @@ $2009$.
 \end{quote}
 
 
-Similarly with difference $4$, or $8$, or---in fact---any even number
+Similarly, it interesting to consider primes $p$ and $q$
+with difference $4$, or $8$, or---in fact---any even number
 $2k$. That is, people have guessed that there are infinitely many
 pairs of primes with difference $4$, with difference $6$, etc. but
 none of these guesses have yet been proved. [[maybe reference in an
@@ -731,8 +735,7 @@ for $X=10^7$.
    
    
    
-\begin{table}[H]
-\begin{center}
+\begin{table}[H]\centering
 \caption{Values of ${\rm Gap}_{k}(X)$ \label{tab:gap}}
 \vspace{1em}
 
@@ -746,7 +749,6 @@ $10^5$ & 1224 & 1215 & 1940 & 773 \\\hline
 $10^6$ & 8169 & 8143 & 13549 & 5569 \\\hline
 $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 \end{tabular}
-\end{center}
 \end{table}  
 
 
@@ -761,7 +763,7 @@ the spacing of prime numbers that we can't answer.
 {\em Racing Gap $2$,  Gap $4$, Gap $6$, and Gap $8$ against each other:} 
   
 \begin{quote}
-  Challenge: As X tends to infinity which of the three $Gap_2(X),
+  Challenge: As $X$ tends to infinity which of $Gap_2(X),
   Gap_4(X), Gap_6(X),$ or $Gap_8(X)$ do you think that will grow
   faster? How much would you bet on the truth of your guess?
 \end{quote}
@@ -801,15 +803,14 @@ number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
 multiplicatively odd.  Table~\ref{tab:evenodddata} gives some data:
    
   \begin{table}[H] \caption{Multiplicatively even and odd positive numbers $\le N$\label{tab:evenodddata}}
-  \begin{center}
- 
+\centering
+ {\small
 \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
 \hline
 N & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16  \\ \hline
-Multiplicatively even & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hline
-Multiplicatively odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
-\end{tabular}
-\end{center}
+Mult. even & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hline
+Mult. odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
+\end{tabular}}
 \end{table}
 
   
@@ -824,7 +825,7 @@ multiplicatively odd numbers between $2$ and $N$, for $N$ equal to 10,
 would, for sufficiently large $N$, ever cross the $x$-axis.
 
  \begin{figure}[H]
-\begin{center}
+\centering
 \includegraphics[width=.4\textwidth]{illustrations/liouville-10}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-100}\\
 \includegraphics[width=.4\textwidth]{illustrations/liouville-1000}
@@ -832,33 +833,36 @@ would, for sufficiently large $N$, ever cross the $x$-axis.
 \includegraphics[width=.4\textwidth]{illustrations/liouville-100000}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-1000000}\\
 \caption{Racing Multiplicatively Even and Odd Numbers.\label{fig:liouville}}
-\end{center}
 \end{figure}
   
-A {\em negative} response to this question would imply the Riemann
+A {\em negative} response to this question---i.e., a proof that any plot as drawn in Figurewould imply the Riemann
 Hypothesis!  In contrast to the list of previous questions, the answer
-to this one is known: alas, there is such an $N$.  In 1960, Lehman
-showed that for $N=906,400,000$ there are $708$ more multiplicatively
-even numbers up to $N$ than multiplicatively odd numbers (Tanaka found
-in 1980 that the smallest $N$ with this property is
-$N=906,150,257$). For more details, see P.~Borwein, {\em Sign changes
+to this one is known\endnote{For more details, see P.~Borwein, {\em Sign changes
   in sums of the Liouville Function} and the nice short paper of
 Norbert Wiener {\em Notes on Polya's and Turan's hypothesis concerning
   Liouville's factor} (page 765 of volume II of Wiener's Collected
 Works); see also: G. Polya {\em Vershiedene Bemerkungen zur
   Zahlentheorie} Jahresbericht de Deutschen Mathematiker-Vereinigung,
-{\bf 28} (1919) 31--40.
+{\bf 28} (1919) 31--40.}: alas, there is such an $N$.  In 1960, Lehman
+showed that for $N=906,400,000$ there are $708$ more multiplicatively
+even numbers up to $N$ than multiplicatively odd numbers (Tanaka found
+in 1980 that the smallest $N$ with this property is
+$N=906,150,257$).
 
 %%%%%%%%%%%%%%%%%
-
+\begin{wrapfigure}{r}{0.5\textwidth}
+  %\%begin{center}}
+    \includegraphics[width=0.48\textwidth]{illustrations/questions}
+   %\end{center}
+\end{wrapfigure}
 These are questions that have been asked about primes (and we could
 give bushels more), questions expressible in simple vocabulary, that
 we can't answer today. We have been studying numbers for over two
 millenia and yet we are indeed in the infancy of our understanding.
 
-So we'll continue our discussion by returning to the simplest counting
-question about prime numbers.
 
+So we'll continue our discussion by returning to the simplest counting
+question about prime numbers.  [[I'm experimenting with images next to text.]]
                            
 \chapter{How many primes are there?}
 
@@ -887,7 +891,7 @@ There are 455,052,512 primes less than ten billion; i.e.,
 $1$ in $22$).
 
 Primes, then, seem to be thinning out.  We return to the sifting process
-we did earlier, and take a look at a few graphs, to get a sense of why
+we carried out earlier, and take a look at a few graphs, to get a sense of why
 that might be so. There are a hundred numbers less than or equal to
 $100$, a thousand numbers less than or equal to $1000$, etc.: the
 shaded bar graph that looks like a regular staircase, each step the
@@ -908,7 +912,7 @@ even less.  And so it goes: with each move in our
 sieving process we are winnowing the field more extensively, reducing
 the chances that the later numbers are prime.
 
-\ill{sieve_2_200}{.8}{Sieving by removing multiples of $2$ up to $100$}
+\ill{sieve_2_100}{.8}{Sieving by removing multiples of $2$ up to $100$}
 \ill{sieve1000}{.8}{Sieving for primes up to $1000$}
           
 The red curve in these figures actually counts the primes: it is the
@@ -961,7 +965,7 @@ the eye. How strange and wonderful to watch, as our viewpoint zooms
 out to larger ranges of numbers, the accumulation of primes taking on
 such a smooth and elegant shape.
 
-\illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircase of primes up to 1,000 and 10,000\label{fig:staircases2}}
+\illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircases of primes up to 1,000 and 10,000\label{fig:staircases2}}
 
 \ill{prime_pi_100000}{.8}{Primes up to 100,000\label{fig:pn100000}.}
 
@@ -992,7 +996,7 @@ mathematics: {\em pure} and {\em applied}. Usually---when we judge
 whether a piece of mathematics is pure or applied---this distinction
 turns on whether or not the math has application to the ``outside
 world,'' i.e., that {\em world} where bridges are built, where economic
-models are fashioned, where computers churn away at the internet (for
+models are fashioned, where computers churn away on the Internet (for
 only then do we unabashedly call it {\em applied math}), or whether
 the piece of mathematics will find an important place within the
 context of mathematical theory (and then we label it {\em pure}).  Of
@@ -1052,14 +1056,13 @@ might well hit upon Gauss's curve.
 The (natural) logarithm function $\log(X)$ 
 is roughly proportional to the function that assigns to $X$ the 
 number of digits of $X$.  Euler's famous constant $e=2.71828182\ldots$ 
-is used in the precise description $\log$: 
-\begin{center}{\em $a = \log(X)$ is that 
-unique number such that $e^a = X$.}
+is used in the definition of $\log$: 
+\begin{center}{\em $A = \log(X)$ is the number $A$ for which $e^A = X$.}
 \end{center}
 Before electronic calculators, logarithms were frequently used to 
-speed up hand calculations, since logarithms translate difficult multiplication
-problems into easy addition problems,
-the logarithm of a product being equal to the sum of the logarithms
+speed up calculations, since logarithms translate difficult multiplication
+problems into easier addition problems which can be done mechanically.
+Such calculations use that the logarithm of a product is the sum of the logarithms
 of the factors; that is, $\log(XY) = \log(X) + \log(Y)$. 
 %FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES "
 
@@ -1077,7 +1080,7 @@ $\log(X)$ to $\log(Y)$ giving $\log(XY)$.
 % I found this here: http://kr.blog.yahoo.com/kimxx168/498
 % It is referenced in http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html
 % but that link is broken.
-\ill{gauss_tables_half}{.78}{Gauss's Letter (see Endnote~\ref{end:gauss_letter} for an English translation)\label{fig:gauss_letter}}
+\ill{gauss_tables_half}{.9}{Gauss's Letter (see Endnote~\ref{end:gauss_letter} for an English translation)\label{fig:gauss_letter}}
 
 In 1791, when Gauss was 14 years old, he received a book that contained 
 logarithms of numbers up to $7$ digits and a table of primes up to 10,009.
@@ -1123,7 +1126,7 @@ $$
    \frac{99}{2\times 2} = 24.75 \approx  25,
 $$   
 which is pretty amazing, since the correct number of
-primes $< 99$ is $25$.  The number of primes up to $999$ should
+primes up to $99$ is $25$.  The number of primes up to $999$ should
 be roughly
 $$
    \frac{999}{2\times 3} = 166.5 \approx  167,
@@ -1131,7 +1134,7 @@ $$
 which is again close, since there are 168 primes up to below $1000$. 
 The number of primes up to $999,\!999$ should be roughly
 $$
-   \frac{999999}{2\times 6} = 83,\!333.25 \approx  83,\!333,
+   \frac{999999}{2\times 6} = 83333.25 \approx  83,\!333,
 $$   
 which is close to the correct count of $78,\!498$. 
 
@@ -1143,7 +1146,7 @@ is remarkably close to the correct count $78,\!498$ of the primes
 up to $999,\!999$.
 
 \illthree{area_under_log_graph_30}{area_under_log_graph_100}{area_under_log_graph_1000}{.3}{The
-  expected tally of the number of primes $<X$ is approximated by the
+  expected tally of the number of primes $\leq X$ is approximated by the
   area underneath the graph of $1/\log(X)$ from $1$ to $X$.\label{fig:G}}
 
            
@@ -1217,7 +1220,7 @@ of a {\em single} error term,
  quantity, let us say that $q_{\rm approx}(X)$ is {\bf essentially a
    square-root accurate approximation to $q(X)$} if for {\em any}
  given exponent greater than $0.5$ (you choose it: $0.501$, $0.5001$,
- $0.50001$, $\dots$ for example) and for large enough $X$--- where the
+ $0.50001$, $\dots$ for example) and for large enough $X$---where the
  phrase ``large enough'' depends on your choice of exponent---the {\bf
    error term}---i.e., the difference between $q_{\rm approx}(X)$ and
  the {\em true} quantity, $q(X)$, is, in absolute value, less than
@@ -1264,7 +1267,7 @@ of a {\em single} error term,
 Recall that a rough approximation to $\pi(X)$, the number of primes $<
 X$,  is given by the function $X/\log(X)$; and  Gauss's guess for an
 approximation to $\pi(X)$  was in terms of the area in the region
-from $2$ to $X$ under the graph $1/\log(X)$, a quantity sometimes referred to
+from $2$ to $X$ under the graph of $1/\log(X)$, a quantity sometimes referred to
 as $\Li(X) = \int_2^X (dx/\log x)$.
 ``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral}.
 
@@ -1274,19 +1277,18 @@ $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
  
 \ill{three_plots}{.9}{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom).\label{fig:threeplots}}
  
-Let $X=10^{23}$.  Then \label{pili_vals}
+Let $X=10^{23}$.  Then\endnote{This computation of $\pi(10^{23})$ was done on a single
+computer in 2007 by Oliveira e Silva,
+and is the largest value of $\pi(X)$ ever computed.  See
+\url{http://www.ieeta.pt/~tos/primes.html} for more details.} \label{pili_vals}
 \begin{align*}
   \pi(X) &= 1925320391606803968923,\\
   \Li(X) &= 1925320391614054155138.780\ldots, \\
   X/(\log(X)-1)  &=  1924577459166813514799.7932241\ldots.\\
   \Li(X) - \pi(X) &= 7250186215.78002929687500\ldots, \\
-  \sqrt{X}\log(X) &= 16747250820487.142114662460299 \ldots,
+  \sqrt{X}\log(X) &= 16747250820487.142114662460299 \ldots.
 \end{align*}
-This computation of $\pi(10^{23})$ was done on a single
-computer in 2007 by Oliveira e Silva,
-and is the largest value of $\pi(X)$ ever computed.  See
-\url{http://www.ieeta.pt/~tos/primes.html} for more details.
- 
+
 
 Since $\Li(X)$ seems to start out impressively close in value to our
 $\pi(X)$ (at least in this range) it is natural to hope that in full
@@ -1302,7 +1304,11 @@ Hypothesis:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate.\label{rh:first}
+root accurate.
+\vskip2ex
+
+Equivalently\endnote{See ...}, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$. 
+\label{rh:first}
 
 \vspace{1ex}
 \end{minipage}}
@@ -1314,7 +1320,7 @@ root accurate.\label{rh:first}
 
 \chapter{The Prime Number Theorem\label{sec:pnt}}
   
-Take a look at Figure 10.1 again.  All three functions, $X/\log(X)$,
+Take a look at Figure~\ref{fig:threeplots} again.  All three functions, $X/\log(X)$,
 $\Li(X)$ and $\pi(X)$ are ``going to infinity with $X$'' (this means
 that for any real number $R$, if $X$ is taken to be sufficiently
 large, the values of these functions at $X$ will exceed $R$).
@@ -1328,7 +1334,7 @@ functions, $A(X)$ and $B(X)$, that each go to infinity will be said to
 $$A(X)/B(X)$$ 
 tends to $1$ as $X$ goes to infinity.
 
-Here is one way of thinking about what it means for two functions , $A(X)$ and $B(X)$, to go to infinity at the same rate. It means that  for any
+Here is one way of thinking about what it means for two functions, $A(X)$ and $B(X)$, to go to infinity at the same rate. It means that  for any
 number you give us, say: a million (or a billion, or a trillion) we should be able to show that if $X$ is large enough, then the
 ``top" million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same. 
 
@@ -1356,7 +1362,7 @@ See Figure~\ref{fig:simrates}. %where we may take $c=1/2$ and $C=1$.
     
 
 
-Now a theorem from elementary calculus, tells us that the ratio of
+Now a theorem from elementary calculus tells us that the ratio of
 $\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
 That is---using the definition we've just introduced--- $\Li(X)$ and
 $X/\log(X)$ go to infinity at the same rate.\endnote{Give a proof
@@ -1364,7 +1370,7 @@ of this statement in an endnote.}
 
 
 Recall (on page 10 above)  that
-if $X = 1023$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top" million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
+if $X = 10^{23}$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top" million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
   
 The \RH{}, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
@@ -1373,7 +1379,7 @@ would be {\it much} more precise information than) the statement that
 the {\it ratio} $\Li(X)/\pi(X)$ tends to $1$, i.e., that $\Li(X)$ and
 $\pi(X)$ go to infinity at the same rate.
 
-This last statement---giving, of course, a far less precise
+This last statement gives, of course, a far less precise
 relationship between $\Li(X)$ and $\pi(X)$ than the \RH{}
 (once it is proved!) would give us.  The advantage, though, of the
 less precise statement is that it is known, and---in fact---has been
@@ -1383,7 +1389,7 @@ known for over a century. It goes under the name of
  \noindent {\bf The Prime Number Theorem:\ \ } $\Li(X)$ and $\pi(X)$ go to infinity at the same rate.
    
 
-   Since $\Li(X)$ and $X/\log(X)$ go to infinity at the same rate could
+   Since $\Li(X)$ and $X/\log(X)$ go to infinity at the same rate, we could
    equally well have expressed the ``same" theorem by saying:
 
   
@@ -1458,7 +1464,7 @@ what this staircase looks like, for
 different ranges.
 
 \begin{figure}[H]
-\begin{center}
+\centering
 \includegraphics[width=.4\textwidth]{illustrations/PN_25} 
 \includegraphics[width=.4\textwidth]{illustrations/PN_100}\\ 
 
@@ -1466,10 +1472,6 @@ different ranges.
 \includegraphics[width=.4\textwidth]{illustrations/PN_10000}\\ 
 
 \includegraphics[width=.6\textwidth]{illustrations/PN_100000}
-\end{center}
-
-
-
 
 
 \caption{The Staircase of Primes\label{fig:staircases}}
@@ -1532,18 +1534,17 @@ but is constructed according to the following architectural plan.
    (as was the length of all risers in the old staircase of primes)
    but rather: the step at $x=p^n$ will have the height of its riser
    equal to $\log p$.  So for the first few steps listed in the
-   previous item, the risers will be of length $N=\log(2\pi), \log
+   previous item, the risers will be of length $\log(2\pi), \log
    2,\log 3,\log 2,\log 5,\log 2,\log 3,\log 11, \dots$ These vertical
    dimensions might lead to a steeper ascent but no great loss of {\em
      information}.
   
-   Although we are not quite done with our architectural work, Figures~\ref{fig:psi} and \ref{fig:psi2} shows 
+   Although we are not quite done with our architectural work, Figure~\ref{fig:psi} shows 
    what our staircase looks like, so far.
 
-\ill{psi_9}{.5}{The newly constructed staircase that counts prime powers up to $9$\label{fig:psi}}
+\illtwo{psi_9}{psi_100}{.45}{The newly constructed staircase that counts prime powers\label{fig:psi}}
 
-\ill{psi_100}{.5}{The newly constructed staircase that counts prime powers up to $100$\label{fig:psi2}}
-  
+
   \end{itemize} 
   
   Notice that this new staircase looks, from afar, as if it were
@@ -1578,14 +1579,15 @@ that mathematicians know to be equivalent to the first one---is to
 celebrate the variety of equivalent ways we have to express Riemann's
 proposed answers to the question ``How many primes are there?'' and to
 point out that some formulations would reveal a startling
-simplicity--not immediately apparent---to the behavior of prime
+simplicity---not immediately apparent---to the behavior of prime
 numbers, no matter how erratic primes initially appear to us to
 be. After all, what could be simpler than a 45 degree straight line?
  
  
 
 
-\chapter[Computer music files and prime numbers]{What do  computer music files,  data-compression, and prime numbers have to do with each other?\label{sec:fourier1}}
+\chapter[Computer music files and prime numbers]{What do  computer music files,  
+data compression, and prime numbers have to do with each other?\label{sec:fourier1}}
 
 
 
@@ -1595,9 +1597,9 @@ as vibrations of air molecules at roughly 768 miles an hour. These
 vibrations---fluctuations of pressure---are often represented, or
 ``pictured,'' by a graph where the horizontal axis corresponds to
 time, and the vertical axis corresponds to pressure at that time.  The
-very purest of sounds---a single sustained note--- would look
+very purest of sounds---a single sustained note---would look
 something like this (called a ``sine wave'') when pictured (see
-Figure~\ref{fig:sine}).  so that if you fixed your position somewhere
+Figure~\ref{fig:sine}), so that if you fixed your position somewhere
 and measured air pressure due to this sound at that position, the
 peaks correspond to the times when the varying air pressure is maximal
 or minimal and the zeroes to the times when it is normal pressure.
@@ -1707,8 +1709,8 @@ to think of that graph as ``built up by the superposition of a bunch
 of pure waves,'' and if the graph is complicated enough we may very well
 need {\em infinitely} many pure waves to build it up!  Fourier analysis is a
 mathematical theory that allows us to start with any graph---we are
-thinking here of graphs that picture sounds, but any graph will do---
-and actually compute its spectral picture (and even keep track of
+thinking here of graphs that picture sounds, but any graph will 
+do---and actually compute its spectral picture (and even keep track of
 phases).
  
  
@@ -1747,7 +1749,8 @@ mentioned. In contrast, current mp3 audio compression technology uses
 Fourier transforms plus sophisticated algorithms based on
 psycho-acoustic understanding. With this, mp3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
-quality.
+quality, so that you can fit your entire music collection on your
+iPod, instead of just your favorite 10 CD's.  
  
 \chapter{Fourier analysis and the staircase of primes\label{sec:fourier_staircase}}
 
@@ -1757,7 +1760,7 @@ quality.
  In view of the amazing data-compression virtues of Fourier analysis, it isn't unnatural to ask these questions:
 
  \begin{itemize}
-  \item Is there a way of using Fourier Analysis to better understand the complicated picture of the staircase
+  \item Is there a way of using Fourier analysis to better understand the complicated picture of the staircase
 of primes?
  
   \item Does this ornery staircase
@@ -1787,7 +1790,7 @@ ask for profound, and hidden, regularities in structure.
  But for now, let us offer a {\it sneak preview} to the ``spectrum" alluded to in these questions!
  
  
- To get warmed up, let's plot the positive values of this sum of (co-)sine waves:
+ To get warmed up, let's plot the positive values of the following sum of (co-)sine waves:
 
   
   $$f(t) = -{\frac{\log(2)}{2^{1/2}}}\cos(t\log(2))- {\frac{\log(3)}{3^{1/2}}}\cos(t\log(3))-{\frac{\log(2)}{4^{1/2}}}\cos(t\log(4))-{\frac{\log(5)}{5^{1/2}}}\cos(t\log(5))$$
@@ -1801,12 +1804,12 @@ Look at the peaks of this graph. There is nothing very impressive about them, yo
 $$
 -\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ 
-where the summation is over all powers $p^n$ of all prime numbers $p$.   
+where the summation is over all powers $p^n$ of all prime numbers $p$. 
 
 Let us cut this infinite sum  off taking only finitely many terms, by choosing various 
 ``cut-off values'' $C$ and forming the finite sums
 $$
--\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n)),
+-\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n)) 
 $$ 
 and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show
 what we get for a few values of $C$.
@@ -1846,10 +1849,11 @@ book, and is largely the end of our main mission, to explain---in
 elementary terms---{\em what is Riemann's Hypothesis?}
     
      
-For readers who have at some point studied Differential Calculus, we shall 
+For readers who have at some point studied Differential Calculus, in 
+Part~\ref{part2} we shall 
 go further and explain how the pursuit of
 Riemann's hypothesis may provide a key to some deeper structure of the
-prime number, and to the nature of the laws that they obey.
+prime numbers, and to the nature of the laws that they obey.
 
 
 \part{The Spectrum of the Prime Numbers\label{part2}}
@@ -1875,9 +1879,12 @@ Usually, in elementary Calculus classes we are called upon to compute
 slopes only of smooth graphs, i.e., graphs that actually {\em have}
 slopes at each of their points, such as in the illustration just
 above.  What could Calculus possibly do if confronted with a graph
-that has {\em jumps}, such as in Figure~\ref{fig:jump}.
+that has {\em jumps}, such as in Figure~\ref{fig:jump}:
+$$f(x) = \begin{cases}1 & x \leq 3\\ 2 & x > 3.\end{cases}$$
+(Note that for purely aesthetic reasons, we draw a vertical line at the point where the jump occurs, though technically that vertical line is not part of the graph of the function.)
  
-\ill{jump}{0.5}{A graph that jumps---it is $1$ up to $3$ and then $2$ after that point\label{fig:jump}}
+\ill{jump}{0.5}{The graph of the function $f(x)$ above that jumps---it is $1$ up to $3$ and then $2$ after that point.\label{fig:jump}}
+
   
 The most comfortable way to deal with the graph of such a function is
 to just approximate it by a nice smooth function as in
@@ -1921,13 +1928,14 @@ In each of these pictures,  for any interval of real numbers $[a,b]$ the total a
 \begin{center}
 {\it the height of the blue graph at $x=b$}\\
 minus\\
-{\it  the height of the blue graph  at $a$}. 
+{\it  the height of the blue graph  at $x=a$}. 
 \end{center}
-This is a manifestation of one of the basic facts of life of Calculus relating a function to its derivative:
+This is a manifestation of one of the fundamental facts of life of Calculus relating a function to its derivative:
   
   \begin{quote} Given any real-valued  function $F(x)$---that has a derivative---for any interval of real numbers $[a,b]$ the total area under the graph of the derivative of $F(x)$ over that interval is equal to $F(b)-F(a)$. 
   \end{quote}  
-    What happens if we take the series of figures \ref{fig:djump1}, \ref{fig:djump2}, \ref{fig:djump3}, \ref{fig:djump4}, etc. {\it to the limit}?  This is quite curious: 
+    What happens if we take the series of figures \ref{fig:djump1}--\ref{fig:djump4}, etc. 
+    {\it to the limit}?  This is quite curious: 
   
   \begin{itemize}
   \item {\bf the series of red graphs:} these are getting thinner and thinner and higher and higher: can we make any sense of what the red graph might mean in the limit (even though the only picture of it that we have at present makes it infinitely thin and infinitely high)?
@@ -1935,7 +1943,7 @@ This is a manifestation of one of the basic facts of life of Calculus relating a
    \item {\bf the series of blue graphs:} these are happily looking more and more like the tame Figure~\ref{fig:jump}. 
    \end{itemize} 
   
-  Each of our red graphs is the derivative of the corresponding blue graph. Wouldn't it be tempting to think of the limit of the red graphs---whatever this might construed to be---as standing for the derivative of the limit of the blue graphs, i.e., of the graph in Figure~\ref{fig:jump}?
+  Each of our red graphs is the derivative of the corresponding blue graph. Wouldn't it be tempting to think of the limit of the red graphs---whatever we might construe this to be---as standing for the derivative of the limit of the blue graphs, i.e., of the graph in Figure~\ref{fig:jump}?
   
   Well, the temptation is so great that, in fact, mathematicians and physicists of the early twentieth century struggled to give a meaning to things like {\it the limit of the red graphs}---such things were initially called {\bf generalized functions} which might be considered the derivative of {\it the limit of the blue graphs}, i.e., of the graph of Figure~\ref{fig:jump}.
   
@@ -1949,7 +1957,7 @@ rigorous foundation for what they were doing.
    
    
  % From http://en.wikipedia.org/wiki/Karl_Weierstrass
- \ill{weierstrass}{.27}{Karl Weierstrass (1815--1897)} 
+ \ill{weierstrass}{.3}{Karl Weierstrass (1815--1897)} 
  
    Karl Weierstrass, who worked during the latter part of the nineteenth century, was known as the ``father of modern analysis.'' He oversaw one of the glorious moments of rigorization of concepts that were long in use, but never before systematically organized.  He, and other analysts of the time were interested in providing a  rigorous language to talk about {\it functions} and more specifically {\it continuous functions} and {\it smooth} (i.e., {\it differentiable}) functions. They wished to have a firm understanding of limits (i.e., of sequences of numbers, or of functions).  
  
@@ -1962,7 +1970,6 @@ foundation; notably, by the French mathematician, Laurent Schwartz who provide a
 
 % From http://en.wikipedia.org/wiki/Laurent_Schwartz
  \ill{schwartz}{.23}{Laurent Schwartz (1915--2002)} 
-
 
 
 \chapter[Distributions]{Distributions: sharpening our approximating functions even if

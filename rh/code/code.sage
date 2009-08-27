@@ -23,8 +23,14 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
 # Factorization trees
 ##############################################################
 def fig_factor_tree(dir, ext):
+    g = FactorTree(6).plot(labels={'fontsize':90},sort=True)
+    g.save(dir + '/factor_tree_6.%s'%ext, axes=False)
+    
     g = FactorTree(12).plot(labels={'fontsize':50},sort=True)
     g.save(dir + '/factor_tree_12.%s'%ext, axes=False)
+    set_random_seed(3)    
+    g = FactorTree(12).plot(labels={'fontsize':50},sort=False)
+    g.save(dir + '/factor_tree_12b.%s'%ext, axes=False)
 
     set_random_seed(0)
     for w in ['a', 'b']:
@@ -214,6 +220,21 @@ def bag_of_primes(steps):
         for p in prime_divisors(prod(bag)+1):
             bag.append(p)
     print bag
+
+
+##############################################################
+# Questions about numbers
+##############################################################
+def fig_questions(dir, ext):
+    g = questions(100,17,20)
+    g.save(dir + '/questions.%s'%ext, axes=False)
+
+def questions(n=100,k=17,fs=20):
+    set_random_seed(k)
+    g = text("?",(5,5),rgbcolor='grey', fontsize=200)
+    g += sum(text("$%s$"%p,(random()*10,random()*10),rgbcolor=(p/(2*n),p/(2*n),p/(2*n)),fontsize=fs) 
+             for p in primes(n))
+    return g
 
 
 ##############################################################
@@ -590,7 +611,7 @@ def plot_prime_pi(n = 25, **args):
 ##############################################################
 
 def fig_sieves(dir,ext):
-    plot_three_sieves(200, shade=False).save(dir + '/sieve_2_200.%s'%ext, figsize=[9,3])
+    plot_three_sieves(100, shade=False).save(dir + '/sieve_2_100.%s'%ext, figsize=[9,3])
     plot_all_sieves(1000, shade=True).save(dir + '/sieve1000.%s'%ext,figsize=[9,3])
 
     m=100
