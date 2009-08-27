@@ -2281,11 +2281,12 @@ information about the placement of prime numbers among all numbers.
    Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  the generalized function that we engineered in Section~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
    
 
+
    
   As with any function---or generalized function---defined for non-negative values of $t$, we can ``symmetrize it" (about the $t$-axis) which means that we can define it on negative real numbers by the equation  
   $$\Phi(-t) = \Phi(t).$$  
 Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} generalized function.
-  
+
        \ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller the weight.}
 
   
@@ -2307,59 +2308,68 @@ Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} genera
   
   \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).}
 
-
- The first surprising thing about this discrete distribution is that its Fourier transform is again discrete. 
-
-
-[[Put an array of say 6 random plots of discrete distributions along
-with their fft's which don't look discrete at all.]]  In
-Section~\ref{sec:dd} we will revisit the curious case of distributions
-with discrete support that have Fourier transforms with discrete
-support.
-
-
-That is, the spectrum is given by an infinite, but discrete list of
-numbers at the spikes:
-$$
-  \theta_1, \theta_2, \theta_3,\dots
-$$
-
-This, Riemann knew!  
-  
-{\bf Spike distributions that have discrete spectrum}
+ \vskip5pt
+  {\bf WILLIAM: 
+    \begin{itemize}
+    \item The main mathematical task we have is to figure out whether---and in what sense---the Fourier transform of $${\Phi}_{\rm even}(t)$$ is
+  \begin{itemize}
+  \item discretely supported at $$\theta_1,\theta_2,\theta_3,\ldots$$
+  \item a kind of limit of the ${\hat \Phi}_{\le C}(\theta)$ as $ C$ goes to $\infty$.
+  \end{itemize}
+    \vskip5pt
+    \item The above discussion will formally {\it define} {\bf The Spectrum} so we can---at this point---put the following material into our chapter:
+      \end{itemize}
+}
     
-{\bf Aside.  Here we talk about distributions with discrete support; a
-  'spike distribution' is then a sum of $\delta$-distributions
-  supported on a discrete set of points.  We talk about the curious
-  situation where the Fourier transform of one of these is again one,
-  with a few clean examples.  We note that any spike distribution that
-  has the property that its Fourier transform is again a spike also
-  has the curious ``error-correcting virtue'' that if you ever forget
-  a finite number of points of its support you can retrieve them.  We
-  need really interesting SAGE worksheets here.}
-      
-      
-{\bf The Spike distribution $\Phi(t)$; the \RH{}
-  ({\em third formulation})}
+ We can{ compute}---at least approximately---the $\theta_i$'s of this spectrum, the first few $\theta_i$'s being:
+\begin{eqnarray*}
+\theta_1 &=& 14.134725 \dots\\
+\theta_2 &=& 21.022039 \dots\\
+\theta_3 &=& 25.010857 \dots\\
+\theta_4 &=& 30.424876 \dots\\
+\theta_5 &=& 32.935061 \dots\\
+\theta_6 &=& 37.586178 \dots
+\end{eqnarray*}
+
+  Riemann defined this sequence of numbers in his 1859 article  in a manner somewhat different from the treatment we have given (in thatarticle these $\theta_i$ appear as the ``imaginary parts of the nontrivial zeroes of his $\zeta$-function;"  we will discuss this briefly in Chapter 24 below). Riemann wrote:
+ \begin{quote}
+  ``One now finds indeed approximately this number of real roots
+  within these limits, and it is very probable that all roots are
+  real. Certainly one would wish for a stricter proof here; I have
+  meanwhile temporarily put aside the search for this after some
+  futile attempts, as it appears unnecessary for the next objective of
+  my investigation.''
+\end{quote}
+
+Nowadays, these mysterious numbers, these spectral lines for the
+staircase of primes are known to great accuracy.  Here is the smallest
+one, $\theta_1$, given with over $1,\!000$ digits of its decimal
+expansion:  
+\vskip20pt
+$14.134725141734693790457251983562470270784257115699243175685567460149\newline
+9634298092567649490103931715610127792029715487974367661426914698822545\newline
+8250536323944713778041338123720597054962195586586020055556672583601077\newline
+3700205410982661507542780517442591306254481978651072304938725629738321\newline
+5774203952157256748093321400349904680343462673144209203773854871413783\newline
+1735639699536542811307968053149168852906782082298049264338666734623320\newline
+0787587617920056048680543568014444246510655975686659032286865105448594\newline
+4432062407272703209427452221304874872092412385141835146054279015244783\newline
+3835425453344004487936806761697300819000731393854983736215013045167269\newline
+6838920039176285123212854220523969133425832275335164060169763527563758\newline
+9695376749203361272092599917304270756830879511844534891800863008264831\newline
+2516911271068291052375961797743181517071354531677549515382893784903647\newline
+4709727019948485532209253574357909226125247736595518016975233461213977\newline
+3160053541259267474557258778014726098308089786007125320875093959979666\newline
+60675378381214891908864977277554420656532052405$
+\vskip20pt
+\noindent{}and if, by any chance, you wish to peruse the first
+$100,\!000$ of these $\theta_i$'s lovingly calculated to an accuracy
+within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
+\url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
+
   
-Here we use the basic definition of Fourier transform, and get by
-simple integration that the even Fourier transform of $$\Phi(t)=
-\Psi'(e^t)/e^{t/2}$$ 
-is given by the distribution defined by the
-formula
-$${\hat \Phi}_{\rm even}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\cos(s \log(p^n))$$ 
-and the odd Fourier transform is
-$${\hat \Phi}_{\rm odd}(s): = \sum_{p^n} {\frac{\log(p)}{p^{n/2}}}\sin(s \log(p^n)).$$
-   
-   
-Figures~\ref{fig:phi_even} and \ref{fig:phi_odd} show what you get for
-graphs of these distributions ${\hat \Phi}_{\rm even}(s)$ and ${\hat
-  \Phi}_{\rm odd}(s)$ if you cut off the sums above at $p^n \leq 100$.
   
 
-Define the {\bf Spectrum of the Primes} the set of real numbers
-$\theta_1, \theta_2, \theta_3, \dots$ that comprise the {\em support}
-of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
  
 \chapter{How to build $\Phi(t)$ from the spectrum}
   \vskip5pt 
