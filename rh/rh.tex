@@ -2308,8 +2308,7 @@ Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} genera
   \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).}
 
 
-\begin{itemize}
-\item The first surprising thing about this discrete distribution is that its Fourier transform is again discrete. 
+ The first surprising thing about this discrete distribution is that its Fourier transform is again discrete. 
 
 
 [[Put an array of say 6 random plots of discrete distributions along
@@ -2363,29 +2362,20 @@ $\theta_1, \theta_2, \theta_3, \dots$ that comprise the {\em support}
 of the blip distribution ${\hat \Phi}_{\rm even}(s)$.
  
 \chapter{How to build $\Phi(t)$ from the spectrum}
- 
- 
+  \vskip5pt 
+ {\bf WILLIAM: The main mission of this chapter is to explain, and show data for:}
+   \vskip5pt
  \begin{center}
       \shadowbox{ \begin{minipage}{0.9\textwidth}
       \mbox{}       \vspace{0.2ex}
-      \begin{center}{\bf\large The \RH{} is equivalent to the assertion that  $\Phi(t)$ is {\em equal to} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
+      \begin{center}{\bf\large The \RH{} is equivalent to the assertion that  $\Phi(t)$ is {\em somehow related to---i.e., basically equal to---} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
 ...
     \vspace{1ex}
     \end{minipage}}
  \end{center}
-
-
- 
-{\bf Aside. Here we will motivate the above equivalent statement of RH
-  (that $\phi(t)$ is a sum of the $\cos(\theta t)$'s for a discrete
-  set $\Theta$ of $\theta$'s. Discuss this amazing feature. Discuss
-  that if $\Theta$ exists at all, i.e., if RH is true, $\Theta$ has
-  the ``error-correcting virtue.'' We begin to compute it in a
-  ``worksheet'' given knowledge of the primes, and we wonder whether we
-  can find any other (nonbanal, of course) discrete set $\Theta'$ that
-  has the property that the sum of the $\cos(\theta' t)$'s for
-  $\theta' \in \Theta'$ is discrete.}
-
+  \vskip5pt
+{\bf WILLIAM: At the moment all we have done are these graphs:}
+   \vskip5pt
 
 
 \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$, where
@@ -2402,28 +2392,8 @@ by the Fourier series, and how the prime powers $3^3$ and $2^5$ also appear.}
 %\chapter{Approximations versus exact descriptions: the spectral analysis of primes }
 
 %{\bf Aside. We give a ``Fourier'' reconstruction of $\psi(t)$ in terms of $\Theta$}
- 
- \ill{psi_just_waves1}{0.7}{Illustration of 
-$\displaystyle\frac{\theta\sin(t\theta) + \frac{1}{2}\cos(t\theta)}{\theta^2 + 1/4}$,
-for $\theta\sim 14.13$,  which is the 
-wave component of the first Fourier approximation to $\Phi(t)$}
 
-\ill{psi_2_waves}{.7}{The first two wave components that appear in the Fourier series of $\Phi(t)$,
-are $\frac{\theta\sin(t\theta) + \frac{1}{2}\cos(t\theta)}{\theta^2 + 1/4}$
-for $\theta \sim 14.13, 21.02$}
-
-\ill{psi_with_first_zero}{.5}{The first term of the Fourier series of $\Phi(t)$ is $\displaystyle  
-          \frac{e^{t/2} \theta \sin(t\theta) + \
-                    \frac{1}{2} e^{t/2} \cos(t\theta)}{\theta^2 + 1/4} $, 
-          where $\theta \sim 14.134725$}
-          
-\ill{psi_with_exp_2}{.7}{The first two components of the Fourier series 
-of $\Phi(t)$ (including the exponential factors) are
-$e^{t/2} \cdot \frac{\theta\sin(t\theta) + \frac{1}{2}\cos(t\theta)}{\theta^2 + 1/4}$
-for $\theta \sim 14.13, 21.02$}
-
-
-{\bf [[I commented out the plots of Fourier approximation to Psi, since I can't find any code to redraw them, we don't discuss this, and I don't remember how to draw them anyways.]]}
+%{\bf [[I commented out the plots of Fourier approximation to Psi, since I can't find any code to redraw them, we don't discuss this, and I don't remember how to draw them anyways.]]}
 
 %\ill{psi_approx_1_2_5_30}{0.7}{Fourier approximations to the step function 
 %$\Psi$ obtained using $1$, $2$, $5$, and $30$ frequencies.}
@@ -2439,92 +2409,6 @@ for $\theta \sim 14.13, 21.02$}
 
 %\ill{phi_even}{.5}{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
 
-\end{itemize}
-
-
- We can---at least approximately---{\it compute} the $\theta_i$'s of this spectrum. Riemann knew how to compute too!  In fact, he computed to pretty good accuracy, the first few $\theta_i$'s:
-\begin{eqnarray*}
-\theta_1 &=& 14.134725 \dots\\
-\theta_2 &=& 21.022039 \dots\\
-\theta_3 &=& 25.010857 \dots\\
-\theta_4 &=& 30.424876 \dots\\
-\theta_5 &=& 32.935061 \dots\\
-\theta_6 &=& 37.586178 \dots
-\end{eqnarray*}
-
-[[Put an image from Riemann's manuscript.  Actually, I just looked
-and there are no explicit zeros in Riemann's 1859 manuscript.  Is
-there some other scan you have that has him finding zeros?
-Barry -- where is this?  I looked carefully
-through Riemann's paper where he introduces Zeta, and there are no
-explicit zeros there.  Maybe somewhere else?
-]]
-
-\begin{quote}
-  ``One now finds indeed approximately this number of real roots
-  within these limits, and it is very probable that all roots are
-  real. Certainly one would wish for a stricter proof here; I have
-  meanwhile temporarily put aside the search for this after some
-  futile attempts, as it appears unnecessary for the next objective of
-  my investigation.''
-
--- Riemann, 1859
-\end{quote}
-
-Nowadays, these mysterious numbers, these spectral lines for the
-staircase of primes are known to great accuracy.  Here is the smallest
-one, $\theta_1$, given with over $1,\!000$ digits of its decimal
-expansion:  
-
-$14.134725141734693790457251983562470270784257115699243175685567460149\newline
-9634298092567649490103931715610127792029715487974367661426914698822545\newline
-8250536323944713778041338123720597054962195586586020055556672583601077\newline
-3700205410982661507542780517442591306254481978651072304938725629738321\newline
-5774203952157256748093321400349904680343462673144209203773854871413783\newline
-1735639699536542811307968053149168852906782082298049264338666734623320\newline
-0787587617920056048680543568014444246510655975686659032286865105448594\newline
-4432062407272703209427452221304874872092412385141835146054279015244783\newline
-3835425453344004487936806761697300819000731393854983736215013045167269\newline
-6838920039176285123212854220523969133425832275335164060169763527563758\newline
-9695376749203361272092599917304270756830879511844534891800863008264831\newline
-2516911271068291052375961797743181517071354531677549515382893784903647\newline
-4709727019948485532209253574357909226125247736595518016975233461213977\newline
-3160053541259267474557258778014726098308089786007125320875093959979666\newline
-60675378381214891908864977277554420656532052405$
-
-\noindent{}and if, by any chance, you wish to peruse the first
-$100,\!000$ of these $\theta_i$'s lovingly calculated to an accuracy
-within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
-\url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
-
-Better yet, we can compute this spectrum in terms of the {\it
-    zeroes} of the famous function of a complex variable, known as
-  {\it Riemann's zeta-function}, the function we mentioned in passing
-  in Section~\ref{sec:rh1} above, appearing on the first page of
-  Riemann's manuscript,
-  $$
-   \zeta(s) = 1 +{\frac{1}{2^s}} +{\frac{1}{3^s}}+{\frac{1}{4^s}}+\dots
-  $$
-  extended to be a complex analytic function of the variable $s$ for
-  all complex numbers $s\ne 1$.
-
-An equivalent formulation of Riemann's hypothesis is
-  that 
-  $$
-   \Phi(t) = 1 + \sum_{i=1}^{\infty} \cos(\theta_i t)
-  $$ 
-
- 
-And, an equivalent formulation of Riemann's hypothesis again is
-  that the non-real zeroes of Riemann's zeta function are given by the
-  following list:
-  $${\frac{1}{2}}\pm i\theta_1,\ \ \  
-       {\frac{1}{2}}\pm  i\theta_2,\ \ \ 
-       {\frac{1}{2}}\pm  i\theta_3,\ \ \  \dots
-  $$
- 
-The hidden order, then, of primes is to be sought in the elegant
-structure of the zeroes of Riemann's zeta function!
 
 
 \chapter[Building $\pi(X)$ knowing the Spectrum]{How to build $\pi(X)$ knowing the Spectrum (Riemann's way)}
