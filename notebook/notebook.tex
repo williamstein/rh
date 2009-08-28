@@ -34,7 +34,7 @@ RH book todo:
 \end{itemize}
 
 Here is a todo list while reading the book:  
-\begin{itemize}
+\begin{enumerate}
 \item Make a list of the books --both popular and not-- about
   RH. (mentioned on page 1).  I have Patterson (serious) and Edwards
   (serious) on my desk, and Sabbagh (popular) and Rockmore
@@ -611,7 +611,7 @@ zeros...
   complex analysis?
 
 
-\end{itemize}
+\end{enumerate}
 
 
 
@@ -718,20 +718,20 @@ Notes on the current draft.
 \item (done) {\tt http://wstein/rh --> http://wstein.org/rh}; also mention there that every single
 figure in the entire book can be automatically computed using a Sage script available
 at the above website.  
-\item actually post my script at http://wstein.org/rh.
-\item Write code to auto-translate our entire book to a web page with embedded interactive
+\item (done, technically, but need to make nice webpage) actually post my script at http://wstein.org/rh.
+\item (later) Write code to auto-translate our entire book to a web page with embedded interactive
 controls, with one page for each chapter (this is more longterm).
-\item We {\em have} to add the precise formulation that RH is equivalent to
+\item (done -- but could be done better!!) We {\em have} to add the precise formulation that RH is equivalent to
 $$|\pi(x) - \Li(x)| \leq \log(x) \sqrt{x}.$$
 It's definitely my favorite formulation of RH.
 \item  "If we were to suggest some possible specific items to come home with, 
 after read our book, three key phrases Ð prime numbers, square-root accu- 
 rate, and error term Ð would head the list."    You know, a fourth would be the
-notion of "distribution", wouldn't it?
+notion of "distribution", wouldn't it?   [[replace error term by "distribution"]]
 \item (done) Delete my comment "[[By prior does he mean ..." since the point as I see it
 is that this is just a remark that the reader doesn't have totally understand.
 \item (done) " 150 decimal digits" --> "hundreds of decimal digits" (better to be vague)
-\item "Offer two primes, say, P and Q each with more than 100 digits"  --> few hundred digits.
+\item (done) "Offer two primes, say, P and Q each with more than 100 digits"  --> few hundred digits.
 I want to be vague because I don't want to get in trouble with CCR about making any specific
 claims about the difficulty of cryptanalysis.  Also, factoring a product of two 100 digit primes
 is the sort of thing that has I think (just barely) been done by people (though it took a while and a lot of computers). 
@@ -769,12 +769,128 @@ though technically that is "wrong".
 of $\pi(10^{23})$ that he did took 2 months on a single computer that had
 2GB of RAM."
 \item IMPORTANT!  I think in all the figured I really plot $-\hat{\Phi}_{\leq C}(\theta)$ -- note the
-negative sign.  I did that just so the spikes would be up instead of down.  
+negative sign.  I did that just so the spikes would be up instead of down.    Soln: change label to illustrate this. 
 \item After reading some popular books on RH, I actually no longer want to list them in an endnote.
+(e.g., Derbyshire's... )
 \end{enumerate}
 
 
 \section{August 28, 2009: Final Push}
+
+\begin{enumerate}
+\item Draw the sum cos but with $s'(t)$ subtracted off.
+
+\item good distributions reference
+
+\item Sarnak quote in sufficing conjecture
+
+\item We have several natural sections already in the Þrst 8 pages, but donÕt break them 
+up as such. We should. It would make things easier to navigate. We have a section 
+Òwhat are primesÓ. Then Òprime gapsÓ. Then Òmultiplicative parityÓ. 
+
+\item -- [[take only first four, compress into paren remark]] Pure and applied math.  I think we should double the length of
+  this section by adding some examples.  In particular, we could use
+  examples all of which will appear later!  Examples of possible
+  illustrations include:
+\begin{itemize}
+  \item something foreshadowing Fourier theory (applied)
+  \item random walks (finance?)  (applied)
+  \item data compression (applied)
+  \item Mersenne primes, e.g., the Lucas-Lehmer test for primality (pure mathematics)
+  \item Goldbach's conjecture (pure)
+\end{itemize}
+
+\item VERY VERY VERY for $X/2 num digits$.
+
+\item We agree on $\pi(X)$.
+
+\item We prove nothing except one thing in text.  Keep your eyes out for it. 
+
+\item ``These vertical dimensions might lead to a steeper ascent but
+  no great loss of information'' Maybe change to ``Since $\log(p)>1$,
+  these vertical dimensions lead to a steeper ascent but no great loss
+  of information.''
+
+
+\item ``Do not worry if you do not understand why our first and second
+  formulations of Riemann's Hypothesis are equivalent.''  We should
+  either rigorously prove this in an endnote (my preference at the
+  moment) or gave a reference that totally does it.  I could imagine a
+  better student who has a more advanced background, who would benefit
+  by seeing a proof at this point.  And it might help us keep things
+  straight... e.g., we had this equivalence wrong I think in some
+  version of our notes long ago.  -- we will give four equivalent statements, 
+  call any one RH, to see references click on this endnotes, or those attached
+  to each boxes. 
+  
+  \item I wonder if we should say something right before stating RH 2
+  about what it means for two mathematical statements to be
+  equivalent?   -- DO this in the introduction.  We give you four boxes.
+  We call any one of them RH.  What do we mean by equivalent?
+
+
+\item What are the frequence and amplitudes of pure C and E notes?  
+
+\item ``Surprisingly, this seems to be roughly the way our ear
+  processes such a sound when we hear it.'' (in reference to storing
+  the spectrum, etc.)  Is this a {\em biological} statement, and if so
+  is it the result of some research in biology that we could cite?
+  Otherwise, where does this assertion come from?  Having us two
+  authors and explaining (possibly with footnotes) where all our
+  assertions come from I think will make our book vastly more solid
+  than most popular math books, which are often just full of seemingly
+  random unjustified statements.
+
+\item ``At this point we recommend to our readers that they
+  download...'' However, we don't recommend that they read it right
+  now!  They should finish our book first. :-) I want our book to be a
+  pager turner that they can't put down.  That they blow off
+  everything so they can finish reading it.  Actually, because of
+  that, we should maybe put in more foreshadowing at the beginning of
+  this section and throughout.  I want something like the paragraph at
+  the end of section 13 full of questions (top of page 33), but at the
+  beginning of section 13.
+
+\item ``So our CE chord'' [["major third chord"]] -- do musicians really write ``CE'' to mean
+  ``some combination of C and E''?  I don't know.  If so, we might say
+  ``musicians write CE to mean ...''  If not, what do they write?
+  Should their be some notes (you know like what musicians actually
+  definitely do write) somewhere on our page?
+
+
+\item ``psycho-acoustic understanding.'' replace by a sentence saying
+  what that is, e.g., that humans only here certain frequencies
+  (etc.).  Also, in that paragraph we could emphasize that a factor of
+  10 in compression is revolutionary -- it means you get 100 songs on
+  a CD instead of 12, and 200 albums on your ipod instead of 20.
+
+
+\item Differential Calculus, initially the creation of Newton and/or
+Leibniz, acquaints us with {\em slopes} of graphs. -- have a date
+
+\item DO THIS:  This goes at the end of calculus chapter.  
+I wonder if we should say what a ``function''.  We're spending a
+  lot of energy saying that $\delta$ {\em isn't} a function, but we
+  didn't say what a function is.  I didn't know an official definition
+  of function until my third year of undergraduate school, so the
+  target audience I have in mind doesn't know an ``official
+  definition'' either.  In Calculus one typically sees sloppy things
+  like ``the function $1/x$ which is infinite at $0$'', so for us to
+  go on about delta not being a function because it is infinite is
+  disigeneous.  Also, often us mathematicians do consider functions
+  $\R \to \R\cup\{\infty\}$, say.  It occurs to me that the problem
+  with $\delta$ is not that it is not a function, but that it is not a
+  function that behaves well with respect to Calculus.  The $\delta$
+  distribution is much better since e.g. $\int f \delta$ behaves so
+  sensibly.
+  
+  \item section to chapter
+  
+  \item  - [[end note about why?]] We through in a factor of $e^{t/2}$ in addition to precomposing
+with $e^t$.  It seems like we do the division by $e^{t/2}$ without even
+commenting on that.  Let's fix that.  Why is it there?
+
+\end{enumerate}
 
 
 

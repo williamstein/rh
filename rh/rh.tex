@@ -453,10 +453,10 @@ simple principle: it is much easier to multiply numbers together than
 to factor them. If you had to factor, say, the number $143$ you might
 scratch your head for a few minutes before discovering that $143$ is
 $11\times 13$. But if you had to multiply $11$ by $13$ you would do it
-straightaway.  Offer two primes, say, $P$ and $Q$ each with more than
-100 digits, to your computing machine and ask it to multiply them
-together: you will get their product $N = P\times Q$ with its 200 or
-so digits in a few microseconds. But present that number $N$ to any
+straightaway.  Offer two primes, say, $P$ and $Q$ each with a few hundred 
+digits, to your computing machine and ask it to multiply them
+together: you will get their product $N = P\times Q$ with its hundreds of digits
+in less than a microsecond. But present that number $N$ to any
 current desktop computer, and ask it to factor $N$, and the computer
 will (almost certainly) fail to do the task. The safety of much
 encryption depends upon this guaranteed\endnote{Nobody has ever
@@ -565,7 +565,7 @@ The number $p$ displayed above is the largest prime we know, where by
   compute} things about it.  For example, the last two digits of $p$
 are 11 and the sum of the digits is 58,416,637.  Of course $p$ is not
 the largest prime number since there are infinitely many primes, e.g.,
-the next prime $q$ after $p$ is a prime.  But there is no obvious way
+the next prime $q$ after $p$ is a prime.  But there is no known way
 to efficiently compute anything interesting about $q$.  For example,
 what is the last digit of $q$ in its decimal expansion?
 
@@ -1015,7 +1015,8 @@ payoff.
 
 The particular issue before us is, in our opinion, twofold, both
 applied, and pure: can we curve-fit the ``staircase of primes'' by a
-well approximating smooth curve?  The story behind this alone is
+well approximating smooth curve given by a simple analytic formula?  
+The story behind this alone is
 marvelous, has a cornucopia of applications, and we will be telling it
 below. But our curiosity here is driven by a question that is pure,
 and less amenable to precise formulation: are there mathematical
@@ -1301,10 +1302,7 @@ Hypothesis:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate.
-\vskip2ex
-
-Equivalently\endnote{See ...}, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$. 
+root accurate.\endnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See ...}
 \label{rh:first}
 
 \vspace{1ex}
@@ -1437,10 +1435,11 @@ formulations being provably equivalent to any of the others.
 This \RH{} remains unproved to this day, and therefore is
 ``only a hypothesis,'' as Osiander said of Copernicus's theory, but one
 for which we have overwhelming theoretical and numerical evidence in
-its support.  It is the kind of conjecture that Frans Oort might label
+its support.  It is the kind of conjecture that contemporary
+Dutch mathematician Frans Oort might label
 a {\em suffusing conjecture} in that it has unusually broad
 implications: many many results are now known to follow, if the
-conjecture, familiarly known as RH, is true. A proof of RH would,
+conjecture, familiarly known as RH, is true.  A proof of RH would,
 therefore, fall into the {\em applied} category, given our discussion
 above.  But however you classify RH, it is a central concern in
 mathematics to find its proof (or, a counter-example!).  RH is 
@@ -1552,7 +1551,7 @@ but is constructed according to the following architectural plan.
   function\endnote{We have $$\psi(x) =\sum_{p^n \le x}\log p$$ where the summation is over prime
 powers $p^n$ that are $\le x$.}
   of $x$ whose graph is
-depicted in Figure~\ref{fig:psi2}.
+depicted in Figure~\ref{fig:psi}.
    
           \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
@@ -1859,18 +1858,31 @@ prime numbers, and to the nature of the laws that they obey.
 \chapter[Slopes of graphs that have no slopes]{How Calculus manages to find the slopes of graphs that  
 have no slopes}   
    
-Differential Calculus, initially the creation of Newton and/or
-Leibniz, acquaints us with {\em slopes} of graphs.  See Figure~\ref{fig:graph_slope_deriv}.
+Differential Calculus, initially the creation of Newton and/or Leibniz, acquaints
+us with {\it slopes} of graphs of functions of a real variable.  So, to discuss this we should say a word about
+ what a {\it function} is, and what its {\it graph} is.
+ 
+ \illtwo{newton}{leibniz}{0.25}{Isaac Newton and Gottfried Leibniz created Calculus}
+
+
+ A {\bf function}  (let us refer to it in this discussion as $f$)  is often described as a {\it kind of machine} that for any specific input numerical value $a$  will give, as output, a well-defined real number. 
+ 
+ This ``output number"   is denoted $f(a)$ and is called {\it the ``value" of the function $f$ at $a$}.  For example, the {\it machine that adds $1$ to any number} can be thought of as the function $f$ whose value at any $a$ is given by the equation $f(a) = a+1$.  Often we choose a letter---say, $X$---to stand for a ``general number"  and we denote the function $f$ by the symbol $f(X)$ so that this symbolization allows to "substitute for $X$ any specific number $a$" to get its value $f(a)$.
+
+   The {\bf graph} of a function is a vivid visual representation of the function in the Euclidean plane where over every point $a$ on the $x$-axis you plot a point above it of ``height" equal to the value of the function at $a$, i.e., $f(a)$. In  Cartesian coordinates, then, you are plotting points $(a, f(a))$ in the plane where $a$ runs through all real numbers.
+
+
+    In this book we will very often be talking about ``graphs" when we are also specifically interested in the functions---of which they are the graphs. We will use these words almost synonymously since we like to adopt a very visual attitude towards the behavior of the functions that interest us.
+
 
 \ill{graph_slope_deriv}{0.7}{A function (blue), a slope at a point (black straight line), and the derivative (red).\label{fig:graph_slope_deriv}}
          
          
-\illtwo{newton}{leibniz}{0.25}{Isaac Newton and Gottfried Leibniz created Calculus}
 
 
-Calculus explains to us how to calculate those slopes, and
+Calculus explains to us how to calculate slopes of graphs, and
 finally, shows us the power that we then have to answer problems we
-could not answer if we couldn't compute those slopes.
+could not answer if we couldn't compute those slopes.  %See Figure~\ref{fig:graph_slope_deriv}.
 
 Usually, in elementary Calculus classes we are called upon to compute
 slopes only of smooth graphs, i.e., graphs that actually {\em have}
@@ -2103,7 +2115,7 @@ about it, to credit Sobolev $\dots$)]]
 }
 
 
-\chapter{Fourier Transforms: second visit}
+\chapter{Fourier transforms: second visit}
 
 In Part~\ref{part1} of this book  (in Section~\ref{sec:fourier1} above) we wrote:
 
