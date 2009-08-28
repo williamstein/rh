@@ -196,14 +196,16 @@ how long certain computer programs will take to run, which, in some
 cases, gives us the assurance we need to initiate a computation that
 might take weeks or even months to complete.
 
-Our book is profusely illustrated, containing over 100 figures, diagrams,
+Our book is profusely illustrated, containing over 125 figures, diagrams,
 and pictures that accompany the text.  There are comparatively very few 
 mathematical equations.   For the more adventurous readers, we have
-also created at \url{http://wstein/rh} something we call {\em worksheets}
+also created at \url{http://wstein.org/rh} something we call {\em worksheets}
 that enable the reader to use the free Sage mathematical
 software to experiment with the parameters for
 the ranges of data illustrated, so as to get an even more
-vivid sense of how the numbers ``behave.''
+vivid sense of how the numbers ``behave.''  Also Sage code is available
+at the above webpage that can be used to recreate every diagram
+in this book. 
  
 So, what {\em is} the \RH{}? Here is a {\em first
   description} of this hypothesis, put in one ridiculously condensed
@@ -362,13 +364,7 @@ is not surprising, given Aristotle's emphasis on the distinction
 between the {\em composite} and the {\em incomposite}. ``The
 incomposite is prior to the composite,'' writes Aristotle in Book 13 of
 the Metaphysics.
-[[By prior does he mean ``more important than'' or ``comes before''?  I.e., is the quote
-really saying ``The incomposite is more important than and comes before the composite.''
-I ask, because the word prior as above is definitely not everyday modern
-plane-spoken English, and I don't want to trip up our readers unnecessarily.  A
-short endnote or rephrasing or maybe a different translation could really help here.
-This might be a good opportunity to cite your Imagining Numbers book.]]
-           
+
 % from http://en.wikipedia.org/wiki/File:Euklid-von-Alexandria_1.jpg           
 \ill{euclid}{.3}{Euclid}           
 
@@ -450,7 +446,7 @@ you always end up with the same collection of prime numbers:
 The \RH{} probes the question: how intimately can we know
 prime numbers, those {\em atoms} of multiplication?  Prime numbers are
 an important part of our daily lives.  For example, anytime we visit a
-website and purchase something online, prime numbers having over 150
+website and purchase something online, prime numbers having hundreds of
 decimal digits are used to keep our bank transactions private.  This
 ubiquitous use to which these giant primes are put depends upon a very
 simple principle: it is much easier to multiply numbers together than
@@ -475,8 +471,7 @@ $$
 $$ 
 is a prime number, this number having $12,\!978,\!189$ digits!  This
 prime, which was discovered on August 23, 2008, was the first prime
-ever found with more than ten million digits, whose discover won a
-\$100,000 prize for the GIMPS project (\url{http://www.mersenne.org/}).
+ever found with more than ten million digits.
 
 Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
@@ -558,7 +553,9 @@ Though there are infinitely many primes, actually finding them is a
 major challenge.  In the 1990s, the Electronic Frontier Foundation
 \url{http://www.eff.org/awards/coop} offered a \$100,000 cash reward
 to the first group to find a prime with at least 10,000,000 decimal
-digits (the record prime $p$ above will win this prize), and offers
+digits (the record prime $p$ above is set to win this prize\endnote{%
+The 46th Mersenne prime was also declared by Time Magazine to be
+one of the top 50 best ``inventions'' of 2008: \url{http://www.time.com/time/specials/packages/article/0,28804,1852747_1854195_1854157,00.html}.}), and offers
 another \$150,000 cash prize to the first group to find a prime with
 at least 100,000,000 decimal digits.
 
@@ -989,7 +986,7 @@ With this warning, but very much fortified by the data of Figure~\ref{fig:pn1000
 let us ask: {\em what is a smooth curve that is a reasonable
   approximation to the staircase of primes?}
 
-\chapter{ Pure and applied  mathematics  }     
+\chapter{Pure and applied  mathematics}     
 
 Everyone seems to agree that, loosely speaking, there are two types of
 mathematics: {\em pure} and {\em applied}. Usually---when we judge
@@ -1832,7 +1829,7 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
    How this ``plays out" as we take longer  and longer finite pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, and what relationship this has to the Fourier analysis of the staircase of primes is the subject of the later parts of this book.
 
 
-\chapter{ To our readers of Part~\ref{part1}} 
+\chapter{To our readers of Part~\ref{part1}} 
 The statement of the \RH{}---admittedly as elusive as
 before---has, at least, been expressed elegantly and more simply,
 given our new staircase that approximates (conjecturally with {\em
@@ -1965,7 +1962,23 @@ rigorous foundation for what they were doing.
     For Weierstrass and his companions, even though the functions they worked with needn't be smooth, or continuous, at the very least, the functions they studied had {\it well-defined---and usually finite---values}.   But our ``limit of red graphs" is not so easily formalized as the concepts that occupied the efforts of Weierstrass. Happily however, this general process 
 of approximating discontinuous functions more and more exactly by smooth functions, and taking
 their derivatives to get the blip-functions as we have just seen in the red graphs above was eventually given a mathematically rigorous
-foundation; notably, by the French mathematician, Laurent Schwartz who provide a beautiful theory that we will not go into here, that made perfect sense of ``generalized functions'' such as our limit of the series of red graphs, and that allows mathematicians to work with these concepts with ease. These ``generalized functions''  are called {\it distributions} in Schwartz's theory.
+foundation; notably, by the French mathematician, Laurent Schwartz who provide a beautiful theory that we will not go into here, that made perfect sense of ``generalized functions'' such as our limit of the series of red graphs, and that allows mathematicians to work with these concepts with ease. These ``generalized functions''  are called {\it distributions} in Schwartz's theory.\endnote{
+Shwartz's explains on page 238 of his autobiography: 
+``Why did we choose the name distribution?  Because, if $\mu$ is a
+measure, i.e., a particular kind of distribution, it can be considered
+as a distribution of electric charges in the universe.  Distributions
+give more general types of electric charges, for example dipoles and
+magnetic distributions.  If we consider the dipole placed at the point
+$a$ having magnetic moment $M$, we easily see that it is defined by
+the distribution $-D_M \delta_{(a)}$.  These objects occur in physics.
+ Deny's thesis, which he defended shortly after, introduced electric
+distributions of finite energy, the only ones which really occur in
+practice; these objects really are distributions, and do not
+correspond to measures.  Thus, distributions have two very different
+aspects: they are a generalization of the notion of function, and a
+generalization of the notion of distribution of electric charges in
+space. [...] Both these interpretations of distributions are currently
+used.''}
 
 
 % From http://en.wikipedia.org/wiki/Laurent_Schwartz
@@ -2278,7 +2291,7 @@ information about the placement of prime numbers among all numbers.
   We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Section~\ref{sec:ftdelta}. In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
   
 
-   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  the generalized function that we engineered in Section~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
+   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  which was one of the generalized function that we engineered in Section~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
    
 
 
@@ -2331,7 +2344,7 @@ Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} genera
 \theta_6 &=& 37.586178 \dots
 \end{eqnarray*}
 
-  Riemann defined this sequence of numbers in his 1859 article  in a manner somewhat different from the treatment we have given (in thatarticle these $\theta_i$ appear as the ``imaginary parts of the nontrivial zeroes of his $\zeta$-function;"  we will discuss this briefly in Chapter 24 below). Riemann wrote:
+  Riemann defined this sequence of numbers in his 1859 article  in a manner somewhat different from the treatment we have given (in that article these $\theta_i$ appear as the ``imaginary parts of the nontrivial zeroes of his $\zeta$-function;"  we will discuss this briefly in Chapter 24 below). Riemann wrote:
  \begin{quote}
   ``One now finds indeed approximately this number of real roots
   within these limits, and it is very probable that all roots are
@@ -2363,7 +2376,8 @@ $14.134725141734693790457251983562470270784257115699243175685567460149\newline
 60675378381214891908864977277554420656532052405$
 \vskip20pt
 \noindent{}and if, by any chance, you wish to peruse the first
-$100,\!000$ of these $\theta_i$'s lovingly calculated to an accuracy
+$2,\!001,\!052$
+ of these $\theta_i$'s lovingly calculated to an accuracy
 within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
 
@@ -2483,7 +2497,7 @@ asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$,
 in the sense that both go to infinity at the same rate. 
 Our first formulation of the \RH{} (see page~\pageref{rh:first})
 was that $\Li(X)$ is an essentially square root accurate approximation of $\pi(X)$. 
-Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate that Riemann's function $R(X)$ appears to be a better
+Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate that Riemann's function $R(X)$ appears to be an even better
 approximation to $\pi(X)$ than anything we have seen before. 
 
 \illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.5}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom)\label{fig:guess100}}
@@ -2500,7 +2514,7 @@ but with $\sin(X)$ replaced by $R(X)$ and spectrum the $\theta_i$, which
 conjecturally exactly equals $\pi(X)$.
 He gave an infinite sequence of improved guesses,
 $$
-R(X) = R_0(X),\quad R_1(X), \quad R_2(X), \quad R_3(X), \ldots
+R(X) = R_0(X),\quad R_1(X), \quad R_2(X), \quad R_3(X), \quad \ldots
 $$
 and he hypothesized that one and all of them were all
 essentially square root approximations to $\pi(X)$,
@@ -2524,7 +2538,7 @@ The \RH{}, if true, would tell us that these correction
 terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small},
 and all the successively corrected smooth curves $$R(X), R_1(X),
 R_2(X),R_3(X),\dots$$ are good approximations to $\pi(X)$.
-Moreover, [[is this right?]]
+Moreover, {\bf [[is this right?]]}
 $$
  \pi(X) = R(X) + \sum_{k=1}^{\infty} C_k(X).
 $$
@@ -2537,12 +2551,12 @@ numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
 
 Here in the book will be where we refer explicitly to complex numbers for the first time!!
 The definition of Riemann's $C_k(X)$ requires complex numbers $a+bi$, where $i=\sqrt{-1}$, 
-and extending the function $\Li(X)$ to make sense when given complex numbers as input.   
+and requires extending the definition of the function $\Li(X)$ to make sense when given complex numbers as input.   
 Assuming the \RH{}, the Riemann correction terms $C_k(X)$ are then
 $$
    C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}), 
 $$
-where the $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$
+where $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$, etc.,
 are the spectrum of the prime numbers.\endnote{ People who know that these correction terms are
 index by the nontrivial zeroes of the Riemann zeta-function may well
 ask how I propose to order them if RH is false; the following
@@ -2552,15 +2566,18 @@ than one zero with the same imaginary part, order zeroes of the same
 imaginary part by their real parts, going from right to left.}
 
 Riemann provided an extraordinary recipe that allows us to work
-out the harmonics, $$C_1(X),\quad C_2(X),\quad C_3(X),\dots$$ without our having
+out the harmonics, $$C_1(X),\quad C_2(X),\quad C_3(X),\quad \dots$$ without our having
 to consult, or compute with, the actual staircase of primes. As with
 Fourier's modus operandi where both {\em fundamental} and all {\em
   harmonics} are modeled on the sine wave, but appropriately
 calibrated, Riemann fashioned his higher harmonics, modeling them all
 on a single function, namely his initial guess $R(X)$.
+
+The convergence of $R_k(X)$ to $\pi(X)$ is strikingly illustrated
+in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various values of $k$.
  
   
-\ill{Rk_1_2_100}{.9}{The function $R_{1}$ approximating the staircase of primes up to $100$}
+\ill{Rk_1_2_100}{.9}{The function $R_{1}$ approximating the staircase of primes up to $100$\label{fig:rkfirst}}
 
 \ill{Rk_10_2_100}{.9}{The function $R_{10}$ approximating the staircase of primes up to $100$}
 
@@ -2571,7 +2588,7 @@ on a single function, namely his initial guess $R(X)$.
 
 \ill{Rk_50_2_500}{.9}{The function $R_{50}$ approximating the staircase of primes up to $500$}
 
-\ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.}
+\ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.\label{fig:rklast}}
 
 
 \chapter[The Riemann Zeta-Function]{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
