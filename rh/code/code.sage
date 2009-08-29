@@ -857,6 +857,7 @@ def fig_waves(dir,ext):
 
     x = var('x')
     c = 5
+    # See for why this is right http://www.phy.mtu.edu/~suits/notefreqs.html
     g = plot(sin(x), 0, c*pi) + plot(sin(329.0/261*x), 0, c*pi, color='red')
     g.save(dir+'/sin-twofreq.%s'%ext)
 

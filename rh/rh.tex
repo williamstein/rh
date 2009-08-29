@@ -130,7 +130,9 @@
 \newcommand{\RH}{Riemann Hypothesis\index{Riemann Hypothesis}}
 
 
-\title{\Huge What is Riemann's Hypothesis?}
+\title{\Huge What is Riemann's Hypothesis?\\
+August 2009 Draft\\
+{\Large This is still VERY VERY Rough and Incomplete!}}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
 %\begin{center}
@@ -177,10 +179,7 @@ There are at least four full-length books recently published, written
 for a general audience, that have the \RH{} as their main
 topic.  A reader of these books will get a fairly rich picture of the
 personalities engaged in the pursuit, and of related mathematical and
-historical issues.\endnote{List these four books here with some discussion of each?
-
-Music of Primes by Marcus du Sautoi
-}
+historical issues.\endnote{See, e.g., {\em The Music of the Primes} by Marcus du Sautoy.}
      
 This is {\em not} the mission of the book that you now hold in your
 hands. We aim---instead---to explain, in as direct a manner as
@@ -198,7 +197,7 @@ might take weeks or even months to complete.
 
 Our book is profusely illustrated, containing over 125 figures, diagrams,
 and pictures that accompany the text.  There are comparatively very few 
-mathematical equations.   For the more adventurous readers, we have
+mathematical equations in Part~\ref{part1}.   For the more adventurous readers, we have
 also created at \url{http://wstein.org/rh} something we call {\em worksheets}
 that enable the reader to use the free Sage mathematical
 software to experiment with the parameters for
@@ -248,7 +247,7 @@ to find that key.
 \ill{raoulbott}{0.25}{Raoul Bott (1923--2005)\label{fig:bott}}
 
 
-A famous mathematician, Raoul Bott (see Figure~\ref{fig:bott}), once
+A famous mathematician, Raoul Bott, once
 said---giving advice to some young mathematicians---that whenever one
 reads a mathematics book or article, or goes to a math lecture, one
 should aim to come home with something very specific (it can be small,
@@ -577,8 +576,7 @@ Eratosthenes, the mathematician from Cyrene (and later, librarian at
 Alexandria) explained how to {\em sift} the prime numbers from the
 series of all numbers: in the sequence of numbers,
 $$2\ \ 3\ \ 4 \ \ 5\ \ 6\ \ 7\ \ 8\ \ 9\ \ 10\ \ 11
-\ \ 12\ \ 13\ \ 14\ \ 15\ \ 16\ \ 17\ \ 18\ \ 19\ \ 20\ \ 21\ \ 22\ \ 23\ \ 24\ \ 25\ \ 26\ \ 
-27\ \ 28\ \ 29,$$
+\ \ 12\ \ 13\ \ 14\ \ 15\ \ 16\ \ 17\ \ 18\ \ 19\ \ 20\ \ 21\ \ 22\ \ 23\ \ 24\ \ 25\ \ 26,$$
 for example, start by circling the $2$ and crossing out all the other
 multiples of $2$.  Next, go back to the beginning of our sequence of
 numbers and circle the first number that is neither circled nor
@@ -603,7 +601,7 @@ their box red.
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-3}\\
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-5}
 \includegraphics[width=.4\textwidth]{illustrations/sieve100-7}\\
-\caption{Using the Primes 2,3,5,7 to Sieve out the Primes up to 100\label{fig:erat}}
+\caption{Using the Primes 2, 3, 5, and 7 to Sieve out the Primes up to 100\label{fig:erat}}
 \end{figure}
 
 
@@ -714,9 +712,7 @@ Similarly, it interesting to consider primes $p$ and $q$
 with difference $4$, or $8$, or---in fact---any even number
 $2k$. That is, people have guessed that there are infinitely many
 pairs of primes with difference $4$, with difference $6$, etc. but
-none of these guesses have yet been proved. [[maybe reference in an
-endnote something involving Green/Tao or Goldstein or some other
-recent big theorem related to the above?]]
+none of these guesses have yet been proved. 
 
 
 
@@ -762,22 +758,12 @@ the spacing of prime numbers that we can't answer.
 \begin{quote}
   Challenge: As $X$ tends to infinity which of $Gap_2(X),
   Gap_4(X), Gap_6(X),$ or $Gap_8(X)$ do you think that will grow
-  faster? How much would you bet on the truth of your guess?
+  faster? How much would you bet on the truth of your guess?\endnote{%
+  Hardy and Littlewood give a nice conjectural answer to such questions about
+  gaps between primes.  See [reference Guy's book].}
 \end{quote}
   
-[[TODO: It would be natural to talk about the
-conjectural Hardy-Littlewood answer to this question, which is very
-much not suggested by data.  Perhaps we should also
-ask whether ${\rm Gap}_6(X)$ is always the winner, or if there is some
-other $k$ such that ${\rm Gap}_k(X)$ eventually always beat ${\rm
-  Gap}_6(X)$?  That's what Hardy-Littlewood predicts.]]
 
-[[Give Hardy-Littlewood's asymptotic conjecture for $Gap_k(X)$ (I
-assume it is simply $C_k{\sqrt X}/\log(X)$ for some specific
-(nonzero...)  constants $C_k$? What are these $C_k$'s???  Should we
-just trot them out in a little table, and say that this is Hardy and
-Littlewood's guess, but we haven't a clue, at present, how to prove
-such guesses.]]
 
 
 Here is a curious question that you can easily begin to check out for
@@ -847,11 +833,9 @@ in 1980 that the smallest $N$ with this property is
 $N=906,150,257$).
 
 %%%%%%%%%%%%%%%%%
-\begin{wrapfigure}{r}{0.5\textwidth}
-  %\%begin{center}}
-    \includegraphics[width=0.48\textwidth]{illustrations/questions}
-   %\end{center}
-\end{wrapfigure}
+%\begin{wrapfigure}{r}{0.2\textwidth}
+%    \includegraphics[width=0.2\textwidth]{illustrations/questions}
+%\end{wrapfigure}
 These are questions that have been asked about primes (and we could
 give bushels more), questions expressible in simple vocabulary, that
 we can't answer today. We have been studying numbers for over two
@@ -859,7 +843,7 @@ millenia and yet we are indeed in the infancy of our understanding.
 
 
 So we'll continue our discussion by returning to the simplest counting
-question about prime numbers.  [[I'm experimenting with images next to text.]]
+question about prime numbers.  
                            
 \chapter{How many primes are there?}
 
@@ -997,7 +981,10 @@ models are fashioned, where computers churn away on the Internet (for
 only then do we unabashedly call it {\em applied math}), or whether
 the piece of mathematics will find an important place within the
 context of mathematical theory (and then we label it {\em pure}).  Of
-course, there is a great overlap. Moreover, many questions in
+course, there is a great overlap (as we will see later, Fourier analysis plays 
+a major role both in data compression and in pure mathematics).
+
+ Moreover, many questions in
 mathematics are ``hustlers'' in the sense that, at first view, what is
 being requested is that some simple task be done (e.g., the question
 raised in this book, {\em to find a smooth curve that is a reasonable
@@ -1024,17 +1011,6 @@ concepts at the root of, and more basic than (and ``prior to,'' to
 borrow Aristotle's use of the phrase,) {\em prime numbers}--concepts
 that account for the apparent complexity of the nature of primes?
    
-   
-%[[TODO (william): Insert a discussion here about how believing RH is
-%crucial to doing many algebraic number theory calculations.  E.g.,
-%complexity analyses for algorithms like factoring depend on RH.  Also,
-%standard class group algorithms are vastly faster if we assume RH (or
-%even more!), so number theorists do so all the time when doing
-%numerical experiments (though of course they try to remove the
-%hypothesis...).  See {\tt
-%  http://pari.math.u-bordeaux.fr/dochtml/html.stable/}, e.g., for some
-%sense of what this is like in the trenches...  It says ``Warning. Make
-%sure you understand the above!'']]
    
 \chapter{A probabilistic ``first'' guess\label{sec:firstguess} }
 
@@ -1093,7 +1069,7 @@ Your remarks concerning the frequency of primes were of interest to me in more
 ways than one. You have reminded me of my own endeavors in this Þeld which 
 began in the very distant past, in 1792 or 1793, after I had acquired the Lambert 
 supplements to the logarithmic tables. Even before I had begun my more detailed 
-investigations into higher arithmetic, one of my Þrst projects was to turn my 
+investigations into higher arithmetic, one of my first projects was to turn my 
 attention to the decreasing frequency of primes, to which end I counted the primes in 
 several chiliads and recorded the results on the attached white pages. I soon recognized 
 that behind all of its fluctuations, this frequency is on the average inversely 
@@ -1116,7 +1092,7 @@ have been counted and checked against the integral. A small excerpt follows: ...
 written in 1849 (see Figure~\ref{fig:gauss_letter}), Gauss
 claimed that as early as 1792 or 1793 he had already observed that the
 density of prime numbers over intervals of numbers of a given rough
-magnitude $X$ seemed to average $1/\log(X)$.  Roughly speaking, this
+magnitude $X$ seemed to average $1/\log(X)$.  Very {\em very} roughly speaking, this
 means that {\em the number of primes up to $X$ is approximately $X$ divided by
 twice the number of digits of $X$}.  For example,
 the number of primes less than $99$ should be roughly
@@ -1129,7 +1105,7 @@ be roughly
 $$
    \frac{999}{2\times 3} = 166.5 \approx  167,
 $$   
-which is again close, since there are 168 primes up to below $1000$. 
+which is again close, since there are 168 primes up to $1000$. 
 The number of primes up to $999,\!999$ should be roughly
 $$
    \frac{999999}{2\times 6} = 83333.25 \approx  83,\!333,
@@ -1394,18 +1370,13 @@ known for over a century. It goes under the name of
    This fact is a very hard-won piece of mathematics!  It was proved
    in 1896 independently by Hadamard and de la Vall\'{e}e Poussin.
 
-   [William: here we can have a riff on PNT reminding people of Gauss,
-   Hadamard et al, and maybe even the controversy of Selberg and
-   Erd{\"o}s or maybe not. The Wiki-reference for the PNT is superb!!
-   We should rewference it (Probably written by Granville).  It may be
-   reasonable also to say:]
+   {\bf William: here we can have more of a riff on PNT.}
+        
 
-        
-        
-        A milestone in the history leading up to the proof of Prime
-        Number Theorem is the earlier work of Chebyshev [ref***]
-        showing that (to use the terminology we introduced)
-        $X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
+A milestone in the history leading up to the proof of Prime
+Number Theorem is the earlier work of Chebyshev [ref***]
+showing that (to use the terminology we introduced)
+$X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
         
 
 The elusive \RH{}, however, is much deeper than the Prime
@@ -1439,8 +1410,16 @@ its support.  It is the kind of conjecture that contemporary
 Dutch mathematician Frans Oort might label
 a {\em suffusing conjecture} in that it has unusually broad
 implications: many many results are now known to follow, if the
-conjecture, familiarly known as RH, is true.  A proof of RH would,
-therefore, fall into the {\em applied} category, given our discussion
+conjecture, familiarly known as RH, is true.\endnote{%
+% This is from page 106 of the Borwein book.
+Peter Sarnak says: {\em The Riemann hypothesis is the central problem and it implies many,
+many things. One thing that makes it rather unusual in mathematics
+today is that there must be over five hundred papers---somebody should
+go and count---which start ``Assume the Riemann hypothesis,'' and
+the conclusion is fantastic. And those [conclusions] would then become
+theorems ... With this one solution you would have proven five hundred
+theorems or more at once.}} 
+A proof of RH would, therefore, fall into the {\em applied} category, given our discussion
 above.  But however you classify RH, it is a central concern in
 mathematics to find its proof (or, a counter-example!).  RH is 
 one of the weightiest statements in all of mathematics. 
@@ -1531,9 +1510,10 @@ but is constructed according to the following architectural plan.
    but rather: the step at $x=p^n$ will have the height of its riser
    equal to $\log p$.  So for the first few steps listed in the
    previous item, the risers will be of length $\log(2\pi), \log
-   2,\log 3,\log 2,\log 5,\log 2,\log 3,\log 11, \dots$ These vertical
-   dimensions might lead to a steeper ascent but no great loss of {\em
-     information}.
+   2,\log 3,\log 2,\log 5,\log 2,\log 3,\log 11, \dots$ 
+   Since $\log(p)>1$,
+  these vertical dimensions lead to a steeper ascent but no great loss
+  of {\em information}.
   
    Although we are not quite done with our architectural work, Figure~\ref{fig:psi} shows 
    what our staircase looks like, so far.
@@ -1547,9 +1527,9 @@ but is constructed according to the following architectural plan.
   nicely approximated by the $45$ degree straight line, i.e., by the
   simple function $x$. In fact, we have---by this new
   architecture---a second {\em equivalent} way of formulating
-  Riemann's hypothesis.   For this, let $\psi(x)$ denote the 
-  function\endnote{We have $$\psi(x) =\sum_{p^n \le x}\log p$$ where the summation is over prime
-powers $p^n$ that are $\le x$.}
+  Riemann's hypothesis.   For this, let $\psi(X)$ denote the 
+  function\endnote{We have $$\psi(X) =\sum_{p^n \le X}\log p$$ where the summation is over prime
+powers $p^n$ that are $\le X$.}
   of $x$ whose graph is
 depicted in Figure~\ref{fig:psi}.
    
@@ -1560,7 +1540,7 @@ depicted in Figure~\ref{fig:psi}.
        \medskip
        
        This new staircase is essentially square root close to the 45 degree
-straight line; i.e., the function $\psi(x)$ is essentially square root
+straight line; i.e., the function $\psi(X)$ is essentially square root
 close to the function $f(x)=x$.
           \vspace{1ex}
    \end{minipage}}
@@ -1668,12 +1648,12 @@ get a reasonable quality of sound.
 
 Another way is to simply record the {\em five} numbers: the {\em
   spectrum, amplitudes,} and {\em phase}.  Surprisingly, this seems to
-be roughly the way our ear processes such a sound when we hear it.  At
-this point we recommend to our readers that they download
-\url{http://www.maths.abdn.ac.uk/~bensondj/html/music.pdf}, which is a
-marvelous book by Dave Benson, entitled {\em Music: A Mathematical
-  Offering}. This is free, and gives a beautiful account of the superb
-mechanism of hearing, and of the mathematics of music.
+be roughly the way our ear processes such a sound when we hear it.\endnote{%
+We recommend to our readers that they download Dave Benson's marvelous book
+{\em Music: A Mathematical Offering} from 
+\url{http://www.maths.abdn.ac.uk/~bensondj/html/music.pdf}. 
+This is free, and gives a beautiful account of the superb
+mechanism of hearing, and of the mathematics of music.}
 
   Even in this simplest of examples (our pure chord: the pure note C
   played simultaneously with pure note E) the {\em efficiency of data
@@ -1743,7 +1723,8 @@ Figure~\ref{fig:complicated-wave}, and you want to record it.
 Standard audio CD's record their data by intensive sampling as we
 mentioned. In contrast, current mp3 audio compression technology uses
 Fourier transforms plus sophisticated algorithms based on
-psycho-acoustic understanding. With this, mp3 technology manages to
+knowledge of which frequencies the human ear can hear. 
+With this, mp3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality, so that you can fit your entire music collection on your
 iPod, instead of just your favorite 10 CD's.  
@@ -1858,7 +1839,7 @@ prime numbers, and to the nature of the laws that they obey.
 \chapter[Slopes of graphs that have no slopes]{How Calculus manages to find the slopes of graphs that  
 have no slopes}   
    
-Differential Calculus, initially the creation of Newton and/or Leibniz, acquaints
+Differential Calculus, initially the creation of Newton and/or Leibniz in the 1680s, acquaints
 us with {\it slopes} of graphs of functions of a real variable.  So, to discuss this we should say a word about
  what a {\it function} is, and what its {\it graph} is.
  
@@ -1867,7 +1848,7 @@ us with {\it slopes} of graphs of functions of a real variable.  So, to discuss 
 
  A {\bf function}  (let us refer to it in this discussion as $f$)  is often described as a {\it kind of machine} that for any specific input numerical value $a$  will give, as output, a well-defined real number. 
  
- This ``output number"   is denoted $f(a)$ and is called {\it the ``value" of the function $f$ at $a$}.  For example, the {\it machine that adds $1$ to any number} can be thought of as the function $f$ whose value at any $a$ is given by the equation $f(a) = a+1$.  Often we choose a letter---say, $X$---to stand for a ``general number"  and we denote the function $f$ by the symbol $f(X)$ so that this symbolization allows to "substitute for $X$ any specific number $a$" to get its value $f(a)$.
+ This ``output number"   is denoted $f(a)$ and is called {\it the ``value" of the function $f$ at $a$}.  For example, the {\it machine that adds $1$ to any number} can be thought of as the function $f$ whose value at any $a$ is given by the equation $f(a) = a+1$.  Often we choose a letter---say, $X$---to stand for a ``general number"  and we denote the function $f$ by the symbol $f(X)$ so that this symbolization allows to ``substitute for $X$ any specific number $a$" to get its value $f(a)$.
 
    The {\bf graph} of a function is a vivid visual representation of the function in the Euclidean plane where over every point $a$ on the $x$-axis you plot a point above it of ``height" equal to the value of the function at $a$, i.e., $f(a)$. In  Cartesian coordinates, then, you are plotting points $(a, f(a))$ in the plane where $a$ runs through all real numbers.
 
@@ -1930,7 +1911,7 @@ a smooth approximation to a function that jumps.\label{fig:djump3}}
 a smooth approximation to a function that jumps.\label{fig:djump4}}
 
 
-Notice, what is happening: as the approximation gets better and
+Notice what is happening: as the approximation gets better and
 better, the derivative will be zero mostly, with a blip at the point
 of discontinuity, and the blip will get higher and higher. 
 In each of these pictures,  for any interval of real numbers $[a,b]$ the total area under the red graph over that interval is equal to
@@ -1966,7 +1947,9 @@ rigorous foundation for what they were doing.
    
    
  % From http://en.wikipedia.org/wiki/Karl_Weierstrass
- \ill{weierstrass}{.3}{Karl Weierstrass (1815--1897)} 
+ 
+% From http://en.wikipedia.org/wiki/Laurent_Schwartz
+ \illtwo{weierstrass}{schwartz}{.3}{Karl Weierstrass (1815--1897) and Laurent Schwartz (1915--2002)} 
  
    Karl Weierstrass, who worked during the latter part of the nineteenth century, was known as the ``father of modern analysis.'' He oversaw one of the glorious moments of rigorization of concepts that were long in use, but never before systematically organized.  He, and other analysts of the time were interested in providing a  rigorous language to talk about {\it functions} and more specifically {\it continuous functions} and {\it smooth} (i.e., {\it differentiable}) functions. They wished to have a firm understanding of limits (i.e., of sequences of numbers, or of functions).  
  
@@ -1975,7 +1958,8 @@ rigorous foundation for what they were doing.
 of approximating discontinuous functions more and more exactly by smooth functions, and taking
 their derivatives to get the blip-functions as we have just seen in the red graphs above was eventually given a mathematically rigorous
 foundation; notably, by the French mathematician, Laurent Schwartz who provide a beautiful theory that we will not go into here, that made perfect sense of ``generalized functions'' such as our limit of the series of red graphs, and that allows mathematicians to work with these concepts with ease. These ``generalized functions''  are called {\it distributions} in Schwartz's theory.\endnote{
-Shwartz's explains on page 238 of his autobiography: 
+See \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29} for more about distributions.
+Also, Shwartz's explains on page 238 of his autobiography: 
 ``Why did we choose the name distribution?  Because, if $\mu$ is a
 measure, i.e., a particular kind of distribution, it can be considered
 as a distribution of electric charges in the universe.  Distributions
@@ -1993,8 +1977,6 @@ space. [...] Both these interpretations of distributions are currently
 used.''}
 
 
-% From http://en.wikipedia.org/wiki/Laurent_Schwartz
- \ill{schwartz}{.23}{Laurent Schwartz (1915--2002)} 
 
 
 \chapter[Distributions]{Distributions: sharpening our approximating functions even if
@@ -2002,7 +1984,7 @@ used.''}
   
 
 
-The curious {\it limit of the red graphs} of the previous section, which you might think be tempted to think of as a ``blip-function'' that vanishes for $t$ nonzero and is somehow ``infinite'' (whatever that means) at $0$ is an example of a {\it generalized function} (in the sense of the earlier mathematicians) or a {\it distribution} in the sense of Laurent Schwartz.
+The curious {\it limit of the red graphs} of the previous section, which you might be tempted to think of as a ``blip-function'' that vanishes for $t$ nonzero and is somehow ``infinite'' (whatever that means) at $0$ is an example of a {\it generalized function} (in the sense of the earlier mathematicians) or a {\it distribution} in the sense of Laurent Schwartz.
 
   This particular {\it limit of the red graphs} also goes by another  name (it is officially called a Dirac $\delta$-function,
 the adjective ``Dirac'' being in honor of the physicist who first worked  with this concept, the ``$\delta$'' being the symbol he assigned to these objects). The noun ``function'' should 
@@ -2102,22 +2084,15 @@ $$\int_a^bF'(t)dt \ = \ F(b) -F(a).$$
      
       
   We'll be dealing with much more complicated staircase functions in the next section, but the general principles discussed here will nicely apply there.\endnote{
-[[I found this comment about ``Generalized functions"
-     (which seems to be an early name for distributions) on Wikipedia:
-
-
+From Wikipedia:
 \begin{quote} ``Generalized functions'' were introduced by Sergei Sobolev in 1935. They were independently introduced in the late 1940s by Laurent Schwartz, who developed a comprehensive theory of distributions.
 \end{quote}
-
-so maybe we should look into the history of this. (But I'm not keen on
-getting too much into it: just if we need to add a short end-note
-about it, to credit Sobolev $\dots$)]]
 }
 
 
 \chapter{Fourier transforms: second visit}
 
-In Part~\ref{part1} of this book  (in Section~\ref{sec:fourier1} above) we wrote:
+In Part~\ref{part1} of this book  (in Chapter~\ref{sec:fourier1} above) we wrote:
 
 \begin{quote} The operation that starts with a graph and goes to its spectral picture that records the frequencies,
 amplitudes, and phases of the pure sine waves that, together, compose the graph is called the {\bf Fourier
@@ -2158,7 +2133,7 @@ transform}.
 
 \chapter[Fourier transform of delta]{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
 
-   Consider the $\delta$-function that we denoted $\delta(t)$  (or $\delta_0(t)$). This is also the ``generalized function" that we thought of as the ``limit of the red graphs" in Section~\ref{sec:dist} above. Even though $\delta(t)$ is  a distribution and {\it not} a bona fide function, it is symmetric about the origin, and also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is finite (its value is, in fact, $1$). All this means that, appropriately understood, the discussion of the previous section applies, and we can {\it feed} this delta-function into our Fourier Transform Machine (Figure~\ref{fig:fourier_machine}) to see what frequencies and amplitudes arise in our attempt to express---whatever this means!---the delta-function as a sum, or an integral, of cosine functions.
+   Consider the $\delta$-function that we denoted $\delta(t)$  (or $\delta_0(t)$). This is also the ``generalized function" that we thought of as the ``limit of the red graphs" in Chapter~\ref{sec:dist} above. Even though $\delta(t)$ is  a distribution and {\it not} a bona fide function, it is symmetric about the origin, and also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is finite (its value is, in fact, $1$). All this means that, appropriately understood, the discussion of the previous section applies, and we can {\it feed} this delta-function into our Fourier Transform Machine (Figure~\ref{fig:fourier_machine}) to see what frequencies and amplitudes arise in our attempt to express---whatever this means!---the delta-function as a sum, or an integral, of cosine functions.
    
    
      So what is the Fourier transform,  ${\hat \delta_0}(\theta)$, of the delta-function?
@@ -2192,7 +2167,7 @@ transform}.
 $\cos(x\theta).$ }
 
     
-So far, so good, but remember that the theory of the Fourier transform has---like much of mathematics---two parts: an {\it analysis part} and a {\it synthesis} part.  We've just perfom the {\it analysis} part of the theory for these symmetrized delta functions $(\delta_x(t) + \delta_{-x}(t))/2$.  
+So far, so good, but remember that the theory of the Fourier transform has---like much of mathematics---two parts: an {\it analysis part} and a {\it synthesis} part.  We've just perfomed the {\it analysis} part of the theory for these symmetrized delta functions $(\delta_x(t) + \delta_{-x}(t))/2$.  
 
 Can we synthesize them---i.e., build them up again---from their Fourier transforms?
   
@@ -2205,7 +2180,7 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
   
   $$\log(XY) = \log(X) + \log(Y)$$
 
-which we encountered earlier in Section~\ref{sec:firstguess},  is just two ways of looking at 
+which we encountered earlier in Chapter~\ref{sec:firstguess},  is just two ways of looking at 
 the same thing,  yet it was the basis for much manual calculation for several centuries.
   
   
@@ -2221,19 +2196,19 @@ the same thing,  yet it was the basis for much manual calculation for several ce
  
 As we have already hinted in the previous sections, however, there are various ways open to us to tinker with---and significantly modify---our staircase {\it without losing  the essential information it contains}. Of course, there is always the danger of modifying things in such a way that ``retrieval" of the original data becomes difficult.  Moreover, we had better  remember every change we have made if we are to have any hope of retrieving the original data!
  
- With this in mind, let us go back to Section~\ref{sec:information} (discussing the staircase of primes) and Section~\ref{sec:tinkering}, where we tinkered with the original staircase of primes---alias: the graph of $\pi(x)$---to get $\psi(x)$ whose risers look---from afar---as if they approximated 45 degree staircase.
+ With this in mind, let us go back to Chapter~\ref{sec:information} (discussing the staircase of primes) and Chapter~\ref{sec:tinkering}, where we tinkered with the original staircase of primes---alias: the graph of $\pi(X)$---to get $\psi(X)$ whose risers look---from afar---as if they approximated the 45 degree staircase.
  
  
-   At this point we'll do some further carpentry on $\psi(x)$:
+   At this point we'll do some further carpentry on $\psi(X)$:
    
   
    \begin{enumerate}
    
 \item Distort
-the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the function $$\Psi(t):= \psi(e^t).$$  No harm is done by this  for we can retrieve our original $\psi(x)$  as $$\psi(x) = \Psi(\log(x)).$$  Our distorted staircase has risers at ($0$ and) all positive integral multiples of logs of prime numbers.
+the $X$-axis of our staircase by  replacing the variable $X$ by $e^t$ to get the function $$\Psi(t):= \psi(e^t).$$  No harm is done by this  for we can retrieve our original $\psi(X)$  as $$\psi(X) = \Psi(\log(X)).$$  Our distorted staircase has risers at ($0$ and) all positive integral multiples of logs of prime numbers.
   
 
-\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the right is just the plot of $\psi$ but with the $x$-axis plotted on a logarithmic scale.}
+\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the right is just the plot of $\psi$ but with the $X$-axis plotted on a logarithmic scale.}
 
 
 \item  Now we'll do something that might seem a bit more brutal: {\it take the derivative of this distorted staircase) $\Psi(t)$.}   This derivative $\Psi'(t)$ is a {\it generalized} function with support  at all nonnegative  integral multiples of logs of prime numbers.
@@ -2241,15 +2216,12 @@ the $x$-axis of our staircase by  replacing the variable $x$ by $e^t$ to get the
 \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and $\log(2\pi)$ at $0$).  The more red the arrow, the larger the weight.}
 
 \item    Now ---for normalization purposes---multiply $\Psi'(t)$ by
-the function $e^{?t}$ which has no effect whatsoever on the support.
+the function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
     
-{\bf William: the ``?" is just that I haven't yet recomputed the normalization factor; will do. I think that it is $\pm 1/2$ but am vague about the sign}
-
-
 Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
 
-  $$\Phi(t) \ = \ e^{?t}\Psi'(t)$$ 
+  $$\Phi(t) \ = \ e^{-t/2}\Psi'(t)$$ 
   A distribution that has a discrete set of real numbers as its support---as $\Phi(t)$ does, we sometimes like to call {\bf spike distributions} since the pictures of functions approximating them tend to look like a series of spikes.
    
  We have then before us  a spike distribution with support at integral multiples of logarithms of prime numbers, and this generalized function retains the essential information about the placement of prime numbers among all whole numbers, and
@@ -2259,7 +2231,7 @@ Let us denote by $\Phi(t)$ the generalized function that resulted from the above
    
       Here is a sequence of functions approximating it.
 
-\ill{psi_200}{.6}{Illustration of the  staircase $\Psi(x)$  constructed in Section~\ref{sec:tinkering} that 
+\ill{psi_200}{.6}{Illustration of the  staircase $\Psi(x)$  constructed in Chapter~\ref{sec:tinkering} that 
 counts weighted prime powers.\label{fig:psi_200}}
   
 So what happens when we take the derivative---in the sense of
@@ -2296,14 +2268,14 @@ information about the placement of prime numbers among all numbers.
 
 \chapter{Going from the primes to the spectrum}
 
-{\bf This chapter is in a very provisional  (or rather: nontempered) state and the moment, and we'll be figuring out how to deal with this, following the phone conversation we had on Tuesday}
+{\bf This chapter is in a very provisional  (or rather: nontempered) state and the moment, and we'll be figuring out how to deal with this.}
  
  
  
-  We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Section~\ref{sec:ftdelta}. In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
+  We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Chapter~\ref{sec:ftdelta}. In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
   
 
-   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  which was one of the generalized function that we engineered in Section~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
+   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  which was one of the generalized function that we engineered in Chapter~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
    
 
 
@@ -2328,13 +2300,13 @@ Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} genera
   
   
   We have come then---again---to the expressions graphed at the end of Part~\ref{part1}, in 
-  Section~\ref{sec:fourier_staircase}.
+  Chapter~\ref{sec:fourier_staircase}.
   
   
   \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).}
 
  \vskip5pt
-  {\bf WILLIAM: 
+  {\bf 
     \begin{itemize}
     \item The main mathematical task we have is to figure out whether---and in what sense---the Fourier transform of $${\Phi}_{\rm even}(t)$$ is
   \begin{itemize}
@@ -2399,18 +2371,18 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
  
 \chapter{How to build $\Phi(t)$ from the spectrum}
   \vskip5pt 
- {\bf WILLIAM: The main mission of this chapter is to explain, and show data for:}
+ {\bf The main mission of this chapter is to explain, and show data for:}
    \vskip5pt
  \begin{center}
       \shadowbox{ \begin{minipage}{0.9\textwidth}
       \mbox{}       \vspace{0.2ex}
-      \begin{center}{\bf\large The \RH{} is equivalent to the assertion that  $\Phi(t)$ is {\em somehow related to---i.e., basically equal to---} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
+      \begin{center}{\bf\large The \RH{} is equivalent to the assertion that  $\Phi(t)$ is {\em somehow related to---} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
 ...
     \vspace{1ex}
     \end{minipage}}
  \end{center}
   \vskip5pt
-{\bf WILLIAM: At the moment all we have done are these graphs:}
+{\bf At the moment all we have done are these graphs:}
    \vskip5pt
 
 
@@ -2425,25 +2397,6 @@ by the Fourier series, and how the prime powers $3^3$ and $2^5$ also appear.}
 \ill{phi_cos_sum_1010_1026_15000}{.7}{Fourier series from $1,000$ to $1,030$ using 15,000 of the numbers $\theta_i$.  Note the twin primes $1019$ and $1021$ and that $1024=2^{10}$.}
 
  
-%\chapter{Approximations versus exact descriptions: the spectral analysis of primes }
-
-%{\bf Aside. We give a ``Fourier'' reconstruction of $\psi(t)$ in terms of $\Theta$}
-
-%{\bf [[I commented out the plots of Fourier approximation to Psi, since I can't find any code to redraw them, we don't discuss this, and I don't remember how to draw them anyways.]]}
-
-%\ill{psi_approx_1_2_5_30}{0.7}{Fourier approximations to the step function 
-%$\Psi$ obtained using $1$, $2$, $5$, and $30$ frequencies.}
-
-%\ill{psi_approx_using_30_zeros_from4to5}{0.7}{Fourier 
-%approximation to the step function $\Psi$ obtained using $30$
-%frequences and graphed from $1$ to $5$}
-
-%\ill{psi_using_30_terms}{0.7}{Fourier approximation to the step 
-%function $\Psi$ obtained using $30$ frequences.}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\ill{phi_even}{.5}{Approximation of (even) Fourier transform of $\Phi(t)$ using prime powers $<100$\label{fig:phi_even_a}}
 
 
 
@@ -2479,7 +2432,7 @@ Riemann started with a specific smooth function, which we will refer to
 as $R(X)$, a function that Riemann offered, just as Gauss offered his
 $\Li(X)$, as a candidate smooth function approximating the staircase of
 primes.  
-Recall from Section~\ref{sec:rh1} that Gauss's guess is $\Li(X)=
+Recall from Chapter~\ref{sec:rh1} that Gauss's guess is $\Li(X)=
     \int_2^{X}dt/{\rm log}(t).$ 
 Riemann's guess for a better approximation to $\pi(X)$ is obtained
 from Gauss's using the Moebius function $\mu(n)$, which is defined by
@@ -2504,7 +2457,7 @@ where $\mu(n)$ is the Moebius function introduced above.
 
 \ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript.}
 
-In Section~\ref{sec:pnt} we encountered the Prime Number Theorem which 
+In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem which 
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$, 
 in the sense that both go to infinity at the same rate. 
 Our first formulation of the \RH{} (see page~\pageref{rh:first})
@@ -2550,7 +2503,7 @@ The \RH{}, if true, would tell us that these correction
 terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small},
 and all the successively corrected smooth curves $$R(X), R_1(X),
 R_2(X),R_3(X),\dots$$ are good approximations to $\pi(X)$.
-Moreover, {\bf [[is this right?]]}
+Moreover, 
 $$
  \pi(X) = R(X) + \sum_{k=1}^{\infty} C_k(X).
 $$
@@ -2605,11 +2558,13 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 
 \chapter[The Riemann Zeta-Function]{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
 
-{\bf Here we develop a tiny bit of the traditional route of exposition
-  to RH. Namely, in terms of the successive nontrivial {\em zeroes of
-    Riemann's zeta-function}.} There are infinitely many of these
+Here we develop a tiny bit of the traditional route of exposition
+  to the Riemann Hypothesis. Namely, in terms of the successive nontrivial {\em zeroes of
+    Riemann's zeta-function}.
+    
+There are infinitely many of these
 nontrivial$^4$ zeroes of the $ \zeta$-function. If you want to see
-tables of the first $100,\!000$ of these zeroes lovingly calculated to
+large tables of these zeroes lovingly calculated to
 an accuracy within $3 \cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta\_tables/}. 
 
@@ -2710,9 +2665,9 @@ coventional terminology that we restrained
 \mbox{}
 
 
-\eject
-\addcontentsline{toc}{chapter}{Index}
-\printindex
+%\eject
+%\addcontentsline{toc}{chapter}{Index}
+%\printindex
 
 
 
