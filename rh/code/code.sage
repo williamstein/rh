@@ -1030,7 +1030,7 @@ def fig_calculus(dir,ext):
     g += text("Here it is!",(5,.9), fontsize=fontsize, rgbcolor='black')
     g += arrow((4.7,.76), (4, fprime(x=4)), rgbcolor='black')
     g += point((4,fprime(x=4)),rgbcolor='black', pointsize=20)
-    g += text("How compute?  This is Calculus.", (4.3, -0.7), 
+    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.7), 
                   fontsize=fontsize, rgbcolor='black')
     g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True)
 

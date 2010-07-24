@@ -1,3 +1,22 @@
 notebook dir:
 
 /Users/wstein/books/riemann_hypothesis/simuw
+
+
+* GRH in cnt -- 
+ That's interesting. I assume you mean the quotation:
+
+"Consequently, an algorithm to compute Cl(K) via generators and
+relations (currently the
+only viable practical approach) either has to assume that GRH is true
+or immediately
+becomes exponential."
+
+
+Yes, that's relevant to us.  Of course we can't use the phrase "Cl(K)
+via generators and relations"  so we could say, in our book, for
+example, that "(G)RH would assure us that some of the algorithms we
+use compute things of essential importance in mathematics  will NOT be
+exponential."   There is---a bit---the problem that it is GRH and not
+RH, but there must be a way of signalling ---or at least
+hinting---this without staying from our format too much(?)

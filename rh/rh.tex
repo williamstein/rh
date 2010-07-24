@@ -195,8 +195,20 @@ how long certain computer programs will take to run, which, in some
 cases, gives us the assurance we need to initiate a computation that
 might take weeks or even months to complete.
 
+Here is how the
+Princeton mathematician Peter Sarnak described the broad impact the
+Riemann Hypothesis has had: 
+``The Riemann hypothesis is the central problem and it implies many,
+many things. One thing that makes it rather unusual in mathematics
+today is that there must be over five hundred papers---somebody should
+go and count---which start `Assume the Riemann hypothesis,' and
+the conclusion is fantastic. And those [conclusions] would then become
+theorems ... With this one solution you would have proven five hundred
+theorems or more at once.'' % This is from page 106 of the Borwein book.
+
+
 Our book is profusely illustrated, containing over 125 figures, diagrams,
-and pictures that accompany the text.  There are comparatively very few 
+and pictures that accompany the text.  There are comparatively fewer
 mathematical equations in Part~\ref{part1}.   For the more adventurous readers, we have
 also created at \url{http://wstein.org/rh} something we call {\em worksheets}
 that enable the reader to use the free Sage mathematical
@@ -206,12 +218,7 @@ vivid sense of how the numbers ``behave.''  Also Sage code is available
 at the above webpage that can be used to recreate every diagram
 in this book. 
  
-So, what {\em is} the \RH{}? Here is a {\em first
-  description} of this hypothesis, put in one ridiculously condensed
-paragraph. We will be giving other quite miraculous formulations of
-this hypothesis as well; the task of our book is to expand the
-following paragraph into a real {\em explanation} and to convince you
-of its importance and its beauty.
+So, what {\it is} the Riemann Hypothesis?  Below is a {\it first description} of what it is about. The task of our book is to develop the following boxed paragraph into a fuller explanation and to convince you of the importance and beauty of the mathematics it represents.  We will be offering, throughout our book, a number of different---but equivalent---ways of precisely formulating this hypothesis  (we display these in boxes).  When we say that two mathematical statements are ``equivalent" we mean that, given the present state of mathematical knowledge, we can prove that if either one of those statements is true, then the other is true. The endnotes will guide the reader to the mathematical literature that establishes these equivalences.
       
       \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
@@ -255,7 +262,7 @@ but should be {\em specific}) that has application to a wider class of
 mathematical problem than was the focus of the text or lecture.  If we
 were to suggest some possible {\em specific} items to come home with,
 after read our book, three key phrases -- {\bf prime numbers}, {\bf
-  square-root accurate}, and {\bf error term} -- would head the
+  square-root accurate}, and {\bf distribution} -- would head the
 list. As for words of encouragement to think hard about the first of
 these, i.e., prime numbers, we can do no better than to quote a
 paragraph of Don Zagier's classic 12-page exposition, {\em The First
@@ -559,7 +566,7 @@ another \$150,000 cash prize to the first group to find a prime with
 at least 100,000,000 decimal digits.
 
 
-The number $p$ displayed above is the largest prime we know, where by
+The number $p= 2^{43,112,609} - 1$  is the largest prime we know, where by
 ``know'' we mean that we know it so explicitly that we can {\em
   compute} things about it.  For example, the last two digits of $p$
 are 11 and the sum of the digits is 58,416,637.  Of course $p$ is not
@@ -687,7 +694,7 @@ Come up with with your own question about primes that
  \item     is interesting to you,
   \item    is not a question whose answer is known to you,
  \item     is not a question that you've seen before; or at least not exactly,
-  \item    is a question about which you can begin to make numerical investigations? 
+  \item    is a question about which you can begin to make numerical investigations. 
  \end{itemize}
  
 \section{Further questions about primes} 
@@ -1212,12 +1219,12 @@ of a {\em single} error term,
 
   Imagine that the devil had the idea of saddling a large committee of
   people with the task of finding values of $\pi(X)$ for various large
-  numbers $N$.  This he did in the following somewhat ridiculous
+  numbers $X$.  This he did in the following somewhat ridiculous
   manner, having already worked out which numbers are prime and which
   composite, himself. Since the devil is, as everyone knows, {\em into
     the details,} he has made no mistakes: his work is entirely
   correct.  He gives each committee member a copy of the list of all
-  whole numbers between $1$ and one of the large numbers $N$ in which
+  whole numbers between $1$ and one of the large numbers $X$ in which
   he was interested, the devil having put check-marks by the numbers
   on that list that are prime numbers, and no mark by the composite
   numbers. Now each committee member would count the number of primes
@@ -1230,7 +1237,7 @@ of a {\em single} error term,
   contrary: that a number hasn't got a mark, when it does.  If many
   people are engaged in such pursuit, some of them might over-count
   $\pi(X)$; some of them might under-count it. The average error
-  (over-counted or undercounted) would be proportional to~${\sqrt N}$.
+  (over-counted or undercounted) would be proportional to~${\sqrt X}$.
 
 \end{remark}
 
@@ -1248,6 +1255,12 @@ as $\Li(X) = \int_2^X (dx/\log x)$.
 
 Figure~\ref{fig:threeplots} contains a graph of the three functions
 $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
+But data, no matter how impressive, may be deceiving. If you think
+that  the three graphs  never cross for all large values of $X$,  and
+that we have the simple relationship  $X/\log(X) < \pi(X) < Li(X)$ for
+large $X$, turn to this endnote.\endnote{Very very  briefly tell people
+about Littlewood's  Theorem, Skewes Number, etc.}
+
  
 \ill{three_plots}{.9}{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom).\label{fig:threeplots}}
  
@@ -1410,15 +1423,7 @@ its support.  It is the kind of conjecture that contemporary
 Dutch mathematician Frans Oort might label
 a {\em suffusing conjecture} in that it has unusually broad
 implications: many many results are now known to follow, if the
-conjecture, familiarly known as RH, is true.\endnote{%
-% This is from page 106 of the Borwein book.
-Peter Sarnak says: {\em The Riemann hypothesis is the central problem and it implies many,
-many things. One thing that makes it rather unusual in mathematics
-today is that there must be over five hundred papers---somebody should
-go and count---which start ``Assume the Riemann hypothesis,'' and
-the conclusion is fantastic. And those [conclusions] would then become
-theorems ... With this one solution you would have proven five hundred
-theorems or more at once.}} 
+conjecture, familiarly known as RH, is true.
 A proof of RH would, therefore, fall into the {\em applied} category, given our discussion
 above.  But however you classify RH, it is a central concern in
 mathematics to find its proof (or, a counter-example!).  RH is 
@@ -1740,7 +1745,7 @@ iPod, instead of just your favorite 10 CD's.
   \item Is there a way of using Fourier analysis to better understand the complicated picture of the staircase
 of primes?
  
-  \item Does this ornery staircase
+  \item Does this staircase
 of primes  (or, perhaps, some tinkered version of the staircase that contains the same basic information) have a {\it spectrum}?
 
   \item  If  such a {\it spectrum} exists, can we compute it conveniently, just as we have done for the saw-tooth wave above,
@@ -2268,7 +2273,10 @@ information about the placement of prime numbers among all numbers.
 
 \chapter{Going from the primes to the spectrum}
 
-{\bf This chapter is in a very provisional  (or rather: nontempered) state and the moment, and we'll be figuring out how to deal with this.}
+{\bf This chapter has not been fully written and there are some
+mathematical issues that we don't yet understand, and we will  need to
+work out in order to do a satisfactory job here.  We'll be  figuring
+out how to deal with this.}
  
  
  
@@ -2371,7 +2379,9 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
  
 \chapter{How to build $\Phi(t)$ from the spectrum}
   \vskip5pt 
- {\bf The main mission of this chapter is to explain, and show data for:}
+ {\bf The main mission of this chapter is to begin the discussion---in
+the style of our book (!)---of Riemann's Explicit Formula,  and also
+to explain and exhibit data for:}
    \vskip5pt
  \begin{center}
       \shadowbox{ \begin{minipage}{0.9\textwidth}
@@ -2656,6 +2666,9 @@ coventional terminology that we restrained
   zeroes of zeta.
 
 
+  Also mention Brian Conrey's Notices article on RH as ``among the best 12 pages of RH survey material that there is---at least for an audience of general mathematicians.''
+  
+  
 
 \backmatter
 
