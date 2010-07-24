@@ -1,6 +1,6 @@
 cd ../..
 tar jcvf rh.tar.bz2 2010
-scp ../../rh.tar.bz2 sage:www/rh/&
+scp rh.tar.bz2 sage:www/rh/
 cd 2010/rh/
 scp rh.pdf sage:www/rh/rh/
 scp code/code.sage sage:www/rh/rh/code/
