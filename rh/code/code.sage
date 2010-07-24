@@ -1359,4 +1359,7 @@ def fig_Rk(dir, ext):
     g = R.plot_Rk(50, 350, 400, plot_points=200)
     g += plot(Li,350,400,rgbcolor='green')
     g.save(dir + '/Rk_50_350_400.%s'%ext)
-    
+
+
+
+
