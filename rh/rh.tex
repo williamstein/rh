@@ -725,14 +725,14 @@ none of these guesses have yet been proved.
 
 
    
-So, define $${\rm Gap}_{k}(X)$$ to be the number of pairs of primes
-less than $X$ with ``gap $k$'' (i.e., such that their difference is
-$k$).  For example, ${\rm Gap}_2(10) = 2$, since the pairs $(3,5)$ and
-$(5,7)$ are the pairs less than $10$ with gap $2$.
-See Table~\ref{tab:gap} for various values of ${\rm Gap}_{k}(X)$
-and Figure~\ref{fig:primegapdist} for the distribution of prime gaps
-for $X=10^7$.
-   
+So, define $${\rm Gap}_{k}(X)$$ to be the number of pairs of primes of
+successive primes $(p,q)$ with $q<X$ that have ``gap $k$'' (i.e., such
+that their difference $q-p$ is $k$).  Here $p$ is a prime, $q>p$ is a
+prime, and there are no primes between $p$ and $q$.  For example,
+${\rm Gap}_2(10) = 2$, since the pairs $(3,5)$ and $(5,7)$ are the
+pairs less than $10$ with gap $2$.  See Table~\ref{tab:gap} for
+various values of ${\rm Gap}_{k}(X)$ and Figure~\ref{fig:primegapdist}
+for the distribution of prime gaps for $X=10^7$.
    
    
 \begin{table}[H]\centering
