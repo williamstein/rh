@@ -1782,7 +1782,7 @@ ask for profound, and hidden, regularities in structure.
 
 
 Look at the peaks of this graph. There is nothing very impressive about them, you might think; but wait,
- for this is just a very ``early'' piece of an infinite sum of (co-)sine waves:
+ for this is just a very ``early'' piece of an infinite sum{\footnote{Here we will make use of  the Greek symbol $\sum$ as a shorthand way of expressing a sum of many terms.}}  of (co-)sine waves:
 $$
 -\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ 
@@ -1795,24 +1795,35 @@ $$
 $$ 
 and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show
 what we get for a few values of $C$.
- In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the \RH{} holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  
 
+
+ In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the \RH{} holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  \vskip20pt
+\begin{itemize} 
+\item {\bf The sum with $p^n \le C=5$}
+
+Here is the function $f(t)$ we displayed above; it consists in the sum of the first four terms of our infinite sum, and doesn't yet show very much ``structure":
 
 \ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with
-arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
+arrows pointing to the spectrum of the primes\label{fig:pnsum5}}\vskip20pt
+\item {\bf The sum with $p^n \le C=20$} 
 
-\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}
+ Something,
+ (don't you agree?)  is already beginning to happen here:
+\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}\vskip20pt
+\item {\bf The sum with $p^n \le C=50$} 
 
-\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}
+Note that the high peaks seem to be lining up more accurately with the vertical red lines. Note also that the $y$-axis has been rescaled.
+
+\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}\vskip20pt
+\item {\bf The sum with $p^n \le C=500$}
+
+Here, the peaks are even sharper, and note that again they are higher; that is, we have rescaled the $y$-axis. 
 \ill{phihat_even-500}{1}{Plot of $-\sum_{p^n\leq 500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
-
-  
-
- 
- Notice though,  how this spectrum  of red lines is so closely matched by the peaks of the graphs of the positive values of these finite sums. 
- 
-   How this ``plays out" as we take longer  and longer finite pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, and what relationship this has to the Fourier analysis of the staircase of primes is the subject of the later parts of this book.
-
+\end{itemize}
+ \vskip20pt
+  We will discuss in the later parts of this book  
+  \begin{itemize} \item  how this ``plays out" as we take the sums of longer  and longer  pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, \item how this spectrum  of red lines more closely matches the high peaks of the graphs of the positive values of these finite sums,\item  how these peaks are climbing higher and higher,\item   what relationship this has to the Fourier analysis of the staircase of primes,\item  and, equally importantly, what these mysterious red lines signify. 
+\end{itemize}
 
 \chapter{To our readers of Part~\ref{part1}} 
 The statement of the \RH{}---admittedly as elusive as
