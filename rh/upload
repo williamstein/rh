@@ -1,4 +1,4 @@
-cd ../..
+cd $HOME/books/riemann_hypothesis/
 tar jcvf rh.tar.bz2 2010
 scp rh.tar.bz2 sage:www/rh/
 cd 2010/rh/

@@ -19,7 +19,7 @@
 
 \usepackage{makeidx}\makeindex
 
-
+\DeclareMathOperator{\Gap}{Gap}
 \DeclareMathOperator{\Li}{Li}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -49,7 +49,7 @@
 
 %%%% Theoremstyles
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{claim}[theorem]{Claim}
@@ -446,10 +446,11 @@ ways to begin:
 $$
   300= 30\times 10\qquad\text{or}\qquad 300 = 6 \times 50
 $$
-and there are various other starting possibilities. But if you continue the factorization (``climbing down'' any one of 
-the possible ``factoring trees'') to the bottom, where every factor is a prime number, e.g., in
-Figure~\ref{fig:factor300},
-you always end up with the same collection of prime numbers:                  
+and there are various other starting possibilities. But if you
+continue the factorization (``climbing down'' any one of the possible
+``factoring trees'') to the bottom, where every factor is a prime
+number as in Figure~\ref{fig:factor300}, you always end up with the
+same collection of prime numbers:
                  $$300 = 2^2\times 3\times 5^2.$$   
 
 \illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
@@ -485,8 +486,9 @@ $$
   p=2^{43,112,609}-1 = 3164702693\ldots\ldots\ldots6697152511
 $$ 
 is a prime number, this number having $12,\!978,\!189$ digits!  This
-prime, which was discovered on August 23, 2008, was the first prime
-ever found with more than ten million digits.
+prime, which was discovered on August 23, 2008 by the GIMPS project
+(\url{http://www.mersenne.org/}), was the first prime ever found with
+more than ten million digits.
 
 Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
@@ -568,8 +570,9 @@ Though there are infinitely many primes, actually finding them is a
 major challenge.  In the 1990s, the Electronic Frontier Foundation
 \url{http://www.eff.org/awards/coop} offered a \$100,000 cash reward
 to the first group to find a prime with at least 10,000,000 decimal
-digits (the record prime $p$ above is set to win this prize\endnote{%
-The 46th Mersenne prime was also declared by Time Magazine to be
+digits (the record prime $p$ above won this prize\endnote{%
+See \url{http://www.eff.org/press/archives/2009/10/14-0}.
+Also the 46th Mersenne prime was declared by Time Magazine to be
 one of the top 50 best ``inventions'' of 2008: \url{http://www.time.com/time/specials/packages/article/0,28804,1852747_1854195_1854157,00.html}.}), and offers
 another \$150,000 cash prize to the first group to find a prime with
 at least 100,000,000 decimal digits.
@@ -578,7 +581,7 @@ at least 100,000,000 decimal digits.
 The number $p= 2^{43,112,609} - 1$  is the largest prime we know, where by
 ``know'' we mean that we know it so explicitly that we can {\em
   compute} things about it.  For example, the last two digits of $p$
-are 11 and the sum of the digits is 58,416,637.  Of course $p$ is not
+are both 1 and the sum of the digits of $p$ is 58,416,637.  Of course $p$ is not
 the largest prime number since there are infinitely many primes, e.g.,
 the next prime $q$ after $p$ is a prime.  But there is no known way
 to efficiently compute anything interesting about $q$.  For example,
@@ -705,6 +708,8 @@ Come up with with your own question about primes that
  \item     is not a question that you've seen before; or at least not exactly,
   \item    is a question about which you can begin to make numerical investigations. 
  \end{itemize}
+If you are having trouble coming up with a question, read on for more
+examples that  provide further motivation.
  
 \section{Further questions about primes} 
 
@@ -719,8 +724,8 @@ such pairs of primes, but no one has been able to prove this yet.
 
 \begin{quote} The largest known twin primes are 
 $$65516468355\cdot 2^{333333} \pm 1$$
-They have $100355$ digits and were announced by Kaiser and Klahnin
-$2009$.
+They have $100355$ digits and were found by Kaiser and Klahnin.\endnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+largest known twin primes.}
 \end{quote}
 
 
@@ -734,22 +739,22 @@ none of these guesses have yet been proved.
 
 
    
-So, define $${\rm Gap}_{k}(X)$$ to be the number of pairs of primes of
+So, define $$\Gap_{k}(X)$$ to be the number of pairs of primes of
 successive primes $(p,q)$ with $q<X$ that have ``gap $k$'' (i.e., such
 that their difference $q-p$ is $k$).  Here $p$ is a prime, $q>p$ is a
 prime, and there are no primes between $p$ and $q$.  For example,
-${\rm Gap}_2(10) = 2$, since the pairs $(3,5)$ and $(5,7)$ are the
+$\Gap_2(10) = 2$, since the pairs $(3,5)$ and $(5,7)$ are the
 pairs less than $10$ with gap $2$.  See Table~\ref{tab:gap} for
-various values of ${\rm Gap}_{k}(X)$ and Figure~\ref{fig:primegapdist}
+various values of $\Gap_{k}(X)$ and Figure~\ref{fig:primegapdist}
 for the distribution of prime gaps for $X=10^7$.
    
    
 \begin{table}[H]\centering
-\caption{Values of ${\rm Gap}_{k}(X)$ \label{tab:gap}}
+\caption{Values of $\Gap_{k}(X)$ \label{tab:gap}}
 \vspace{1em}
 
 \begin{tabular}{|l|c|c|c|c|}\hline
-$X$ & ${\rm Gap}_{2}(X)$ & ${\rm Gap}_{4}(X)$& ${\rm Gap}_{6}(X)$ & ${\rm Gap}_{8}(X)$\\\hline
+$X$ & $\Gap_{2}(X)$ & $\Gap_{4}(X)$& $\Gap_{6}(X)$ & $\Gap_{8}(X)$\\\hline
 10 & 2 & 1 & 0 & 0\\\hline
 $10^2$ & 8 & 8 & 7 & 1 \\\hline
 $10^3$ & 35 & 40 & 44 & 15 \\\hline
@@ -772,8 +777,8 @@ the spacing of prime numbers that we can't answer.
 {\em Racing Gap $2$,  Gap $4$, Gap $6$, and Gap $8$ against each other:} 
   
 \begin{quote}
-  Challenge: As $X$ tends to infinity which of $Gap_2(X),
-  Gap_4(X), Gap_6(X),$ or $Gap_8(X)$ do you think that will grow
+  Challenge: As $X$ tends to infinity which of $\Gap_2(X),
+  \Gap_4(X), \Gap_6(X),$ or $\Gap_8(X)$ do you think that will grow
   faster? How much would you bet on the truth of your guess?\endnote{%
   Hardy and Littlewood give a nice conjectural answer to such questions about
   gaps between primes.  See [reference Guy's book].}
@@ -801,7 +806,7 @@ number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
 3$, $9=3\cdot 3$, and $10= 2\cdot 5$; but $12=2\cdot 2\cdot 4$ is
 multiplicatively odd.  Table~\ref{tab:evenodddata} gives some data:
    
-  \begin{table}[H] \caption{Multiplicatively even and odd positive numbers $\le N$\label{tab:evenodddata}}
+  \begin{table}[H] \caption{Count of multiplicatively even and odd positive numbers $\le N$\label{tab:evenodddata}}
 \vspace{1ex}
 \centering
  {\small
@@ -835,7 +840,9 @@ would, for sufficiently large $N$, ever cross the $x$-axis.
 \caption{Racing Multiplicatively Even and Odd Numbers.\label{fig:liouville}}
 \end{figure}
   
-A {\em negative} response to this question---i.e., a proof that any plot as drawn in Figurewould imply the Riemann
+A {\em negative} response to this question---i.e., a proof that any plot as drawn in 
+Figure~\ref{fig:liouville}
+would imply the Riemann
 Hypothesis!  In contrast to the list of previous questions, the answer
 to this one is known\endnote{For more details, see P.~Borwein, {\em Sign changes
   in sums of the Liouville Function} and the nice short paper of
@@ -846,7 +853,8 @@ Works); see also: G. Polya {\em Vershiedene Bemerkungen zur
 {\bf 28} (1919) 31--40.}: alas, there is such an $N$.  In 1960, Lehman
 showed that for $N=906,400,000$ there are $708$ more multiplicatively
 even numbers up to $N$ than multiplicatively odd numbers (Tanaka found
-in 1980 that the smallest $N$ with this property is
+in 1980 that the smallest $N$ 
+such that there are more multiplicative even than odd numbers is
 $N=906,150,257$).
 
 %%%%%%%%%%%%%%%%%
@@ -876,13 +884,13 @@ $168$ primes less than a thousand (so we might say that among the
 numbers less than a thousand the chances that one of them is prime is
 roughly $1$ in $6$).
                                                            
-\ill{proportion_primes_100}{1}{Proportion of primes up to $N=100$}
+\ill{proportion_primes_100}{1}{Graph of the proportion of primes up to $N$ for each integer $N\leq 100$}
 
 There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes up to $1000$ and $10000$}
+\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $N$ up to $1000$ (left) and $10000$ (right)}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10,000,000,000 (so we might say that the chances are down to roughly
@@ -892,9 +900,9 @@ Primes, then, seem to be thinning out.  We return to the sifting process
 we carried out earlier, and take a look at a few graphs, to get a sense of why
 that might be so. There are a hundred numbers less than or equal to
 $100$, a thousand numbers less than or equal to $1000$, etc.: the
-shaded bar graph that looks like a regular staircase, each step the
+shaded bar graph in Figure~\ref{fig:sieve_2_100} that looks like a regular staircase, each step the
 same length as each riser, climbing up at, so to speak, a 45 degree
-angle, counts all numbers up to and including $N$.
+angle, counts all numbers up to and including~$N$.
 
 Following Eratosthenes, we have sifted those numbers, to pan for
 primes. Our first move was to throw out roughly half the numbers (the
@@ -910,7 +918,7 @@ even less.  And so it goes: with each move in our
 sieving process we are winnowing the field more extensively, reducing
 the chances that the later numbers are prime.
 
-\ill{sieve_2_100}{.8}{Sieving by removing multiples of $2$ up to $100$}
+\ill{sieve_2_100}{.8}{Sieving by removing multiples of $2$ up to $100$\label{fig:sieve_2_100}}
 \ill{sieve1000}{.8}{Sieving for primes up to $1000$}
           
 The red curve in these figures actually counts the primes: it is the
@@ -1149,8 +1157,9 @@ predicted that there would be $216,\!970$ primes---a miss, Gauss
 thought, by 
 $$225 = 216,\!970 - 216,\!745$$ 
 (but actually he was closer than he thought: the
-prediction of the curve $G(X)$ missed by a mere $154 = 216,\!970  - 216,\!816$; not as close as the 2004 US
-elections, but pretty close nevertheless).  
+prediction of the curve $G(X)$ missed by a mere $154 = 216,\!970  - 216,\!816$)
+%; not as close as the 2004 US
+%elections, but pretty close nevertheless).  
 Gauss's computation brings up two queries: will this spectacular ``good
 fit'' continue for arbitrarily large numbers? and, the (evidently
 prior) question: what counts as a good fit?
@@ -1219,6 +1228,10 @@ of a {\em single} error term,
  X^{0.5001}$, etc.). Readers who know calculus and wish to have a
  technical formulation of this definition of {\em good approximation}
  might turn to the endnote $^2$ for a precise statement.
+If you found the above confusing, don't worry: again, a 
+square-root accurate approximation is one in which at least roughly
+half the digits are correct.
+ 
 
 \begin{remark}
   To get a feel for how basic the notion of {\em approximation to data
@@ -1261,7 +1274,7 @@ approximation to $\pi(X)$  was in terms of the area in the region
 from $2$ to $X$ under the graph of $1/\log(X)$, a quantity sometimes referred to
 as $\Li(X) = \int_2^X (dx/\log x)$.
 ``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral}.
-
+[[Introduction of the Li special function seems very abrupt to me.]]
 
 Figure~\ref{fig:threeplots} contains a graph of the three functions
 $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
@@ -1330,7 +1343,7 @@ tends to $1$ as $X$ goes to infinity.
 
 Here is one way of thinking about what it means for two functions, $A(X)$ and $B(X)$, to go to infinity at the same rate. It means that  for any
 number you give us, say: a million (or a billion, or a trillion) we should be able to show that if $X$ is large enough, then the
-``top" million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same. 
+``leftmost" million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same. 
 
 
 While we're defining things, let us say that two functions, $A(X)$
@@ -1882,7 +1895,7 @@ us with {\it slopes} of graphs of functions of a real variable.  So, to discuss 
    machine that adds $1$ to any number} can be thought of as the
  function $f$ whose value at any $a$ is given by the equation $f(a) =
  a+1$.  Often we choose a letter---say, $X$---to stand for a ``general
- number" and we denote the function $f$ by the symbol $f(X)$ so that
+ number'' and we denote the function $f$ by the symbol $f(X)$ so that
  this symbolization allows to ``substitute for $X$ any specific number
  $a$" to get its value $f(a)$.
 
@@ -1893,6 +1906,7 @@ us with {\it slopes} of graphs of functions of a real variable.  So, to discuss 
  you are plotting points $(a, f(a))$ in the plane where $a$ runs
  through all real numbers.
 
+ \ill{graph_aplusone}{0.6}{Graph of the function $f(a)=a+1$\label{fig:graph_aplusone}}
 
  In this book we will very often be talking about ``graphs" when we
  are also specifically interested in the functions---of which they are
@@ -2187,15 +2201,10 @@ additivity relation
 
 
  The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough---and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ 
- \noindent {\bf A question:} If you've never seen distributions
- before, but know the Riemann integral, can you guess at what the
- definition of $\int_a^bc(t)D(t)$ is, and can you formulate hypotheses
- on $c(t)$ that would allow you to endow this expression with a
- definite meaning?
 
- \ill{dirac_delta}{0.5}{The Dirac $\delta$-function, where we draw a
-   vertical arrow to illustrate the delta function with support at a
-   given point.}
+ \ill{dirac_delta}{0.5}{The Dirac $\delta$-``function'' (actually
+   distribution), where we draw a vertical arrow to illustrate the
+   delta function with support at a given point.}
 
  For example, for the Dirac $\delta$-function we have been discussing
  (i.e., the limit of the red graphs of the previous section) {\it is}
@@ -2217,6 +2226,8 @@ additivity relation
 \end{itemize}
 
 
+
+
 We sometimes summarize the fact that these areas vanish so long as the
 origin is not included in the interval we are considering by saying
 that the {\bf support} of this $\delta$-function is ``at the origin.''
@@ -2232,19 +2243,22 @@ $\delta_x$ vanishes for $t \ne x$ and intuitively speaking, has an
 So, the original delta-function we were discussing, i.e., $\delta(t)$
 would be denoted $\delta_0(t)$.
   
+ \noindent {\bf A question:} If you've never seen distributions
+ before, but know the Riemann integral, can you guess at what the
+ definition of $\int_a^bc(t)D(t)$ is, and can you formulate hypotheses
+ on $c(t)$ that would allow you to endow this expression with a
+ definite meaning?
+
 
 \noindent {\bf A second question:} if you have not seen distributions
-before, and have answered the first question in this section, let
+before, and have answered the first question above, let
 $c(t)$ be an honest function for which your definition
 of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
-
  Can you use your definition to compute
  
  $$\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)?$$
  
- 
  The answer, by the way, is: 
- 
  $\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)=c(x).$ This will be useful in the later sections!     
      
 
@@ -2298,7 +2312,7 @@ In Part~\ref{part1} of this book  (in Chapter~\ref{sec:fourier1} above) we wrote
   
   We will focus our discussion on an {\bf even} function $f(t)$ of a
   real variable $t$.  ``{\bf Even}" means that its graph is symmetric
-  about the origin; that is, $f(-t)= f(t)$.  See
+  about the $y$-axis; that is, $f(-t)= f(t)$.  See
   Figure~\ref{fig:even_function}.
   
   \ill{even_function}{.8}{The graph of an even function is symmetrical
@@ -2328,7 +2342,7 @@ spectrum of $f(t)$, and if so, what the amplitude is of the cosine
 function $\cos(\theta t)$ that occurs in the Fourier expansion of
 $f(t)$---this amplitude answers the awkwardly phrased question: {\it
   how much $\cos(\theta t)$ ``occurs in" $f(t)$?}  We will denote this
-amplitude by ${\hat f}(\theta)$, an refer to it as {\bf the Fourier
+amplitude by ${\hat f}(\theta)$, and refer to it as {\bf the Fourier
   transform} of $f(t)$.  The {\bf Spectrum}, then, of $f(t)$ is the
 set of all frequencies $\theta$ where the amplitude is nonzero.
   
@@ -2529,7 +2543,7 @@ Let us denote by $\Phi(t)$ the generalized function that resulted from the above
    
  
    
-      Here is a sequence of functions approximating it.
+%Here is a sequence of functions approximating it.
 
 \ill{psi_200}{.6}{Illustration of the  staircase $\Psi(x)$  constructed in Chapter~\ref{sec:tinkering} that 
 counts weighted prime powers.\label{fig:psi_200}}
@@ -2784,13 +2798,14 @@ where $\mu(n)$ is the Moebius function introduced above.
 
 \ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript}
 
-In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem which 
-asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$, 
-in the sense that both go to infinity at the same rate. 
-8Our first formulation of the \RH{} (see page~\pageref{rh:first})
-was that $\Li(X)$ is an essentially square root accurate approximation of $\pi(X)$. 
-Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate that Riemann's function $R(X)$ appears to be an even better
-approximation to $\pi(X)$ than anything we have seen before. 
+In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem which
+asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for
+$\pi(X)$, in the sense that both go to infinity at the same rate.
+8Our first formulation of the \RH{} (see page~\pageref{rh:first}) was
+that $\Li(X)$ is an essentially square root accurate approximation of
+$\pi(X)$.  Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate
+that Riemann's function $R(X)$ appears to be an even better
+approximation to $\pi(X)$ than anything we have seen before.
 
 \illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.5}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom)\label{fig:guess100}}
 
@@ -2893,9 +2908,12 @@ Here we develop a tiny bit of the traditional route of exposition
     Riemann's zeta-function}.
     
 There are infinitely many of these
-nontrivial$^4$ zeroes of the $ \zeta$-function. If you want to see
-large tables of these zeroes lovingly calculated to
-an accuracy within $3 \cdot 10^{-9}$, consult Andrew Odlyzko's tables:
+nontrivial$^4$ zeroes of the $ \zeta$-function. If you want to 
+peruse the first
+$2,\!001,\!052$
+ of these $\theta_i$'s lovingly calculated to an accuracy
+within $3\cdot 10^{-9}$,
+consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta\_tables/}. 
 
 The first three of these zeroes are:

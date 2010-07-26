@@ -1018,6 +1018,11 @@ def plot_symbolic_phihat(bound, xmin, xmax, plot_points=1000, zeros=True):
 # Calculus pictures
 ##############################################################
 
+def fig_aplusone(dir,ext):
+    a = var('a')
+    g = plot(a+1, -5,8, thickness=3)
+    g.save(dir + '/graph_aplusone.%s'%ext, gridlines=True, frame=True)
+
 def fig_calculus(dir,ext):
     x = var('x')
     t = 8; f = log(x); fprime = f.diff()
