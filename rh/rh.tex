@@ -71,9 +71,6 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{exercise}[theorem]{Exercise}
 
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
 
 
 %\hoffset=-0.05\textwidth
@@ -166,8 +163,6 @@ August 2009 Draft\\
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 
 \chapter*{\label{foreword}Foreword}
-
-
 
 The \RH{} is one of the great unsolved problems of
 mathematics and the reward of \$1,000,000 of {\em Clay Mathematics
@@ -299,7 +294,10 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 
 \part{The \RH{}\label{part1}}
 
-
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+ 
 \chapter[Thoughts about numbers]{Thoughts about numbers: ancient, medieval, and modern}
 
 If we are to believe the ancient Greek philosopher Aristotle the early
@@ -804,6 +802,7 @@ number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
 multiplicatively odd.  Table~\ref{tab:evenodddata} gives some data:
    
   \begin{table}[H] \caption{Multiplicatively even and odd positive numbers $\le N$\label{tab:evenodddata}}
+\vspace{1ex}
 \centering
  {\small
 \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -2783,7 +2782,7 @@ R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \Li(X^{1\over n}),
 $$  
 where $\mu(n)$ is the Moebius function introduced above. 
 
-\ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript.}
+\ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript}
 
 In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem which 
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$, 

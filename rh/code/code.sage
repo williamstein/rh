@@ -23,23 +23,24 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
 # Factorization trees
 ##############################################################
 def fig_factor_tree(dir, ext):
-    g = FactorTree(6).plot(labels={'fontsize':90},sort=True)
-    g.save(dir + '/factor_tree_6.%s'%ext, axes=False)
+    g = FactorTree(6).plot(labels={'fontsize':60},sort=True)
+    g.save(dir + '/factor_tree_6.%s'%ext, axes=False, axes_pad=0.1)
     
     g = FactorTree(12).plot(labels={'fontsize':50},sort=True)
-    g.save(dir + '/factor_tree_12.%s'%ext, axes=False)
+    g.save(dir + '/factor_tree_12.%s'%ext, axes=False, axes_pad=0.1)
+    
     set_random_seed(3)    
     g = FactorTree(12).plot(labels={'fontsize':50},sort=False)
-    g.save(dir + '/factor_tree_12b.%s'%ext, axes=False)
+    g.save(dir + '/factor_tree_12b.%s'%ext, axes=False,axes_pad=0.1)
 
     set_random_seed(0)
     for w in ['a', 'b']:
         g = FactorTree(300).plot(labels={'fontsize':40},sort=False)
-        g.save(dir + '/factor_tree_300_%s.%s'%(w,ext), axes=False)
+        g.save(dir + '/factor_tree_300_%s.%s'%(w,ext), axes=False, axes_pad=0.1)
 
     set_random_seed(0)
     g = FactorTree(6469693230).plot(labels={'fontsize':14},sort=False)
-    g.save(dir + '/factor_tree_big.%s'%ext, axes=False)
+    g.save(dir + '/factor_tree_big.%s'%ext, axes=False, axes_pad=0.1)
     
 
 class FactorTree:
@@ -763,7 +764,7 @@ def fig_primes_line(dir,ext):
     for n in [xmin..xmax]:
         g += line([(n,eps), (n,-eps)], rgbcolor='black', thickness=0.5)
         g += text("$%s$"%n, (n,-6), rgbcolor='black')
-    g.save(dir + '/primes_line.%s'%ext, axes=False,figsize=[9,.7], ymin=-10)
+    g.save(dir + '/primes_line.%s'%ext, axes=False,figsize=[9,.7], ymin=-10, ymax=2)
 
 ##############################################################
 # Plots of Psi function
@@ -890,7 +891,7 @@ def fig_waves(dir,ext):
     B += text("C", (3.2,-0.05), rgbcolor='black', fontsize=18)
     B += text("D", (4.2,-0.05), rgbcolor='black', fontsize=18)
     B += text("E", (5.2,-0.05), rgbcolor='black', fontsize=18)
-    B.save(dir+'/sound-ce-general_sum-blips.%s'%ext, axes=False, xmin=0, ymin=0)
+    B.save(dir+'/sound-ce-general_sum-blips.%s'%ext, axes=False, xmin=0)
     
     f(x) = 0.7*sin(x) + sin(329.0/261*x + 0.4) +  0.5*sin(300.0/261*x + 0.7) + 0.3*sin(1.5*x + 0.2) + 1.1*sin(4*x+0.1)
     g = plot(f, (0, 5*pi))
@@ -957,7 +958,7 @@ def fig_fourier_machine(dir, ext):
     g += arrow((1+1/16,1/2), (1+1/2-1/9,1/2), rgbcolor='black')
     t=var('t')
     g += plot((1/2)*t*cos(14*t)+1/2,(t,0,1), fill='axis', thickness=0.8)
-    g.save(dir+'/fourier_machine.%s'%ext, axes=False)
+    g.save(dir+'/fourier_machine.%s'%ext, axes=False, axes_pad=0.1)
     
 
 ##############################################################
@@ -1025,12 +1026,12 @@ def fig_calculus(dir,ext):
     g += plot(x*fprime(x=4)+(f(x=4)-4*fprime(x=4)), (.5,t), rgbcolor='black')
     g += point((4,f(x=4)), pointsize=20, rgbcolor='black')
     g += plot(fprime, (0.5,t), rgbcolor='red')
-    g += text("What is the slope of the tangent line?", (3.3,2.2), 
+    g += text("What is the slope of the tangent line?", (3.5,2.2), 
                   fontsize=fontsize, rgbcolor='black')
     g += text("Here it is!",(5,.9), fontsize=fontsize, rgbcolor='black')
     g += arrow((4.7,.76), (4, fprime(x=4)), rgbcolor='black')
     g += point((4,fprime(x=4)),rgbcolor='black', pointsize=20)
-    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.7), 
+    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.5), 
                   fontsize=fontsize, rgbcolor='black')
     g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True)
 
@@ -1180,7 +1181,7 @@ def fig_psi_waves(dir, ext):
 
 def fig_moebius(dir,ext):
     g = plot(moebius,0, 50)
-    g.save(dir+'/moebius.%s'%ext,figsize=[10,2])
+    g.save(dir+'/moebius.%s'%ext,figsize=[10,2], axes_pad=.1)
     
 
 def riemann_R(terms):
