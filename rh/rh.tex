@@ -218,7 +218,18 @@ vivid sense of how the numbers ``behave.''  Also Sage code is available
 at the above webpage that can be used to recreate every diagram
 in this book. 
  
-So, what {\it is} the Riemann Hypothesis?  Below is a {\it first description} of what it is about. The task of our book is to develop the following boxed paragraph into a fuller explanation and to convince you of the importance and beauty of the mathematics it represents.  We will be offering, throughout our book, a number of different---but equivalent---ways of precisely formulating this hypothesis  (we display these in boxes).  When we say that two mathematical statements are ``equivalent" we mean that, given the present state of mathematical knowledge, we can prove that if either one of those statements is true, then the other is true. The endnotes will guide the reader to the mathematical literature that establishes these equivalences.
+So, what {\it is} the Riemann Hypothesis?  Below is a {\it first
+  description} of what it is about. The task of our book is to develop
+the following boxed paragraph into a fuller explanation and to
+convince you of the importance and beauty of the mathematics it
+represents.  We will be offering, throughout our book, a number of
+different---but equivalent---ways of precisely formulating this
+hypothesis (we display these in boxes).  When we say that two
+mathematical statements are ``equivalent" we mean that, given the
+present state of mathematical knowledge, we can prove that if either
+one of those statements is true, then the other is true. The endnotes
+will guide the reader to the mathematical literature that establishes
+these equivalences.
       
       \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
@@ -1862,17 +1873,38 @@ us with {\it slopes} of graphs of functions of a real variable.  So, to discuss 
  \illtwo{newton}{leibniz}{0.25}{Isaac Newton and Gottfried Leibniz created Calculus}
 
 
- A {\bf function}  (let us refer to it in this discussion as $f$)  is often described as a {\it kind of machine} that for any specific input numerical value $a$  will give, as output, a well-defined real number. 
+ A {\bf function} (let us refer to it in this discussion as $f$) is
+ often described as a {\it kind of machine} that for any specific
+ input numerical value $a$ will give, as output, a well-defined real
+ number.
  
- This ``output number"   is denoted $f(a)$ and is called {\it the ``value" of the function $f$ at $a$}.  For example, the {\it machine that adds $1$ to any number} can be thought of as the function $f$ whose value at any $a$ is given by the equation $f(a) = a+1$.  Often we choose a letter---say, $X$---to stand for a ``general number"  and we denote the function $f$ by the symbol $f(X)$ so that this symbolization allows to ``substitute for $X$ any specific number $a$" to get its value $f(a)$.
+ This ``output number" is denoted $f(a)$ and is called {\it the
+   ``value" of the function $f$ at $a$}.  For example, the {\it
+   machine that adds $1$ to any number} can be thought of as the
+ function $f$ whose value at any $a$ is given by the equation $f(a) =
+ a+1$.  Often we choose a letter---say, $X$---to stand for a ``general
+ number" and we denote the function $f$ by the symbol $f(X)$ so that
+ this symbolization allows to ``substitute for $X$ any specific number
+ $a$" to get its value $f(a)$.
 
-   The {\bf graph} of a function is a vivid visual representation of the function in the Euclidean plane where over every point $a$ on the $x$-axis you plot a point above it of ``height" equal to the value of the function at $a$, i.e., $f(a)$. In  Cartesian coordinates, then, you are plotting points $(a, f(a))$ in the plane where $a$ runs through all real numbers.
+ The {\bf graph} of a function is a vivid visual representation of the
+ function in the Euclidean plane where over every point $a$ on the
+ $x$-axis you plot a point above it of ``height" equal to the value of
+ the function at $a$, i.e., $f(a)$. In Cartesian coordinates, then,
+ you are plotting points $(a, f(a))$ in the plane where $a$ runs
+ through all real numbers.
 
 
-    In this book we will very often be talking about ``graphs" when we are also specifically interested in the functions---of which they are the graphs. We will use these words almost synonymously since we like to adopt a very visual attitude towards the behavior of the functions that interest us.
+ In this book we will very often be talking about ``graphs" when we
+ are also specifically interested in the functions---of which they are
+ the graphs. We will use these words almost synonymously since we like
+ to adopt a very visual attitude towards the behavior of the functions
+ that interest us.
 
 
-\ill{graph_slope_deriv}{0.7}{A function (blue), a slope at a point (black straight line), and the derivative (red).\label{fig:graph_slope_deriv}}
+ \ill{graph_slope_deriv}{0.7}{A function (blue), a slope at a point
+   (black straight line), and the derivative
+   (red).\label{fig:graph_slope_deriv}}
          
          
 
@@ -1936,30 +1968,57 @@ In each of these pictures,  for any interval of real numbers $[a,b]$ the total a
 minus\\
 {\it  the height of the blue graph  at $x=a$}. 
 \end{center}
-This is a manifestation of one of the fundamental facts of life of Calculus relating a function to its derivative:
+This is a manifestation of one of the fundamental facts of life of
+Calculus relating a function to its derivative:
   
-  \begin{quote} Given any real-valued  function $F(x)$---that has a derivative---for any interval of real numbers $[a,b]$ the total area under the graph of the derivative of $F(x)$ over that interval is equal to $F(b)-F(a)$. 
+\begin{quote} Given any real-valued function $F(x)$---that has a
+  derivative---for any interval of real numbers $[a,b]$ the total area
+  under the graph of the derivative of $F(x)$ over that interval is
+  equal to $F(b)-F(a)$.
   \end{quote}  
     What happens if we take the series of figures \ref{fig:djump1}--\ref{fig:djump4}, etc. 
     {\it to the limit}?  This is quite curious: 
   
   \begin{itemize}
-  \item {\bf the series of red graphs:} these are getting thinner and thinner and higher and higher: can we make any sense of what the red graph might mean in the limit (even though the only picture of it that we have at present makes it infinitely thin and infinitely high)?
+  \item {\bf the series of red graphs:} these are getting thinner and
+    thinner and higher and higher: can we make any sense of what the
+    red graph might mean in the limit (even though the only picture of
+    it that we have at present makes it infinitely thin and infinitely
+    high)?
   
-   \item {\bf the series of blue graphs:} these are happily looking more and more like the tame Figure~\ref{fig:jump}. 
+  \item {\bf the series of blue graphs:} these are happily looking
+    more and more like the tame Figure~\ref{fig:jump}.
    \end{itemize} 
   
-  Each of our red graphs is the derivative of the corresponding blue graph. Wouldn't it be tempting to think of the limit of the red graphs---whatever we might construe this to be---as standing for the derivative of the limit of the blue graphs, i.e., of the graph in Figure~\ref{fig:jump}?
+   Each of our red graphs is the derivative of the corresponding blue
+   graph. Wouldn't it be tempting to think of the limit of the red
+   graphs---whatever we might construe this to be---as standing for
+   the derivative of the limit of the blue graphs, i.e., of the graph
+   in Figure~\ref{fig:jump}?
   
-  Well, the temptation is so great that, in fact, mathematicians and physicists of the early twentieth century struggled to give a meaning to things like {\it the limit of the red graphs}---such things were initially called {\bf generalized functions} which might be considered the derivative of {\it the limit of the blue graphs}, i.e., of the graph of Figure~\ref{fig:jump}.
+   Well, the temptation is so great that, in fact, mathematicians and
+   physicists of the early twentieth century struggled to give a
+   meaning to things like {\it the limit of the red graphs}---such
+   things were initially called {\bf generalized functions} which
+   might be considered the derivative of {\it the limit of the blue
+     graphs}, i.e., of the graph of Figure~\ref{fig:jump}.
   
   
-  Of course, to achieve progress in mathematics, all the concepts that play a role in the theory have to be unambiguously defined,  and it took a while before {\it generalized functions} such as the limit of our series of red graphs had been rigorously introduced.
+   Of course, to achieve progress in mathematics, all the concepts
+   that play a role in the theory have to be unambiguously defined,
+   and it took a while before {\it generalized functions} such as the
+   limit of our series of red graphs had been rigorously introduced.
   
-     But many of the great moments in the development of mathematics occur when mathematicians---requiring some concept not yet formalized---work with the concept tentatively, dismissing---if need be---mental tortures, in hopes that the experience they acquire by working with the concept will eventually help to put that concept on sure footing. For example,  early
-mathematicians (Newton, Leibniz)|in replacing approximate speeds by instantaneous velocities
-by passing to limits|had to wait a while before later mathematicians (e.g., Weierstrass) gave a
-rigorous foundation for what they were doing.  
+   But many of the great moments in the development of mathematics
+   occur when mathematicians---requiring some concept not yet
+   formalized---work with the concept tentatively, dismissing---if
+   need be---mental tortures, in hopes that the experience they
+   acquire by working with the concept will eventually help to put
+   that concept on sure footing. For example, early mathematicians
+   (Newton, Leibniz)|in replacing approximate speeds by instantaneous
+   velocities by passing to limits|had to wait a while before later
+   mathematicians (e.g., Weierstrass) gave a rigorous foundation for
+   what they were doing.
    
    
  % From http://en.wikipedia.org/wiki/Karl_Weierstrass
@@ -1967,30 +2026,51 @@ rigorous foundation for what they were doing.
 % From http://en.wikipedia.org/wiki/Laurent_Schwartz
  \illtwo{weierstrass}{schwartz}{.3}{Karl Weierstrass (1815--1897) and Laurent Schwartz (1915--2002)} 
  
-   Karl Weierstrass, who worked during the latter part of the nineteenth century, was known as the ``father of modern analysis.'' He oversaw one of the glorious moments of rigorization of concepts that were long in use, but never before systematically organized.  He, and other analysts of the time were interested in providing a  rigorous language to talk about {\it functions} and more specifically {\it continuous functions} and {\it smooth} (i.e., {\it differentiable}) functions. They wished to have a firm understanding of limits (i.e., of sequences of numbers, or of functions).  
+ Karl Weierstrass, who worked during the latter part of the nineteenth
+ century, was known as the ``father of modern analysis.'' He oversaw
+ one of the glorious moments of rigorization of concepts that were
+ long in use, but never before systematically organized.  He, and
+ other analysts of the time were interested in providing a rigorous
+ language to talk about {\it functions} and more specifically {\it
+   continuous functions} and {\it smooth} (i.e., {\it differentiable})
+ functions. They wished to have a firm understanding of limits (i.e.,
+ of sequences of numbers, or of functions).
  
    
-    For Weierstrass and his companions, even though the functions they worked with needn't be smooth, or continuous, at the very least, the functions they studied had {\it well-defined---and usually finite---values}.   But our ``limit of red graphs" is not so easily formalized as the concepts that occupied the efforts of Weierstrass. Happily however, this general process 
-of approximating discontinuous functions more and more exactly by smooth functions, and taking
-their derivatives to get the blip-functions as we have just seen in the red graphs above was eventually given a mathematically rigorous
-foundation; notably, by the French mathematician, Laurent Schwartz who provide a beautiful theory that we will not go into here, that made perfect sense of ``generalized functions'' such as our limit of the series of red graphs, and that allows mathematicians to work with these concepts with ease. These ``generalized functions''  are called {\it distributions} in Schwartz's theory.\endnote{
-See \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29} for more about distributions.
-Also, Shwartz's explains on page 238 of his autobiography: 
-``Why did we choose the name distribution?  Because, if $\mu$ is a
-measure, i.e., a particular kind of distribution, it can be considered
-as a distribution of electric charges in the universe.  Distributions
-give more general types of electric charges, for example dipoles and
-magnetic distributions.  If we consider the dipole placed at the point
-$a$ having magnetic moment $M$, we easily see that it is defined by
-the distribution $-D_M \delta_{(a)}$.  These objects occur in physics.
- Deny's thesis, which he defended shortly after, introduced electric
-distributions of finite energy, the only ones which really occur in
-practice; these objects really are distributions, and do not
-correspond to measures.  Thus, distributions have two very different
-aspects: they are a generalization of the notion of function, and a
-generalization of the notion of distribution of electric charges in
-space. [...] Both these interpretations of distributions are currently
-used.''}
+ For Weierstrass and his companions, even though the functions they
+ worked with needn't be smooth, or continuous, at the very least, the
+ functions they studied had {\it well-defined---and usually
+   finite---values}.  But our ``limit of red graphs" is not so easily
+ formalized as the concepts that occupied the efforts of
+ Weierstrass. Happily however, this general process of approximating
+ discontinuous functions more and more exactly by smooth functions,
+ and taking their derivatives to get the blip-functions as we have
+ just seen in the red graphs above was eventually given a
+ mathematically rigorous foundation; notably, by the French
+ mathematician, Laurent Schwartz who provide a beautiful theory that
+ we will not go into here, that made perfect sense of ``generalized
+ functions'' such as our limit of the series of red graphs, and that
+ allows mathematicians to work with these concepts with ease. These
+ ``generalized functions'' are called {\it distributions} in
+ Schwartz's theory.\endnote{ See
+   \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29}
+   for more about distributions.  Also, Shwartz's explains on page 238
+   of his autobiography: ``Why did we choose the name distribution?
+   Because, if $\mu$ is a measure, i.e., a particular kind of
+   distribution, it can be considered as a distribution of electric
+   charges in the universe.  Distributions give more general types of
+   electric charges, for example dipoles and magnetic distributions.
+   If we consider the dipole placed at the point $a$ having magnetic
+   moment $M$, we easily see that it is defined by the distribution
+   $-D_M \delta_{(a)}$.  These objects occur in physics.  Deny's
+   thesis, which he defended shortly after, introduced electric
+   distributions of finite energy, the only ones which really occur in
+   practice; these objects really are distributions, and do not
+   correspond to measures.  Thus, distributions have two very
+   different aspects: they are a generalization of the notion of
+   function, and a generalization of the notion of distribution of
+   electric charges in space. [...] Both these interpretations of
+   distributions are currently used.''}
 
 
 
@@ -2000,25 +2080,45 @@ used.''}
   
 
 
-The curious {\it limit of the red graphs} of the previous section, which you might be tempted to think of as a ``blip-function'' that vanishes for $t$ nonzero and is somehow ``infinite'' (whatever that means) at $0$ is an example of a {\it generalized function} (in the sense of the earlier mathematicians) or a {\it distribution} in the sense of Laurent Schwartz.
+The curious {\it limit of the red graphs} of the previous section,
+which you might be tempted to think of as a ``blip-function'' that
+vanishes for $t$ nonzero and is somehow ``infinite'' (whatever that
+means) at $0$ is an example of a {\it generalized function} (in the
+sense of the earlier mathematicians) or a {\it distribution} in the
+sense of Laurent Schwartz.
 
-  This particular {\it limit of the red graphs} also goes by another  name (it is officially called a Dirac $\delta$-function,
-the adjective ``Dirac'' being in honor of the physicist who first worked  with this concept, the ``$\delta$'' being the symbol he assigned to these objects). The noun ``function'' should 
-be in quotation-marks for, properly speaking, the Dirac $\delta$-function is not---as we have explained
-above---a bona fide function but rather a distribution.
+This particular {\it limit of the red graphs} also goes by another
+name (it is officially called a Dirac $\delta$-function, the adjective
+``Dirac'' being in honor of the physicist who first worked with this
+concept, the ``$\delta$'' being the symbol he assigned to these
+objects). The noun ``function'' should be in quotation-marks for,
+properly speaking, the Dirac $\delta$-function is not---as we have
+explained above---a bona fide function but rather a distribution.
       
       \ill{dirac}{0.3}{Paul Adrien Maurice Dirac (1902--1984)}
 
      
-Now may be  a good time to summarize what the major difference is between {\it honest functions} and {\it generalized functions}  or  {\it distributions}.
+      Now may be a good time to summarize what the major difference is
+      between {\it honest functions} and {\it generalized functions}
+      or {\it distributions}.
 
-An honest (by which we mean {\it integrable}) function of a real variable  $f(t)$ possesses two ``features.''
+      An honest (by which we mean {\it integrable}) function of a real
+      variable $f(t)$ possesses two ``features.''
 
 
 \begin{itemize}
-\item  {\bf It has values.}  That is, at any real number $t$,  e.g., $t =2$ or $t =0$ or $t =\pi$ etc., our function has a definite real number value ($f(2)$ or $f(0)$ or $f(\pi)$ etc.) {\it and if we know all those values we know the function.}
+\item {\bf It has values.}  That is, at any real number $t$, e.g., $t
+  =2$ or $t =0$ or $t =\pi$ etc., our function has a definite real
+  number value ($f(2)$ or $f(0)$ or $f(\pi)$ etc.) {\it and if we know
+    all those values we know the function.}
      
-\item  {\bf It has areas under its graph.} If we are given any interval of real numbers, say the interval between $a$ and $b$, we can talk unambiguously about the area ``under'' the graph of the function $f(t)$ over the interval  between $a$ and $b$.  That is, in the terminology of Calculus, we can talk of  {\it the integral of $f(t)$ from $a$ to $b$}.  And in the notation of Calculus, this---thanks to Leibniz---is elegantly  denoted     
+\item {\bf It has areas under its graph.} If we are given any interval
+  of real numbers, say the interval between $a$ and $b$, we can talk
+  unambiguously about the area ``under'' the graph of the function
+  $f(t)$ over the interval between $a$ and $b$.  That is, in the
+  terminology of Calculus, we can talk of {\it the integral of $f(t)$
+    from $a$ to $b$}.  And in the notation of Calculus, this---thanks
+  to Leibniz---is elegantly denoted
 $$\int_a^bf(t)dt.$$
 
 \end{itemize}
@@ -2026,52 +2126,118 @@ $$\int_a^bf(t)dt.$$
 In contrast a {\it generalized function}  or  {\it distribution} 
 
 \begin{itemize}
-\item {\bf may not have ``definite values''} at all real numbers if it is not an honest function, nevertheless:
+\item {\bf may not have ``definite values''} at all real numbers if it
+  is not an honest function, nevertheless:
      
-\item  {\bf It has well-defined areas under portions of its ``graph."} If we are given any interval of real numbers, say the (open) interval between $a$ and $b$, we can still talk unambiguously about the {\it area ``under" the graph of the generalized function $D(t)$ over the interval  between $a$ and~$b$} and we will denote this--extending what we do in ordinary calculus---by the symbol
+\item {\bf It has well-defined areas under portions of its ``graph."}
+  If we are given any interval of real numbers, say the (open)
+  interval between $a$ and $b$, we can still talk unambiguously about
+  the {\it area ``under" the graph of the generalized function $D(t)$
+    over the interval between $a$ and~$b$} and we will denote
+  this--extending what we do in ordinary calculus---by the symbol
 $$\int_a^bD(t).$$ 
 \end{itemize} 
 
- This description is important to bear in mind and it gives us a handy way of thinking about ``generalized functions" (i.e., distributions) as opposed to functions:  when we consider an (integrable) function of a real variable, $f(t)$, we may invoke its {\it value} at every real number  and  for every interval $[a,b]$ we may consider the quantity  $\int_a^bf(t)dt$. BUT when we are given a generalized function $D(t)$ we {\it only} have at our disposal the latter quantities.  In fact,  a generalized function of a real variable $D(t)$ is (formally) nothing more than a {\it rule} that assigns to any finite interval  $[a,b]$ ($a \le b$)  a quantity that we might denote   $\int_a^bD(t)dt$  and that {\it behaves as if it were the integral of a function} and in particular---for three real numbers $a\le b\le c$ we have the additivity relation
+This description is important to bear in mind and it gives us a handy
+way of thinking about ``generalized functions" (i.e., distributions)
+as opposed to functions: when we consider an (integrable) function of
+a real variable, $f(t)$, we may invoke its {\it value} at every real
+number and for every interval $[a,b]$ we may consider the quantity
+$\int_a^bf(t)dt$. BUT when we are given a generalized function $D(t)$
+we {\it only} have at our disposal the latter quantities.  In fact, a
+generalized function of a real variable $D(t)$ is (formally) nothing
+more than a {\it rule} that assigns to any finite interval $[a,b]$ ($a
+\le b$) a quantity that we might denote $\int_a^bD(t)dt$ and that {\it
+  behaves as if it were the integral of a function} and in
+particular---for three real numbers $a\le b\le c$ we have the
+additivity relation
  $$  \int_a^cD(t)dt \ = \ \int_a^bD(t)dt \ + \ \int_b^cD(t)dt.$$
  
- SO, any  honest function integrable over finite intervals clearly {\it is} a distribution (forget about its values!) but $\dots$ there are many more generalized functions, and including them in our sights gives us a very important tool.
+ SO, any honest function integrable over finite intervals clearly {\it
+   is} a distribution (forget about its values!) but $\dots$ there are
+ many more generalized functions, and including them in our sights
+ gives us a very important tool.
  
  
-  It is natural to talk, as well, of Cauchy sequences, and limits, of distributions. We'll say that such a sequence $D_1(t), D_2(t), D_3(t),\dots$ is a {\bf Cauchy sequence} if for every interval $[a,b]$ the quantities  $$\int_a^bD_1(t)dt,\quad \int_a^bD_2(t)dt,\quad\int_a^bD_3(t)dt,\dots$$ form a Cauchy sequence of real numbers. Now, any Cauchy sequence of distributions {\it converges to a limiting distribution} $D(t)$ which is defined by the rule that for every interval $[a,b]$,
+ It is natural to talk, as well, of Cauchy sequences, and limits, of
+ distributions. We'll say that such a sequence $D_1(t), D_2(t),
+ D_3(t),\dots$ is a {\bf Cauchy sequence} if for every interval
+ $[a,b]$ the quantities $$\int_a^bD_1(t)dt,\quad
+ \int_a^bD_2(t)dt,\quad\int_a^bD_3(t)dt,\dots$$ form a Cauchy sequence
+ of real numbers. Now, any Cauchy sequence of distributions {\it
+   converges to a limiting distribution} $D(t)$ which is defined by
+ the rule that for every interval $[a,b]$,
   
   $$ \int_a^bD(t)dt\ =\ \lim_{i \to \infty} \int_a^bD_i(t)dt.$$
     
   
-  If, by the way, you have an infinite  sequence---say---of honest, continuous, functions that converges uniformly to a limit (which will again be a continuous function) then that sequence certainly converges---in the above sense---to the same limit when these functions are viewed as generalized functions. BUT, there are many important occasions where your sequence of honest continuous functions doesn't have that convergence property and {\it yet} when they are viewed as generalized functions they do converge to some generalized function as a limit. We will see this soon when we get back to the ``sequence of the red graphs." This sequence {\bf does} converge (in the above sense)  to the delta-function when these red graphs are thought of as a sequence of generalized functions.
+  If, by the way, you have an infinite sequence---say---of honest,
+  continuous, functions that converges uniformly to a limit (which
+  will again be a continuous function) then that sequence certainly
+  converges---in the above sense---to the same limit when these
+  functions are viewed as generalized functions. BUT, there are many
+  important occasions where your sequence of honest continuous
+  functions doesn't have that convergence property and {\it yet} when
+  they are viewed as generalized functions they do converge to some
+  generalized function as a limit. We will see this soon when we get
+  back to the ``sequence of the red graphs." This sequence {\bf does}
+  converge (in the above sense) to the delta-function when these red
+  graphs are thought of as a sequence of generalized functions.
 
 
 
 
  The integral notation for distribution is very useful, and allows us the flexibility to define, for nice enough---and honest---functions $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$ 
-\noindent {\bf A question:}  If you've never seen distributions before, but know the Riemann integral, can you guess at what the definition of $\int_a^bc(t)D(t)$  is, and can you formulate hypotheses on $c(t)$ that would allow  you  to endow this expression with a definite meaning?
+ \noindent {\bf A question:} If you've never seen distributions
+ before, but know the Riemann integral, can you guess at what the
+ definition of $\int_a^bc(t)D(t)$ is, and can you formulate hypotheses
+ on $c(t)$ that would allow you to endow this expression with a
+ definite meaning?
 
-\ill{dirac_delta}{0.5}{The Dirac $\delta$-function, where we draw a vertical arrow to illustrate the delta function with support at a given point.}
+ \ill{dirac_delta}{0.5}{The Dirac $\delta$-function, where we draw a
+   vertical arrow to illustrate the delta function with support at a
+   given point.}
 
-For example, for the Dirac $\delta$-function we have been discussing (i.e., the limit of the red graphs of the previous section) {\it is} an honest function away from $t=0$ and ---in fact---is the ``trivial function" zero away from the origin.  And at $0$, we may {\it say} that it has the ``value" infinity, in honor of it being the limit of blip functions getting taller and taller at $0$ but the feature that pins it down as a distribution is given by its behavior relative to the second feature above, the area of its graph over  the open interval  between $a$ and $b$: 
+ For example, for the Dirac $\delta$-function we have been discussing
+ (i.e., the limit of the red graphs of the previous section) {\it is}
+ an honest function away from $t=0$ and ---in fact---is the ``trivial
+ function" zero away from the origin.  And at $0$, we may {\it say}
+ that it has the ``value" infinity, in honor of it being the limit of
+ blip functions getting taller and taller at $0$ but the feature that
+ pins it down as a distribution is given by its behavior relative to
+ the second feature above, the area of its graph over the open
+ interval between $a$ and $b$:
 
 \begin{itemize}
-\item 
-If both $a$ and $b$  have the same sign  (i.e., if the origin is not in the open interval spanned by $a$ and $b$) then the ``area under the graph of our Dirac $\delta$-function" is $0$.
-\item If $a$ is negative and $b$ is positive then the ``area under the graph of our Dirac $\delta$-function" is $1$---in notation $$\int_a^b\delta = 1.$$
+\item If both $a$ and $b$ have the same sign (i.e., if the origin is
+  not in the open interval spanned by $a$ and $b$) then the ``area
+  under the graph of our Dirac $\delta$-function" is $0$.
+\item If $a$ is negative and $b$ is positive then the ``area under the
+  graph of our Dirac $\delta$-function" is $1$---in
+  notation $$\int_a^b\delta = 1.$$
 \end{itemize}
 
 
- We sometimes summarize the fact that these areas vanish so long as the origin is not included in the interval we are considering by saying that the {\bf support} of this $\delta$-function 
- is ``at the origin.''  
+We sometimes summarize the fact that these areas vanish so long as the
+origin is not included in the interval we are considering by saying
+that the {\bf support} of this $\delta$-function is ``at the origin.''
  
  
- Once you're happy with  {\it this} Dirac $\delta$-function, you'll also be happy with a Dirac $\delta$-function---call it $\delta_x$---with support concentrated at any specific real number $x$ gotten by ``translating" the one we've been talking about appropriately; $\delta_x$ vanishes for $t \ne x$ and intuitively  speaking, has an {\it infinite blip} at $t=x$.
+Once you're happy with {\it this} Dirac $\delta$-function, you'll also
+be happy with a Dirac $\delta$-function---call it $\delta_x$---with
+support concentrated at any specific real number $x$ gotten by
+``translating" the one we've been talking about appropriately;
+$\delta_x$ vanishes for $t \ne x$ and intuitively speaking, has an
+{\it infinite blip} at $t=x$.
 
- So, the original delta-function we were discussing, i.e., $\delta(t)$ would be denoted $\delta_0(t)$.
+So, the original delta-function we were discussing, i.e., $\delta(t)$
+would be denoted $\delta_0(t)$.
   
 
-\noindent {\bf A second question:} if you have not seen distributions before, and have answered the first question in this section, let $c(t)$ be an honest function for which your definition of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
+\noindent {\bf A second question:} if you have not seen distributions
+before, and have answered the first question in this section, let
+$c(t)$ be an honest function for which your definition
+of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
 
  Can you use your definition to compute
  
@@ -2089,19 +2255,31 @@ The theory of distributions gives a partial answer to the following funny questi
 \begin{quote}  How  in the world can you ``take the derivative'' of a function $F(t)$ that doesn't have a derivative?
 \end{quote}
 
-The short answer to this question is that {\it this derivative $F'(t)$ which doesn't exist as a function may exist as a distribution.}  What then is the integral of that distribution? Well, it is given by the original function! 
+The short answer to this question is that {\it this derivative $F'(t)$
+  which doesn't exist as a function may exist as a distribution.}
+What then is the integral of that distribution? Well, it is given by
+the original function!
      
 $$\int_a^bF'(t)dt \ = \ F(b) -F(a).$$
      
- Let us practice this with simple staircase functions. For example, what is the {\it derivative}---in the sense of the theory of distributions---of the function in Figure~\ref{fig:simple_staircase}.   {\bf Answer} $\delta_0 + 2 \delta_1$.
+Let us practice this with simple staircase functions. For example,
+what is the {\it derivative}---in the sense of the theory of
+distributions---of the function in Figure~\ref{fig:simple_staircase}.
+{\bf Answer} $\delta_0 + 2 \delta_1$.
      
  
-\ill{simple_staircase}{.5}{The staircase function that is $0$ for $t \le 0$, $1$ for $0 <t \le 1$ and $3$ for $1< t \le 2$ has derivative $\delta_0 + 2\delta_1$.\label{fig:simple_staircase}}
+\ill{simple_staircase}{.5}{The staircase function that is $0$ for $t
+  \le 0$, $1$ for $0 <t \le 1$ and $3$ for $1< t \le 2$ has derivative
+  $\delta_0 + 2\delta_1$.\label{fig:simple_staircase}}
      
       
-  We'll be dealing with much more complicated staircase functions in the next section, but the general principles discussed here will nicely apply there.\endnote{
-From Wikipedia:
-\begin{quote} ``Generalized functions'' were introduced by Sergei Sobolev in 1935. They were independently introduced in the late 1940s by Laurent Schwartz, who developed a comprehensive theory of distributions.
+We'll be dealing with much more complicated staircase functions in the
+next section, but the general principles discussed here will nicely
+apply there.\endnote{ From Wikipedia:
+  \begin{quote} ``Generalized functions'' were introduced by Sergei
+    Sobolev in 1935. They were independently introduced in the late
+    1940s by Laurent Schwartz, who developed a comprehensive theory of
+    distributions.
 \end{quote}
 }
 
@@ -2110,67 +2288,129 @@ From Wikipedia:
 
 In Part~\ref{part1} of this book  (in Chapter~\ref{sec:fourier1} above) we wrote:
 
-\begin{quote} The operation that starts with a graph and goes to its spectral picture that records the frequencies,
-amplitudes, and phases of the pure sine waves that, together, compose the graph is called the {\bf Fourier
-transform}.
+\begin{quote} The operation that starts with a graph and goes to its
+  spectral picture that records the frequencies, amplitudes, and
+  phases of the pure sine waves that, together, compose the graph is
+  called the {\bf Fourier transform}.
 \end{quote}
 
 
   Now let's take a closer look at this operation {\it Fourier transform}.
   
-  We will focus our discussion on an {\bf even} function $f(t)$ of a real variable $t$.  ``{\bf Even}" means that its graph is symmetric about the origin; that is, $f(-t)= f(t)$.  See Figure~\ref{fig:even_function}.
+  We will focus our discussion on an {\bf even} function $f(t)$ of a
+  real variable $t$.  ``{\bf Even}" means that its graph is symmetric
+  about the origin; that is, $f(-t)= f(t)$.  See
+  Figure~\ref{fig:even_function}.
   
-  \ill{even_function}{.8}{The graph of an even function is symmetrical about the $y$-axis.\label{fig:even_function}}
+  \ill{even_function}{.8}{The graph of an even function is symmetrical
+    about the $y$-axis.\label{fig:even_function}}
   
-    When we get to apply this discussion to the {\it staircase of primes} $\pi(t)$ or the {\it tinkered staircase of primes} $\psi(t)$  both of which being defined only for positive values of $t$, then we would ``lose little information" in our quest to understand them  if we simply ``symmetrized their graphs'' by defining their values on negative numbers $-t$ via the formulas  $\pi(-t)=\pi(t)$ and  $\psi(-t)=\psi(t)$ thereby turning each of them into {\it even functions}. 
+  When we get to apply this discussion to the {\it staircase of
+    primes} $\pi(t)$ or the {\it tinkered staircase of primes}
+  $\psi(t)$ both of which being defined only for positive values of
+  $t$, then we would ``lose little information" in our quest to
+  understand them if we simply ``symmetrized their graphs'' by
+  defining their values on negative numbers $-t$ via the formulas
+  $\pi(-t)=\pi(t)$ and $\psi(-t)=\psi(t)$ thereby turning each of them
+  into {\it even functions}.
 
 \ill{even_pi}{.8}{Even extension of the staircase of primes.}
 
-  The idea behind the Fourier transform is to express $f(t)$ as {\it made up out of sine and cosine wave functions}.  Since we have agreed to consider only even functions, we can dispense with the sine waves---they won't appear in our Fourier analysis---and ask how to reconstruct $f(t)$ as a {\it sum} (with coefficients) of cosine functions (if only finitely many frequencies occur in the spectrum of our function) or more generally, as an {\it integral} if the spectrum is more elaborate.  For this work, we need a little machine that tells us, for each real number $\theta$ whether or not  $\theta$ is in the spectrum of $f(t)$, and if so, what the amplitude is of the  cosine function $\cos(\theta t)$ that occurs in the Fourier expansion of $f(t)$---this amplitude  answers the awkwardly phrased question: {\it how much $\cos(\theta t)$ ``occurs in" $f(t)$?}  We will denote this amplitude by ${\hat f}(\theta)$, an refer to it as {\bf the Fourier transform} of $f(t)$.  The {\bf Spectrum}, then, of $f(t)$ is the set of all frequencies $\theta$ where the amplitude is nonzero.
+The idea behind the Fourier transform is to express $f(t)$ as {\it
+  made up out of sine and cosine wave functions}.  Since we have
+agreed to consider only even functions, we can dispense with the sine
+waves---they won't appear in our Fourier analysis---and ask how to
+reconstruct $f(t)$ as a {\it sum} (with coefficients) of cosine
+functions (if only finitely many frequencies occur in the spectrum of
+our function) or more generally, as an {\it integral} if the spectrum
+is more elaborate.  For this work, we need a little machine that tells
+us, for each real number $\theta$ whether or not $\theta$ is in the
+spectrum of $f(t)$, and if so, what the amplitude is of the cosine
+function $\cos(\theta t)$ that occurs in the Fourier expansion of
+$f(t)$---this amplitude answers the awkwardly phrased question: {\it
+  how much $\cos(\theta t)$ ``occurs in" $f(t)$?}  We will denote this
+amplitude by ${\hat f}(\theta)$, an refer to it as {\bf the Fourier
+  transform} of $f(t)$.  The {\bf Spectrum}, then, of $f(t)$ is the
+set of all frequencies $\theta$ where the amplitude is nonzero.
   
   
 \ill{fourier_machine}{.6}{The Fourier Transform Machine, which transforms $f(t)$ into ${\hat f}(\theta)$\label{fig:fourier_machine}}
 
     
-    Now in certain easy circumstances---specifically, if $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ (exists, and) is finite---the Integral Calculus provides us with an easy construction of that machine
-    (see Figure~\ref{fig:fourier_machine}); namely:
+Now in certain easy circumstances---specifically, if
+$\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ (exists, and) is finite---the
+Integral Calculus provides us with an easy construction of that
+machine (see Figure~\ref{fig:fourier_machine}); namely:
       
     $${\hat f}(\theta) = \int_{-{\infty}}^{+{\infty}}f(t)\cos(-\theta t)dt.$$
      
-  \ill{oo_integral}{.8}{This figure illustrates $\int_{-\infty}^{\infty} f(x) dx$, which is the signed area between the graph of $f(x)$ and the $x$-axis, where area below the $x$-axis (yellow) counts negative, and area above (grey) is positive.}
+    \ill{oo_integral}{.8}{This figure illustrates
+      $\int_{-\infty}^{\infty} f(x) dx$, which is the signed area
+      between the graph of $f(x)$ and the $x$-axis, where area below
+      the $x$-axis (yellow) counts negative, and area above (grey) is
+      positive.}
      
-    This concise machine manages to ``pick out'' just the part of $f(t)$ that has frequency $\theta$!!  It  provides for us the {\it analysis} part of the Fourier analysis of our function $f(t)$. But there is a {\it synthesis} part to our work as well, for we can reconstruct $f(t)$ from its Fourier transform, by a process intriguingly similar to the analysis part; namely:
+    This concise machine manages to ``pick out'' just the part of
+    $f(t)$ that has frequency $\theta$!!  It provides for us the {\it
+      analysis} part of the Fourier analysis of our function
+    $f(t)$. But there is a {\it synthesis} part to our work as well,
+    for we can reconstruct $f(t)$ from its Fourier transform, by a
+    process intriguingly similar to the analysis part; namely:
        
       $$f(t)  = {\frac{1}{2\pi}}\int_{-{\infty}}^{+{\infty}}{\hat f}(\theta)\cos(\theta t)d\theta.$$
        
-    We are not so lucky to have $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ finite  when we try our hand at a Fourier analysis of the staircase of primes, but we'll work around this!
+      We are not so lucky to have
+      $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ finite when we try our
+      hand at a Fourier analysis of the staircase of primes, but we'll
+      work around this!
   
   
 
 \chapter[Fourier transform of delta]{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
 
-   Consider the $\delta$-function that we denoted $\delta(t)$  (or $\delta_0(t)$). This is also the ``generalized function" that we thought of as the ``limit of the red graphs" in Chapter~\ref{sec:dist} above. Even though $\delta(t)$ is  a distribution and {\it not} a bona fide function, it is symmetric about the origin, and also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is finite (its value is, in fact, $1$). All this means that, appropriately understood, the discussion of the previous section applies, and we can {\it feed} this delta-function into our Fourier Transform Machine (Figure~\ref{fig:fourier_machine}) to see what frequencies and amplitudes arise in our attempt to express---whatever this means!---the delta-function as a sum, or an integral, of cosine functions.
+Consider the $\delta$-function that we denoted $\delta(t)$ (or
+$\delta_0(t)$). This is also the ``generalized function" that we
+thought of as the ``limit of the red graphs" in Chapter~\ref{sec:dist}
+above. Even though $\delta(t)$ is a distribution and {\it not} a bona
+fide function, it is symmetric about the origin, and
+also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is
+finite (its value is, in fact, $1$). All this means that,
+appropriately understood, the discussion of the previous section
+applies, and we can {\it feed} this delta-function into our Fourier
+Transform Machine (Figure~\ref{fig:fourier_machine}) to see what
+frequencies and amplitudes arise in our attempt to express---whatever
+this means!---the delta-function as a sum, or an integral, of cosine
+functions.
    
    
      So what is the Fourier transform,  ${\hat \delta_0}(\theta)$, of the delta-function?
      
           
-  Well, the general formula would give us:
-  
+Well, the general formula would give us:
   $$ {\hat \delta_0}(\theta) = \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_0(t)dt$$
-  and as we mentioned in section 18, for any nice function $c(t)$   we have that the integral of the product of $c(t)$ by  the distribution $\delta_x(t)$  is given by  the {\it value} of the function $c(t)$ at $t=x$.  SO:
+  and as we mentioned in section 18, for any nice function $c(t)$ we
+  have that the integral of the product of $c(t)$ by the distribution
+  $\delta_x(t)$ is given by the {\it value} of the function $c(t)$ at
+  $t=x$.  SO:
   
-    $$ {\hat \delta_0}(\theta) = \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_0(t)dt = \cos(0) = 1.$$
+$$ {\hat \delta_0}(\theta) = \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_0(t)dt = \cos(0) = 1.$$
     
     
-    In other words, the Fourier transform of $\delta_0(t)$ is the constant function $$ {\hat \delta_0}(\theta)=1.$$ One can think of this colloquially as saying that the delta-function is a perfect example of {\it white noise} in that  {\it every} frequency occurs in its Fourier analysis and they all occur in equal amounts.
+In other words, the Fourier transform of $\delta_0(t)$ is the constant
+function $$ {\hat \delta_0}(\theta)=1.$$ One can think of this
+colloquially as saying that the delta-function is a perfect example of
+{\it white noise} in that {\it every} frequency occurs in its Fourier
+analysis and they all occur in equal amounts.
         
-    To generalize this computation let us consider for any real number $x$ the symmetrized delta-function with support at $x$ and $-x$, given by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
+To generalize this computation let us consider for any real number $x$
+the symmetrized delta-function with support at $x$ and $-x$, given
+by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
     
     
     \ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$, where we draw vertical arrows to illustrate the Dirac delta functions.}
     
-    What is the Fourier transform of this $d_x(t)$?  The answer is given by making the same computation as we've just made:
+    What is the Fourier transform of this $d_x(t)$?  The answer is
+    given by making the same computation as we've just made:
     
 \begin{align*}
 {\hat d_x}(\theta)  &=  {\frac{1}{2}}\left(\int_{-\infty}^{+\infty}\cos(-\theta t)\delta_x(t)dt + \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_{-x}(t)dt\right)\\
@@ -2179,11 +2419,17 @@ transform}.
 \end{align*}
 
     
-  To summarize this in ridiculous (!) colloquial terms: {\it for any frequency $\theta$ the amount of $\cos(\theta t)$ you need to build up the generalized function $(\delta_x(t) + \delta_{-x}(t))/2$ is
-$\cos(x\theta).$ }
+To summarize this in ridiculous (!) colloquial terms: {\it for any
+  frequency $\theta$ the amount of $\cos(\theta t)$ you need to build
+  up the generalized function $(\delta_x(t) + \delta_{-x}(t))/2$ is
+  $\cos(x\theta).$ }
 
     
-So far, so good, but remember that the theory of the Fourier transform has---like much of mathematics---two parts: an {\it analysis part} and a {\it synthesis} part.  We've just perfomed the {\it analysis} part of the theory for these symmetrized delta functions $(\delta_x(t) + \delta_{-x}(t))/2$.  
+So far, so good, but remember that the theory of the Fourier transform
+has---like much of mathematics---two parts: an {\it analysis part} and
+a {\it synthesis} part.  We've just perfomed the {\it analysis} part
+of the theory for these symmetrized delta functions $(\delta_x(t) +
+\delta_{-x}(t))/2$.
 
 Can we synthesize them---i.e., build them up again---from their Fourier transforms?
   
@@ -2192,27 +2438,51 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
 
 \chapter{On losing no information\label{sec:loseno}}
 
-  To manage to repackage the ``same'' data in various ways---where each way brings out some features that would be kept in the shadows if the data were packaged in some different way---is a high art, in mathematics. In a sense {\it every} mathematical equation does this, for the ``equal sign'' in the middle of the equation tells us that even though the two sides of the equation may seem different, or have different shapes, they are nonetheless ``the same data.''  For example, the equation 
+To manage to repackage the ``same'' data in various ways---where each
+way brings out some features that would be kept in the shadows if the
+data were packaged in some different way---is a high art, in
+mathematics. In a sense {\it every} mathematical equation does this,
+for the ``equal sign'' in the middle of the equation tells us that
+even though the two sides of the equation may seem different, or have
+different shapes, they are nonetheless ``the same data.''  For
+example, the equation
   
   $$\log(XY) = \log(X) + \log(Y)$$
 
-which we encountered earlier in Chapter~\ref{sec:firstguess},  is just two ways of looking at 
-the same thing,  yet it was the basis for much manual calculation for several centuries.
+  which we encountered earlier in Chapter~\ref{sec:firstguess}, is
+  just two ways of looking at the same thing, yet it was the basis for
+  much manual calculation for several centuries.
   
   
   
   
- Now, the problem we have been concentrating on, in this book, has been---in effect---to understand the pattern, if we can call it that, given by the placement of prime numbers among the natural  line-up of all whole numbers. 
+  Now, the problem we have been concentrating on, in this book, has
+  been---in effect---to understand the pattern, if we can call it
+  that, given by the placement of prime numbers among the natural
+  line-up of all whole numbers.
  
  \ill{primes_line}{1}{Prime Numbers up to $37$}
   
-  There are, of course, many ways for us to present this basic pattern. Our initial strategy was to focus attention on the {\it staircase of primes} which gives us a vivid portrait, if you wish, of the order of appearance of primes among all numbers.
+ There are, of course, many ways for us to present this basic
+ pattern. Our initial strategy was to focus attention on the {\it
+   staircase of primes} which gives us a vivid portrait, if you wish,
+ of the order of appearance of primes among all numbers.
  
  \ill{PN_38}{.45}{Prime Numbers up to $37$}
  
-As we have already hinted in the previous sections, however, there are various ways open to us to tinker with---and significantly modify---our staircase {\it without losing  the essential information it contains}. Of course, there is always the danger of modifying things in such a way that ``retrieval" of the original data becomes difficult.  Moreover, we had better  remember every change we have made if we are to have any hope of retrieving the original data!
+ As we have already hinted in the previous sections, however, there
+ are various ways open to us to tinker with---and significantly
+ modify---our staircase {\it without losing the essential information
+   it contains}. Of course, there is always the danger of modifying
+ things in such a way that ``retrieval" of the original data becomes
+ difficult.  Moreover, we had better remember every change we have
+ made if we are to have any hope of retrieving the original data!
  
- With this in mind, let us go back to Chapter~\ref{sec:information} (discussing the staircase of primes) and Chapter~\ref{sec:tinkering}, where we tinkered with the original staircase of primes---alias: the graph of $\pi(X)$---to get $\psi(X)$ whose risers look---from afar---as if they approximated the 45 degree staircase.
+ With this in mind, let us go back to Chapter~\ref{sec:information}
+ (discussing the staircase of primes) and Chapter~\ref{sec:tinkering},
+ where we tinkered with the original staircase of primes---alias: the
+ graph of $\pi(X)$---to get $\psi(X)$ whose risers look---from
+ afar---as if they approximated the 45 degree staircase.
  
  
    At this point we'll do some further carpentry on $\psi(X)$:
@@ -2220,28 +2490,43 @@ As we have already hinted in the previous sections, however, there are various w
   
    \begin{enumerate}
    
-\item Distort
-the $X$-axis of our staircase by  replacing the variable $X$ by $e^t$ to get the function $$\Psi(t):= \psi(e^t).$$  No harm is done by this  for we can retrieve our original $\psi(X)$  as $$\psi(X) = \Psi(\log(X)).$$  Our distorted staircase has risers at ($0$ and) all positive integral multiples of logs of prime numbers.
+   \item Distort the $X$-axis of our staircase by replacing the
+     variable $X$ by $e^t$ to get the function $$\Psi(t):=
+     \psi(e^t).$$ No harm is done by this for we can retrieve our
+     original $\psi(X)$ as $$\psi(X) = \Psi(\log(X)).$$ Our distorted
+     staircase has risers at ($0$ and) all positive integral multiples
+     of logs of prime numbers.
   
 
 \illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the right is just the plot of $\psi$ but with the $X$-axis plotted on a logarithmic scale.}
 
 
-\item  Now we'll do something that might seem a bit more brutal: {\it take the derivative of this distorted staircase) $\Psi(t)$.}   This derivative $\Psi'(t)$ is a {\it generalized} function with support  at all nonnegative  integral multiples of logs of prime numbers.
+\item Now we'll do something that might seem a bit more brutal: {\it
+    take the derivative of this distorted staircase) $\Psi(t)$.}  This
+  derivative $\Psi'(t)$ is a {\it generalized} function with support
+  at all nonnegative integral multiples of logs of prime numbers.
 
-\ill{bigPsi_prime}{1}{$\Psi'(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and $\log(2\pi)$ at $0$).  The more red the arrow, the larger the weight.}
+  \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a sum of Dirac delta functions
+    at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and
+    $\log(2\pi)$ at $0$).  The more red the arrow, the larger the
+    weight.}
 
-\item    Now ---for normalization purposes---multiply $\Psi'(t)$ by
-the function $e^{-t/2}$ which has no effect whatsoever on the support.
+\item Now ---for normalization purposes---multiply $\Psi'(t)$ by the
+  function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
     
 Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
-
   $$\Phi(t) \ = \ e^{-t/2}\Psi'(t)$$ 
-  A distribution that has a discrete set of real numbers as its support---as $\Phi(t)$ does, we sometimes like to call {\bf spike distributions} since the pictures of functions approximating them tend to look like a series of spikes.
+  A distribution that has a discrete set of real numbers as its
+  support---as $\Phi(t)$ does, we sometimes like to call {\bf spike
+    distributions} since the pictures of functions approximating them
+  tend to look like a series of spikes.
    
- We have then before us  a spike distribution with support at integral multiples of logarithms of prime numbers, and this generalized function retains the essential information about the placement of prime numbers among all whole numbers, and
- will be playing a major role in our story.
+  We have then before us a spike distribution with support at integral
+  multiples of logarithms of prime numbers, and this generalized
+  function retains the essential information about the placement of
+  prime numbers among all whole numbers, and will be playing a major
+  role in our story.
    
  
    
@@ -2291,19 +2576,35 @@ out how to deal with this.}
  
  
  
-  We've discussed the nature of the Fourier transform of (symmetrized) $\delta$-functions in Chapter~\ref{sec:ftdelta}. In particular, recall the ``spike function" $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We mentioned that its Fourier transform, ${\hat d}_x(\theta)$,  is equal to $\cos(x\theta)$ (and gave some hints about why this may be true).
+We've discussed the nature of the Fourier transform of (symmetrized)
+$\delta$-functions in Chapter~\ref{sec:ftdelta}. In particular, recall
+the ``spike function" $$d_x(t) \ = \ (\delta_x(t) +
+\delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We
+mentioned that its Fourier transform, ${\hat d}_x(\theta)$, is equal
+to $\cos(x\theta)$ (and gave some hints about why this may be true).
   
 
-   Our next goal is to work with the much more interesting  ``spike function"  $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$  which was one of the generalized function that we engineered in Chapter~\ref{sec:loseno}, and that has support at all nonnegative integral multiples of logarithms of prime numbers.
+Our next goal is to work with the much more interesting ``spike
+function" $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$ which was one of the
+generalized function that we engineered in Chapter~\ref{sec:loseno},
+and that has support at all nonnegative integral multiples of
+logarithms of prime numbers.
    
 
 
    
-  As with any function---or generalized function---defined for non-negative values of $t$, we can ``symmetrize it" (about the $t$-axis) which means that we can define it on negative real numbers by the equation  
+As with any function---or generalized function---defined for
+non-negative values of $t$, we can ``symmetrize it" (about the
+$t$-axis) which means that we can define it on negative real numbers
+by the equation
   $$\Phi(-t) = \Phi(t).$$  
-Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} generalized function.
+  Let us make that convention, thereby turning $\Phi(t)$ into an {\it
+    even} generalized function.
 
-       \ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller the weight.}
+  \ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the
+    logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$
+    (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller
+    the weight.}
 
   
    We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
@@ -2313,7 +2614,9 @@ Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} genera
  $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
   
  
- Since the Fourier transform of each $d_{n\log(p)}(t)$ is $\cos(n\log(p)\theta)$ we compute the  Fourier transform of $\Phi_{\le C}(t)$ to be:
+ Since the Fourier transform of each $d_{n\log(p)}(t)$ is
+ $\cos(n\log(p)\theta)$ we compute the Fourier transform of $\Phi_{\le
+   C}(t)$ to be:
   
   $${\hat \Phi}_{\le C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
   
@@ -2347,7 +2650,11 @@ Let us make that convention, thereby turning $\Phi(t)$ into an {\it even} genera
 \theta_6 &=& 37.586178 \dots
 \end{eqnarray*}
 
-  Riemann defined this sequence of numbers in his 1859 article  in a manner somewhat different from the treatment we have given (in that article these $\theta_i$ appear as the ``imaginary parts of the nontrivial zeroes of his $\zeta$-function;"  we will discuss this briefly in Chapter 24 below). Riemann wrote:
+Riemann defined this sequence of numbers in his 1859 article in a
+manner somewhat different from the treatment we have given (in that
+article these $\theta_i$ appear as the ``imaginary parts of the
+nontrivial zeroes of his $\zeta$-function;" we will discuss this
+briefly in Chapter 24 below). Riemann wrote:
  \begin{quote}
   ``One now finds indeed approximately this number of real roots
   within these limits, and it is very probable that all roots are
@@ -2481,7 +2788,7 @@ where $\mu(n)$ is the Moebius function introduced above.
 In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem which 
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for $\pi(X)$, 
 in the sense that both go to infinity at the same rate. 
-Our first formulation of the \RH{} (see page~\pageref{rh:first})
+8Our first formulation of the \RH{} (see page~\pageref{rh:first})
 was that $\Li(X)$ is an essentially square root accurate approximation of $\pi(X)$. 
 Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate that Riemann's function $R(X)$ appears to be an even better
 approximation to $\pi(X)$ than anything we have seen before. 
@@ -2535,21 +2842,24 @@ $R(X)$ and are completely described if you know the sequence of real
 numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
 
 
-Here in the book will be where we refer explicitly to complex numbers for the first time!!
-The definition of Riemann's $C_k(X)$ requires complex numbers $a+bi$, where $i=\sqrt{-1}$, 
-and requires extending the definition of the function $\Li(X)$ to make sense when given complex numbers as input.   
-Assuming the \RH{}, the Riemann correction terms $C_k(X)$ are then
+Here in the book will be where we refer explicitly to complex numbers
+for the first time!!  The definition of Riemann's $C_k(X)$ requires
+complex numbers $a+bi$, where $i=\sqrt{-1}$, and requires extending
+the definition of the function $\Li(X)$ to make sense when given
+complex numbers as input.  Assuming the \RH{}, the Riemann correction
+terms $C_k(X)$ are then
 $$
    C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}), 
 $$
 where $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$, etc.,
-are the spectrum of the prime numbers.\endnote{ People who know that these correction terms are
-index by the nontrivial zeroes of the Riemann zeta-function may well
-ask how I propose to order them if RH is false; the following
-prescription will do: order them in terms of (the absolute value of)
-their imaginary part, and in the unlikely situation that there is more
-than one zero with the same imaginary part, order zeroes of the same
-imaginary part by their real parts, going from right to left.}
+are the spectrum of the prime numbers.\endnote{ People who know that
+  these correction terms are index by the nontrivial zeroes of the
+  Riemann zeta-function may well ask how I propose to order them if RH
+  is false; the following prescription will do: order them in terms of
+  (the absolute value of) their imaginary part, and in the unlikely
+  situation that there is more than one zero with the same imaginary
+  part, order zeroes of the same imaginary part by their real parts,
+  going from right to left.}
 
 Riemann provided an extraordinary recipe that allows us to work
 out the harmonics, $$C_1(X),\quad C_2(X),\quad C_3(X),\quad \dots$$ without our having
@@ -2677,7 +2987,9 @@ coventional terminology that we restrained
   zeroes of zeta.
 
 
-  Also mention Brian Conrey's Notices article on RH as ``among the best 12 pages of RH survey material that there is---at least for an audience of general mathematicians.''
+  Also mention Brian Conrey's Notices article on RH as ``among the
+  best 12 pages of RH survey material that there is---at least for an
+  audience of general mathematicians.''
   
   
 
