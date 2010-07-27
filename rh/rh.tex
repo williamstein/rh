@@ -591,6 +591,8 @@ what is the last digit of $q$ in its decimal expansion?
 
 %\ill{sieve_boxes_100}{0.7}{Sieve of Eratosthenes\label{fig:erat}}
 
+\chapter{Sieves}
+
 Eratosthenes, the mathematician from Cyrene (and later, librarian at
 Alexandria) explained how to {\em sift} the prime numbers from the
 series of all numbers: in the sequence of numbers,
@@ -609,20 +611,27 @@ the primes.
 
 
 
-In Figure~\ref{fig:erat} we use the primes $2$, $3$, $5$, and $7$ to
-sieve out the primes up to 100, where instead of crossing out
-multiples we grey them out, and instead of circling primes we color
-their box red.
+In Figures~\ref{fig:erat2}--\ref{fig:erat2357} we use the primes $2$,
+$3$, $5$, and finally $7$ to sieve out the primes up to 100, where instead of
+crossing out multiples we grey them out, and instead of circling
+primes we color their box red.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.4\textwidth]{illustrations/sieve100-2}
-\includegraphics[width=.4\textwidth]{illustrations/sieve100-3}\\
-\includegraphics[width=.4\textwidth]{illustrations/sieve100-5}
-\includegraphics[width=.4\textwidth]{illustrations/sieve100-7}\\
-\caption{Using the Primes 2, 3, 5, and 7 to Sieve out the Primes up to 100\label{fig:erat}}
-\end{figure}
+\ill{sieve100-2}{.8}{Using the prime 2 to sieve for primes up to 100\label{fig:erat2}}
+Since all the even numbers greater than two are
+eliminated as being composite numbers and not primes they appear as
+gray in Figure~\ref{fig:erat2}, but none of the odd numbers are eliminated so they
+still appear in white boxes.
 
+\ill{sieve100-3}{.8}{Using the primes 2 and 3 to sieve for primes up to 100\label{fig:erat23}}
+\ill{sieve100-5}{.8}{Using the primes 2,3,5 to sieve for primes up to 100\label{fig:erat235}}
+Looking at Figure~\ref{fig:erat235}, we see that for all but
+six numbers up to 100 we have  (after sieving by 2,3, and 5) determined
+which are primes and which composite.
+
+\ill{sieve100-7}{.8}{Using the primes 2,3,5,7 to sieve for primes up to 100\label{fig:erat2357}}
+
+Finally, as in Figure~\ref{fig:erat2357}, 
+sieving by 2,3,5, and 7 we have determined which are primes for all but two numbers.
 
 % GIVEN WHAT IS ABOVE, THIS IS SILLY.
 %Especially if you have had little experience with math, may I suggest
@@ -711,7 +720,7 @@ Come up with with your own question about primes that
 If you are having trouble coming up with a question, read on for more
 examples that  provide further motivation.
  
-\section{Further questions about primes} 
+\chapter{Further questions about primes} 
 
 Let us, for variety, dice the question differently by concentrating on
 the {\em gaps} between one prime and the next, rather than the tally
@@ -923,8 +932,8 @@ the chances that the later numbers are prime.
           
 The red curve in these figures actually counts the primes: it is the
 beguilingly irregular {\em staircase of primes.}  Its height above any
-number $N$ on the horizontal line records the number of primes less
-than or equal to $N$, the accumulation of primes up to $N$.  Refer to
+number $X$ on the horizontal line records the number of primes less
+than or equal to $X$, the accumulation of primes up to $X$.  Refer to
 this number as $\pi(X)$. So $\pi(2)=1$, $\pi(3) = 2$, $\pi(30) = 10$; of
 course, if you believed some of the data above you could plot a few
 more values of $\pi(X)$, like $\pi(\text{ten billion}) = 455,052,512$.
