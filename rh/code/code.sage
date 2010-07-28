@@ -572,6 +572,16 @@ def mult_parities_python(bound, verbose=False):
         last = cur
     return v
 
+##############################################################
+# LogX over X in "Probabilistic first guess" chapter
+##############################################################
+def fig_logXoverX(dir, ext):
+    file = dir + '/logXoverX.%s'%ext
+    x = var('x')
+    xmax = 250
+    G = plot(x/(log(x)-1), 4, xmax, color='blue')
+    G += prime_pi.plot(4, xmax, color='red')
+    G.save(file, figsize=[7,3])
 
 ##############################################################
 # Prime pi plots
