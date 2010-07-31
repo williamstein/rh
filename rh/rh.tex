@@ -128,7 +128,7 @@
 
 
 \title{\Huge What is Riemann's Hypothesis?\\
-August 2009 Draft\\
+July 2010 Draft\\
 {\Large This is still VERY VERY Rough and Incomplete!}}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
@@ -1607,7 +1607,7 @@ be. After all, what could be simpler than a 45 degree straight line?
 data compression, and prime numbers have to do with each other?\label{sec:fourier1}}
 
 
-
+[[Barry: I couldn't bring myself to just delete this chapter.]]
 
 Sounds of all sorts---and in particular the sounds of music---travel
 as vibrations of air molecules at roughly 768 miles an hour. These
@@ -1770,7 +1770,32 @@ get a compression factor of 8--12 with little {\em perceived} loss in
 quality, so that you can fit your entire music collection on your
 iPod, instead of just your favorite 10 CD's.  
  
-\chapter{Fourier analysis and the staircase of primes\label{sec:fourier_staircase}}
+ 
+ \chapter{Spectra and Trigonometric Sums \label{sec:trigsums}}
+
+As we saw in Chapter~\ref{sec:fourier1}, a pure tone can be represented by a periodic {\it sine wave}---a function of  time $f(t)$--- the equation of which might be:
+$$f(t)\ \ = \ \ a\cdot \cos(b +\theta t).$$  
+
+\vskip20pt
+{\bf William:  Do you think that this deserves a picture?}
+\vskip20pt
+ The $\theta$ determines the {\it frequency} of the periodic wave, the larger $\theta$ is the higher the ``pitch."  The  coefficient $a$ determines the envelope of size of the periodic wave, and we  call it  the {\it amplitude} of the periodic wave.  
+
+Sometimes we encounter functions $F(t)$ that are not pure tones, but that can be expressed as (or we might say ``decomposed into") a finite sum of pure tones, for example three  of them:
+
+$$F(t)  = a_1\cdot \cos(b_1 +\theta_1 t) + a_2\cdot \cos(b_2 +\theta_2 t) + a_3\cdot \cos(b_3 +\theta_3 t)$$
+\vskip20pt
+{\bf William:  Do you think that this deserves a picture?}
+\vskip20pt
+
+   We'll refer to such functions $F(t)$ as {\it finite trigonometric sums}, because ---well---they are.
+  In this example, there are three frequencies involved---i.e., $\theta_1,\theta_2,\theta_3$---and we'll say that {\it the spectrum of $F(t)$} is the set of these frequencies, i.e.,
+  
+  $$ {\rm The\ spectrum \ of \ } F(t) \ \ = \ \ \{\theta_1,\theta_2,\theta_3\}.$$
+  
+    More generally we might consider a sum of any finite number of pure cosine waves---or in a moment we'll  also see some infinite ones as well. Again, for these more general trigonometric sums, their {\it spectrum} will denote the set of frequencies that compose them.
+%\end{document}
+\chapter{The spectrum and the staircase of primes\label{sec:fourier_staircase}}
 
 \ill{prime_pi_100_aspect1}{0.95}{The Staircase of Primes\label{fig:staircase100}}
 
@@ -1805,24 +1830,38 @@ ask for profound, and hidden, regularities in structure.
 
  In Part~\ref{part2} of this book we will---if not explain---at least hint at how the above series of questions have been answered so far, and how the \RH{} offers a surprise for the last question in this series. 
  
- But for now, let us offer a {\it sneak preview} to the ``spectrum" alluded to in these questions!
+ But for now, let us offer a {\it sneak preview} to the ``spectrum" alluded to in these questions! We will do this by formulating two infinite trigonometric sums and exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums.
  
+ \vskip10pt
+ %{\bf William: We could refer our readers at this point to something on-line that allows them to make and play with the cutoffs???}
+  \vskip10pt
+ \begin{enumerate} \item The first infinite  trigonometric sum is a sum  of pure cosine waves with frequencies given by logarithms of powers of primes and with amplitudes that will be described below.  These graphs will have ``higher and higher peaks" concentrated more and more accurately at what we referred to as the {\it spectrum}, indicated in our pictures below by the series of vertical red lines.  
  
+ \item The second infinite  trigonometric sum is a sum  of pure cosine waves with frequencies given by the spectrum of primes and with amplitudes {\it all equal to $1$}.  These graphs will have ``higher and higher peaks" concentrated more and more accurately at the {\it logarithms of powers of primes,} indicated in our pictures below by the series of vertical blue lines.
+ \end{enumerate}
+ 
+ That the series of {\it blue lines}  (i.e.,  the logarithms of powers of primes)   in our pictures below determines---via the the trigonometric sums we describe---the series of {\it red lines} (i.e., what we are calling the spectrum) and conversely is a consequence of the Riemann Hypothesis.
+   \vskip10pt
+\begin{enumerate} \item{\bf Towards the Spectrum, starting from (logs of) powers of the primes:}
+ \vskip10pt
  To get warmed up, let's plot the positive values of the following sum of (co-)sine waves:
 
-  
-  $$f(t) = -{\frac{\log(2)}{2^{1/2}}}\cos(t\log(2))- {\frac{\log(3)}{3^{1/2}}}\cos(t\log(3))-{\frac{\log(2)}{4^{1/2}}}\cos(t\log(4))-{\frac{\log(5)}{5^{1/2}}}\cos(t\log(5))$$
+    \begin{align*}
+   f(t) =& -{\frac{\log(2)}{2^{1/2}}}\cos(t\log(2))- {\frac{\log(3)}{3^{1/2}}}\cos(t\log(3))\\
+     &\qquad -{\frac{\log(2)}{4^{1/2}}}\cos(t\log(4))-{\frac{\log(5)}{5^{1/2}}}\cos(t\log(5))
+  \end{align*}
+
 
 
 \ill{mini_phihat_even}{1}{Plot of $f(t)$}
 
 
 Look at the peaks of this graph. There is nothing very impressive about them, you might think; but wait,
- for this is just a very ``early'' piece of an infinite sum{\footnote{Here we will make use of  the Greek symbol $\sum$ as a shorthand way of expressing a sum of many terms.}}  of (co-)sine waves:
+ for this is just a very ``early '' piece of an  expression that consists of a sum{\footnote{Here we  make use of  the Greek symbol $\sum$ as a shorthand way of expressing a sum of many terms.  We are not requesting this sum to converge.}}  of infinitely many (co-)sine waves:
 $$
 -\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ 
-where the summation is over all powers $p^n$ of all prime numbers $p$. 
+ the summation being over all powers $p^n$ of all prime numbers $p$. 
 
 Let us cut this infinite sum  off taking only finitely many terms, by choosing various 
 ``cut-off values'' $C$ and forming the finite sums
@@ -1833,7 +1872,7 @@ and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} 
 what we get for a few values of $C$.
 
 
- In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers are the key to the staircase of primes (and if the \RH{} holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  \vskip20pt
+ In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers at the red vertical arrows in the graphs above, $$\theta_1, \theta_2, \theta_3, \dots$$ are the key to the staircase of primes (and if the \RH{} holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  \vskip20pt
 \begin{itemize} 
 \item {\bf The sum with $p^n \le C=5$}
 
@@ -1860,6 +1899,46 @@ Here, the peaks are even sharper, and note that again they are higher; that is, 
   We will discuss in the later parts of this book  
   \begin{itemize} \item  how this ``plays out" as we take the sums of longer  and longer  pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, \item how this spectrum  of red lines more closely matches the high peaks of the graphs of the positive values of these finite sums,\item  how these peaks are climbing higher and higher,\item   what relationship this has to the Fourier analysis of the staircase of primes,\item  and, equally importantly, what these mysterious red lines signify. 
 \end{itemize}
+   \vskip10pt
+ \item{\bf Towards (logs of) powers of the primes, starting from the Spectrum:}
+  \vskip10pt
+  
+  Here we will be making use of the series of numbers $$\theta_1, \theta_2, \theta_3, \dots$$ comprising what we called the {\it spectrum}. We consider the infinite trigonometric series
+  $$1 + \cos(\theta_1t)+\cos(\theta_2t)+\cos(\theta_3t)+\dots$$
+  
+ or, using the $\sum$ notation,
+ 
+ $$1+\sum_{\theta}\cos(\theta t)$$ where the summation is over the spectrum, $\theta=\theta_1, \theta_2, \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this infinite trigonometric sum, $$1+\sum_{\theta\ < C}\cos(\theta t)$$ and plot their graphs, over various ranges.
+ 
+    \vskip10pt
+ {\bf William: Here we could simply collect some of the marvelous graphs you tabulated---e.g.,the ones currently  in chapter 24, and the new ones---without the $e^{-t/2}$ term---we really don't need it, I think; the graphs will look just as good without it. Here, of course, the vertical lines indicating the peaks at the logs of prime powers should be blue. After this sequence of graphs, we can write:}
+ \end{enumerate}
+  \vskip10pt
+  
+   This  passage---thanks to the Riemann Hypothesis--- from spectrum to prime powers and back again via consideration of the ``high peaks" in the graphs of the appropriate trigonometric sums provides a kind of visual duality emphasizing, for us, that the information inherent in the wild spacing of prime powers, is somehow ``packaged" in the series of mysterious numbers we have called the spectrum, and reciprocally, the information givden in that series of mysterious numbers is obtainable from the sequence of prime powers. 
+   
+  We will go into this in slightly more detail in the later chapters, but for our readers of this Part I, we hope that 
+the statement of the \RH{}---admittedly as elusive as
+before---has, at least, been expressed elegantly and more simply,
+given our new staircase that approximates (conjecturally with {\em
+  essential square root accuracy}) a 45 degree straight line.
+   
+We have offered two equivalent formulations of the \RH{},
+both having to do with the manner in which the prime numbers are
+situated among all whole numbers.
+
+In doing this, we hope that we have convinced you that---in the words
+of Don Zagier---primes seem to obey no other law than that of chance
+and yet exhibit stunning regularity.  This is the end of Part~\ref{part1} of our
+book, and is largely the end of our main mission, to explain---in
+elementary terms---{\em what is Riemann's Hypothesis?}
+    
+     
+For readers who have at some point studied Differential Calculus, in 
+Part~\ref{part2} we shall 
+go further and explain how the pursuit of
+Riemann's hypothesis may provide a key to some deeper structure of the
+prime numbers, and to the nature of the laws that they obey.
 
 \chapter{To our readers of Part~\ref{part1}} 
 The statement of the \RH{}---admittedly as elusive as
