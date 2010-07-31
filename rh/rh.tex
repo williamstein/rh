@@ -1055,21 +1055,32 @@ ago when Carl Friedrich Gauss defined a certain beautiful curve that,
 experimentally, seemed to be an exceptionally good fit for the
 staircase of primes. 
 
-\ill{logXoverX}{.7}{graph of ...}
+\ill{logXoverX}{.7}{Plot of $\pi(X)$ and $\log(X)/(X-1)$}
 
 Let us denote Gauss's curve $G(X)$; it has an
 elegant simple formula comprehensible to anyone who has had a tiny bit
 of calculus.  If you make believe that the chances that a number $N$ is
 a prime is inversely proportional to the number of digits of $N$ you
 might well hit upon Gauss's curve.   
+That is,
+\vskip10pt
+$$G(N)\hskip40pt  {\rm is\ roughly} \hskip40pt  {\frac{X}{{\rm the\ number\ of\ digits\ of\ } N}}.$$
+\vskip10pt
+But to describe Gauss's guess precisely we need to discuss the {\it natural logarithm} ``$\log(X)$" which is an elegant smooth function of real numbers $X$ that is roughly proportional to the number of digits of the whole number part of $X$.
+
 
 
 \ill{log}{.8}{Plot of the natural logarithm $\log(X)$}
-The (natural) logarithm function $\log(X)$ 
-is roughly proportional to the function that assigns to $X$ the 
-number of digits of $X$.  Euler's famous constant $e=2.71828182\ldots$ 
+
+
+ Euler's famous constant $e=2.71828182\ldots$ which is the limit 
+ of the sequence 
+ $$\left(1+{\frac{1}{2}}\right)^2,  
+       \left(1+{\frac{1}{3}}\right)^3, 
+       \left(1+{\frac{1}{4}}\right)^4, \dots$$
 is used in the definition of $\log$: 
-\begin{center}{\em $A = \log(X)$ is the number $A$ for which $e^A = X$.}
+\begin{center}
+{\em $A = \log(X)$ is the number $A$ for which $e^A = X$.}
 \end{center}
 Before electronic calculators, logarithms were frequently used to 
 speed up calculations, since logarithms translate difficult multiplication
@@ -2014,7 +2025,7 @@ us with {\it slopes} of graphs of functions of a real variable.  So, to discuss 
          
 
 
-Calculus explains to us how to calculate slopes of graphs, and
+Differential Calculus explains to us how to calculate slopes of graphs, and
 finally, shows us the power that we then have to answer problems we
 could not answer if we couldn't compute those slopes.  %See Figure~\ref{fig:graph_slope_deriv}.
 
@@ -2221,14 +2232,21 @@ explained above---a bona fide function but rather a distribution.
   of real numbers, say the interval between $a$ and $b$, we can talk
   unambiguously about the area ``under'' the graph of the function
   $f(t)$ over the interval between $a$ and $b$.  That is, in the
-  terminology of Calculus, we can talk of {\it the integral of $f(t)$
+  terminology of Integral Calculus, we can talk of {\it the integral of $f(t)$
     from $a$ to $b$}.  And in the notation of Calculus, this---thanks
   to Leibniz---is elegantly denoted
 $$\int_a^bf(t)dt.$$
 
 \end{itemize}
 
-In contrast a {\it generalized function}  or  {\it distribution} 
+   \ill{oo_integral}{.8}{This figure illustrates
+      $\int_{-\infty}^{\infty} f(x) dx$, which is the signed area
+      between the graph of $f(x)$ and the $x$-axis, where area below
+      the $x$-axis (yellow) counts negative, and area above (grey) is
+      positive.}
+     
+
+In contrast, a {\it generalized function}  or  {\it distribution} 
 
 \begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it
@@ -2449,12 +2467,7 @@ machine (see Figure~\ref{fig:fourier_machine}); namely:
       
     $${\hat f}(\theta) = \int_{-{\infty}}^{+{\infty}}f(t)\cos(-\theta t)dt.$$
      
-    \ill{oo_integral}{.8}{This figure illustrates
-      $\int_{-\infty}^{\infty} f(x) dx$, which is the signed area
-      between the graph of $f(x)$ and the $x$-axis, where area below
-      the $x$-axis (yellow) counts negative, and area above (grey) is
-      positive.}
-     
+ 
     This concise machine manages to ``pick out'' just the part of
     $f(t)$ that has frequency $\theta$!!  It provides for us the {\it
       analysis} part of the Fourier analysis of our function
