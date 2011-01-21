@@ -399,7 +399,7 @@ expectations, and unsolved problems.
             
             
             
-\chapter{What are prime numbers?}
+\chapter{What are prime numbers?}\label{ch:what_are_primes}
 
 \noindent {\em Primes as atoms. } To begin from the beginning, think
 of the operation of multiplication as a bond that ties numbers
@@ -591,7 +591,7 @@ what is the last digit of $q$ in its decimal expansion?
 
 %\ill{sieve_boxes_100}{0.7}{Sieve of Eratosthenes\label{fig:erat}}
 
-\chapter{Sieves}
+\chapter{Sieves}\label{ch:sieves}
 
 Eratosthenes, the mathematician from Cyrene (and later, librarian at
 Alexandria) explained how to {\em sift} the prime numbers from the
@@ -3117,7 +3117,144 @@ coventional terminology that we restrained
   best 12 pages of RH survey material that there is---at least for an
   audience of general mathematicians.''
   
-  
+
+\part{Epilogue\label{part5}}
+
+\chapter{Theoretical Chapter proving that RH implies our formula,
+  etc.   No holds bared}
+
+\chapter{Computing}
+
+All of the computations for this book were done using Sage, which is a
+free open source matheamtical software package
+(\url{http://www.sagemath.org}).  If you would like to replicate any
+of the computations, install Sage, and the purplesage Python package,
+which is available here \url{http://code.google.com/p/purplesage/}.
+The code for the book is all in \verb|psage/rh/mazur_stein|.
+
+In Chapter~\ref{ch:what_are_primes} we discussed primes first in the
+context of integer factorization.  Given an integer $n$, there is an
+array of algorithms available for trying to write $n$ as a product of
+prime numbers.  First we can apply {\em trial division}, where we
+simply divide $n$ by each prime $2, 3, 5, 7, 11, 13, \ldots$ in turn,
+and see what small prime factors we find (up to a few digits).  After
+using this method to eliminate as many primes as we have patience to
+eliminate, we typically next turn to a technique called {\em Lenstra's
+  elliptic curve method}, which allows us to check $n$ for
+divisibility by bigger primes (e.g., around 10--15 digits).  Once
+we've exhausted our patience using the elliptic curve method, we would
+next hit our number with something called the {\em quadratic sieve},
+which works well for factoring numbers of the form $n=pq$, with $p$
+and $q$ primes of roughly equal size, and $n$ having less than 100
+digits (say, though the 100 depends greatly on the implementation).
+All of the above algorithms---and then some---are implemented in Sage,
+and used by default when you type {\tt factor(n)} into Sage. Try
+typing {\tt factor(some number, verbose=8)} to see for yourself.  
+
+If the quadratic sieve fails, a final recourse is to run the {\em
+  number field sieve} algorithm, possibly on a supercomputer.  To give
+a sense of how powerful (or powerless, depending on perspective!)  the
+number field sieve is, a record-setting factorization of a general
+number using this algorithm is the factorization of a 232 digit number
+called RSA-768:
+
+$
+n = 12301866845301177551304949583849627207728535695953347921973224521\\
+517264005072636575187452021997864693899564749427740638459251925573263\\
+034537315482685079170261221429134616704292143116022212404792747377940\\
+80665351419597459856902143413
+$
+\par\noindent{}which factors as $pq$, where\par\noindent{}
+$
+ p = 334780716989568987860441698482126908177047949837137685689124313889\\
+82883793878002287614711652531743087737814467999489
+$
+\par\noindent{}and\par\noindent{}
+$
+q = 367460436667995904282446337996279526322791581643430876426760322838\\
+15739666511279233373417143396810270092798736308917.
+$
+\par\noindent{}I encourage you to try to 
+factor $n$ in Sage, and see that it fails. 
+Sage does not currently (as of 2011) include an implementation of the
+number field sieve algorithm, though there are some free implementations
+currently available (see \url{http://www.boo.net/~jasonp/qs.html}).
+
+In contrast to the situation with factorization, testing integers of
+this size (e.g., the primes $p$ and $q$) for primality is relatively
+easy.  There are fast algorithms that can tell whether or not any
+random thousand digit number is prime in a fraction of
+second. Try for yourself using the Sage command \verb|is_prime|.
+For example, if $p$ and $q$ are as above:
+\begin{verbatim}
+sage: is_prime(p)
+True
+sage: is_prime(q)
+True
+sage: is_prime(p*q)
+False
+sage: factor(p*q, verbose=8)
+... watch Sage try and fail to factor n...
+\end{verbatim}
+
+Incidentally, we can use Sage to instantly compute the digits of the ``hefty
+number'' $p = 2^{43,112,609}-1$ that arises in
+Chapter~\ref{ch:what_are_primes}.
+\begin{verbatim}
+sage: time p = 2^43112609 - 1
+CPU times: user 0.00 s, sys: 0.01 s, total: 0.01 s
+\end{verbatim}
+In what sense have we {\em computed} $p$?  Internally, $p$ is now
+stored in base $2$ in the computer's memory; given the special form of
+$p$ it is not surprising that it took no time to compute.  Much more 
+challenging is to compute all the base 10 digits of $p$, which takes
+a few seconds:
+\begin{verbatim}
+sage: time d = str(p)
+CPU times: user 17.20 s, sys: 0.15 s, total: 17.35 s
+Wall time: 17.35 s
+\end{verbatim}
+Here are the last 50 digits of $p$:
+\begin{verbatim}
+sage: d[-50:]
+'79670729447921616491887478265780022181166697152511'
+\end{verbatim}
+
+
+Chapter~\ref{ch:sieves} is about enumerating primes.  In Sage, the
+function \verb|prime_range| does this, e.g., 
+\begin{verbatim}
+sage: prime_range(50)
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+sage: prime_range(50,100)
+[53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+\end{verbatim}
+Sage has little trouble enumerating the primes up to a hundred million:
+\begin{verbatim}
+sage: time v = prime_range(10^8)
+CPU times: user 0.77 s, sys: 0.99 s, total: 1.76 s
+\end{verbatim}
+You can also enumerate primes up to a billion, but this will use
+several gigabytes of memory, so be careful not to crash your computer
+if you try this:
+\begin{verbatim}
+sage: time v = prime_range(10^9)
+CPU times: user 7.77 s, sys: 42.18 s, total: 49.95 s
+sage: len(v)
+50847534
+\end{verbatim}
+
+You can also compute $\pi(x)$ directly, without enumerating all primes:
+\begin{verbatim}
+sage: time prime_pi(10^9)
+CPU times: user 0.02 s, sys: 0.00 s, total: 0.02 s
+Wall time: 0.05 s
+50847534
+\end{verbatim}
+This is much faster since it uses some clever counting tricks to find the
+number of primes without actually listing them all. 
+
+
 
 \backmatter
 
