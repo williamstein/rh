@@ -315,7 +315,7 @@ So, how far along are we in our thoughts about numbers?
 The French philosopher and mathematician Ren\'e Descartes, almost four
 centuries ago, expressed the hope that there soon would be ``almost
 nothing more to discover in geometry.'' Contemporary physicists dream
-of a final theory\endnote{Link to Weinberg's book {\em Dreams of a
+of a final theory\endnote{See Weinberg's book {\em Dreams of a
     Final Theory: The Search for the Fundamental Laws of Nature}, by
   Steven Weinberg (New York: Pantheon Books, 1992)}.  But despite its
 venerability and its great power and beauty, the pure mathematics of
@@ -522,9 +522,9 @@ numbers and they showed it via the same method as we showed that our
 $p = 2^{43,112,609} - 1$ is not the largest prime number.
 
 Here is the argument again, given very succinctly: Suppose there are
-only finitely many primes $p_1, \ldots, p_n$.  Let $n=p_1 p_2 \cdots
-p_n + 1$.  Then $n$ is divisible by some prime, but no $p_i$ divides
-$n$, which is contrary to our assumption that $p_1, \ldots, p_n$ is
+only finitely many primes $p_1, \ldots, p_m$.  Let $n=p_1 p_2 \cdots
+p_m + 1$.  Then $n$ is divisible by some prime, but no $p_i$ divides
+$n$, which is contrary to our assumption that $p_1, \ldots, p_m$ is
 the complete list of primes.
 
 
@@ -581,7 +581,7 @@ at least 100,000,000 decimal digits.
 The number $p= 2^{43,112,609} - 1$  is the largest prime we know, where by
 ``know'' we mean that we know it so explicitly that we can {\em
   compute} things about it.  For example, the last two digits of $p$
-are both 1 and the sum of the digits of $p$ is 58,416,637.  Of course $p$ is not
+are both 1 and the sum of the digits of $p$ is 58,416,637.\label{sumdigits}  Of course $p$ is not
 the largest prime number since there are infinitely many primes, e.g.,
 the next prime $q$ after $p$ is a prime.  But there is no known way
 to efficiently compute anything interesting about $q$.  For example,
@@ -720,7 +720,7 @@ Come up with with your own question about primes that
 If you are having trouble coming up with a question, read on for more
 examples that  provide further motivation.
  
-\chapter{Further questions about primes} 
+\chapter{Further questions about primes\label{ch:further}} 
 
 Let us, for variety, dice the question differently by concentrating on
 the {\em gaps} between one prime and the next, rather than the tally
@@ -748,14 +748,18 @@ none of these guesses have yet been proved.
 
 
    
-So, define $$\Gap_{k}(X)$$ to be the number of pairs of primes of
-successive primes $(p,q)$ with $q<X$ that have ``gap $k$'' (i.e., such
-that their difference $q-p$ is $k$).  Here $p$ is a prime, $q>p$ is a
-prime, and there are no primes between $p$ and $q$.  For example,
-$\Gap_2(10) = 2$, since the pairs $(3,5)$ and $(5,7)$ are the
-pairs less than $10$ with gap $2$.  See Table~\ref{tab:gap} for
-various values of $\Gap_{k}(X)$ and Figure~\ref{fig:primegapdist}
-for the distribution of prime gaps for $X=10^7$.
+So, define 
+$$
+  \Gap_{k}(X)
+$$ 
+to be the number of pairs of successive primes $(p,q)$ with
+$q<X$ that have ``gap $k$'' (i.e., such that their difference $q-p$ is
+$k$).  Here $p$ is a prime, $q>p$ is a prime, and there are no primes
+between $p$ and $q$.  For example, $\Gap_2(10) = 2$, since the pairs
+$(3,5)$ and $(5,7)$ are the pairs less than $10$ with gap $2$.  See
+Table~\ref{tab:gap} for various values of $\Gap_{k}(X)$ and
+Figure~\ref{fig:primegapdist} for the distribution of prime gaps for
+$X=10^7$.
    
    
 \begin{table}[H]\centering
@@ -776,30 +780,41 @@ $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 
 
 
-\ill{primegapdist}{1}{Frequency histogram showing the distribution of prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is the most popular gap in this data.\label{fig:primegapdist}}
+\ill{primegapdist}{1}{Frequency histogram showing the distribution of
+  prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
+  the most popular gap in this data.  The vertical axis labels 
+  such as ``6e4'' mean $6\cdot 10^4=60,\!000$.
+\label{fig:primegapdist}}
 
    
+\ill{primegap_race}{1}{Plots of $\Gap_k(X)$ for $k=2,4,6,8$.  Which wins?}
    
-   Here is yet another question with deals with
-the spacing of prime numbers that we can't answer.
+Here is yet another question that deals with the spacing of prime
+numbers that we do not know the answer to:
   
 {\em Racing Gap $2$,  Gap $4$, Gap $6$, and Gap $8$ against each other:} 
   
 \begin{quote}
-  Challenge: As $X$ tends to infinity which of $\Gap_2(X),
-  \Gap_4(X), \Gap_6(X),$ or $\Gap_8(X)$ do you think that will grow
-  faster? How much would you bet on the truth of your guess?\endnote{%
-  Hardy and Littlewood give a nice conjectural answer to such questions about
-  gaps between primes.  See [reference Guy's book].}
+  Challenge: As $X$ tends to infinity which of $\Gap_2(X), \Gap_4(X),
+  \Gap_6(X),$ or $\Gap_8(X)$ do you think that will grow faster? How
+  much would you bet on the truth of your guess?\endnote{%
+    Hardy and Littlewood give a nice conjectural answer to such
+    questions about gaps between primes.  See Problem {\bf A8} of
+    Guy's book {\em Unsolved Problems in Number Theory}, 2004.}
 \end{quote}
   
+
+
+
+
+
 
 
 
 Here is a curious question that you can easily begin to check out for
 small numbers. We know, of course, that the {\em even} numbers and the
 {\em odd} numbers are nicely and simply distributed: after every odd
-number comes an even number, after every even, an odd, there is an
+number comes an even number, after every even, an odd, there are an
 equal number of odd number as even numbers less than any given odd
 number, and there may be nothing else of interest to say about the
 matter.  Things change considerably, though, if we focus our
@@ -815,13 +830,13 @@ number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
 3$, $9=3\cdot 3$, and $10= 2\cdot 5$; but $12=2\cdot 2\cdot 4$ is
 multiplicatively odd.  Table~\ref{tab:evenodddata} gives some data:
    
-  \begin{table}[H] \caption{Count of multiplicatively even and odd positive numbers $\le N$\label{tab:evenodddata}}
+  \begin{table}[H] \caption{Count of multiplicatively even and odd positive numbers $\le X$\label{tab:evenodddata}}
 \vspace{1ex}
 \centering
  {\small
 \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
 \hline
-N & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16  \\ \hline
+$X$ & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16  \\ \hline
 Mult. even & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hline
 Mult. odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
 \end{tabular}}
@@ -830,13 +845,16 @@ Mult. odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
   
    Now looking at this data, a natural, and simple, question to ask about the concept of multiplicative {\em oddness} and {\em evenness} is: 
    
-   \noindent {\em Is there some  $N\ge 2$ for which there are more multiplicatively even numbers less than or equal to $N$ than multiplicatively odd ones?}
+   \noindent {\em Is there some $X\ge 2$ for which there are more
+     multiplicatively even numbers less than or equal to $X$ than
+     multiplicatively odd ones?}
 
-Each plot in Figure~\ref{fig:liouville} gives the number of
-multiplicatively even numbers between $2$ and $N$ minus the number of
-multiplicatively odd numbers between $2$ and $N$, for $N$ equal to 10,
-100, 1000, 10000, 100000, and 1000000. The above question asks whether these graphs
-would, for sufficiently large $N$, ever cross the $x$-axis.
+   Each plot in Figure~\ref{fig:liouville} gives the number of
+   multiplicatively even numbers between $2$ and $X$ minus the number
+   of multiplicatively odd numbers between $2$ and $X$, for $X$ equal
+   to 10, 100, 1000, 10000, 100000, and 1000000. The above question
+   asks whether these graphs would, for sufficiently large $X$, ever
+   cross the $x$-axis.
 
  \begin{figure}[H]
 \centering
@@ -849,22 +867,21 @@ would, for sufficiently large $N$, ever cross the $x$-axis.
 \caption{Racing Multiplicatively Even and Odd Numbers.\label{fig:liouville}}
 \end{figure}
   
-A {\em negative} response to this question---i.e., a proof that any plot as drawn in 
-Figure~\ref{fig:liouville}
-would imply the Riemann
-Hypothesis!  In contrast to the list of previous questions, the answer
-to this one is known\endnote{For more details, see P.~Borwein, {\em Sign changes
-  in sums of the Liouville Function} and the nice short paper of
-Norbert Wiener {\em Notes on Polya's and Turan's hypothesis concerning
-  Liouville's factor} (page 765 of volume II of Wiener's Collected
-Works); see also: G. Polya {\em Vershiedene Bemerkungen zur
-  Zahlentheorie} Jahresbericht de Deutschen Mathematiker-Vereinigung,
-{\bf 28} (1919) 31--40.}: alas, there is such an $N$.  In 1960, Lehman
-showed that for $N=906,400,000$ there are $708$ more multiplicatively
-even numbers up to $N$ than multiplicatively odd numbers (Tanaka found
-in 1980 that the smallest $N$ 
-such that there are more multiplicative even than odd numbers is
-$N=906,150,257$).
+A {\em negative} response to this question---i.e., a proof that any
+plot as drawn in Figure~\ref{fig:liouville} stays below the $X$
+axis---would imply the Riemann Hypothesis!  In contrast to the list of
+previous questions, the answer to this question is known\endnote{For more
+  details, see P.~Borwein, {\em Sign changes in sums of the Liouville
+    Function} and the nice short paper of Norbert Wiener {\em Notes on
+    Polya's and Turan's hypothesis concerning Liouville's factor}
+  (page 765 of volume II of Wiener's Collected Works); see also:
+  G. Polya {\em Vershiedene Bemerkungen zur Zahlentheorie}
+  Jahresbericht de Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
+  31--40.}: alas, there is such an $X$.  In 1960, Lehman showed that
+for $X=906,400,000$ there are $708$ more multiplicatively even numbers
+up to $X$ than multiplicatively odd numbers (Tanaka found in 1980 that
+the smallest $X$ such that there are more multiplicative even than odd
+numbers is $X=906,150,257$).
 
 %%%%%%%%%%%%%%%%%
 %\begin{wrapfigure}{r}{0.2\textwidth}
@@ -893,13 +910,13 @@ $168$ primes less than a thousand (so we might say that among the
 numbers less than a thousand the chances that one of them is prime is
 roughly $1$ in $6$).
                                                            
-\ill{proportion_primes_100}{1}{Graph of the proportion of primes up to $N$ for each integer $N\leq 100$}
+\ill{proportion_primes_100}{1}{Graph of the proportion of primes up to $X$ for each integer $X\leq 100$}
 
 There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $N$ up to $1000$ (left) and $10000$ (right)}
+\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $X$ up to $1000$ (left) and $10000$ (right)}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10,000,000,000 (so we might say that the chances are down to roughly
@@ -911,7 +928,7 @@ that might be so. There are a hundred numbers less than or equal to
 $100$, a thousand numbers less than or equal to $1000$, etc.: the
 shaded bar graph in Figure~\ref{fig:sieve_2_100} that looks like a regular staircase, each step the
 same length as each riser, climbing up at, so to speak, a 45 degree
-angle, counts all numbers up to and including~$N$.
+angle, counts all numbers up to and including~$X$.
 
 Following Eratosthenes, we have sifted those numbers, to pan for
 primes. Our first move was to throw out roughly half the numbers (the
@@ -934,9 +951,9 @@ The red curve in these figures actually counts the primes: it is the
 beguilingly irregular {\em staircase of primes.}  Its height above any
 number $X$ on the horizontal line records the number of primes less
 than or equal to $X$, the accumulation of primes up to $X$.  Refer to
-this number as $\pi(X)$. So $\pi(2)=1$, $\pi(3) = 2$, $\pi(30) = 10$; of
-course, if you believed some of the data above you could plot a few
-more values of $\pi(X)$, like $\pi(\text{ten billion}) = 455,052,512$.
+this number as $\pi(X)$. So $\pi(2)=1$, $\pi(3) = 2$, $\pi(30) = 10$;
+of course, could plot a few more values of $\pi(X)$, like
+$\pi(\text{ten billion}) = 455,052,512$.
                               
                                  
 Let us accompany Eratosthenes for a few further steps in his sieving
@@ -964,7 +981,7 @@ all whole numbers tends towards $0\%$ (it does).
   
 
 To get a sense of how the primes accumulate, we will take a look at
-the staircase of primes for $N= 25$ and $N=100$ in Figures~\ref{fig:staircase25}
+the staircase of primes for $X= 25$ and $X=100$ in Figures~\ref{fig:staircase25}
 and \ref{fig:staircase100a}.
 
 \ill{prime_pi_25_aspect1}{.8}{Staircase of primes up to 25\label{fig:staircase25}}
@@ -982,7 +999,9 @@ such a smooth and elegant shape.
 
 \illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircases of primes up to 1,000 and 10,000\label{fig:staircases2}}
 
-\ill{prime_pi_100000}{.8}{Primes up to 100,000\label{fig:pn100000}.}
+\ill{prime_pi_100000}{.8}{Primes up to 100,000\label{fig:pn100000}.  
+Note that the axis label ``6e4'' means $6 \times 10^4$.}
+
 
 
 But don't be fooled by the seemingly smooth shape of the curve in the
@@ -1004,19 +1023,20 @@ With this warning, but very much fortified by the data of Figure~\ref{fig:pn1000
 let us ask: {\em what is a smooth curve that is a reasonable
   approximation to the staircase of primes?}
 
-\chapter{Pure and applied  mathematics}     
+\chapter{Pure and applied  mathematics}\label{ch:pureapplied}
 
-Everyone seems to agree that, loosely speaking, there are two types of
-mathematics: {\em pure} and {\em applied}. Usually---when we judge
-whether a piece of mathematics is pure or applied---this distinction
-turns on whether or not the math has application to the ``outside
-world,'' i.e., that {\em world} where bridges are built, where economic
-models are fashioned, where computers churn away on the Internet (for
-only then do we unabashedly call it {\em applied math}), or whether
-the piece of mathematics will find an important place within the
-context of mathematical theory (and then we label it {\em pure}).  Of
-course, there is a great overlap (as we will see later, Fourier analysis plays 
-a major role both in data compression and in pure mathematics).
+Mathematicians seems to agree that, loosely speaking, there are two
+types of mathematics: {\em pure} and {\em applied}. Usually---when we
+judge whether a piece of mathematics is pure or applied---this
+distinction turns on whether or not the math has application to the
+``outside world,'' i.e., that {\em world} where bridges are built,
+where economic models are fashioned, where computers churn away on the
+Internet (for only then do we unabashedly call it {\em applied math}),
+or whether the piece of mathematics will find an important place
+within the context of mathematical theory (and then we label it {\em
+  pure}).  Of course, there is a great overlap (as we will see later,
+Fourier analysis plays a major role both in data compression and in
+pure mathematics).
 
  Moreover, many questions in
 mathematics are ``hustlers'' in the sense that, at first view, what is
@@ -1059,12 +1079,12 @@ staircase of primes.
 
 Let us denote Gauss's curve $G(X)$; it has an
 elegant simple formula comprehensible to anyone who has had a tiny bit
-of calculus.  If you make believe that the chances that a number $N$ is
-a prime is inversely proportional to the number of digits of $N$ you
+of calculus.  If you make believe that the chances that a number $X$ is
+a prime is inversely proportional to the number of digits of $X$ you
 might well hit upon Gauss's curve.   
 That is,
 \vskip10pt
-$$G(N)\hskip40pt  {\rm is\ roughly proportional to} \hskip40pt  {\frac{X}{{\rm the\ number\ of\ digits\ of\ } N}}.$$
+$$G(X)\hskip40pt  {\rm is\ roughly\ proportional\ to} \hskip40pt  {\frac{X}{{\rm the\ number\ of\ digits\ of\ } X}}.$$
 \vskip10pt
 But to describe Gauss's guess precisely we need to discuss the {\it natural logarithm} ``$\log(X)$" which is an elegant smooth function of real numbers $X$ that is roughly proportional to the number of digits of the whole number part of $X$.
 
@@ -1073,11 +1093,11 @@ But to describe Gauss's guess precisely we need to discuss the {\it natural loga
 \ill{log}{.8}{Plot of the natural logarithm $\log(X)$}
 
 
- Euler's famous constant $e=2.71828182\ldots$ which is the limit 
+ Euler's famous constant $e=2.71828182\ldots$, which is the limit 
  of the sequence 
  $$\left(1+{\frac{1}{2}}\right)^2,  
        \left(1+{\frac{1}{3}}\right)^3, 
-       \left(1+{\frac{1}{4}}\right)^4, \dots$$
+       \left(1+{\frac{1}{4}}\right)^4, \dots,$$
 is used in the definition of $\log$: 
 \begin{center}
 {\em $A = \log(X)$ is the number $A$ for which $e^A = X$.}
@@ -1090,7 +1110,7 @@ of the factors; that is, $\log(XY) = \log(X) + \log(Y)$.
 %FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMES—GAUSS’ TABLES "
 
 % From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
-\ill{slide_rule}{.8}{A slide rule  computing $2X$ by using that $\log(2X)=\log(2)+\log(X)$\label{fig:slide_rule}}
+\ill{slide_rule}{.8}{A slide rule  computes $2X$ by using that $\log(2X)=\log(2)+\log(X)$\label{fig:slide_rule}}
 
 In Figure~\ref{fig:slide_rule} the numbers printed (on each of the slidable pieces of the rule)
 are spaced according to their logarithms, so that when one slides the
@@ -1115,7 +1135,7 @@ The following is an English translation of Gauss's letter (Figure~\ref{fig:gauss
 ``My distinguished friend, 
 
 Your remarks concerning the frequency of primes were of interest to me in more 
-ways than one. You have reminded me of my own endeavors in this ﬁeld which 
+ways than one. You have reminded me of my own endeavors in this field which 
 began in the very distant past, in 1792 or 1793, after I had acquired the Lambert 
 supplements to the logarithmic tables. Even before I had begun my more detailed 
 investigations into higher arithmetic, one of my first projects was to turn my 
@@ -1128,14 +1148,14 @@ $$
 \int \frac{dn}{\log(n)},
 $$
 where the logarithm is understood to be hyperbolic. Later on, when I became acquainted 
-with the list in Vega’s tables (1796) going up to 400,031, I extended my 
-computation further, conﬁrming that estimate. In 1811, the appearance of Chernau’s 
+with the list in Vega's tables (1796) going up to 400,031, I extended my 
+computation further, confirming that estimate. In 1811, the appearance of Chernau's 
 cribrum gave me much pleasure and I have frequently (since I lack the patience 
 for a continuous count) spent an idle quarter of an hour to count another chiliad 
 here and there; although I eventually gave it up without quite getting through a 
-million. Only some time later did I make use of the diligence of Goldschmidt to ﬁll 
-some of the remaining gaps in the ﬁrst million and to continue the computation 
-according to Burkhardt’s tables. Thus (for many years now) the ﬁrst three million 
+million. Only some time later did I make use of the diligence of Goldschmidt to 
+fill some of the remaining gaps in the first million and to continue the computation 
+according to Burkhardt's tables. Thus (for many years now) the first three million 
 have been counted and checked against the integral. A small excerpt follows: ....''
 \end{quote}}
 written in 1849 (see Figure~\ref{fig:gauss_letter}), Gauss
@@ -1286,25 +1306,37 @@ half the digits are correct.
   $\pi(X)$; some of them might under-count it. The average error
   (over-counted or undercounted) would be proportional to~${\sqrt X}$.
 
+{\bf WARNING: The above, as explained, is currently wrong.}
+% Instead of the probability of making a mistake being "say $0.001\%$ of
+% the time", let's imagine that you make a mistake deciding whether or
+% not a number is prime 10% of the time.  Now imagine counting the
+% primes up to X.   The expected number of primes that you'll declare
+% prime is 0.9*pi(X), and the expected number of composites up to X that
+% you'll declare prime is (X-pi(X))*.1, since there are X-pi(X)
+% composites up to X.  Thus the expected tally you'll get is 0.9*pi(X) +
+% (X-pi(X))*.1, which is asymptotic to 0.1*X, as Mumford claimed.  
+
 \end{remark}
 
 \chapter[What is Riemann's Hypothesis?] { What is Riemann's Hypothesis?  ({\em first formulation})\label{sec:rh1}}
 
  
 
-Recall that a rough approximation to $\pi(X)$, the number of primes $<
-X$,  is given by the function $X/\log(X)$; and  Gauss's guess for an
-approximation to $\pi(X)$  was in terms of the area in the region
-from $2$ to $X$ under the graph of $1/\log(X)$, a quantity sometimes referred to
-as $\Li(X) = \int_2^X (dx/\log x)$.
-``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral}.
-[[Introduction of the Li special function seems very abrupt to me.]]
+Recall from Chapter~\ref{sec:firstguess} that a rough approximation to
+$\pi(X)$, the number of primes $< X$, is given by the function
+$X/\log(X)$; and Gauss's guess for an approximation to $\pi(X)$ was in
+terms of the area of the region from $2$ to $X$ under the graph of
+$1/\log(X)$, a quantity sometimes referred to as $\Li(X)$. 
+``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral},
+because the area of the region from $2$ to $X$ under $1/\log(X)$
+is the {\em integral} $\int_2^t 1/\log(X) dt$.
 
 Figure~\ref{fig:threeplots} contains a graph of the three functions
 $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
-But data, no matter how impressive, may be deceiving. If you think
+But data, no matter how impressive, may be deceiving (as we learned in 
+Chapter~\ref{ch:further}). If you think
 that  the three graphs  never cross for all large values of $X$,  and
-that we have the simple relationship  $X/\log(X) < \pi(X) < Li(X)$ for
+that we have the simple relationship  $X/\log(X) < \pi(X) < \Li(X)$ for
 large $X$, turn to this endnote.\endnote{Very very  briefly tell people
 about Littlewood's  Theorem, Skewes Number, etc.}
 
@@ -1315,12 +1347,13 @@ Let $X=10^{23}$.  Then\endnote{This computation of $\pi(10^{23})$ was done on a 
 computer in 2007 by Oliveira e Silva,
 and is the largest value of $\pi(X)$ ever computed.  See
 \url{http://www.ieeta.pt/~tos/primes.html} for more details.} \label{pili_vals}
+
 \begin{align*}
   \pi(X) &= 1925320391606803968923,\\
   \Li(X) &= 1925320391614054155138.780\ldots, \\
   X/(\log(X)-1)  &=  1924577459166813514799.7932241\ldots.\\
-  \Li(X) - \pi(X) &= 7250186215.78002929687500\ldots, \\
-  \sqrt{X}\log(X) &= 16747250820487.142114662460299 \ldots.
+  \Li(X) - \pi(X) &= \hspace{6em}7250186215.78002929687500\ldots, \\
+  \sqrt{X}\log(X) &= \hspace{4em}16747250820487.142114662460299 \ldots.
 \end{align*}
 
 
@@ -1338,7 +1371,8 @@ Hypothesis:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate.\endnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See ...}
+root accurate.\endnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
+a computational perspective}.}
 \label{rh:first}
 
 \vspace{1ex}
@@ -1390,6 +1424,9 @@ same degrees and the same leading coefficient; they {\it go to
   infinity at similar rates} if they have the same degree.
 See Figure~\ref{fig:simrates}. %where we may take $c=1/2$ and $C=1$.    
 
+ \ill{same_rates}{1.0}{The polynomials $A(X)=X^{2} + 3 X - 5$ (top)
+and $B(X)= X^{2} - 2 X + 1$ (bottom) go to infinity 
+at the same rate.\label{fig:samerate}}
     
 
 
@@ -1463,18 +1500,18 @@ formulations being provably equivalent to any of the others.
 \ill{riemann}{.3}{Bernhard Riemann (1826--1866)}
 
 
-This \RH{} remains unproved to this day, and therefore is
-``only a hypothesis,'' as Osiander said of Copernicus's theory, but one
-for which we have overwhelming theoretical and numerical evidence in
-its support.  It is the kind of conjecture that contemporary
-Dutch mathematician Frans Oort might label
-a {\em suffusing conjecture} in that it has unusually broad
-implications: many many results are now known to follow, if the
-conjecture, familiarly known as RH, is true.
-A proof of RH would, therefore, fall into the {\em applied} category, given our discussion
-above.  But however you classify RH, it is a central concern in
-mathematics to find its proof (or, a counter-example!).  RH is 
-one of the weightiest statements in all of mathematics. 
+This \RH{} remains unproved to this day, and therefore is ``only a
+hypothesis,'' as Osiander said of Copernicus's theory, but one for
+which we have overwhelming theoretical and numerical evidence in its
+support.  It is the kind of conjecture that contemporary Dutch
+mathematician Frans Oort might label a {\em suffusing conjecture} in
+that it has unusually broad implications: many many results are now
+known to follow, if the conjecture, familiarly known as RH, is true.
+A proof of RH would, therefore, fall into the {\em applied} category,
+given our discussion above in Chapter~\ref{ch:pureapplied}.  But
+however you classify RH, it is a central concern in mathematics to
+find its proof (or, a counter-example!).  RH is one of the weightiest
+statements in all of mathematics.
 
 
 \chapter[The staircase of primes]{The {\em information} contained in the staircase of primes\label{sec:information}}
@@ -1577,12 +1614,12 @@ but is constructed according to the following architectural plan.
   
   Notice that this new staircase looks, from afar, as if it were
   nicely approximated by the $45$ degree straight line, i.e., by the
-  simple function $x$. In fact, we have---by this new
+  simple function $X$. In fact, we have---by this new
   architecture---a second {\em equivalent} way of formulating
   Riemann's hypothesis.   For this, let $\psi(X)$ denote the 
   function\endnote{We have $$\psi(X) =\sum_{p^n \le X}\log p$$ where the summation is over prime
 powers $p^n$ that are $\le X$.}
-  of $x$ whose graph is
+  of $X$ whose graph is
 depicted in Figure~\ref{fig:psi}.
    
           \begin{center}
@@ -1593,7 +1630,7 @@ depicted in Figure~\ref{fig:psi}.
        
        This new staircase is essentially square root close to the 45 degree
 straight line; i.e., the function $\psi(X)$ is essentially square root
-close to the function $f(x)=x$.
+close to the function $f(X)=X$.
           \vspace{1ex}
    \end{minipage}}
 \end{center}
@@ -1618,8 +1655,6 @@ be. After all, what could be simpler than a 45 degree straight line?
 data compression, and prime numbers have to do with each other?\label{sec:fourier1}}
 
 
-[[Barry: I couldn't bring myself to just delete this chapter.]]
-
 Sounds of all sorts---and in particular the sounds of music---travel
 as vibrations of air molecules at roughly 768 miles an hour. These
 vibrations---fluctuations of pressure---are often represented, or
@@ -1636,14 +1671,14 @@ or minimal and the zeroes to the times when it is normal pressure.
 
 You'll notice that there are two features to the graph in Figure~\ref{fig:sine}.
 
-\begin{itemize}
+\begin{enumerate}
 \item {\em The height of the peaks of this sine wave:} This height is
   referred to as the {\bf amplitude} and corresponds to the {\em
-    loudness} of the sound,
+    loudness} of the sound.
 \item {\em The number of peaks per second:} This number is referred to
   as the {\bf frequency} and corresponds to the {\em pitch} of the
   sound.
-\end{itemize}
+\end{enumerate}
 
 
 Of course, music is rarely---perhaps never---just given by a single
@@ -1677,7 +1712,7 @@ and phase.\label{fig:sum-sin-phase}}
   \begin{itemize}
   \item the two frequencies---the collection of frequencies that make
     up the sound is called the {\em spectrum} of the sound,
-  \item the {\em amplitudes} of each of these frequencies,
+  \item the two {\em amplitudes} of each of these two frequencies,
   \item the {\em phase} between them.
   
  \end{itemize}
@@ -1694,7 +1729,8 @@ Then, fill in the rest of the points to obtain Figure~\ref{fig:sum-sin-phase-sam
 \ill{sin-twofreq-phase-sum-fill}{0.6}{Graph obtained from Figure~\ref{fig:sum-sin-phase-sample} by
 filling in the rest of the points\label{fig:sum-sin-phase-sample-fill}}
 
-But this sampling would take an enormous amount of storage space!
+But this sampling would take an enormous amount of storage space, at
+least compared to storing five numbers, as explained above!
 Current audio compact discs do their sampling 44,100 times a second to
 get a reasonable quality of sound.
 
@@ -1747,8 +1783,10 @@ picture that records the frequencies, amplitudes, and phases of the
 pure sine waves that, together, compose the graph is called the {\em
   Fourier transform} and nowadays there are very fast procedures for
 getting accurate {\em Fourier transforms} (meaning accurate spectral
-pictures including information about phases) by computer.\endnote{Discuss
-some good readable article on the Fast Fourier Transform algorithm; there are probably many such algorithms.}
+pictures including information about phases) by
+computer.\endnote{Discuss some good readable article on the Fast
+  Fourier Transform algorithm; there are probably many such
+  articles.}
  
  
 If you pass to the worksheet at this point, you'll be able to see the
@@ -1787,75 +1825,113 @@ iPod, instead of just your favorite 10 CD's.
 As we saw in Chapter~\ref{sec:fourier1}, a pure tone can be represented by a periodic {\it sine wave}---a function of  time $f(t)$--- the equation of which might be:
 $$f(t)\ \ = \ \ a\cdot \cos(b +\theta t).$$  
 
-\vskip20pt
-{\bf William:  Do you think that this deserves a picture?}
-\vskip20pt
- The $\theta$ determines the {\it frequency} of the periodic wave, the larger $\theta$ is the higher the ``pitch."  The  coefficient $a$ determines the envelope of size of the periodic wave, and we  call it  the {\it amplitude} of the periodic wave.  
+\ill{pure_tone}{.7}{Plot of the periodic sine wave $f(t) = 2\cdot \cos(1+t/2)$}
 
-Sometimes we encounter functions $F(t)$ that are not pure tones, but that can be expressed as (or we might say ``decomposed into") a finite sum of pure tones, for example three  of them:
+The $\theta$ determines the {\it frequency} of the periodic wave, the
+larger $\theta$ is the higher the ``pitch."  The coefficient $a$
+determines the envelope of size of the periodic wave, and we call it
+the {\it amplitude} of the periodic wave.
+
+Sometimes we encounter functions $F(t)$ that are not pure tones, but
+that can be expressed as (or we might say ``decomposed into") a finite
+sum of pure tones, for example three of them:
 
 $$F(t)  = a_1\cdot \cos(b_1 +\theta_1 t) + a_2\cdot \cos(b_2 +\theta_2 t) + a_3\cdot \cos(b_3 +\theta_3 t)$$
-\vskip20pt
-{\bf William:  Do you think that this deserves a picture?}
-\vskip20pt
 
-   We'll refer to such functions $F(t)$ as {\it finite trigonometric sums}, because ---well---they are.
-  In this example, there are three frequencies involved---i.e., $\theta_1,\theta_2,\theta_3$---and we'll say that {\it the spectrum of $F(t)$} is the set of these frequencies, i.e.,
+\ill{mixed_tone3}{.7}{Plot of the sum $5  \cos\left(-t - 2\right) + 2 \cos\left(t/2 + 1\right) + 3  \cos\left(2  t + 4\right)$}
+
+We'll refer to such functions $F(t)$ as {\it finite trigonometric
+  sums}, because ---well---they are.  In this example, there are three
+frequencies involved---i.e., $\theta_1,\theta_2,\theta_3$---and we'll
+say that {\it the spectrum of $F(t)$} is the set of these frequencies,
+i.e.,
   
-  $$ {\rm The\ spectrum \ of \ } F(t) \ \ = \ \ \{\theta_1,\theta_2,\theta_3\}.$$
+$$ 
+  {\rm The\ spectrum \ of \ } F(t) \ \ = \ \ \{\theta_1,\theta_2,\theta_3\}.
+$$
   
-    More generally we might consider a sum of any finite number of pure cosine waves---or in a moment we'll  also see some infinite ones as well. Again, for these more general trigonometric sums, their {\it spectrum} will denote the set of frequencies that compose them.
-%\end{document}
+More generally we might consider a sum of any finite number of pure
+cosine waves---or in a moment we'll also see some infinite ones as
+well. Again, for these more general trigonometric sums, their {\it
+  spectrum} will denote the set of frequencies that compose them.
+
 \chapter{The spectrum and the staircase of primes\label{sec:fourier_staircase}}
 
 \ill{prime_pi_100_aspect1}{0.95}{The Staircase of Primes\label{fig:staircase100}}
 
  
- In view of the amazing data-compression virtues of Fourier analysis, it isn't unnatural to ask these questions:
+In view of the amazing data-compression virtues of Fourier analysis,
+it isn't unnatural to ask these questions:
 
- \begin{itemize}
-  \item Is there a way of using Fourier analysis to better understand the complicated picture of the staircase
-of primes?
+\begin{itemize}
+\item Is there a way of using Fourier analysis to better understand
+  the complicated picture of the staircase of primes?
  
-  \item Does this staircase
-of primes  (or, perhaps, some tinkered version of the staircase that contains the same basic information) have a {\it spectrum}?
+\item Does this staircase of primes (or, perhaps, some tinkered
+  version of the staircase that contains the same basic information)
+  have a {\it spectrum}?
 
-  \item  If  such a {\it spectrum} exists, can we compute it conveniently, just as we have done for the saw-tooth wave above,
-or for the major third CE chord?
- 
-
-  \item  Assuming the spectrum exists, and is computable, will our understanding of this spectrum allow us to reproduce all
-the pertinent information about the placement of primes among all whole numbers, elegantly and
-faithfully? 
-
-  \item  And here is a most important question: will that spectrum show us order and organization
-lurking within the staircase that we would otherwise be blind to? 
+\item If such a {\it spectrum} exists, can we compute it conveniently,
+  just as we have done for the saw-tooth wave above, or for the major
+  third CE chord?
  
 
-  \end{itemize}
+\item Assuming the spectrum exists, and is computable, will our
+  understanding of this spectrum allow us to reproduce all the
+  pertinent information about the placement of primes among all whole
+  numbers, elegantly and faithfully?
+
+\item And here is a most important question: will that spectrum show
+  us order and organization lurking within the staircase that we would
+  otherwise be blind to?
+ 
+\end{itemize}
    
 
- Strangely enough, it is towards questions like these that Riemann's Hypothesis  takes us. We began with the simple question about primes: how to count them, and are led to
-ask for profound, and hidden, regularities in structure.
+Strangely enough, it is towards questions like these that Riemann's
+Hypothesis takes us. We began with the simple question about primes:
+how to count them, and are led to ask for profound, and hidden,
+regularities in structure.
 
 
- In Part~\ref{part2} of this book we will---if not explain---at least hint at how the above series of questions have been answered so far, and how the \RH{} offers a surprise for the last question in this series. 
+In Part~\ref{part2} of this book we will---if not explain---at least
+hint at how the above series of questions have been answered so far,
+and how the \RH{} offers a surprise for the last question in this
+series.
  
- But for now, let us offer a {\it sneak preview} to the ``spectrum" alluded to in these questions! We will do this by formulating two infinite trigonometric sums and exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums.
+But for now, let us offer a {\it sneak preview} to the ``spectrum"
+alluded to in these questions! We will do this by formulating two
+infinite trigonometric sums and exhibiting the graphs of more and more
+accurate finite approximations (cutoffs) of these infinite sums.
+
+\begin{enumerate} 
+\item The first infinite trigonometric sum is a sum of pure cosine
+  waves with frequencies given by logarithms of powers of primes and
+  with amplitudes that will be described below.  These graphs will
+  have ``higher and higher peaks" concentrated more and more
+  accurately at what we referred to as the {\it spectrum}, indicated
+  in our pictures below by the series of vertical red lines.
  
- \vskip10pt
- %{\bf William: We could refer our readers at this point to something on-line that allows them to make and play with the cutoffs???}
-  \vskip10pt
- \begin{enumerate} \item The first infinite  trigonometric sum is a sum  of pure cosine waves with frequencies given by logarithms of powers of primes and with amplitudes that will be described below.  These graphs will have ``higher and higher peaks" concentrated more and more accurately at what we referred to as the {\it spectrum}, indicated in our pictures below by the series of vertical red lines.  
+\item The second infinite trigonometric sum is a sum of pure cosine
+  waves with frequencies given by the spectrum of primes and with
+  amplitudes {\it all equal to $1$}.  These graphs will have ``higher
+  and higher peaks" concentrated more and more accurately at the {\it
+    logarithms of powers of primes,} indicated in our pictures below
+  by the series of vertical blue lines.
+\end{enumerate}
  
- \item The second infinite  trigonometric sum is a sum  of pure cosine waves with frequencies given by the spectrum of primes and with amplitudes {\it all equal to $1$}.  These graphs will have ``higher and higher peaks" concentrated more and more accurately at the {\it logarithms of powers of primes,} indicated in our pictures below by the series of vertical blue lines.
- \end{enumerate}
- 
- That the series of {\it blue lines}  (i.e.,  the logarithms of powers of primes)   in our pictures below determines---via the the trigonometric sums we describe---the series of {\it red lines} (i.e., what we are calling the spectrum) and conversely is a consequence of the Riemann Hypothesis.
-   \vskip10pt
-\begin{enumerate} \item{\bf Towards the Spectrum, starting from (logs of) powers of the primes:}
- \vskip10pt
- To get warmed up, let's plot the positive values of the following sum of (co-)sine waves:
+That the series of {\it blue lines} (i.e., the logarithms of powers of
+primes) in our pictures below determines---via the the trigonometric
+sums we describe---the series of {\it red lines} (i.e., what we are
+calling the spectrum) and conversely is a consequence of the Riemann
+Hypothesis.
+\begin{enumerate} 
+
+\item {\bf Towards the Spectrum, starting from (logs of) powers of the
+    primes:}
+
+  To get warmed up, let's plot the positive values of the following
+  sum of (co-)sine waves:
 
     \begin{align*}
    f(t) =& -{\frac{\log(2)}{2^{1/2}}}\cos(t\log(2))- {\frac{\log(3)}{3^{1/2}}}\cos(t\log(3))\\
@@ -1867,23 +1943,34 @@ ask for profound, and hidden, regularities in structure.
 \ill{mini_phihat_even}{1}{Plot of $f(t)$}
 
 
-Look at the peaks of this graph. There is nothing very impressive about them, you might think; but wait,
- for this is just a very ``early '' piece of an  expression that consists of a sum{\footnote{Here we  make use of  the Greek symbol $\sum$ as a shorthand way of expressing a sum of many terms.  We are not requesting this sum to converge.}}  of infinitely many (co-)sine waves:
+Look at the peaks of this graph. There is nothing very impressive
+about them, you might think; but wait, for this is just a very ``early
+'' piece of an expression that consists of a sum{\footnote{Here we
+    make use of the Greek symbol $\sum$ as a shorthand way of
+    expressing a sum of many terms.  We are not requesting this sum to
+    converge.}}  of infinitely many (co-)sine waves:
 $$
 -\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ 
- the summation being over all powers $p^n$ of all prime numbers $p$. 
+the summation being over all powers $p^n$ of all prime numbers $p$.
 
-Let us cut this infinite sum  off taking only finitely many terms, by choosing various 
-``cut-off values'' $C$ and forming the finite sums
+Let us cut this infinite sum off taking only finitely many terms, by
+choosing various ``cut-off values'' $C$ and forming the finite sums
 $$
 -\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n)) 
 $$ 
-and plotting their positive values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show
-what we get for a few values of $C$.
+and plotting their positive
+values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show what we get
+for a few values of $C$.
 
 
- In each of the graphs, we have indicated by red vertical arrows the real numbers that give the  values of the {\it spectrum} that we will be discussing in later portions of this book. These numbers at the red vertical arrows in the graphs above, $$\theta_1, \theta_2, \theta_3, \dots$$ are the key to the staircase of primes (and if the \RH{} holds they are precisely the so-called {\it imaginary parts of the ``nontrivial" zeroes of the Riemann zeta-function}).  \vskip20pt
+In each of the graphs, we have indicated by red vertical arrows the
+real numbers that give the values of the {\it spectrum} that we will
+be discussing in later portions of this book. These numbers at the red
+vertical arrows in the graphs above, $$\theta_1, \theta_2, \theta_3,
+\dots$$ are the key to the staircase of primes (and if the \RH{} holds
+they are precisely the so-called {\it imaginary parts of the
+  ``nontrivial" zeroes of the Riemann zeta-function}).  \vskip20pt
 \begin{itemize} 
 \item {\bf The sum with $p^n \le C=5$}
 
@@ -1898,7 +1985,9 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}\vskip20pt
 \ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}\vskip20pt
 \item {\bf The sum with $p^n \le C=50$} 
 
-Note that the high peaks seem to be lining up more accurately with the vertical red lines. Note also that the $y$-axis has been rescaled.
+  Note that the high peaks seem to be lining up more accurately with
+  the vertical red lines. Note also that the $y$-axis has been
+  rescaled.
 
 \ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes}\vskip20pt
 \item {\bf The sum with $p^n \le C=500$}
@@ -1906,33 +1995,63 @@ Note that the high peaks seem to be lining up more accurately with the vertical 
 Here, the peaks are even sharper, and note that again they are higher; that is, we have rescaled the $y$-axis. 
 \ill{phihat_even-500}{1}{Plot of $-\sum_{p^n\leq 500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum of the primes\label{fig:pnsum500}}
 \end{itemize}
- \vskip20pt
+
   We will discuss in the later parts of this book  
-  \begin{itemize} \item  how this ``plays out" as we take the sums of longer  and longer  pieces of the infinite sum of cosine waves above, given by  larger and larger cutoffs $C$, \item how this spectrum  of red lines more closely matches the high peaks of the graphs of the positive values of these finite sums,\item  how these peaks are climbing higher and higher,\item   what relationship this has to the Fourier analysis of the staircase of primes,\item  and, equally importantly, what these mysterious red lines signify. 
+
+\begin{itemize} 
+\item how this ``plays out" as we take the sums of longer and longer
+  pieces of the infinite sum of cosine waves above, given by larger
+  and larger cutoffs $C$,
+\item how this spectrum of red lines more closely matches the high
+  peaks of the graphs of the positive values of these finite sums,
+\item how these peaks are climbing higher and higher,
+\item what relationship this has to the Fourier analysis of the
+  staircase of primes,
+\item and, equally importantly, what these mysterious red lines
+  signify.
 \end{itemize}
-   \vskip10pt
- \item{\bf Towards (logs of) powers of the primes, starting from the Spectrum:}
-  \vskip10pt
+
+\item{\bf Towards (logs of) powers of the primes, starting from the Spectrum:}
   
-  Here we will be making use of the series of numbers $$\theta_1, \theta_2, \theta_3, \dots$$ comprising what we called the {\it spectrum}. We consider the infinite trigonometric series
-  $$1 + \cos(\theta_1t)+\cos(\theta_2t)+\cos(\theta_3t)+\dots$$
-  
- or, using the $\sum$ notation,
+  Here we will be making use of the series of numbers $$\theta_1,
+  \theta_2, \theta_3, \dots$$ comprising what we called the {\it
+    spectrum}. We consider the infinite trigonometric series
+  $$
+  1 + \cos(\theta_1t)+\cos(\theta_2t)+\cos(\theta_3t)+\dots
+  $$
+  or, using the $\sum$ notation,
+ $$
+  1+\sum_{\theta}\cos(\theta t)
+ $$ 
+ where the summation is over the spectrum, $\theta=\theta_1, \theta_2,
+ \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this
+ infinite trigonometric sum, $$1+\sum_{\theta\ < C}\cos(\theta t)$$
+ and plot their graphs, over various ranges.
  
- $$1+\sum_{\theta}\cos(\theta t)$$ where the summation is over the spectrum, $\theta=\theta_1, \theta_2, \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this infinite trigonometric sum, $$1+\sum_{\theta\ < C}\cos(\theta t)$$ and plot their graphs, over various ranges.
- 
-    \vskip10pt
- {\bf William: Here we could simply collect some of the marvelous graphs you tabulated---e.g.,the ones currently  in chapter 24, and the new ones---without the $e^{-t/2}$ term---we really don't need it, I think; the graphs will look just as good without it. Here, of course, the vertical lines indicating the peaks at the logs of prime powers should be blue. After this sequence of graphs, we can write:}
- \end{enumerate}
-  \vskip10pt
+{\bf William: Here we could simply collect some of the
+   marvelous graphs you tabulated---e.g.,the ones currently in chapter
+   24, and the new ones---without the $e^{-t/2}$ term---we really
+   don't need it, I think; the graphs will look just as good without
+   it. Here, of course, the vertical lines indicating the peaks at the
+   logs of prime powers should be blue. After this sequence of graphs,
+   we can write:}
+\end{enumerate}
   
-   This  passage---thanks to the Riemann Hypothesis--- from spectrum to prime powers and back again via consideration of the ``high peaks" in the graphs of the appropriate trigonometric sums provides a kind of visual duality emphasizing, for us, that the information inherent in the wild spacing of prime powers, is somehow ``packaged" in the series of mysterious numbers we have called the spectrum, and reciprocally, the information givden in that series of mysterious numbers is obtainable from the sequence of prime powers. 
+This passage---thanks to the Riemann Hypothesis--- from spectrum to
+prime powers and back again via consideration of the ``high peaks" in
+the graphs of the appropriate trigonometric sums provides a kind of
+visual duality emphasizing, for us, that the information inherent in
+the wild spacing of prime powers, is somehow ``packaged" in the series
+of mysterious numbers we have called the spectrum, and reciprocally,
+the information given in that series of mysterious numbers is
+obtainable from the sequence of prime powers.
    
-  We will go into this in slightly more detail in the later chapters, but for our readers of this Part I, we hope that 
-the statement of the \RH{}---admittedly as elusive as
-before---has, at least, been expressed elegantly and more simply,
-given our new staircase that approximates (conjecturally with {\em
-  essential square root accuracy}) a 45 degree straight line.
+We will go into this in slightly more detail in the later chapters,
+but for our readers of this Part I, we hope that the statement of the
+\RH{}---admittedly as elusive as before---has, at least, been
+expressed elegantly and more simply, given our new staircase that
+approximates (conjecturally with {\em essential square root accuracy})
+a 45 degree straight line.
    
 We have offered two equivalent formulations of the \RH{},
 both having to do with the manner in which the prime numbers are
@@ -1940,14 +2059,14 @@ situated among all whole numbers.
 
 In doing this, we hope that we have convinced you that---in the words
 of Don Zagier---primes seem to obey no other law than that of chance
-and yet exhibit stunning regularity.  This is the end of Part~\ref{part1} of our
-book, and is largely the end of our main mission, to explain---in
-elementary terms---{\em what is Riemann's Hypothesis?}
+and yet exhibit stunning regularity.  This is the end of
+Part~\ref{part1} of our book, and is largely the end of our main
+mission, to explain---in elementary terms---{\em what is Riemann's
+  Hypothesis?}
     
      
-For readers who have at some point studied Differential Calculus, in 
-Part~\ref{part2} we shall 
-go further and explain how the pursuit of
+For readers who have at some point studied Differential Calculus, in
+Part~\ref{part2} we shall go further and explain how the pursuit of
 Riemann's hypothesis may provide a key to some deeper structure of the
 prime numbers, and to the nature of the laws that they obey.
 
@@ -1978,20 +2097,21 @@ prime numbers, and to the nature of the laws that they obey.
 \part{Distributions\label{part2}}
 
 
-\chapter[Slopes of graphs that have no slopes]{How Calculus manages to find the slopes of graphs that  
-have no slopes}   
+\chapter[Slopes of graphs that have no slopes]{How Calculus manages to
+  find the slopes of graphs that have no slopes}
    
-Differential Calculus, initially the creation of Newton and/or Leibniz in the 1680s, acquaints
-us with {\it slopes} of graphs of functions of a real variable.  So, to discuss this we should say a word about
- what a {\it function} is, and what its {\it graph} is.
+Differential Calculus, initially the creation of Newton and/or Leibniz
+in the 1680s, acquaints us with {\it slopes} of graphs of functions of
+a real variable.  So, to discuss this we should say a word about what
+a {\it function} is, and what its {\it graph} is.
  
  \illtwo{newton}{leibniz}{0.25}{Isaac Newton and Gottfried Leibniz created Calculus}
 
 
  A {\bf function} (let us refer to it in this discussion as $f$) is
  often described as a {\it kind of machine} that for any specific
- input numerical value $a$ will give, as output, a well-defined real
- number.
+ input numerical value $a$ will give, as output, a well-defined
+ numerical value.
  
  This ``output number" is denoted $f(a)$ and is called {\it the
    ``value" of the function $f$ at $a$}.  For example, the {\it
@@ -2027,7 +2147,7 @@ us with {\it slopes} of graphs of functions of a real variable.  So, to discuss 
 
 Differential Calculus explains to us how to calculate slopes of graphs, and
 finally, shows us the power that we then have to answer problems we
-could not answer if we couldn't compute those slopes.  %See Figure~\ref{fig:graph_slope_deriv}.
+could not answer if we couldn't compute those slopes.  
 
 Usually, in elementary Calculus classes we are called upon to compute
 slopes only of smooth graphs, i.e., graphs that actually {\em have}
@@ -2146,7 +2266,7 @@ Calculus relating a function to its derivative:
  century, was known as the ``father of modern analysis.'' He oversaw
  one of the glorious moments of rigorization of concepts that were
  long in use, but never before systematically organized.  He, and
- other analysts of the time were interested in providing a rigorous
+ other analysts of the time, were interested in providing a rigorous
  language to talk about {\it functions} and more specifically {\it
    continuous functions} and {\it smooth} (i.e., {\it differentiable})
  functions. They wished to have a firm understanding of limits (i.e.,
@@ -2207,7 +2327,7 @@ This particular {\it limit of the red graphs} also goes by another
 name (it is officially called a Dirac $\delta$-function, the adjective
 ``Dirac'' being in honor of the physicist who first worked with this
 concept, the ``$\delta$'' being the symbol he assigned to these
-objects). The noun ``function'' should be in quotation-marks for,
+objects). The noun ``function'' should be in quotation marks for,
 properly speaking, the Dirac $\delta$-function is not---as we have
 explained above---a bona fide function but rather a distribution.
       
@@ -2258,7 +2378,7 @@ In contrast, a {\it generalized function}  or  {\it distribution}
   the {\it area ``under" the graph of the generalized function $D(t)$
     over the interval between $a$ and~$b$} and we will denote
   this--extending what we do in ordinary calculus---by the symbol
-$$\int_a^bD(t).$$ 
+$$\int_a^bD(t)dt.$$ 
 \end{itemize} 
 
 This description is important to bear in mind and it gives us a handy
@@ -2304,8 +2424,9 @@ additivity relation
   they are viewed as generalized functions they do converge to some
   generalized function as a limit. We will see this soon when we get
   back to the ``sequence of the red graphs." This sequence {\bf does}
-  converge (in the above sense) to the delta-function when these red
-  graphs are thought of as a sequence of generalized functions.
+  converge (in the above sense) to the Dirac $\delta$-function when
+  these red graphs are thought of as a sequence of generalized
+  functions.
 
 
 
@@ -2453,7 +2574,7 @@ function $\cos(\theta t)$ that occurs in the Fourier expansion of
 $f(t)$---this amplitude answers the awkwardly phrased question: {\it
   how much $\cos(\theta t)$ ``occurs in" $f(t)$?}  We will denote this
 amplitude by ${\hat f}(\theta)$, and refer to it as {\bf the Fourier
-  transform} of $f(t)$.  The {\bf Spectrum}, then, of $f(t)$ is the
+  transform} of $f(t)$.  The {\bf spectrum}, then, of $f(t)$ is the
 set of all frequencies $\theta$ where the amplitude is nonzero.
   
   
@@ -2603,7 +2724,7 @@ example, the equation
  (discussing the staircase of primes) and Chapter~\ref{sec:tinkering},
  where we tinkered with the original staircase of primes---alias: the
  graph of $\pi(X)$---to get $\psi(X)$ whose risers look---from
- afar---as if they approximated the 45 degree staircase.
+ afar---as if they approximated the 45 degree staircase (see Figure~\ref{fig:psi38} below).
  
  
    At this point we'll do some further carpentry on $\psi(X)$:
@@ -2619,7 +2740,7 @@ example, the equation
      of logs of prime numbers.
   
 
-\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the right is just the plot of $\psi$ but with the $X$-axis plotted on a logarithmic scale.}
+\illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the right is just the plot of $\psi$ but with the $X$-axis plotted on a logarithmic scale.\label{fig:psi38}}
 
 
 \item Now we'll do something that might seem a bit more brutal: {\it
@@ -2635,6 +2756,8 @@ example, the equation
 \item Now ---for normalization purposes---multiply $\Psi'(t)$ by the
   function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
+
+{\bf [[TODO: We use the word ``support'' a lot without clearly defining it.]]}
     
 Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
   $$\Phi(t) \ = \ e^{-t/2}\Psi'(t)$$ 
@@ -2661,16 +2784,9 @@ distributions---of a complicated staircase?  For example, see
 Figure~\ref{fig:psi_200}.  Well, we would have blip-functions (alias:
 Dirac $\delta$-functions) at each point of discontinuity of $\Psi(x)$;
 that is, at $x=$ any power of a prime.
-  
-     
-   
-%     \ill{psi_prime}{.7}{Continuous approximation to the staircase
-%       $\Psi(x)$ (in red) along with a plot (in blue) of the
-%       derivative of this approximation.}
-     
-%\ill{phi_50}{0.6}{An approximation to the distribution $\Phi(t)$}
-     
 
+{\bf [[Why do we use both ``blip'' and ``spike''?]]}
+  
 The spike distribution $\Phi(t)$ is now a major player in our drama,
 because all of the crucial valuable information of placement of primes
 is contained in it: the ``blips'' constituting this distribution (its
@@ -2895,7 +3011,7 @@ $$
  $$
  See Figure~\ref{fig:moebius} for a plot of the Moebius function. 
  
-\ill{moebius}{1}{The blue dots plot the values of the Moebius function $\mu(n)$\label{fig:moebius}}
+\ill{moebius}{1}{The blue dots plot the values of the Moebius function $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
 
 
 Riemann's guess is
@@ -2906,18 +3022,18 @@ where $\mu(n)$ is the Moebius function introduced above.
 
 \ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript}
 
-In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem which
+In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem, which
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for
 $\pi(X)$, in the sense that both go to infinity at the same rate.
-8Our first formulation of the \RH{} (see page~\pageref{rh:first}) was
+Our first formulation of the \RH{} (see page~\pageref{rh:first}) was
 that $\Li(X)$ is an essentially square root accurate approximation of
 $\pi(X)$.  Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate
 that Riemann's function $R(X)$ appears to be an even better
 approximation to $\pi(X)$ than anything we have seen before.
 
-\illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.5}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom)\label{fig:guess100}}
+\illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.5}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess100}}
 
-\ill{pi_riemann_gauss_10000-11000}{0.5}{Closeup comparison of  $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom)\label{fig:guess10000}}
+\ill{pi_riemann_gauss_10000-11000}{0.5}{Closeup comparison of  $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess10000}}
 
 
 Think of Riemann's smooth curve $R(X)$ as the {\em fundamental}
@@ -3017,22 +3133,15 @@ Here we develop a tiny bit of the traditional route of exposition
     Riemann's zeta-function}.
     
 There are infinitely many of these
-nontrivial$^4$ zeroes of the $ \zeta$-function. If you want to 
-peruse the first
-$2,\!001,\!052$
- of these $\theta_i$'s lovingly calculated to an accuracy
-within $3\cdot 10^{-9}$,
-consult Andrew Odlyzko's tables:
-\url{http://www.dtc.umn.edu/~odlyzko/zeta\_tables/}. 
-
-The first three of these zeroes are:
+nontrivial$^4$ zeroes of the $ \zeta$-function. 
+The first three are:
   $$\rho_1={1\over 2} + 14.134725\dots i\ \ \ \ \  \rho_2={1\over 2} + 21.022040\dots i\ \ \ \rho_3={1\over 2} + 25.01\dots i\ \ 
 \ {\rm etc.}.]$$ 
 
 
 
 We hope that it is OK if we don't explain this at all, for it does
-require calculus but we can think of these ``zeroes'' as being a
+require Calculus but we can think of these ``zeroes'' as being a
 certain precious infinite sequence of quantities, that contain within
 them the secret of the exact determination of the pattern of prime
 numbers. (You can squint at the way Riemann wrote out the
@@ -3047,7 +3156,7 @@ exponents of the three zeroes listed above.  Riemann called attention
 to this phenomenon, which we now know holds for all 1029.9 billion
 zeroes that have been tabulated as of Feb.  18, 2005!  The ${1\over
   2}$ in the exponent of a correction term is what guarantees that the
-correction term is indeed ``square- root small.'' We are ready, then,
+correction term is indeed ``square-root small.'' We are ready, then,
 for another equivalent formulation of the \RH{}, this
 being--in fact--the more traditional way of expressing it:
  
@@ -3115,7 +3224,8 @@ coventional terminology that we restrained
 
   Also mention Brian Conrey's Notices article on RH as ``among the
   best 12 pages of RH survey material that there is---at least for an
-  audience of general mathematicians.''
+  audience of general mathematicians.''  And mention 
+ mention Sarnak and and Bombieri articles at the CMI website on RH.
   
 
 \part{Epilogue\label{part5}}
@@ -3132,6 +3242,7 @@ of the computations, install Sage, and the purplesage Python package,
 which is available here \url{http://code.google.com/p/purplesage/}.
 The code for the book is all in \verb|psage/rh/mazur_stein|.
 
+\section{Factoring}
 In Chapter~\ref{ch:what_are_primes} we discussed primes first in the
 context of integer factorization.  Given an integer $n$, there is an
 array of algorithms available for trying to write $n$ as a product of
@@ -3197,6 +3308,7 @@ sage: factor(p*q, verbose=8)
 ... watch Sage try and fail to factor n...
 \end{verbatim}
 
+\section{Big Prime Numbers}
 Incidentally, we can use Sage to instantly compute the digits of the ``hefty
 number'' $p = 2^{43,112,609}-1$ that arises in
 Chapter~\ref{ch:what_are_primes}.
@@ -3210,17 +3322,21 @@ $p$ it is not surprising that it took no time to compute.  Much more
 challenging is to compute all the base 10 digits of $p$, which takes
 a few seconds:
 \begin{verbatim}
-sage: time d = str(p)
-CPU times: user 17.20 s, sys: 0.15 s, total: 17.35 s
-Wall time: 17.35 s
+sage: d = str(p)          # takes about 20 seconds
 \end{verbatim}
 Here are the last 50 digits of $p$:
 \begin{verbatim}
 sage: d[-50:]
 '79670729447921616491887478265780022181166697152511'
 \end{verbatim}
+And here is the sum of the digits of $p$ (recall page~\pageref{sumdigits} above):
+\begin{verbatim}
+sage: sum(p.digits())     # about 20 seconds
+58416637
+\end{verbatim}
 
 
+\section{Enumerating Primes}
 Chapter~\ref{ch:sieves} is about enumerating primes.  In Sage, the
 function \verb|prime_range| does this, e.g., 
 \begin{verbatim}
@@ -3253,6 +3369,22 @@ Wall time: 0.05 s
 \end{verbatim}
 This is much faster since it uses some clever counting tricks to find the
 number of primes without actually listing them all. 
+
+In Chapter~\ref{sec:tinkering} we tinkered with the staircase of
+primes by first counting both primes and prime powers.    It turns out
+that there are comparatively few prime powers that are not prime.
+Up to $10^8$, only 1405 of the 5762860 prime powers are not themselves primes:
+\begin{verbatim}
+sage: X = 10^8; a = prime_pi(X); pp = len(prime_powers(X))
+sage: a, pp, pp - a
+(5761455, 5762860, 1405)
+\end{verbatim}
+
+
+\section{The Fast Fourier Transform}
+
+[[Give numerical examples about how fast, how to use in Sage, libraries out there,
+etc.]]
 
 
 
