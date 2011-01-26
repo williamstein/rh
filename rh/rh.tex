@@ -1075,7 +1075,7 @@ ago when Carl Friedrich Gauss defined a certain beautiful curve that,
 experimentally, seemed to be an exceptionally good fit for the
 staircase of primes. 
 
-\ill{logXoverX}{.7}{Plot of $\pi(X)$ and $\log(X)/(X-1)$}
+\ill{pi_Li}{.7}{Plot of $\pi(X)$ and Gauss's smooth curve $G(X)$}
 
 Let us denote Gauss's curve $G(X)$; it has an
 elegant simple formula comprehensible to anyone who has had a tiny bit
@@ -1124,6 +1124,9 @@ $\log(X)$ to $\log(Y)$ giving $\log(XY)$.
 % It is referenced in http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html
 % but that link is broken.
 \ill{gauss_tables_half}{.9}{Gauss's Letter (see Endnote~\ref{end:gauss_letter} for an English translation)\label{fig:gauss_letter}}
+
+{\bf [[Actually the endnote is a translation of something related, but not
+of the actual German in the figure above.]]}
 
 In 1791, when Gauss was 14 years old, he received a book that contained 
 logarithms of numbers up to $7$ digits and a table of primes up to 10,009.
@@ -2158,6 +2161,11 @@ $$f(x) = \begin{cases}1 & x \leq 3\\ 2 & x > 3.\end{cases}$$
 The most comfortable way to deal with the graph of such a function is
 to just approximate it by a nice smooth function as in
 Figure~\ref{fig:jumpsmooth}.
+
+{\bf [[ISSUE: This graph is actually not smooth.  The derivative is 
+continuous, but not differentiable.  Do we {\em need} to require
+that the approximating function is actually smooth, or would differentiable
+be enough?  In all the pictures, the example is merely differentiable.]]}
     
    
 \ill{jump-smooth}{0.5}{A picture of a smooth graph approximating the
