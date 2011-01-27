@@ -2847,13 +2847,11 @@ by the equation
     the weight.}
 
   
-   We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
- 
- $$\Phi(t)\ = \ \lim_{C \to {\infty}}\Phi_{\le C}(t)$$ where $\Phi_{\le C}(t)$  is the finite linear combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
- 
+We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
+ $$\Phi(t)\ = \ \lim_{C \to {\infty}}\Phi_{\le C}(t)$$ 
+where $\Phi_{\le C}(t)$  is the finite linear 
+combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
  $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
-  
- 
  Since the Fourier transform of each $d_{n\log(p)}(t)$ is
  $\cos(n\log(p)\theta)$ we compute the Fourier transform of $\Phi_{\le
    C}(t)$ to be:
@@ -2865,20 +2863,69 @@ by the equation
   Chapter~\ref{sec:fourier_staircase}.
   
   
-  \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).}
+ \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
+ $C=5$ (top), 20, 50, and 500 (bottom).}
 
- \vskip5pt
-  {\bf 
-    \begin{itemize}
-    \item The main mathematical task we have is to figure out whether---and in what sense---the Fourier transform of $${\Phi}_{\rm even}(t)$$ is
-  \begin{itemize}
-  \item discretely supported at $$\theta_1,\theta_2,\theta_3,\ldots$$
-  \item a kind of limit of the ${\hat \Phi}_{\le C}(\theta)$ as $ C$ goes to $\infty$.
-  \end{itemize}
-    \vskip5pt
-    \item The above discussion will formally {\it define} {\bf The Spectrum} so we can---at this point---put the following material into our chapter:
-      \end{itemize}
-}
+
+
+
+
+The $\theta$-coordinates of the peaks of these graphs {\it seem to be}
+vaguely clustered about a discrete set of positive real numbers. In
+fact, this is already a hint of what happens to the graphs of these
+functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to
+tend to infinity.  But to make it more than a hint, and to ``see" a
+certain infinite set of positive real numbers
+$$
+  \theta_1,\theta_2,\theta_3,\dots
+$$ 
+emerge, we are going to subject our functions ${\hat\Phi}_{\le C}(\theta)$ 
+to a few simple cleansing operations.
+
+Once we define them, we will be calling the
+set $$\theta_1,\theta_2,\theta_3,\dots$$ the {\bf spectrum of the
+  primes} and if the Riemann Hypothesis holds, these numbers would be
+the key to the placement of primes on the number line.
+
+{\bf The cleansing operations:} Here is a short list of things we are
+going to do to the ${\hat\Phi}_{\le C}(\theta)$'s to make them reveal
+their secrets. These operations are given in the order in which we
+will apply them
+
+\begin{itemize} 
+\item Add to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth
+  function{\footnote{ The function is given by the following formula:
+      for $C$ reasonably large and for positive real $\theta$
+      put $$T_C,(\theta) =
+      {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot
+      \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by
+  $T_C(\theta)$. This function divided by $C^{1/2}$ is bounded in the
+  variable $C$ and goes to zero if $\theta$ tends to infinity.
+
+  So, after this operation we will be dealing with 
+$$
+  A_C(\theta) = {\hat\Phi}_{\le C}(\theta) +T_C(\theta)
+$$
+ 
+\item Now let us smooth out $A_C(\theta)$ by replacing it with the
+  function that computes its ``average" up to $C$; call this function
+ $$
+   B_C(\theta) = {\frac{\sum_{c=1}^C A_c(\theta)}{C}}.
+ $$  
+This type of operation on a function is called {\it Cesaro smoothing}.
+ 
+  \item  Now we normalize by dividing by $\log(C)$, (supposing that $C >1$
+ to get a function we'll call: 
+ $$
+   E_C(\theta) = B_C(\theta)/\log(C).
+ $$  
+\end{itemize}
+
+If we stop here, this is what the graphs look like:
+
+ \centerline{\bf Graphs here} 
+
+
     
  We can{ compute}---at least approximately---the $\theta_i$'s of this spectrum, the first few $\theta_i$'s being:
 \begin{eqnarray*}
