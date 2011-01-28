@@ -2866,69 +2866,56 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
  \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
  $C=5$ (top), 20, 50, and 500 (bottom).}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Hints of the spectrum:}\ The $\theta$-coordinates of the peaks of these graphs {\it seem to be} vaguely clustered about  a discrete set of  positive real numbers. In fact, this is already a hint of what happens to the graphs of these functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to tend to infinity.   But to make it more than a hint, and to ``see"  a certain infinite set of positive real numbers  
+$$\theta_1,\theta_2,\theta_3,\dots$$ emerge,  we are going to subject our functions ${\hat\Phi}_{\le C}(\theta)$ to a few simple cleansing operations. 
+
+Once we define them, we will be calling the set $$\theta_1,\theta_2,\theta_3,\dots$$ the {\bf spectrum of the primes}  and  if the Riemann Hypothesis holds, these numbers would be the key to the placement of primes on the number line.
 
 
+{\bf The cleansing operations:}    Here is a short list of things we are going to do  to the ${\hat\Phi}_{\le C}(\theta)$'s to make them reveal their secrets. These operations are given in the order in which we will apply  them
+ \vskip20pt
+\begin{itemize} \item Add  to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth function{\footnote{ The function is given by the following formula:  for $C$ reasonably large and for positive real $\theta$ put   $$T_C,(\theta):= {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by $T_C(\theta)$. This function divided by $C^{1/2}$  is bounded in the variable $C$ and goes to zero if $\theta$ tends to infinity.
 
-
-The $\theta$-coordinates of the peaks of these graphs {\it seem to be}
-vaguely clustered about a discrete set of positive real numbers. In
-fact, this is already a hint of what happens to the graphs of these
-functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to
-tend to infinity.  But to make it more than a hint, and to ``see" a
-certain infinite set of positive real numbers
-$$
-  \theta_1,\theta_2,\theta_3,\dots
-$$ 
-emerge, we are going to subject our functions ${\hat\Phi}_{\le C}(\theta)$ 
-to a few simple cleansing operations.
-
-Once we define them, we will be calling the
-set $$\theta_1,\theta_2,\theta_3,\dots$$ the {\bf spectrum of the
-  primes} and if the Riemann Hypothesis holds, these numbers would be
-the key to the placement of primes on the number line.
-
-{\bf The cleansing operations:} Here is a short list of things we are
-going to do to the ${\hat\Phi}_{\le C}(\theta)$'s to make them reveal
-their secrets. These operations are given in the order in which we
-will apply them
-
-\begin{itemize} 
-\item Add to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth
-  function{\footnote{ The function is given by the following formula:
-      for $C$ reasonably large and for positive real $\theta$
-      put $$T_C,(\theta) =
-      {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot
-      \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by
-  $T_C(\theta)$. This function divided by $C^{1/2}$ is bounded in the
-  variable $C$ and goes to zero if $\theta$ tends to infinity.
-
-  So, after this operation we will be dealing with 
-$$
-  A_C(\theta) = {\hat\Phi}_{\le C}(\theta) +T_C(\theta)
-$$
+ So, after this operation we will be dealing with  $$A_C(\theta):= {\hat\Phi}_{\le C}(\theta) +T_C,(\theta)$$
  
-\item Now let us smooth out $A_C(\theta)$ by replacing it with the
-  function that computes its ``average" up to $C$; call this function
- $$
-   B_C(\theta) = {\frac{\sum_{c=1}^C A_c(\theta)}{C}}.
- $$  
-This type of operation on a function is called {\it Cesaro smoothing}.
+  \vskip20pt\item Now let us smooth out $A_C(\theta)$ by replacing it with the function that computes its ``average" up to $C$. Let ${[C]}$ mean the largest whole number less than or equal to $C$.    Now consider
  
-  \item  Now we normalize by dividing by $\log(C)$, (supposing that $C >1$
- to get a function we'll call: 
- $$
-   E_C(\theta) = B_C(\theta)/\log(C).
- $$  
-\end{itemize}
+ $${\tilde A}_C(\theta):= {\frac{\sum_{c=1}^{[C]} A_c(\theta)}{[C]}}.$$  This type of operation on  functions is called {\it Cesaro smoothing}. Applying Cesaro smoothing to a function $U_C(\theta)$ gives a new function $${\tilde U}_C(\theta):=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} U_c(\theta)$$  with useful properties, at times:
+  \begin{quote} \begin{itemize}\item  If, for a given value of $\theta$, $${\lim_{C \to \infty}}  U_C(\theta)$$ actually exists, then the limit also exists for its Cesaro smoothing, and the limits are equal: $${\lim_{C \to \infty}}  U_C(\theta)= {\lim_{C \to \infty}}  {\tilde U}_C(\theta).$$ \item But sometimes the first limit doesn't exist and yet the second one does, and moreover, \item if the first limit exists, sometimes the second one converges faster than the first. \end{itemize} \end{quote}  
+  \vskip20pt\item  Now we normalize ${\tilde A}_C(\theta)$ by dividing by $\log(C)$, (supposing that $C >1$)
+ 
+ to get a function we'll call: $$B_C(\theta):= {\tilde A}_C(\theta)/\log(C).$$  If we stop here, this is what the graphs look like:
+ \vskip20pt
+ \centerline{\bf Graphs here}
+ 
+  \vskip20pt
+\item But we can also perform a second Cesaro smoothing to get
 
-If we stop here, this is what the graphs look like:
+$${\tilde B}_C(\theta):=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} B_c(\theta)$$ 
 
- \centerline{\bf Graphs here -- what to put here is far from clear.  We need to think
-hard about http://localhost:8000/home/admin/549/ together.} 
+and this is what the graphs look like now
+ \vskip20pt
+ \centerline{\bf Graphs here}
+ 
+  \vskip20pt
+ Here is a---perhaps surprising---{\it theorem}  that tells us what sort of strange functions ${\tilde B}_C(\theta)$ and $B_C(\theta)$ are.
+ 
+ \noindent{\bf Theorem:} Suppose the Riemann Hypothesis. \begin{enumerate}\item The limit $$B(\theta):=\lim_{C \to \infty}  B_C(\theta)$$ exists for every positive real number $\theta$;  therefore ${\tilde B}(\theta):={\lim_{C \to \infty}}{\tilde B}_C(\theta)$ also exists and these limits are equal. \item The values of $B(\theta)$ are {\it either zero or one}. \item The set of arguments $\theta$ for which $B(\theta) = {\tilde B}(\theta) =1$ is an infinite discrete set of positive real numbers, $$\theta_1,\theta_2,\theta_3,\dots$$ which we will now call {\it the spectrum of the primes}.
+ \end{enumerate}
+ \end{itemize} 
+   \vskip20pt
+    {\bf  We should correct the chapter number on line 4 of page 96, and also discuss whether we should hint at the surprise of the zeta function here---as we do in our text---or withhold it.}
 
 
-    
- We can{ compute}---at least approximately---the $\theta_i$'s of this spectrum, the first few $\theta_i$'s being:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Already by tabulating  ${\tilde B}(\theta)$ we can compute---at least very approximately---$\dots$
 \begin{eqnarray*}
 \theta_1 &=& 14.134725 \dots\\
 \theta_2 &=& 21.022039 \dots\\
@@ -2975,7 +2962,7 @@ $14.134725141734693790457251983562470270784257115699243175685567460149\newline
 \vskip20pt
 \noindent{}and if, by any chance, you wish to peruse the first
 $2,\!001,\!052$
- of these $\theta_i$'s lovingly calculated to an accuracy
+ of these $\theta_i$'s calculated to an accuracy
 within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
 
@@ -2983,7 +2970,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
   
 
  
-\chapter{How to build $\Phi(t)$ from the spectrum}
+\chapter{Going from the spectrum to the primes}
   \vskip5pt 
  {\bf The main mission of this chapter is to begin the discussion---in
 the style of our book (!)---of Riemann's Explicit Formula,  and also
