@@ -2971,22 +2971,41 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 
  
 \chapter{Going from the spectrum to the primes}
-  \vskip5pt 
- {\bf The main mission of this chapter is to begin the discussion---in
-the style of our book (!)---of Riemann's Explicit Formula,  and also
-to explain and exhibit data for:}
-   \vskip5pt
- \begin{center}
-      \shadowbox{ \begin{minipage}{0.9\textwidth}
-      \mbox{}       \vspace{0.2ex}
-      \begin{center}{\bf\large The \RH{} is equivalent to the assertion that  $\Phi(t)$ is {\em somehow related to---} the distribution defined as the summation $1+\sum_{i=1}^{\infty}\cos(\theta_i t)$}  where the $\theta_i$'s run through the spectrum of the primes. \end{center}
-...
-    \vspace{1ex}
-    \end{minipage}}
- \end{center}
-  \vskip5pt
-{\bf At the moment all we have done are these graphs:}
-   \vskip5pt
+
+  To justify the name {\it spectrum of primes} we will investigate graphically whether  in an analogous manner we can use the spectrum to get information about the placement of prime numbers. We might ask, for example, if  there is a trigonometric function with frequencies given by this collection of  real numbers,  $$\theta_1,\theta_2,\theta_3,\dots$$ that somehow pinpoints the prime powers, just as our functions  $${\hat \Phi}(\theta)_{\le C}= 2\sum_{{\rm prime\ powers\ } p^n \le C} p^{-m/2}\log(p)\cos(n\log(p)\theta)$$  for large $C$ pinpoint the spectrum (as discussed in the previous two chapters).
+  
+  To start the return game, consider this sequence of trigonometric functions that have ($zero$ and)  the $\theta_i$ as  spectrum 
+   
+   $$G_C(x):= 1+ \sum_{i < C}\cos(\theta_i\cdot x).$$ 
+   
+    As we'll see  presently it is best to view these functions on a logarithmic scale so we will make the substitution of variables  $x = \log(s)$ and write 
+    
+    $$H_C(s):= G_C(\log(s))= 1+ \sum_{i < C}\cos(\theta_i\cdot \log(s)).$$ 
+    
+    Now take a look at the graphs of our functions $H_C(s)$ for various choices of $C$ and ranges of $s$.
+  
+  \vskip20pt
+  \centerline{ \bf William: our figures on pp. 98,99 might come here.}  
+   \vskip20pt 
+   
+   To get a cleaner picture let us subject our functions $H_C(s)$ to Cesaro smoothing as in the previous chapter. Define:
+   $${\tilde H}_C(s) :=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} H_c(\theta),$$ and let's take another look.
+   \vskip20pt
+{ \bf William:  Can you ``Cesaro sum" our figures on pp. 98,99? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
+   \vskip20pt   
+
+There is an endnote.\endnote{The theoretical story behind the phenomena that we have seen graphically in this chapter is yet another manifestation of Riemann's explicit formula.  Modern references for this  are  {\bf [Iwaniec-Kowalski]} and {\bf [Davenport: Multiplicative Number Theory]}. (see also the bibliography in these books.)  Many ways of seeing  the explicit relationship are given in  Chapter 5  of {\bf [I-K]}. For  example, consider Exercise 5 on page 109.
+  
+$$\sum_{\rho}{\hat \phi}(\rho) = -\sum_{n \ge 1}\Lambda(n)\phi(n) + I(\phi),$$
+  
+where \begin{itemize} \item $\phi$ is any smooth complex-valued function  on the reals with compact support,\item  ${\hat \phi}$ is its Mellin transform:  $${\hat \phi}(s):= \int_0^{\infty}\phi(x)x^{s-1}dx,$$ \item the last term on the right,  $I(\phi)$, is  just 
+ $$I(\phi):= \int_1^{\infty}(1-{\frac{1}{x^3-x}})\phi(x)dx$$ (coming from the pole at $s=1$ and the ``trivial zeroes"). \item The more serious  summation on the left hand side of the equation is over the nontrivial zeroes $\rho$, noting that if $\rho$ is a nontrivial zero so is ${\bar \rho}$. \end{itemize}
+
+
+
+   Of course, this `explicit formulation' is not {\it immediately} applicable to the graphs we are constructing since we cannot naively take ${\hat \phi}$ to be a function forcing the left hand side to be $G_C(x)$.
+   
+   See also Exercise 7 on page 112,  which discusses the sums $$x - \sum_{|\theta| \le C} {\frac{x^{{\frac{1}{2}} +i\theta}-1}{{\frac{1}{2}} +i\theta}}.$$} 
 
 
 \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$, where
