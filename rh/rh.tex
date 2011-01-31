@@ -1,11 +1,35 @@
 \documentclass[openany]{book}
+
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
 
-\usepackage{endnotes}
+\bibliographystyle{amsplain}
+
 \usepackage{float}
 
 \usepackage{wrapfig}
+
+\usepackage{color}
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
+\definecolor{dredcolor}{rgb}{0.8,0,0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+\usepackage{listings}
+\lstdefinelanguage{Sage}[]{Python}
+{morekeywords={True,False,sage,singular},
+sensitive=true}
+\lstset{frame=none,
+          showtabs=False,
+          showspaces=False,
+          showstringspaces=False,
+          commentstyle={\ttfamily\color{dredcolor}},
+          keywordstyle={\ttfamily\color{dbluecolor}\bfseries},
+          stringstyle ={\ttfamily\color{dgraycolor}\bfseries},
+          language = Sage,
+          basicstyle={\scriptsize \ttfamily},
+          aboveskip=.3em,
+          belowskip=.1em
+          }
 
 
 \usepackage{fancybox}
@@ -144,6 +168,7 @@ January 26, 2011 Draft\\
 %\end{center}
 }
 
+\usepackage{notes2bib}
 
 \usepackage[hypertex]{hyperref}
 
@@ -174,7 +199,7 @@ There are at least four full-length books recently published, written
 for a general audience, that have the \RH{} as their main
 topic.  A reader of these books will get a fairly rich picture of the
 personalities engaged in the pursuit, and of related mathematical and
-historical issues.\endnote{See, e.g., {\em The Music of the Primes} by Marcus du Sautoy.}
+historical issues. \bibnote{See, e.g., {\em The Music of the Primes} by Marcus du Sautoy.}
      
 This is {\em not} the mission of the book that you now hold in your
 hands. We aim---instead---to explain, in as direct a manner as
@@ -183,7 +208,7 @@ this problem is all about and why it is so important. For even before
 anyone proves this {\em hypothesis} to be true (or false!), just
 getting familiar with it and with some of the the ideas behind it, is
 exciting.  Moreover, this hypothesis is of crucial importance in a
-wide range of mathematical fields; for example it is a
+wide range of mathematical fields; for example, it is a
 confidence-booster for computational mathematics: even if the Riemann
 Hypothesis is never proved, its truth gives us an excellent sense of
 how long certain computer programs will take to run, which, in some
@@ -193,25 +218,30 @@ might take weeks or even months to complete.
 Here is how the
 Princeton mathematician Peter Sarnak described the broad impact the
 Riemann Hypothesis has had: 
+\begin{quote}
 ``The Riemann hypothesis is the central problem and it implies many,
 many things. One thing that makes it rather unusual in mathematics
 today is that there must be over five hundred papers---somebody should
 go and count---which start `Assume the Riemann hypothesis,' and
 the conclusion is fantastic. And those [conclusions] would then become
 theorems ... With this one solution you would have proven five hundred
-theorems or more at once.'' % This is from page 106 of the Borwein book.
+theorems or more at once.'' \bibnote{See page 222 of
+{\em The Riemann hypothesis: the greatest unsolved problem in mathematics} by Karl Sabbagh (2002).}
+\end{quote}
+% This is from page 106 of the Borwein book, which is just citing Sabbagh.
 
 
 Our book is profusely illustrated, containing over 125 figures, diagrams,
-and pictures that accompany the text.  There are comparatively fewer
-mathematical equations in Part~\ref{part1}.   For the more adventurous readers, we have
-also created at \url{http://wstein.org/rh} something we call {\em worksheets}
-that enable the reader to use the free Sage mathematical
-software to experiment with the parameters for
+and pictures that accompany the text \bibnote{All of the figures were created using the
+free Sage mathematical software \url{http://www.sagemath.org}.
+Complete Sage code is available at \url{http://wstein.org/rh}
+that can be used to recreate every diagram in this book. 
+More adventurous readers can
+to experiment with the parameters for
 the ranges of data illustrated, so as to get an even more
-vivid sense of how the numbers ``behave.''  Also Sage code is available
-at the above webpage that can be used to recreate every diagram
-in this book. 
+vivid sense of how the numbers ``behave.''}.
+There are comparatively fewer
+mathematical equations in Part~\ref{part1}.   
  
 So, what {\it is} the Riemann Hypothesis?  Below is a {\it first
   description} of what it is about. The task of our book is to develop
@@ -227,7 +257,7 @@ will guide the reader to the mathematical literature that establishes
 these equivalences.
       
       \begin{center}
-       \shadowbox{ \begin{minipage}{0.9\textwidth}
+       \shadowbox{ \begin{minipage}{0.91\textwidth}
 \mbox{}       \vspace{0.2ex}
        \begin{center}{\bf\large What {\em sort} of Hypothesis is the \RH{}?}\end{center}
        \medskip
@@ -235,9 +265,11 @@ these equivalences.
 Consider the seemingly innocuous series of questions:
 
 \begin{quote}
-How many prime numbers  (2, 3, 5, 7, 11, 13, 17, … ) are there less than 100?\\
-How many less than 10,000?\\
-How many less than 1,000,000?\vspace{-1ex}\\
+\begin{itemize}
+\item How many prime numbers  (2, 3, 5, 7, 11, 13, 17, $\ldots$) are there less than 100?
+\item How many less than 10,000?
+\item How many less than 1,000,000?
+\end{itemize}
 
 More generally, how many primes are there less than any given number $X$?
 \end{quote}
@@ -315,7 +347,7 @@ So, how far along are we in our thoughts about numbers?
 The French philosopher and mathematician Ren\'e Descartes, almost four
 centuries ago, expressed the hope that there soon would be ``almost
 nothing more to discover in geometry.'' Contemporary physicists dream
-of a final theory\endnote{See Weinberg's book {\em Dreams of a
+of a final theory \bibnote{See Weinberg's book {\em Dreams of a
     Final Theory: The Search for the Fundamental Laws of Nature}, by
   Steven Weinberg (New York: Pantheon Books, 1992)}.  But despite its
 venerability and its great power and beauty, the pure mathematics of
@@ -344,7 +376,7 @@ Toboso, the first letters of each line spelling out her name. The
   of four octosyllabic lines each, there would be one letter too many,
   and if he made the stanzas of five octosyllabic lines each, the ones
   called {\em d{\'e}cimas} or {\em redondillas,} there would be three
-  letters too few...''
+  letters too few...'' \bibnote{See Chapter IV of the Second Part of the Ingenius Gentleman Don Quixote of La Mancha.}
 \end{quote}
   
 ``It must fit in, however, you do it,'' pleaded Quixote, not willing to
@@ -385,17 +417,17 @@ the Metaphysics.
 
 But, until Euclid, prime numbers seem not to have been singled out as
 {\em the} extraordinary mathematical concept, central to any deep
-understanding of numerical phenomena, that they are now understood to
+understanding of arithmetic phenomena, that they are now understood to
 be.
        
 
 
 
-There is an extraordinary wealth of established truths about numbers;
-these truths provoke sheer awe for the beautiful complexity of prime
-numbers. But each of the important new discoveries we make give rise
-to a further richness of questions, educated guesses, heuristics,
-expectations, and unsolved problems.
+There is an extraordinary wealth of established truths about whole
+numbers; these truths provoke sheer awe for the beautiful complexity
+of prime numbers. But each of the important new discoveries we make
+give rise to a further richness of questions, educated guesses,
+heuristics, expectations, and unsolved problems.
             
             
             
@@ -450,7 +482,12 @@ and there are various other starting possibilities. But if you
 continue the factorization (``climbing down'' any one of the possible
 ``factoring trees'') to the bottom, where every factor is a prime
 number as in Figure~\ref{fig:factor300}, you always end up with the
-same collection of prime numbers:
+same collection of prime numbers \bibnote{See Section~1.1 of
+Stein's book {\em Elementary Number Theory: Primes, Congruences, and Secrets} (2008)
+for a proof of the ``fundamental theorem of arithmetic'', 
+which is the statement that every positive  
+whole number factors uniquely as a product of primes.
+This book is freely available at \url{http://wstein.org/ent/}.}:
                  $$300 = 2^2\times 3\times 5^2.$$   
 
 \illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
@@ -466,29 +503,41 @@ website and purchase something online, prime numbers having hundreds of
 decimal digits are used to keep our bank transactions private.  This
 ubiquitous use to which these giant primes are put depends upon a very
 simple principle: it is much easier to multiply numbers together than
-to factor them. If you had to factor, say, the number $143$ you might
-scratch your head for a few minutes before discovering that $143$ is
-$11\times 13$. But if you had to multiply $11$ by $13$ you would do it
+to factor them. If you had to factor, say, the number $391$ you might
+scratch your head for a few minutes before discovering that $391$ is
+$17\times 23$. But if you had to multiply $17$ by $23$ you would do it
 straightaway.  Offer two primes, say, $P$ and $Q$ each with a few hundred 
 digits, to your computing machine and ask it to multiply them
 together: you will get their product $N = P\times Q$ with its hundreds of digits
-in less than a microsecond. But present that number $N$ to any
+in about a microsecond. But present that number $N$ to any
 current desktop computer, and ask it to factor $N$, and the computer
-will (almost certainly) fail to do the task. The safety of much
-encryption depends upon this guaranteed\endnote{Nobody has ever
+will (almost certainly) fail to do the task.
+%We illustrate this in Sage:
+% \begin{lstlisting}[]
+% sage: n = ZZ.random_element(10^500)
+% sage: m = ZZ.random_element(10^500)
+% sage: timeit('n*m')
+% 1.51 microseconds per loop
+% sage: timeit('n*m')
+% 2.33 microseconds per loop
+% sage: factor(n*m)
+% [wait forever]
+% \end{lstlisting}}. 
+The safety of much
+encryption depends upon this guaranteed failure! \bibnote{Nobody has ever
   published a {\em proof} that there is no fast way to factor
   integers.  This is an article of ``faith'' among some
-  cryptographers.} failure!
+  cryptographers.}
 
 If we were latter-day number-phenomenologists we might revel in the
 discovery and proof that
 $$
-  p=2^{43,112,609}-1 = 3164702693\ldots\ldots\ldots6697152511
+  p=2^{43,112,609}-1 = 3164702693\ldots\ldots\text{\small (millions of digits)}\ldots\ldots6697152511
 $$ 
 is a prime number, this number having $12,\!978,\!189$ digits!  This
 prime, which was discovered on August 23, 2008 by the GIMPS project
-(\url{http://www.mersenne.org/}), was the first prime ever found with
-more than ten million digits.
+(see \bibnote{The GIMPS project website is \url{http://www.mersenne.org/}.}), 
+is the first prime ever found with more than ten million digits.
 
 Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
@@ -521,12 +570,10 @@ two thousand years old, since it already occurred in Euclid's {\em
 numbers and they showed it via the same method as we showed that our
 $p = 2^{43,112,609} - 1$ is not the largest prime number.
 
-Here is the argument again, given very succinctly: Suppose there are
-only finitely many primes $p_1, \ldots, p_m$.  Let $n=p_1 p_2 \cdots
-p_m + 1$.  Then $n$ is divisible by some prime, but no $p_i$ divides
-$n$, which is contrary to our assumption that $p_1, \ldots, p_m$ is
-the complete list of primes.
-
+Here is the argument again, given very succinctly: 
+Given primes $p_1, \ldots, p_m$, let $n=p_1 p_2 \cdots p_m +
+1$.  Then $n$ is divisible by some prime not equal to any $p_i$,
+so there are more than $m$ primes. 
 
 You can think of this strategy as a simple game that you can
 play. Start with any finite bag of prime numbers (say the bag that
@@ -560,17 +607,15 @@ $\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051\}$
 $\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051, 29881, 67003,\\
 \mbox{}\qquad\qquad\qquad 9119521, 6212157481\}$
 \newline
-\mbox{}\qquad{}etc.\endnote{The sequence of prime numbers we find by this
-procedure is discussed in more detail with references at
-Sloane's table of integer sequences:
-\url{http://www.research.att.com/~njas/sequences/A126263}.}
-
+\mbox{}\qquad{}etc. \bibnote{The sequence of prime numbers we find by this
+procedure is discussed in more detail with references
+in the Online Encyclopedia of Integer Sequences \url{http://oeis.org/A126263}.}
 
 Though there are infinitely many primes, actually finding them is a
 major challenge.  In the 1990s, the Electronic Frontier Foundation
 \url{http://www.eff.org/awards/coop} offered a \$100,000 cash reward
 to the first group to find a prime with at least 10,000,000 decimal
-digits (the record prime $p$ above won this prize\endnote{%
+digits (the record prime $p$ above won this prize \bibnote{%
 See \url{http://www.eff.org/press/archives/2009/10/14-0}.
 Also the 46th Mersenne prime was declared by Time Magazine to be
 one of the top 50 best ``inventions'' of 2008: \url{http://www.time.com/time/specials/packages/article/0,28804,1852747_1854195_1854157,00.html}.}), and offers
@@ -655,10 +700,10 @@ the spacing of the infinite series of prime numbers.
 For example, {\em are there infinitely many pairs of primes whose
   difference is $2$?}  The sequence of primes seems to be rich in such
 pairs $$5-3 =2,\ \ \ 7-5=2,\ \ \ 13-11=2,\ \ \ 19-17 =2,$$ and we know
-that there are loads more such pairs\endnote{For example, according to
+that there are loads more such pairs (see \bibnote{For example, according to
 \url{http://www.research.att.com/~njas/sequences/A007508} there are
 $10,\!304,\!185,\!697,\!298$ such pairs less than
-$10,\!000,\!000,\!000,\!000,\!000$.} but the answer to our question,
+$10,\!000,\!000,\!000,\!000,\!000$.}) but the answer to our question,
 {\em are there infinitely many?}, is not known. {\em Are there
   infinitely many pairs of primes whose difference is $4$?}  Answer:
 equally unknown. {\em Is every even number greater than $2$ a sum of
@@ -733,7 +778,7 @@ such pairs of primes, but no one has been able to prove this yet.
 
 \begin{quote} The largest known twin primes are 
 $$65516468355\cdot 2^{333333} \pm 1$$
-They have $100355$ digits and were found by Kaiser and Klahnin.\endnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+They have $100355$ digits and were found by Kaiser and Klahnin. \bibnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
 largest known twin primes.}
 \end{quote}
 
@@ -797,7 +842,7 @@ numbers that we do not know the answer to:
 \begin{quote}
   Challenge: As $X$ tends to infinity which of $\Gap_2(X), \Gap_4(X),
   \Gap_6(X),$ or $\Gap_8(X)$ do you think that will grow faster? How
-  much would you bet on the truth of your guess?\endnote{%
+  much would you bet on the truth of your guess? \bibnote{%
     Hardy and Littlewood give a nice conjectural answer to such
     questions about gaps between primes.  See Problem {\bf A8} of
     Guy's book {\em Unsolved Problems in Number Theory}, 2004.}
@@ -870,14 +915,14 @@ Mult. odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
 A {\em negative} response to this question---i.e., a proof that any
 plot as drawn in Figure~\ref{fig:liouville} stays below the $X$
 axis---would imply the Riemann Hypothesis!  In contrast to the list of
-previous questions, the answer to this question is known\endnote{For more
+previous questions, the answer to this question is known (see \bibnote{For more
   details, see P.~Borwein, {\em Sign changes in sums of the Liouville
     Function} and the nice short paper of Norbert Wiener {\em Notes on
     Polya's and Turan's hypothesis concerning Liouville's factor}
   (page 765 of volume II of Wiener's Collected Works); see also:
   G. Polya {\em Vershiedene Bemerkungen zur Zahlentheorie}
   Jahresbericht de Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
-  31--40.}: alas, there is such an $X$.  In 1960, Lehman showed that
+  31--40.}): alas, there is such an $X$.  In 1960, Lehman showed that
 for $X=906,400,000$ there are $708$ more multiplicatively even numbers
 up to $X$ than multiplicatively odd numbers (Tanaka found in 1980 that
 the smallest $X$ such that there are more multiplicative even than odd
@@ -1130,7 +1175,12 @@ of the actual German in the figure above.]]}
 
 In 1791, when Gauss was 14 years old, he received a book that contained 
 logarithms of numbers up to $7$ digits and a table of primes up to 10,009.
-Years later, in a letter\endnote{\label{end:gauss_letter}
+Years later, in a letter
+written in 1849 (see Figure~\ref{fig:gauss_letter}), Gauss
+claimed that as early as 1792 or 1793 he had already observed that the
+density of prime numbers over intervals of numbers of a given rough
+magnitude $X$ seemed to average $1/\log(X)$
+(see \bibnote{\label{end:gauss_letter}
 The following is an English translation of Gauss's letter (Figure~\ref{fig:gauss_letter}), taken from 
 \url{http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html}.
 
@@ -1160,11 +1210,8 @@ million. Only some time later did I make use of the diligence of Goldschmidt to
 fill some of the remaining gaps in the first million and to continue the computation 
 according to Burkhardt's tables. Thus (for many years now) the first three million 
 have been counted and checked against the integral. A small excerpt follows: ....''
-\end{quote}}
-written in 1849 (see Figure~\ref{fig:gauss_letter}), Gauss
-claimed that as early as 1792 or 1793 he had already observed that the
-density of prime numbers over intervals of numbers of a given rough
-magnitude $X$ seemed to average $1/\log(X)$.  Very {\em very} roughly speaking, this
+\end{quote}}).
+ Very {\em very} roughly speaking, this
 means that {\em the number of primes up to $X$ is approximately $X$ divided by
 twice the number of digits of $X$}.  For example,
 the number of primes less than $99$ should be roughly
@@ -1228,7 +1275,8 @@ with {\em square-root error} (${\sqrt{1,\!000,\!000}}=1,\!000$).
 Again, for short, call this a {\em good approximation.} So, when Gauss
 thought his curve missed by $226$ in estimating the number of primes
 less than three million, it was well within the margin we have given
-for a ``good approximation.''\endnote{If $f(x)$ and 
+for a ``good approximation.'' 
+\bibnote{If $f(x)$ and 
 $g(x)$ are real-valued functions of a real variable $x$ such that
 for any
 $\epsilon >0$ both of them take their values between $ x^{1-\epsilon}$  
@@ -1335,17 +1383,17 @@ But data, no matter how impressive, may be deceiving (as we learned in
 Chapter~\ref{ch:further}). If you think
 that  the three graphs  never cross for all large values of $X$,  and
 that we have the simple relationship  $X/\log(X) < \pi(X) < \Li(X)$ for
-large $X$, turn to this endnote.\endnote{Very very  briefly tell people
+large $X$, turn to this endnote.
+\bibnote{Very, very  briefly tell people
 about Littlewood's  Theorem, Skewes Number, etc.}
 
  
 \ill{three_plots}{.9}{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom).\label{fig:threeplots}}
  
-Let $X=10^{23}$.  Then\endnote{This computation of $\pi(10^{23})$ was done on a single
+Let $X=10^{23}$.  Then \label{pili_vals} (see \bibnote{This computation of $\pi(10^{23})$ was done on a single
 computer in 2007 by Oliveira e Silva,
 and is the largest value of $\pi(X)$ ever computed.  See
-\url{http://www.ieeta.pt/~tos/primes.html} for more details.} \label{pili_vals}
-
+\url{http://www.ieeta.pt/~tos/primes.html} for more details.})
 \begin{align*}
   \pi(X) &= 1925320391606803968923,\\
   \Li(X) &= 1925320391614054155138.780\ldots, \\
@@ -1369,7 +1417,7 @@ Hypothesis:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate.\endnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
+root accurate. See \bibnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
 a computational perspective}.}
 \label{rh:first}
 
@@ -1431,8 +1479,8 @@ at the same rate.\label{fig:samerate}}
 Now a theorem from elementary calculus tells us that the ratio of
 $\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
 That is---using the definition we've just introduced--- $\Li(X)$ and
-$X/\log(X)$ go to infinity at the same rate.\endnote{Give a proof
-of this statement in an endnote.}
+$X/\log(X)$ go to infinity at the same rate (see \bibnote{Give a proof
+of this statement in an endnote.})
 
 
 Recall (on page 10 above)  that
@@ -1478,8 +1526,9 @@ The elusive \RH{}, however, is much deeper than the Prime
 Number Theorem, and takes its origin from some awe-inspiring,
 difficult to interpret, lines in Bernhard Riemann's magnificent 8-page
 paper, ``On the number of primes less than a given magnitude,''
-published in 1859. \endnote{See \url{http://www.maths.tcd.ie/pub/HistMath/People/Riemann/Zeta/}
-for for the original German version and an English translation.}
+published in 1859
+(see \bibnote{See \url{http://www.maths.tcd.ie/pub/HistMath/People/Riemann/Zeta/}
+for for the original German version and an English translation.}).
  
 
 \ill{riemann_zoom}{1}{From Riemann's 1859 Manuscript\label{fig:riemamn}}
@@ -1615,10 +1664,11 @@ but is constructed according to the following architectural plan.
   simple function $X$. In fact, we have---by this new
   architecture---a second {\em equivalent} way of formulating
   Riemann's hypothesis.   For this, let $\psi(X)$ denote the 
-  function\endnote{We have $$\psi(X) =\sum_{p^n \le X}\log p$$ where the summation is over prime
-powers $p^n$ that are $\le X$.}
+  function
   of $X$ whose graph is
-depicted in Figure~\ref{fig:psi}.
+depicted in Figure~\ref{fig:psi}
+(see \bibnote{We have $$\psi(X) =\sum_{p^n \le X}\log p$$ where the summation is over prime
+powers $p^n$ that are $\le X$.}).
    
           \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
@@ -1734,12 +1784,12 @@ get a reasonable quality of sound.
 
 Another way is to simply record the {\em five} numbers: the {\em
   spectrum, amplitudes,} and {\em phase}.  Surprisingly, this seems to
-be roughly the way our ear processes such a sound when we hear it.\endnote{%
+be roughly the way our ear processes such a sound when we hear it \bibnote{%
 We recommend to our readers that they download Dave Benson's marvelous book
 {\em Music: A Mathematical Offering} from 
 \url{http://www.maths.abdn.ac.uk/~bensondj/html/music.pdf}. 
 This is free, and gives a beautiful account of the superb
-mechanism of hearing, and of the mathematics of music.}
+mechanism of hearing, and of the mathematics of music.}.
 
   Even in this simplest of examples (our pure chord: the pure note C
   played simultaneously with pure note E) the {\em efficiency of data
@@ -1782,9 +1832,9 @@ pure sine waves that, together, compose the graph is called the {\em
   Fourier transform} and nowadays there are very fast procedures for
 getting accurate {\em Fourier transforms} (meaning accurate spectral
 pictures including information about phases) by
-computer.\endnote{Discuss some good readable article on the Fast
+computer \bibnote{Discuss some good readable article on the Fast
   Fourier Transform algorithm; there are probably many such
-  articles.}
+  articles.}.
  
  
 If you pass to the worksheet at this point, you'll be able to see the
@@ -2291,7 +2341,7 @@ Calculus relating a function to its derivative:
  functions'' such as our limit of the series of red graphs, and that
  allows mathematicians to work with these concepts with ease. These
  ``generalized functions'' are called {\it distributions} in
- Schwartz's theory.\endnote{ See
+ Schwartz's theory \bibnote{ See
    \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29}
    for more about distributions.  Also, Shwartz's explains on page 238
    of his autobiography: ``Why did we choose the name distribution?
@@ -2309,7 +2359,7 @@ Calculus relating a function to its derivative:
    different aspects: they are a generalization of the notion of
    function, and a generalization of the notion of distribution of
    electric charges in space. [...] Both these interpretations of
-   distributions are currently used.''}
+   distributions are currently used.''}.
 
 
 
@@ -2522,13 +2572,13 @@ distributions---of the function in Figure~\ref{fig:simple_staircase}.
       
 We'll be dealing with much more complicated staircase functions in the
 next section, but the general principles discussed here will nicely
-apply there.\endnote{ From Wikipedia:
+apply there \bibnote{ From Wikipedia:
   \begin{quote} ``Generalized functions'' were introduced by Sergei
     Sobolev in 1935. They were independently introduced in the late
     1940s by Laurent Schwartz, who developed a comprehensive theory of
     distributions.
 \end{quote}
-}
+}.
 
 
 \chapter{Fourier transforms: second visit}
@@ -2994,7 +3044,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 { \bf William:  Can you ``Cesaro sum" our figures on pp. 98,99? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
    \vskip20pt   
 
-There is an endnote.\endnote{The theoretical story behind the phenomena that we have seen graphically in this chapter is yet another manifestation of Riemann's explicit formula.  Modern references for this  are  {\bf [Iwaniec-Kowalski]} and {\bf [Davenport: Multiplicative Number Theory]}. (see also the bibliography in these books.)  Many ways of seeing  the explicit relationship are given in  Chapter 5  of {\bf [I-K]}. For  example, consider Exercise 5 on page 109.
+\bibnote{The theoretical story behind the phenomena that we have seen graphically in this chapter is yet another manifestation of Riemann's explicit formula.  Modern references for this  are  {\bf [Iwaniec-Kowalski]} and {\bf [Davenport: Multiplicative Number Theory]}. (see also the bibliography in these books.)  Many ways of seeing  the explicit relationship are given in  Chapter 5  of {\bf [I-K]}. For  example, consider Exercise 5 on page 109.
   
 $$\sum_{\rho}{\hat \phi}(\rho) = -\sum_{n \ge 1}\Lambda(n)\phi(n) + I(\phi),$$
   
@@ -3147,14 +3197,14 @@ $$
    C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}), 
 $$
 where $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$, etc.,
-are the spectrum of the prime numbers.\endnote{ People who know that
+are the spectrum of the prime numbers \bibnote{ People who know that
   these correction terms are index by the nontrivial zeroes of the
   Riemann zeta-function may well ask how I propose to order them if RH
   is false; the following prescription will do: order them in terms of
   (the absolute value of) their imaginary part, and in the unlikely
   situation that there is more than one zero with the same imaginary
   part, order zeroes of the same imaginary part by their real parts,
-  going from right to left.}
+  going from right to left.}.
 
 Riemann provided an extraordinary recipe that allows us to work
 out the harmonics, $$C_1(X),\quad C_2(X),\quad C_3(X),\quad \dots$$ without our having
@@ -3447,19 +3497,16 @@ etc.]]
 
 \backmatter
 
-\chapter{Endnotes}
-\theendnotes
-\vfill
-\mbox{}
-
 
 %\eject
 %\addcontentsline{toc}{chapter}{Index}
 %\printindex
 
+%\label{lastpage}
 
 
-\label{lastpage}
+\bibliography{biblio}
+
 
 \end{document}
    
