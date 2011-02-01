@@ -3,9 +3,11 @@
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
 
+\usepackage{soul}
 \bibliographystyle{amsplain}
 
 \usepackage{float}
+\usepackage{tikz}
 
 \usepackage{wrapfig}
 
@@ -654,7 +656,7 @@ other multiples.  Repeat this pattern until all the numbers in our
 sequence are either circled, or crossed out, the circled ones being
 the primes.
 
-
+\includegraphics[width=\textwidth]{illustrations/circled_primes}
 
 In Figures~\ref{fig:erat2}--\ref{fig:erat2357} we use the primes $2$,
 $3$, $5$, and finally $7$ to sieve out the primes up to 100, where instead of
@@ -770,11 +772,12 @@ examples that  provide further motivation.
 Let us, for variety, dice the question differently by concentrating on
 the {\em gaps} between one prime and the next, rather than the tally
 of all primes. Of course, it is no fun at all to try to guess how many
-pairs of primes $p, q$ there are with gap $q-p$ equal to to a fixed
-odd number.  The fun, though, begins in earnest if you ask for pairs
-of primes with difference equal to $2$ (these being called {\em twin
-  primes}) for it has long been guessed that there are infinitely many
-such pairs of primes, but no one has been able to prove this yet.
+pairs of primes $p, q$ there are with gap $q-p$ equal to a fixed odd
+number, since the difference of two odd numbers is even.  The fun,
+though, begins in earnest if you ask for pairs of primes with
+difference equal to $2$ (these being called {\em twin primes}) for it
+has long been guessed that there are infinitely many such pairs of
+primes, but no one has been able to prove this yet.
 
 \begin{quote} The largest known twin primes are 
 $$65516468355\cdot 2^{333333} \pm 1$$
@@ -841,11 +844,15 @@ numbers that we do not know the answer to:
   
 \begin{quote}
   Challenge: As $X$ tends to infinity which of $\Gap_2(X), \Gap_4(X),
-  \Gap_6(X),$ or $\Gap_8(X)$ do you think that will grow faster? How
+  \Gap_6(X),$ or $\Gap_8(X)$ do you think will grow faster? How
   much would you bet on the truth of your guess? \bibnote{%
     Hardy and Littlewood give a nice conjectural answer to such
     questions about gaps between primes.  See Problem {\bf A8} of
-    Guy's book {\em Unsolved Problems in Number Theory}, 2004.}
+    Guy's book {\em Unsolved Problems in Number Theory} (2004).
+Note that Guy's book discusses counting the number $P_k(X)$ of pairs of 
+primes up to $X$ that differ by a fixed even number $k$; we have
+$P_k(X)\geq \Gap_k(X)$, since for $P_k(X)$ there is no requirement
+that the pairs of primes be consecutive.}
 \end{quote}
   
 
@@ -873,18 +880,31 @@ product of {\em an even number of} primes; and a {\bf multiplicatively
   number of} primes.  So, any prime is multiplicatively odd, the
 number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
 3$, $9=3\cdot 3$, and $10= 2\cdot 5$; but $12=2\cdot 2\cdot 4$ is
-multiplicatively odd.  Table~\ref{tab:evenodddata} gives some data:
+multiplicatively odd.   Below we list the numbers up to 25, and underline
+and bold  the multiplicatively odd numbers.
+\begin{center}
+1\, {\bf \underline{2}}\, {\bf \underline{3}}\, 4\, {\bf
+\underline{5}}\, 6\, {\bf \underline{7}}\, {\bf \underline{8}}\, 9\,
+10\, {\bf \underline{11}}\, {\bf \underline{12}}\, {\bf
+\underline{13}}\, 14\, 15\, 16\, {\bf \underline{17}}\, {\bf
+\underline{18}}\, {\bf \underline{19}}\, {\bf \underline{20}}\, 21\,
+22\, {\bf \underline{23}}\, 24\, 25
+\end{center}
+
+  
+ Table~\ref{tab:evenodddata} gives some data:
    
-  \begin{table}[H] \caption{Count of multiplicatively even and odd positive numbers $\le X$\label{tab:evenodddata}}
+ \begin{table}[H] \caption{Count of multiplicatively odd and
+    multiplicatively even positive numbers $\le X$\label{tab:evenodddata}}
 \vspace{1ex}
 \centering
  {\small
-\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
+\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
 \hline
-$X$ & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16  \\ \hline
-Mult. even & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hline
-Mult. odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
-\end{tabular}}
+$X$ & 1 & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16  \\ \hline\hline
+m. odd & 0 & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
+m. even & 1 & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hline
+\end{tabular}} 
 \end{table}
 
   
@@ -895,26 +915,26 @@ Mult. odd & 1 & 2 & 2 & 3  & 3 & 4 & 5 & 5 & 5 & 6 & 7 & 8 & 8 & 8 & 8 \\ \hline
      multiplicatively odd ones?}
 
    Each plot in Figure~\ref{fig:liouville} gives the number of
-   multiplicatively even numbers between $2$ and $X$ minus the number
-   of multiplicatively odd numbers between $2$ and $X$, for $X$ equal
+   multiplicatively odd numbers between $2$ and $X$ minus the number
+   of multiplicatively even numbers between $2$ and $X$, for $X$ equal
    to 10, 100, 1000, 10000, 100000, and 1000000. The above question
    asks whether these graphs would, for sufficiently large $X$, ever
-   cross the $x$-axis.
+   cross the $X$-axis.
 
  \begin{figure}[H]
 \centering
-\includegraphics[width=.4\textwidth]{illustrations/liouville-10}
+\includegraphics[width=.4\textwidth]{illustrations/liouville-17}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-100}\\
 \includegraphics[width=.4\textwidth]{illustrations/liouville-1000}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-10000}\\
 \includegraphics[width=.4\textwidth]{illustrations/liouville-100000}
 \includegraphics[width=.4\textwidth]{illustrations/liouville-1000000}\\
 \caption{Racing Multiplicatively Even and Odd Numbers.\label{fig:liouville}}
-\end{figure}
+\end{figure} 
   
 A {\em negative} response to this question---i.e., a proof that any
-plot as drawn in Figure~\ref{fig:liouville} stays below the $X$
-axis---would imply the Riemann Hypothesis!  In contrast to the list of
+plot as drawn in Figure~\ref{fig:liouville} never crosses 
+the $X$-axis---would imply the Riemann Hypothesis!  In contrast to the list of
 previous questions, the answer to this question is known (see \bibnote{For more
   details, see P.~Borwein, {\em Sign changes in sums of the Liouville
     Function} and the nice short paper of Norbert Wiener {\em Notes on
@@ -933,7 +953,8 @@ numbers is $X=906,150,257$).
 %    \includegraphics[width=0.2\textwidth]{illustrations/questions}
 %\end{wrapfigure}
 These are questions that have been asked about primes (and we could
-give bushels more), questions expressible in simple vocabulary, that
+give bushels more as is done in \bibnote{Richard Guy's book {\em Unsolved Problems in Number Theory} (2004).}), 
+questions expressible in simple vocabulary, that
 we can't answer today. We have been studying numbers for over two
 millenia and yet we are indeed in the infancy of our understanding.
 
@@ -961,7 +982,7 @@ There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $X$ up to $1000$ (left) and $10000$ (right)}
+\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $X$ up to $1,\!000$ (left) and $10,\!000$ (right)}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10,000,000,000 (so we might say that the chances are down to roughly
@@ -969,9 +990,9 @@ $1$ in $22$).
 
 Primes, then, seem to be thinning out.  We return to the sifting process
 we carried out earlier, and take a look at a few graphs, to get a sense of why
-that might be so. There are a hundred numbers less than or equal to
+that might be so. There are a $100$ numbers less than or equal to
 $100$, a thousand numbers less than or equal to $1000$, etc.: the
-shaded bar graph in Figure~\ref{fig:sieve_2_100} that looks like a regular staircase, each step the
+shaded graph in Figure~\ref{fig:sieve_2_100} that looks like a regular staircase, each step the
 same length as each riser, climbing up at, so to speak, a 45 degree
 angle, counts all numbers up to and including~$X$.
 
