@@ -4,7 +4,6 @@
 
 
 \usepackage{soul}
-\bibliographystyle{amsplain}
 
 \usepackage{float}
 \usepackage{tikz}
@@ -171,8 +170,9 @@ January 26, 2011 Draft\\
 }
 
 \usepackage{notes2bib}
+\bibliographystyle{amsplain}
 
-\usepackage[hypertex]{hyperref}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -196,6 +196,7 @@ mathematics and the reward of \$1,000,000 of {\em Clay Mathematics
   Institute} prize money awaits the person who solves it. But---with
 or without money---its resolution is crucial for our understanding of
 the nature of numbers.
+
 
 There are at least four full-length books recently published, written
 for a general audience, that have the \RH{} as their main
@@ -633,7 +634,6 @@ the largest prime number since there are infinitely many primes, e.g.,
 the next prime $q$ after $p$ is a prime.  But there is no known way
 to efficiently compute anything interesting about $q$.  For example,
 what is the last digit of $q$ in its decimal expansion?
-
 
 
 %\ill{sieve_boxes_100}{0.7}{Sieve of Eratosthenes\label{fig:erat}}
@@ -2877,6 +2877,23 @@ facts about this $\Phi(t)$, a distribution that contains full
 information about the placement of prime numbers among all numbers.
 
 
+\chapter{Trigonometric series} 
+   Given our interest in the ideas of Fourier, it is not surprising that we'll want to deal with things like $$F(t) =  \sum_{k=1}^{\infty} a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending (strictly monotonically) to infinity.  These we'll just call {\bf trigonometric series} without asking whether they converge in any sense for all values of $t$, or even for {\it any} value of $t$. The $s_k$'s that occur in such a trigonometric series we will call the {\bf spectral values} or for short, the {\bf spectrum} of the series, and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that we impose no convergence requirements at all. But we also think of these things as providing ``cutoff" finite trigonometric sums, which we think of as functions of two variables, $t$ and $N$ (the ``cutoff") where $$F(t,N): =   \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$ 
+    \vskip20pt 
+    {\bf Smoothing out these trigonometric series:}  To see their behavior more clearly we will sometime want to perform what might be  called a {\bf Cesaro smoothing} on them. By this we just mean we just mean replacing  $F(t,N)$ by the function of two variables ($t$ and $N$)  $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
+   
+   
+{\bf Spike values of trigonometric series:} \begin{definition} Say that a function $H(t,N)$ has a {\bf spike} at the real number $t_o \in {\bf R}$  if the set of absolute values $$|H(t_0,1)|, \ \  |H(t_0,2)|,\ \   |H(t_0,3)|,\ \   \cdots,\ \  |H(t_0,N)|,\ \   \cdots$$ is unbounded. 
+ A real number $t_o \in {\bf R}$ is, in contrast, a {\bf non-spike} if those values admit a finite upper bound. \end{definition}
+  \vskip10pt
+The particular trigonometric sums we are most interested in are going to be particularly nice. Under the assumption of the Riemann Hypothesis, either they or their Cesaro smoothing will have the property that the set of their spike values is a {\it discrete} subset of the real line,  $$t_1, t_2, t_3, \dots, t_k, \dots$$. 
+ 
+\vskip10pt
+
+We should note, in passing, that the set of spike values of a function  $F(t,N)$ is {\it contained in}{\footnote{but not necessarily equal to}} the the set of spike values of its Cesaro smoothing  $G(t,N)$.
+
+{\bf [[TODO: Is the footnote backwards?   I think the set of spike values of the Cesaro smoothing of a function is contained in the set spike values of the function, because if a sequence is bounded, then the sequence of averages is also bounded, but not conversely.]]}
+
 
 \chapter{Going from the primes to the spectrum}
 
@@ -3254,7 +3271,114 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 
 \part{Back to Riemann\label{part4}}
 
-\chapter[The Riemann Zeta-Function]{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version)}
+\chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its spectrum}
+In the previous chapters we have described---using Riemann's Hypothesis---how to obtain the {\it spectrum}  $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of primes, and hinted at how to go back. Roughly speaking, we were performing ``Fourier transformations" to make this transit. But Riemann, on the very first page of his 1859 memoir, construes the relationship we have been discussing, between spectrum and staircase, in a even more profound  way.
+
+To talk about this extraordinary insight of Riemann, one would need to do two things that might seem remote from our topic, given our discussion so far.
+
+ \begin{itemize} \item We will discuss a key idea that Leonhard Euler had (circa 1740).
+ \item To follow the evolution of this idea in the hands of Riemann, we would have to assume familiarity with basic complex analysis.
+ \end{itemize}
+ 
+ We will say only a few words here about this, in hopes of  giving at least a shred of a hint of how marvelous Riemann's idea is. For readers who wish to pursue it further, here is a list of  sources, that are our favorites among those meant to be read by a somewhat broader audience than people very advanced in the subject. We list them in order of ``required background."
+ 
+ \begin{enumerate} 
+\item John  Derbyshire's {\it Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics}.  We have already mentioned this book  in our introduction {\bf [[though not by name]]}, but feel that it is so good, that it is worth a second mention here. See specifically: $\dots$
+ \item The Wikipedia entry for Riemann's Zeta Function  (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function})  It is difficult to summarize who wrote this, but we feel that it is a gift to the community in its clarity. Thanks authors!
+ \item Enrico Bombieri's article \bibnote{Bombieri, {\em The Riemann Hypothesis}, available at \url{http://www.claymath.org/millennium/Riemann_Hypothesis/riemann.pdf}}.  To comprehend all ten pages of this excellent and fairly thorough account may require significant background, but try your hand at it; no matter where you stop, you will have seen good things in what you have read.
+\end{enumerate}
+\vskip20pt
+{\bf Leonhardt Euler's idea ($\simeq$1740):}
+
+As readers of Jacob Bernoulli's {\it Ars Conjectandi} (or of the works of John Wallis) know, there was already a rich mathematical theory of finite sums of (non-negative $k$-th powers) of consecutive integers.  This sum, $$S_k(N) = 1^k+2^k+3^k+\cdots +N^k,$$  is a is a
+polynomial in $N$ of degree $k+1$ with no constant term, a leading term equal to ${1\over
+k+1}N^{k+1}$, and a famous linear term.   The coefficient of the linear term of the polynomial $S_k(N)$ is the {\it Bernoulli number}
+$B_{k}$:
+\begin{align*}
+S_1(n) &= 1+2+3+ \dots + (n-1) \ = \ {n(n-1)\over 2}  \ = \  {n^2\over 2}\ -\  {1\over 2}\cdot n,\\
+S_2(n) &= 1^2+2^2+3^2+ \dots + (n-1)^2 \ = \   {n^3\over 3} +\cdots -\ {1\over 6}\cdot n,\\
+S_3(n) &= 1^3+2^3+3^3+ \dots + (n-1)^3 \ = \  {n^4\over 4} +\cdots  -\ 0\cdot n,\\
+S_4(n) &= 1^4+2^4+3^4+ \dots + (n-1)^4 \ = \  {n^5\over 5} +\cdots  -\ {1\over 30}\cdot n,
+\end{align*}
+etc.   
+For odd integers $k
+> 1$ this linear term vanishes.  For even integers $2k$ the  Bernoulli number
+$B_{2k}$ is the rational number given by the coefficient of ${x^{2k}\over {2k}!}$ in the power series expansion 
+\    \newline \bigskip \     \newline
+$${x\over e^x-1} \ = \  1 - {x\over 2} +  \sum_{k=1}^{\infty}
+(-1)^{k+1}B_{2k}{x^{2k}\over {2k}!}.$$
+\    \newline \bigskip \     \newline
+So
+  $$ B_2 = {1\over 6},\ \ \ \ \ \ \ \   B_4 = {1\over 30},\ \ \ \ \ \ \ \   B_6 = {1\over 42},\ \ \ \ \ \ \
+\   B_8 = {1\over 30},$$ and to convince you that the numerator of these numbers is not always $1$, here are
+a few more: 
+$$B_{10} = {5\over 66},\ \ \ \ \ \ \ \   B_{12}= {691\over 2730},\ \ \ \ \ \ \ \  B_{14} = {7\over 6}.$$
+\    \newline \bigskip \     \newline 
+  If you turn attention to sums of negative $k$-th powers of consecutive integers, then when $k= -1$,   $$S_{-1}(N)= {\frac{1}{1}}+ {\frac{1}{2}}+ {\frac{1}{3}}+ \cdots {\frac{1}{N}}$$  tends to infinity like $\log(N)$, but for $k < -1$ we are facing the sum of reciprocals of powers (of exponent $>1$)  of consecutive whole numbers, and $S_k(N)$ converges. This is the first appearance of the zeta function $\zeta(s)$ for arguments $s=2,3,4,\dots$  So let us denote these limits by notation that has been standard, after Riemann:
+   
+$$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$  
+  The striking reformulation that Euler discovered  was the expression of this infinite sum as an infinite product of factors associated to the prime numbers:
+  $$\zeta(s)=\prod_{p \ {\rm prime}}{\frac{1}{\big(1-p^{-s}\big)}},$$  where the infinite sum on the right and the infinite product on the left both converge (and are equal) if $s > 1$. He also evaluated these sums at even positive integers, where---surprise---the Bernoulli numbers come in again; and they and $\pi$ play a combined, fascinating role:
+
+\begin{align*}
+\zeta(2) &= {\frac{1}{1^2}}+{\frac{1}{2^2}}+\cdots = \pi^2/6 \simeq 1.65\dots\\
+\zeta(4) &= {\frac{1}{1^4}}+{\frac{1}{2^4}}+\cdots = \pi^4/90\simeq 1.0823\dots
+\end{align*}
+and, in general,  
+  $$\zeta(2n) = {\frac{1}{1^{2n}}}+{\frac{1}{2^{2n}}}+\cdots \ \ \ = \ \ \ (-1)^{n+1}B_{2n}\pi^{2n}\cdot {\frac{2^{2n-1}}{2n!}}.$$
+
+ A side note to Euler's formulas comes from the fact (only known much later) that no power of $\pi$ is rational: do you see how to use this to give a  proof that there are infinitely many primes, combining Euler's infinite product expansion displayed above with  the formula for $\zeta(2)$, or with the formula for $\zeta(4)$, or, in fact, for  the formulas for $\zeta(2n)$ for {\it any} $n$ you choose?
+
+{\bf Pafnuty Lvovich Chebyshev's ($\simeq$1845):}  The second moment in the history of evolution of this function $\zeta(s)$ is when Chebyshev  used the {\it same formula} as above in the extended range where $s$ is allowed now to be a real variable---not just an integer--- greater than $1$.
+Making use of this extension of the range of definition of Euler's sum of reciprocals of powers  of consecutive whole numbers, Chebyshev could prove that for large $x$ the ratio of $\pi(x)$ and $x/\log(x)$ is bounded above and below by two explicitly given constants. He also proved that there exists a prime number in the inteval bounded by  $n$ and $2n$ for any positive integer $n$  (this was called {\it Bertrand's postulate}).\vskip20pt
+{\bf Riemann's idea (1859):}  It is in the third step of the   evolution of $\zeta(s)$ that something quite surprising happens. Riemann extended the range of Chebyshev's sum of reciprocals of positive real powers  of consecutive whole numbers allowing the argument $s$ to range over the entire complex plane $s$  (avoiding $s=1$).  Now this is a  more mysterious extension of Euler's function, and it is deeper in two ways:
+
+\begin{itemize} 
+\item The formula $$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$ does converge when the real part of the  exponent $s$ is greater than $1$ (i.e., this allows us to use the same formula, as Chebyshev had done, for the right upper half plane in the complex plane determined by the condition $s=x+iy$ with $x>1$ but not beyond this).  You can't simply use the same formula for the extension.\item So you must face the fact that if you wish to ``extend" a function beyond the natural range in which its defining  formula makes sense, there may be many ways of doing it. 
+\end{itemize}
+
+  To appreciate the second point, the theory of a complex variable is essential. The {\it uniqueness}  (but not yet the {\it existence}) of Riemann's extension of $\zeta(s)$ to the entire complex plane is guaranteed by the  phenomenon referred to as {\it analytic continuation}.  If you are given a function on any infinite subset $X$ of the complex plane that contains a limit point, and if you are looking for a  function on the entire complex plane{\footnote{ or to any connected open subset that contains $X$}} that is differentiable in the sense of complex analysis, there may be no functions at all that have that property, but if there is one, that function is {\it unique}.
+ But Riemann succeeded: he was indeed able to extend Euler's function to the entire complex plane except for the point $s=1$, thereby defining what we now call {\it Riemann's zeta function}.
+ \vskip20pt
+ 
+ Those ubiquitous Bernoulli numbers, by the way, reappear yet again as
+ values of this {\it extended} zeta function at negative integers:
+  
+  $$\zeta(-n) = -B_{n+1}/n+1$$ 
+  
+  so since the Bernoulli numbers indexed by odd integers $>1$ all vanish, the extended zeta function $\zeta(s)$ actually vanishes at {\it all} even integers. 
+  
+   The even integers $-2, -4, -6, \dots$ are often called the {\bf trivial zeroes} of the Riemann zeta function.   There are indeed other zeroes of zeta, and those other zeroes could---in no way---be dubbed ``trivial," as we shall shortly see.\vskip20pt
+  It is time to consider these facts:
+  
+\begin{enumerate}\item {\bf  Riemann's zeta function codes the placement of prime powers among all numbers}  The key here is to take logarithm and then the derivative of $\zeta(s)$  (this boils down to forming ${\frac{d{\zeta}}{ds}}(s)/\zeta(s)$). Assuming that the real part of $s$ is $>1$, taking the logarithm of $\zeta(s)$ ---using Euler's infinite product formulation---gives us $$\log\zeta(s)= \sum_{p \ {\rm prime}}-\log{\big(1-p^{-s}\big)},$$ and we can do this term-by-term, since the real part of $s$ is $>1$.  Then taking the derivative gives us:
+   \vskip20pt
+
+{\bf [[TODO: put in log deriv of zeta]]}
+%$$ {\frac{d{\zeta}}{ds}}(s)/\zeta(s)=-\sum_{p \ {\rm prime}}\log(p)p^{-s}.$$  For any particular $s$ this is an infinite sum which tallies the primes  $p$, each weighted by the quantity  $\log(p)p^{-s}$ and is absolutely convergent if the real part of $s$ is $>1$.   % note : this forgets the prime powers.
+
+ \vskip20pt
+\item {\bf  You know lots about a function if you know its zeroes and poles}  This is certainly true, for example for polynomials, or even rational functions: if someone told you, for example, that a certain function $f(s)$ vanishes to order $1$ at $0$ and  at $\infty$; and that it has a double pole at $s=2$ and at all other points has finite nonzero values, then you can immediate say that this mystery function is a nonzero constant times $s/(s-2)^2$. 
+
+Knowing the zeroes and poles (in the complex plane) alone of the Riemann zeta function doesn't entirely pin it down---you have to know more about its behavior at infinity since---for example, multiplying a function by $e^z$ doesn't change the structure of its zeroes and poles in the finite plane.  but a complete understanding of the zeroes and poles of $\zeta(s)$ will  give all the information you need to pin down the placement of primes among all numbers. 
+
+  So here is the score: 
+  
+ \begin{itemize} \item As for poles, $\zeta(s)$ has only one pole. It is at $s=1$ and is of order $1$ ( a ``simple pole").\item As for zeroes, we have already mentioned the trivial zeroes (at negative even integers), but $\zeta(s)$ also has infinitely many {\it nontrivial} zeroes. These nontrivial zeroes are known to lie in the vertical strip $$0\ < \ {\rm real\ part\ of\ } s\ < \ 1.$$\end{itemize}
+ \end{enumerate}
+ And here is yet another equivalent statement of Riemann's Hypothesis---this being the formulation closest to the one given in his 1859 memoir:
+ 
+\begin{quote}{\it All the nontrivial zeroes of $\zeta(s)$  lie on the vertical line in the complex plane given by ${\rm real\ part\ of\ } s\ = {\frac{1}{2}},$ and these zeroes are none other than ${\frac{1}{2}}+i\theta_1,{\frac{1}{2}}+i\theta_2, {\frac{1}{2}}+i\theta_3,\dots,$ where $\theta_1, \theta_2, \theta_3, \dots$ comprise the spectrum of primes we talked about in the earlier chapters.}\end{quote}
+ The zeta function, then, is the vise, that so elegantly clamps together information about the placement of primes and their spectrum!  
+  
+  
+
+We can think of end-notes discussing the issue of convergence (which, for the moment is not addressed).
+\vskip20pt
+    
+
+
+\chapter[The Riemann Zeta-Function]{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version) -- to delete}
 
 Here we develop a tiny bit of the traditional route of exposition
   to the Riemann Hypothesis. Namely, in terms of the successive nontrivial {\em zeroes of
