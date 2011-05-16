@@ -2,7 +2,6 @@
 
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
-
 \usepackage{soul}
 
 \usepackage{float}
@@ -190,7 +189,6 @@ January 26, 2011 Draft\\
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 
 \chapter*{\label{foreword}Foreword}
-
 The \RH{} is one of the great unsolved problems of
 mathematics and the reward of \$1,000,000 of {\em Clay Mathematics
   Institute} prize money awaits the person who solves it. But---with
@@ -515,6 +513,77 @@ together: you will get their product $N = P\times Q$ with its hundreds of digits
 in about a microsecond. But present that number $N$ to any
 current desktop computer, and ask it to factor $N$, and the computer
 will (almost certainly) fail to do the task.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibnote{{\bf How not to factor the numerator of a Bernoulli number:}
+
+ In  Jacob Bernoulli's {\it Ars Conjectandi } (published posthumously, in 1713) a certain sequence of numbers, now called {\it Bernoulli Numbers}, was  introduced.  These numbers are now seen to be the key to deep phenomena in a great many different  mathematical fields. In {\it Ars Conjectandi } those numbers came up in the problem of giving a {\it closed form expression} for  the sum of consecutive integers, \vskip10pt  $$1+2+3+ \dots + (n-1) \ = \ {n(n-1)\over 2}  \ = \  {n^2\over 2}\ -\  {1\over 2}\cdot n,\hskip20pt {\rm and} $$ \vskip10pt  the sum of squares of consecutive integers, \vskip10pt $$ \ 1^2+2^2+3^2+ \dots + (n-1)^2 \ = \   {n^3\over 3} +\dots -\ {1\over 6}\cdot n,\hskip20pt {\rm and}$$ \vskip10pt the sum of consecutive cubes $$\ 1^3+2^3+3^3+ \dots + (n-1)^3 \ = \  {n^4\over 4} +\dots  -\ 0\cdot n,$$ \vskip10pt  and more generally, for any $k$, 
+the  sum of   $k$-th powers of consecutive integers.  As Bernoulli saw (and it was known even before his work) this sum $$ 1^k+2^k+3^k+ \dots + (n-1)^k$$ is a polynomial in $n$ of degree $k+1$ with no constant term, and leading term simply ${1\over k+1}n^{k+1}$.  Bernoulli concerned himself with the determination of the other coefficients of this polynomial. 
+
+For each $k$, the coefficient of the linear term of the polynomial $S_k(n)$ is (up to sign) the number $B_k$  that now bears his name. These numbers are rational numbers and, putting them in lowest terms, their numerators play a role in certain problems, and their denominators in others. (This is an amazing story, which we can't go into here!)
+
+ One of us (Barry Mazur) in the recent article {\em How can we construct abelian Galois extensions of basic number fields?} (see \url{http://www.ams.org/journals/bull/2011-48-02/S0273-0979-2011-01326-X/}) found himself  dealing (for various reasons) with the fraction $-B_{200}/400$, where $B_{200}$ is the two-hundredth Bernoulli number.   The numerator of this fraction is quite large: it is---hold your breath---\  $$389\cdot 691\cdot5370056528687 \ \ \ \  {\rm times\ this\ }204-{\rm digit \ number:}$$\vskip 10pt
+$N:=34526903293921580314641092817369674040684481568423967210129920642145194459192569$\newline$415445652760676623601087497272415557084252e765272786877636295951962087273561220060103$\newline$6506871681124610986596878180738901486527$\vskip 10pt  and he {\it incorrectly asserted} that it was prime.  Happily, Bartosz Naskr\c{e}cki spotted this error: our $204$-digit $N$ is {\it not} prime. 
+% Note, according to http://perso.telecom-paristech.fr/~cappe/local/latex/accents.pdf
+% the accent I get with \c{e} is ``NOTE: This is technically incorrect.  The accent should be reversed in orientation,
+% but there is currently no such accent in plain TEX or LATEX.''
+
+How did he know this?  By using the most basic test in the repertoire
+of tests that we have available to check to see whether a number is
+prime: we'll call it the ``{\bf Fermat $2$-test.}" We'll first give a
+general explanation of this type of test before we show how $N$ {\it
+  fails the Fermat $2$-test.}
+
+
+The starting idea behind this test is the famous result known as {\em
+  Fermat's Little Theorem} where the ``little'' is meant to
+alliteratively distinguish it from you-know-what.
+\begin{theorem}[Fermat's Little Theorem]  
+If $p$ is a prime number, and $a$ is any number relatively prime to $p$ then $a^{p-1} - 1$ is divisible by $p$. 
+\end{theorem}
+A good exercise is to try to prove this, and a one-word hint that might lead you to one of the many proofs of it is 
+{\em induction}.\footnote{Here's the proof:
+$$(N+1)^p \equiv N^p +1 \equiv (N+1),$$
+where the first equality is the binomial theorem and the second
+equality is induction.}
+ 
+ Now we are going to use this as a criterion, by---in effect---restating it in what logicians would call  its {\it contrapositive}:
+ \begin{theorem}[The Fermat $a$-test] 
+If $M$ is a positive integer, and $a$ is any number relatively prime to $M$ such that  $a^{M-1} - 1$ is {\it not} divisible by $M$, then $M$ is {\it not} a prime. 
+\end{theorem}
+
+Well, Naskr\c{e}cki computed $2^{N-1}-1$  (for the $204$-digit $N$ above)   and saw that 
+it is {\it not} divisible by $N$.{\footnote{and has a residue of $3334581100595953025153969739282790317394606677381970645616725285996925
+66100005682$\newline$92727335792620957159782739813115005451450864072425835484898
+5651127636929707992693354028195076056916221$\newline$73717318335512037458$ after division by $N$.}}  
+Ergo, our $N$ fails the  Fermat $2$-test so is {\it not} prime. 
+
+But then, given that it is so ``easy'' to see that $N$ is not prime, a
+natural question to ask is: what, in fact, is its prime factorization?
+This---it turns out---isn't so easy to determined, and---to
+date---has not been determined (at least by us).
+Naskr\c{e}cki devoted $24$ hours of computer time setting standard factorization
+algorithms on the task, and that was not sufficient time to resolve
+the issue.  The factorization of the numerators of general Bernoulli
+numbers is the subject of a very interesting web site of Samuel
+Wagstaff (\url{http://homes.cerias.purdue.edu/~ssw/bernoulli}).
+Linked to this web page one finds
+(\url{http://homes.cerias.purdue.edu/~ssw/bernoulli/composite}) which gives
+a list of composite numbers whose factorizations have resisted all
+attempts to date.  The two-hundredth Bernoulli number is 12th on the list.
+
+Finally, we note that there with sufficient motivation we believe it
+would be possible to factor $N$.  The page
+\url{http://en.wikipedia.org/wiki/Integer_factorization_records} lists
+record challenge factorization, and one challenge that was completed
+in 2009 involves a difficult-to-factor number with 232 digits; its
+factorization was completed by a large team of researchers and took around
+2000 years of CPU time.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 %We illustrate this in Sage:
 % \begin{lstlisting}[]
 % sage: n = ZZ.random_element(10^500)
@@ -1173,7 +1242,7 @@ speed up calculations, since logarithms translate difficult multiplication
 problems into easier addition problems which can be done mechanically.
 Such calculations use that the logarithm of a product is the sum of the logarithms
 of the factors; that is, $\log(XY) = \log(X) + \log(Y)$. 
-%FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES "
+%FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÃ‘GAUSSÃ• TABLES "
 
 % From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
 \ill{slide_rule}{.8}{A slide rule  computes $2X$ by using that $\log(2X)=\log(2)+\log(X)$\label{fig:slide_rule}}
@@ -3482,10 +3551,104 @@ coventional terminology that we restrained
 
 \part{Epilogue\label{part5}}
 
-\chapter{Theoretical Chapter proving that RH implies our formula,
-  etc.   No holds bared}
+\chapter{Epilogue: companions to the zeta function}
+ 
+Our book, so far, has been exclusively about Riemann's $\zeta(s)$ and
+its zeroes. We have been discussing how the (placement of) the zeroes
+of $\zeta(s)$ in the complex plane contains the information needed to
+understand the (placement of) the primes in the set of all whole
+numbers; and conversely.
+  
+It would be wrong---we think---if we don't even mention that
+$\zeta(s)$ fits into a broad family of similar functions (it is
+standard to call them $L$-{\it functions}).  These $L$-functions, and
+certain finite product or quotients of them, play roles analogous to
+Riemann's zeta, for other problems in number theory.
+  
+For example, for every {\it quadratic number field} $K:={\bf Q}({\sqrt
+  d})$, there is a corresponding ``$L$-function" $L(K,s)$ with an
+expansion of the form $$L(K,s)= \sum_{N=1}^{\infty} a_n(K)\cdot
+n^{-s}$$ convergent for complex numbers $s$ with real part $> 1$---and
+where the coefficients $a_n(K)$ are either $0$ or $\pm 1$.  The
+product $\zeta(s)\cdot L(K,s)$ is called the {\it zeta function of
+  $K$} and is sometimes denoted $\zeta_K(s)$ to distinguish it from
+the Riemann zeta-function.  The ``nontrivial zeroes" of $\zeta_K(s)$
+contains the information needed to understand the (placement of) the
+norms of prime ideals of the ring of integers of $K$.
+   
+For a more explicit example, take the field of {\it Gaussian numbers}
+ $$
+   K = {\bf Q}(i) = \{ a+bi\ | \ a,b \in  {\bf Z}\}.
+$$  
+Here the $n$-th coefficient $a_n({\bf Q}(i))$ of $\zeta_K(s)$ is $\pm
+1$ according as $n$ has a remainder of $\pm 1$ after division by $4$;
+and is $0$ if $n$ is even.
+   
+For this field, $K = {\bf Q}(i)$, the placement of the {\it zeroes} of
+$\zeta_K(s)=\zeta(s)\cdot L({\bf Q}(i),s)$ in the complex plane give
+us complete information about placement of Gaussian primes in the set
+of all Gaussian integers. Here is a plot of a large number of Gaussian
+primes as they display themselves amongst complex numbers:
+   
+\noindent{\bf William:  Possibly a picture of the primes in the Gaussian integers.  Here is an example: \newline http://en.wikipedia.org/wiki/File:Gauss-primes-768x768.png}
 
-\chapter{Computing}
+\ill{gaussian_staircase_14}{.8}{Staircase of Gaussian primes of norm up to 14}
+\ill{gaussian_staircase_100}{.8}{Staircase of Gaussian primes of norm up to 100}
+\ill{gaussian_staircase_1000}{.8}{Staircase of Gaussian primes of norm up to 1000}
+\ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000}
+
+  
+But a similar thing is true for every number field. And, more
+miraculous, it seems as if the ``nontrivial zeroes" of $L$-functions
+associated to {\it every} number field all have the property that
+their real part is equal to ${\frac{1}{2}}$.  This statement, still
+unproved for even any {\it one} of these $L$-functions{\footnote{ or
+    for much the more generous collection of $L$-functions associated
+    to algebraic varieties over number fields, or to automorphic forms
+    for reductive groups}} is called the ``Grand Riemann Hypothesis."
+  
+  
+Here is a picture of the first $A$ zeroes of the $L$-functions of the
+first $B$ quadratic fields, arranged along the $x$-axis by increasing
+conductor, and---as experts will have guessed by the relative
+``horizontality" of the $n$-th zero for all these $L$-functions
+($n=1,2,\dots, A$)----the $y$-axis has been scaled by a (smooth)
+factor dependent upon the conductor so as to allow for all the``lowest
+zeroes" of the $L$-functions of these quadratic fields to have a
+chance of appearing roughly horizontal, as well as the ``second lowest
+zeroes" etc.  That they do appear roughly horizontal shows that these
+$L$-functions have---in some statistical sense---a kind of kinship.
+\vskip10pt
+   
+\noindent{\bf William:  Possibly your multi-colored picture of the zeroes of the various $L$-functions, labeled.}
+     
+In all of these cases, and for all the nontrivial zeroes of these
+$L$-functions that have actually been computed, these zeroes {\it do
+  have} real part equal to ${\frac{1}{2}}$; that is, they are all
+conforming---so far---to the ``Grand Riemann Hypotheses."
+     
+     
+Is this a reason to actually {\it believe} the Grand Riemann
+Hypothesis? I.e., that so many $L$-functions, for as far as we have at
+present computed their zeroes, conform to the hypothesis(?)
+     
+One further type of analogy gives even more evidence: for any system
+of polynomials in a fixed number of variables (with integer
+coefficients, say) and for each prime number $p$ there are
+``zeta-type" functions that contain all the information needed to
+count the number of simultaneous solutions in finite fields of
+characteristic $p$.  That such counts can be well-approximated with a
+neatly small error term is related to the placement of the zeroes of
+these ``zeta-type" functions. There is then a ``Riemann Hypothesis"
+that prescribes precise conditions on the real parts of their
+zeroes---this prescription being called the ``Riemann Hypothesis for
+function fields." Now the beauty of this analogous hypothesis is that
+it has, in fact, been proved! (See $C$.)
+      
+Is this yet another reason to believe the Grand Riemann Hypothesis?
+
+
+\chapter{Epilogue: Computing}
 
 All of the computations for this book were done using Sage, which is a
 free open source matheamtical software package
