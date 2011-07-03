@@ -516,10 +516,15 @@ will (almost certainly) fail to do the task.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibnote{{\bf How not to factor the numerator of a Bernoulli number:}
 
- In  Jacob Bernoulli's {\it Ars Conjectandi } (published posthumously, in 1713) a certain sequence of numbers, now called {\it Bernoulli Numbers}, was  introduced.  These numbers are now seen to be the key to deep phenomena in a great many different  mathematical fields. In {\it Ars Conjectandi } those numbers came up in the problem of giving a {\it closed form expression} for  the sum of consecutive integers, \vskip10pt  $$1+2+3+ \dots + (n-1) \ = \ {n(n-1)\over 2}  \ = \  {n^2\over 2}\ -\  {1\over 2}\cdot n,\hskip20pt {\rm and} $$ \vskip10pt  the sum of squares of consecutive integers, \vskip10pt $$ \ 1^2+2^2+3^2+ \dots + (n-1)^2 \ = \   {n^3\over 3} +\dots -\ {1\over 6}\cdot n,\hskip20pt {\rm and}$$ \vskip10pt the sum of consecutive cubes $$\ 1^3+2^3+3^3+ \dots + (n-1)^3 \ = \  {n^4\over 4} +\dots  -\ 0\cdot n,$$ \vskip10pt  and more generally, for any $k$, 
-the  sum of   $k$-th powers of consecutive integers.  As Bernoulli saw (and it was known even before his work) this sum $$ 1^k+2^k+3^k+ \dots + (n-1)^k$$ is a polynomial in $n$ of degree $k+1$ with no constant term, and leading term simply ${1\over k+1}n^{k+1}$.  Bernoulli concerned himself with the determination of the other coefficients of this polynomial. 
-
-For each $k$, the coefficient of the linear term of the polynomial $S_k(n)$ is (up to sign) the number $B_k$  that now bears his name. These numbers are rational numbers and, putting them in lowest terms, their numerators play a role in certain problems, and their denominators in others. (This is an amazing story, which we can't go into here!)
+As mentioned in Chapter~\ref{ch:envision}, the coefficient $B_k$ of the linear
+term of the polynomial
+$$
+S_k(n)= 1^k+2^k+3^k+\dots +(n-1)^k
+$$
+is (up to sign) the $k$-th {\bf Bernoulli number}.  These numbers are
+rational numbers and, putting them in lowest terms, their numerators
+play a role in certain problems, and their denominators in
+others. (This is an amazing story, which we can't go into here!)
 
  One of us (Barry Mazur) in the recent article {\em How can we construct abelian Galois extensions of basic number fields?} (see \url{http://www.ams.org/journals/bull/2011-48-02/S0273-0979-2011-01326-X/}) found himself  dealing (for various reasons) with the fraction $-B_{200}/400$, where $B_{200}$ is the two-hundredth Bernoulli number.   The numerator of this fraction is quite large: it is---hold your breath---\  $$389\cdot 691\cdot5370056528687 \ \ \ \  {\rm times\ this\ }204-{\rm digit \ number:}$$\vskip 10pt
 $N:=34526903293921580314641092817369674040684481568423967210129920642145194459192569$\newline$415445652760676623601087497272415557084252e765272786877636295951962087273561220060103$\newline$6506871681124610986596878180738901486527$\vskip 10pt  and he {\it incorrectly asserted} that it was prime.  Happily, Bartosz Naskr\c{e}cki spotted this error: our $204$-digit $N$ is {\it not} prime. 
@@ -1241,7 +1246,7 @@ Before electronic calculators, logarithms were frequently used to
 speed up calculations, since logarithms translate difficult multiplication
 problems into easier addition problems which can be done mechanically.
 Such calculations use that the logarithm of a product is the sum of the logarithms
-of the factors; that is, $\log(XY) = \log(X) + \log(Y)$. 
+of the factors; that is, $$\log(X\cdot Y) = \log(X) + \log(Y).$$ 
 %FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES "
 
 % From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
@@ -1258,7 +1263,7 @@ $\log(X)$ to $\log(Y)$ giving $\log(XY)$.
 % I found this here: http://kr.blog.yahoo.com/kimxx168/498
 % It is referenced in http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html
 % but that link is broken.
-\ill{gauss_tables_half}{.9}{Gauss's Letter (see Endnote~\ref{end:gauss_letter} for an English translation)\label{fig:gauss_letter}}
+\ill{gauss_tables_half}{.9}{A Letter of Gauss\label{fig:gauss_letter}}
 
 {\bf [[Actually the endnote is a translation of something related, but not
 of the actual German in the figure above.]]}
@@ -1269,38 +1274,8 @@ Years later, in a letter
 written in 1849 (see Figure~\ref{fig:gauss_letter}), Gauss
 claimed that as early as 1792 or 1793 he had already observed that the
 density of prime numbers over intervals of numbers of a given rough
-magnitude $X$ seemed to average $1/\log(X)$
-(see \bibnote{\label{end:gauss_letter}
-The following is an English translation of Gauss's letter (Figure~\ref{fig:gauss_letter}), taken from 
-\url{http://www.ams.org/bull/2006-43-01/S0273-0979-05-01096-7/home.html}.
+magnitude $X$ seemed to average $1/\log(X)$.
 
-\begin{quote}
-``My distinguished friend, 
-
-Your remarks concerning the frequency of primes were of interest to me in more 
-ways than one. You have reminded me of my own endeavors in this field which 
-began in the very distant past, in 1792 or 1793, after I had acquired the Lambert 
-supplements to the logarithmic tables. Even before I had begun my more detailed 
-investigations into higher arithmetic, one of my first projects was to turn my 
-attention to the decreasing frequency of primes, to which end I counted the primes in 
-several chiliads and recorded the results on the attached white pages. I soon recognized 
-that behind all of its fluctuations, this frequency is on the average inversely 
-proportional to the logarithm, so that the number of primes below a given bound $n$ 
-is approximately equal to 
-$$
-\int \frac{dn}{\log(n)},
-$$
-where the logarithm is understood to be hyperbolic. Later on, when I became acquainted 
-with the list in Vega's tables (1796) going up to 400,031, I extended my 
-computation further, confirming that estimate. In 1811, the appearance of Chernau's 
-cribrum gave me much pleasure and I have frequently (since I lack the patience 
-for a continuous count) spent an idle quarter of an hour to count another chiliad 
-here and there; although I eventually gave it up without quite getting through a 
-million. Only some time later did I make use of the diligence of Goldschmidt to 
-fill some of the remaining gaps in the first million and to continue the computation 
-according to Burkhardt's tables. Thus (for many years now) the first three million 
-have been counted and checked against the integral. A small excerpt follows: ....''
-\end{quote}}).
  Very {\em very} roughly speaking, this
 means that {\em the number of primes up to $X$ is approximately $X$ divided by
 twice the number of digits of $X$}.  For example,
@@ -1427,18 +1402,18 @@ half the digits are correct.
   Imagine that the devil had the idea of saddling a large committee of
   people with the task of finding values of $\pi(X)$ for various large
   numbers $X$.  This he did in the following manner, having already
-  worked out which numbers are prime 
-  himself. Since the devil is, as everyone knows, {\em into the
-    details,} he has made no mistakes: his work is entirely correct.
-  He gives each committee member a copy of the list of all {\em prime
-    numbers} between $1$ and one of the large numbers $X$ in which he
-  was interested.  Now each committee member would count the number of
-  primes by considering each number, in turn, on their list and
-  tallying them up, much like a canvasser counting votes. But since
-  they are human, they will indeed be making mistakes, say $0.001\%$
-  of the time.  Assume further that it is just as likely for them to
-  make the mistake of undercounting or overcounting.  If many people
-  are engaged in such pursuit, some of them might over-count $\pi(X)$;
+  worked out which numbers are prime himself. Since the devil is, as
+  everyone knows, {\em into the details,} he has made no mistakes: his
+  work is entirely correct.  He gives each committee member a copy of
+  the list of all {\em prime numbers} between $1$ and one of the large
+  numbers $X$ in which he was interested.  Now each committee member
+  would count the number of primes by doing nothing more than
+  considering each number, in turn, on their list and tallying them
+  up, much like a canvasser counting votes. But since they are human,
+  they will indeed be making mistakes, say $0.001\%$ of the time.
+  Assume further that it is just as likely for them to make the
+  mistake of undercounting or overcounting.  If many people are
+  engaged in such pursuit, some of them might over-count $\pi(X)$;
   some of them might under-count it. The average error (over-counted
   or undercounted) would be proportional to~${\sqrt X}$.
 
@@ -1583,10 +1558,10 @@ would be {\it much} more precise information than) the statement that
 the {\it ratio} $\Li(X)/\pi(X)$ tends to $1$, i.e., that $\Li(X)$ and
 $\pi(X)$ go to infinity at the same rate.
 
-This last statement gives, of course, a far less precise
-relationship between $\Li(X)$ and $\pi(X)$ than the \RH{}
-(once it is proved!) would give us.  The advantage, though, of the
-less precise statement is that it is known, and---in fact---has been
+This last statement gives, of course, a far less precise relationship
+between $\Li(X)$ and $\pi(X)$ than the \RH{} (once it is proved!)
+would give us.  The advantage, though, of the less precise statement
+is that it is currently known to be true, and---in fact---has been
 known for over a century. It goes under the name of
   
 
@@ -1603,8 +1578,6 @@ known for over a century. It goes under the name of
    This fact is a very hard-won piece of mathematics!  It was proved
    in 1896 independently by Hadamard and de la Vall\'{e}e Poussin.
 
-   {\bf William: here we can have more of a riff on PNT.}
-        
 
 A milestone in the history leading up to the proof of Prime
 Number Theorem is the earlier work of Chebyshev [ref***]
@@ -2048,14 +2021,15 @@ accurate finite approximations (cutoffs) of these infinite sums.
   with amplitudes that will be described below.  These graphs will
   have ``higher and higher peaks" concentrated more and more
   accurately at what we referred to as the {\it spectrum}, indicated
-  in our pictures below by the series of vertical red lines.
+  in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500})
+  by the series of vertical red lines.
  
 \item The second infinite trigonometric sum is a sum of pure cosine
   waves with frequencies given by the spectrum of primes and with
   amplitudes {\it all equal to $1$}.  These graphs will have ``higher
   and higher peaks" concentrated more and more accurately at the {\it
     logarithms of powers of primes,} indicated in our pictures below
-  by the series of vertical blue lines.
+  (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
 \end{enumerate}
  
 That the series of {\it blue lines} (i.e., the logarithms of powers of
@@ -2163,16 +2137,11 @@ Here, the peaks are even sharper, and note that again they are higher; that is, 
  $$ 
  where the summation is over the spectrum, $\theta=\theta_1, \theta_2,
  \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this
- infinite trigonometric sum, $$1+\sum_{\theta\ < C}\cos(\theta t)$$
+ infinite trigonometric sum, $${\hat \Phi}_{\le C}(\theta) = 1+\sum_{\theta\ \leq C}\cos(\theta t)$$
  and plot their graphs, over various ranges.
  
-{\bf William: Here we could simply collect some of the
-   marvelous graphs you tabulated---e.g.,the ones currently in chapter
-   24, and the new ones---without the $e^{-t/2}$ term---we really
-   don't need it, I think; the graphs will look just as good without
-   it. Here, of course, the vertical lines indicating the peaks at the
-   logs of prime powers should be blue. After this sequence of graphs,
-   we can write:}
+ \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
+ $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phihat}}
 \end{enumerate}
   
 This passage---thanks to the Riemann Hypothesis--- from spectrum to
@@ -2184,29 +2153,7 @@ of mysterious numbers we have called the spectrum, and reciprocally,
 the information given in that series of mysterious numbers is
 obtainable from the sequence of prime powers.
    
-We will go into this in slightly more detail in the later chapters,
-but for our readers of this Part I, we hope that the statement of the
-\RH{}---admittedly as elusive as before---has, at least, been
-expressed elegantly and more simply, given our new staircase that
-approximates (conjecturally with {\em essential square root accuracy})
-a 45 degree straight line.
-   
-We have offered two equivalent formulations of the \RH{},
-both having to do with the manner in which the prime numbers are
-situated among all whole numbers.
-
-In doing this, we hope that we have convinced you that---in the words
-of Don Zagier---primes seem to obey no other law than that of chance
-and yet exhibit stunning regularity.  This is the end of
-Part~\ref{part1} of our book, and is largely the end of our main
-mission, to explain---in elementary terms---{\em what is Riemann's
-  Hypothesis?}
-    
-     
-For readers who have at some point studied Differential Calculus, in
-Part~\ref{part2} we shall go further and explain how the pursuit of
-Riemann's hypothesis may provide a key to some deeper structure of the
-prime numbers, and to the nature of the laws that they obey.
+We will go into this in slightly more detail in the later chapters.
 
 \chapter{To our readers of Part~\ref{part1}} 
 The statement of the \RH{}---admittedly as elusive as
@@ -2260,7 +2207,7 @@ a {\it function} is, and what its {\it graph} is.
  this symbolization allows to ``substitute for $X$ any specific number
  $a$" to get its value $f(a)$.
 
- The {\bf graph} of a function is a vivid visual representation of the
+ The {\bf graph} of a function provides a vivid visual representation of the
  function in the Euclidean plane where over every point $a$ on the
  $x$-axis you plot a point above it of ``height" equal to the value of
  the function at $a$, i.e., $f(a)$. In Cartesian coordinates, then,
@@ -2276,16 +2223,17 @@ a {\it function} is, and what its {\it graph} is.
  that interest us.
 
 
- \ill{graph_slope_deriv}{0.7}{A function (blue), a slope at a point
-   (black straight line), and the derivative
-   (red).\label{fig:graph_slope_deriv}}
+ \ill{graph_slope_deriv}{0.7}{\label{fig:graph_slope_deriv}Calculus}
          
          
 
-
-Differential Calculus explains to us how to calculate slopes of graphs, and
-finally, shows us the power that we then have to answer problems we
-could not answer if we couldn't compute those slopes.  
+ Figure~\ref{fig:graph_slope_deriv} illustrates a function (blue), the
+ slope at a point (black straight line), and the derivative (red) of
+ the function; the red derivative is the function whose value at a point
+ is the slope of the blue function at that point.  Differential
+ Calculus explains to us how to calculate slopes of graphs, and
+ finally, shows us the power that we then have to answer problems we
+ could not answer if we couldn't compute those slopes.
 
 Usually, in elementary Calculus classes we are called upon to compute
 slopes only of smooth graphs, i.e., graphs that actually {\em have}
@@ -2299,13 +2247,16 @@ $$f(x) = \begin{cases}1 & x \leq 3\\ 2 & x > 3.\end{cases}$$
 
   
 The most comfortable way to deal with the graph of such a function is
-to just approximate it by a nice smooth function as in
-Figure~\ref{fig:jumpsmooth}.
+to just approximate it by a differentiable function as in
+Figure~\ref{fig:jumpsmooth}.  Note that this function is not smooth, since the
+derivative is continuous but not differentiable; in our discussion all
+we will need is that our approximating function is once
+differentiable.
 
-{\bf [[ISSUE: This graph is actually not smooth.  The derivative is 
-continuous, but not differentiable.  Do we {\em need} to require
-that the approximating function is actually smooth, or would differentiable
-be enough?  In all the pictures, the example is merely differentiable.]]}
+%{\bf [[ISSUE: This graph is actually not smooth.  The derivative is 
+%continuous, but not differentiable.  Do we {\em need} to require
+%that the approximating function is actually smooth, or would differentiable
+%be enough?  In all the pictures, the example is merely differentiable.]]}
     
    
 \ill{jump-smooth}{0.5}{A picture of a smooth graph approximating the
@@ -2949,7 +2900,7 @@ information about the placement of prime numbers among all numbers.
 \chapter{Trigonometric series} 
    Given our interest in the ideas of Fourier, it is not surprising that we'll want to deal with things like $$F(t) =  \sum_{k=1}^{\infty} a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending (strictly monotonically) to infinity.  These we'll just call {\bf trigonometric series} without asking whether they converge in any sense for all values of $t$, or even for {\it any} value of $t$. The $s_k$'s that occur in such a trigonometric series we will call the {\bf spectral values} or for short, the {\bf spectrum} of the series, and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that we impose no convergence requirements at all. But we also think of these things as providing ``cutoff" finite trigonometric sums, which we think of as functions of two variables, $t$ and $N$ (the ``cutoff") where $$F(t,N): =   \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$ 
     \vskip20pt 
-    {\bf Smoothing out these trigonometric series:}  To see their behavior more clearly we will sometime want to perform what might be  called a {\bf Cesaro smoothing} on them. By this we just mean we just mean replacing  $F(t,N)$ by the function of two variables ($t$ and $N$)  $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
+    {\bf Smoothing out these trigonometric series:}  To see their behavior more clearly we will sometime want to perform what might be  called a {\bf Cesaro smoothing} on them. By this we just mean continually averaging our function $F(t,N)$ over larger and larger stretches of values of $n$, i.e., by the function of two variables ($t$ and $N$)  $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
    
    
 {\bf Spike values of trigonometric series:} \begin{definition} Say that a function $H(t,N)$ has a {\bf spike} at the real number $t_o \in {\bf R}$  if the set of absolute values $$|H(t_0,1)|, \ \  |H(t_0,2)|,\ \   |H(t_0,3)|,\ \   \cdots,\ \  |H(t_0,N)|,\ \   \cdots$$ is unbounded. 
@@ -2959,9 +2910,7 @@ The particular trigonometric sums we are most interested in are going to be part
  
 \vskip10pt
 
-We should note, in passing, that the set of spike values of a function  $F(t,N)$ is {\it contained in}{\footnote{but not necessarily equal to}} the the set of spike values of its Cesaro smoothing  $G(t,N)$.
-
-{\bf [[TODO: Is the footnote backwards?   I think the set of spike values of the Cesaro smoothing of a function is contained in the set spike values of the function, because if a sequence is bounded, then the sequence of averages is also bounded, but not conversely.]]}
+We should note, in passing, that the set of spike values of a function  $F(t,N)$ {\it contains}{\footnote{but is not necessarily equal to}} the the set of spike values of its Cesaro smoothing  $G(t,N)$.
 
 
 \chapter{Going from the primes to the spectrum}
@@ -3033,9 +2982,9 @@ Once we define them, we will be calling the set $$\theta_1,\theta_2,\theta_3,\do
 
 {\bf The cleansing operations:}    Here is a short list of things we are going to do  to the ${\hat\Phi}_{\le C}(\theta)$'s to make them reveal their secrets. These operations are given in the order in which we will apply  them
  \vskip20pt
-\begin{itemize} \item Add  to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth function{\footnote{ The function is given by the following formula:  for $C$ reasonably large and for positive real $\theta$ put   $$T_C,(\theta):= {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by $T_C(\theta)$. This function divided by $C^{1/2}$  is bounded in the variable $C$ and goes to zero if $\theta$ tends to infinity.
+\begin{itemize} \item Add  to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth function{\footnote{ The function is given by the following formula:  for $C$ reasonably large and for positive real $\theta$ put   $$T_C(\theta):= {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by $T_C(\theta)$. This function divided by $C^{1/2}$  is bounded in the variable $C$ and goes to zero if $\theta$ tends to infinity.
 
- So, after this operation we will be dealing with  $$A_C(\theta):= {\hat\Phi}_{\le C}(\theta) +T_C,(\theta)$$
+ So, after this operation we will be dealing with  $$A_C(\theta):= {\hat\Phi}_{\le C}(\theta) +T_C(\theta)$$
  
   \vskip20pt\item Now let us smooth out $A_C(\theta)$ by replacing it with the function that computes its ``average" up to $C$. Let ${[C]}$ mean the largest whole number less than or equal to $C$.    Now consider
  
@@ -3340,7 +3289,7 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 
 \part{Back to Riemann\label{part4}}
 
-\chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its spectrum}
+\chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its spectrum\label{ch:envision}}
 In the previous chapters we have described---using Riemann's Hypothesis---how to obtain the {\it spectrum}  $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of primes, and hinted at how to go back. Roughly speaking, we were performing ``Fourier transformations" to make this transit. But Riemann, on the very first page of his 1859 memoir, construes the relationship we have been discussing, between spectrum and staircase, in a even more profound  way.
 
 To talk about this extraordinary insight of Riemann, one would need to do two things that might seem remote from our topic, given our discussion so far.
@@ -3437,68 +3386,20 @@ Knowing the zeroes and poles (in the complex plane) alone of the Riemann zeta fu
  \end{enumerate}
  And here is yet another equivalent statement of Riemann's Hypothesis---this being the formulation closest to the one given in his 1859 memoir:
  
-\begin{quote}{\it All the nontrivial zeroes of $\zeta(s)$  lie on the vertical line in the complex plane given by ${\rm real\ part\ of\ } s\ = {\frac{1}{2}},$ and these zeroes are none other than ${\frac{1}{2}}+i\theta_1,{\frac{1}{2}}+i\theta_2, {\frac{1}{2}}+i\theta_3,\dots,$ where $\theta_1, \theta_2, \theta_3, \dots$ comprise the spectrum of primes we talked about in the earlier chapters.}\end{quote}
- The zeta function, then, is the vise, that so elegantly clamps together information about the placement of primes and their spectrum!  
-  
-  
-
-We can think of end-notes discussing the issue of convergence (which, for the moment is not addressed).
-\vskip20pt
-    
-
-
-\chapter[The Riemann Zeta-Function]{The Riemann Zeta-Function; and Riemann's Hypothesis (fourth version) -- to delete}
-
-Here we develop a tiny bit of the traditional route of exposition
-  to the Riemann Hypothesis. Namely, in terms of the successive nontrivial {\em zeroes of
-    Riemann's zeta-function}.
-    
-There are infinitely many of these
-nontrivial$^4$ zeroes of the $ \zeta$-function. 
-The first three are:
-  $$\rho_1={1\over 2} + 14.134725\dots i\ \ \ \ \  \rho_2={1\over 2} + 21.022040\dots i\ \ \ \rho_3={1\over 2} + 25.01\dots i\ \ 
-\ {\rm etc.}.]$$ 
-
-
-
-We hope that it is OK if we don't explain this at all, for it does
-require Calculus but we can think of these ``zeroes'' as being a
-certain precious infinite sequence of quantities, that contain within
-them the secret of the exact determination of the pattern of prime
-numbers. (You can squint at the way Riemann wrote out the
-zeta-function by trying to make out the formula on the first page of
-his manuscript, in Figure~\ref{fig:riemamn}.)
-    
-
-
-
-You will notice the curious persistence of the ${1\over 2}$'s in the
-exponents of the three zeroes listed above.  Riemann called attention
-to this phenomenon, which we now know holds for all 1029.9 billion
-zeroes that have been tabulated as of Feb.  18, 2005!  The ${1\over
-  2}$ in the exponent of a correction term is what guarantees that the
-correction term is indeed ``square-root small.'' We are ready, then,
-for another equivalent formulation of the \RH{}, this
-being--in fact--the more traditional way of expressing it:
- 
-
-
-  \begin{center}
+      \begin{center}
        \shadowbox{ \begin{minipage}{0.9\textwidth}
 \mbox{}       \vspace{0.2ex}
        \begin{center}{\bf\large The {\bf \RH{}} (fourth formulation)}\end{center}
        \medskip
-       The \RH{} is equivalent to the statement that all
-       the nontrivial zeroes of the Riemann zeta-function lie on the
-       line ${1\over 2}+iy $ in the complex plane
+All the nontrivial zeroes of $\zeta(s)$  lie on the vertical line in the complex plane given by ${\rm real\ part\ of\ } s\ = {\frac{1}{2}},$ and these zeroes are none other than ${\frac{1}{2}}+i\theta_1,{\frac{1}{2}}+i\theta_2, {\frac{1}{2}}+i\theta_3,\dots,$ where $\theta_1, \theta_2, \theta_3, \dots$ comprise the spectrum of primes we talked about in the earlier chapters.
 \vspace{1ex}
 \end{minipage}}
       \end{center}
 
 
-
-
-
+ The zeta function, then, is the vise, that so elegantly clamps together information about the placement of primes and their spectrum!  
+  
+    
 That a simple geometric property of these zeroes (lying on a line!) is
 directly equivalent to such profound (and more difficult to express)
 regularities among prime numbers suggests that these zeroes and the
