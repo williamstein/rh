@@ -1309,9 +1309,6 @@ $\log(X)$ to $\log(Y)$ giving $\log(XY)$.
 % but that link is broken.
 \ill{gauss_tables_half}{.9}{A Letter of Gauss\label{fig:gauss_letter}}
 
-{\bf [[Actually the endnote is a translation of something related, but not
-of the actual German in the figure above.]]}
-
 In 1791, when Gauss was 14 years old, he received a book that contained 
 logarithms of numbers up to $7$ digits and a table of primes up to 10,009.
 Years later, in a letter
@@ -1623,10 +1620,11 @@ known for over a century. It goes under the name of
    in 1896 independently by Hadamard and de la Vall\'{e}e Poussin.
 
 
-A milestone in the history leading up to the proof of Prime
-Number Theorem is the earlier work of Chebyshev [ref***]
-showing that (to use the terminology we introduced)
-$X/\log(X)$ and $\pi(X)$ go to infinity at similar rates.
+   A milestone in the history leading up to the proof of Prime Number
+   Theorem is the earlier work of Chebyshev (see
+   \url{http://en.wikipedia.org/wiki/Chebyshev_function}) showing that
+   (to use the terminology we introduced) $X/\log(X)$ and $\pi(X)$ go
+   to infinity at similar rates.
         
 
 The elusive \RH{}, however, is much deeper than the Prime
@@ -2297,11 +2295,6 @@ derivative is continuous but not differentiable; in our discussion all
 we will need is that our approximating function is once
 differentiable.
 
-%{\bf [[ISSUE: This graph is actually not smooth.  The derivative is 
-%continuous, but not differentiable.  Do we {\em need} to require
-%that the approximating function is actually smooth, or would differentiable
-%be enough?  In all the pictures, the example is merely differentiable.]]}
-    
    
 \ill{jump-smooth}{0.5}{A picture of a smooth graph approximating the
   graph that is $1$ up to some point $x$ and then $2$ after that
@@ -2813,6 +2806,31 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
   
   We'll leave this, at least for now, as a question for you. 
 
+\chapter{Supports, Spectra, Blips and Spikes}
+
+(to be written)
+
+% Here is where we will
+% be really justifying our heavy discussion of distributions,
+% trigonometric sums, etc.
+
+\chapter{Trigonometric series} 
+   Given our interest in the ideas of Fourier, it is not surprising that we'll want to deal with things like $$F(t) =  \sum_{k=1}^{\infty} a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending (strictly monotonically) to infinity.  These we'll just call {\bf trigonometric series} without asking whether they converge in any sense for all values of $t$, or even for {\it any} value of $t$. The $s_k$'s that occur in such a trigonometric series we will call the {\bf spectral values} or for short, the {\bf spectrum} of the series, and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that we impose no convergence requirements at all. But we also think of these things as providing ``cutoff'' finite trigonometric sums, which we think of as functions of two variables, $t$ and $N$ (the ``cutoff'') where $$F(t,N): =   \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$ 
+    \vskip20pt 
+    {\bf Smoothing out these trigonometric series:}  To see their behavior more clearly we will sometime want to perform what might be  called a {\bf Cesaro smoothing} on them. By this we just mean continually averaging our function $F(t,N)$ over larger and larger stretches of values of $n$, i.e., by the function of two variables ($t$ and $N$)  $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
+   
+   
+{\bf Spike values of trigonometric series:} \begin{definition} Say that a function $H(t,N)$ has a {\bf spike} at the real number $t_o \in {\bf R}$  if the set of absolute values $$|H(t_0,1)|, \ \  |H(t_0,2)|,\ \   |H(t_0,3)|,\ \   \cdots,\ \  |H(t_0,N)|,\ \   \cdots$$ is unbounded. 
+ A real number $t_o \in {\bf R}$ is, in contrast, a {\bf non-spike} if those values admit a finite upper bound. \end{definition}
+  \vskip10pt
+The particular trigonometric sums we are most interested in are going to be particularly nice. Under the assumption of the Riemann Hypothesis, either they or their Cesaro smoothing will have the property that the set of their spike values is a {\it discrete} subset of the real line,  $$t_1, t_2, t_3, \dots, t_k, \dots$$. 
+ 
+\vskip10pt
+
+We should note, in passing, that the set of spike values of a function  $F(t,N)$ {\it contains}{\footnote{but is not necessarily equal to}} the the set of spike values of its Cesaro smoothing  $G(t,N)$.
+
+
+
 \part{The Spectrum of the Prime Numbers\label{part3}}
 
 
@@ -2895,8 +2913,6 @@ example, the equation
   function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
 
-{\bf [[TODO: We use the word ``support'' a lot without clearly defining it.]]}
-    
 Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
   $$\Phi(t) \ = \ e^{-t/2}\Psi'(t)$$ 
   A distribution that has a discrete set of real numbers as its
@@ -2923,8 +2939,6 @@ Figure~\ref{fig:psi_200}.  Well, we would have blip-functions (alias:
 Dirac $\delta$-functions) at each point of discontinuity of $\Psi(x)$;
 that is, at $x=$ any power of a prime.
 
-{\bf [[Why do we use both ``blip'' and ``spike''?]]}
-  
 The spike distribution $\Phi(t)$ is now a major player in our drama,
 because all of the crucial valuable information of placement of primes
 is contained in it: the ``blips'' constituting this distribution (its
@@ -2941,28 +2955,12 @@ facts about this $\Phi(t)$, a distribution that contains full
 information about the placement of prime numbers among all numbers.
 
 
-\chapter{Trigonometric series} 
-   Given our interest in the ideas of Fourier, it is not surprising that we'll want to deal with things like $$F(t) =  \sum_{k=1}^{\infty} a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending (strictly monotonically) to infinity.  These we'll just call {\bf trigonometric series} without asking whether they converge in any sense for all values of $t$, or even for {\it any} value of $t$. The $s_k$'s that occur in such a trigonometric series we will call the {\bf spectral values} or for short, the {\bf spectrum} of the series, and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that we impose no convergence requirements at all. But we also think of these things as providing ``cutoff'' finite trigonometric sums, which we think of as functions of two variables, $t$ and $N$ (the ``cutoff'') where $$F(t,N): =   \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$ 
-    \vskip20pt 
-    {\bf Smoothing out these trigonometric series:}  To see their behavior more clearly we will sometime want to perform what might be  called a {\bf Cesaro smoothing} on them. By this we just mean continually averaging our function $F(t,N)$ over larger and larger stretches of values of $n$, i.e., by the function of two variables ($t$ and $N$)  $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
-   
-   
-{\bf Spike values of trigonometric series:} \begin{definition} Say that a function $H(t,N)$ has a {\bf spike} at the real number $t_o \in {\bf R}$  if the set of absolute values $$|H(t_0,1)|, \ \  |H(t_0,2)|,\ \   |H(t_0,3)|,\ \   \cdots,\ \  |H(t_0,N)|,\ \   \cdots$$ is unbounded. 
- A real number $t_o \in {\bf R}$ is, in contrast, a {\bf non-spike} if those values admit a finite upper bound. \end{definition}
-  \vskip10pt
-The particular trigonometric sums we are most interested in are going to be particularly nice. Under the assumption of the Riemann Hypothesis, either they or their Cesaro smoothing will have the property that the set of their spike values is a {\it discrete} subset of the real line,  $$t_1, t_2, t_3, \dots, t_k, \dots$$. 
- 
-\vskip10pt
-
-We should note, in passing, that the set of spike values of a function  $F(t,N)$ {\it contains}{\footnote{but is not necessarily equal to}} the the set of spike values of its Cesaro smoothing  $G(t,N)$.
-
 
 \chapter{Going from the primes to the spectrum}
 
-{\bf This chapter has not been fully written and there are some
-mathematical issues that we don't yet understand, and we will  need to
-work out in order to do a satisfactory job here.  We'll be  figuring
-out how to deal with this.}
+\todo{This chapter has not been fully written, there are some
+  mathematical issues that we don't yet explain, and we will need to
+  work out in order to do a satisfactory job here.}
  
  
  
@@ -3014,7 +3012,7 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
   
   
  \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
- $C=5$ (top), 20, 50, and 500 (bottom).}
+ $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3056,8 +3054,7 @@ and this is what the graphs look like now
  \end{enumerate}
  \end{itemize} 
    \vskip20pt
-    {\bf  We should correct the chapter number on line 4 of page 96, and also discuss whether we should hint at the surprise of the zeta function here---as we do in our text---or withhold it.}
-
+   
 
 
 
@@ -3079,7 +3076,7 @@ Riemann defined this sequence of numbers in his 1859 article in a
 manner somewhat different from the treatment we have given (in that
 article these $\theta_i$ appear as the ``imaginary parts of the
 nontrivial zeroes of his $\zeta$-function;'' we will discuss this
-briefly in Chapter 24 below). Riemann wrote:
+briefly in Chapter~\ref{ch:envision} below). Riemann wrote:
  \begin{quote}
   ``One now finds indeed approximately this number of real roots
   within these limits, and it is very probable that all roots are
@@ -3139,7 +3136,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
    To get a cleaner picture let us subject our functions $H_C(s)$ to Cesaro smoothing as in the previous chapter. Define:
    $${\tilde H}_C(s) :=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} H_c(\theta),$$ and let's take another look.
    \vskip20pt
-\todo{Can we ``Cesaro sum'' our figures on pp. 98,99? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
+\todo{Can we ``Cesaro sum'' our figures on Page~\pageref{fig:phic}? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
    \vskip20pt   
 
 \bibnote{The theoretical story behind the phenomena that we have seen graphically in this chapter is yet another manifestation of Riemann's explicit formula.  Modern references for this  are  {\bf [Iwaniec-Kowalski]} and {\bf [Davenport: Multiplicative Number Theory]}. (see also the bibliography in these books.)  Many ways of seeing  the explicit relationship are given in  Chapter 5  of {\bf [I-K]}. For  example, consider Exercise 5 on page 109.
@@ -3343,7 +3340,7 @@ To talk about this extraordinary insight of Riemann, one would need to do two th
  We will say only a few words here about this, in hopes of  giving at least a shred of a hint of how marvelous Riemann's idea is. For readers who wish to pursue it further, here is a list of  sources, that are our favorites among those meant to be read by a somewhat broader audience than people very advanced in the subject. We list them in order of ``required background.''
  
  \begin{enumerate} 
-\item John  Derbyshire's {\it Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics}.  We have already mentioned this book  in our introduction {\bf [[though not by name]]}, but feel that it is so good, that it is worth a second mention here. See specifically: $\dots$
+\item John  Derbyshire's {\it Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics}.  We have already mentioned this book  in our introduction, but feel that it is so good, that it is worth a second mention here. See specifically: $\dots$
  \item The Wikipedia entry for Riemann's Zeta Function  (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function})  It is difficult to summarize who wrote this, but we feel that it is a gift to the community in its clarity. Thanks authors!
  \item Enrico Bombieri's article \bibnote{Bombieri, {\em The Riemann Hypothesis}, available at \url{http://www.claymath.org/millennium/Riemann_Hypothesis/riemann.pdf}}.  To comprehend all ten pages of this excellent and fairly thorough account may require significant background, but try your hand at it; no matter where you stop, you will have seen good things in what you have read.
 \end{enumerate}
@@ -3414,7 +3411,7 @@ Making use of this extension of the range of definition of Euler's sum of recipr
 \begin{enumerate}\item {\bf  Riemann's zeta function codes the placement of prime powers among all numbers}  The key here is to take logarithm and then the derivative of $\zeta(s)$  (this boils down to forming ${\frac{d{\zeta}}{ds}}(s)/\zeta(s)$). Assuming that the real part of $s$ is $>1$, taking the logarithm of $\zeta(s)$ ---using Euler's infinite product formulation---gives us $$\log\zeta(s)= \sum_{p \ {\rm prime}}-\log{\big(1-p^{-s}\big)},$$ and we can do this term-by-term, since the real part of $s$ is $>1$.  Then taking the derivative gives us:
    \vskip20pt
 
-{\bf [[TODO: put in log deriv of zeta]]}
+\todo{Put in log deriv of zeta.}
 %$$ {\frac{d{\zeta}}{ds}}(s)/\zeta(s)=-\sum_{p \ {\rm prime}}\log(p)p^{-s}.$$  For any particular $s$ this is an infinite sum which tallies the primes  $p$, each weighted by the quantity  $\log(p)p^{-s}$ and is absolutely convergent if the real part of $s$ is $>1$.   % note : this forgets the prime powers.
 
  \vskip20pt
@@ -3591,14 +3588,23 @@ it has, in fact, been proved! (See $C$.)
 Is this yet another reason to believe the Grand Riemann Hypothesis?
 
 
-\chapter{Epilogue: Computing}
+\chapter{Epilogue: computing}
 
-All of the computations for this book were done using Sage, which is a
-free open source matheamtical software package
-(\url{http://www.sagemath.org}).  If you would like to replicate any
-of the computations, install Sage, and the purplesage Python package,
-which is available here \url{http://code.google.com/p/purplesage/}.
-The code for the book is all in \verb|psage/rh/mazur_stein|.
+The computations for this book were done using Sage, which is a free
+open source matheamtical software package
+(\url{http://www.sagemath.org}).  If you would like to replicate the
+computations, visit \url{http://sagenb.org} or install Sage and the
+purplesage Python package, which is available here
+\url{http://code.google.com/p/purplesage/}.  The code for the book is
+all in \verb|psage/rh/mazur_stein|.
+
+Below we discuss how to use Sage to experiment with some ideas in the
+first part of the book. 
+
+\todo{This chapter could be extended to cover the whole book.
+  Alternatively, this chapter could be removed, and instead its
+  contents put into a different live web-only interactive version of
+  the book.}
 
 \section{Factoring}
 In Chapter~\ref{ch:what_are_primes} we discussed primes first in the
@@ -3751,6 +3757,7 @@ sage: a, pp, pp - a
 
 %\label{lastpage}
 
+\renewcommand\bibname{Endnotes}
 
 \bibliography{biblio}
 
