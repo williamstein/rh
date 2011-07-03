@@ -152,7 +152,7 @@ sensitive=true}
 
 
 \title{\Huge What is Riemann's Hypothesis?\\
-January 26, 2011 Draft\\
+July 2, 2011 Draft\\
 {\Large This is still VERY VERY Rough and Incomplete!}}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
@@ -251,7 +251,7 @@ convince you of the importance and beauty of the mathematics it
 represents.  We will be offering, throughout our book, a number of
 different---but equivalent---ways of precisely formulating this
 hypothesis (we display these in boxes).  When we say that two
-mathematical statements are ``equivalent" we mean that, given the
+mathematical statements are ``equivalent'' we mean that, given the
 present state of mathematical knowledge, we can prove that if either
 one of those statements is true, then the other is true. The endnotes
 will guide the reader to the mathematical literature that establishes
@@ -289,7 +289,7 @@ to find that key.
       
       % I got this from http://www.math.harvard.edu/history/bott/
 % Barry says there  is a good picture in the book
-% "the Index Theorem" that Yau published.
+% ''the Index Theorem'' that Yau published.
 \ill{raoulbott}{0.25}{Raoul Bott (1923--2005)\label{fig:bott}}
 
 
@@ -534,7 +534,7 @@ $N:=3452690329392158031464109281736967404068448156842396721012992064214519445919
 
 How did he know this?  By using the most basic test in the repertoire
 of tests that we have available to check to see whether a number is
-prime: we'll call it the ``{\bf Fermat $2$-test.}" We'll first give a
+prime: we'll call it the ``{\bf Fermat $2$-test.}'' We'll first give a
 general explanation of this type of test before we show how $N$ {\it
   fails the Fermat $2$-test.}
 
@@ -709,6 +709,47 @@ the next prime $q$ after $p$ is a prime.  But there is no known way
 to efficiently compute anything interesting about $q$.  For example,
 what is the last digit of $q$ in its decimal expansion?
 
+
+\chapter{``Named'' Prime Numbers}
+Prime numbers come in all sorts of shapes, some more convenient to
+deal with than others.  For example, the number we have been talking
+about, $$p = 2^{43,112,609}-1,$$ is given to us, by its very notation,
+in a striking form; i.e., {\it one less than a power of $2$}. It is no
+accident that the largest ``currently known'' prime number has such a
+form.  This is because there are special techniques we can draw on to
+show primality of a number, if it is one less than a power of $2$
+and---of course---if it also happens to be prime.  The primes of that
+form have a name, {\it Mersenne Primes}, as do the primes that are
+{\it one more than a power of $2$}, those being called {\it Fermat
+  Primes}.
+ 
+Here are two exercises that you might try to do, if this is your first
+encounter with primes that differ from a power of $2$ by $1$:
+  
+\begin{enumerate}
+\item Show that if a number of the form $M=2^n-1$ is prime, then the
+  exponent $n$ is also prime.  For example: $ 2^2-1= 3, 2^3-1= 7$ are
+  primes, but $2^4-1=15$ is not.  So {\it Mersenne primes} are numbers
+  that are
+  \begin{itemize}
+    \item of the form $$2^{\rm prime\ number} -1,$$ and 
+    \item are themselves prime numbers.
+  \end{itemize}
+
+\item Show that if a number of the form $F=2^n+1$ is prime, then the
+  exponent $n$ is a power of two.  For example: $ 2^2+1= 5$ is prime,
+  but $2^3+1= 9$ is not.  So {\it Fermat primes} are numbers that
+  are 
+  \begin{itemize} 
+     \item of the form $$2^{\rm power\ of\ two} +1,$$ and 
+     \item are themselves prime numbers.
+  \end{itemize}
+\end{enumerate}
+  
+Not all numbers of the form $2^{\rm prime\ number} -1$ or of the form
+$2^{\rm power\ of\ two} +1$ are prime. We currently know only finite
+many primes of either of these forms. How we have come to know what we
+know is an interesting tale.  See, for example, \url{http://www.mersenne.org/}.
 
 %\ill{sieve_boxes_100}{0.7}{Sieve of Eratosthenes\label{fig:erat}}
 
@@ -1226,7 +1267,7 @@ That is,
 \vskip10pt
 $$G(X)\hskip40pt  {\rm is\ roughly\ proportional\ to} \hskip40pt  {\frac{X}{{\rm the\ number\ of\ digits\ of\ } X}}.$$
 \vskip10pt
-But to describe Gauss's guess precisely we need to discuss the {\it natural logarithm} ``$\log(X)$" which is an elegant smooth function of real numbers $X$ that is roughly proportional to the number of digits of the whole number part of $X$.
+But to describe Gauss's guess precisely we need to discuss the {\it natural logarithm} ``$\log(X)$'' which is an elegant smooth function of real numbers $X$ that is roughly proportional to the number of digits of the whole number part of $X$.
 
 
 
@@ -1247,7 +1288,7 @@ speed up calculations, since logarithms translate difficult multiplication
 problems into easier addition problems which can be done mechanically.
 Such calculations use that the logarithm of a product is the sum of the logarithms
 of the factors; that is, $$\log(X\cdot Y) = \log(X) + \log(Y).$$ 
-%FROM -- YURI TSCHINKEL's: "ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES "
+%FROM -- YURI TSCHINKEL's: ''ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES ''
 
 % From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
 \ill{slide_rule}{.8}{A slide rule  computes $2X$ by using that $\log(2X)=\log(2)+\log(X)$\label{fig:slide_rule}}
@@ -1418,8 +1459,8 @@ half the digits are correct.
   or undercounted) would be proportional to~${\sqrt X}$.
 
 % {\bf WARNING: The above, as explained, is currently wrong.}
-% % Instead of the probability of making a mistake being "say $0.001\%$ of
-% % the time", let's imagine that you make a mistake deciding whether or
+% % Instead of the probability of making a mistake being ''say $0.001\%$ of
+% % the time'', let's imagine that you make a mistake deciding whether or
 % % not a number is prime 10% of the time.  Now imagine counting the
 % % primes up to X.   The expected number of primes that you'll declare
 % % prime is 0.9*pi(X), and the expected number of composites up to X that
@@ -1512,7 +1553,7 @@ tends to $1$ as $X$ goes to infinity.
 
 Here is one way of thinking about what it means for two functions, $A(X)$ and $B(X)$, to go to infinity at the same rate. It means that  for any
 number you give us, say: a million (or a billion, or a trillion) we should be able to show that if $X$ is large enough, then the
-``leftmost" million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same. 
+``leftmost'' million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same. 
 
 
 While we're defining things, let us say that two functions, $A(X)$
@@ -1549,7 +1590,7 @@ of this statement in an endnote.})
 
 
 Recall (on page 10 above)  that
-if $X = 10^{23}$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top" million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
+if $X = 10^{23}$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
   
 The \RH{}, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
@@ -1569,7 +1610,7 @@ known for over a century. It goes under the name of
    
 
    Since $\Li(X)$ and $X/\log(X)$ go to infinity at the same rate, we could
-   equally well have expressed the ``same" theorem by saying:
+   equally well have expressed the ``same'' theorem by saying:
 
   
   \noindent {\bf The Prime Number Theorem:\ \ } $X/\log(X)$ and $\pi(X)$ go to infinity at the same rate.
@@ -1939,12 +1980,12 @@ $$f(t)\ \ = \ \ a\cdot \cos(b +\theta t).$$
 \ill{pure_tone}{.7}{Plot of the periodic sine wave $f(t) = 2\cdot \cos(1+t/2)$}
 
 The $\theta$ determines the {\it frequency} of the periodic wave, the
-larger $\theta$ is the higher the ``pitch."  The coefficient $a$
+larger $\theta$ is the higher the ``pitch.''  The coefficient $a$
 determines the envelope of size of the periodic wave, and we call it
 the {\it amplitude} of the periodic wave.
 
 Sometimes we encounter functions $F(t)$ that are not pure tones, but
-that can be expressed as (or we might say ``decomposed into") a finite
+that can be expressed as (or we might say ``decomposed into'') a finite
 sum of pure tones, for example three of them:
 
 $$F(t)  = a_1\cdot \cos(b_1 +\theta_1 t) + a_2\cdot \cos(b_2 +\theta_2 t) + a_3\cdot \cos(b_3 +\theta_3 t)$$
@@ -2010,7 +2051,7 @@ hint at how the above series of questions have been answered so far,
 and how the \RH{} offers a surprise for the last question in this
 series.
  
-But for now, let us offer a {\it sneak preview} to the ``spectrum"
+But for now, let us offer a {\it sneak preview} to the ``spectrum''
 alluded to in these questions! We will do this by formulating two
 infinite trigonometric sums and exhibiting the graphs of more and more
 accurate finite approximations (cutoffs) of these infinite sums.
@@ -2019,7 +2060,7 @@ accurate finite approximations (cutoffs) of these infinite sums.
 \item The first infinite trigonometric sum is a sum of pure cosine
   waves with frequencies given by logarithms of powers of primes and
   with amplitudes that will be described below.  These graphs will
-  have ``higher and higher peaks" concentrated more and more
+  have ``higher and higher peaks'' concentrated more and more
   accurately at what we referred to as the {\it spectrum}, indicated
   in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500})
   by the series of vertical red lines.
@@ -2027,7 +2068,7 @@ accurate finite approximations (cutoffs) of these infinite sums.
 \item The second infinite trigonometric sum is a sum of pure cosine
   waves with frequencies given by the spectrum of primes and with
   amplitudes {\it all equal to $1$}.  These graphs will have ``higher
-  and higher peaks" concentrated more and more accurately at the {\it
+  and higher peaks'' concentrated more and more accurately at the {\it
     logarithms of powers of primes,} indicated in our pictures below
   (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
 \end{enumerate}
@@ -2082,11 +2123,11 @@ be discussing in later portions of this book. These numbers at the red
 vertical arrows in the graphs above, $$\theta_1, \theta_2, \theta_3,
 \dots$$ are the key to the staircase of primes (and if the \RH{} holds
 they are precisely the so-called {\it imaginary parts of the
-  ``nontrivial" zeroes of the Riemann zeta-function}).  \vskip20pt
+  ``nontrivial'' zeroes of the Riemann zeta-function}).  \vskip20pt
 \begin{itemize} 
 \item {\bf The sum with $p^n \le C=5$}
 
-Here is the function $f(t)$ we displayed above; it consists in the sum of the first four terms of our infinite sum, and doesn't yet show very much ``structure":
+Here is the function $f(t)$ we displayed above; it consists in the sum of the first four terms of our infinite sum, and doesn't yet show very much ``structure'':
 
 \ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with
 arrows pointing to the spectrum of the primes\label{fig:pnsum5}}\vskip20pt
@@ -2111,7 +2152,7 @@ Here, the peaks are even sharper, and note that again they are higher; that is, 
   We will discuss in the later parts of this book  
 
 \begin{itemize} 
-\item how this ``plays out" as we take the sums of longer and longer
+\item how this ``plays out'' as we take the sums of longer and longer
   pieces of the infinite sum of cosine waves above, given by larger
   and larger cutoffs $C$,
 \item how this spectrum of red lines more closely matches the high
@@ -2145,10 +2186,10 @@ Here, the peaks are even sharper, and note that again they are higher; that is, 
 \end{enumerate}
   
 This passage---thanks to the Riemann Hypothesis--- from spectrum to
-prime powers and back again via consideration of the ``high peaks" in
+prime powers and back again via consideration of the ``high peaks'' in
 the graphs of the appropriate trigonometric sums provides a kind of
 visual duality emphasizing, for us, that the information inherent in
-the wild spacing of prime powers, is somehow ``packaged" in the series
+the wild spacing of prime powers, is somehow ``packaged'' in the series
 of mysterious numbers we have called the spectrum, and reciprocally,
 the information given in that series of mysterious numbers is
 obtainable from the sequence of prime powers.
@@ -2198,25 +2239,25 @@ a {\it function} is, and what its {\it graph} is.
  input numerical value $a$ will give, as output, a well-defined
  numerical value.
  
- This ``output number" is denoted $f(a)$ and is called {\it the
-   ``value" of the function $f$ at $a$}.  For example, the {\it
+ This ``output number'' is denoted $f(a)$ and is called {\it the
+   ``value'' of the function $f$ at $a$}.  For example, the {\it
    machine that adds $1$ to any number} can be thought of as the
  function $f$ whose value at any $a$ is given by the equation $f(a) =
  a+1$.  Often we choose a letter---say, $X$---to stand for a ``general
  number'' and we denote the function $f$ by the symbol $f(X)$ so that
  this symbolization allows to ``substitute for $X$ any specific number
- $a$" to get its value $f(a)$.
+ $a$'' to get its value $f(a)$.
 
  The {\bf graph} of a function provides a vivid visual representation of the
  function in the Euclidean plane where over every point $a$ on the
- $x$-axis you plot a point above it of ``height" equal to the value of
+ $x$-axis you plot a point above it of ``height'' equal to the value of
  the function at $a$, i.e., $f(a)$. In Cartesian coordinates, then,
  you are plotting points $(a, f(a))$ in the plane where $a$ runs
  through all real numbers.
 
  \ill{graph_aplusone}{0.6}{Graph of the function $f(a)=a+1$\label{fig:graph_aplusone}}
 
- In this book we will very often be talking about ``graphs" when we
+ In this book we will very often be talking about ``graphs'' when we
  are also specifically interested in the functions---of which they are
  the graphs. We will use these words almost synonymously since we like
  to adopt a very visual attitude towards the behavior of the functions
@@ -2278,7 +2319,7 @@ function is constant, its derivative is zero. In the subsequent
 figures, our initial function will be {\it nonconstant} for smaller
 and smaller intervals about the origin. Note also that, in our series
 of pictures below, we will be successively rescaling the $y$-axis; all
-our initial functions have the value $1$ for ``large" negative numbers
+our initial functions have the value $1$ for ``large'' negative numbers
 and the value $2$ for large positive numbers.
 
 \ill{jump-smooth-deriv-2}{0.5}{Second picture of the derivative of
@@ -2370,7 +2411,7 @@ Calculus relating a function to its derivative:
  For Weierstrass and his companions, even though the functions they
  worked with needn't be smooth, or continuous, at the very least, the
  functions they studied had {\it well-defined---and usually
-   finite---values}.  But our ``limit of red graphs" is not so easily
+   finite---values}.  But our ``limit of red graphs'' is not so easily
  formalized as the concepts that occupied the efforts of
  Weierstrass. Happily however, this general process of approximating
  discontinuous functions more and more exactly by smooth functions,
@@ -2466,17 +2507,17 @@ In contrast, a {\it generalized function}  or  {\it distribution}
 \item {\bf may not have ``definite values''} at all real numbers if it
   is not an honest function, nevertheless:
      
-\item {\bf It has well-defined areas under portions of its ``graph."}
+\item {\bf It has well-defined areas under portions of its ``graph.''}
   If we are given any interval of real numbers, say the (open)
   interval between $a$ and $b$, we can still talk unambiguously about
-  the {\it area ``under" the graph of the generalized function $D(t)$
+  the {\it area ``under'' the graph of the generalized function $D(t)$
     over the interval between $a$ and~$b$} and we will denote
   this--extending what we do in ordinary calculus---by the symbol
 $$\int_a^bD(t)dt.$$ 
 \end{itemize} 
 
 This description is important to bear in mind and it gives us a handy
-way of thinking about ``generalized functions" (i.e., distributions)
+way of thinking about ``generalized functions'' (i.e., distributions)
 as opposed to functions: when we consider an (integrable) function of
 a real variable, $f(t)$, we may invoke its {\it value} at every real
 number and for every interval $[a,b]$ we may consider the quantity
@@ -2517,7 +2558,7 @@ additivity relation
   functions doesn't have that convergence property and {\it yet} when
   they are viewed as generalized functions they do converge to some
   generalized function as a limit. We will see this soon when we get
-  back to the ``sequence of the red graphs." This sequence {\bf does}
+  back to the ``sequence of the red graphs.'' This sequence {\bf does}
   converge (in the above sense) to the Dirac $\delta$-function when
   these red graphs are thought of as a sequence of generalized
   functions.
@@ -2534,8 +2575,8 @@ additivity relation
  For example, for the Dirac $\delta$-function we have been discussing
  (i.e., the limit of the red graphs of the previous section) {\it is}
  an honest function away from $t=0$ and ---in fact---is the ``trivial
- function" zero away from the origin.  And at $0$, we may {\it say}
- that it has the ``value" infinity, in honor of it being the limit of
+ function'' zero away from the origin.  And at $0$, we may {\it say}
+ that it has the ``value'' infinity, in honor of it being the limit of
  blip functions getting taller and taller at $0$ but the feature that
  pins it down as a distribution is given by its behavior relative to
  the second feature above, the area of its graph over the open
@@ -2544,9 +2585,9 @@ additivity relation
 \begin{itemize}
 \item If both $a$ and $b$ have the same sign (i.e., if the origin is
   not in the open interval spanned by $a$ and $b$) then the ``area
-  under the graph of our Dirac $\delta$-function" is $0$.
+  under the graph of our Dirac $\delta$-function'' is $0$.
 \item If $a$ is negative and $b$ is positive then the ``area under the
-  graph of our Dirac $\delta$-function" is $1$---in
+  graph of our Dirac $\delta$-function'' is $1$---in
   notation $$\int_a^b\delta = 1.$$
 \end{itemize}
 
@@ -2561,7 +2602,7 @@ that the {\bf support} of this $\delta$-function is ``at the origin.''
 Once you're happy with {\it this} Dirac $\delta$-function, you'll also
 be happy with a Dirac $\delta$-function---call it $\delta_x$---with
 support concentrated at any specific real number $x$ gotten by
-``translating" the one we've been talking about appropriately;
+``translating'' the one we've been talking about appropriately;
 $\delta_x$ vanishes for $t \ne x$ and intuitively speaking, has an
 {\it infinite blip} at $t=x$.
 
@@ -2636,7 +2677,7 @@ In Part~\ref{part1} of this book  (in Chapter~\ref{sec:fourier1} above) we wrote
   Now let's take a closer look at this operation {\it Fourier transform}.
   
   We will focus our discussion on an {\bf even} function $f(t)$ of a
-  real variable $t$.  ``{\bf Even}" means that its graph is symmetric
+  real variable $t$.  ``{\bf Even}'' means that its graph is symmetric
   about the $y$-axis; that is, $f(-t)= f(t)$.  See
   Figure~\ref{fig:even_function}.
   
@@ -2646,7 +2687,7 @@ In Part~\ref{part1} of this book  (in Chapter~\ref{sec:fourier1} above) we wrote
   When we get to apply this discussion to the {\it staircase of
     primes} $\pi(t)$ or the {\it tinkered staircase of primes}
   $\psi(t)$ both of which being defined only for positive values of
-  $t$, then we would ``lose little information" in our quest to
+  $t$, then we would ``lose little information'' in our quest to
   understand them if we simply ``symmetrized their graphs'' by
   defining their values on negative numbers $-t$ via the formulas
   $\pi(-t)=\pi(t)$ and $\psi(-t)=\psi(t)$ thereby turning each of them
@@ -2666,7 +2707,7 @@ us, for each real number $\theta$ whether or not $\theta$ is in the
 spectrum of $f(t)$, and if so, what the amplitude is of the cosine
 function $\cos(\theta t)$ that occurs in the Fourier expansion of
 $f(t)$---this amplitude answers the awkwardly phrased question: {\it
-  how much $\cos(\theta t)$ ``occurs in" $f(t)$?}  We will denote this
+  how much $\cos(\theta t)$ ``occurs in'' $f(t)$?}  We will denote this
 amplitude by ${\hat f}(\theta)$, and refer to it as {\bf the Fourier
   transform} of $f(t)$.  The {\bf spectrum}, then, of $f(t)$ is the
 set of all frequencies $\theta$ where the amplitude is nonzero.
@@ -2702,8 +2743,8 @@ machine (see Figure~\ref{fig:fourier_machine}); namely:
 \chapter[Fourier transform of delta]{What is the Fourier transform of a delta function?\label{sec:ftdelta}}
 
 Consider the $\delta$-function that we denoted $\delta(t)$ (or
-$\delta_0(t)$). This is also the ``generalized function" that we
-thought of as the ``limit of the red graphs" in Chapter~\ref{sec:dist}
+$\delta_0(t)$). This is also the ``generalized function'' that we
+thought of as the ``limit of the red graphs'' in Chapter~\ref{sec:dist}
 above. Even though $\delta(t)$ is a distribution and {\it not} a bona
 fide function, it is symmetric about the origin, and
 also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is
@@ -2810,7 +2851,7 @@ example, the equation
  are various ways open to us to tinker with---and significantly
  modify---our staircase {\it without losing the essential information
    it contains}. Of course, there is always the danger of modifying
- things in such a way that ``retrieval" of the original data becomes
+ things in such a way that ``retrieval'' of the original data becomes
  difficult.  Moreover, we had better remember every change we have
  made if we are to have any hope of retrieving the original data!
  
@@ -2898,7 +2939,7 @@ information about the placement of prime numbers among all numbers.
 
 
 \chapter{Trigonometric series} 
-   Given our interest in the ideas of Fourier, it is not surprising that we'll want to deal with things like $$F(t) =  \sum_{k=1}^{\infty} a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending (strictly monotonically) to infinity.  These we'll just call {\bf trigonometric series} without asking whether they converge in any sense for all values of $t$, or even for {\it any} value of $t$. The $s_k$'s that occur in such a trigonometric series we will call the {\bf spectral values} or for short, the {\bf spectrum} of the series, and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that we impose no convergence requirements at all. But we also think of these things as providing ``cutoff" finite trigonometric sums, which we think of as functions of two variables, $t$ and $N$ (the ``cutoff") where $$F(t,N): =   \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$ 
+   Given our interest in the ideas of Fourier, it is not surprising that we'll want to deal with things like $$F(t) =  \sum_{k=1}^{\infty} a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending (strictly monotonically) to infinity.  These we'll just call {\bf trigonometric series} without asking whether they converge in any sense for all values of $t$, or even for {\it any} value of $t$. The $s_k$'s that occur in such a trigonometric series we will call the {\bf spectral values} or for short, the {\bf spectrum} of the series, and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that we impose no convergence requirements at all. But we also think of these things as providing ``cutoff'' finite trigonometric sums, which we think of as functions of two variables, $t$ and $N$ (the ``cutoff'') where $$F(t,N): =   \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$ 
     \vskip20pt 
     {\bf Smoothing out these trigonometric series:}  To see their behavior more clearly we will sometime want to perform what might be  called a {\bf Cesaro smoothing} on them. By this we just mean continually averaging our function $F(t,N)$ over larger and larger stretches of values of $n$, i.e., by the function of two variables ($t$ and $N$)  $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
    
@@ -2924,14 +2965,14 @@ out how to deal with this.}
  
 We've discussed the nature of the Fourier transform of (symmetrized)
 $\delta$-functions in Chapter~\ref{sec:ftdelta}. In particular, recall
-the ``spike function" $$d_x(t) \ = \ (\delta_x(t) +
+the ``spike function'' $$d_x(t) \ = \ (\delta_x(t) +
 \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We
 mentioned that its Fourier transform, ${\hat d}_x(\theta)$, is equal
 to $\cos(x\theta)$ (and gave some hints about why this may be true).
   
 
 Our next goal is to work with the much more interesting ``spike
-function" $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$ which was one of the
+function'' $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$ which was one of the
 generalized function that we engineered in Chapter~\ref{sec:loseno},
 and that has support at all nonnegative integral multiples of
 logarithms of prime numbers.
@@ -2940,7 +2981,7 @@ logarithms of prime numbers.
 
    
 As with any function---or generalized function---defined for
-non-negative values of $t$, we can ``symmetrize it" (about the
+non-negative values of $t$, we can ``symmetrize it'' (about the
 $t$-axis) which means that we can define it on negative real numbers
 by the equation
   $$\Phi(-t) = \Phi(t).$$  
@@ -2974,7 +3015,7 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\bf Hints of the spectrum:}\ The $\theta$-coordinates of the peaks of these graphs {\it seem to be} vaguely clustered about  a discrete set of  positive real numbers. In fact, this is already a hint of what happens to the graphs of these functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to tend to infinity.   But to make it more than a hint, and to ``see"  a certain infinite set of positive real numbers  
+{\bf Hints of the spectrum:}\ The $\theta$-coordinates of the peaks of these graphs {\it seem to be} vaguely clustered about  a discrete set of  positive real numbers. In fact, this is already a hint of what happens to the graphs of these functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to tend to infinity.   But to make it more than a hint, and to ``see''  a certain infinite set of positive real numbers  
 $$\theta_1,\theta_2,\theta_3,\dots$$ emerge,  we are going to subject our functions ${\hat\Phi}_{\le C}(\theta)$ to a few simple cleansing operations. 
 
 Once we define them, we will be calling the set $$\theta_1,\theta_2,\theta_3,\dots$$ the {\bf spectrum of the primes}  and  if the Riemann Hypothesis holds, these numbers would be the key to the placement of primes on the number line.
@@ -2986,7 +3027,7 @@ Once we define them, we will be calling the set $$\theta_1,\theta_2,\theta_3,\do
 
  So, after this operation we will be dealing with  $$A_C(\theta):= {\hat\Phi}_{\le C}(\theta) +T_C(\theta)$$
  
-  \vskip20pt\item Now let us smooth out $A_C(\theta)$ by replacing it with the function that computes its ``average" up to $C$. Let ${[C]}$ mean the largest whole number less than or equal to $C$.    Now consider
+  \vskip20pt\item Now let us smooth out $A_C(\theta)$ by replacing it with the function that computes its ``average'' up to $C$. Let ${[C]}$ mean the largest whole number less than or equal to $C$.    Now consider
  
  $${\tilde A}_C(\theta):= {\frac{\sum_{c=1}^{[C]} A_c(\theta)}{[C]}}.$$  This type of operation on  functions is called {\it Cesaro smoothing}. Applying Cesaro smoothing to a function $U_C(\theta)$ gives a new function $${\tilde U}_C(\theta):=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} U_c(\theta)$$  with useful properties, at times:
   \begin{quote} \begin{itemize}\item  If, for a given value of $\theta$, $${\lim_{C \to \infty}}  U_C(\theta)$$ actually exists, then the limit also exists for its Cesaro smoothing, and the limits are equal: $${\lim_{C \to \infty}}  U_C(\theta)= {\lim_{C \to \infty}}  {\tilde U}_C(\theta).$$ \item But sometimes the first limit doesn't exist and yet the second one does, and moreover, \item if the first limit exists, sometimes the second one converges faster than the first. \end{itemize} \end{quote}  
@@ -3034,7 +3075,7 @@ Already by tabulating  ${\tilde B}(\theta)$ we can compute---at least very appro
 Riemann defined this sequence of numbers in his 1859 article in a
 manner somewhat different from the treatment we have given (in that
 article these $\theta_i$ appear as the ``imaginary parts of the
-nontrivial zeroes of his $\zeta$-function;" we will discuss this
+nontrivial zeroes of his $\zeta$-function;'' we will discuss this
 briefly in Chapter 24 below). Riemann wrote:
  \begin{quote}
   ``One now finds indeed approximately this number of real roots
@@ -3097,7 +3138,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
    To get a cleaner picture let us subject our functions $H_C(s)$ to Cesaro smoothing as in the previous chapter. Define:
    $${\tilde H}_C(s) :=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} H_c(\theta),$$ and let's take another look.
    \vskip20pt
-{ \bf William:  Can you ``Cesaro sum" our figures on pp. 98,99? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
+{ \bf William:  Can you ``Cesaro sum'' our figures on pp. 98,99? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
    \vskip20pt   
 
 \bibnote{The theoretical story behind the phenomena that we have seen graphically in this chapter is yet another manifestation of Riemann's explicit formula.  Modern references for this  are  {\bf [Iwaniec-Kowalski]} and {\bf [Davenport: Multiplicative Number Theory]}. (see also the bibliography in these books.)  Many ways of seeing  the explicit relationship are given in  Chapter 5  of {\bf [I-K]}. For  example, consider Exercise 5 on page 109.
@@ -3105,7 +3146,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 $$\sum_{\rho}{\hat \phi}(\rho) = -\sum_{n \ge 1}\Lambda(n)\phi(n) + I(\phi),$$
   
 where \begin{itemize} \item $\phi$ is any smooth complex-valued function  on the reals with compact support,\item  ${\hat \phi}$ is its Mellin transform:  $${\hat \phi}(s):= \int_0^{\infty}\phi(x)x^{s-1}dx,$$ \item the last term on the right,  $I(\phi)$, is  just 
- $$I(\phi):= \int_1^{\infty}(1-{\frac{1}{x^3-x}})\phi(x)dx$$ (coming from the pole at $s=1$ and the ``trivial zeroes"). \item The more serious  summation on the left hand side of the equation is over the nontrivial zeroes $\rho$, noting that if $\rho$ is a nontrivial zero so is ${\bar \rho}$. \end{itemize}
+ $$I(\phi):= \int_1^{\infty}(1-{\frac{1}{x^3-x}})\phi(x)dx$$ (coming from the pole at $s=1$ and the ``trivial zeroes''). \item The more serious  summation on the left hand side of the equation is over the nontrivial zeroes $\rho$, noting that if $\rho$ is a nontrivial zero so is ${\bar \rho}$. \end{itemize}
 
 
 
@@ -3290,7 +3331,7 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 \part{Back to Riemann\label{part4}}
 
 \chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its spectrum\label{ch:envision}}
-In the previous chapters we have described---using Riemann's Hypothesis---how to obtain the {\it spectrum}  $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of primes, and hinted at how to go back. Roughly speaking, we were performing ``Fourier transformations" to make this transit. But Riemann, on the very first page of his 1859 memoir, construes the relationship we have been discussing, between spectrum and staircase, in a even more profound  way.
+In the previous chapters we have described---using Riemann's Hypothesis---how to obtain the {\it spectrum}  $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of primes, and hinted at how to go back. Roughly speaking, we were performing ``Fourier transformations'' to make this transit. But Riemann, on the very first page of his 1859 memoir, construes the relationship we have been discussing, between spectrum and staircase, in a even more profound  way.
 
 To talk about this extraordinary insight of Riemann, one would need to do two things that might seem remote from our topic, given our discussion so far.
 
@@ -3298,7 +3339,7 @@ To talk about this extraordinary insight of Riemann, one would need to do two th
  \item To follow the evolution of this idea in the hands of Riemann, we would have to assume familiarity with basic complex analysis.
  \end{itemize}
  
- We will say only a few words here about this, in hopes of  giving at least a shred of a hint of how marvelous Riemann's idea is. For readers who wish to pursue it further, here is a list of  sources, that are our favorites among those meant to be read by a somewhat broader audience than people very advanced in the subject. We list them in order of ``required background."
+ We will say only a few words here about this, in hopes of  giving at least a shred of a hint of how marvelous Riemann's idea is. For readers who wish to pursue it further, here is a list of  sources, that are our favorites among those meant to be read by a somewhat broader audience than people very advanced in the subject. We list them in order of ``required background.''
  
  \begin{enumerate} 
 \item John  Derbyshire's {\it Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics}.  We have already mentioned this book  in our introduction {\bf [[though not by name]]}, but feel that it is so good, that it is worth a second mention here. See specifically: $\dots$
@@ -3352,7 +3393,7 @@ Making use of this extension of the range of definition of Euler's sum of recipr
 {\bf Riemann's idea (1859):}  It is in the third step of the   evolution of $\zeta(s)$ that something quite surprising happens. Riemann extended the range of Chebyshev's sum of reciprocals of positive real powers  of consecutive whole numbers allowing the argument $s$ to range over the entire complex plane $s$  (avoiding $s=1$).  Now this is a  more mysterious extension of Euler's function, and it is deeper in two ways:
 
 \begin{itemize} 
-\item The formula $$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$ does converge when the real part of the  exponent $s$ is greater than $1$ (i.e., this allows us to use the same formula, as Chebyshev had done, for the right upper half plane in the complex plane determined by the condition $s=x+iy$ with $x>1$ but not beyond this).  You can't simply use the same formula for the extension.\item So you must face the fact that if you wish to ``extend" a function beyond the natural range in which its defining  formula makes sense, there may be many ways of doing it. 
+\item The formula $$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$ does converge when the real part of the  exponent $s$ is greater than $1$ (i.e., this allows us to use the same formula, as Chebyshev had done, for the right upper half plane in the complex plane determined by the condition $s=x+iy$ with $x>1$ but not beyond this).  You can't simply use the same formula for the extension.\item So you must face the fact that if you wish to ``extend'' a function beyond the natural range in which its defining  formula makes sense, there may be many ways of doing it. 
 \end{itemize}
 
   To appreciate the second point, the theory of a complex variable is essential. The {\it uniqueness}  (but not yet the {\it existence}) of Riemann's extension of $\zeta(s)$ to the entire complex plane is guaranteed by the  phenomenon referred to as {\it analytic continuation}.  If you are given a function on any infinite subset $X$ of the complex plane that contains a limit point, and if you are looking for a  function on the entire complex plane{\footnote{ or to any connected open subset that contains $X$}} that is differentiable in the sense of complex analysis, there may be no functions at all that have that property, but if there is one, that function is {\it unique}.
@@ -3366,7 +3407,7 @@ Making use of this extension of the range of definition of Euler's sum of recipr
   
   so since the Bernoulli numbers indexed by odd integers $>1$ all vanish, the extended zeta function $\zeta(s)$ actually vanishes at {\it all} even integers. 
   
-   The even integers $-2, -4, -6, \dots$ are often called the {\bf trivial zeroes} of the Riemann zeta function.   There are indeed other zeroes of zeta, and those other zeroes could---in no way---be dubbed ``trivial," as we shall shortly see.\vskip20pt
+   The even integers $-2, -4, -6, \dots$ are often called the {\bf trivial zeroes} of the Riemann zeta function.   There are indeed other zeroes of zeta, and those other zeroes could---in no way---be dubbed ``trivial,'' as we shall shortly see.\vskip20pt
   It is time to consider these facts:
   
 \begin{enumerate}\item {\bf  Riemann's zeta function codes the placement of prime powers among all numbers}  The key here is to take logarithm and then the derivative of $\zeta(s)$  (this boils down to forming ${\frac{d{\zeta}}{ds}}(s)/\zeta(s)$). Assuming that the real part of $s$ is $>1$, taking the logarithm of $\zeta(s)$ ---using Euler's infinite product formulation---gives us $$\log\zeta(s)= \sum_{p \ {\rm prime}}-\log{\big(1-p^{-s}\big)},$$ and we can do this term-by-term, since the real part of $s$ is $>1$.  Then taking the derivative gives us:
@@ -3382,7 +3423,7 @@ Knowing the zeroes and poles (in the complex plane) alone of the Riemann zeta fu
 
   So here is the score: 
   
- \begin{itemize} \item As for poles, $\zeta(s)$ has only one pole. It is at $s=1$ and is of order $1$ ( a ``simple pole").\item As for zeroes, we have already mentioned the trivial zeroes (at negative even integers), but $\zeta(s)$ also has infinitely many {\it nontrivial} zeroes. These nontrivial zeroes are known to lie in the vertical strip $$0\ < \ {\rm real\ part\ of\ } s\ < \ 1.$$\end{itemize}
+ \begin{itemize} \item As for poles, $\zeta(s)$ has only one pole. It is at $s=1$ and is of order $1$ ( a ``simple pole'').\item As for zeroes, we have already mentioned the trivial zeroes (at negative even integers), but $\zeta(s)$ also has infinitely many {\it nontrivial} zeroes. These nontrivial zeroes are known to lie in the vertical strip $$0\ < \ {\rm real\ part\ of\ } s\ < \ 1.$$\end{itemize}
  \end{enumerate}
  And here is yet another equivalent statement of Riemann's Hypothesis---this being the formulation closest to the one given in his 1859 memoir:
  
@@ -3467,13 +3508,13 @@ certain finite product or quotients of them, play roles analogous to
 Riemann's zeta, for other problems in number theory.
   
 For example, for every {\it quadratic number field} $K:={\bf Q}({\sqrt
-  d})$, there is a corresponding ``$L$-function" $L(K,s)$ with an
+  d})$, there is a corresponding ``$L$-function'' $L(K,s)$ with an
 expansion of the form $$L(K,s)= \sum_{N=1}^{\infty} a_n(K)\cdot
 n^{-s}$$ convergent for complex numbers $s$ with real part $> 1$---and
 where the coefficients $a_n(K)$ are either $0$ or $\pm 1$.  The
 product $\zeta(s)\cdot L(K,s)$ is called the {\it zeta function of
   $K$} and is sometimes denoted $\zeta_K(s)$ to distinguish it from
-the Riemann zeta-function.  The ``nontrivial zeroes" of $\zeta_K(s)$
+the Riemann zeta-function.  The ``nontrivial zeroes'' of $\zeta_K(s)$
 contains the information needed to understand the (placement of) the
 norms of prime ideals of the ring of integers of $K$.
    
@@ -3500,24 +3541,24 @@ primes as they display themselves amongst complex numbers:
 
   
 But a similar thing is true for every number field. And, more
-miraculous, it seems as if the ``nontrivial zeroes" of $L$-functions
+miraculous, it seems as if the ``nontrivial zeroes'' of $L$-functions
 associated to {\it every} number field all have the property that
 their real part is equal to ${\frac{1}{2}}$.  This statement, still
 unproved for even any {\it one} of these $L$-functions{\footnote{ or
     for much the more generous collection of $L$-functions associated
     to algebraic varieties over number fields, or to automorphic forms
-    for reductive groups}} is called the ``Grand Riemann Hypothesis."
+    for reductive groups}} is called the ``Grand Riemann Hypothesis.''
   
   
 Here is a picture of the first $A$ zeroes of the $L$-functions of the
 first $B$ quadratic fields, arranged along the $x$-axis by increasing
 conductor, and---as experts will have guessed by the relative
-``horizontality" of the $n$-th zero for all these $L$-functions
+``horizontality'' of the $n$-th zero for all these $L$-functions
 ($n=1,2,\dots, A$)----the $y$-axis has been scaled by a (smooth)
 factor dependent upon the conductor so as to allow for all the``lowest
-zeroes" of the $L$-functions of these quadratic fields to have a
+zeroes'' of the $L$-functions of these quadratic fields to have a
 chance of appearing roughly horizontal, as well as the ``second lowest
-zeroes" etc.  That they do appear roughly horizontal shows that these
+zeroes'' etc.  That they do appear roughly horizontal shows that these
 $L$-functions have---in some statistical sense---a kind of kinship.
 \vskip10pt
    
@@ -3526,7 +3567,7 @@ $L$-functions have---in some statistical sense---a kind of kinship.
 In all of these cases, and for all the nontrivial zeroes of these
 $L$-functions that have actually been computed, these zeroes {\it do
   have} real part equal to ${\frac{1}{2}}$; that is, they are all
-conforming---so far---to the ``Grand Riemann Hypotheses."
+conforming---so far---to the ``Grand Riemann Hypotheses.''
      
      
 Is this a reason to actually {\it believe} the Grand Riemann
@@ -3536,14 +3577,14 @@ present computed their zeroes, conform to the hypothesis(?)
 One further type of analogy gives even more evidence: for any system
 of polynomials in a fixed number of variables (with integer
 coefficients, say) and for each prime number $p$ there are
-``zeta-type" functions that contain all the information needed to
+``zeta-type'' functions that contain all the information needed to
 count the number of simultaneous solutions in finite fields of
 characteristic $p$.  That such counts can be well-approximated with a
 neatly small error term is related to the placement of the zeroes of
-these ``zeta-type" functions. There is then a ``Riemann Hypothesis"
+these ``zeta-type'' functions. There is then a ``Riemann Hypothesis''
 that prescribes precise conditions on the real parts of their
 zeroes---this prescription being called the ``Riemann Hypothesis for
-function fields." Now the beauty of this analogous hypothesis is that
+function fields.'' Now the beauty of this analogous hypothesis is that
 it has, in fact, been proved! (See $C$.)
       
 Is this yet another reason to believe the Grand Riemann Hypothesis?
@@ -3697,10 +3738,6 @@ sage: a, pp, pp - a
 \end{verbatim}
 
 
-\section{The Fast Fourier Transform}
-
-[[Give numerical examples about how fast, how to use in Sage, libraries out there,
-etc.]]
 
 
 
