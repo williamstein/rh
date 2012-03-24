@@ -1,3 +1,4 @@
 tar jcvf rh.tar.bz2 rh
 rsync -axvH --delete rh/ sage:www/rh/rh/
 scp rh.tar.bz2 sage:www/rh/
+rm rh.tar.bz2
