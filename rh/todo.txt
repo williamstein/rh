@@ -1,4 +1,4 @@
-[ ] change all links to sloane's pages to http://oeis.org
+[x] change all links to sloane's pages to http://oeis.org
 
 [ ] fix fig_phihat_even_all -- need odlyzko database; figures seem too close.
     I should just include all the zeros needed in code.sage, to not depend on odlyzko!
