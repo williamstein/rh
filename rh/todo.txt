@@ -1,0 +1,21 @@
+[ ] change all links to sloane's pages to http://oeis.org
+
+[ ] fix fig_phihat_even_all -- need odlyzko database; figures seem too close.
+    I should just include all the zeros needed in code.sage, to not depend on odlyzko!
+
+Barry write: 
+
+[ ] explicit formula
+[ ] introduction (overview of book)
+[ ] chapter 28
+[ ] skewes # endnote
+[ ] multiplicities
+[ ] chapter 30
+[ ] epilogue: gaussian primes
+
+Me: 
+[ ] first -- reorganization of parts
+[ ] move my compute stuff to epilogues
+[ ] "Riemann Spectrum" (and is this standard terminology?)
+[ ] find or generate the missing plots
+[ ] make small corrections
