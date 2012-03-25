@@ -2712,7 +2712,7 @@ machine (see Figure~\ref{fig:fourier_machine}); namely:
     But there is a {\it synthesis} part to our work as well,
     for we can reconstruct $f(t)$ from its Fourier transform, by a
     process intriguingly similar to the analysis part; namely:  if
-$\int_{-{\infty}}^{+{\infty}}|{\hat f}(\theta)|d\theta$ (exists, and) is finite, we retrieve $(f(t)$ by the integral
+$\int_{-{\infty}}^{+{\infty}}|{\hat f}(\theta)|d\theta$ (exists, and) is finite, we retrieve $f(t)$ by the integral
        
       $$f(t)  = {\frac{1}{2\pi}}\int_{-{\infty}}^{+{\infty}}{\hat f}(\theta)\cos(\theta t)d\theta.$$
        
@@ -2769,7 +2769,7 @@ by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
     What is the Fourier transform of this $d_x(t)$?  The answer is
     given by making the same computation as we've just made:
     
-\begin{align*}
+\begin{align*}\label{dx}
 {\hat d_x}(\theta)  &=  {\frac{1}{2}}\left(\int_{-\infty}^{+\infty}\cos(-\theta t)\delta_x(t)dt + \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_{-x}(t)dt\right)\\
     &= {\frac{1}{2}}\big(\cos(-\theta x)+ \cos(+\theta x)\big)\\
     &= \cos(x\theta)
@@ -2784,7 +2784,7 @@ To summarize this in ridiculous (!) colloquial terms: {\it for any
     
 So far, so good, but remember that the theory of the Fourier transform
 has---like much of mathematics---two parts: an {\it analysis part} and
-a {\it synthesis} part.  We've just perfomed the {\it analysis} part
+a {\it synthesis} part.  We've just performed the {\it analysis} part
 of the theory for these symmetrized delta functions $(\delta_x(t) +
 \delta_{-x}(t))/2$.
 
@@ -2820,7 +2820,7 @@ We should note, in passing, that the set of spike values of a function  $F(t,N)$
 
 \part{The Riemann Spectrum of the Prime Numbers\label{part3}}
 
-\chapter{ A sneak preview}
+\chapter{ A sneak preview}\label{snpr}
 
 To get a sense of what we're in for, let us consider two
 infinite trigonometric sums and exhibit the graphs of more and more
@@ -2851,7 +2851,7 @@ calling the spectrum) and conversely is a consequence of the Riemann
 Hypothesis.
 \begin{enumerate} 
 
-\item {\bf Towards the Spectrum, starting from (logs of) powers of the
+\item {\bf Towards the Riemann Spectrum, starting from (logs of) powers of the
     primes:}
 
   To get warmed up, let's plot the positive values of the following
@@ -2935,7 +2935,7 @@ Here, the peaks are even sharper, and note that again they are higher; that is, 
   signify.
 \end{itemize}
 
-\item{\bf Towards (logs of) powers of the primes, starting from the Spectrum:}
+\item{\bf Towards (logs of) powers of the primes, starting from the Riemann Spectrum:}
   
   Here we will be making use of the series of numbers $$\theta_1,
   \theta_2, \theta_3, \dots$$ comprising what we called the {\it
@@ -3043,7 +3043,7 @@ example, the equation
     $\log(2\pi)$ at $0$).  The more red the arrow, the larger the
     weight.}
 
-\item Now ---for normalization purposes---multiply $\Psi'(t)$ by the
+\item Now---for normalization purposes---multiply $\Psi'(t)$ by the
   function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
 
@@ -3087,11 +3087,11 @@ information about the placement of prime numbers among all numbers.
 
 
 
-\chapter{Going from the primes to the spectrum}
+\chapter{Going from the primes to the Riemann Spectrum}
 
-\todo{This chapter has not been fully written, there are some
-  mathematical issues that we don't yet explain, and we will need to
-  work out in order to do a satisfactory job here.}
+%\todo{This chapter has not been fully written, there are some
+%  mathematical issues that we don't yet explain, and we will need to
+ % work out in order to do a satisfactory job here.}
  
  
  
@@ -3131,15 +3131,15 @@ We may want to think of $\Phi(t)$ as a limit of the following sequence of distri
 where $\Phi_{\le C}(t)$  is the finite linear 
 combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
  $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
- Since the Fourier transform of each $d_{n\log(p)}(t)$ is
- $\cos(n\log(p)\theta)$ we compute the Fourier transform of $\Phi_{\le
-   C}(t)$ to be:
+ Since the Fourier transform of $d_x(t)$ is  $\cos(t\theta)$, the Fourier transform of  each $d_{n\log(p)}(t)$ is
+ $\cos(n\log(p)\theta)$ so the Fourier transform of $\Phi_{\le
+   C}(t)$ is:
   
   $${\hat \Phi}_{\le C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
   
   
-  We have come then---again---to the expressions graphed at the end of Part~\ref{part1}, in 
-  Chapter~\ref{sec:fourier_staircase}.
+  We have come then---again---to the expressions graphed at the beginning of Part~\ref{part3}, in 
+  Chapter~\ref{snpr}.
   
   
  \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
@@ -3147,15 +3147,15 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\bf Hints of the spectrum:}\ The $\theta$-coordinates of the peaks of these graphs {\it seem to be} vaguely clustered about  a discrete set of  positive real numbers. In fact, this is already a hint of what happens to the graphs of these functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to tend to infinity.   But to make it more than a hint, and to ``see''  a certain infinite set of positive real numbers  
+{\bf We already see hints of the Riemann Spectrum:}\ The $\theta$-coordinates of the peaks of these graphs {\it seem to be} vaguely clustered about  a discrete set of  positive real numbers. In fact, this is already a hint of what happens to the graphs of these functions ${\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to tend to infinity.   But to make it more than a hint, and to ``see''  a certain infinite set of positive real numbers  
 $$\theta_1,\theta_2,\theta_3,\dots$$ emerge,  we are going to subject our functions ${\hat\Phi}_{\le C}(\theta)$ to a few simple cleansing operations. 
 
-Once we define them, we will be calling the set $$\theta_1,\theta_2,\theta_3,\dots$$ the {\bf spectrum of the primes}  and  if the Riemann Hypothesis holds, these numbers would be the key to the placement of primes on the number line.
+Once we define them, we will be calling the set $$\theta_1,\theta_2,\theta_3,\dots$$ the {\bf Riemann spectrum of the primes}  and  if the Riemann Hypothesis holds, these numbers would be the key to the placement of primes on the number line.
 
 
-{\bf The cleansing operations:}    Here is a short list of things we are going to do  to the ${\hat\Phi}_{\le C}(\theta)$'s to make them reveal their secrets. These operations are given in the order in which we will apply  them
+{\bf The cleansing operations:}    Here is a long list of things we are going to do  to the ${\hat\Phi}_{\le C}(\theta)$'s to make them reveal their secrets. These operations are given in the order in which we will apply  them.
  \vskip20pt
-\begin{itemize} \item Add  to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth function{\footnote{ The function is given by the following formula:  for $C$ reasonably large and for positive real $\theta$ put   $$T_C(\theta):= {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by $T_C(\theta)$. This function divided by $C^{1/2}$  is bounded in the variable $C$ and goes to zero if $\theta$ tends to infinity.
+\begin{enumerate} \item Add  to ${\hat\Phi}_{\le C}(\theta)$ a certain nice smooth function{\footnote{ The function is given by the following formula:  for $C$ reasonably large and for positive real $\theta$ put   $$T_C(\theta):= {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot \log(C))\big\}.$$}} of $C$ and $\theta$ that we will denote by $T_C(\theta)$. This function divided by $C^{1/2}$  is bounded in the variable $C$ and goes to zero if $\theta$ tends to infinity.
 
  So, after this operation we will be dealing with  $$A_C(\theta):= {\hat\Phi}_{\le C}(\theta) +T_C(\theta)$$
  
@@ -3181,9 +3181,11 @@ and this is what the graphs look like now
   \vskip20pt
  Here is a---perhaps surprising---{\it theorem}  that tells us what sort of strange functions ${\tilde B}_C(\theta)$ and $B_C(\theta)$ are.
  
- \noindent{\bf Theorem:} Suppose the Riemann Hypothesis. \begin{enumerate}\item The limit $$B(\theta):=\lim_{C \to \infty}  B_C(\theta)$$ exists for every positive real number $\theta$;  therefore ${\tilde B}(\theta):={\lim_{C \to \infty}}{\tilde B}_C(\theta)$ also exists and these limits are equal. \item The values of $B(\theta)$ are {\it either zero or one}. \item The set of arguments $\theta$ for which $B(\theta) = {\tilde B}(\theta) =1$ is an infinite discrete set of positive real numbers, $$\theta_1,\theta_2,\theta_3,\dots$$ which we will now call {\it the spectrum of the primes}.
+ \noindent{\bf Theorem:} Suppose the Riemann Hypothesis is true. \begin{enumerate}\item The limit $$B(\theta):=\lim_{C \to \infty}  B_C(\theta)$$ exists for every positive real number $\theta$;  therefore ${\tilde B}(\theta):={\lim_{C \to \infty}}{\tilde B}_C(\theta)$ also exists and these limits are equal. \item The values of $B(\theta)$ are {\it either zero or positive integers}. \item The set of arguments $\theta$ for which $B(\theta) = {\tilde B}(\theta) > 0$ is an infinite discrete set of positive real numbers, $$\theta_1,\theta_2,\theta_3,\dots$$   This collection of real numbers  we will now call {\it the Reimann Spectrum of the primes}. The {\it value} of  ${\tilde B}(\theta)$ is called the {\bf multiplicity} of $\theta$.
  \end{enumerate}
  \end{itemize} 
+ 
+
    \vskip20pt
    
 
@@ -3244,13 +3246,15 @@ $2,\!001,\!052$
 within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
 
+  Since people have already computed at least $1029.9 $ billion$\theta$'s (as of Feb. 18, 2005) and have never found one with multplicity $>1$ it is generally expected that the multiplicity of all the $theta$'s in the Riemann Spectrum is $1$.  But, independent of that expectation, our convention in what follows will be that we {\it count} each of the  elements in the Riemann Spectrum repeated as many times as their multiplicity. So, if it so happens that $\theta_n$ occurs with multiplicity two, we view the Riemann spectrum as being the series of numbers
+  $$\theta_1, \theta_2, \dots, \theta_{n-1}, \theta_n, \theta_n, \theta_{n+1}, \dots$$
   
   
 
  
-\chapter{Going from the spectrum to the primes}
+\chapter{Going from the Riemann Spectrum to the primes}
 
-  To justify the name {\it spectrum of primes} we will investigate graphically whether  in an analogous manner we can use the spectrum to get information about the placement of prime numbers. We might ask, for example, if  there is a trigonometric function with frequencies given by this collection of  real numbers,  $$\theta_1,\theta_2,\theta_3,\dots$$ that somehow pinpoints the prime powers, just as our functions  $${\hat \Phi}(\theta)_{\le C}= 2\sum_{{\rm prime\ powers\ } p^n \le C} p^{-m/2}\log(p)\cos(n\log(p)\theta)$$  for large $C$ pinpoint the spectrum (as discussed in the previous two chapters).
+  To justify the name {\it Riemann spectrum of primes} we will investigate graphically whether  in an analogous manner we can use this spectrum to get information about the placement of prime numbers. We might ask, for example, if  there is a trigonometric function with frequencies given by this collection of  real numbers,  $$\theta_1,\theta_2,\theta_3,\dots$$ that somehow pinpoints the prime powers, just as our functions  $${\hat \Phi}(\theta)_{\le C}= 2\sum_{{\rm prime\ powers\ } p^n \le C} p^{-m/2}\log(p)\cos(n\log(p)\theta)$$  for large $C$ pinpoint the spectrum (as discussed in the previous two chapters).
   
   To start the return game, consider this sequence of trigonometric functions that have ($zero$ and)  the $\theta_i$ as  spectrum 
    
