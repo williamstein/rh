@@ -545,7 +545,11 @@ The numerator of this fraction is quite large: it is---hold your
 breath---\ $$389\cdot 691\cdot5370056528687 \ \ \ \ {\rm times\ this\
 }204-{\rm digit \ number:}
 $$\vskip 10pt
-$N:=34526903293921580314641092817369674040684481568423967210129920642145194459192569$\newline$415445652760676623601087497272415557084252e765272786877636295951962087273561220060103$\newline$6506871681124610986596878180738901486527$\vskip 10pt  and he {\it incorrectly asserted} that it was prime.  Happily, Bartosz Naskr\c{e}cki spotted this error: our $204$-digit $N$ is {\it not} prime. 
+$N:=3452690329392158031464109281736967404068448156842396721012$\newline
+$\mbox{}\,\,\,\qquad 9920642145194459192569415445652760676623601087497272415557$\newline
+$\mbox{}\,\,\,\qquad 0842527652727868776362959519620872735612200601036506871681$\newline
+$\mbox{}\,\,\,\qquad 124610986596878180738901486527$
+\vskip 10pt  and he {\it incorrectly asserted} that it was prime.  Happily, Bartosz Naskr\c{e}cki spotted this error: our $204$-digit $N$ is {\it not} prime. 
 % Note, according to http://perso.telecom-paristech.fr/~cappe/local/latex/accents.pdf
 % the accent I get with \c{e} is ``NOTE: This is technically incorrect.  The accent should be reversed in orientation,
 % but there is currently no such accent in plain TEX or LATEX.''
@@ -3189,7 +3193,7 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
   Chapter~\ref{snpr}.
   
   
- \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
+ \ill{phihat_even_all}{1}{Plots of $-\frac{1}{2}{\hat \Phi}_{\le C}(\theta)$ for
  $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3226,9 +3230,8 @@ will apply them.  \vskip20pt
 
  So, after this operation we will be dealing with  $$A_C(\theta):= {\hat\Phi}_{\le C}(\theta) +T_C(\theta)$$
  
-  \vskip20pt\item Now let us smooth out $A_C(\theta)$ by replacing it with the function that computes its ``average'' up to $C$. Let ${[C]}$ mean the largest whole number less than or equal to $C$.    Now consider
- 
- $${\tilde A}_C(\theta):= {\frac{\sum_{c=1}^{[C]} A_c(\theta)}{[C]}}.$$  This type of operation on  functions is called {\it Cesaro smoothing}. Applying Cesaro smoothing to a function $U_C(\theta)$ gives a new function $${\tilde U}_C(\theta):=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} U_c(\theta)$$  with useful properties, at times:
+  \vskip20pt\item Now let us smooth out $A_C(\theta)$ by replacing it with the function that computes its ``average'' up to $C$.  Now consider
+ $${\tilde A}_C(\theta):= {\frac{\sum_{c=1}^{C} A_c(\theta)}{C}}.$$  This type of operation on  functions is called {\it Cesaro smoothing}. Applying Cesaro smoothing to a function $U_C(\theta)$ gives a new function $${\tilde U}_C(\theta):=  {\frac{1}{C}}\sum_{c=1}^{C} U_c(\theta)$$  with useful properties, at times:
  \begin{quote} \begin{itemize}\item If, for a given value of
      $\theta$, $${\lim_{C \to \infty}} U_C(\theta)$$ actually exists,
      then the limit also exists for its Cesaro smoothing, and the
@@ -3247,7 +3250,7 @@ will apply them.  \vskip20pt
   \vskip20pt
 \item But we can also perform a second Cesaro smoothing to get
 
-$${\tilde B}_C(\theta):=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} B_c(\theta)$$ 
+$${\tilde B}_C(\theta):=  {\frac{1}{C}}\sum_{c=1}^{C} B_c(\theta)$$ 
 
 and this is what the graphs look like now
  \vskip20pt
@@ -3373,7 +3376,7 @@ spectrum (as discussed in the previous two chapters).
 \todo{Our figures on pp. 98,99 might come here.}  
    
    To get a cleaner picture let us subject our functions $H_C(s)$ to Cesaro smoothing as in the previous chapter. Define:
-   $${\tilde H}_C(s) :=  {\frac{1}{[C]}}\sum_{c=1}^{[C]} H_c(\theta),$$ and let's take another look.
+   $${\tilde H}_C(s) :=  {\frac{1}{C}}\sum_{c=1}^{C} H_c(\theta),$$ and let's take another look.
    \vskip20pt
 \todo{Can we ``Cesaro sum'' our figures on Page~\pageref{fig:phic}? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}  
    \vskip20pt   
