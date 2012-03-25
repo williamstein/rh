@@ -3260,10 +3260,12 @@ will apply them.  \vskip20pt
      one converges faster than the first. \end{itemize} \end{quote}
  \vskip20pt\item Now we normalize ${\tilde A}_C(\theta)$ by dividing
  by $\log(C)$, (supposing that $C >1$)
- 
  to get a function we'll call: $$B_C(\theta):= {\tilde
    A}_C(\theta)/\log(C).$$ If we stop here, this is what the graphs
- look like: \vskip20pt \centerline{\bf Graphs here}
+ look like: \vskip20pt 
+
+\ill{Bc_all}{1}{Plots of $-B_{C}(\theta)$ for
+$C=5$, 20 (top), 50 and 100 (bottom).\label{fig:phiBc}}
  
   \vskip20pt
 \item But we can also perform a second Cesaro smoothing to get
@@ -3272,8 +3274,8 @@ $${\tilde B}_C(\theta):=  {\frac{1}{C}}\sum_{c=2}^{C} B_c(\theta)$$
 
 and this is what the graphs look like now
 
-% \ill{Bc_all}{1}{Plots of $-\frac{1}{2}{\tilde B}_{C}(\theta)$ for
-% $C=5$ (top), 20, 50, and 100 (bottom).\label{fig:phiBc}}
+\ill{Bctilde_all}{1}{Plots of $-{\tilde B}_{C}(\theta)$ for
+$C=5$, 20 (top), 50 and 100 (bottom).\label{fig:phiBc}}
  
   \vskip20pt
  Here is a---perhaps surprising---{\it theorem}  that tells us what sort of strange functions ${\tilde B}_C(\theta)$ and $B_C(\theta)$ are.
@@ -3283,12 +3285,12 @@ and this is what the graphs look like now
      \infty} B_C(\theta)$$ exists for every positive real number
    $\theta$; therefore ${\tilde B}(\theta):={\lim_{C \to
        \infty}}{\tilde B}_C(\theta)$ also exists and these limits are
-   equal. \item The values of $B(\theta)$ are {\it either zero or
+   equal. \item The values of $-B(\theta)$ are {\it either zero or
      positive integers}. \item The set of arguments $\theta$ for which
-   $B(\theta) = {\tilde B}(\theta) > 0$ is an infinite discrete set of
+   $-B(\theta) = -{\tilde B}(\theta) > 0$ is an infinite discrete set of
    positive real numbers, $$\theta_1,\theta_2,\theta_3,\dots$$ This
    collection of real numbers we will now call {\it the Reimann
-     Spectrum of the primes}. The {\it value} of ${\tilde B}(\theta)$
+     Spectrum of the primes}. The {\it value} of $-{\tilde B}(\theta)$
    is called the {\bf multiplicity} of $\theta$.
  \end{enumerate}
 
