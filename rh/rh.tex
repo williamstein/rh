@@ -3335,7 +3335,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 
 Since people have already computed at least $1029.9 $
 billion$\theta$'s (as of Feb. 18, 2005) and have never found one with
-multplicity $>1$ it is generally expected that the multiplicity of all
+multiplicity $>1$ it is generally expected that the multiplicity of all
 the $theta$'s in the Riemann Spectrum is $1$.  But, independent of
 that expectation, our convention in what follows will be that we {\it
   count} each of the elements in the Riemann Spectrum repeated as many
@@ -3440,7 +3440,7 @@ $G_C(x)$.
   assuming the \RH{} as formulated in Chapter~\ref{sec:tinkering}---can 
   we construct the staircase of primes $\pi(X)$ solely
   from knowledge of the sequence of real numbers $\theta_1,
-  \theta_2,\theta_3,\dots$
+  \theta_2,\theta_3,\dots$?
   
   
 
@@ -3584,7 +3584,7 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 \ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.\label{fig:rklast}}
 
 
-\chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its spectrum\label{ch:envision}}
+\chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its Riemann Spectrum\label{ch:envision}}
 In the previous chapters we have described---using Riemann's
 Hypothesis---how to obtain the {\it
   spectrum} $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of
@@ -3592,7 +3592,7 @@ primes, and hinted at how to go back. Roughly speaking, we were
 performing ``Fourier transformations'' to make this transit. But
 Riemann, on the very first page of his 1859 memoir, construes the
 relationship we have been discussing, between spectrum and staircase,
-in a even more profound way.
+in an even more profound way.
 
 To talk about this extraordinary insight of Riemann, one would need to
 do two things that might seem remote from our topic, given our
@@ -3604,8 +3604,8 @@ discussion so far.
  \end{itemize}
  
  We will say only a few words here about this, in hopes of giving at
- least a shred of a hint of how marvelous Riemann's idea is. For
- readers who wish to pursue it further, here is a list of sources,
+ least a shred of a hint of how marvelous Riemann's idea is.  We will be drawing, at this point, on some further mathematical background.  For
+ readers who wish to pursue the themes we discuss, here is a list of sources,
  that are our favorites among those meant to be read by a somewhat
  broader audience than people very advanced in the subject. We list
  them in order of ``required background.''
@@ -3661,7 +3661,7 @@ $$B_{10} = {5\over 66},\ \ \ \ \ \ \ \   B_{12}= {691\over 2730},\ \ \ \ \ \ \ \
 \    \newline \bigskip \     \newline 
 If you turn attention to sums of negative $k$-th powers of consecutive
 integers, then when $k= -1$, $$S_{-1}(N)= {\frac{1}{1}}+
-{\frac{1}{2}}+ {\frac{1}{3}}+ \cdots {\frac{1}{N}}$$ tends to infinity
+{\frac{1}{2}}+ {\frac{1}{3}}+ \cdots+ {\frac{1}{N}}$$ tends to infinity
 like $\log(N)$, but for $k < -1$ we are facing the sum of reciprocals
 of powers (of exponent $>1$) of consecutive whole numbers, and
 $S_k(N)$ converges. This is the first appearance of the zeta function
@@ -3671,9 +3671,9 @@ $$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$
 The striking reformulation that Euler discovered was the expression of
 this infinite sum as an infinite product of factors associated to the
 prime numbers:
-$$\zeta(s)=\prod_{p \ {\rm prime}}{\frac{1}{\big(1-p^{-s}\big)}},$$  
-where the infinite sum on the right and the infinite product on the
-left both converge (and are equal) if $s > 1$. He also evaluated these
+$$\zeta(s)=\sum_n{|frac{1}{n^s}} = prod_{p \ {\rm prime}}{\frac{1}{1-p^{-s}}},$$  
+where the infinite sum on the left and the infinite product on the
+right both converge (and are equal) if $s > 1$. He also evaluated these
 sums at even positive integers, where---surprise---the Bernoulli
 numbers come in again; and they and $\pi$ play a combined, fascinating
 role:
@@ -3751,7 +3751,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
   
   The even integers $-2, -4, -6, \dots$ are often called the {\bf
     trivial zeroes} of the Riemann zeta function.  There are indeed
-  other zeroes of zeta, and those other zeroes could---in no way---be
+  other zeroes of the zeta function, and those other zeroes could---in no way---be
   dubbed ``trivial,'' as we shall shortly see.\vskip20pt It is time to
   consider these facts:
   
@@ -3767,8 +3767,9 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
     derivative gives us:
 
   \vskip20pt
+   $${\frac{d{\zeta}}{ds}}(s)/\zeta(s)= -\sum_{n=1}^{\infty}\Lambda(n)n^{-s}$$ where  $$\Lambda(n): = \log p$$ if $n= p^k$ for $p$ a prime number and $k >0$;  and  $$\Lambda(n): = 0$$ if $n$ is not a power of a prime number.  In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
 
-\todo{Put in log deriv of zeta.}
+%\todo{Put in log deriv of zeta.}
 %$$ {\frac{d{\zeta}}{ds}}(s)/\zeta(s)=-\sum_{p \ {\rm prime}}\log(p)p^{-s}.$$  For any particular $s$ this is an infinite sum which tallies the primes  $p$, each weighted by the quantity  $\log(p)p^{-s}$ and is absolutely convergent if the real part of $s$ is $>1$.   % note : this forgets the prime powers.
 
  \vskip20pt
@@ -3872,29 +3873,25 @@ standard to call them $L$-{\it functions}).  These $L$-functions, and
 certain finite product or quotients of them, play roles analogous to
 Riemann's zeta, for other problems in number theory.
   
-For example, for every {\it quadratic number field} $K:={\bf Q}({\sqrt
-  d})$, there is a corresponding ``$L$-function'' $L(K,s)$ with an
-expansion of the form $$L(K,s)= \sum_{N=1}^{\infty} a_n(K)\cdot
-n^{-s}$$ convergent for complex numbers $s$ with real part $> 1$---and
-where the coefficients $a_n(K)$ are either $0$ or $\pm 1$.  The
-product $\zeta(s)\cdot L(K,s)$ is called the {\it zeta function of
-  $K$} and is sometimes denoted $\zeta_K(s)$ to distinguish it from
-the Riemann zeta-function.  The ``nontrivial zeroes'' of $\zeta_K(s)$
-contains the information needed to understand the (placement of) the
-norms of prime ideals of the ring of integers of $K$.
+
+% for every {\it quadratic number field} $K:={\bf Q}({\sqrt
+%  d})$, there is a corresponding ``$L$-function'' $L(K,s)$ with an
+%expansion of the form $$L(K,s)= \sum_{N=1}^{\infty} a_n(K)\cdot
+%n^{-s}$$ convergent for complex numbers $s$ with real part $> 1$---and
+%where the coefficients $a_n(K)$ are either $0$ or $\pm 1$.  The
+%product $\zeta(s)\cdot L(K,s)$ is called the {\it zeta function of
+%  $K$} and is sometimes denoted $\zeta_K(s)$ to distinguish it from
+%the Riemann zeta-function.  The ``nontrivial zeroes'' of $\zeta_K(s)$
+%contains the information needed to understand the (placement of) the
+%norms of prime ideals of the ring of integers of $K$.
    
-For a more explicit example, take the field of {\it Gaussian numbers}
- $$
-   K = {\bf Q}(i) = \{ a+bi\ | \ a,b \in  {\bf Z}\}.
-$$  
-Here the $n$-th coefficient $a_n({\bf Q}(i))$ of $\zeta_K(s)$ is $\pm
-1$ according as $n$ has a remainder of $\pm 1$ after division by $4$;
-and is $0$ if $n$ is even.
-   
-For this field, $K = {\bf Q}(i)$, the placement of the {\it zeroes} of
-$\zeta_K(s)=\zeta(s)\cdot L({\bf Q}(i),s)$ in the complex plane give
-us complete information about placement of Gaussian primes in the set
-of all Gaussian integers. Here is a plot of a large number of Gaussian
+For example---instead of the ordinary integers---consider 
+the  {\it Gaussian integers},. This is the collection of numbers
+ $$ \{ a+bi\}$$ where $i = {\sqrt{-1}}$ and $a,b$ are ordinary integers. We can add and multiply two such numbers and get another of the same form. The only ``units" among thes Gaussian integers (i.e., numbers whose inverse is again a Gaussian integer) are the four numbers $\pm 1, \pm i$  and if we mullttply any Gaussian integer $a+bi$ by any of these four units, we will be getting  the collection $\{a+bi, -a-bi, -b+ai, b -ai\}$.  We measure the {\it size} of  Gasussian integer by the square of its distance to the origin, i.e., $$|a+bi|^2 =  {a^2+b^2}.$$ and note that this ``size" is a nice multiplicative function on the set of Gaussian integers, in that the size of a product of two Gaussiain integers is the product of the sizes of each of them.   
+ 
+ We have a natural notion of {\bf prime Gaussian integer}, i.e., one that cannot be factored as the product of two Gaussian integers of smaller size.  Given what we have just discussed, can you prove that if a Gaussian integer is  a prime Gaussian integer, then it size must either be an ordinary  prime number, or the square of an ordinary prime number?
+ 
+  Here is a plot of a large number of Gaussian
 primes as they display themselves amongst complex numbers:
    
 \todo{Possibly a picture of the primes in the Gaussian integers.  Here is an example: \newline http://en.wikipedia.org/wiki/File:Gauss-primes-768x768.png}
@@ -3904,17 +3901,16 @@ primes as they display themselves amongst complex numbers:
 \ill{gaussian_staircase_1000}{.8}{Staircase of Gaussian primes of norm up to 1000}
 \ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000}
 
-  
-But a similar thing is true for every number field. And, more
+The natural question to ask, then, is: how are the Gaussian prime numbers distributed? Can one provide as close an estimate to their distribution and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with analogues to the Riemann zeta function playing  a role similar to the prototype $\zeta(s)$  for every number field. And, more
 miraculous, it seems as if the ``nontrivial zeroes'' of $L$-functions
 associated to {\it every} number field all have the property that
-their real part is equal to ${\frac{1}{2}}$.  This statement, still
+their real part is equal to ${\frac{1}{2}}$.  That is, we have  companion Riemann Hypothesis which is part of an even grander expectation, called appropriately,
 unproved for even any {\it one} of these $L$-functions{\footnote{ or
-    for much the more generous collection of $L$-functions associated
+  the ``Grand Riemann Hypothesis.''
+\centerline{ \bf William: the rest of this chapter might be an endnote, once worked on}  
+   for much the more generous collection of $L$-functions associated
     to algebraic varieties over number fields, or to automorphic forms
-    for reductive groups}} is called the ``Grand Riemann Hypothesis.''
-  
-  
+    for reductive groups}} is called  
 Here is a picture of the first $A$ zeroes of the $L$-functions of the
 first $B$ quadratic fields, arranged along the $x$-axis by increasing
 conductor, and---as experts will have guessed by the relative
@@ -3959,7 +3955,7 @@ Is this yet another reason to believe the Grand Riemann Hypothesis?
 \chapter{Glossary}
 
 Here we give all the connections with the standard literature and 
-coventional terminology that we restrained
+conventional terminology that we restrained
   ourselves from giving in the text itself.
 
   For the moment the list of entries is the following but it will
