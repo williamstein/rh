@@ -678,6 +678,18 @@ Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
 number!'' (which it is not) how might you convince that person that
 he or she is wrong?
+\bibnote{We can use Sage to quickly compute the ``hefty
+number'' $p = 2^{43,112,609}-1$.  Simply type
+{\tt p = 2\^43112609 - 1} to instantly compute $p$.
+In what sense have we {\em computed} $p$?  Internally, $p$ is now
+stored in base $2$ in the computer's memory; given the special form of
+$p$ it is not surprising that it took little time to compute.  Much more 
+challenging is to compute all the base 10 digits of $p$, which takes
+a few seconds: {\tt d = str(p)}.
+Now type {\tt d[-50:]} to see the last 50 digits of $p$. 
+To compute the sum $58416637$ of the digits of $p$ type {\tt sum(p.digits())}.
+}
+
 
 Here is a neat---and, we hope, convincing---strategy to show there are
 prime numbers even larger than $p = 2^{43,112,609} - 1$. Imagine
@@ -863,6 +875,32 @@ which are primes and which composite.
 
 Finally, as in Figure~\ref{fig:erat2357}, 
 sieving by 2,3,5, and 7 we have determined which are primes for all but two numbers.
+\bibnote{In Sage, the
+function {\tt prime\_range} enumerates primes in a range, e.g., 
+{\tt prime\_range(50)}
+outputs the primes up to $50$
+and {\tt prime\_range(50,100)}
+outputs the primes between $50$ and $100$.
+Typing {\tt prime\_range(10\^{}8)}
+in Sage enumerates the primes up to a hundred million in around a second.
+You can also enumerate primes up to a billion by typing {\tt v=prime\_range(10\^{}9)}, but this will use
+a large amount of memory, so be careful not to crash your computer
+if you try this.  Notice that there are $\pi(10^9) = 50,\!847,\!534$ primes up to a billion
+by then typing {\tt len(v)}.
+You can also compute $\pi(10^9)$ directly, without enumerating all primes,
+using the command {\tt prime\_pi(10\^{}9)}.
+This is much faster since it uses some clever counting tricks to find the
+number of primes without actually listing them all. 
+
+In Chapter~\ref{sec:tinkering} we tinkered with the staircase of
+primes by first counting both primes and prime powers.    It turns out
+that there are comparatively few prime powers that are not prime.
+Up to $10^8$, only $1,\!405$ of the $5,\!762,\!860$ prime powers are not themselves primes.
+To see this, first enter 
+{\tt a~=~prime\_pi(10\^{}8); pp~=~len(prime\_powers(10\^{}8))}.
+Typing {\tt (a,~pp,~pp-a)} then outputs the triple 
+{\tt (5761455, 5762860, 1405)}.}
+
 
 % GIVEN WHAT IS ABOVE, THIS IS SILLY.
 %Especially if you have had little experience with math, may I suggest
@@ -3657,87 +3695,7 @@ Is this yet another reason to believe the Grand Riemann Hypothesis?
 \chapter{Epilogue: computing}
 
 
-Below we discuss how to use Sage to experiment with some ideas in the
-first part of the book. 
-
-\todo{This chapter could be extended to cover the whole book.
-  Alternatively, this chapter could be removed, and instead its
-  contents put into a different live web-only interactive version of
-  the book.}
-
-
-
-\section{Big Prime Numbers}
-Incidentally, we can use Sage to instantly compute the digits of the ``hefty
-number'' $p = 2^{43,112,609}-1$ that arises in
-Chapter~\ref{ch:what_are_primes}.
-\begin{verbatim}
-sage: time p = 2^43112609 - 1
-CPU times: user 0.00 s, sys: 0.01 s, total: 0.01 s
-\end{verbatim}
-In what sense have we {\em computed} $p$?  Internally, $p$ is now
-stored in base $2$ in the computer's memory; given the special form of
-$p$ it is not surprising that it took no time to compute.  Much more 
-challenging is to compute all the base 10 digits of $p$, which takes
-a few seconds:
-\begin{verbatim}
-sage: d = str(p)          # takes about 20 seconds
-\end{verbatim}
-Here are the last 50 digits of $p$:
-\begin{verbatim}
-sage: d[-50:]
-'79670729447921616491887478265780022181166697152511'
-\end{verbatim}
-And here is the sum of the digits of $p$ (recall page~\pageref{sumdigits} above):
-\begin{verbatim}
-sage: sum(p.digits())     # about 20 seconds
-58416637
-\end{verbatim}
-
-
 \section{Enumerating Primes}
-Chapter~\ref{ch:sieves} is about enumerating primes.  In Sage, the
-function \verb|prime_range| does this, e.g., 
-\begin{verbatim}
-sage: prime_range(50)
-[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-sage: prime_range(50,100)
-[53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-\end{verbatim}
-Sage has little trouble enumerating the primes up to a hundred million:
-\begin{verbatim}
-sage: time v = prime_range(10^8)
-CPU times: user 0.77 s, sys: 0.99 s, total: 1.76 s
-\end{verbatim}
-You can also enumerate primes up to a billion, but this will use
-several gigabytes of memory, so be careful not to crash your computer
-if you try this:
-\begin{verbatim}
-sage: time v = prime_range(10^9)
-CPU times: user 7.77 s, sys: 42.18 s, total: 49.95 s
-sage: len(v)
-50847534
-\end{verbatim}
-
-You can also compute $\pi(x)$ directly, without enumerating all primes:
-\begin{verbatim}
-sage: time prime_pi(10^9)
-CPU times: user 0.02 s, sys: 0.00 s, total: 0.02 s
-Wall time: 0.05 s
-50847534
-\end{verbatim}
-This is much faster since it uses some clever counting tricks to find the
-number of primes without actually listing them all. 
-
-In Chapter~\ref{sec:tinkering} we tinkered with the staircase of
-primes by first counting both primes and prime powers.    It turns out
-that there are comparatively few prime powers that are not prime.
-Up to $10^8$, only 1405 of the 5762860 prime powers are not themselves primes:
-\begin{verbatim}
-sage: X = 10^8; a = prime_pi(X); pp = len(prime_powers(X))
-sage: a, pp, pp - a
-(5761455, 5762860, 1405)
-\end{verbatim}
 
 
 
