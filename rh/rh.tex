@@ -3031,10 +3031,7 @@ Let us denote by $\Phi(t)$ the generalized function that resulted from the above
   role in our story.
    
  
-   
-%Here is a sequence of functions approximating it.
-
-\ill{psi_200}{.6}{Illustration of the  staircase $\Psi(x)$  constructed in Chapter~\ref{sec:tinkering} that 
+\ill{psi_200}{.6}{Illustration of the  staircase $\psi(x)$  constructed in Chapter~\ref{sec:tinkering} that 
 counts weighted prime powers.\label{fig:psi_200}}
   
 So what happens when we take the derivative---in the sense of
@@ -3258,7 +3255,7 @@ where \begin{itemize} \item $\phi$ is any smooth complex-valued function  on the
 
 
 \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$, where
-$\theta_1 \sim 14.13, \ldots$ are the first $1000$ frequencies.  The red
+$\theta_1 \sim 14.13, \ldots$ are the first $1000$ contributions to the Riemann spectrum.  The red
 dots are at the prime powers $p^n$, whose size is proportional to $\log(p)$.}
 
 \ill{phi_cos_sum_26_34_1000}{.8}{Illustration of $-\sum_{i=1}^{1000} \cos(\log(s)\theta_i)$ in the
@@ -3268,13 +3265,13 @@ by the Fourier series, and how the prime powers $3^3$ and $2^5$ also appear.}
 \ill{phi_cos_sum_1010_1026_15000}{.7}{Fourier series from $1,000$ to $1,030$ using 15,000 of the numbers $\theta_i$.  Note the twin primes $1019$ and $1021$ and that $1024=2^{10}$.}
 
  
-
+\part{Back to Riemann\label{part4}}
 
 
 \chapter[Building $\pi(X)$ knowing the Spectrum]{How to build $\pi(X)$ knowing the Spectrum (Riemann's way)}
 
 
-  We have been dealing in this Part~\ref{part2} of our book with $\Phi(t)$ a
+  We have been dealing in Part~\ref{part3} of our book with $\Phi(t)$ a
   distribution that---we said---contains all the essential information
   about the placement of primes among numbers. We have given a clean
   restatement of Riemann's hypothesis, the third restatement so far,
@@ -3284,8 +3281,8 @@ by the Fourier series, and how the prime powers $3^3$ and $2^5$ also appear.}
   original problem---to understand this staircase---would be whether
   we can return to the original staircase, and ``reconstruct it'' so to
   speak, solely from the information of $\Phi(t)$---or equivalently,
-  assuming the \RH{} as formulated in the previous
-  section---can we construct the staircase of primes $\pi(X)$ solely
+  assuming the \RH{} as formulated in Chapter~\ref{sec:tinkering}---can 
+  we construct the staircase of primes $\pi(X)$ solely
   from knowledge of the sequence of real numbers $\theta_1,
   \theta_2,\theta_3,\dots$
   
@@ -3430,7 +3427,6 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 
 \ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.\label{fig:rklast}}
 
-\part{Back to Riemann\label{part4}}
 
 \chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its spectrum\label{ch:envision}}
 In the previous chapters we have described---using Riemann's Hypothesis---how to obtain the {\it spectrum}  $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of primes, and hinted at how to go back. Roughly speaking, we were performing ``Fourier transformations'' to make this transit. But Riemann, on the very first page of his 1859 memoir, construes the relationship we have been discussing, between spectrum and staircase, in a even more profound  way.
@@ -3571,31 +3567,8 @@ Alexander Grothendieck, and Pierre Deligne--where the corresponding
 analogue of Riemann's hypothesis has indeed been proved$\dots$
 
 
-\chapter{Glossary}
 
-Here we give all the connections with the standard literature and 
-coventional terminology that we restrained
-  ourselves from giving in the text itself.
-
-  For the moment the list of entries is the following but it will
-  expand.
-
-  $\pi(X)= \pi_0(X)$, $Q(X)= \psi_0(X)$, $\log, \exp$, $\delta$,
-  distributions, RSA cryptography, Mersenne prime, $\Li(x)$, random
-  walk, spectrum, harmonic, fundamental, frequency, phase, amplitude,
-  band-pass, complex numbers, complex plane, Riemann Zeta function,
-  zeroes of zeta.
-
-
-  Also mention Brian Conrey's Notices article on RH as ``among the
-  best 12 pages of RH survey material that there is---at least for an
-  audience of general mathematicians.''  And mention 
- mention Sarnak and and Bombieri articles at the CMI website on RH.
-  
-
-\part{Epilogue\label{part5}}
-
-\chapter{Epilogue: companions to the zeta function}
+\chapter{Companions to the zeta function}
  
 Our book, so far, has been exclusively about Riemann's $\zeta(s)$ and
 its zeroes. We have been discussing how the (placement of) the zeroes
@@ -3692,14 +3665,28 @@ it has, in fact, been proved! (See $C$.)
 Is this yet another reason to believe the Grand Riemann Hypothesis?
 
 
-\chapter{Epilogue: computing}
+
+\chapter{Glossary}
+
+Here we give all the connections with the standard literature and 
+coventional terminology that we restrained
+  ourselves from giving in the text itself.
+
+  For the moment the list of entries is the following but it will
+  expand.
+
+  $\pi(X)= \pi_0(X)$, $Q(X)= \psi_0(X)$, $\log, \exp$, $\delta$,
+  distributions, RSA cryptography, Mersenne prime, $\Li(x)$, random
+  walk, spectrum, harmonic, fundamental, frequency, phase, amplitude,
+  band-pass, complex numbers, complex plane, Riemann Zeta function,
+  zeroes of zeta.
 
 
-\section{Enumerating Primes}
-
-
-
-
+  Also mention Brian Conrey's Notices article on RH as ``among the
+  best 12 pages of RH survey material that there is---at least for an
+  audience of general mathematicians.''  And mention 
+ mention Sarnak and and Bombieri articles at the CMI website on RH.
+  
 
 \backmatter
 
