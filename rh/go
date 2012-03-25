@@ -1,1 +1,1 @@
-watch rh.tex ./l
+watch rh.tex "pdflatex rh; bibtex rh; pdflatex rh"
