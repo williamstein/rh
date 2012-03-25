@@ -235,9 +235,16 @@ theorems or more at once.'' \bibnote{See page 222 of
 % This is from page 106 of the Borwein book, which is just citing Sabbagh.
 
 
-Our book is profusely illustrated, containing over 125 figures, diagrams,
-and pictures that accompany the text \bibnote{All of the figures were created using the
-free Sage mathematical software \url{http://www.sagemath.org}.
+Our book is profusely illustrated, containing over 125 figures,
+diagrams, and pictures that accompany the text \bibnote{All of the
+  figures were created using the free Sage mathematical
+  software\bibnote{The computations for this book were done using
+    Sage, which is a free open source matheamtical software package
+    (\url{http://www.sagemath.org}).  If you would like to replicate
+    the computations, visit \url{http://sagenb.org} or install Sage
+    and the purplesage Python package, which is available here
+    \url{http://code.google.com/p/purplesage/}.  The code for the book
+    is all in \verb|psage/rh/mazur_stein|.}.
 Complete Sage code is available at \url{http://wstein.org/rh}
 that can be used to recreate every diagram in this book. 
 More adventurous readers can
@@ -586,6 +593,54 @@ record challenge factorization, and one challenge that was completed
 in 2009 involves a difficult-to-factor number with 232 digits; its
 factorization was completed by a large team of researchers and took around
 2000 years of CPU time.}
+\bibnote{\label{bibnote:factor}
+Given an integer $n$, there are
+many algorithms available for trying to write $n$ as a product of
+prime numbers.  First we can apply {\em trial division}, where we
+simply divide $n$ by each prime $2, 3, 5, 7, 11, 13, \ldots$ in turn,
+and see what small prime factors we find (up to a few digits).  After
+using this method to eliminate as many primes as we have patience to
+eliminate, we typically next turn to a technique called {\em Lenstra's
+  elliptic curve method}, which allows us to check $n$ for
+divisibility by bigger primes (e.g., around 10--15 digits).  Once
+we've exhausted our patience using the elliptic curve method, we would
+next hit our number with something called the {\em quadratic sieve},
+which works well for factoring numbers of the form $n=pq$, with $p$
+and $q$ primes of roughly equal size, and $n$ having less than 100
+digits (say, though the 100 depends greatly on the implementation).
+All of the above algorithms---and then some---are implemented in Sage,
+and used by default when you type {\tt factor(n)} into Sage. Try
+typing {\tt factor(some number, verbose=8)} to see for yourself.  
+
+If the quadratic sieve fails, a final recourse is to run the {\em
+  number field sieve} algorithm, possibly on a supercomputer.  To give
+a sense of how powerful (or powerless, depending on perspective!)  the
+number field sieve is, a record-setting factorization of a general
+number using this algorithm is the factorization of a 232 digit number
+called RSA-768:
+
+$
+n = 12301866845301177551304949583849627207728535695953347921973224521\\
+517264005072636575187452021997864693899564749427740638459251925573263\\
+034537315482685079170261221429134616704292143116022212404792747377940\\
+80665351419597459856902143413
+$
+\par\noindent{}which factors as $pq$, where\par\noindent{}
+$
+ p = 334780716989568987860441698482126908177047949837137685689124313889\\
+82883793878002287614711652531743087737814467999489
+$
+\par\noindent{}and\par\noindent{}
+$
+q = 367460436667995904282446337996279526322791581643430876426760322838\\
+15739666511279233373417143396810270092798736308917.
+$
+\par\noindent{}I encourage you to try to 
+factor $n$ in Sage, and see that it fails. 
+Sage does not currently (as of 2011) include an implementation of the
+number field sieve algorithm, though there are some free implementations
+currently available (see \url{http://www.boo.net/~jasonp/qs.html}).
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -725,6 +780,17 @@ and---of course---if it also happens to be prime.  The primes of that
 form have a name, {\it Mersenne Primes}, as do the primes that are
 {\it one more than a power of $2$}, those being called {\it Fermat
   Primes}.
+\bibnote{
+In contrast to the situation with factorization, testing integers of
+this size (e.g., the primes $p$ and $q$) for primality is relatively
+easy.  There are fast algorithms that can tell whether or not any
+random thousand digit number is prime in a fraction of
+second. Try for yourself using the Sage command {\tt is\_prime}.
+For example, if $p$ and $q$ are as in endnote~\ref{bibnote:factor}, then
+{\tt is\_prime(p)} and {\tt is\_prime(q)} quickly output True
+and {\tt is\_prime(p*q)} outputs False.  However, if you type
+{\tt factor(p*q, verbose=8)}  you can watch as Sage tries 
+forever and fails to factor $pq$.}
  
 Here are two exercises that you might try to do, if this is your first
 encounter with primes that differ from a power of $2$ by $1$:
@@ -3590,13 +3656,6 @@ Is this yet another reason to believe the Grand Riemann Hypothesis?
 
 \chapter{Epilogue: computing}
 
-The computations for this book were done using Sage, which is a free
-open source matheamtical software package
-(\url{http://www.sagemath.org}).  If you would like to replicate the
-computations, visit \url{http://sagenb.org} or install Sage and the
-purplesage Python package, which is available here
-\url{http://code.google.com/p/purplesage/}.  The code for the book is
-all in \verb|psage/rh/mazur_stein|.
 
 Below we discuss how to use Sage to experiment with some ideas in the
 first part of the book. 
@@ -3606,71 +3665,7 @@ first part of the book.
   contents put into a different live web-only interactive version of
   the book.}
 
-\section{Factoring}
-In Chapter~\ref{ch:what_are_primes} we discussed primes first in the
-context of integer factorization.  Given an integer $n$, there is an
-array of algorithms available for trying to write $n$ as a product of
-prime numbers.  First we can apply {\em trial division}, where we
-simply divide $n$ by each prime $2, 3, 5, 7, 11, 13, \ldots$ in turn,
-and see what small prime factors we find (up to a few digits).  After
-using this method to eliminate as many primes as we have patience to
-eliminate, we typically next turn to a technique called {\em Lenstra's
-  elliptic curve method}, which allows us to check $n$ for
-divisibility by bigger primes (e.g., around 10--15 digits).  Once
-we've exhausted our patience using the elliptic curve method, we would
-next hit our number with something called the {\em quadratic sieve},
-which works well for factoring numbers of the form $n=pq$, with $p$
-and $q$ primes of roughly equal size, and $n$ having less than 100
-digits (say, though the 100 depends greatly on the implementation).
-All of the above algorithms---and then some---are implemented in Sage,
-and used by default when you type {\tt factor(n)} into Sage. Try
-typing {\tt factor(some number, verbose=8)} to see for yourself.  
 
-If the quadratic sieve fails, a final recourse is to run the {\em
-  number field sieve} algorithm, possibly on a supercomputer.  To give
-a sense of how powerful (or powerless, depending on perspective!)  the
-number field sieve is, a record-setting factorization of a general
-number using this algorithm is the factorization of a 232 digit number
-called RSA-768:
-
-$
-n = 12301866845301177551304949583849627207728535695953347921973224521\\
-517264005072636575187452021997864693899564749427740638459251925573263\\
-034537315482685079170261221429134616704292143116022212404792747377940\\
-80665351419597459856902143413
-$
-\par\noindent{}which factors as $pq$, where\par\noindent{}
-$
- p = 334780716989568987860441698482126908177047949837137685689124313889\\
-82883793878002287614711652531743087737814467999489
-$
-\par\noindent{}and\par\noindent{}
-$
-q = 367460436667995904282446337996279526322791581643430876426760322838\\
-15739666511279233373417143396810270092798736308917.
-$
-\par\noindent{}I encourage you to try to 
-factor $n$ in Sage, and see that it fails. 
-Sage does not currently (as of 2011) include an implementation of the
-number field sieve algorithm, though there are some free implementations
-currently available (see \url{http://www.boo.net/~jasonp/qs.html}).
-
-In contrast to the situation with factorization, testing integers of
-this size (e.g., the primes $p$ and $q$) for primality is relatively
-easy.  There are fast algorithms that can tell whether or not any
-random thousand digit number is prime in a fraction of
-second. Try for yourself using the Sage command \verb|is_prime|.
-For example, if $p$ and $q$ are as above:
-\begin{verbatim}
-sage: is_prime(p)
-True
-sage: is_prime(q)
-True
-sage: is_prime(p*q)
-False
-sage: factor(p*q, verbose=8)
-... watch Sage try and fail to factor n...
-\end{verbatim}
 
 \section{Big Prime Numbers}
 Incidentally, we can use Sage to instantly compute the digits of the ``hefty
