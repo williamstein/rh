@@ -2,6 +2,8 @@
 
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
+\usepackage{fix-cm}
+
 \usepackage{soul}
 
 \usepackage{float}
@@ -150,18 +152,16 @@ sensitive=true}
 
 \newcommand{\RH}{Riemann Hypothesis\index{Riemann Hypothesis}}
 
-
-\title{\Huge What is Riemann's Hypothesis?\\
-March 25, 2012 Draft\\
-{\Large This is still VERY VERY Rough and Incomplete!}}
-\date{}
-\author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
+\title{{\fontsize{100}{120}\selectfont PRIMES}\\
+\vspace{1em}\mbox{}\\
+{\Large (Warning: still rough and incomplete)}}
+\author{\Large Barry Mazur \and \Large William Stein \and \vspace{10ex}\\
 %\begin{center}
 %A formula that counts the prime numbers ...
 %\includegraphics[width=.65\textwidth]{illustrations/Rk_50_2_100}
 %... built out of their spectrum:
 % cover = use fractal trace with params 0.3 -0.1 0 0 
-\includegraphics[width=\textwidth]{illustrations/cover}
+\includegraphics[width=1.1\textwidth]{illustrations/cover}
 %$$
 %f(t) = -\sum_{\text{prime powers }p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 %$$ 
