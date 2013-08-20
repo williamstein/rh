@@ -219,6 +219,8 @@ how long certain computer programs will take to run, which, in some
 cases, gives us the assurance we need to initiate a computation that
 might take weeks or even months to complete.
 
+
+
 \todo{Add a photo of Sarnak}
 Here is how the
 Princeton mathematician Peter Sarnak described the broad impact the
@@ -239,7 +241,7 @@ theorems or more at once.'' \bibnote{See page 222 of
 Our book is profusely illustrated, containing over 125 figures,
 diagrams, and pictures that accompany the text \bibnote{All of the
   figures were created using the free Sage mathematical
-  software\bibnote{The computations for this book were done using
+  software \bibnote{The computations for this book were done using
     Sage, which is a free open source mathematical software package
     (\url{http://www.sagemath.org}).  If you would like to replicate
     the computations, visit \url{http://sagenb.org} or install Sage
@@ -2833,7 +2835,7 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
 % be really justifying our heavy discussion of distributions,
 % trigonometric sums, etc.
 
-\chapter{Trigonometric series}
+\chapter{Trigonometric series}\label{ch:trigseries}
 Given our interest in the ideas of Fourier, it is not surprising that
 we'll want to deal with things like $$F(t) = \sum_{k=1}^{\infty}
 a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending
@@ -2886,10 +2888,10 @@ the the set of spike values of its Cesaro smoothing $G(t,N)$.
 
 To get a sense of what we're in for, let us consider two infinite trigonometric sums---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
 
-\begin{enumerate}
-\item The first infinite trigonometric sum is a sum of pure cosine waves with frequencies given by {\it logarithms of powers of primes} and with amplitudes that will be described below. The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
+\begin{enumerate}\item The first infinite trigonometric sum is a sum of pure cosine waves with frequencies given by {\it logarithms of powers of primes} and with amplitudes that will be described below. The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
 
-               \item  In contrast, the second infinite trigonometric sum is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$. These graphs will have ``higher and higher peaks" concentrated more and more accurately at {\bf the logarithms of powers of primes} indicated in our pictures below (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
+\item  In contrast, the second infinite trigonometric sum is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$. These graphs will have ``higher and higher peaks" concentrated more and more accurately at {\bf the logarithms of powers of primes} indicated in our pictures below (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
+
                \end{enumerate}
 
 
@@ -2902,8 +2904,8 @@ calling the spectrum) and conversely is a consequence of the Riemann
 Hypothesis.
 \begin{enumerate}
 
-\item {\bf Towards the Riemann Spectrum, starting from (logs of) powers of the
-    primes:}
+\item {\bf Getting the Riemann Spectrum as the spike values of a trigonometric series with
+frequencies equal to (logs of) powers of the primes:}
 
   To get warmed up, let's plot the positive values of the following
   sum of (co-)sine waves:
@@ -2942,10 +2944,19 @@ for a few values of $C$.
 In each of the graphs, we have indicated by red vertical arrows the
 real numbers that give the values of the {\it Riemann spectrum} that we will
 be discussing. These numbers at the red
-vertical arrows in the graphs above, $$\theta_1, \theta_2, \theta_3,
-\dots$$ are the key to the staircase of primes \bibnote{ (If the \RH{} holds
+vertical arrows in the graphs above,
+$$
+\theta_1, \theta_2, \theta_3, \dots
+$$
+are  {\it spike values}---as described in Chapter~\ref{ch:trigseries}---of the infinite trigonometric series
+$$
+  -\sum_{p^n<C}{\frac{\log(p)}{p^{n/2}}} \cos(t \log(p^n)).
+$$
+They constitute what we are calling the Riemann spectrum and are key to the staircase of primes
+\bibnote{ (If the \RH{} holds
 they are precisely the  {\it imaginary parts of the
-  ``nontrivial'' zeroes of the Riemann zeta-function}}.  \vskip20pt
+  ``nontrivial'' zeroes of the Riemann zeta-function}}.
+
 \begin{itemize}
 \item {\bf The sum with $p^n \le C=5$}
 
@@ -3623,8 +3634,7 @@ discussion so far.
  \item John Derbyshire's {\it Prime Obsession: Bernhard Riemann and
      the Greatest Unsolved Problem in Mathematics}.  We have already
    mentioned this book in our introduction, but feel that it is so
-   good, that it is worth a second mention here. See specifically:
-   $\dots$
+   good, that it is worth a second mention here.
  \item The Wikipedia entry for Riemann's Zeta Function
    (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function}) It is
    difficult to summarize who wrote this, but we feel that it is a
@@ -3643,7 +3653,7 @@ discussion so far.
 As readers of Jacob Bernoulli's {\it Ars Conjectandi} (or of the works
 of John Wallis) know, there was already a rich mathematical theory of
 finite sums of (non-negative $k$-th powers) of consecutive integers.
-This sum, $$S_k(N) = 1^k+2^k+3^k+\cdots +N^k,$$ is a is a polynomial
+This sum, $$S_k(N) = 1^k+2^k+3^k+\cdots +N^k,$$ is a polynomial
 in $N$ of degree $k+1$ with no constant term, a leading term equal to
 ${1\over k+1}N^{k+1}$, and a famous linear term.  The coefficient of
 the linear term of the polynomial $S_k(N)$ is the {\it Bernoulli
@@ -3901,7 +3911,7 @@ For example---instead of the ordinary integers---consider the {\it
  i$ and if we multiply any Gaussian integer $a+bi$ by any of these
  four units, we get the collection $\{a+bi, -a-bi, -b+ai, b -ai\}$.
  We measure the {\it size} of Gaussian integer by the square of its
- distance to the origin, i.e., $$|a+bi|^2 = {a^2+b^2}.$$   This size function  is called the {\bf norm} of the Gaussian integer $a+bi$ and can also be thought of as  the product of $a+bi$ and its ``conjugate"n $a-bi$.   note that
+ distance to the origin, i.e., $$|a+bi|^2 = {a^2+b^2}.$$   This size function  is called the {\bf norm} of the Gaussian integer $a+bi$ and can also be thought of as  the product of $a+bi$ and its ``conjugate'' $a-bi$.   note that
  the norm is a nice multiplicative function on the set of Gaussian
  integers, in that the norm of a product of two Gaussian integers is
  the product of the norms of each of them.
