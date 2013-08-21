@@ -1,1 +1,1 @@
-pdflatex rh.tex < /dev/null
+pdflatex rh && bibtex rh && pdflatex rh

@@ -1,1 +1,1 @@
-watch2 rh.tex "pdflatex rh; bibtex rh; pdflatex rh; ./extract"
+watch2 rh.tex "pdflatex rh</dev/null; bibtex rh; pdflatex rh < /dev/null"

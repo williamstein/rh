@@ -630,11 +630,10 @@ Bernoulli number:
 N &= 389 \cdot 691 \cdot 5370056528687 \cdot c_{204}\\
 c_{204} &= p_{90} \cdot p_{115}\\
 p_{90}  &= 149474329044343594528784250333645983079497454292\\
-        &= 838248852612270757617561057674257880592603
+        &= 838248852612270757617561057674257880592603\\
 p_{115} &= 230988849487852221315416645031371036732923661613\\
         &= 619208811597595398791184043153272314198502348476\\
         &= 2629703896050377709
-
 \end{align*}
 
 The factorization of the 204-digit composite was made possible with the help
@@ -660,7 +659,7 @@ of many people:
   This factorization showed that such a distributed effort might be feasible for a
   new record GNFS factorization, in particular for the polynomial selection.
   This was the largest GNFS factorization performed by {\sf NFS@home} to date,
-  the second largest being $2^1040+1$ at 183.7 digits.
+  the second largest being $2^{1040}+1$ at 183.7 digits.
 \item two independent runs of the filtering and linear algebra were done: one by Greg
   Childers with msieve (\url{http://www.boo.net/~jasonp/qs.html}) using a 48-core
   cluster made available by Bill Hart, one by Emmanuel Thomé and Paul
@@ -672,6 +671,20 @@ of many people:
 
 Bill Hart
 \end{quote}
+
+Verify the above in Sage as follows: \\
+
+{\sf
+sage: p90 = 1494743290443435945287842503336459830794974542928382\textbackslash\\
+48852612270757617561057674257880592603\\
+sage: p115 = 230988849487852221315416645031371036732923661613619\textbackslash\\
+2088115975953987911840431532723141985023484762629703896050377709\\
+sage: c204 = p90 * p115\\
+sage: 389 * 691 * 5370056528687 * c204 == -numerator(bernoulli(200))\\
+True\\
+sage: is\_prime(p90), is\_prime(p115), is\_prime(c204)\\
+(True, True, False)
+}
 }
 \bibnote{\label{bibnote:factor}
 Given an integer $n$, there are
