@@ -2837,49 +2837,65 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
 
 \chapter{Trigonometric series}\label{ch:trigseries}
 Given our interest in the ideas of Fourier, it is not surprising that
-we'll want to deal with things like $$F(t) = \sum_{k=1}^{\infty}
-a_k\cos(s_k\cdot t)$$ where the $s_k$ are real numbers tending
+we'll want to deal with things like $$F(\theta) = \sum_{k=1}^{\infty}
+a_k\cos(s_k\cdot \theta)$$ where the $s_k$ are real numbers tending
 (strictly monotonically) to infinity.  These we'll just call {\bf
   trigonometric series} without asking whether they converge in any
-sense for all values of $t$, or even for {\it any} value of $t$. The
+sense for all values of $\theta$, or even for {\it any} value of $\theta$. The
 $s_k$'s that occur in such a trigonometric series we will call the
 {\bf spectral values} or for short, the {\bf spectrum} of the series,
-and the $a_i$'s the (corresponding) {\bf amplitudes}.  We repeat that
+and the $a_k$'s the (corresponding) {\bf amplitudes}.  We repeat that
 we impose no convergence requirements at all. But we also think of
 these things as providing ``cutoff'' finite trigonometric sums, which
-we think of as functions of two variables, $t$ and $N$ (the
-``cutoff'') where $$F(t,N): = \sum_{s_i\le N} a_i\cos(s_i\cdot t).$$
-
-\vskip20pt {\bf Smoothing out these trigonometric series:} To see
-their behavior more clearly we will sometime want to perform what
-might be called a {\bf Cesaro smoothing} on them. By this we just mean
-continually averaging our function $F(t,N)$ over larger and larger
-stretches of values of $n$, i.e., by the function of two variables
-($t$ and $N$) $$G(t,N):={\frac{1}{N}}\sum_{n=1}^NF(t,n).$$
+we think of as functions of two variables, $\theta$ and $C$ (the
+``cutoff'') where $$F(\theta,C): = \sum_{s_k\le C} a_k\cos(s_k\cdot \theta).$$ These functions $F(\theta,C)$ are finite trigonometric series and therefore ``honest functions" having finite values everywhere.
 
 
-{\bf Spike values of trigonometric series:} \begin{definition} Say
-  that a function $H(t,N)$ has a {\bf spike} at the real number $t_o
-  \in {\bf R}$ if the set of absolute values $$|H(t_0,1)|, \ \
-  |H(t_0,2)|,\ \ |H(t_0,3)|,\ \ \cdots,\ \ |H(t_0,N)|,\ \ \cdots$$ is
-  unbounded.  A real number $t_o \in {\bf R}$ is, in contrast, a {\bf
+\section{\bf Spike values} \begin{definition} Say
+  that a trigonometric serties $F(\theta)$ has a {\bf spike} at the real number $\theta=\tau \in {\bf R}$
+if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive number cutoffs is
+  unbounded.  A real number $\tau \in {\bf R}$ is, in contrast, a {\bf
     non-spike} if those values admit a finite upper
   bound. \end{definition}
 
-  \vskip10pt
-
-  The particular trigonometric sums we are most interested in are
+   One main mission in this book will be furthered just by paying attention to the  spike values of certain (infinite) trigonometric series.
+    The trigonometric sums we study are
   going to be particularly nice. Under the assumption of the Riemann
-  Hypothesis, either they or their Cesaro smoothing will have the
-  property that the set of their spike values is a {\it discrete}
-  subset of the real line, $$t_1, t_2, t_3, \dots, t_k, \dots$$.
+  Hypothesis, they  will have the
+  property that the set of their spike values are particularly interesting {\it discrete}
+  subsets of the real line.
 
-\vskip10pt
+\section{\bf Trigonometric Series as Fourier Transforms}
 
-We should note, in passing, that the set of spike values of a function
-$F(t,N)$ {\it contains}{\footnote{but is not necessarily equal to}}
-the the set of spike values of its Cesaro smoothing $G(t,N)$.
-
+Recall, as in Chapter \ref{sec:ftdelta}, that for any real number $x$, we considered
+the symmetrized delta-function with support at $x$ and $-x$, given
+by
+$$
+ d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2
+$$
+\ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$,
+where we draw vertical arrows to illustrate the Dirac delta functions.}
+and noted that the Fourier transform of this $d_x(t)$  is
+\begin{align*}
+\label{dx2}{\hat d_x}(\theta)  = \cos(x\theta).
+\end{align*}
+It follows, of course, that a cutoff finite trigonometric series,
+$F(\theta,C)$ associated to an infinite trigonometric series
+$$
+ F(\theta) = \sum_{k=1}^{\infty} a_k\cos(s_k\cdot \theta)
+$$
+is the Fourier transform of the distribution
+$$
+ D(t,C):=\sum_{s_k \le C}a_kd_{s_k}(t).
+$$
+Given the discreteness of the set of spectral values $s_k$ ($k=1,2,\dots$)  and
+given the efficacy of  the theory of distributions, we can perfectly well
+consider the infinite sum
+$$
+ D(t):=\sum_{k=1}^{\infty}a_kd_{s_k}(t),
+$$ viewed as distribution, and playing the role of
+the `inverse Fourier transform' of our trigonometric
+series $F(t)$.
 
 
 \part{The Riemann Spectrum of the Prime Numbers\label{part3}}
