@@ -599,8 +599,7 @@ Ergo, our $N$ fails the  Fermat $2$-test so is {\it not} prime.
 
 But then, given that it is so ``easy'' to see that $N$ is not prime, a
 natural question to ask is: what, in fact, is its prime factorization?
-This---it turns out---isn't so easy to determined, and---to
-date---has not been determined (at least by us).
+This---it turns out---isn't so easy to determine;
 Naskr\c{e}cki devoted $24$ hours of computer time setting standard factorization
 algorithms on the task, and that was not sufficient time to resolve
 the issue.  The factorization of the numerators of general Bernoulli
@@ -611,13 +610,68 @@ Linked to this web page one finds
 a list of composite numbers whose factorizations have resisted all
 attempts to date.  The two-hundredth Bernoulli number is 12th on the list.
 
-Finally, we note that there with sufficient motivation we believe it
-would be possible to factor $N$.  The page
+ The page
 \url{http://en.wikipedia.org/wiki/Integer_factorization_records} lists
 record challenge factorization, and one challenge that was completed
 in 2009 involves a difficult-to-factor number with 232 digits; its
 factorization was completed by a large team of researchers and took around
-2000 years of CPU time.}
+2000 years of CPU time.  This convinced us that
+with sufficient motivation  it would be possible to factor $N$, and so we
+asked some leaders in the filed to try.   They succeeded!
+\begin{quote}\sf
+Factorisation of B200
+
+by Bill Hart on 4 Aug 05, 2012 at 07:24pm
+
+We are happy to announce the factorization of the numerator of the 200th
+Bernoulli number:
+
+\begin{align*}
+N &= 389 \cdot 691 \cdot 5370056528687 \cdot c_{204}\\
+c_{204} &= p_{90} \cdot p_{115}\\
+p_{90}  &= 149474329044343594528784250333645983079497454292 \\
+        &= 83824838248852612270757617561057674257880592603\\
+p_{115} &= 230988849487852221315416645031371036732923661613\\
+        &= 619206192088115975953987911840431532723141985023\\
+        &= 484762629703896050377709
+\end{align*}
+
+The factorization of the 204-digit composite was made possible with the help
+of many people:
+\begin{itemize}
+\item William Stein and Barry Mazur challenged us to factor this number
+\item Sam Wagstaff maintains a table of factorizations of numerators of Bernoulli
+  numbers at \url{http://homes.cerias.purdue.edu/~ssw/bernoulli/bnum}. According
+  to this table, the 200th Bernoulli number is the 2nd smallest index with
+  unfactored numerator (the first being the 188th Bernoulli number)
+\item Cyril Bouvier tried to factor the c204 by ECM up to 60-digit level, using
+  the TALC cluster at Inria Nancy - Grand Est
+\item {\sf yoyo@home} tried to factor the c204 by ECM up to 65-digit level, using the
+  help of many volunteers of the distributed computing platform
+  \url{http://www.rechenkraft.net/yoyo/}.
+ after ECM was unsuccessful, we decided to factor the c204 by GNFS
+\item many people at mersenneforum helped for the polynomial selection. The best
+  polynomial was found by Shi Bai, using his implementation of Kleinjung's
+  algorithm in CADO-NFS:
+  \url{http://www.mersenneforum.org/showthread.php?p=298264#post298264}
+ sieving was performed by many volunteers {\sf NFS@home}, thanks to Greg
+  Childers. See \url{http://escatter11.fullerton.edu/nfs} for more details {\sf NFS@home}
+  This factorization showed that such a distributed effort might be feasible for a
+  new record GNFS factorization, in particular for the polynomial selection.
+  This was the largest GNFS factorization performed by {\sf NFS@home} to date,
+  the second largest being $2^1040+1$ at 183.7 digits.
+\item two independent runs of the filtering and linear algebra were done: one by Greg
+  Childers with msieve (\url{http://www.boo.net/~jasonp/qs.html}) using a 48-core
+  cluster made available by Bill Hart, one by Emmanuel Thomé and Paul
+  Zimmermann with CADO-NFS (\url{http://cado-nfs.gforge.inria.fr/}), using the Grid
+  5000 platform.
+\item the first linear algebra run to complete was the one with CADO-NFS, thus we
+  decided to stop the other run.
+\end{itemize}
+
+Bill Hart
+\end{quote}
+}
 \bibnote{\label{bibnote:factor}
 Given an integer $n$, there are
 many algorithms available for trying to write $n$ as a product of
@@ -2876,9 +2930,9 @@ $$
 \ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$,
 where we draw vertical arrows to illustrate the Dirac delta functions.}
 and noted that the Fourier transform of this $d_x(t)$  is
-\begin{align*}
-\label{dx2}{\hat d_x}(\theta)  = \cos(x\theta).
-\end{align*}
+$$
+   \label{dx2}{\hat d_x}(\theta)  = \cos(x\theta).
+$$
 It follows, of course, that a cutoff finite trigonometric series,
 $F(\theta,C)$ associated to an infinite trigonometric series
 $$
