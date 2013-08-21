@@ -151,9 +151,8 @@ sensitive=true}
 \newcommand{\RH}{Riemann Hypothesis\index{Riemann Hypothesis}}
 
 
-\title{\Huge What is Riemann's Hypothesis?\\
-March 25, 2012 Draft\\
-{\Large This is still VERY VERY Rough and Incomplete!}}
+\title{\Huge PRIMES\\
+August 2013 Draft}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
 %\begin{center}
@@ -617,7 +616,7 @@ in 2009 involves a difficult-to-factor number with 232 digits; its
 factorization was completed by a large team of researchers and took around
 2000 years of CPU time.  This convinced us that
 with sufficient motivation  it would be possible to factor $N$, and so we
-asked some leaders in the filed to try.   They succeeded!
+asked some leaders in the field to try.   They succeeded!
 \begin{quote}\sf
 Factorisation of B200
 
@@ -3141,15 +3140,13 @@ example, the equation
   been---in effect---to understand the pattern, if we can call it
   that, given by the placement of prime numbers among the natural
   line-up of all whole numbers.
-
- \ill{primes_line}{1}{Prime Numbers up to $37$}
+\ill{primes_line}{1}{Prime Numbers up to $37$}
 
  There are, of course, many ways for us to present this basic
  pattern. Our initial strategy was to focus attention on the {\it
    staircase of primes} which gives us a vivid portrait, if you wish,
  of the order of appearance of primes among all numbers.
-
- \ill{PN_38}{.45}{Prime Numbers up to $37$}
+\ill{PN_38}{.45}{Prime Numbers up to $37$}
 
  As we have already hinted in the previous sections, however, there
  are various ways open to us to tinker with---and significantly
@@ -3163,12 +3160,28 @@ example, the equation
  (discussing the staircase of primes) and Chapter~\ref{sec:tinkering},
  where we tinkered with the original staircase of primes---alias: the
  graph of $\pi(X)$---to get $\psi(X)$ whose risers look---from
- afar---as if they approximated the 45 degree staircase (see Figure~\ref{fig:psi38} below).
+ afar---as if they approximated the 45 degree staircase.% (see Figure~\ref{fig:psi38} below).
 
 
-   At this point we'll do some further carpentry on $\psi(X)$:
+   At this point we'll do some further carpentry on $\psi(X)$ {\it without destroying the valuable
+   information it contains}. We will be replacing  $\psi(X)$ by a generalized function, i.e., a
+   distribution, which we denote $\Phi(t)$ that has support at all positive integral multiples
+     of logs of prime numbers, and is  zero on the complement of that discrete set.  Recall that
+     by definition, a discrete subset $S$ of real numbers is  the  {\bf support} of a function,
+     or of a distribution, if the function vanishes on the complement of  $S$ and doesn't vanish
+     on the complement of any proper subset of $S$.
 
+    Given the mission of our book, it may be less important for us to  elaborate on  the construction
+    of  $\Phi(t)$ (starting from $\psi(X)$)  than it is to {\bf (a)} note that $\Phi(t)$  contains
+    all the valuable information that  $\psi(X)$ has and {\bf (b)} pay close attention to the spike
+    values of the trigonometric series that is the Fourier transform of $\Phi(t)$.
 
+     For the definition  of the distribution $\Phi(t)$ see the end-note
+     \bibnote{
+ {\it The construction of  $ \Phi(t)$ from $\phi(X)$}
+
+Succinctly, $$\Phi(t): \ = \ e^{- t/2}\Psi'(t),$$ where  $\Psi(t) = \phi(e^t)$,  and $\Phi'$ is the
+derivative of $\Phi(t)$ viewed as distribution. But, to review this in a more leisurely pace,
    \begin{enumerate}
 
    \item Distort the $X$-axis of our staircase by replacing the
@@ -3179,29 +3192,35 @@ example, the equation
      of logs of prime numbers.
 
 
-     \illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left)
-       and $\Psi$ (right).  Notice that the plot of $\Psi$ on the
-       right is just the plot of $\psi$ but with the $X$-axis plotted
-       on a logarithmic scale.\label{fig:psi38}}
+%  \illtwo{psi_38}{bigPsi_38}{.4}{The two staircases $\psi$ (left) and $\Psi$ (right).  Notice that the plot of $\Psi$ on the  right is just the plot of $\psi$ but with the $X$-axis plotted on a logarithmic scale.\label{fig:psi38}}
 
 
 \item Now we'll do something that might seem a bit more brutal: {\it
-    take the derivative of this distorted staircase) $\Psi(t)$.}  This
+    take the derivative of this distorted staircase $\Psi(t)$.}  This
   derivative $\Psi'(t)$ is a {\it generalized} function with support
   at all nonnegative integral multiples of logs of prime numbers.
 
-  \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a sum of Dirac delta functions
-    at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and
-    $\log(2\pi)$ at $0$).  The more red the arrow, the larger the
-    weight.}
+ \vskip20pt
+ \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and  $\log(2\pi)$ at $0$).  The more red the arrow, the larger the  weight.}
 
 \item Now---for normalization purposes---multiply $\Psi'(t)$ by the
   function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
+  \vskip20pt\ill{psi_200}{.6}{Illustration of the  staircase $\psi(x)$  constructed in Chapter~\ref{sec:tinkering} that counts weighted prime powers.\label{fig:psi_200}}
+
+So what happens when we take the derivative---in the sense of
+distributions---of a complicated staircase?  For example, see
+Figure~\ref{fig:psi_200}.  Well, we would have blip-functions (alias:
+Dirac $\delta$-functions) at each point of discontinuity of $\Psi(x)$;
+that is, at $x=$ any power of a prime.
+
 
 Let us denote by $\Phi(t)$ the generalized function that resulted from the above carpentry:
   $$\Phi(t) \ = \ e^{-t/2}\Psi'(t)$$
-  A distribution that has a discrete set of real numbers as its
+}.% end bibnote
+
+
+A distribution that has a discrete set of real numbers as its
   support---as $\Phi(t)$ does, we sometimes like to call {\bf spike
     distributions} since the pictures of functions approximating them
   tend to look like a series of spikes.
@@ -3210,33 +3229,12 @@ Let us denote by $\Phi(t)$ the generalized function that resulted from the above
   multiples of logarithms of prime numbers, and this generalized
   function retains the essential information about the placement of
   prime numbers among all whole numbers, and will be playing a major
-  role in our story.
-
-
-\ill{psi_200}{.6}{Illustration of the  staircase $\psi(x)$  constructed in Chapter~\ref{sec:tinkering} that
-counts weighted prime powers.\label{fig:psi_200}}
-
-So what happens when we take the derivative---in the sense of
-distributions---of a complicated staircase?  For example, see
-Figure~\ref{fig:psi_200}.  Well, we would have blip-functions (alias:
-Dirac $\delta$-functions) at each point of discontinuity of $\Psi(x)$;
-that is, at $x=$ any power of a prime.
-
-The spike distribution $\Phi(t)$ is now a major player in our drama,
-because all of the crucial valuable information of placement of primes
-is contained in it: the ``blips'' constituting this distribution (its
-support) would allow us to reconstruct the position of the prime
-numbers among all numbers.
-
-But there are many other ways to package this vital information, so we
+  role in our story: knowledge of the placement of the ``blips'' constituting this distribution (its
+support), being at positive integral multiples of logs of prime numbers, would allow us to reconstruct the position of the prime
+numbers among all numbers. Of course there are many other ways to package this vital information, so we
 must explain our motivation for subjecting our poor initial staircase
 to the particular series of brutal acts of distortion that we
 described, that end up with the distribution $\Phi(t)$.
-
-We do this because we are fascinated by this list of very surprising
-facts about this $\Phi(t)$, a distribution that contains full
-information about the placement of prime numbers among all numbers.
-
 
 
 \chapter{Going from the primes to the Riemann Spectrum}
