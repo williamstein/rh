@@ -242,11 +242,8 @@ diagrams, and pictures that accompany the text \bibnote{All of the
   figures were created using the free Sage mathematical
   software \bibnote{The computations for this book were done using
     Sage, which is a free open source mathematical software package
-    (\url{http://www.sagemath.org}).  If you would like to replicate
-    the computations, visit \url{http://sagenb.org} or install Sage
-    and the purplesage Python package, which is available here
-    \url{http://code.google.com/p/purplesage/}.  The code for the book
-    is all in \verb|psage/rh/mazur_stein|.}.
+    (\url{http://www.sagemath.org}). The code for the book
+    is available at \url{https://github.com/williamstein/rh}.}.
 Complete Sage code is available at \url{http://wstein.org/rh}
 that can be used to recreate every diagram in this book.
 More adventurous readers can
@@ -727,7 +724,7 @@ $
 q = 367460436667995904282446337996279526322791581643430876426760322838\\
 15739666511279233373417143396810270092798736308917.
 $
-\par\noindent{}I encourage you to try to
+\par\noindent{}We encourage you to try to
 factor $n$ in Sage, and see that it fails.
 Sage does not currently (as of 2011) include an implementation of the
 number field sieve algorithm, though there are some free implementations
@@ -770,9 +767,9 @@ Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
 number!'' (which it is not) how might you convince that person that
 he or she is wrong?
-\bibnote{We can use Sage to quickly compute the ``hefty
+\bibnote{We can use Sage (at \url{http://sagemath.org}) to quickly compute the ``hefty
 number'' $p = 2^{43,112,609}-1$.  Simply type
-{\tt p = 2\^43112609 - 1} to instantly compute $p$.
+{\tt p = 2\^{}43112609 - 1} to instantly compute $p$.
 In what sense have we {\em computed} $p$?  Internally, $p$ is now
 stored in base $2$ in the computer's memory; given the special form of
 $p$ it is not surprising that it took little time to compute.  Much more
@@ -1787,8 +1784,13 @@ at the same rate.\label{fig:samerate}}
 Now a theorem from elementary calculus tells us that the ratio of
 $\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
 That is---using the definition we've just introduced--- $\Li(X)$ and
-$X/\log(X)$ go to infinity at the same rate (see \bibnote{Give a proof
-of this statement in an endnote.})
+$X/\log(X)$ go to infinity at the same rate (see
+\bibnote{For a proof of this here's a hint. Compute the difference
+between the derivatives of $\Li(x)$ and of  $x/\log x$. The answer
+is $1/\log^2(x)$.  So you must show that the ratio of
+$\int_2^X dx/\log^2(x)$ to $\Li(x)= \int_2^Xdx/\log(x)$
+tends to zero as~$x$ goes to infinity, and this is a good
+Calculus exercise.})
 
 
 Recall (on page 10 above)  that
@@ -2092,7 +2094,7 @@ get a reasonable quality of sound.
 Another way is to simply record the {\em five} numbers: the {\em
   spectrum, amplitudes,} and {\em phase}.  Surprisingly, this seems to
 be roughly the way our ear processes such a sound when we hear it \bibnote{%
-We recommend to our readers that they download Dave Benson's marvelous book
+We recommend downloading Dave Benson's marvelous book
 {\em Music: A Mathematical Offering} from
 \url{http://www.maths.abdn.ac.uk/~bensondj/html/music.pdf}.
 This is free, and gives a beautiful account of the superb
@@ -3382,7 +3384,8 @@ $C=5$, 20 (top), 50 and 100 (bottom).\label{fig:phiBc}}
  \end{enumerate}
 
 \end{enumerate}
-} for a precise definition) we can compute---at least very approximately---$\dots$
+}
+for a precise definition) we can compute---at least very approximately---$\dots$
 \begin{eqnarray*}
 \theta_1 &=& 14.134725 \dots\\
 \theta_2 &=& 21.022039 \dots\\
@@ -3470,19 +3473,15 @@ spectrum (as discussed in the previous two chapters).
 
     Now take a look at the graphs of our functions $H_C(s)$ for various choices of $C$ and ranges of $s$.
 
-\todo{Our figures on pp. 98,99 might come here.}
 
    To get a cleaner picture let us subject our functions $H_C(s)$ to Cesaro smoothing as in the previous chapter. Define:
    $${\tilde H}_C(s) :=  {\frac{1}{C}}\sum_{c=1}^{C} H_c(\theta),$$ and let's take another look.
-   \vskip20pt
-\todo{Can we ``Cesaro sum'' our figures on Page~\pageref{fig:phic}? If they look sharper than the corresponding un-smoothed $H_C(s)$'s  and if they look more like they are limiting, in some sense, to something with support on prime powers, we can include them; of course, if they don't we shouldn't since Cesaro summing is, I believe really not necessary.}
-   \vskip20pt
 
    \bibnote{The theoretical story behind the phenomena that we have
      seen graphically in this chapter is yet another manifestation of
      Riemann's explicit formula.  Modern references for this are {\bf
        [Iwaniec-Kowalski]} and {\bf [Davenport: Multiplicative Number
-       Theory]}. (see also the bibliography in these books.)  Many
+       Theory]}. (See also the bibliography in these books.)  Many
      ways of seeing the explicit relationship are given in Chapter 5
      of {\bf [I-K]}. For example, consider Exercise 5 on page 109.
 
@@ -3650,8 +3649,8 @@ $$
 $$
 where $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$, etc.,
 are the spectrum of the prime numbers \bibnote{ People who know that
-  these correction terms are index by the nontrivial zeroes of the
-  Riemann zeta-function may well ask how I propose to order them if RH
+  these correction terms are indexed by the nontrivial zeroes of the
+  Riemann zeta-function may well ask how we propose to order them if RH
   is false; the following prescription will do: order them in terms of
   (the absolute value of) their imaginary part, and in the unlikely
   situation that there is more than one zero with the same imaginary

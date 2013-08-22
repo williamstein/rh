@@ -1,1 +1,2 @@
-pdflatex rh && bibtex rh && pdflatex rh
+rm *.bbl && pdflatex rh && bibtex rh && pdflatex rh
+echo $?
