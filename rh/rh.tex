@@ -653,7 +653,7 @@ of many people:
   help of many volunteers of the distributed computing platform
   \url{http://www.rechenkraft.net/yoyo/}.
  after ECM was unsuccessful, we decided to factor the c204 by GNFS
-\item many people at mersenneforum helped for the polynomial selection. The best
+\item Many people at mersenneforum helped for the polynomial selection. The best
   polynomial was found by Shi Bai, using his implementation of Kleinjung's
   algorithm in CADO-NFS:
   \url{http://www.mersenneforum.org/showthread.php?p=298264#post298264}
@@ -663,12 +663,12 @@ of many people:
   new record GNFS factorization, in particular for the polynomial selection.
   This was the largest GNFS factorization performed by {\sf NFS@home} to date,
   the second largest being $2^{1040}+1$ at 183.7 digits.
-\item two independent runs of the filtering and linear algebra were done: one by Greg
+\item Two independent runs of the filtering and linear algebra were done: one by Greg
   Childers with msieve (\url{http://www.boo.net/~jasonp/qs.html}) using a 48-core
   cluster made available by Bill Hart, one by Emmanuel Thomé and Paul
   Zimmermann with CADO-NFS (\url{http://cado-nfs.gforge.inria.fr/}), using the Grid
   5000 platform.
-\item the first linear algebra run to complete was the one with CADO-NFS, thus we
+\item The first linear algebra run to complete was the one with CADO-NFS, thus we
   decided to stop the other run.
 \end{itemize}
 
@@ -866,7 +866,8 @@ another \$150,000 cash prize to the first group to find a prime with
 at least 100,000,000 decimal digits.
 
 
-The number $p= 2^{43,112,609} - 1$  is the largest prime we know, where by
+The number $p= 2^{43,112,609} - 1$  was for a time
+the largest prime known, where by
 ``know'' we mean that we know it so explicitly that we can {\em
   compute} things about it.  For example, the last two digits of $p$
 are both 1 and the sum of the digits of $p$ is 58,416,637.\label{sumdigits}  Of course $p$ is not
@@ -1039,12 +1040,17 @@ equally unknown. {\em Is every even number greater than $2$ a sum of
 
 
 
-Remember the Mersenne prime $p= 2^{43,112,609}-1$? and how we showed
-that there is a prime $P$ larger than that? Suppose, though, someone
+Remember the Mersenne prime $p= 2^{43,112,609}-1$? and how we
+proved---by pure thoughts---that there must be
+a prime $P$ larger than that? Suppose, though, someone
 asked us whether there was a {\it Mersenne Prime} larger than this
 $p$: that is, {\em is there a prime number of the form $$2^{\rm some\
-  prime\ number}-1$$ bigger than $p= 2^{43,112,609}-1$?} Answer:  We don't
-know. It is possible that there are infinitely many Mersenne primes
+  prime\ number}-1$$ bigger than $p= 2^{43,112,609}-1$?} Answer:
+For many years we did not know; however, in 2013 Curtis Cooper discovered
+the even bigger Mersenne prime $2^{57,885,161}-1$, with a whopping
+17,425,170 digits!  Again we can ask if there is a Mersenne
+prime larger than Cooper's.  Answer: we do not know.
+It is possible that there are infinitely many Mersenne primes
 but we're far from being able to answer such questions.
 
 % from http://www.york.ac.uk/depts/maths/histstat/people/mersenne.gif
@@ -1103,10 +1109,10 @@ difference equal to $2$ (these being called {\em twin primes}) for it
 has long been guessed that there are infinitely many such pairs of
 primes, but no one has been able to prove this yet.
 
-\begin{quote} The largest known twin primes are
-$$65516468355\cdot 2^{333333} \pm 1$$
-They have $100355$ digits and were found by Kaiser and Klahnin. \bibnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
-largest known twin primes.}
+\begin{quote} As of 2013, the largest known twin primes are
+$$3756801695685\cdot 2^{666669} \pm 1$$
+These enormous primes have $200700$ digits each (see \bibnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+largest known twin primes.}).
 \end{quote}
 
 
@@ -1701,16 +1707,18 @@ large $X$, turn to this endnote.
 
 \ill{three_plots}{.9}{Plots of $\Li(X)$ (top), $\pi(X)$ (in the middle), and $X/\log(X)$ (bottom).\label{fig:threeplots}}
 
-Let $X=10^{23}$.  Then \label{pili_vals} (see \bibnote{This computation of $\pi(10^{23})$ was done on a single
-computer in 2007 by Oliveira e Silva,
+Let $X=10^{24}$.  Then \label{pili_vals} (see \bibnote{This computation of $\pi(X)$ was done by David J. Platt in 2012,
 and is the largest value of $\pi(X)$ ever computed.  See
-\url{http://www.ieeta.pt/~tos/primes.html} for more details.})
+\url{http://arxiv.org/abs/1203.5712} for more details.})
 \begin{align*}
-  \pi(X) &= 1925320391606803968923,\\
-  \Li(X) &= 1925320391614054155138.780\ldots, \\
-  X/(\log(X)-1)  &=  1924577459166813514799.7932241\ldots.\\
-  \Li(X) - \pi(X) &= \hspace{6em}7250186215.78002929687500\ldots, \\
-  \sqrt{X}\log(X) &= \hspace{4em}16747250820487.142114662460299 \ldots.
+  \pi(X) &= 18{,}435{,}599{,}767{,}349{,}200{,}867{,}866\\
+  \Li(X) &= 18{,}435{,}599{,}767{,}366{,}347{,}775{,}143.10580\ldots \\
+  X/(\log(X)-1)  &=
+            18{,}429{,}088{,}896{,}563{,}917{,}716{,}962.93869\ldots\\
+  \Li(X) - \pi(X) &= \hspace{7em}
+     17{,}146{,}907{,}277.105803\ldots\\
+  \sqrt{X}\cdot \log(X) &= \hspace{5.2em}
+     55{,}262{,}042{,}231{,}857.096416 \ldots
 \end{align*}
 
 
@@ -1729,7 +1737,7 @@ Hypothesis:
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
 root accurate. See \bibnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
-a computational perspective}.}
+a computational perspective}.}.
 \label{rh:first}
 
 \vspace{1ex}
