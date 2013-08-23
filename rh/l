@@ -1,2 +1,2 @@
-rm *.bbl && pdflatex rh && bibtex rh && pdflatex rh
+rm -f *.bbl && pdflatex rh && bibtex rh && pdflatex rh
 echo $?
