@@ -1,1 +1,2 @@
-pdflatex rh.tex < /dev/null
+rm -f *.bbl && pdflatex rh && bibtex rh && pdflatex rh
+echo $?

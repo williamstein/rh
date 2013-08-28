@@ -1,1 +1,1 @@
-watch rh.tex "pdflatex rh; bibtex rh; pdflatex rh"
+watch2 rh.tex "pdflatex rh</dev/null; bibtex rh; pdflatex rh < /dev/null"

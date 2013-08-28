@@ -1,6 +1,9 @@
-3##############################################################
+
+# Options
+
+##############################################################
 # Drawing figures (one or all)
-##############################################################        
+##############################################################
 
 def draw(fig=None, dir='illustrations/',ext='pdf'):
     if isinstance(fig, str):
@@ -10,7 +13,7 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
         eval('fig_%s(dir,ext)'%fig)
         print " (time = %s seconds)"%walltime(t)
         return
-    
+
     if fig is None:
         figs = ['_'.join(x.split('_')[1:]) for x in globals() if x.startswith('fig_')]
     elif isinstance(fig, list):
@@ -25,11 +28,11 @@ def draw(fig=None, dir='illustrations/',ext='pdf'):
 def fig_factor_tree(dir, ext):
     g = FactorTree(6).plot(labels={'fontsize':60},sort=True)
     g.save(dir + '/factor_tree_6.%s'%ext, axes=False, axes_pad=0.1)
-    
+
     g = FactorTree(12).plot(labels={'fontsize':50},sort=True)
     g.save(dir + '/factor_tree_12.%s'%ext, axes=False, axes_pad=0.1)
-    
-    set_random_seed(3)    
+
+    set_random_seed(3)
     g = FactorTree(12).plot(labels={'fontsize':50},sort=False)
     g.save(dir + '/factor_tree_12b.%s'%ext, axes=False,axes_pad=0.1)
 
@@ -41,14 +44,14 @@ def fig_factor_tree(dir, ext):
     set_random_seed(0)
     g = FactorTree(6469693230).plot(labels={'fontsize':14},sort=False)
     g.save(dir + '/factor_tree_big.%s'%ext, axes=False, axes_pad=0.1)
-    
+
 
 class FactorTree:
     """
     A factorization tree.
 
     EXAMPLES::
-    
+
         sage: FactorTree(100)
         Factorization trees of 100
         sage: R.<x> = QQ[]
@@ -77,7 +80,7 @@ class FactorTree:
     def __repr__(self):
         """
         EXAMPLES::
-        
+
             sage: FactorTree(100).__repr__()
             'Factorization trees of 100'
         """
@@ -102,7 +105,7 @@ class FactorTree:
             sage: FactorTree(2009).plot(labels={'fontsize':30},sort=True)
 
         We can make factor trees of polynomials in addition to integers::
-        
+
             sage: R.<x> = QQ[]
             sage: F = FactorTree((x^2-1)*(x^3+2)*(x-5)); F
             Factorization trees of x^6 - 5*x^5 - x^4 + 7*x^3 - 10*x^2 - 2*x + 10
@@ -145,7 +148,7 @@ class FactorTree:
             [(100, None, 0)]
         """
         if len(v) > 0:
-            # add a row to g at the ith level. 
+            # add a row to g at the ith level.
             rows.append(v)
         w = []
         for i in range(len(v)):
@@ -198,13 +201,13 @@ class FactorTree:
                          c = (0r,0r,.4r)
                     g += text("$%s$"%latex(e), (j*2-len(cur),-i), rgbcolor=c, **labels)
                     if not k is None and not f is None:
-                        g += line([(j*2-len(cur),-i), (k*2-len(rows[i-1]),-i+1)], axes=False, **lines) 
+                        g += line([(j*2-len(cur),-i), (k*2-len(rows[i-1]),-i+1)], axes=False, **lines)
         return g
 
 
 ##############################################################
 # Bag of primes
-##############################################################        
+##############################################################
 
 def bag_of_primes(steps):
     """
@@ -212,7 +215,7 @@ def bag_of_primes(steps):
     (via GMP-ECM) to get step 10.
 
     EXAMPLES::
-    
+
         sage: bag_of_primes(5)
         [2, 3, 7, 43, 13, 139, 3263443]
     """
@@ -233,14 +236,14 @@ def fig_questions(dir, ext):
 def questions(n=100,k=17,fs=20):
     set_random_seed(k)
     g = text("?",(5,5),rgbcolor='grey', fontsize=200)
-    g += sum(text("$%s$"%p,(random()*10,random()*10),rgbcolor=(p/(2*n),p/(2*n),p/(2*n)),fontsize=fs) 
+    g += sum(text("$%s$"%p,(random()*10,random()*10),rgbcolor=(p/(2*n),p/(2*n),p/(2*n)),fontsize=fs)
              for p in primes(n))
     return g
 
 
 ##############################################################
 # Sieve of Eratosthenes
-##############################################################        
+##############################################################
 
 def fig_erat(dir,ext):
     # sieving out 2,3,5,7
@@ -248,25 +251,25 @@ def fig_erat(dir,ext):
         sieve_step(p,100).save(dir+'/sieve100-%s.%s'%(p,ext))
 
     sieve_step(13,200).save(dir+'/sieve200.%s'%ext)
-        
-        
+
+
 def number_grid(c, box_args=None, font_args=None, offset=0):
     """
-    INPUT:  
+    INPUT:
         c -- list of length n^2, where n is an integer.
              The entries of c are RGB colors.
         box_args -- additional arguments passed to box.
         font_args -- all additional arguments are passed
                 to the text function, e.g., fontsize.
         offset -- use to fine tune text placement in the squares
-        
+
     OUTPUT:
-        Graphics -- a plot of a grid that illustrates 
+        Graphics -- a plot of a grid that illustrates
              those n^2 numbers colored according to c.
     """
     if box_args is None: box_args = {}
     if font_args is None: font_args = {}
-    
+
     try:
         n = sqrt(ZZ(len(c)))
     except ArithmeticError:
@@ -289,17 +292,18 @@ def number_grid(c, box_args=None, font_args=None, offset=0):
             k += 1
     G.axes(False)
     G.xmin(0); G.xmax(n); G.ymin(0); G.ymax(n)
+    G.set_aspect_ratio('automatic')
     return G
 
 def sieve_step(p, n, gone=(1,1,1), prime=(1,0,0), \
-               multiple=(.6,.6,.6), remaining=(.9,.9,.9), 
+               multiple=(.6,.6,.6), remaining=(.9,.9,.9),
                fontsize=11,offset=0):
     """
     Return graphics that illustrates sieving out multiples of p.
     Numbers that are a nontrivial multiple of primes < p are shown in
     the gone color.  Numbers that are a multiple of p are shown in a
     different color.  The number p is shown in yet a third color.
-  
+
     INPUT:
         p -- a prime (or 1, in which case all points are colored "remaining")
         n -- a SQUARE integer
@@ -322,7 +326,7 @@ def sieve_step(p, n, gone=(1,1,1), prime=(1,0,0), \
             elif k%p == 0:
                 c.append(multiple)
             else:
-                c.append(remaining) 
+                c.append(remaining)
         # end for
     # end if
     return number_grid(c,{'rgbcolor':(0.2,0.2,0.2)},{'fontsize':fontsize, 'rgbcolor':(0,0,0)},offset=offset)
@@ -330,10 +334,10 @@ def sieve_step(p, n, gone=(1,1,1), prime=(1,0,0), \
 
 ##############################################################
 # Similar rates of growth
-##############################################################        
+##############################################################
 
 def fig_simrates(dir,ext):
-    # similar rates 
+    # similar rates
     G = similar_rates()
     G.save(dir + "/similar_rates.%s"%ext,figsize=[8,3])
 
@@ -352,8 +356,8 @@ def similar_rates():
     G += text("$A(X)/B(X)$", (70,.58), rgbcolor='black', fontsize=14)
     H = plot(A, (X,1,100), rgbcolor='red') + plot(B, (X,1,100))
     H += text("$A(X)$", (85,8000), rgbcolor='black',fontsize=14)
-    H += text("$B(X)$", (60,18000), rgbcolor='black',fontsize=14)    
-    a = graphics_array([[H,G]]) 
+    H += text("$B(X)$", (60,18000), rgbcolor='black',fontsize=14)
+    a = graphics_array([[H,G]])
     return a
 
 
@@ -398,7 +402,7 @@ def plot_step_function(v, vertical_lines=True, **args):
         return line(w, **args)
     else:
         return sum(line([v[i],(v[i+1][0],v[i][1])], **args) for i in range(len(v)-1))
-        
+
 
 def proportion_of_primes(bound, **args):
     """
@@ -406,7 +410,7 @@ def proportion_of_primes(bound, **args):
     proportion of numbers between 1 and X of primes.
 
     INPUTS:
-    
+
         - `bound` -- positive integer
 
         - additional arguments are passed to the line function.
@@ -426,17 +430,17 @@ def proportion_of_primes(bound, **args):
 
 ##############################################################
 # Prime Gaps
-##############################################################        
+##############################################################
 
 @cached_function
 def prime_gaps(maxp):
     """
     Return the sequence of prime gaps obtained using primes up to maxp.
-    
+
     EXAMPLES::
-    
+
         sage: prime_gaps(100)
-        [1, 2, 2, 4, 2, 4, 2, 4, 6, 2, 6, 4, 2, 4, 6, 6, 2, 6, 4, 2, 6, 4, 6, 8]        
+        [1, 2, 2, 4, 2, 4, 2, 4, 6, 2, 6, 4, 2, 4, 6, 6, 2, 6, 4, 2, 6, 4, 6, 8]
     """
     P = prime_range(maxp+1)
     return [P[i+1] - P[i] for i in range(len(P)-1)]
@@ -448,7 +452,7 @@ def prime_gap_distribution(maxp):
     among the primes up to maxp.
 
     EXAMPLES::
-    
+
         sage: prime_gap_distribution(100)
         [0, 1, 8, 0, 7, 0, 7, 0, 1]
         sage: prime_gap_distribution(1000)
@@ -457,7 +461,7 @@ def prime_gap_distribution(maxp):
     h = prime_gaps(maxp)
     v = [0]*(max(h)+1)
     for gap in h: v[gap] += 1
-    return v    
+    return v
 
 def fig_primegapdist(dir,ext):
     v = prime_gap_distribution(10^7)[:50]
@@ -474,7 +478,7 @@ def mult_even_odd_count(bound):
     number of multiplicatively odd positive numbers <= n.
 
     INPUT:
-    
+
         - ``bound`` -- a positive integer
 
     EXAMPLES::
@@ -594,7 +598,7 @@ def fig_prime_pi_aspect1(dir,ext):
                  fillcolor=(.9,.9,.9),fill=True)
         file = dir + '/prime_pi_%s_aspect1.%s'%(n,ext)
         p.save(file, aspect_ratio=1)
-        
+
 def fig_prime_pi(dir,ext):
     for n in [1000, 10000, 100000]:
         p = plot(lambda x: prime_pi(floor(x)), 1,n,
@@ -616,7 +620,7 @@ def plot_prime_pi(n = 25, **args):
         v.append((p,k))
     v.append((n,k))
     return plot_step_function(v, **args)
-        
+
 ##############################################################
 # Sieving
 ##############################################################
@@ -634,17 +638,17 @@ def plot_sieve(n, x, poly={}, lin={}, label=True, shade=True):
     Return a plot of the number of integer up to x that are coprime to n.
     These are the integers that are sieved out using the primes <= n.
 
-    In n is 0 draw a graph of all primes. 
+    In n is 0 draw a graph of all primes.
     """
     v = range(x+1)         # integers 0, 1, ..., x
     if n == 0:
         v = prime_range(x)
     else:
         for p in prime_divisors(n):
-           v = [k for k in v if k%p != 0 or k==p]   
+           v = [k for k in v if k%p != 0 or k==p]
            # eliminate non-prime multiples of p
     v = set(v)
-    j = 0 
+    j = 0
     w = [(0,j)]
     for i in range(1,x+1):
         w.append((i,j))
@@ -671,6 +675,7 @@ def plot_sieve(n, x, poly={}, lin={}, label=True, shade=True):
         F += polygon(w, **poly)
     if label:
         F += text(t, pos, horizontal_alignment="right", rgbcolor='black')
+    F.set_aspect_ratio('automatic')
     return F
 
 def plot_three_sieves(m, shade=True):
@@ -692,14 +697,14 @@ def plot_multiple_sieves(m=100, k = [2,3,5], shade=True):
         else:
             z = prod(prime_range(k[i]+1))
         r = float(i)/n
-        clr = (.85 + 0.15*r,0.9 -0.2*r, 0.9 -0.4*r)  
+        clr = (.85 + 0.15*r,0.9 -0.2*r, 0.9 -0.4*r)
         if z == 0:
             clrlin=(1,0,0)
         else:
             clrlin=(0,0,0)
-        s = plot_sieve(z, m, 
-             poly={'rgbcolor':clr}, 
-             lin={'rgbcolor':clrlin, 'thickness':1}, 
+        s = plot_sieve(z, m,
+             poly={'rgbcolor':clr},
+             lin={'rgbcolor':clrlin, 'thickness':1},
              label=(i==0 or i==n-1), shade=shade)
         g += s
     return g
@@ -723,7 +728,7 @@ def area_under_inverse_log(m, **args):
 
     EXAMPLES::
 
-    
+
     """
     f = plot(lambda x: 1/(log(x)),2,m)
     P = polygon([(2,0)]+list(f[0])+[(m,0)], hue=0.1,alpha=0.4)
@@ -741,13 +746,14 @@ def area_under_inverse_log(m, **args):
     fun = text('1/log(x)',(m/8,1.4),fontsize=fs,rgbcolor='black', horizontal_alignment='left')
     G = pr + f+P+area+T+primes +fun
     G.xmax(m+1)
+    G.set_aspect_ratio('automatic')
     return G
 
 def fig_inverse_of_log(dir,ext):
     for m in [30, 100, 1000]:
         area_under_inverse_log(m).save(dir+'/area_under_log_graph_%s.%s'%(m,ext), figsize=[7,7])
 
-        
+
 ##############################################################
 # Comparing Li, pi, and x/log(x)
 ##############################################################
@@ -816,12 +822,12 @@ def fig_Psi(dir, ext):
 def fig_Psiprime(dir, ext):
     g = line([(0,0),(0,100)], rgbcolor='black')
     xmax = 20
-    ymax = 50 
+    ymax = 50
     for n in [1..xmax]:
         if is_prime_power(n):
             if n == 1:
                 h = log(2*pi)
-            else: 
+            else:
                 h = log(factor(n)[0][0])
             c = (float(h)/log(xmax), 0, 1-float(h)/log(xmax))
             g += arrow((log(n),-1),(log(n),ymax), width=2, rgbcolor=c)
@@ -831,17 +837,17 @@ def fig_Psiprime(dir, ext):
     g += line([(-1/2,0), (xmax+1,0)], thickness=2)
     g.save(dir+'/bigPsi_prime.%s'%ext,
            xmin=-1/2, xmax=log(xmax), ymax=ymax,
-             axes=False, gridlines=True, figsize=[8,3])    
+             axes=False, gridlines=True, figsize=[8,3])
 
 def fig_Phi(dir=0, ext=0):
     g = line([(0,0),(0,100)], rgbcolor='black')
     xmax = 20
-    ymax = 50 
+    ymax = 50
     for n in [1..xmax]:
         if is_prime_power(n):
             if n == 1:
                 h = log(2*pi)
-            else: 
+            else:
                 h = log(factor(n)[0][0])
             h *= exp(-log(n)/2)
             c = (float(h)/log(xmax), 0, 1-float(h)/log(xmax))
@@ -855,7 +861,7 @@ def fig_Phi(dir=0, ext=0):
     g += line([(-log(xmax)-1,0), (log(xmax)+1,0)], thickness=2)
     g.save(dir+'/bigPhi.%s'%ext,
            xmin=-log(xmax), xmax=log(xmax), ymax=ymax,
-             axes=False, gridlines=True, figsize=[8,3])    
+             axes=False, gridlines=True, figsize=[8,3])
 
 
 ##############################################################
@@ -872,7 +878,7 @@ def fig_waves(dir,ext):
     g = plot(sin(x), 0, c*pi) + plot(sin(329.0/261*x), 0, c*pi, color='red')
     g.save(dir+'/sin-twofreq.%s'%ext)
 
-    g = plot(sin(x) + sin(329.0/261*x), 0, c*pi) 
+    g = plot(sin(x) + sin(329.0/261*x), 0, c*pi)
     g.save(dir+'/sin-twofreq-sum.%s'%ext)
 
     c=5
@@ -902,7 +908,7 @@ def fig_waves(dir,ext):
     B += text("D", (4.2,-0.05), rgbcolor='black', fontsize=18)
     B += text("E", (5.2,-0.05), rgbcolor='black', fontsize=18)
     B.save(dir+'/sound-ce-general_sum-blips.%s'%ext, axes=False, xmin=0)
-    
+
     f(x) = 0.7*sin(x) + sin(329.0/261*x + 0.4) +  0.5*sin(300.0/261*x + 0.7) + 0.3*sin(1.5*x + 0.2) + 1.1*sin(4*x+0.1)
     g = plot(f, (0, 5*pi))
     g.save(dir + '/complicated-wave.%s'%ext)
@@ -914,7 +920,7 @@ def fig_waves(dir,ext):
 def fig_sawtooth(dir,ext):
     g = plot_sawtooth(3)
     g.save(dir+'/sawtooth.%s'%ext, figsize=[10,2])
-    
+
     g = plot_sawtooth_spectrum(18)
     g.save(dir+'/sawtooth-spectrum.%s'%ext, figsize=[8,3])
 
@@ -929,7 +935,7 @@ def plot_sawtooth_spectrum(xmax):
     return sum([line([(k,0),(k,1/k)],thickness=3) for k in [1..xmax]])
 
 ##############################################################
-# Fourier Transforms: second visit 
+# Fourier Transforms: second visit
 ##############################################################
 def fig_even_function(dir, ext):
     x = var('x')
@@ -969,7 +975,7 @@ def fig_fourier_machine(dir, ext):
     t=var('t')
     g += plot((1/2)*t*cos(14*t)+1/2,(t,0,1), fill='axis', thickness=0.8)
     g.save(dir+'/fourier_machine.%s'%ext, axes=False, axes_pad=0.1)
-    
+
 
 ##############################################################
 # Distribution section
@@ -996,7 +1002,7 @@ def fig_phihat_even(dir,ext):
         G.save(dir+'/phihat_even-%s.%s'%(bound,ext), figsize=[9,3], ymin=0)
 
 def fig_phihat_even_all(dir, ext):
-    p = [plot_symbolic_phihat(n, 2,100) for n in [5,20,50,500]]    
+    p = [plot_symbolic_phihat(n, 2,100) for n in [5,20,50,500]]
     [a.ymin(0) for a in p]
     g = graphics_array([[a] for a in p],4,1)
     g.save(dir+'/phihat_even_all.%s'%ext)
@@ -1037,16 +1043,16 @@ def fig_calculus(dir,ext):
     x = var('x')
     t = 8; f = log(x); fprime = f.diff()
     fontsize = 14
-    g = plot(f, (0.5,t)) 
+    g = plot(f, (0.5,t))
     g += plot(x*fprime(x=4)+(f(x=4)-4*fprime(x=4)), (.5,t), rgbcolor='black')
     g += point((4,f(x=4)), pointsize=20, rgbcolor='black')
     g += plot(fprime, (0.5,t), rgbcolor='red')
-    g += text("What is the slope of the tangent line?", (3.5,2.2), 
+    g += text("What is the slope of the tangent line?", (3.5,2.2),
                   fontsize=fontsize, rgbcolor='black')
     g += text("Here it is!",(5,.9), fontsize=fontsize, rgbcolor='black')
     g += arrow((4.7,.76), (4, fprime(x=4)), rgbcolor='black')
     g += point((4,fprime(x=4)),rgbcolor='black', pointsize=20)
-    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.5), 
+    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.5),
                   fontsize=fontsize, rgbcolor='black')
     g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True)
 
@@ -1077,7 +1083,7 @@ def smoothderiv(e):
         def g(x):
             return (f(x + delta) - f(x))/delta
         return g
-    
+
     v = line( [(0,1), (3-e,1)], thickness=2) + line([(3+e,2), (6,2)], thickness=2)
     v.ymin(0)
     S = spline( [(3-e,1), (3-e+e/20, 1), (3,1.5), (3+e-e/20, 2), (3+e,2)] )
@@ -1092,9 +1098,9 @@ def smoothderiv(e):
 def fig_dirac(dir,ext):
     g = line([(0,0),(0,100)], rgbcolor='black')
     g += arrow((0,-1),(0,50), width=3)
-    g += line([(-1.2,0), (1.25,0)], thickness=3)    
+    g += line([(-1.2,0), (1.25,0)], thickness=3)
     g.save(dir+'/dirac_delta.%s'%ext,
-           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True) 
+           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)
 
 def fig_two_delta(dir,ext):
     g = line([(0,0),(0,100)], rgbcolor='black')
@@ -1104,7 +1110,7 @@ def fig_two_delta(dir,ext):
     g += text("$-x$", (-1/2-1/20,-4), rgbcolor='black', fontsize=35, horizontal_alignment='center')
     g += text("$x$", (1/2,-4), rgbcolor='black', fontsize=35, horizontal_alignment='center')
     g.save(dir+'/two_delta.%s'%ext,
-           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)    
+           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)
 
 ##############################################################
 # Cosine sums
@@ -1119,7 +1125,7 @@ def fig_phi(dir,ext):
 
     g = phi_interval_plot(1010,1026,15000,drop=60)
     g.save(dir+'/phi_cos_sum_1010_1026_15000.%s'%ext, axes=False, ymin=-50)
-    
+
 def phi_interval_plot(xmin, xmax, zeros=1000,fontsize=12,drop=20):
     g = phi_approx_plot(xmin,xmax,zeros=zeros,fontsize=fontsize,drop=drop)
     g += line([(xmin,0),(xmax,0)],rgbcolor='black')
@@ -1131,7 +1137,7 @@ def phi_approx(m, positive_only=False, symbolic=False):
         assert not positive_only
         s = var('s')
         return -sum(cos(log(s)*t) for t in zeta_zeros()[:m])
-    
+
     from math import cos, log
     v = [float(z) for z in zeta_zeros()[:m]]
     def f(s):
@@ -1148,7 +1154,7 @@ def phi_approx(m, positive_only=False, symbolic=False):
 def phi_approx_plot(xmin, xmax, zeros, pnts=2000, dots=True, positive_only=False,
                     fontsize=7, drop=10, **args):
     phi = phi_approx(zeros, positive_only)
-    g = plot(phi, xmin, xmax, alpha=0.7, 
+    g = plot(phi, xmin, xmax, alpha=0.7,
               plot_points=pnts, adaptive_recursion=0, **args)
     g.xmin(xmin); g.xmax(xmax)
     if dots: g += primepower_dots(xmin,xmax, fontsize=fontsize,drop=drop)
@@ -1162,8 +1168,8 @@ def primepower_dots(xmin, xmax, fontsize=7, drop=10):
     for n in range(max(xmin,2),ceil(xmax)+1):
         F = factor(n)
         if len(F) == 1:
-           g += point((n,0), pointsize=50*log(F[0][0]), rgbcolor=(1,0,0)) 
-           if fontsize>0: 
+           g += point((n,0), pointsize=50*log(F[0][0]), rgbcolor=(1,0,0))
+           if fontsize>0:
                g += text(str(n),(n,-drop),fontsize=fontsize, rgbcolor='black')
     g.xmin(xmin)
     g.xmax(xmax)
@@ -1188,7 +1194,7 @@ def fig_psi_waves(dir, ext):
 
     g += plot(f(theta=zeta_zeros()[1]),(t,0,pi), rgbcolor='red')
     g.save(dir + '/psi_with_exp_2.%s'%ext)
-    
+
 
 ##############################################################
 # Riemann's R_k
@@ -1197,7 +1203,7 @@ def fig_psi_waves(dir, ext):
 def fig_moebius(dir,ext):
     g = plot(moebius,0, 50)
     g.save(dir+'/moebius.%s'%ext,figsize=[10,2], axes_pad=.1)
-    
+
 
 def riemann_R(terms):
     c = [0] + [float(moebius(n))/n for n in range(1, terms+1)]
@@ -1227,7 +1233,7 @@ def fig_pi_riemann_gauss(dir,ext):
     g = plot_pi_riemann_gauss(10000,11000, 100)
     g.save(dir +'/pi_riemann_gauss_10000-11000.%s'%ext, axes=False, frame=True)
 
-    
+
 class RiemannPiApproximation:
     r"""
     Riemann's explicit formula for `\pi(X)`.
@@ -1235,14 +1241,14 @@ class RiemannPiApproximation:
     EXAMPLES::
 
     We compute Riemann's analytic approximatin to `\pi(25)` using `R_{10}(x)`:
-    
+
         sage: R = RiemannPiApproximation(10, 100); R
         Riemann explicit formula for pi(x) for x <= 100 using R_k for k <= 10
         sage: R.Rk(100, 10)
         25.3364299527
         sage: prime_pi(100)
         25
-    
+
     """
     def __init__(self, kmax, xmax, prec=50):
         """
@@ -1253,7 +1259,7 @@ class RiemannPiApproximation:
             - ``xmax`` -- (float) largest input x value allowed
 
             - ``prec`` -- (default: 50) determines precision of certain series approximations
-        
+
         """
         from math import log
         self.xmax = xmax
@@ -1276,7 +1282,7 @@ class RiemannPiApproximation:
             n_factorial *= n
             zeta_value = float(abs(zeta(n+1)))
             self.coeffs.append(float(1.0/(n_factorial*n*zeta_value)))
-    
+
     def _check(self, x, k):
         if x > self.xmax:
              raise ValueError, "x (=%s) must be at most %s"%(x, self.xmax)
@@ -1310,7 +1316,7 @@ class RiemannPiApproximation:
         # This is from equation 32 on page 978 of Riesel-Gohl.
         term1 = self.msum / (2*log_x) + \
                    (1/pi) * atan(pi/log_x)
-    
+
         # This is from equation 19 on page 975
         term2 = sum(self.Tk(x, v) for v in xrange(1,k+1))
         return term1 + term2
@@ -1371,7 +1377,7 @@ def fig_Rk(dir, ext):
         print "plotting k=%s"%k
         g = R.plot_Rk(k, xmin, xmax, plot_points=300, thickness=0.65)
         g.save(dir + '/Rk_%s_%s_%s.%s'%(k,xmin,xmax,ext))
-    # 
+    #
     g = R.plot_Rk(50, 350, 400, plot_points=200)
     g += plot(Li,350,400,rgbcolor='green')
     g.save(dir + '/Rk_50_350_400.%s'%ext)
