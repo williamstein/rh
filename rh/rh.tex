@@ -11,6 +11,7 @@
 
 \usepackage{wrapfig}
 
+
 \usepackage{color}
 \definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
 \definecolor{dbluecolor}{rgb}{.01,.02,0.7}
@@ -766,7 +767,7 @@ discovery and proof that
 $$
   p=2^{43,112,609}-1 = 3164702693\ldots\ldots\text{\small (millions of digits)}\ldots\ldots6697152511
 $$
-is a prime number, this number having $12,\!978,\!189$ digits!  This
+is a prime number, this number having $12{,}978{,}189$ digits!  This
 prime, which was discovered on August 23, 2008 by the GIMPS project
 (see \bibnote{The GIMPS project website is \url{http://www.mersenne.org/}.}),
 is the first prime ever found with more than ten million digits.
@@ -985,7 +986,7 @@ Typing {\tt prime\_range(10\^{}8)}
 in Sage enumerates the primes up to a hundred million in around a second.
 You can also enumerate primes up to a billion by typing {\tt v=prime\_range(10\^{}9)}, but this will use
 a large amount of memory, so be careful not to crash your computer
-if you try this.  Notice that there are $\pi(10^9) = 50,\!847,\!534$ primes up to a billion
+if you try this.  Notice that there are $\pi(10^9) = 50{,}847{,}534$ primes up to a billion
 by then typing {\tt len(v)}.
 You can also compute $\pi(10^9)$ directly, without enumerating all primes,
 using the command {\tt prime\_pi(10\^{}9)}.
@@ -995,7 +996,7 @@ number of primes without actually listing them all.
 In Chapter~\ref{sec:tinkering} we tinkered with the staircase of
 primes by first counting both primes and prime powers.    It turns out
 that there are comparatively few prime powers that are not prime.
-Up to $10^8$, only $1,\!405$ of the $5,\!762,\!860$ prime powers are not themselves primes.
+Up to $10^8$, only $1{,}405$ of the $5{,}762{,}860$ prime powers are not themselves primes.
 To see this, first enter
 {\tt a~=~prime\_pi(10\^{}8); pp~=~len(prime\_powers(10\^{}8))}.
 Typing {\tt (a,~pp,~pp-a)} then outputs the triple
@@ -1026,8 +1027,8 @@ For example, {\em are there infinitely many pairs of primes whose
 pairs $$5-3 =2,\ \ \ 7-5=2,\ \ \ 13-11=2,\ \ \ 19-17 =2,$$ and we know
 that there are loads more such pairs (see \bibnote{For example, according to
 \url{http://oeis.org/A007508} there are
-$10,\!304,\!185,\!697,\!298$ such pairs less than
-$10,\!000,\!000,\!000,\!000,\!000$.}) but the answer to our question,
+$10{,}304{,}185{,}697{,}298$ such pairs less than
+$10{,}000{,}000{,}000{,}000{,}000$.}) but the answer to our question,
 {\em are there infinitely many?}, is not known.
 Nevertheless there is very exciting recent work in this direction, specifically,
 Yitang Zhang proved that there are infinitely many pairs of primes that differ
@@ -1162,7 +1163,7 @@ $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of
   prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
   the most popular gap in this data.  The vertical axis labels
-  such as ``6e4'' mean $6\cdot 10^4=60,\!000$.
+  such as ``6e4'' mean $6\cdot 10^4=60{,}000$.
 \label{fig:primegapdist}}
 
 
@@ -1210,7 +1211,7 @@ product of {\em an even number of} primes; and a {\bf multiplicatively
   odd} number is one that can be expressed as a product of {\em an odd
   number of} primes.  So, any prime is multiplicatively odd, the
 number $4 = 2\cdot 2$ is multiplicatively even, and so is $6=2\cdot
-3$, $9=3\cdot 3$, and $10= 2\cdot 5$; but $12=2\cdot 2\cdot 4$ is
+3$, $9=3\cdot 3$, and $10= 2\cdot 5$; but $12=2\cdot 2\cdot 3$ is
 multiplicatively odd.   Below we list the numbers up to 25, and underline
 and bold  the multiplicatively odd numbers.
 \begin{center}
@@ -1313,7 +1314,7 @@ There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $X$ up to $1,\!000$ (left) and $10,\!000$ (right)}
+\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $X$ up to $1{,}000$ (left) and $10{,}000$ (right)}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10,000,000,000 (so we might say that the chances are down to roughly
@@ -1544,18 +1545,18 @@ $$
    \frac{999}{2\times 3} = 166.5 \approx  167,
 $$
 which is again close, since there are 168 primes up to $1000$.
-The number of primes up to $999,\!999$ should be roughly
+The number of primes up to $999{,}999$ should be roughly
 $$
-   \frac{999999}{2\times 6} = 83333.25 \approx  83,\!333,
+   \frac{999999}{2\times 6} = 83333.25 \approx  83{,}333,
 $$
-which is close to the correct count of $78,\!498$.
+which is close to the correct count of $78{,}498$.
 
 Gauss guessed that the expected number of primes up to $X$
 is approximated by the area under the
 graph of $1/\log(X)$ from $2$ to $X$ (see Figure~\ref{fig:G}).
-The area under $1/\log(X)$ up to $X=999,\!999$ is $78,\!626.43\ldots$, which
-is remarkably close to the correct count $78,\!498$ of the primes
-up to $999,\!999$.
+The area under $1/\log(X)$ up to $X=999{,}999$ is $78{,}626.43\ldots$, which
+is remarkably close to the correct count $78{,}498$ of the primes
+up to $999{,}999$.
 
 \illthree{area_under_log_graph_30}{area_under_log_graph_100}{area_under_log_graph_1000}{.3}{The
   expected tally of the number of primes $\leq X$ is approximated by the
@@ -1564,13 +1565,13 @@ up to $999,\!999$.
 
 Gauss was an inveterate computer:
 he wrote in his 1849 letter  that
-there are $216,\!745$ prime numbers less than three million (This is
-wrong: the actual number of these primes is $216,\!816$). Gauss's curve $G(X)$
-predicted that there would be $216,\!970$ primes---a miss, Gauss
+there are $216{,}745$ prime numbers less than three million (This is
+wrong: the actual number of these primes is $216{,}816$). Gauss's curve $G(X)$
+predicted that there would be $216{,}970$ primes---a miss, Gauss
 thought, by
-$$225 = 216,\!970 - 216,\!745$$
+$$225 = 216{,}970 - 216{,}745$$
 (but actually he was closer than he thought: the
-prediction of the curve $G(X)$ missed by a mere $154 = 216,\!970  - 216,\!816$)
+prediction of the curve $G(X)$ missed by a mere $154 = 216{,}970  - 216{,}816$)
 %; not as close as the 2004 US
 %elections, but pretty close nevertheless).
 Gauss's computation brings up two queries: will this spectacular ``good
@@ -1584,13 +1585,13 @@ prior) question: what counts as a good fit?
 If you are trying to estimate a number, say, around ten thousand, and
 you get it right to within a hundred, let us celebrate this kind of
 accuracy by saying that you have made an approximation with {\em
-  square-root error} (${\sqrt{10,\!000}}=100$). Of course, we should
+  square-root error} (${\sqrt{10{,}000}}=100$). Of course, we should
 really use the more clumsy phrase ``an approximation with at worst
 {\em square-root error.}''  Sometimes we'll simply refer to such
 approximations as {\em good approximations.} If you are trying to
 estimate a number in the millions, and you get it right to within a
 thousand, let's agree that---again---you have made an approximation
-with {\em square-root error} (${\sqrt{1,\!000,\!000}}=1,\!000$).
+with {\em square-root error} (${\sqrt{1{,}000{,}000}}=1{,}000$).
 Again, for short, call this a {\em good approximation.} So, when Gauss
 thought his curve missed by $226$ in estimating the number of primes
 less than three million, it was well within the margin we have given
@@ -2190,7 +2191,7 @@ knowledge of which frequencies the human ear can hear.
 With this, mp3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality, so that you can fit your entire music collection on your
-iPod, instead of just your favorite 10 CD's.
+mp3 player, instead of just a few of your favorite CD's.
 
 
  \chapter{Spectra and Trigonometric Sums \label{sec:trigsums}}
@@ -3290,8 +3291,9 @@ by the equation
   $$\Phi(-t) = \Phi(t).$$
   Let us make that convention, thereby turning $\Phi(t)$ into an {\it
     even} generalized function.
-\vskip20pt{\bf William: sum of Dirac delta functions  Figure goes here}\vskip20pt
-%\ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller the weight.}
+
+%\vskip20pt{\bf William: sum of Dirac delta functions  Figure goes here}\vskip20pt
+\ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller the weight.}
 
 
 We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
@@ -3320,7 +3322,7 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
 \vskip20pt
   Notice the risers at the red vertical lines. We've superimposed the graph of  derivative of ${\hat \Phi}_{\le C}(\theta)$ to focus attention more specifically on those risers.
 
-   To see this staircase phenomenon of the graph even more clearly, we will counteract the `ascendancy' of the graph without destroying its staircase structure,  by  subtracting  $R(C,\theta)$, a certain smooth function {\bibnote{$\dots$}}  of $\theta$ and $C$ giving us the function we call: $$A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$$ whose graph looks like:
+   To see this staircase phenomenon of the graph even more clearly, we will counteract the `ascendancy' of the graph without destroying its staircase structure,  by  subtracting  $R(C,\theta)$, a certain smooth function {\bibnote{$\dots$}}  of $\theta$ and $C$, giving us the function we call: $$A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$$ whose graph looks like:
      \vskip20pt
 {\bf William: (FIGURE 2)  Plots of $A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$. Now  $R(C,\theta)$ is,  I think, $-1/2$ times the function $$T_C(\theta):=
       {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot
@@ -3400,8 +3402,8 @@ briefly in Chapter~\ref{ch:envision} below). Riemann wrote:
 \end{quote}
 
 Nowadays, these mysterious numbers, these spectral lines for the
-staircase of primes are known to great accuracy.  Here is the smallest
-one, $\theta_1$, given with over $1,\!000$ digits of its decimal
+staircase of primes, are known to great accuracy.  Here is the smallest
+one, $\theta_1$, given with over $1{,}000$ digits of its decimal
 expansion:
 \vskip20pt
 $14.134725141734693790457251983562470270784257115699243175685567460149\newline
@@ -3421,12 +3423,12 @@ $14.134725141734693790457251983562470270784257115699243175685567460149\newline
 60675378381214891908864977277554420656532052405$
 \vskip20pt
 \noindent{}and if, by any chance, you wish to peruse the first
-$2,\!001,\!052$
+$2{,}001{,}052$
  of these $\theta_i$'s calculated to an accuracy
 within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
 
-Since people have already computed at least $1029.9 $
+Since people have already computed at least $1{,}029.9 $
 billion $\theta$'s (as of Feb. 18, 2005) and have never found one with
 multiplicity $>1$; it is generally expected that the multiplicity of all
 the $\theta$'s in the Riemann Spectrum is $1$.  But, independent of
@@ -4072,4 +4074,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":165}
+%sagemathcloud={"zoom_width":160}
