@@ -1,4 +1,4 @@
-\documentclass[openany]{book}
+    \documentclass[openany]{book}
 
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
@@ -3260,7 +3260,7 @@ described, that end up with the distribution $\Phi(t)$.
 
 
 \chapter{Going from the primes to the Riemann Spectrum}
-
+\label{ch:prime-to-spectrum}
 %\todo{This chapter has not been fully written, there are some
 %  mathematical issues that we don't yet explain, and we will need to
  % work out in order to do a satisfactory job here.}
@@ -3344,7 +3344,57 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
    \vskip20pt
 
 
-   For a theoretical discussion of this, see endnote \bibnote{{\bf William:}    Here we should put Andrew Granville's write-up if he sends one.  Or an account using the Perron formula, Also, we should include a picture of Granvillle!}.
+   For a theoretical discussion of this, see endnote~\bibnote{
+ A version of the Riemann von Mangoldt explicit formula gives some theoretical affirmation of the phenomena we are seeing here. We thank Andrew Granville for a  discussion about this. Even though the present endnote is not the place to give anything like a full account, we can't resist setting down a few of Granville's comments that might be helpful to people who wish to go further. (This discussion can be modified to analyze what happens unconditionally, but we will be assuming the Riemann Hypothesis below.) The function ${\hat \Phi}_{\le C}(\theta)$ that we are graphing in this chapter can be written as:
+ $${\hat \Phi}_{\le C}(\theta)= \sum_{n\le C}\Lambda(n)n^{-w}$$ where $w = {\frac{1}{2}}+i\theta$. This function, in turn, may be written (by Perron's formula) as
+\begin{align*}
+&{\frac{1}{2\pi i }}\lim_{T \to \infty}\int_{s=\sigma_o-iT}^{s=\sigma_o-iT}\sum_{n}\Lambda(n)n^{-w}\left({\frac {C}{n}}\right)^{s}{\frac{ds}{s}}\\
+&=  {\frac{1}{2\pi i }}\lim_{T \to \infty}\int_{s=\sigma_o-iT}^{s=\sigma_o-iT}\sum_{n}\Lambda(n)n^{-w-s}C^{s}{\frac{ds}{s}}\\
+&= -{\frac{1}{2\pi i }}\lim_{T \to \infty}\int_{s=\sigma_o-iT}^{s=\sigma_o-iT}\left({\frac{\zeta'}{\zeta}}\right)(w+s){\frac{C^{s}}{s}}ds. \end{align*}
+
+Here, we assume that $\sigma_o$ is sufficiently large and $C$ is not a prime power.
+
+One proceeds, as  is standard in the derivation of Explicit Formulae, by moving the line of integration to the left, picking up residues along the way. Fix the value of $w= {\frac{1}{2}}+i\theta$ and consider $ -{\frac{1}{2\pi i }}$ times the integrand,
+ $$K_w(s,C):=\ \   {\frac{1}{2\pi i }}\left(\frac{\zeta'}{\zeta}\right)(w+s){\frac{C^{s}}{s}},$$   which has poles at $$s= 0, \ \ \ 1-w,\ \ \ {\rm and }\ \ \ \rho-w, $$  for $\rho$ a zero of $\zeta(s)$.
+ We distinguish four cases, giving descriptive names to each:
+
+ \begin{itemize} \item {\it Singular pole:} $s= 1-w$.
+                        \item {\it Trivial poles:}  $s= \rho-w$ with $\rho$ a trivial zero of $\zeta(s)$.
+                        \item  {\it Oscillatory poles:} $s= \rho-w = i(\gamma-\theta) \ne 0$ with $\rho(\ne w)$ a nontrivial zero of $\zeta(s)$. (Recall that we are assuming the Riemann Hypothesis, and our variable $w= {\frac{1}{2}}+i\theta$ runs through complex numbers of real part equal to ${\frac{1}{2}}$. So, in this case, $s$ is purely imaginary.)
+                        \item {\it Elementary pole:} $s=0$ when  $ w$ is not a nontrivial zero of $\zeta(s)$---i.e., when $0=s\ne\rho-w$ for any nontrivial zero $\rho$.
+                        \item {\it Double pole:}  $s=0$ when  $ w$ is a nontrivial zero of $\zeta(s)$---i.e., when $0=s=\rho-w$ for some nontrivial zero $\rho$. This, when it occurs, is indeed a double pole, and the residue is given by $m\cdot \log C +\epsilon$.  Here $m$ is the multiplicity of the zero $\rho$  (which we expect always---or at least usually---to be equal to $1$) and $\epsilon$ is a constant (depending on $\rho$, but not on $C$).
+\end{itemize}
+
+           The standard technique for the ``Explicit formula'' will provide us with a formula for our function of interest  ${\hat \Phi}_{\le C}(\theta)$. The formula has terms resulting from the residues of each of the first three types of poles, and of the {\it Elementary} or  the  {\it Double} pole---whichever exists.  Here is the shape of the formula, given with terminology that is meant to be  evocative:
+
+
+
+           $$ {\bf(1)}\ \ \ {\hat \Phi}_{\le C}(\theta) = {\it Sing}_{\le C}(\theta) + {\it Triv}_{\le C}(\theta) +  {\it Osc}_{\le C}(\theta) + {\it Elem}_{\le C}(\theta)$$
+
+           Or:
+
+           $${\bf(2)}\ \ \ {\hat \Phi}_{\le C}(\theta) = {\it Sing}_{\le C}(\theta) + {\it Triv}_{\le C}(\theta) +  {\it Osc}_{\le C}(\theta) +  {\it Double}_{\le C}(\theta),$$
+
+           \noindent the first if $w$ is not a nontrivial zero and the second if it is.
+
+                     The good news is that  the functions ${\it Sing}_{\le C}(\theta),  {\it Triv}_{\le C}(\theta)$ (and also ${\it Elem}_{\le C}(\theta)$ when it exists) are smooth (easily describable) functions of the two variables $C$ and $\theta$; for us, this means so they are not that related to the essential information-laden {\it discontinuous} structure of  $ {\hat \Phi}_{\le C}(\theta)$. Let us bunch these three contributions together and call the sum ${\it Smooth}(C,\theta)$, and rewrite the above two formulae as:
+                       $$ {\bf(1)}\ \ \ {\hat \Phi}_{\le C}(\theta) ={\it Smooth}(C,\theta) +  {\it Osc}_{\le C}(\theta) $$
+
+           Or:
+
+           $${\bf(2)}\ \ \ {\hat \Phi}_{\le C}(\theta) = {\it Smooth}(C,\theta)+  {\it Osc}_{\le C}(\theta) +  m\cdot \log C +\epsilon,$$
+
+           depending upon whether or not $w$ is a nontrivial zero of $\zeta(s)$.
+
+
+ We now focus our attention on the Oscillatory term,  ${\it Osc}_{\le C}(\theta) $, approximating it by a truncation:  $$Osc_w(C,X):=  2\sum_{|\gamma| <
+ X} {{\frac{e^{i\log C\cdot (\gamma-\theta)}}{i(\gamma-\theta)}}}.$$ In this formula we have relegated the ``$\theta$" to the status of  a subscript (i.e., $w = {\frac{1}{2}} +i\theta$) since we are keeping it constant, and we view the two variables $X$ and $C$ as linked in that we want the cutoff ``$X$" to be sufficiently large, say $X \gg C^2$, so that the error term can be controlled.
+
+ At this point, recall  from our discussion in  this chapter that we are also performing a C{\'e}saro summation ---i.e.,  applying the operator $F(c) \mapsto$ ({\it C{\'e}s}$F)(C):= \int_1^CF(c) dc/c.$
+This has the effect of forcing the oscillatory term to be bounded as $C$ tends to infinity.
+
+ This implies that for any fixed $\theta$,  \begin{itemize} \item ${\hat \Phi}_{\le C}(\theta)$  is bounded independent of $C$  if  $\theta$ is not the imaginary part of a nontrivial zero of $\zeta(s)$  and
+ \item ${\hat \Phi}_{\le C}(\theta)$ grows as $m\cdot \log C +O(1)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$, \end{itemize} giving a theoretical confirmation of the striking feature of the graphs of our Chapter~\ref{ch:prime-to-spectrum}.}.
 
 
    %  \ill{phihat_even_all}{1}{Plots of $-\frac{1}{2}{\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}
@@ -4074,4 +4124,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":160}
+%sagemathcloud={"zoom_width":100}
