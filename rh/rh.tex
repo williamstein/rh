@@ -1,4 +1,4 @@
-    \documentclass[openany]{book}
+\documentclass[openany]{book}
 
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
@@ -318,7 +318,7 @@ should aim to come home with something very specific (it can be small,
 but should be {\em specific}) that has application to a wider class of
 mathematical problem than was the focus of the text or lecture.  If we
 were to suggest some possible {\em specific} items to come home with,
-after read our book, three key phrases -- {\bf prime numbers}, {\bf
+after reading our book, three key phrases -- {\bf prime numbers}, {\bf
   square-root accurate}, and {\bf spectrum} -- would head the
 list. As for words of encouragement to think hard about the first of
 these, i.e., prime numbers, we can do no better than to quote a
@@ -346,9 +346,9 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 
     Part~\ref{part2} does require calculus, and is meant as a general preparation for the type of Fourier analysis that will occur in the later chapters. The notion of spectrum is key.
 
-    Part~\ref{part3} is for readers who wish to see, more vividly, the phenomenology that links the placement of prime numbers and (what we call there) the {\it Riemann Spectrum}.
+    Part~\ref{part3} is for readers who wish to see, more vividly, the link between the placement of prime numbers and (what we call there) the {\it Riemann Spectrum}.
 
-    Part~\ref{part4} requires some  complex analysis, and returns to Riemann's original viewpoint.  In particular it  relates the ``Riemann Spectrum'' that we discuss in Part III to the {\it nontrivial zeroes of the Riemann's zeta-function}.
+    Part~\ref{part4} requires some familiarity with complex analytic functions, and returns to Riemann's original viewpoint.  In particular it  relates the ``Riemann Spectrum'' that we discuss in Part III to the {\it nontrivial zeroes of the Riemann's zeta-function}.
 
       The end-notes are meant to provide  more technical commentary, and link the text to references.
 
@@ -1072,7 +1072,7 @@ unknown.
 %%%%%%%%%%%%%%%
 
 One can think of many ways of ``getting at'' some understanding of the
-placement of prime numbers among all number.  Up to this point we have
+placement of prime numbers among all numbers.  Up to this point we have
 been mainly just counting them, trying to answer the question ``how
 many primes are there up to $X$?''  and we have begun to get some feel
 for the numbers behind this question, and especially for the current
@@ -1350,7 +1350,7 @@ beguilingly irregular {\em staircase of primes.}  Its height above any
 number $X$ on the horizontal line records the number of primes less
 than or equal to $X$, the accumulation of primes up to $X$.  Refer to
 this number as $\pi(X)$. So $\pi(2)=1$, $\pi(3) = 2$, $\pi(30) = 10$;
-of course, could plot a few more values of $\pi(X)$, like
+of course, we could plot a few more values of $\pi(X)$, like
 $\pi(\text{ten billion}) = 455,052,512$.
 
 
@@ -1683,6 +1683,8 @@ half the digits are correct.
 % % (X-pi(X))*.1, which is asymptotic to 0.1*X, as Mumford claimed.
 
 \end{remark}
+
+\todo{ bot: Explain why sqrt error is natural. (Barry will write this)}
 
 \chapter[What is Riemann's Hypothesis?] { What is Riemann's Hypothesis?  ({\em first formulation})\label{sec:rh1}}
 
@@ -2388,8 +2390,10 @@ $$f(x) = \begin{cases}1 & x \leq 3\\ 2 & x > 3.\end{cases}$$
 
 The most comfortable way to deal with the graph of such a function is
 to just approximate it by a differentiable function as in
-Figure~\ref{fig:jumpsmooth}.  Note that this function is not smooth, since the
-derivative is continuous but not differentiable; in our discussion all
+Figure~\ref{fig:jumpsmooth}.  Note that the function in
+Figure~\ref{fig:jumpsmooth} is not smooth, since the
+derivative is continuous but not differentiable; in our
+discussion all
 we will need is that our approximating function is once
 differentiable.
 
@@ -2937,13 +2941,13 @@ we think of as functions of two variables, $\theta$ and $C$ (the
 
 
 \section{\bf Spike values} \begin{definition} Say
-  that a trigonometric serties $F(\theta)$ has a {\bf spike} at the real number $\theta=\tau \in {\bf R}$
+  that a trigonometric series $F(\theta)$ has a {\bf spike} at the real number $\theta=\tau \in {\bf R}$
 if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive number cutoffs is
   unbounded.  A real number $\tau \in {\bf R}$ is, in contrast, a {\bf
     non-spike} if those values admit a finite upper
   bound. \end{definition}
 
-   One main mission in this book will be furthered just by paying attention to the  spike values of certain (infinite) trigonometric series.
+   One mission in this book will be furthered just by paying attention to the  spike values of certain (infinite) trigonometric series.
     The trigonometric sums we study are
   going to be particularly nice. Under the assumption of the Riemann
   Hypothesis, they  will have the
@@ -3045,7 +3049,7 @@ for a few values of $C$.
 In each of the graphs, we have indicated by red vertical arrows the
 real numbers that give the values of the {\it Riemann spectrum} that we will
 be discussing. These numbers at the red
-vertical arrows in the graphs above,
+vertical arrows in Figures~\ref{fig:pnsum5}--\ref{fig:phihat},
 $$
 \theta_1, \theta_2, \theta_3, \dots
 $$
@@ -3064,7 +3068,9 @@ they are precisely the  {\it imaginary parts of the
 Here is the function $f(t)$ we displayed above; it consists in the sum of the first four terms of our infinite sum, and doesn't yet show very much ``structure'':
 
 \ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with
-arrows pointing to the spectrum of the primes\label{fig:pnsum5}}\vskip20pt
+arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
+
+\vskip20pt
 \item {\bf The sum with $p^n \le C=20$}
 
  Something,
@@ -3363,6 +3369,7 @@ One proceeds, as  is standard in the derivation of Explicit Formulae, by moving 
                         \item  {\it Oscillatory poles:} $s= \rho-w = i(\gamma-\theta) \ne 0$ with $\rho(\ne w)$ a nontrivial zero of $\zeta(s)$. (Recall that we are assuming the Riemann Hypothesis, and our variable $w= {\frac{1}{2}}+i\theta$ runs through complex numbers of real part equal to ${\frac{1}{2}}$. So, in this case, $s$ is purely imaginary.)
                         \item {\it Elementary pole:} $s=0$ when  $ w$ is not a nontrivial zero of $\zeta(s)$---i.e., when $0=s\ne\rho-w$ for any nontrivial zero $\rho$.
                         \item {\it Double pole:}  $s=0$ when  $ w$ is a nontrivial zero of $\zeta(s)$---i.e., when $0=s=\rho-w$ for some nontrivial zero $\rho$. This, when it occurs, is indeed a double pole, and the residue is given by $m\cdot \log C +\epsilon$.  Here $m$ is the multiplicity of the zero $\rho$  (which we expect always---or at least usually---to be equal to $1$) and $\epsilon$ is a constant (depending on $\rho$, but not on $C$).
+\todo{Explain "multiplicity" (I'll do that.)}
 \end{itemize}
 
            The standard technique for the ``Explicit formula'' will provide us with a formula for our function of interest  ${\hat \Phi}_{\le C}(\theta)$. The formula has terms resulting from the residues of each of the first three types of poles, and of the {\it Elementary} or  the  {\it Double} pole---whichever exists.  Here is the shape of the formula, given with terminology that is meant to be  evocative:
@@ -3602,7 +3609,7 @@ $G_C(x)$.
   Bernhard Riemann used the spectrum of the prime numbers to provide
   an exact analytic formula that analyzes and/or synthesizes the
   staircase of primes.  This formula is motivated by Fourier's
-  analysis of functions as constituted out of sines.  Riemann started
+  analysis of functions as constituted out of cosines.  Riemann started
   with a specific smooth function, which we will refer to as $R(X)$, a
   function that Riemann offered, just as Gauss offered his $\Li(X)$,
   as a candidate smooth function approximating the staircase of
@@ -3820,7 +3827,10 @@ $$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$
 The striking reformulation that Euler discovered was the expression of
 this infinite sum as an infinite product of factors associated to the
 prime numbers:
-$$\zeta(s)=\sum_n{|frac{1}{n^s}} = prod_{p \ {\rm prime}}{\frac{1}{1-p^{-s}}},$$
+$$
+\zeta(s)=\sum_n{\frac{1}{n^s}} = 
+\prod_{p \ {\rm prime}}{\frac{1}{1-p^{-s}}},
+$$
 where the infinite sum on the left and the infinite product on the
 right both converge (and are equal) if $s > 1$. He also evaluated these
 sums at even positive integers, where---surprise---the Bernoulli
@@ -4124,4 +4134,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":100}
+%sagemathcloud={"zoom_width":165}

@@ -1,0 +1,33 @@
+Hi William,
+
+ A reader of our draft left me an annotated copy of it with some queries and corrections. From the 'queries,' I became convinced that we need a new little chapter  giving a full and enlightening discussion of the word 'spectrum.'  Along with that, we seem to need a definition of 'multiplicity,' and also a fuller explanation of why \sqrt accuracy is the gold standard. I'll try to write these. But here, also, are a dozen typos that I recorded from the marginal annotation. I hope they're easy to figure out and correct  our draft .
+
+x 1) page 6, line 6: insert 'reading' instead of 'read'
+
+x 2) page 7, line 10: replace "phenomenology that links"  by "the link between"
+
+x 3)  page 7, line 13: replace "complex analysis" by "familiarity with complex analytic functions"
+
+x 4)  page 23,  line 9: 'numbers' instead of 'number'
+
+x 5)  page 31, line 6: replace 'of course, could' by :  'of course, we could'
+
+NO -- not using "the fact that" to add another is one of main points of Strunk&White 6)  page 38, line 2 from bot: replace 'use that' by 'use the fact that'
+
+x 7)* page 42, bot: Explain why sqrt error is natural. (I'll write this)
+
+x 8) page 68: "this function" (be more explicit: i.e., the function in figure 20.5)
+
+x 9) page 84, line 6bot: 'serties' should be 'series'
+
+x 10) page 84, line 2bot: remove 'main'
+
+x 11) page 88, line 2bot:  "graphs above"  should be more explicit: i.e., the function in figure 20.5)
+
+   >>> I put Figures 25.2-25.6  (??)
+
+x 12)* Explain "multiplicity" (I'll do that.)
+
+x 13) page 105, line 5bot: 'sines' should be 'cosines'
+
+x 140 page 114: 'frac and prod' should be '\frac and \prod'
