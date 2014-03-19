@@ -1,4 +1,4 @@
-\documentclass[openany]{book}
+\documentclass[openany,draft]{book}
 
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
@@ -488,7 +488,7 @@ arithmetic tells us that any number (bigger than $1$) can be factored
 as a product of primes, and the factorization is {\em unique} except
 for rearranging the order of the primes.
 
-For example, if you try to factor the number $12$ as a product of
+For example, if you try to factor $12$ as a product of
 smaller numbers---ignoring the order of the factors---there are two
 ways to begin to do this:
 $$
@@ -1175,8 +1175,9 @@ numbers that we do not know the answer to:
 {\em Racing Gap $2$,  Gap $4$, Gap $6$, and Gap $8$ against each other:}
 
 \begin{quote}
-  Challenge: As $X$ tends to infinity which of $\Gap_2(X), \Gap_4(X),
-  \Gap_6(X),$ or $\Gap_8(X)$ do you think will grow faster? How
+  Challenge: As $X$ tends to infinity which of $\Gap_2(X)$,
+  $\Gap_4(X)$,
+  $\Gap_6(X),$ or $\Gap_8(X)$ do you think will grow faster? How
   much would you bet on the truth of your guess? \bibnote{%
     Hardy and Littlewood give a nice conjectural answer to such
     questions about gaps between primes.  See Problem {\bf A8} of
@@ -1314,7 +1315,7 @@ There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.48}{Proportion of primes for $X$ up to $1{,}000$ (left) and $10{,}000$ (right)}
+\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.46}{Proportion of primes for $X$ up to $1{,}000$ (left) and $10{,}000$ (right)}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10,000,000,000 (so we might say that the chances are down to roughly
@@ -1558,7 +1559,7 @@ The area under $1/\log(X)$ up to $X=999{,}999$ is $78{,}626.43\ldots$, which
 is remarkably close to the correct count $78{,}498$ of the primes
 up to $999{,}999$.
 
-\illthree{area_under_log_graph_30}{area_under_log_graph_100}{area_under_log_graph_1000}{.3}{The
+\illthree{area_under_log_graph_30}{area_under_log_graph_100}{area_under_log_graph_1000}{.27}{The
   expected tally of the number of primes $\leq X$ is approximated by the
   area underneath the graph of $1/\log(X)$ from $1$ to $X$.\label{fig:G}}
 
@@ -2460,10 +2461,10 @@ Calculus relating a function to its derivative:
    \end{itemize}
 
    Each of our red graphs is the derivative of the corresponding blue
-   graph. Wouldn't it be tempting to think of the limit of the red
+   graph. It is tempting to think of the limit of the red
    graphs---whatever we might construe this to be---as standing for
    the derivative of the limit of the blue graphs, i.e., of the graph
-   in Figure~\ref{fig:jump}?
+   in Figure~\ref{fig:jump}.
 
    Well, the temptation is so great that, in fact, mathematicians and
    physicists of the early twentieth century struggled to give a
@@ -2954,20 +2955,22 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
   property that the set of their spike values are particularly interesting {\it discrete}
   subsets of the real line.
 
-\section{\bf Trigonometric Series as Fourier Transforms}
+\section{Trigonometric Series as Fourier Transforms}
+
 
 Recall, as in Chapter \ref{sec:ftdelta}, that for any real number $x$, we considered
 the symmetrized delta-function with support at $x$ and $-x$, given
 by
 $$
- d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2
+ d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2,
 $$
-\ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$,
-where we draw vertical arrows to illustrate the Dirac delta functions.}
 and noted that the Fourier transform of this $d_x(t)$  is
 $$
    \label{dx2}{\hat d_x}(\theta)  = \cos(x\theta).
 $$
+\ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$,
+where we draw vertical arrows to illustrate the Dirac delta functions.}
+
 It follows, of course, that a cutoff finite trigonometric series,
 $F(\theta,C)$ associated to an infinite trigonometric series
 $$
@@ -3273,7 +3276,7 @@ described, that end up with the distribution $\Phi(t)$.
 
 
 
-We've discussed the nature of the Fourier transform of (symmetrized)
+We  discussed the nature of the Fourier transform of (symmetrized)
 $\delta$-functions in Chapter~\ref{sec:ftdelta}. In particular, recall
 the ``spike function'' $$d_x(t) \ = \ (\delta_x(t) +
 \delta_{-x}(t))/2$$ that has support at the points $x$ and $-x$.  We
@@ -3462,7 +3465,9 @@ Nowadays, these mysterious numbers, these spectral lines for the
 staircase of primes, are known to great accuracy.  Here is the smallest
 one, $\theta_1$, given with over $1{,}000$ digits of its decimal
 expansion:
+
 \vskip20pt
+{\small
 $14.134725141734693790457251983562470270784257115699243175685567460149\newline
 9634298092567649490103931715610127792029715487974367661426914698822545\newline
 8250536323944713778041338123720597054962195586586020055556672583601077\newline
@@ -3477,7 +3482,8 @@ $14.134725141734693790457251983562470270784257115699243175685567460149\newline
 2516911271068291052375961797743181517071354531677549515382893784903647\newline
 4709727019948485532209253574357909226125247736595518016975233461213977\newline
 3160053541259267474557258778014726098308089786007125320875093959979666\newline
-60675378381214891908864977277554420656532052405$
+60675378381214891908864977277554420656532052405$}
+
 \vskip20pt
 \noindent{}and if, by any chance, you wish to peruse the first
 $2{,}001{,}052$
@@ -3620,8 +3626,12 @@ $G_C(x)$.
 $$
  \mu(n) = \begin{cases}
     1 &
-       \mbox{if $n$ is a square-free positive integer with an even number of distinct prime factors}\\
-    -1& \mbox{if $n$ is a square-free positive integer with an odd number of distinct prime factors}\\
+       \mbox{\begin{minipage}{0.6\textwidth}if $n$ is a square-free
+       positive integer with an even number of distinct prime
+       factors,\end{minipage}}\vspace{1em}\\
+    -1& \mbox{\begin{minipage}{0.6\textwidth}if $n$ is a square-free
+    positive integer with an odd number of distinct
+    prime factors,\end{minipage}}\vspace{1em}\\
     0 & \mbox{if $n$ is not square-free.}
  \end{cases}
  $$
@@ -3647,7 +3657,8 @@ $\pi(X)$.  Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate
 that Riemann's function $R(X)$ appears to be an even better
 approximation to $\pi(X)$ than anything we have seen before.
 
-\illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.5}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess100}}
+\illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.47}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess100}}
+
 
 \ill{pi_riemann_gauss_10000-11000}{0.5}{Closeup comparison of  $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess10000}}
 
@@ -3828,7 +3839,7 @@ The striking reformulation that Euler discovered was the expression of
 this infinite sum as an infinite product of factors associated to the
 prime numbers:
 $$
-\zeta(s)=\sum_n{\frac{1}{n^s}} = 
+\zeta(s)=\sum_n{\frac{1}{n^s}} =
 \prod_{p \ {\rm prime}}{\frac{1}{1-p^{-s}}},
 $$
 where the infinite sum on the left and the infinite product on the
@@ -4134,4 +4145,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":165}
+%sagemathcloud={"zoom_width":150}
