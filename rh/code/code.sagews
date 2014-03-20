@@ -19,7 +19,7 @@ f(500*10^6)
 %time
 draw("theta_C")
 
-︡eaa6f356-6967-4216-98b1-8cc803298610︡{"stdout":"Drawing theta_C... "}︡{"stdout":" "}︡{"stdout":" (time = 5.14735412598 seconds)\n"}︡{"stdout":"CPU time: 5.15 s, Wall time: 5.16 s\n"}︡
+︡8e53287a-8bae-44b2-80ae-adb45047b992︡{"stdout":"Drawing theta_C... "}︡{"stdout":" "}︡{"stdout":" (time = 5.19401979446 seconds)\n"}︡{"stdout":"CPU time: 5.19 s, Wall time: 5.05 s\n"}︡
 ︠8bdd3bcb-d391-4a9f-a7d8-f0cef539369a︠
 %time
 draw("random_walks")

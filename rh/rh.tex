@@ -2229,6 +2229,22 @@ quality, so that you can fit your entire music collection on your
 mp3 player, instead of just a few of your favorite CD's.
 
 \chapter{ The word `Spectrum'}
+  It is worth noting how often this word appears in scientific literature, with an array of different uses and meanings.   It  comes from Latin where its meaning is ``image," or ``appearance," related to the verb meaning {\it to look} (the older form being  {\it specere} and the later form {\it spectare}).  In most of its meanings, nowadays, it has to do with some procedure, an analysis, allowing one to see clearly the  constituent parts of something to be analyzed, these constituent parts often organized in some continuous scale, such as in the discussion of the previous chapter.
+
+  The Oxford Dictionary lists, as one of its many uses:
+
+\begin{quote} Used to classify something, or suggest that it can be classified, in terms of its position on a scale between two extreme or opposite points.\end{quote}
+
+This works well for the color spectrum, as initiation by Newton (as in the figure ... below, white light is separated by a prism into a rainbow  continuum of colors): an analysis of white light into its components. Or in mass spectrometry, where
+ beams of ions are separated (analyzed) according to their
+mass/charge ratio and the mass spectrum is recorded on a photographic plate or film.  Or in the recording of the various component frequencies, with their  corresponding intensities of some audible phenomenon.
+
+ In mathematics the word  has found its use in many different fields, the most basic use occurring in Fourier analysis, which has as its goal the aim of either {\it analyzing}  a function $f(t)$ as being  comprised of simpler (specifically: sine and cosine) functions, or {\it synthesizing} such a function by combining simpler functions to produce it. The understanding here,vious chapter,vious chapter, is that  an analysis of $f(t)$ as built up of simpler functions is meant to provide a significantly clearer image of the constitution of $f(t)$.  If, to take a very particular example, the simpler functions  that are needed for the synthesis of $f(t)$ are of the form $a\cos(\theta t)$  (for $a$ some real number which is the {\it amplitude} or size of the peaks of this periodic function)---and  if $f(t)$ is given as the limit of $a_1\cos(\theta_1t) +  a_2\cos(\theta_2t) + a_3cos(\theta_3t) \dots$  for a sequence of real numbers $\theta_1, \theta_2,
+ \theta_3,
+ \dots$  (i.e., these simpler functions are functions of {\it periods} ${\frac{2\pi}{\theta_1}}, {\frac{2\pi}{\theta_2}}, {\frac{2\pi}{\theta_3}}, \dots$) it is natural to call the these $\theta_i$ the  {\bf spectrum} of $f(t)$.
+   This will eventually show up in our discussion of the {\it Riemann Spectrum} below.
+
+
  \chapter{Spectra and Trigonometric Sums \label{sec:trigsums}}
 
 As we saw in Chapter~\ref{sec:fourier1}, a pure tone can be represented by a periodic {\it sine wave}---a function of  time $f(t)$--- the equation of which might be:
@@ -3359,8 +3375,9 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
 For example, when $C=3$, we have
 $$
   {\hat \Phi}_{\leq 3}(\theta) =
-   \sqrt{2}\log\left(2\right) \cos\left(\theta \log\left(2\right)\right) +
-  \frac{2}{3} \, \sqrt{3}  \log\left(3\right)  \cos\left(\theta \log\left(3\right)\right),
+  \frac{2}{\sqrt{2}} \log(2)\cos(\log(2)\theta)
+ +
+ \frac{2}{\sqrt{3}} \log(3)\cos(\log(3)\theta),
 $$
 which we plot in Figure~\ref{fig:theta_3}, along with
 its derivative in grey.
@@ -3375,12 +3392,11 @@ which we've indicated with red vertical arrows.
 When $C=3$, we locate this spike by numerically finding
 that the root of the derivative
 $$
-{\hat \Phi'}_{\leq 3}(\theta)
-   =  -\sqrt{2}\log\left(2\right)^2 \sin\left(\theta \log\left(2\right)\right) -
-  \frac{2}{3} \, \sqrt{3}  \log\left(3\right)^2  \sin\left(\theta \log\left(3\right)\right)
+  {\hat \Phi'}_{\leq 3}(\theta) =
+  -\frac{2}{\sqrt{2}} \log(2)^2\sin(\log(2)\theta)
+ -\frac{2}{\sqrt{3}} \log(3)^3\sin(\log(3)\theta),
 $$
-between 12 and 16 is $14.135375354\ldots$.  This is a calculation
-you can do using any computer algebra system.
+between 12 and 16 is $14.135375354\ldots$.  
 
 
  \illtwo{theta_C-5}{theta_C-10}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=5$ and $10$\label{fig:theta_C-5-10}}
