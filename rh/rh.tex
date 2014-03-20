@@ -1,4 +1,4 @@
-\documentclass[openany,draft]{book}
+\documentclass[openany]{book}
 
 %\documentclass[11pt,draft]{article}   % uncomment this and comment out the above line for *fast* typesetting (no images)
 
@@ -158,7 +158,7 @@ sensitive=true}
 What is Riemann's Hypothesis?\\
 \vspace{1em}
 \large
-(August 2013 Draft)}
+(March 2014 Draft)}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
 %\begin{center}
@@ -487,6 +487,8 @@ from which all numbers can be made. A fundamental theorem of
 arithmetic tells us that any number (bigger than $1$) can be factored
 as a product of primes, and the factorization is {\em unique} except
 for rearranging the order of the primes.
+
+
 
 For example, if you try to factor $12$ as a product of
 smaller numbers---ignoring the order of the factors---there are two
@@ -928,6 +930,7 @@ encounter with primes that differ from a power of $2$ by $1$:
   \end{itemize}
 \end{enumerate}
 
+
 Not all numbers of the form $2^{\rm prime\ number} -1$ or of the form
 $2^{\rm power\ of\ two} +1$ are prime. We currently know only finite
 many primes of either of these forms. How we have come to know what we
@@ -1029,16 +1032,20 @@ that there are loads more such pairs (see \bibnote{For example, according to
 \url{http://oeis.org/A007508} there are
 $10{,}304{,}185{,}697{,}298$ such pairs less than
 $10{,}000{,}000{,}000{,}000{,}000$.}) but the answer to our question,
-{\em are there infinitely many?}, is not known.
+{\em are there infinitely many?}, is not known. The conjecture that there are infinitely many such pairs of primes (``twin primes" as they are called) is known as the {\it Twin Primes Conjecture}.
+{\em Are there
+  infinitely many pairs of primes whose difference is $4$, $6$?}  Answer:
+equally unknown.
 Nevertheless there is very exciting recent work in this direction, specifically,
 Yitang Zhang proved that there are infinitely many pairs of primes that differ
-by no more than $7\times 10^7$. See the wikipedia entry \url{http://en.wikipedia.org/wiki/Yitang_Zhang}.
-{\em Are there
-  infinitely many pairs of primes whose difference is $4$?}  Answer:
-equally unknown. {\em Is every even number greater than $2$ a sum of
+by no more than $7\times 10^7$. For a brief account of this, see the wikipedia entry \url{http://en.wikipedia.org/wiki/Yitang_Zhang}, and for a popular report  about developments following Zhang's breakthrough result (we know now, thanks to results of James Maynard, that there are infinitely many pairs of primes that differ
+by no more than $600$) see \url{https://www.simonsfoundation.org/quanta/20131119-together-and-alone-closing-the-prime-gap/}.
+
+{\em Is every even number greater than $2$ a sum of
   two primes?}  Answer: unknown. {\em Are there infinitely many primes
   which are $1$ more than a perfect square?}  Answer: unknown.
 
+\ill{zhang}{0.25}{Yitang Zhang\label{fig:zhang}}
 
 
 
@@ -1101,8 +1108,8 @@ examples that  provide further motivation.
 
 \chapter{Further questions about primes\label{ch:further}}
 
-Let us, for variety, dice the question differently by concentrating on
-the {\em gaps} between one prime and the next, rather than the tally
+In celebration of Yitang Zhang's recent result, let us consider more of the numerics
+regarding {\em gaps} between one prime and the next, rather than the tally
 of all primes. Of course, it is no fun at all to try to guess how many
 pairs of primes $p, q$ there are with gap $q-p$ equal to a fixed odd
 number, since the difference of two odd numbers is even.  The fun,
