@@ -3342,11 +3342,11 @@ We may want to think of $\Phi(t)$ as a limit of the following sequence of distri
 where $\Phi_{\le C}(t)$  is the following finite linear
 combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
  $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
- Since the Fourier transform of $d_x(t)$ is  $\cos(t\theta)$, the Fourier transform of  each $d_{n\log(p)}(t)$ is
+ Since the Fourier transform of $d_x(t)$ is  $\cos(x\theta)$, the Fourier transform of  each $d_{n\log(p)}(t)$ is
  $\cos(n\log(p)\theta)$, so the Fourier transform of $\Phi_{\le
    C}(t)$ is
 
-  $${\hat \Phi}_{\leq C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
+  $${\hat \Phi}_{\leq C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n  \leq{} C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
 
    So, following the discussion in Chapter~\ref{ch:trigseries} above, we are dealing with the cutoffs at finite points  $C$  of the {\it trigonometric series}
 
@@ -3355,8 +3355,9 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
    (This trigonometric series---whose spectral values are the logarithms of prime powers---may also be written as
    $$\sum_{m=2}^{\infty}\Lambda(m)m^{-s} + \sum_{m=2}^{\infty}\Lambda(m)m^{-{\bar s}}$$ for $s={\frac{1}{2}}+i\theta$, where  $\Lambda(m)$ is the von-Mangoldt function.)
 
-   Here is a graph of various cutoffs of this trigonometric function (times $-1/2$).
-   \vskip20pt
+Here is a graph of various cutoffs of this trigonometric function.
+
+\vskip20pt
 {\bf William: (FIGURE 1) I know that you have just computed lots of new graphs but can't log onto the cloud (it doesn't know me or my email address) so I can't yet suggest exactly which of the graphs to put into these figure spots, but how about putting the plot of ${\hat \Phi}_{\le C}(\theta)$ (times $-1/2$?) here as a function of $\theta$ for a few cutoffs $C$? For example: ``fig:phic."}
  %\ill{phihat_even_all}{1}{Plots of $-\frac{1}{2}{\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}}
 
@@ -4177,4 +4178,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":150}
+%sagemathcloud={"zoom_width":155}
