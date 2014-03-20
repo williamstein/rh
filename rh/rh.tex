@@ -3364,14 +3364,22 @@ $$
 $$
 which we plot in Figure~\ref{fig:theta_3}, along with
 its derivative in grey.
-Figures~\ref{fig:theta_C-5-10}--\ref{fig:theta_C-200-500}
-are graphs of various cutoffs of ${\hat \Phi}_{\leq C}(\theta)$.
-As $C$ increases a 
 
 
  \ill{theta_C-3}{0.9}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$ \label{fig:theta_3}}
 
-
+Figures~\ref{fig:theta_C-5-10}--\ref{fig:theta_C-200-500}
+are graphs of various cutoffs of ${\hat \Phi}_{\leq C}(\theta)$.
+As $C$ increases a sequence of spikes down emerge
+which we've indicated with red vertical arrows.
+When $C=3$, we locate this spike by numerically finding
+that the root of the derivative
+$$
+{\hat \Phi'}_{\leq 3}(\theta)
+   =  -\sqrt{2}\log\left(2\right)^2 \sin\left(\theta \log\left(2\right)\right) -
+  \frac{2}{3} \, \sqrt{3}  \log\left(3\right)^2  \sin\left(\theta \log\left(3\right)\right)
+$$
+between 12 and 16 is $14.135375354\ldots$.
 
 
  \illtwo{theta_C-5}{theta_C-10}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=5$ and $10$\label{fig:theta_C-5-10}}
@@ -3380,8 +3388,6 @@ As $C$ increases a
 
 \illtwo{theta_C-200}{theta_C-500}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=200$ and $500$\label{fig:theta_C-200-500}}
 
-  Notice the spikes at the red vertical lines. We've superimposed the graph of  derivative of ${\hat \Phi}_{\le C}(\theta)$ in light grey
-  to focus attention more specifically on those risers.
 
    To see this staircase phenomenon of the graph even more clearly, we will counteract the `ascendancy' of the graph without destroying its staircase structure,  by  subtracting a function $R(C,\theta)$,
    which is a certain smooth function {\bibnote{$\dots$}}  of $\theta$ and $C$, giving us the function we call: $$A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$$ whose graph looks like:
