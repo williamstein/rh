@@ -7,6 +7,20 @@ polygon2d.options
 ︠0b40f245-6fd0-441d-8e0c-9fe4cf069032︠
 %load code.sage
 ︡b8abd6e7-080b-4512-9362-6239db897b28︡
+︠c7203c69-5e8b-43c9-8067-f81a0b9f6a72︠
+def f(B):
+    v = prime_gap_distribution(B)
+    return [v[i] if i<len(v) else 0 for i in [2,4,6,8,252]]
+︡b0c84c14-a888-410d-bc51-3268c3bf2a4f︡
+︠13072bfa-218a-4b8a-a2de-ca7c41312593︠
+for B in [10^i for i in [1..7]]:
+    print B, f(B)
+︡6ac3bacf-e862-424e-be7b-7c31de044d34︡{"stdout":"10 [2, 0, 0, 0, 0]\n100 [8, 7, 7, 1, 0]\n1000 [35, 40, 44, 15, 0]\n10000 [205, 202, 299, 101, 0]\n100000 [1224, 1215, 1940, 773, 0]\n1000000 [8169, 8143, 13549, 5569, 0]\n10000000 "}︡{"stdout":"[58980, 58621, 99987, 42352, 0]\n"}︡
+︠9753b0b8-b7f2-4cbc-843f-6635e137f4ad︠
+
+︠9fe9bd2a-95e4-4287-a027-c801beb0f7bf︠
+
+
 ︠8bdd3bcb-d391-4a9f-a7d8-f0cef539369a︠
 %time
 draw("random_walks")
