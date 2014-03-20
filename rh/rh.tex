@@ -1139,12 +1139,14 @@ So, define
 $$
   \Gap_{k}(X)
 $$
-to be the number of pairs of successive primes $(p,q)$ with
+to be the number of pairs of {\em successive} primes $(p,q)$ with
 $q<X$ that have ``gap $k$'' (i.e., such that their difference $q-p$ is
 $k$).  Here $p$ is a prime, $q>p$ is a prime, and there are no primes
 between $p$ and $q$.  For example, $\Gap_2(10) = 2$, since the pairs
-$(3,5)$ and $(5,7)$ are the pairs less than $10$ with gap $2$.  See
-Table~\ref{tab:gap} for various values of $\Gap_{k}(X)$ and
+$(3,5)$ and $(5,7)$ are the pairs less than $10$ with gap $2$,
+and $\Gap_{4}(10)=0$ because despite $3$ and $7$ being separated
+by $4$, they are not consecutive primes.
+See Table~\ref{tab:gap} for various values of $\Gap_{k}(X)$ and
 Figure~\ref{fig:primegapdist} for the distribution of prime gaps for
 $X=10^7$.
 
@@ -1153,8 +1155,9 @@ $X=10^7$.
 \caption{Values of $\Gap_{k}(X)$ \label{tab:gap}}
 \vspace{1em}
 
-\begin{tabular}{|l|c|c|c|c|}\hline
-$X$ & $\Gap_{2}(X)$ & $\Gap_{4}(X)$& $\Gap_{6}(X)$ & $\Gap_{8}(X)$\\\hline
+\begin{tabular}{|l|c|c|c|c|c|c|}\hline
+$X$ & $\Gap_{2}(X)$ & $\Gap_{4}(X)$& $\Gap_{6}(X)$ & $\Gap_{8}(X)$ &
+$\cdots$ & $\Gap_{252}(X)$\\\hline
 10 & 2 & 1 & 0 & 0\\\hline
 $10^2$ & 8 & 8 & 7 & 1 \\\hline
 $10^3$ & 35 & 40 & 44 & 15 \\\hline
@@ -1165,7 +1168,7 @@ $10^7$ & 58980 & 58621 & 99987 & 42352 \\\hline
 \end{tabular}
 \end{table}
 
- The recent results of Zhang as sharpened by Maynard  we mentioned above tell us that for  at least one even number $2k$ among the three hundred  even numbers $2k \le 600$,    $\Gap_{2k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $2k$.
+ The recent results of Zhang as sharpened by Maynard  we mentioned above tell us that for  at least one even number $2k$ among the three hundred  even numbers $2k \le 252$,    $\Gap_{2k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $2k$.
 
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of
   prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
@@ -1690,9 +1693,11 @@ half the digits are correct.
 
  To take a random walk along a (straight) East-West path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either East or West. After $X$ minutes, how far are you from your home base?
 
-  The answer to this {\it cannot} be a specific nubmer, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. So , you might ask a statistical version of that question: if you took many random walks $X$ minutes long, on the average, how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after these excursion is proportional to ${\sqrt X}$. (In fact, the average is equal to ${\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
+  The answer to this {\it cannot} be a specific number, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. It is more reasonable to ask a statistical version of that question. Namely, if you took {\it many} random walks $X$ minutes long, then---on the average---how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after these excursion is proportional to ${\sqrt X}$. (In fact, the average is equal to ${\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
 
-  To connect this with the committeee member's history oferrors, described in the fable in the last chaapter.
+  To connect this with the committee member's history of errors, described in the fable in the last chapter, imagine that every  error (under-count or over-count by $1$) the committee member makes, as a `step' East---for under-count and West for over-count. Then if such errors were made, at a constant frequency over the duration of time spent counting, and if the over- and under-counts were equally likely and random, then one can model the committee member's computational  accuracy by a random walk. It would be---in the terminology we have already discussed---no better than {\it square-root accurate};it would be subject to {]\it square-root error}.
+
+   To get a real sense of how constrained random walks are by this `square-root law,' here are a few numerical experiments of random walks. The red curve in each of teh figures below is the graph of the quantity ${\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$ over the $X$-axis.   
 
 
 \illtwo{random_walks-3}{random_walks-3-mean}{.45}{Three Random Walks\label{fig:random_walks_3}}
