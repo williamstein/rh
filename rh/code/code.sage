@@ -1384,4 +1384,26 @@ def fig_Rk(dir, ext):
 
 
 
+##############################################################
+# Random Walks
+##############################################################
+def random_walk(n):
+    import random
+    return stats.TimeSeries([random.choice([-1r,1r]) for _ in range(n)]).sums()
 
+def random_walks(path, ext, B, n=1000, seed=1):
+    set_random_seed(seed)
+    path = path + '-%s'%B
+    v = [random_walk(n) for i in range(B)]
+    g = sum([z.plot(thickness=.3) for z in v])
+    g.save(path + '.' + ext)
+    s = sum([z.abs().vector()/B for z in v])
+    avg = stats.TimeSeries(list(s))
+    h = avg.plot() + plot(sqrt(2/pi)*sqrt(x), (0,g.xmax()), color='red', thickness=2)
+    h.save(path + '-mean.' + ext)
+
+def fig_random_walks(dir, ext):
+    random_walks(dir + '/random_walks', ext, 3)
+    random_walks(dir + '/random_walks', ext, 10)
+    random_walks(dir + '/random_walks', ext, 100)
+    random_walks(dir + '/random_walks', ext, 1000)
