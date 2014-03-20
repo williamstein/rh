@@ -1688,7 +1688,11 @@ half the digits are correct.
 
 \chapter{Square Root Error and Random Walks}
 
- To take a random walk along a (straight) East-West path  you would start at your home base, but each second, say, take a step along the path, each step being of the same length,
+ To take a random walk along a (straight) East-West path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either East or West. After $X$ minutes, how far are you from your home base?
+
+  The answer to this {\it cannot} be a specific nubmer, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. So , you might ask a statistical version of that question: if you took many random walks $X$ minutes long, on the average, how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after these excursion is proportional to ${\sqrt X}$. (In fact, the average is equal to ${\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
+
+  To connect this with the committeee member's history oferrors, described in the fable in the last chaapter.
 
 
 \illtwo{random_walks-3}{random_walks-3-mean}{.45}{Three Random Walks\label{fig:random_walks_3}}
