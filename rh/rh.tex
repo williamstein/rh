@@ -1698,7 +1698,7 @@ half the digits are correct.
 
  To take a random walk along a (straight) East-West path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either East or West. After $X$ minutes, how far are you from your home base?
 
-  The answer to this {\it cannot} be a specific number, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. It is more reasonable to ask a statistical version of that question. Namely, if you took {\it many} random walks $X$ minutes long, then---on the average---how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after (sufficiently many of) these excursion is proportional to ${\sqrt X}$. (In fact, the average is equal to ${\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
+  The answer to this {\it cannot} be a specific number, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. It is more reasonable to ask a statistical version of that question. Namely, if you took {\it many} random walks $X$ minutes long, then---on the average---how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after (sufficiently many of) these excursion is proportional to ${\sqrt X}$. (In fact, the average is equal to $\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
 
   To connect this with the committee members' histories of errors, described in the fable in Chapter~\ref{sec:sqrterror}, imagine  every  error (under-count or over-count by $1$) the committee member makes, as a `step' East for under-count and West for over-count. Then if such errors were made, at a constant frequency over the duration of time spent counting, and if the over- and under-counts were equally likely and random, then one can model the committee members' computational  accuracy by a random walk. It would be---in the terminology we have already discussed---no better than {\it square-root accurate}; it would be subject to {\it square-root error}.
 
@@ -3355,14 +3355,16 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
    (This trigonometric series---whose spectral values are the logarithms of prime powers---may also be written as
    $$\sum_{m=2}^{\infty}\Lambda(m)m^{-s} + \sum_{m=2}^{\infty}\Lambda(m)m^{-{\bar s}}$$ for $s={\frac{1}{2}}+i\theta$, where  $\Lambda(m)$ is the von-Mangoldt function.)
 
-Here is a graph of various cutoffs of this trigonometric function.
+Figures~\ref{fig:theta_C-3-10}--\ref{fig:theta_C-200-500} contain graphs of various cutoffs of this trigonometric function.
 
-\vskip20pt
-{\bf William: (FIGURE 1) I know that you have just computed lots of new graphs but can't log onto the cloud (it doesn't know me or my email address) so I can't yet suggest exactly which of the graphs to put into these figure spots, but how about putting the plot of ${\hat \Phi}_{\le C}(\theta)$ (times $-1/2$?) here as a function of $\theta$ for a few cutoffs $C$? For example: ``fig:phic."}
- %\ill{phihat_even_all}{1}{Plots of $-\frac{1}{2}{\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}}
+ \illtwo{theta_C-3}{theta_C-10}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=3$ and $10$\label{fig:theta_C-3-10}}
 
-\vskip20pt
-  Notice the risers at the red vertical lines. We've superimposed the graph of  derivative of ${\hat \Phi}_{\le C}(\theta)$ to focus attention more specifically on those risers.
+\illtwo{theta_C-20}{theta_C-100}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=10$ and $100$\label{fig:theta_C-10-100}}
+
+\illtwo{theta_C-200}{theta_C-500}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=200$ and $500$\label{fig:theta_C-200-500}}
+
+  Notice the risers at the red vertical lines. We've superimposed the graph of  derivative of ${\hat \Phi}_{\le C}(\theta)$ in light grey
+  to focus attention more specifically on those risers.
 
    To see this staircase phenomenon of the graph even more clearly, we will counteract the `ascendancy' of the graph without destroying its staircase structure,  by  subtracting  $R(C,\theta)$, a certain smooth function {\bibnote{$\dots$}}  of $\theta$ and $C$, giving us the function we call: $$A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$$ whose graph looks like:
      \vskip20pt

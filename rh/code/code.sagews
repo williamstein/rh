@@ -1,6 +1,6 @@
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage
-︡7896c35a-2ccd-4a0f-9932-0d2bc3d5db90︡
+︡e8888acb-bf7f-4603-b3ee-5a50751a688c︡
 ︠c7203c69-5e8b-43c9-8067-f81a0b9f6a72︠
 def f(B):
     v = prime_gap_distribution(10^B)
@@ -16,8 +16,10 @@ for B in [1..8]:
 f(500*10^6)
 ︡3b01e2c7-540d-408c-b9de-f60d9cf08ac4︡{"stdout":"[1840170, 1841265, 3257346, 1434059, 0]"}︡{"stdout":"\n"}︡{"stdout":"CPU time: 92.78 s, Wall time: 87.69 s\n"}︡
 ︠9fe9bd2a-95e4-4287-a027-c801beb0f7bf︠
+%time
+draw("theta_C")
 
-
+︡c1f3c533-0dbd-4224-a6ec-c49f5f72d17c︡{"stdout":"Drawing theta_C... "}︡{"stdout":" "}︡{"stdout":" (time = 4.51193785667 seconds)\n"}︡{"stdout":"CPU time: 4.51 s, Wall time: 4.57 s\n"}︡
 ︠8bdd3bcb-d391-4a9f-a7d8-f0cef539369a︠
 %time
 draw("random_walks")

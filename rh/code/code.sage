@@ -1444,7 +1444,7 @@ def plot_theta_C(C, xmax):
     zeros = sum([arrow((x,ym),(x,0),rgbcolor='red',width=1.5,arrowsize=2)
                  for i, x in enumerate(Z)])
     g += zeros
-    g += plot(ff.derivative(), 0, xmax, color='grey', alpha=.5)
+    g += plot(T.derivative(), 0, xmax, color='grey', alpha=.5)
     g.ymax(min(ym,10))
     g.ymin(max(-15,g.ymin()))
     return g
@@ -1454,4 +1454,7 @@ def fig_theta_C(dir, ext):
         plot_theta_C(C,xmax).save(dir+'/theta_C-%s.%s'%(C,ext))
     f(3, 40)
     f(10, 40)
-    f(10, 40)
+    f(20, 40)
+    f(100, 40)
+    f(200, 40)
+    f(500, 40)
