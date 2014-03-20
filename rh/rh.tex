@@ -3379,7 +3379,8 @@ $$
    =  -\sqrt{2}\log\left(2\right)^2 \sin\left(\theta \log\left(2\right)\right) -
   \frac{2}{3} \, \sqrt{3}  \log\left(3\right)^2  \sin\left(\theta \log\left(3\right)\right)
 $$
-between 12 and 16 is $14.135375354\ldots$.
+between 12 and 16 is $14.135375354\ldots$.  This is a calculation
+you can do using any computer algebra system.
 
 
  \illtwo{theta_C-5}{theta_C-10}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=5$ and $10$\label{fig:theta_C-5-10}}
@@ -3389,30 +3390,7 @@ between 12 and 16 is $14.135375354\ldots$.
 \illtwo{theta_C-200}{theta_C-500}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=200$ and $500$\label{fig:theta_C-200-500}}
 
 
-   To see this staircase phenomenon of the graph even more clearly, we will counteract the `ascendancy' of the graph without destroying its staircase structure,  by  subtracting a function $R(C,\theta)$,
-   which is a certain smooth function {\bibnote{$\dots$}}  of $\theta$ and $C$, giving us the function we call: $$A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$$ whose graph looks like:
-     \vskip20pt
-{\bf William: (FIGURE 2)  Plots of $A_C(\theta): = {\hat \Phi}_{\le C}(\theta)\ + \ R(C,\theta)$. Now  $R(C,\theta)$ is,  I think, $-1/2$ times the function $$T_C(\theta):=
-      {\frac{C^{1/2}}{{\frac{1}{4}}+\theta^2}}\cdot\big\{\cos(\theta\cdot\log(C))+2\theta\sin(\theta\cdot
-      \log(C))\big\}$$ of our previous draft. But we should recalculate, to make sure.  Maybe  again the same cutoffs $C=5$ (top), 20, 50, and 500 as in NEW FIGURE 1.}
-   \vskip20pt
-
-   To get an even picture, we can smooth out  $A_C(\theta)$ by averaging over absolutely all cutoffs ranging between  the extreme cutoff at $0$ and the cutoff at $C$, giving us a function we'll denote ${\tilde A}_C(\theta)$. (This operation is called {\it C{\'e}saro summability}.) Its graph  looks like:
-     \vskip20pt
-{\bf William: (FIGURE 3)  )  Plots of ${\tilde A}_C(\theta)$.  Maybe the same cutoffs $C$ as in NEW FIGURE 1.}
-   \vskip20pt
-
-   Finally, we can
- make the spikes look more uniform in height (for different cutoffs) by dividing by $\log C$, giving us a function we'll denote $B_C(\theta):={\tilde A}_C(\theta)/\log C$.
-
-  We have come then---again---to the expressions graphed at the beginning of Part~\ref{part3}, in
-  Chapter~\ref{snpr}.
-      \vskip20pt
-{\bf William: (FIGURE 4)  )  Plots of $B_C(\theta):={\tilde A}_C(\theta)/\log C$.  Maybe the same cutoffs $C$ as in NEW FIGURE 1.}
-   \vskip20pt
-
-
-   For a theoretical discussion of this, see endnote~\bibnote{
+For a theoretical discussion of these spikes, see endnote~\bibnote{
  A version of the Riemann von Mangoldt explicit formula gives some theoretical affirmation of the phenomena we are seeing here. We thank Andrew Granville for a  discussion about this. Even though the present endnote is not the place to give anything like a full account, we can't resist setting down a few of Granville's comments that might be helpful to people who wish to go further. (This discussion can be modified to analyze what happens unconditionally, but we will be assuming the Riemann Hypothesis below.) The function ${\hat \Phi}_{\le C}(\theta)$ that we are graphing in this chapter can be written as:
  $${\hat \Phi}_{\le C}(\theta)= \sum_{n\le C}\Lambda(n)n^{-w}$$ where $w = {\frac{1}{2}}+i\theta$. This function, in turn, may be written (by Perron's formula) as
 \begin{align*}
@@ -3477,12 +3455,13 @@ This has the effect of forcing the oscillatory term to be bounded as $C$ tends t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- The
-$\theta$-coordinates of the peaks of these graphs {\it seem to be}
-vaguely clustered about a discrete set of positive real numbers. In
-fact, this is already a hint of what happens to the graphs of these
-functions ${\frac{1}{C}}{\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to
-tend to infinity.  These `spikes' are our first glimpse of a
+The $\theta$-coordinates of these spikes  {\it seem to be}
+vaguely clustered about a discrete set of positive real numbers.
+%In
+%fact, this is already a hint of what happens to the graphs of these
+%functions ${\frac{1}{C}}{\hat\Phi}_{\le C}(\theta)$ as we allow the cut-off $C$ to
+%tend to infinity.
+These `spikes' are our first glimpse of a
 certain infinite set of positive real numbers
  $$\theta_1,\theta_2,\theta_3,\dots$$ which constitute the {\bf Riemann spectrum of
   the primes}. If the Riemann Hypothesis holds, these numbers would
@@ -3496,7 +3475,7 @@ be the key to the placement of primes on the number line.
 
 
 
-By tabulating these peaks we can compute---at least very approximately---$\dots$
+By tabulating these peaks we compute---at least very approximately---$\dots$
 \begin{eqnarray*}
 \theta_1 &=& 14.134725 \dots\\
 \theta_2 &=& 21.022039 \dots\\
