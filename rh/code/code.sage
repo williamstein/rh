@@ -1453,6 +1453,7 @@ def fig_theta_C(dir, ext):
     def f(C,xmax):
         plot_theta_C(C,xmax).save(dir+'/theta_C-%s.%s'%(C,ext))
     f(3, 40)
+    f(5, 40)
     f(10, 40)
     f(20, 40)
     f(100, 40)
