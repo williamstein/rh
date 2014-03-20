@@ -468,6 +468,19 @@ def fig_primegapdist(dir,ext):
     bar_chart(v).save(dir+"/primegapdist.%s"%ext, figsize=[9,3])
 
 
+"""
+# The table in the book...
+
+def f(B):
+    v = prime_gap_distribution(10^B)
+    z = [v[i] if i<len(v) else 0 for i in [2,4,6,8,100,252]]
+    print "$10^{%s}$ & "%B + " & ".join([str(a) for a in z]) + r"\\\hline"
+
+for B in [1..8]:
+    f(B)
+"""
+
+
 ##############################################################
 # Multiplicatively even and odd table
 ##############################################################
