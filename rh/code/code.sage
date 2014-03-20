@@ -1420,3 +1420,38 @@ def fig_random_walks(dir, ext):
     random_walks(dir + '/random_walks', ext, 10)
     random_walks(dir + '/random_walks', ext, 100)
     random_walks(dir + '/random_walks', ext, 1000)
+
+
+##############################################################
+# Theta_C
+##############################################################
+
+def plot_theta_C(C, xmax):
+    theta = var('theta')
+    T = SR(0)
+    for q in prime_powers(C+1):
+        if q > 1:
+            p, n = factor(q)[0]
+            T += 2 * p^(-n/2) * log(p) * cos(n*log(p)*theta)
+    g = plot(T, 0, xmax)
+    if g.ymax() > 10:
+        g.ymax(10)
+    ym = g.ymax()
+    Z = []
+    for y in zeta_zeros():
+        if y > xmax: break
+        Z.append(y)
+    zeros = sum([arrow((x,ym),(x,0),rgbcolor='red',width=1.5,arrowsize=2)
+                 for i, x in enumerate(Z)])
+    g += zeros
+    g += plot(ff.derivative(), 0, xmax, color='grey', alpha=.5)
+    g.ymax(min(ym,10))
+    g.ymin(max(-15,g.ymin()))
+    return g
+
+def fig_theta_C(dir, ext):
+    def f(C,xmax):
+        plot_theta_C(C,xmax).save(dir+'/theta_C-%s.%s'%(C,ext))
+    f(3, 40)
+    f(10, 40)
+    f(10, 40)
