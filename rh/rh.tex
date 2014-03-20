@@ -1704,6 +1704,8 @@ half the digits are correct.
 
    To get a real sense of how constrained random walks are by this `square-root law,' here are a few numerical experiments of random walks. The left-hand squiggly (blue) graphs in Figures~\ref{fig:random_walks_3}--\ref{fig:random_walks_1000} below are computer-obtained random walk trials (three, ten, a hundred, and a thousand random walks). The blue curve in the right-hand graphs of those four figures is the average distance from home-base of the corresponding (three, ten, a hundred, and a thousand) random walks.
 The red curve in each figure below is the graph of the quantity ${\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$ over the $X$-axis.
+As the number of random walks increases, the red curve
+better and better approximates the average distance.
 
 \illtwo{random_walks-3}{random_walks-3-mean}{.45}{Three Random Walks\label{fig:random_walks_3}}
 
@@ -3344,7 +3346,7 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
  $\cos(n\log(p)\theta)$, so the Fourier transform of $\Phi_{\le
    C}(t)$ is
 
-  $${\hat \Phi}_{\le C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
+  $${\hat \Phi}_{\leq C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n <C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
 
    So, following the discussion in Chapter~\ref{ch:trigseries} above, we are dealing with the cutoffs at finite points  $C$  of the {\it trigonometric series}
 
