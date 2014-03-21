@@ -10,7 +10,7 @@ def fig_Phi():
             else:
                 h = log(factor(n)[0][0])
             h /= sqrt(n)
-            h = float(h)*100
+            h = float(h)*50
             print h
             g += arrow((log(n),0),(log(n),h), width=1)
             g += arrow((-log(n),0),(-log(n),h), width=1)
@@ -24,13 +24,16 @@ def fig_Phi():
     g += line([(-log(xmax)-1,0), (log(xmax)+1,0)], thickness=2)
     return g
 
-show(fig_Phi())
-︡9de3c482-5475-4f36-977e-0df92112e753︡{"stdout":"183.787706641\n49.0129071734\n63.4284100598\n34.657359028\n71.9762515554\n73.5484904011\n24.5064535867\n36.6204096223\n72.2992627858\n71.1388955946\n17.328679514\n68.7155169262\n67.5500629243\n"}︡{"once":false,"file":{"show":true,"uuid":"10373fa0-53a2-4293-a829-fe3cb1276aa9","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute17a/6918/tmp_mlL9LW.png"}}︡
+show(fig_Phi(), axes=False)
+︡7200b48c-0e1a-498f-a6eb-29c88bfb0fe0︡{"stdout":"91.8938533205\n24.5064535867\n31.7142050299\n17.328679514\n35.9881257777\n36.7742452005\n12.2532267934\n18.3102048111\n36.1496313929\n35.5694477973\n8.664339757\n34.3577584631\n33.7750314621\n"}︡{"once":false,"file":{"show":true,"uuid":"c4cb0565-09ba-4299-8773-cc1949a17473","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute17a/6918/tmp_PAKFXy.png"}}︡
 ︠8b7358b4-aa56-4e34-9696-990549016257︠
 
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage
-︡a80ee1cc-62b5-4280-85d0-61f8be9751dd︡
+︡bd352ada-de2d-4a29-bbf4-80bb11e3f472︡
+︠52638b79-4a50-4cf6-bb20-820bf12bc905︠
+draw('Phi')
+︡2e2bda74-3fee-457b-ae44-7f8cdcf03594︡{"stdout":"Drawing Phi... "}︡{"stdout":" 91.8938533205\n24.5064535867\n31.7142050299\n17.328679514\n35.9881257777\n36.7742452005\n12.2532267934\n18.3102048111\n36.1496313929\n35.5694477973\n8.664339757\n34.3577584631\n33.7750314621\n (time = 0.299562931061 seconds)"}︡{"stdout":"\n"}︡
 ︠ee3aeef7-63f1-42f5-b0a7-3d5fc8dbd38b︠
 %time
 draw("theta_C_intro")
