@@ -1472,6 +1472,13 @@ def fig_theta_C_intro(dir, ext):
     h = f(3)
     plot(h, 5, 40).save("%s/theta_3_intro-1.%s"%(dir, ext))
 
+    save(plot(h, 5, 40) + plot(h.derivative(),5,40,color='grey'), "%s/theta_3_intro-2.%s"%(dir, ext))
+
+    roots = [(h.derivative().find_root(a,b),0) for a,b in [(7,9), (10,12), (13,15), (18,21), (21,25), (27,30),
+                                               (30, 33), (33,36), (36, 38), (38,42)]]
+
+    save(plot(h, 5, 40) + plot(h.derivative(),5,40,color='grey') +  points(roots, color='red', pointsize=50, zorder=10),
+         "%s/theta_3_intro-3.%s"%(dir, ext))
 
 
 ##############################################################

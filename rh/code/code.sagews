@@ -2,7 +2,11 @@
 
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage
-︡ae88bfd6-65e9-493e-a600-b246f4f51df5︡
+︡8c5b0dae-04b7-4589-8205-82be64e2f6dc︡
+︠ee3aeef7-63f1-42f5-b0a7-3d5fc8dbd38b︠
+%time
+draw("theta_C_intro")
+︡750022b5-635a-4424-9552-a1254e6b0d60︡{"stdout":"Drawing theta_C_intro... "}︡{"stdout":" "}︡{"stdout":" (time = 1.395870924 seconds)\n"}︡{"stdout":"CPU time: 1.40 s, Wall time: 1.38 s\n"}︡
 ︠590cdc6a-88af-4bb2-9f7b-5a56c87f82f2︠
 draw("cesaro")
 
