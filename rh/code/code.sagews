@@ -1,4 +1,29 @@
 ︠4402b7b7-4adc-4d16-bf55-1bf2faab6f21︠
+def fig_Phi():
+    g = line([(0,0),(0,100)], rgbcolor='black')
+    xmax = 20
+    ymax = 50
+    for n in [1..xmax]:
+        if is_prime_power(n):
+            if n == 1:
+                h = log(2*pi)
+            else:
+                h = log(factor(n)[0][0])
+            h *= exp(-log(n)/2)
+            c = float(h)/log(xmax)
+            g += arrow((log(n),0),(log(n),c), width=2)
+            g += arrow((-log(n),0),(-log(n),c), width=2)
+            if n in [2, 5, 16]:
+               g += text("log(%s)"%n, (log(n),-5), rgbcolor='black', fontsize=12)
+               g += line([(log(n),-2), (log(n),0)], rgbcolor='black')
+               g += text("log(%s)"%n, (-log(n),-5), rgbcolor='black', fontsize=12)
+               g += line([(-log(n),-2), (-log(n),0)], rgbcolor='black')
+    g += line([(-log(xmax)-1,0), (log(xmax)+1,0)], thickness=2)
+    return g
+
+show(fig_Phi(),ymax=2)
+︡142b5bbb-f626-483c-b78b-2306df9da877︡{"once":false,"file":{"show":true,"uuid":"a77588af-c9c9-4176-9cbf-a138a6c1494c","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute17a/6918/tmp_DodwNr.png"}}︡
+︠8b7358b4-aa56-4e34-9696-990549016257︠
 
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage

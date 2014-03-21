@@ -3391,12 +3391,19 @@ which we plot in Figure~\ref{fig:theta_3}.
 \ill{theta_3_intro-1}{.85}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$\label{fig:theta3}}
 
 
-We will be interested in the values of $\theta$ that correspond to higher and higher {\it peaks} of our trigonometric series ${\hat \Phi}_{\leq C}(\theta)$ as $C\to \infty$, so in Figure~\ref{fig:theta_3} we begin this exploration by plotting ${\hat \Phi}_{\leq 3}(\theta)$, together with its derivative, highlighting the zeroes of the derivative.
+We will be interested in the values of $\theta$ that correspond to higher and higher {\it peaks} of our trigonometric series ${\hat \Phi}_{\leq C}(\theta)$ as $C\to \infty$, so in Figure~\ref{fig:theta_3} we begin this exploration by plotting ${\hat \Phi}_{\leq 3}(\theta)$, together with its derivative, highlighting the zeroes of the derivative. For example, $C=3$, we locate this spike by numerically finding
+that the root of the derivative
+$$
+  {\hat \Phi'}_{\leq 3}(\theta) =
+  -\frac{2}{\sqrt{2}} \log(2)^2\sin(\log(2)\theta)
+ -\frac{2}{\sqrt{3}} \log(3)^3\sin(\log(3)\theta),
+$$
+between 12 and 16 is $14.135375354\ldots$.
 
 
 \ill{theta_3_intro-2}{.85}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$ and its derivative\label{fig:theta3}}
 
-As we shall see in subsequent figures of this chapter, there seems to be an eventual convergence of the values of $\theta$ that correspond to higher and higher {\it peaks} as $C$ tends to $\infty$, these `limit' $\theta$-values we now insert as the end-points of red vertical lines into Figure~\ref{fig:theta_3} comparing them with the humble cutoff $C=3$.
+As we shall see in subsequent figures of this chapter, there seems to be an eventual convergence of the values of $\theta$ that correspond to higher and higher {\it peaks} as $C$ tends to $\infty$, the red dots in the figure above. These `limit' $\theta$-values we now insert as the end-points of red vertical lines into Figure~\ref{fig:theta_3} comparing them with the red dots for our humble cutoff $C=3$.
 
 What follows below is a sequence of graphs for a few higher cutoff values $C$ (introducing a few more primes into the game!). Watch how the `high-peak' $\theta$-values of ${\hat \Phi}_{\leq C}(\theta)$ seem to converge to the values of  $\theta$ at the end of the red vertical lines.
 
@@ -3406,14 +3413,7 @@ Figures~\ref{fig:theta_C-5-10}--\ref{fig:theta_C-200-500}
 are graphs of various cutoffs of ${\hat \Phi}_{\leq C}(\theta)$.
 As $C$ increases a sequence of spikes down emerge
 which we've indicated with red vertical arrows.
-When $C=3$, we locate this spike by numerically finding
-that the root of the derivative
-$$
-  {\hat \Phi'}_{\leq 3}(\theta) =
-  -\frac{2}{\sqrt{2}} \log(2)^2\sin(\log(2)\theta)
- -\frac{2}{\sqrt{3}} \log(3)^3\sin(\log(3)\theta),
-$$
-between 12 and 16 is $14.135375354\ldots$.
+
 
 
  \illtwo{theta_C-5}{theta_C-10}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=5$ and $10$\label{fig:theta_C-5-10}}
