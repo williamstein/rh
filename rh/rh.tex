@@ -3353,16 +3353,16 @@ $t$-axis) which means that we can define it on negative real numbers
 by the equation
   $$\Phi(-t) = \Phi(t).$$
   Let us make that convention, thereby turning $\Phi(t)$ into an {\it
-    even} generalized function.
+    even} generalized function. (An {\bf even} function on the real line is a function that takes the same value on any real number and its negative as in the formula above.)
 
 %\vskip20pt{\bf William: sum of Dirac delta functions  Figure goes here}\vskip20pt
 \ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).  The more blue the arrow, the smaller the weight.}
 
 
-We may want to think of $\Phi(t)$ as a limit of the following sequence of distributions,
+We may want to think of $\Phi(t)$ as a limit of this sequence of distributions,
  $$\Phi(t)\ = \ \lim_{C \to {\infty}}\Phi_{\le C}(t)$$
 where $\Phi_{\le C}(t)$  is the following finite linear
-combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
+combination of (symmetrized) $\delta$-functions  $d_x(t)$:
  $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
  Since the Fourier transform of $d_x(t)$ is  $\cos(x\theta)$, the Fourier transform of  each $d_{n\log(p)}(t)$ is
  $\cos(n\log(p)\theta)$, so the Fourier transform of $\Phi_{\le
@@ -3370,24 +3370,24 @@ combinations of (symmetrized) $\delta$-functions  $d_x(t)$:
 
   $${\hat \Phi}_{\leq C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n  \leq{} C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
 
-   So, following the discussion in Chapter~\ref{ch:trigseries} above, we are dealing with the cutoffs at finite points  $C$  of the {\it trigonometric series}
+   So, following the discussion in Chapter~\ref{ch:trigseries} above, we are dealing with the cutoffs at finite points  $C$  of the {\it trigonometric series}{\footnote{The trigonometric series in the text---whose spectral values are the logarithms of prime powers---may also be written as
+   $$\sum_{m=2}^{\infty}\Lambda(m)m^{-s} + \sum_{m=2}^{\infty}\Lambda(m)m^{-{\bar s}}$$ for $s={\frac{1}{2}}+i\theta$, where  $\Lambda(m)$ is the von-Mangoldt function.}}
 
    $${\hat \Phi}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n } p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
 
-   (This trigonometric series---whose spectral values are the logarithms of prime powers---may also be written as
-   $$\sum_{m=2}^{\infty}\Lambda(m)m^{-s} + \sum_{m=2}^{\infty}\Lambda(m)m^{-{\bar s}}$$ for $s={\frac{1}{2}}+i\theta$, where  $\Lambda(m)$ is the von-Mangoldt function.)
 
 
-For example, when $C=3$, we have
+
+For example, when $C=3$, we have 
 $$
   {\hat \Phi}_{\leq 3}(\theta) =
   \frac{2}{\sqrt{2}} \log(2)\cos(\log(2)\theta)
  +
  \frac{2}{\sqrt{3}} \log(3)\cos(\log(3)\theta),
 $$
-which we plot in Figure~\ref{fig:theta_3}, along with
-its derivative in grey.
+which we plot in Figure~\ref{fig:theta_3}.
 
+We will be interested in the values of $\theta$# that correspond to {\it peaks} of our 
 
  \ill{theta_C-3}{0.9}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$ \label{fig:theta_3}}
 
@@ -3563,11 +3563,25 @@ the series of numbers
   $$\theta_1, \theta_2, \dots, \theta_{n-1}, \theta_n, \theta_n, \theta_{n+1}, \dots$$
 
 
+\chapter {C{\'e}saro Sum}
+
+Often when you hop in a car and reset the trip counter, the car
+will display information about your trip.  For instance, it might show you the
+average speed up until now during your trip; this number
+is ``sticky'', changing much less erratically than your
+actual speed, and you might use it to make a rough estimate of
+how long until you will reach your destination.
+Your car is computing the {\em C{\'e}saro sum }of your speed.
+We can use this same idea to better understand the behavior
+of other things, such as the sums appearing in
+the previous chapter.
+
+ Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$.  For example, you can focus on a time interval starting at $0$ and ending at a particular time $T$ in which case the average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right:
+  $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$
+   This new function $F(T)$, called the {\bf C{\'e}saro Sum} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
 
 
-
-
-
+\ill{cesaro}{.8}{The red plot is the C{\'e}saro sum of the blue plot}
 
 
 

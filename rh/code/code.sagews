@@ -1,6 +1,12 @@
+︠4402b7b7-4adc-4d16-bf55-1bf2faab6f21︠
+
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage
-︡a1ae73ac-320e-44c4-b183-c7a9227f3f19︡
+︡ae88bfd6-65e9-493e-a600-b246f4f51df5︡
+︠590cdc6a-88af-4bb2-9f7b-5a56c87f82f2︠
+draw("cesaro")
+
+︡a01846f9-6882-4c70-bc58-18a024c7c761︡{"stdout":"Drawing cesaro... "}︡{"stdout":" "}︡{"stdout":" (time = 3.174036026 seconds)\n"}︡
 ︠c7203c69-5e8b-43c9-8067-f81a0b9f6a72︠
 def f(B):
     v = prime_gap_distribution(10^B)

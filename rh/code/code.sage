@@ -1459,3 +1459,29 @@ def fig_theta_C(dir, ext):
     f(100, 40)
     f(200, 40)
     f(500, 40)
+
+
+
+##############################################################
+# Cesaro Sum
+##############################################################
+
+def fig_cesaro(dir, ext):
+    theta = var('theta')
+    def f(C):
+        T = SR(0)
+        for q in prime_powers(C+1):
+            if q > 1:
+                p, n = factor(q)[0]
+                T += 2 * p^(-n/2) * log(p) * cos(n*log(p)*theta)
+        return T
+    k = f(5)^2
+    T = var('T')
+    assume(T>0)
+    g(T) = 1/T * k.integrate(theta, 0, T)
+    h = plot(g, 0, 40, color='red') + plot(k,0,40)
+    h.save('%s/cesaro.%s'%(dir, ext))
+
+
+
+
