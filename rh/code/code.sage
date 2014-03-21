@@ -1460,6 +1460,18 @@ def fig_theta_C(dir, ext):
     f(200, 40)
     f(500, 40)
 
+def fig_theta_C_intro(dir, ext):
+    theta = var('theta')
+    def f(C):
+        T = SR(0)
+        for q in prime_powers(C+1):
+            if q > 1:
+                p, n = factor(q)[0]
+                T += 2 * p^(-n/2) * log(p) * cos(n*log(p)*theta)
+        return T
+    h = f(3)
+    plot(h, 5, 40).save("%s/theta_3_intro-1.%s"%(dir, ext))
+
 
 
 ##############################################################
