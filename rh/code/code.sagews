@@ -30,7 +30,10 @@ show(fig_Phi(), axes=False)
 
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage
-︡bd352ada-de2d-4a29-bbf4-80bb11e3f472︡
+︡7bf88709-0f16-407b-94c7-dc88b73f7429︡
+︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
+draw('zero_spacing')
+︡98db6677-70af-470b-a77c-ad5bf4f81e4e︡{"stdout":"Drawing zero_spacing... "}︡{"stdout":" "}︡{"stdout":" (time = 1.18501615524 seconds)\n"}︡
 ︠52638b79-4a50-4cf6-bb20-820bf12bc905︠
 draw('Phi')
 ︡2e2bda74-3fee-457b-ae44-7f8cdcf03594︡{"stdout":"Drawing Phi... "}︡{"stdout":" 91.8938533205\n24.5064535867\n31.7142050299\n17.328679514\n35.9881257777\n36.7742452005\n12.2532267934\n18.3102048111\n36.1496313929\n35.5694477973\n8.664339757\n34.3577584631\n33.7750314621\n (time = 0.299562931061 seconds)"}︡{"stdout":"\n"}︡

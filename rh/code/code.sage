@@ -1504,5 +1504,23 @@ def fig_cesaro(dir, ext):
     h.save('%s/cesaro.%s'%(dir, ext))
 
 
+##############################################################
+# Spacing of Zeros
+##############################################################
+
+def fig_zero_spacing(dir, ext):
+    v = zeta_zeros()
+
+    def rmod(a,b):
+        return a -  a//b *b
+
+    def f(per):
+        per = float(per)
+        w = [rmod(a,per) for a in v]
+        return stats.TimeSeries(w).plot_histogram()
+
+    f(2*pi).save('%s/zero-spacing-mod2pi.%s'%(dir, ext))
+
+    f(1).save('%s/zero-spacing-mod1.%s'%(dir, ext))
 
 
