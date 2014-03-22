@@ -1556,3 +1556,47 @@ def fig_riemann_spectrum_gaps(dir, ext):
     g = t.diffs().plot_histogram(bins=500, normalize=False)
     g.save("%s/riemann_spectrum_gaps.%s"%(dir, ext), xmax=2.3, frame=True, gridlines=True, axes=False)
 
+
+
+##############################################################
+# Cesaro Sum of Li - Pi
+##############################################################
+
+def prime_pi_time_series(B):
+    """
+    Return the time series stats.TimeSeries([prime_pi(n) for n in [0..B-1]])
+    but computed (vastly) more efficiently.
+    """
+    x = 0
+    w = []
+    pp = 0
+    for p in prime_range(B):
+        w.extend([x]*(p-pp))
+        pp = p
+        x += 1
+    w.extend([x]*(B-pp))
+    return stats.TimeSeries(w)
+
+def running_average(v):
+    """
+    Return the running average of the time series... i.e., the Cesaro sum.
+    i.e., stats.TimeSeries([0]+[v[:i].mean() for i in range(1,len(v))]),
+    but computed (vastly) more efficiently.
+    """
+    s = v.sums()
+    # now divide s[i] by i+1 for i>=1.
+    for i in range(1,len(s)):
+        s[i] /= i+1
+    return s
+
+def fig_li_minus_pi(dir, ext):
+    B = 250000
+    v = prime_pi_time_series(B)
+    # This takes about 30 seconds...
+    li_minus_pi = stats.TimeSeries([0,0] + [mpmath.li(i,offset=True)-v[i] for i in range(2,B)])
+    v2 = running_average(li_minus_pi)
+    g = li_minus_pi.plot(plot_points=B) + v2.plot(color='red', plot_points=B) + plot(sqrt(2/pi)*sqrt(x/log(x)), (2, B), color='purple')
+    g.save('%s/li-minus-pi-250000.%s'%(dir, ext))
+
+
+
