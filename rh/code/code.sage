@@ -1540,11 +1540,10 @@ def fig_staircase_riemann_spectrum(dir, ext):
         T = var('T')
         p += plot(T/(2*pi) * log(T/(2*pi*e)), 1, n, thickness=.5)
         return p
-    g(30, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext))
-    g(50, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext))
-    g(100, thickness=3).save('%s/staircase-riemann-spectrum-100.%s'%(dir, ext))
-    g(1000, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
-    g(1000, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
+    g(30, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext))
+    g(50, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext))
+    g(100, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-100.%s'%(dir, ext))
+    g(1000, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
 
 
 
