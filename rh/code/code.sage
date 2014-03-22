@@ -1528,7 +1528,7 @@ def fig_zero_spacing(dir, ext):
 # Staircase of the Riemann spectrum
 ##############################################################
 
-def fig_staircase_rs(dir, ext):
+def fig_staircase_riemann_spectrum(dir, ext):
     v = [float(a) for a in zeta_zeros()]
     t = stats.TimeSeries(v)
     def zeta_pi(X):  # not efficient -- but lets us use general plotting machinery, and is fast enough for a book illustration!
@@ -1537,6 +1537,7 @@ def fig_staircase_rs(dir, ext):
         p = plot(zeta_pi, 1,n,
              plot_points=1000,rgbcolor='red',
              fillcolor=(.9,.9,.9),fill=True, **kwds)
+        p += plot(T/(2*pi) * log(T/(2*pi*e)), 1, n, thickness=.5)
         return p
     g(30, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext))
     g(50, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext))

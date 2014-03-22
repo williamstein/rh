@@ -1,3 +1,12 @@
+︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
+%load code.sage
+︡3bac1f28-e74d-4873-808b-79632d182342︡
+︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
+draw('staircase_riemann_spectrum')
+
+︡8517a046-a293-4ac1-9d34-2c6ef3e7ece3︡{"stdout":"Drawing staircase_riemann_spectrum... "}︡{"stderr":"Error in lines 1-1\n"}︡{"stderr":"Traceback (most recent call last):\n  File \"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sagemathcloud/sage_server.py\", line 733, in execute\n    exec compile(block+'\\n', '', 'single') in namespace, locals\n  File \"\", line 1, in <module>\n  File \"<string>\", line 13, in draw\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 1542, in fig_staircase_riemann_spectrum\n  File \"<string>\", line 1540, in g\nNameError: global name 'T' is not defined\n"}︡
+︠f24e5ccf-2b08-4404-af26-7e6b180919e4︠
+
 ︠4402b7b7-4adc-4d16-bf55-1bf2faab6f21︠
 def fig_Phi():
     g = line([(0,0),(0,100)], rgbcolor='black')
@@ -31,7 +40,7 @@ show(fig_Phi(), axes=False)
 ︠8c58f170-89df-4317-9035-cb453164414a︠
 %load code.sage
 ︡7bf88709-0f16-407b-94c7-dc88b73f7429︡
-︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
+︠801ad5d7-666d-4776-bda0-b8990c5e7bc3︠
 draw('zero_spacing')
 ︡98db6677-70af-470b-a77c-ad5bf4f81e4e︡{"stdout":"Drawing zero_spacing... "}︡{"stdout":" "}︡{"stdout":" (time = 1.18501615524 seconds)\n"}︡
 ︠52638b79-4a50-4cf6-bb20-820bf12bc905︠
