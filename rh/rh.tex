@@ -3595,27 +3595,6 @@ the series of numbers
 \illtwo{zero-spacing-mod2pi}{zero-spacing-mod1}{0.4}{Frequence histogram of Odlyzko's zeros modulo $2\pi$ (left) and modulo 1 (right)\label{fig:zero-spacing}}
 
 It has been conjectured that there are no infinite arithmetic progressions among these numbers.
-\chapter {C{\'e}saro Sum}
-
-Often when you hop in a car and reset the trip counter, the car
-will display information about your trip.  For instance, it might show you the
-average speed up until now during your trip; this number
-is ``sticky'', changing much less erratically than your
-actual speed, and you might use it to make a rough estimate of
-how long until you will reach your destination.
-Your car is computing the {\em C{\'e}saro sum }of your speed.
-We can use this same idea to better understand the behavior
-of other things, such as the sums appearing in
-the previous chapter.
-
- Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$.  For example, you can focus on a time interval starting at $0$ and ending at a particular time $T$ in which case the average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right:
-  $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$
-   This new function $F(T)$, called the {\bf C{\'e}saro Sum} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
-
-
-\ill{cesaro}{.8}{The red plot is the C{\'e}saro sum of the blue plot}
-
-
 
 
 
