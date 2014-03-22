@@ -1547,4 +1547,12 @@ def fig_staircase_riemann_spectrum(dir, ext):
     g(1000, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
 
 
+##############################################################
+# Distribution of Riemann Spectrum Gaps
+##############################################################
+
+def fig_riemann_spectrum_gaps(dir, ext):
+    t = stats.TimeSeries(zeta_zeros())
+    g = t.diffs().plot_histogram(bins=500, normalize=False)
+    g.save("%s/riemann_spectrum_gaps.%s"%(dir, ext), xmax=2.3, frame=True, gridlines=True, axes=False)
 

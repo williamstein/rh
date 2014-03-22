@@ -1,10 +1,12 @@
 ︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
 %load code.sage
-︡e172ff9a-3f33-499c-af8f-23b0c61ac7ed︡
+︡b92d51e2-7ff3-4df9-8db6-0399c5ccdd3c︡
 ︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
-draw('staircase_riemann_spectrum')
+draw('riemann_spectrum_gaps')
 
-︡3ac7ac8a-938b-47c1-b908-e4e7e7221b9b︡{"stdout":"Drawing staircase_riemann_spectrum... "}︡{"stdout":" "}︡{"stdout":" (time = 5.66300201416 seconds)\n"}︡
+︡411ead0e-ec18-4c09-8a6f-905014ef79fe︡{"stdout":"Drawing riemann_spectrum_gaps... "}︡{"stdout":" "}︡{"stdout":" (time = 1.61334013939 seconds)\n"}︡
+︠6732c1fc-5898-402c-91af-91abf5753047︠
+
 ︠f24e5ccf-2b08-4404-af26-7e6b180919e4︠
 
 ︠4402b7b7-4adc-4d16-bf55-1bf2faab6f21︠

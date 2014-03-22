@@ -1172,7 +1172,7 @@ $10^{8}$ & 440312 & 440257 & 768752 & 334180 & 878 & 0\\\hline
 }
 \end{table}
 
- The recent results of Zhang as sharpened by Maynard  we mentioned above tell us that for  at least one even number $2k$ among the  even numbers $2k \le 252$,    $\Gap_{2k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $2k$. This hlds
+ The recent results of Zhang as sharpened by Maynard  we mentioned above tell us that for  at least one even number $2k$ among the  even numbers $2k \le 252$,    $\Gap_{2k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $2k$. We expect this as well, of course, for $\Gap_{252}(X)$ despite what might be misconstrued as discouragement by the above data.
 
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of
   prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
@@ -1772,13 +1772,43 @@ Hypothesis:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate. See \bibnote{In fact, $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
+root accurate. See \bibnote{In fact, the Riemann ypothesis is equivalent to $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
 a computational perspective}.}.
 \label{rh:first}
 
 \vspace{1ex}
 \end{minipage}}
       \end{center}
+
+\chapter{The mystery is in the error term}
+
+ Let's think of what happens when you have a {it mysterious quantity} (say,  a function of a real number $X$) you wish to understand. Suppose you manage to approximate that quantity by  an easy to understand  expression---which we'll call the  ``dominant term,"--- that is also simple to compute, but only approximates your mysterious quantity. The approximation is not exact; it has a possible error, that happily is significantly smaller than the size of the dominant term. `Dominant,' here just means exactly that: it  is of size significantly larger than the error of approximation. 
+ 
+ $${\it Mysterious quantity}(X)\ \ = \ \ {\it Simple, but Dominant quantity}(X) \ + \ {\it Error}(X).$$
+ 
+ If all you are after is a general estimate of {\it size}  your job is done. Yoyu might declare victgory and ignore ${\it Error}(X)$ as being---in size--negligable. But if you are interested in the jeep structure of your {\it mysterious quantity} perhaps all you have done is to manage to transport most questions about the deep structure of  ${\it Mysterious quantity}(X)$ to  ${\it Error}(X)$. In conclusion, ${\it Error}(X)$ is now your new mysterious quantity.
+
+
+\chapter {C{\'e}saro Sum}\label{ces}
+
+Often when you hop in a car and reset the trip counter, the car
+will display information about your trip.  For instance, it might show you the
+average speed up until now during your trip; this number
+is ``sticky'', changing much less erratically than your
+actual speed, and you might use it to make a rough estimate of
+how long until you will reach your destination.
+Your car is computing the {\em C{\'e}saro sum }of your speed.
+We can use this same idea to better understand the behavior
+of other things, such as the sums appearing in
+the previous chapter.
+
+ Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$.  For example, you can focus on a time interval starting at $0$ and ending at a particular time $T$ in which case the average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right:
+  $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$
+   This new function $F(T)$, called the {\bf C{\'e}saro Sum} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
+
+
+\ill{cesaro}{.8}{The red plot is the C{\'e}saro sum of the blue plot}
+
 
 
 
@@ -3546,19 +3576,33 @@ Riemann wrote:
 \chapter{ How many $\theta_i$'s are there?}
 
   The Riemann spectrum, $\theta_1, \theta_2, \theta_3, \dots$, an infinite discrete collection of
-positive real nnumbers consitute a fascinating structure about which we have only fragmentary knowledge.
-Just as we did with the prime numbers b
+positive real numbers, constitute a fascinating structure about which we have only fragmentary knowledge.
+Just as we did with the prime numbers before, we can count
+these numbers $\theta_1=14.1347\ldots$,
+$\theta_2=21.0220\ldots$, etc., and form the staircase
+of Figure~\ref{fig:staircase-riemann-spectrum-30},
+with a step up at $\theta_1$, a step up at $\theta_2$, etc.
 
 \ill{staircase-riemann-spectrum-30}{0.8}{The staircase of the Riemann Spectrum\label{fig:staircase-riemann-spectrum-30}}
+
+Again, just as with the staircase of primes, we might hope
+that as we plot this staircase from a distance as in
+Figures~\ref{fig:staircase-riemann-spectrum-50} and \ref{fig:staircase-riemann-spectrum-1000} that it will
+look like a beautiful smooth curve ${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}}$.
+In fact, we know, conditional on RH, the staircase of real numbers $\theta_1, \theta_2, \theta_3,\dots$ is very closely approximated by this
+curve (the error term is bounded by a constant times $\log T$).
+
 
 
 \illtwo{staircase-riemann-spectrum-50}{staircase-riemann-spectrum-100}{0.45}{The staircase of the Riemann Spectrum and the curve ${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}}$\label{fig:staircase-riemann-spectrum-50}}
 
-We know, conditional on RH, for example that there are roughly ${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}}$ such numbers $\theta_i < T$.  This is 'rough' but not all that rough, since the error term is bounded by a constant times $\log T$.
+\ill{staircase-riemann-spectrum-1000}{0.95}{The staircase of the Riemann Spectrum looks like a smooth curve\label{fig:staircase-riemann-spectrum-1000}}
 
 
-\ill{staircase-riemann-spectrum-1000}{0.8}{The staircase of the Riemann Spectrum\label{fig:staircase-riemann-spectrum-1000}}
 
+
+\ill{riemann_spectrum_gaps}{0.95}{Frequency histogram of the
+first 99{,}999 gaps in the Riemann spectrum\label{fig:riemann_spectrum_gaps}}
 
 Nowadays, these mysterious numbers $\theta_i$, these spectral lines for the
 staircase of primes, are known in great abundance and to great accuracy.  Here is the smallest
@@ -3612,7 +3656,7 @@ It has been conjectured that there are no infinite arithmetic progressions among
 
 
 
-\illtwo{zero-spacing-mod2pi}{zero-spacing-mod1}{0.4}{Frequence histogram of Odlyzko's zeros modulo $2\pi$ (left) and modulo 1 (right)\label{fig:zero-spacing}}
+\illtwo{zero-spacing-mod2pi}{zero-spacing-mod1}{0.4}{Frequency histogram of Odlyzko's computation of the Riemann spectrum modulo $2\pi$ (left) and modulo 1 (right)\label{fig:zero-spacing}}
 
 
 \chapter{Going from the Riemann Spectrum to the primes}
