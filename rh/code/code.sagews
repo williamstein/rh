@@ -1,10 +1,10 @@
 ︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
 %load code.sage
-︡75769b33-c088-4cc0-b8dd-d6f28a306032︡
+︡e172ff9a-3f33-499c-af8f-23b0c61ac7ed︡
 ︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
 draw('staircase_riemann_spectrum')
 
-︡8808f8d2-02e0-45f1-8073-3605eee41b80︡{"stdout":"Drawing staircase_riemann_spectrum... "}︡{"stdout":" "}︡{"stdout":" (time = 8.32515096664 seconds)\n"}︡
+︡3ac7ac8a-938b-47c1-b908-e4e7e7221b9b︡{"stdout":"Drawing staircase_riemann_spectrum... "}︡{"stdout":" "}︡{"stdout":" (time = 5.66300201416 seconds)\n"}︡
 ︠f24e5ccf-2b08-4404-af26-7e6b180919e4︠
 
 ︠4402b7b7-4adc-4d16-bf55-1bf2faab6f21︠

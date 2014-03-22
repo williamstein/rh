@@ -1533,12 +1533,13 @@ def fig_staircase_riemann_spectrum(dir, ext):
     t = stats.TimeSeries(v)
     def zeta_pi(X):  # not efficient -- but lets us use general plotting machinery, and is fast enough for a book illustration!
         return len(t.clip_remove(max=X))
-    def g(n, **kwds):
+    def g(n, curve=False, **kwds):
         p = plot(zeta_pi, 1,n,
              plot_points=1000,rgbcolor='red',
              fillcolor=(.9,.9,.9),fill=True, **kwds)
-        T = var('T')
-        p += plot(T/(2*pi) * log(T/(2*pi*e)), 1, n, thickness=.5)
+        if curve:
+            T = var('T')
+            p += plot(T/(2*pi) * log(T/(2*pi*e)), 1, n, thickness=.5)
         return p
     g(30, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext))
     g(50, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext))
