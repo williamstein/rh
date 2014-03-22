@@ -3473,11 +3473,11 @@ One proceeds, as  is standard in the derivation of Explicit Formulae, by moving 
  We now focus our attention on the Oscillatory term,  ${\it Osc}_{\le C}(\theta) $, approximating it by a truncation:  $$Osc_w(C,X):=  2\sum_{|\gamma| <
  X} {{\frac{e^{i\log C\cdot (\gamma-\theta)}}{i(\gamma-\theta)}}}.$$ In this formula we have relegated the ``$\theta$" to the status of  a subscript (i.e., $w = {\frac{1}{2}} +i\theta$) since we are keeping it constant, and we view the two variables $X$ and $C$ as linked in that we want the cutoff ``$X$" to be sufficiently large, say $X \gg C^2$, so that the error term can be controlled.
 
- At this point, recall  from our discussion in  this chapter that we are also performing a C{\'e}saro summation ---i.e.,  applying the operator $F(c) \mapsto$ ({\it C{\'e}s}$F)(C):= \int_1^CF(c) dc/c.$
+ At this point, we can perform a `multiplicative version' of  a C{\'e}saro summation ---i.e.,  the operator $F(c) \mapsto$ ({\it C{\'e}s}$F)(C):= \int_1^CF(c) dc/c.$
 This has the effect of forcing the oscillatory term to be bounded as $C$ tends to infinity.
 
- This implies that for any fixed $\theta$,  \begin{itemize} \item ${\hat \Phi}_{\le C}(\theta)$  is bounded independent of $C$  if  $\theta$ is not the imaginary part of a nontrivial zero of $\zeta(s)$  and
- \item ${\hat \Phi}_{\le C}(\theta)$ grows as $m\cdot \log C +O(1)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$, \end{itemize} giving a theoretical confirmation of the striking feature of the graphs of our Chapter~\ref{ch:prime-to-spectrum}.}.
+ This implies that for any fixed $\theta$,  \begin{itemize} \item {\it C{\'e}s}${\hat \Phi}_{\le C}(\theta)$  is bounded independent of $C$  if  $\theta$ is not the imaginary part of a nontrivial zero of $\zeta(s)$  and
+ \item {\it C{\'e}s}${\hat \Phi}_{\le C}(\theta)$ grows as $m\cdot \log C +O(1)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$, \end{itemize} giving a theoretical confirmation of the striking feature of the graphs of our Chapter~\ref{ch:prime-to-spectrum}.}.
 
 
    %  \ill{phihat_even_all}{1}{Plots of $-\frac{1}{2}{\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}
@@ -3525,7 +3525,13 @@ Riemann defined this sequence of numbers in his 1859 article in a
 manner somewhat different from the treatment we have given (in that
 article these $\theta_i$ appear as the ``imaginary parts of the
 nontrivial zeroes of his $\zeta$-function;'' we will discuss this
-briefly in Chapter~\ref{ch:envision} below). Riemann wrote:
+briefly in Chapter~\ref{ch:envision} below).
+
+Given a smooth (analytic) function $f(s)$  of a complex variable $s$ one says that a complex number $\rho$ is a {\bf zero} of $f(s)$  if the value of the ffunction $f$ at $s=\rho$ is zero, i.e., if $f(\rho)=0$. Equivaently, $\rho$ is a zero of $f(s)$ if the limit of $f(s)/(s-\rho)$ exists and is finite as $s$ tends to $\rho$.  One says that it is a zero of multiplicity $m$ for $m$ a positive number if $f(s)/(s-\rho)^m$ exists and is finite as $s$ tends to $\rho$, and $m$ is the largest positive number for which this is true. One calls it a {\bf simple zero} if it is a zero of multiplicity $m=1$.
+
+In the case of the $\zeta$-function, $\zeta(s)$ has simple zeroes  at all negative even numbers $s=-2,-4,-6,\dots$ these being called the {\bf trivial zeroes} of $\zeta(s)$. All of its other zeroes in the complex plane---conditional on RH---are given by  the complex numbers $${\frac{1}{2}} +\pm\theta_i,$$ these being called, appropriately, the {\bf nontrivial zeroes} of $\zeta(s)$.    We might also mention that the ``${\frac{1}{2}}$" that appears in this formula is directly related to the fact---correspondingly conditional on RH---that $\pi(X)$ is `square-root accurately' approximated by $Li(X)$.  That is, the error term is bounded by $X^{{\bf{\frac{1}{2}}}+\epsilon}.$  It has been conjectured that {\it all} the zeroes of $\zeta(s)$ are simple zeroes.
+
+Riemann wrote:
  \begin{quote}
   ``One now finds indeed approximately this number of real roots
   within these limits, and it is very probable that all roots are
@@ -3565,10 +3571,10 @@ $2{,}001{,}052$
 within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 \url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
 
-\chapter{ Are there any simple-to-describe relations between the numbers $\theta_1, \theta_2, \theta_3,\dots?$}
+\chapter{ More about the Riemann Spectrum}
 
-
-Apparently not!  At least nothing has turned up till now. It has been conjectureed, for example, that there are no infinite arithmetic progressions among these numbers (and---for some purposes--this is a useful con
+  The Riemann spectrum, $\theta_1, \theta_2, \theta_3, \dots$, a discrete collection of positive real nnumbers consitute a fascinating structure about which we have only fragmentary knowledge. It is beyond the scope of this book to dicuss, for example, the conjectures---going beyond RH---that formulate precise statistics for the spacing of these $\theta_i$.   We know, conitional on RH, for example that there are roughly ${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}}$ such numbers $\theta_i < T$.  This is 'rough' but not all that rough, since the error term is bounded by a constant the sense that the error term is 
+It has been conjectureed, for example, that there are no infinite arithmetic progressions among these numbers (and---for some purposes--this is a useful con
 Since people have already computed at least $1{,}029.9 $
 billion $\theta$'s (as of Feb. 18, 2005) and have never found one with
 multiplicity $>1$; it is generally expected that the multiplicity of all
