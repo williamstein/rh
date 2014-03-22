@@ -1523,11 +1523,26 @@ def fig_zero_spacing(dir, ext):
 
     f(1).save('%s/zero-spacing-mod1.%s'%(dir, ext))
 
-   
+
 ##############################################################
-# Spacing of Zeros
+# Staircase of the Riemann spectrum
 ##############################################################
 
+def fig_staircase_rs(dir, ext):
+    v = [float(a) for a in zeta_zeros()]
+    t = stats.TimeSeries(v)
+    def zeta_pi(X):  # not efficient -- but lets us use general plotting machinery, and is fast enough for a book illustration!
+        return len(t.clip_remove(max=X))
+    def g(n, **kwds):
+        p = plot(zeta_pi, 1,n,
+             plot_points=1000,rgbcolor='red',
+             fillcolor=(.9,.9,.9),fill=True, **kwds)
+        return p
+    g(30, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext))
+    g(50, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext))
+    g(100, thickness=3).save('%s/staircase-riemann-spectrum-100.%s'%(dir, ext))
+    g(1000, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
+    g(1000, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
 
 
 
