@@ -1592,8 +1592,9 @@ def running_average(v):
 def fig_li_minus_pi(dir, ext):
     B = 250000
     v = prime_pi_time_series(B)
+    from mpmath import li
     # This takes about 30 seconds...
-    li_minus_pi = stats.TimeSeries([0,0] + [mpmath.li(i,offset=True)-v[i] for i in range(2,B)])
+    li_minus_pi = stats.TimeSeries([0,0] + [li(i,offset=True)-v[i] for i in range(2,B)])
     v2 = running_average(li_minus_pi)
     g = li_minus_pi.plot(plot_points=B) + v2.plot(color='red', plot_points=B) + plot(sqrt(2/pi)*sqrt(x/log(x)), (2, B), color='purple')
     g.save('%s/li-minus-pi-250000.%s'%(dir, ext))
