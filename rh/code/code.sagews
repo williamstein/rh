@@ -1,9 +1,7 @@
 ︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
 %load code.sage
-︡615dd12a-136a-480b-a330-f36527bb62a8︡
-︠3d8d8496-31a7-4158-9163-3c31e88182de︠
-draw('li_minus_pi')
-︡ccc8a91e-3af0-46c9-a6b7-799eb25a4209︡{"stdout":"Drawing li_minus_pi... "}︡{"stdout":" "}︡{"stdout":" (time = 31.2533318996 seconds)\n"}︡
+draw('Psiprime')
+︡1c2d8ab5-9a12-424e-9be3-b44025bbd8e6︡{"stdout":"Drawing Psiprime... "}︡{"stdout":" "}︡{"stdout":" (time = 0.2238509655 seconds)\n"}︡
 ︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
 draw('riemann_spectrum_gaps')
 
