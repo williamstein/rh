@@ -864,7 +864,6 @@ def fig_Phi(dir=0, ext=0):
                 h = log(factor(n)[0][0])
             h /= sqrt(n)
             h = float(h)*50
-            print h
             g += arrow((log(n),0),(log(n),h), width=1)
             g += arrow((-log(n),0),(-log(n),h), width=1)
             g += line([(log(n),0),(log(n),100)], color='black', thickness=.3)
