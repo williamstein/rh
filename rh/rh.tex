@@ -1807,7 +1807,7 @@ a computational perspective}.}.
    To get a feel for this error term, we shall smooth it out a bit, and look at a few of its graphs.
 
 
-\chapter {C{\'e}saro Sum}\label{ces}
+\chapter {C{\'e}saro Smoothing}\label{ces}
 
 Often when you hop in a car and reset the trip counter, the car
 will display information about your trip.  For instance, it might show you the
@@ -1819,7 +1819,8 @@ Your car is computing the {\em C{\'e}saro sum }of your speed.
 We can use this same idea to better understand the behavior
 of other things, such as the sums appearing in
 the previous chapter.
-\ill{camaro}{.5}{2013 Camaro SS Dashboard}
+\ill{camaro}{.7}{A 2013 Camaro SS Dashboard}
+%I took this picture of my rental car -- William Stein.
 
  Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$ overt a time interval, say fro $0$ to $T${\footnote{ For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.}.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
@@ -4328,4 +4329,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":150}
+%sagemathcloud={"zoom_width":155}
