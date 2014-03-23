@@ -340,7 +340,7 @@ that can be used to recreate every diagram in this book.
 More adventurous readers can
 to experiment with the parameters for
 the ranges of data illustrated, so as to get an even more
-vivid sense of how the numbers ``behave.''} in hopes that readers themselves become inspired to make some numerical experimentation. This will surely become easier for people to do  as mathematical software 
+vivid sense of how the numbers ``behave.''} in hopes that readers themselves become inspired to make some numerical experimentation. This will surely become easier for people to do  as mathematical software
 advances\footnote{We used \url{http://sagemath.org}
 for all computations in this book.}.
 
@@ -1826,14 +1826,14 @@ the previous chapter.
 
  Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$ overt a time interval, say fro $0$ to $T${\footnote{ For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.}.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
-   This new function $F(T)$, called the {\bf C{\'e}saro Sum} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
+   This new function $F(T)$, called the {\bf C{\'e}saro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
 
 
-\ill{cesaro}{.8}{The red plot is the C{\'e}saro sum of the blue plot}
+\ill{cesaro}{.8}{The red plot is the C{\'e}saro smoothing of the blue plot}
 \chapter{ A view of $|\Li(X) - \pi(X)|$}
  Returning to our mysterious error term,  consider Figure \ref{fig:li-minus-pi-250000} where the volatile blue curve is $|\Li(X) - \pi(X)|$, its C{\'e}saro smoothing is the red relatively smooth curve, and the blue curve is the graph of $\sqrt{\frac{2}{\pi}}\cdot \sqrt{x/\log(x)}$ over the range of $X\le 250,00$.
 
-\ill{li-minus-pi-250000}{.9}{$\Li(x)-\pi(x)$ (blue middle), its C{\'e}saro sum (red bottom), and
+\ill{li-minus-pi-250000}{.9}{$\Li(x)-\pi(x)$ (blue middle), its C{\'e}saro smoothing (red bottom), and
 $\sqrt{\frac{2}{\pi}}\cdot \sqrt{x/\log(x)}$ (top), all for $x\leq 250{,}000$\label{fig:li-minus-pi-250000}}
 
 % TODO: this is from http://seriesdivergentes.wordpress.com/2011/07/21/john-e-littlewood/
