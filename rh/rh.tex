@@ -1722,14 +1722,21 @@ better and better approximates the average distance.
 
 
 
-Recall from Chapter~\ref{sec:firstguess} that a rough approximation to
+Recall from Chapter~\ref{sec:firstguess} that a rough guess for an approximation to
 $\pi(X)$, the number of primes $< X$, is given by the function
-$X/\log(X)$; and Gauss's guess for an approximation to $\pi(X)$ was in
-terms of the area of the region from $2$ to $X$ under the graph of
+$X/\log(X)$. Recall, as well, that a refinement of that guess, offered by Gauss, stems from this curious thought:  the `probability' that a number $N$ is a prime  is proportional to the reciprocal of its number of digits; more precisely the probability is $1/\log(X)$.  This would lead us to  guess that the approximate value of $\pi(X)$ would be
+the area of the region from $2$ to $X$ under the graph of
 $1/\log(X)$, a quantity sometimes referred to as $\Li(X)$.
 ``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral},
 because the area of the region from $2$ to $X$ under $1/\log(X)$
 is the {\em integral} $\int_2^t 1/\log(X) dt$.
+
+
+More fancifully, we can think of the errror in this approximation, i.e., $|\Li(X)-\pi(X)|$, (the absolute value) of the difference between $\Li(X)$ and $\pi(X)$, as (approximately) the result of  a walk having roughly $X$ steps where you move by the following rule:  go  east by a distance of $1/\log N$ feet if $N$ is not a prime and west by a distance of $1-\1\log N$ feet if $N$ is a prime. Your distance, then, from home base after $X$ steps is $|\Li(X)-\pi(X)|$.   
+
+Who knows if this is 
+
+
 
 Figure~\ref{fig:threeplots} contains a graph of the three functions
 $\Li(X)$, $\pi(X)$, and $X/\log X$ for $X\leq 200$.
@@ -1761,7 +1768,11 @@ and is the largest value of $\pi(X)$ ever computed.  See
 Since $\Li(X)$ seems to start out impressively close in value to our
 $\pi(X)$ (at least in this range) it is natural to hope that in full
 generality it is {\it essentially a square root approximation} to
-$\pi(X)$.  This gives us our first formulation of Riemann's
+$\pi(X)$.
+
+ 
+
+This gives us our first formulation of Riemann's
 Hypothesis:
 
       \begin{center}
@@ -1813,12 +1824,14 @@ the previous chapter.
 
 \ill{cesaro}{.8}{The red plot is the C{\'e}saro sum of the blue plot}
 \chapter{ A view of $|\Li(X) - \pi(X)|$}
- Returning to our mysterious error term,  consider Figure \ref{fig:li-minus-pi-250000} where the volatile blue curve is $|\Li(X) - \pi(X)|$, its C{\'e}saro sum is the red relatively smooth curgve, and the blue curve is the graph of $\sqrt{\frac{2}{\pi}}\cdot \sqrt{x/\log(x)}$ over the range of $X\le 250,00$.
+ Returning to our mysterious error term,  consider Figure \ref{fig:li-minus-pi-250000} where the volatile blue curve is $|\Li(X) - \pi(X)|$, its C{\'e}saro sum is the red relatively smooth curve, and the blue curve is the graph of $\sqrt{\frac{2}{\pi}}\cdot \sqrt{x/\log(x)}$ over the range of $X\le 250,00$.
 
 \ill{li-minus-pi-250000}{.9}{$\Li(x)-\pi(x)$ (blue middle), its C{\'e}saro sum (red bottom), and
 $\sqrt{\frac{2}{\pi}}\cdot \sqrt{x/\log(x)}$ (top), all for $x\leq 250{,}000$\label{fig:li-minus-pi-250000}}
 
-
+  Data such as this graph can be revealing and misleading at the same time.  
+  
+  Viewing our error term, $|\Li(X) - \pi(X)|$ as being the distant
 
 \chapter{The Prime Number Theorem\label{sec:pnt}}
 
