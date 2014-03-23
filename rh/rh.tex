@@ -1732,10 +1732,6 @@ because the area of the region from $2$ to $X$ under $1/\log(X)$
 is the {\em integral} $\int_2^t 1/\log(X) dt$.
 
 
-More fancifully, we can think of the errror in this approximation, i.e., $|\Li(X)-\pi(X)|$, (the absolute value) of the difference between $\Li(X)$ and $\pi(X)$, as (approximately) the result of  a walk having roughly $X$ steps where you move by the following rule:  go  east by a distance of $1/\log N$ feet if $N$ is not a prime and west by a distance of $1-\1\log N$ feet if $N$ is a prime. Your distance, then, from home base after $X$ steps is $|\Li(X)-\pi(X)|$.   
-
-Who knows if this is 
-
 
 
 Figure~\ref{fig:threeplots} contains a graph of the three functions
@@ -1765,12 +1761,13 @@ and is the largest value of $\pi(X)$ ever computed.  See
 \end{align*}
 
 
-Since $\Li(X)$ seems to start out impressively close in value to our
-$\pi(X)$ (at least in this range) it is natural to hope that in full
-generality it is {\it essentially a square root approximation} to
+
+More fancifully, we can think of the errror in this approximation to $\pi(X)$, i.e., $|\Li(X)-\pi(X)|$, (the absolute value) of the difference between $\Li(X)$ and $\pi(X)$, as (approximately) the result of  a walk having roughly $X$ steps where you move by the following rule:  go  east by a distance of $1/\log N$ feet if $N$ is not a prime and west by a distance of $1-\frac{1}{\log N}$ feet if $N$ is a prime. Your distance, then, from home base after $X$ steps is $|\Li(X)-\pi(X)|$.
+
+We have no idea if this picture of things resembles a truly {]it random walk} but at least it gives us gives us a {\it essentially a square root approximation} to
 $\pi(X)$.
 
- 
+
 
 This gives us our first formulation of Riemann's
 Hypothesis:
@@ -1829,8 +1826,8 @@ the previous chapter.
 \ill{li-minus-pi-250000}{.9}{$\Li(x)-\pi(x)$ (blue middle), its C{\'e}saro sum (red bottom), and
 $\sqrt{\frac{2}{\pi}}\cdot \sqrt{x/\log(x)}$ (top), all for $x\leq 250{,}000$\label{fig:li-minus-pi-250000}}
 
-  Data such as this graph can be revealing and misleading at the same time.  
-  
+  Data such as this graph can be revealing and misleading at the same time.
+
   Viewing our error term, $|\Li(X) - \pi(X)|$ as being the distant
 
 \chapter{The Prime Number Theorem\label{sec:pnt}}
