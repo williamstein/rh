@@ -26,7 +26,7 @@
 
 - What books are ours like?
 
-- Ask Jordan about his *agent*
+- Ask Jordan and Joe about his *agent*
 
 - Quality of Kindle version
 
