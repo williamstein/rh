@@ -249,5 +249,105 @@ The
 grant the imperviousness of the number $17$ to division.
 \end{frame}
 
+
+\begin{frame}\frametitle{\bf The ubiquity of primes}
+\vskip10pt
+
+In celebration of Yitang Zhang's recent result, let us consider more of the numerics
+regarding {\em gaps} between one prime and the next, rather than the tally
+of all primes. Of course, it is no fun at all to try to guess how many
+pairs of primes $p, q$ there are with gap $q-p$ equal to a fixed odd
+number, since the difference of two odd numbers is even.  The fun,
+though, begins in earnest if you ask for pairs of primes with
+difference equal to $2$ (these being called {\em twin primes}) for it
+has long been guessed that there are infinitely many such pairs of
+primes, but no one has been able to prove this yet.
+
+\begin{quote} As of 2014, the largest known twin primes are
+$$3756801695685\cdot 2^{666669} \pm 1$$
+These enormous primes have $200700$ digits each (see \bibnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+largest known twin primes.}).
+\end{quote}
+
+
+Similarly, it interesting to consider primes $p$ and $q$
+with difference $4$, or $8$, or---in fact---any even number
+$2k$. That is, people have guessed that there are infinitely many
+pairs of primes with difference $4$, with difference $6$, etc. but
+none of these guesses have yet been proved.
+
+
+
+
+
+So, define
+$$
+  \Gap_{k}(X)
+$$
+to be the number of pairs of {\em consecutive} primes $(p,q)$ with
+$q<X$ that have ``gap $k$'' (i.e., such that their difference $q-p$ is
+$k$).  Here $p$ is a prime, $q>p$ is a prime, and there are no primes
+between $p$ and $q$.  For example, $\Gap_2(10) = 2$, since the pairs
+$(3,5)$ and $(5,7)$ are the pairs less than $10$ with gap $2$,
+and $\Gap_{4}(10)=0$ because despite $3$ and $7$ being separated
+by $4$, they are not consecutive primes.
+See Table~\ref{tab:gap} for various values of $\Gap_{k}(X)$ and
+Figure~\ref{fig:primegapdist} for the distribution of prime gaps for
+$X=10^7$.
+
+
+\begin{table}[H]\centering
+\caption{Values of $\Gap_{k}(X)$ \label{tab:gap}}
+\vspace{1em}
+
+{\small
+\begin{tabular}{|l|c|c|c|c|c|c|}\hline
+$X$ & $\Gap_{2}(X)$ & $\Gap_{4}(X)$& $\Gap_{6}(X)$ & $\Gap_{8}(X)$ &
+ $\Gap_{100}(X)$ &   $\Gap_{252}(X)$\\\hline
+
+$10$ & 2 & 0 & 0 & 0 & 0 & 0\\\hline
+$10^{2}$ & 8 & 7 & 7 & 1 & 0 & 0\\\hline
+$10^{3}$ & 35 & 40 & 44 & 15 & 0 & 0\\\hline
+$10^{4}$ & 205 & 202 & 299 & 101 & 0 & 0\\\hline
+$10^{5}$ & 1224 & 1215 & 1940 & 773 & 0 & 0\\\hline
+$10^{6}$ & 8169 & 8143 & 13549 & 5569 & 2 & 0\\\hline
+$10^{7}$ & 58980 & 58621 & 99987 & 42352 & 36 & 0\\\hline
+$10^{8}$ & 440312 & 440257 & 768752 & 334180 & 878 & 0\\\hline
+
+\end{tabular}
+}
+\end{table}
+
+ The recent results of Zhang as sharpened by Maynard (and others) we mentioned above tell us that for  at least one even number $k$ among the  even numbers $k \le 252$,    $\Gap_{k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $k$. We expect this as well, of course, for $\Gap_{252}(X)$ despite what might be misconstrued as discouragement by the above data.
+
+\ill{primegapdist}{1}{Frequency histogram showing the distribution of
+  prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
+  the most popular gap in this data.  The vertical axis labels
+  such as ``6e4'' mean $6\cdot 10^4=60{,}000$.
+\label{fig:primegapdist}}
+
+
+\ill{primegap_race}{1}{Plots of $\Gap_k(X)$ for $k=2,4,6,8$.  Which wins?}
+
+Here is yet another question that deals with the spacing of prime
+numbers that we do not know the answer to:
+
+{\em Racing Gap $2$,  Gap $4$, Gap $6$, and Gap $8$ against each other:}
+
+\begin{quote}
+  Challenge: As $X$ tends to infinity which of $\Gap_2(X)$,
+  $\Gap_4(X)$,
+  $\Gap_6(X),$ or $\Gap_8(X)$ do you think will grow faster? How
+  much would you bet on the truth of your guess? \bibnote{%
+    Hardy and Littlewood give a nice conjectural answer to such
+    questions about gaps between primes.  See Problem {\bf A8} of
+    Guy's book {\em Unsolved Problems in Number Theory} (2004).
+Note that Guy's book discusses counting the number $P_k(X)$ of pairs of
+primes up to $X$ that differ by a fixed even number $k$; we have
+$P_k(X)\geq \Gap_k(X)$, since for $P_k(X)$ there is no requirement
+that the pairs of primes be consecutive.}
+\end{quote}
+
+
 \end{document}
 %sagemathcloud={"zoom_width":90}
