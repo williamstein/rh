@@ -1,0 +1,133 @@
+\documentclass{beamer}
+
+\usepackage{fix-cm}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{tikz}
+
+\usepackage{color}
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
+\definecolor{dredcolor}{rgb}{0.8,0,0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+\usepackage{listings}
+\lstdefinelanguage{Sage}[]{Python}
+{morekeywords={True,False,sage,singular},
+sensitive=true}
+\lstset{frame=none,
+          showtabs=False,
+          showspaces=False,
+          showstringspaces=False,
+          commentstyle={\ttfamily\color{dredcolor}},
+          keywordstyle={\ttfamily\color{dbluecolor}\bfseries},
+          stringstyle ={\ttfamily\color{dgraycolor}\bfseries},
+          language = Sage,
+          basicstyle={\scriptsize \ttfamily},
+          aboveskip=.3em,
+          belowskip=.1em
+          }
+
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{url}
+
+
+\DeclareMathOperator{\Gap}{Gap}
+\DeclareMathOperator{\Li}{Li}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\mycaption}[1]{\begin{quote}{\bf Figure: } \large #1\end{quote}}
+
+\newcommand{\ill}[3]{%
+   \begin{figure}[H]%
+   \vspace{-2ex}
+   \centering%
+   \includegraphics[width=#2\textwidth]{illustrations/#1}%
+   \caption{#3}%
+   \vspace{-2ex}
+    \end{figure}}
+
+\newcommand{\illtwo}[4]{%
+   \begin{figure}[H]\centering%
+   \includegraphics[width=#3\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#3\textwidth]{illustrations/#2}%
+   \caption{#4}%
+    \end{figure}}
+
+\newcommand{\illthree}[5]{%
+   \begin{figure}[H]%
+\centering%
+   \includegraphics[width=#4\textwidth]{illustrations/#1}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#2}$\qquad$\includegraphics[width=#4\textwidth]{illustrations/#3}%
+   \caption{#5}%
+    \end{figure}}
+
+
+
+
+\def\GL{\mathrm{GL}}
+\def\PGL{\mathrm{PGL}}
+\def\PSL{\mathrm{PSL}}
+\def\GSP{\mathrm{GSP}}
+\def\Z{\mathrm{Z}}
+\def\Q{\mathrm{Q}}
+\def\Gal{\mathrm{Gal}}
+\def\Hom{\mathrm{Hom}}
+\def\Ind{\mathrm{Ind}}
+\def\End{\mathrm{End}}
+\def\Aut{\mathrm{Aut}}
+\def\loc{\mathrm{loc}}
+\def\glob{\mathrm{glob}}
+\def\Kbar{{\bar K}}
+\def\D{{\mathcal D}}
+\def\L{{\mathcal L}}
+\def\R{{\mathcal R}}
+\def\G{{\mathcal G}}
+\def\W{{\mathcal W}}
+\def\H{{\mathcal H}}
+\def\OH{{\mathcal OH}}
+
+
+
+\newcommand{\RH}{Riemann Hypothesis\index{Riemann Hypothesis}}
+
+
+\title{PRIMES}
+\author{Barry Mazur}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Table of contents}
+\tableofcontents
+\end{frame}
+
+
+
+\section{Section no.1}
+\begin{frame}
+\frametitle{frame title}
+Each frame should have a title.  and figures!
+
+\illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
+
+
+\end{frame}
+
+\subsection{Subsection no.1.1  }
+\begin{frame}
+Without title somethink is missing.
+\end{frame}
+
+
+
+
+\end{document}
+%sagemathcloud={"zoom_width":105}
