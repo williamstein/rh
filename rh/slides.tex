@@ -265,32 +265,23 @@ of all primes.
 $$3756801695685\cdot 2^{666669} \pm 1$$
 These enormous primes have $200700$ digits each.
 \end{quote}
-\end{frame}\end{document}
-
-Similarly, it interesting to consider primes $p$ and $q$
-with difference $4$, or $8$, or---in fact---any even number
-$2k$. That is, people have guessed that there are infinitely many
-pairs of primes with difference $4$, with difference $6$, etc. but
-none of these guesses have yet been proved.
-
-
-
-
-
-So, define
-$$
+\end{frame}
+\begin{frame}\frametitle{\bf Gaps of width $k$}
+Define
+{\Huge $$
   \Gap_{k}(X)
-$$
+$$}
 to be the number of pairs of {\em consecutive} primes $(p,q)$ with
 $q<X$ that have ``gap $k$'' (i.e., such that their difference $q-p$ is
-$k$).  Here $p$ is a prime, $q>p$ is a prime, and there are no primes
-between $p$ and $q$.  For example, $\Gap_2(10) = 2$, since the pairs
+$k$). 
+
+\vskip20pt
+
+For example, $\Gap_2(10) = 2$, since the pairs
 $(3,5)$ and $(5,7)$ are the pairs less than $10$ with gap $2$,
 and $\Gap_{4}(10)=0$ because despite $3$ and $7$ being separated
-by $4$, they are not consecutive primes.
-See Table~\ref{tab:gap} for various values of $\Gap_{k}(X)$ and
-Figure~\ref{fig:primegapdist} for the distribution of prime gaps for
-$X=10^7$.
+by $4$, they are not consecutive primes.\end{frame}
+\begin{frame}\frametitle{\bf Gap statistics}
 
 
 \begin{table}[H]\centering
@@ -314,7 +305,7 @@ $10^{8}$ & 440312 & 440257 & 768752 & 334180 & 878 & 0\\\hline
 \end{tabular}
 }
 \end{table}
-
+\end{frame} \end{document}
  The recent results of Zhang as sharpened by Maynard (and others) we mentioned above tell us that for  at least one even number $k$ among the  even numbers $k \le 252$,    $\Gap_{k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $k$. We expect this as well, of course, for $\Gap_{252}(X)$ despite what might be misconstrued as discouragement by the above data.
 
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of
