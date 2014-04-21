@@ -1,7 +1,7 @@
 ︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
 %load code.sage
 draw('Psiprime')
-︡1c2d8ab5-9a12-424e-9be3-b44025bbd8e6︡{"stdout":"Drawing Psiprime... "}︡{"stdout":" "}︡{"stdout":" (time = 0.2238509655 seconds)\n"}︡
+︡ac42395b-8377-4f29-813b-30d626d86e16︡{"stdout":"Drawing Psiprime... "}︡{"stdout":" "}︡{"stdout":" (time = 0.26216506958 seconds)\n"}︡
 ︠81c1fcff-67ca-419b-8a63-77c91960d11c︠
 draw('riemann_spectrum_gaps')
 
