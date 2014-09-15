@@ -1,4 +1,4 @@
 tar jcvf rh.tar.bz2 rh
-rsync -axvH --delete rh/ sage:www/rh/rh/
-scp rh.tar.bz2 sage:www/rh/
+rsync -axvH --delete rh/ wstein@boxen.math.washington.edu:www/rh/rh/
+scp rh.tar.bz2 wstein@boxen.math.washington.edu:www/rh/
 rm rh.tar.bz2
