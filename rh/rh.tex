@@ -3411,7 +3411,7 @@ to $\cos(x\theta)$ (and gave some hints about why this may be true).
 
 Our next goal is to work with the much more interesting ``spike
 function'' $$\Phi(t) \ = \ e^{- t/2}\Psi'(t),$$ which was one of the
-generalized function that we engineered in Chapter~\ref{sec:loseno},
+generalized functions that we engineered in Chapter~\ref{sec:loseno},
 and that has support at all nonnegative integral multiples of
 logarithms of prime numbers.
 
@@ -3469,7 +3469,7 @@ We will be interested in the values of $\theta$ that correspond to higher and hi
   So in Figure~\ref{fig:theta3} we begin this exploration by plotting ${\hat \Phi}_{\leq 3}(\theta)$, together with its derivative, highlighting the zeroes of the derivative.
 
 
-\ill{theta_3_intro-2}{.85}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$ and its derivative\label{fig:theta4}}
+\ill{theta_3_intro-2}{.85}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$ in blue and its derivative in grey\label{fig:theta4}}
 
 As we shall see in subsequent figures of this chapter, there seems to be an eventual convergence of the values of $\theta$ that correspond to higher and higher {\it peaks}, the red dots in the figure above,  as $C$ tends to $\infty$. These `limit' $\theta$-values we now insert as the end-points of red vertical lines into Figure~\ref{fig:theta4} comparing them with the red dots for our humble cutoff $C=3$.
 
@@ -3599,7 +3599,14 @@ briefly in Chapter~\ref{ch:envision} below).
 
 Given a smooth (analytic) function $f(s)$  of a complex variable $s$ one says that a complex number $\rho$ is a {\bf zero} of $f(s)$  if the value of the function $f$ at $s=\rho$ is zero, i.e., if $f(\rho)=0$. Equivalently, $\rho$ is a zero of $f(s)$ if the limit of $f(s)/(s-\rho)$ exists and is finite as $s$ tends to $\rho$.  One says that it is a zero of multiplicity $m$ for $m$ a positive number if $f(s)/(s-\rho)^m$ exists and is finite as $s$ tends to $\rho$, and $m$ is the largest positive number for which this is true. One calls it a {\bf simple zero} if it is a zero of multiplicity $m=1$.
 
-In the case of the $\zeta$-function, $\zeta(s)$ has simple zeroes  at all negative even numbers $s=-2,-4,-6,\dots$ these being called the {\bf trivial zeroes} of $\zeta(s)$. All of its other zeroes in the complex plane---conditional on RH---are given by  the complex numbers $${\frac{1}{2}} +\pm\theta_i,$$ these being called, appropriately, the {\bf nontrivial zeroes} of $\zeta(s)$.    We might also mention that the ``${\frac{1}{2}}$" that appears in this formula is directly related to the fact---correspondingly conditional on RH---that $\pi(X)$ is `square-root accurately' approximated by $Li(X)$.  That is, the error term is bounded by $X^{{\bf{\frac{1}{2}}}+\epsilon}.$  It has been conjectured that {\it all} the zeroes of $\zeta(s)$ are simple zeroes.
+In the case of the $\zeta$-function, $\zeta(s)$ has simple zeroes  at all negative even numbers $s=-2,-4,-6,\dots$ these being called the {\bf trivial zeroes} of $\zeta(s)$. All of its other zeroes in the complex plane---conditional on RH---are given by  the complex numbers
+$$
+\frac{1}{2}  \pm{} i\theta_1,\quad
+\frac{1}{2}  \pm{} i\theta_2,\quad
+\frac{1}{2}  \pm{} i\theta_3,\quad
+\ldots
+$$
+these being called, appropriately, the {\bf nontrivial zeroes} of $\zeta(s)$.    We might also mention that the ``${\frac{1}{2}}$" that appears in this formula is directly related to the fact---correspondingly conditional on RH---that $\pi(X)$ is `square-root accurately' approximated by $\Li(X)$.  That is, the error term is bounded by $X^{{\bf{\frac{1}{2}}}+\epsilon}.$  It has been conjectured that {\it all} the zeroes of $\zeta(s)$ are simple zeroes.
 
 Riemann wrote:
  \begin{quote}
@@ -3611,7 +3618,8 @@ Riemann wrote:
   my investigation.''
 \end{quote}
 
- In the above quotation, Riemann's roots are the $\theta_i$'s and the statement that they are `real" is equivalent to RH, as we will be discussing further in Chapter~\ref{ch:envision} below.
+ In the above quotation, Riemann's roots are the $\theta_i$'s and the statement that they are ``real" is equivalent to RH, as we will be discussing further in Chapter~\ref{ch:envision} below.
+
 
 \chapter{ How many $\theta_i$'s are there?}
 
@@ -4074,7 +4082,7 @@ and, in general,
 \item The formula $$\zeta(s):= {\frac{1}{1^s}}+ {\frac{1}{2^s}}+
   {\frac{1}{3^s}}+ \cdots$$ does converge when the real part of the
   exponent $s$ is greater than $1$ (i.e., this allows us to use the
-  same formula, as Chebyshev had done, for the right upper half plane
+  same formula, as Chebyshev had done, for the right half plane
   in the complex plane determined by the condition $s=x+iy$ with $x>1$
   but not beyond this).  You can't simply use the same formula for the
   extension.\item So you must face the fact that if you wish to
@@ -4143,7 +4151,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
   Riemann zeta function doesn't entirely pin it down---you have to
   know more about its behavior at infinity since---for example,
   multiplying a function by $e^z$ doesn't change the structure of its
-  zeroes and poles in the finite plane.  but a complete understanding
+  zeroes and poles in the finite plane.  But a complete understanding
   of the zeroes and poles of $\zeta(s)$ will give all the information
   you need to pin down the placement of primes among all numbers.
 
@@ -4332,4 +4340,4 @@ conventional terminology that we restrained
 \end{document}
 
 
-%sagemathcloud={"zoom_width":120}
+%sagemathcloud={"zoom_width":115}
