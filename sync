@@ -1,3 +1,4 @@
+chmod a+r -R rh
 tar jcvf rh.tar.bz2 rh
 rsync -axvH --delete rh/ wstein@boxen.math.washington.edu:www/rh/rh/
 scp rh.tar.bz2 wstein@boxen.math.washington.edu:www/rh/
