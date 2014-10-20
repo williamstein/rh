@@ -897,7 +897,7 @@ to efficiently compute anything interesting about $q$.  For example,
 what is the last digit of $q$ in its decimal expansion?
 
 
-\chapter{``Named'' prime numbers}
+\chapter{``Named'' prime numbers}\label{ch:namedprimes}
 Prime numbers come in all sorts of shapes, some more convenient to
 deal with than others.  For example, the number we have been talking
 about, $$p = 2^{43,112,609}-1,$$ is given to us, by its very notation,
@@ -988,14 +988,15 @@ still appear in white boxes.
 \ill{sieve100-3}{.8}{Using the primes 2 and 3 to sieve for primes up to 100\label{fig:erat23}}
 \ill{sieve100-5}{.8}{Using the primes 2,3,5 to sieve for primes up to 100\label{fig:erat235}}
 Looking at Figure~\ref{fig:erat235}, we see that for all but
-six numbers up to 100 we have  (after sieving by 2,3, and 5) determined
+three numbers (49, 77, and 91) up to 100 we have
+(after sieving by 2,3, and 5) determined
 which are primes and which composite.
 
 \ill{sieve100-7}{.8}{Using the primes 2,3,5,7 to sieve for primes up to 100\label{fig:erat2357}}
 
-Finally, as in Figure~\ref{fig:erat2357},
-sieving by 2,3,5, and 7 we have determined which are primes for all but two numbers.
-\bibnote{In Sage, the
+Finally, we see in Figure~\ref{fig:erat2357} that
+sieving by 2,3,5, and 7 determines  all primes up to $100$.
+See \bibnote{In Sage, the
 function {\tt prime\_range} enumerates primes in a range, e.g.,
 {\tt prime\_range(50)}
 outputs the primes up to $50$
@@ -1019,8 +1020,8 @@ Up to $10^8$, only $1{,}405$ of the $5{,}762{,}860$ prime powers are not themsel
 To see this, first enter
 {\tt a~=~prime\_pi(10\^{}8); pp~=~len(prime\_powers(10\^{}8))}.
 Typing {\tt (a,~pp,~pp-a)} then outputs the triple
-{\tt (5761455, 5762860, 1405)}.}
-
+{\tt (5761455, 5762860, 1405)}.} for more about explicitly
+enumerating primes using a computer.
 
 % GIVEN WHAT IS ABOVE, THIS IS SILLY.
 %Especially if you have had little experience with math, may I suggest
@@ -1036,7 +1037,7 @@ Typing {\tt (a,~pp,~pp-a)} then outputs the triple
 %
 
 
-\chapter[Questions about primes]{Questions about primes that any person might ask}
+\chapter[Questions about primes]{Questions about primes that any person might ask}\label{ch:questions}
 
 We become quickly stymied when we ask quite elementary questions about
 the spacing of the infinite series of prime numbers.
@@ -1054,9 +1055,13 @@ $10{,}000{,}000{,}000{,}000{,}000$.}) but the answer to our question,
 equally unknown.
 Nevertheless there is very exciting recent work in this direction, specifically,
 Yitang Zhang proved that there are infinitely many pairs of primes that differ
-by no more than $7\times 10^7$. For a brief account of this, see the wikipedia entry \url{http://en.wikipedia.org/wiki/Yitang_Zhang}, and for a popular report  about developments following Zhang's breakthrough result (we know now, thanks to results of James Maynard and others, that there are infinitely many pairs of primes that differ
-by no more than $252$) see \url{https://www.simonsfoundation.org/quanta/20131119-together-and-alone-closing-the-prime-gap/} and for further work
-\url{http://michaelnielsen.org/polymath1/index.php?title=Bounded_gaps_between_primes}.
+by no more than $7\times 10^7$. For a brief account of
+Zhang's work, see the Wikipedia entry \url{http://en.wikipedia.org/wiki/Yitang_Zhang}.
+Many exciting results have followed Zhang's breakthrough;
+we know now, thanks to results of James Maynard and
+others, that there are infinitely many pairs of primes
+that differ by no more than $246$ (see \bibnote{See \url{https://www.simonsfoundation.org/quanta/20131119-together-and-alone-closing-the-prime-gap/} and for further work
+\url{http://michaelnielsen.org/polymath1/index.php?title=Bounded_gaps_between_primes}.}).
 
 {\em Is every even number greater than $2$ a sum of
   two primes?}  Answer: unknown. {\em Are there infinitely many primes
@@ -1066,9 +1071,10 @@ by no more than $252$) see \url{https://www.simonsfoundation.org/quanta/20131119
 
 
 
-Remember the Mersenne prime $p= 2^{43,112,609}-1$? and how we
-proved---by pure thoughts---that there must be
-a prime $P$ larger than that? Suppose, though, someone
+Remember the Mersenne prime $p= 2^{43,112,609}-1$? from
+Chapter~\ref{ch:namedprimes} and how we
+proved---by pure thought---that there must be
+a prime $P$ larger than $p$? Suppose, though, someone
 asked us whether there was a {\it Mersenne Prime} larger than this
 $p$: that is, {\em is there a prime number of the form $$2^{\rm some\
   prime\ number}-1$$ bigger than $p= 2^{43,112,609}-1$?} Answer:
@@ -1085,7 +1091,7 @@ but we're far from being able to answer such questions.
 
 
 {\em Is there some neat formula giving the next prime?} More
-specifically, {\em If I give you a number $N$, say $N=$ one million,
+specifically, {\em if I give you a number $N$, say $N=$ one million,
   and ask you for the first number after $N$ that is prime, is there a
   method that answers that question without, in some form or other,
   running through each of the successive odd numbers after $N$ rejecting
@@ -1129,7 +1135,8 @@ In celebration of Yitang Zhang's recent result, let us consider more of the nume
 regarding {\em gaps} between one prime and the next, rather than the tally
 of all primes. Of course, it is no fun at all to try to guess how many
 pairs of primes $p, q$ there are with gap $q-p$ equal to a fixed odd
-number, since the difference of two odd numbers is even.  The fun,
+number, since the difference of two odd numbers is even, as
+in Chapter~\ref{ch:questions}.  The fun,
 though, begins in earnest if you ask for pairs of primes with
 difference equal to $2$ (these being called {\em twin primes}) for it
 has long been guessed that there are infinitely many such pairs of
@@ -1137,12 +1144,12 @@ primes, but no one has been able to prove this yet.
 
 \begin{quote} As of 2014, the largest known twin primes are
 $$3756801695685\cdot 2^{666669} \pm 1$$
-These enormous primes have $200700$ digits each (see \bibnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+These enormous primes, which were found in 2011, have $200700$ digits each (see \bibnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
 largest known twin primes.}).
 \end{quote}
 
 
-Similarly, it interesting to consider primes $p$ and $q$
+Similarly, it is interesting to consider primes $p$ and $q$
 with difference $4$, or $8$, or---in fact---any even number
 $2k$. That is, people have guessed that there are infinitely many
 pairs of primes with difference $4$, with difference $6$, etc. but
@@ -1175,7 +1182,7 @@ $X=10^7$.
 {\small
 \begin{tabular}{|l|c|c|c|c|c|c|}\hline
 $X$ & $\Gap_{2}(X)$ & $\Gap_{4}(X)$& $\Gap_{6}(X)$ & $\Gap_{8}(X)$ &
- $\Gap_{100}(X)$ &   $\Gap_{252}(X)$\\\hline
+ $\Gap_{100}(X)$ &   $\Gap_{246}(X)$\\\hline
 
 $10$ & 2 & 0 & 0 & 0 & 0 & 0\\\hline
 $10^{2}$ & 8 & 7 & 7 & 1 & 0 & 0\\\hline
@@ -1190,7 +1197,11 @@ $10^{8}$ & 440312 & 440257 & 768752 & 334180 & 878 & 0\\\hline
 }
 \end{table}
 
- The recent results of Zhang as sharpened by Maynard (and others) we mentioned above tell us that for  at least one even number $k$ among the  even numbers $k \le 252$,    $\Gap_{k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $k$. We expect this as well, of course, for $\Gap_{252}(X)$ despite what might be misconstrued as discouragement by the above data.
+ The recent results of Zhang as sharpened by Maynard (and others) we mentioned above tell us that for  at least one even number $k$ among the  even numbers $k \le 246$,    $\Gap_{k}(X)$ goes to infinity as $X$ goes to infinity. One expects that this happens for {\it all} even numbers $k$. We expect this as well, of course, for $\Gap_{246}(X)$ despite what might be misconstrued as discouragement by the above data.
+% NOTE: the biggest gap up to $10^{8}$ is 220, as this 30s comp shows:
+% v = prime_range(10^8)
+% gaps = [v[i]-v[i-1] for i in range(1,len(v))]
+% max(gaps)
 
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of
   prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
@@ -1232,7 +1243,8 @@ Here is a curious question that you can easily begin to check out for
 small numbers. We know, of course, that the {\em even} numbers and the
 {\em odd} numbers are nicely and simply distributed: after every odd
 number comes an even number, after every even, an odd, there are an
-equal number of odd number as even numbers less than any given odd
+equal number of positive odd numbers as positive
+even numbers less than any given odd
 number, and there may be nothing else of interest to say about the
 matter.  Things change considerably, though, if we focus our
 concentration on {\em multiplicatively even} numbers and {\em
@@ -1260,7 +1272,7 @@ and bold  the multiplicatively odd numbers.
  Table~\ref{tab:evenodddata} gives some data:
 
  \begin{table}[H] \caption{Count of multiplicatively odd and
-    multiplicatively even positive numbers $\le X$\label{tab:evenodddata}}
+    even positive numbers $\le X$\label{tab:evenodddata}}
 \vspace{1ex}
 \centering
  {\small
@@ -1308,10 +1320,10 @@ previous questions, the answer to this question is known (see \bibnote{For more
   G. Polya {\em Vershiedene Bemerkungen zur Zahlentheorie}
   Jahresbericht de Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
   31--40.}): alas, there is such an $X$.  In 1960, Lehman showed that
-for $X=906,400{,}000$ there are $708$ more multiplicatively even numbers
+for $X=906{,}400{,}000$ there are $708$ more multiplicatively even numbers
 up to $X$ than multiplicatively odd numbers (Tanaka found in 1980 that
 the smallest $X$ such that there are more multiplicative even than odd
-numbers is $X=906,150,257$).
+numbers is $X=906{,}150{,}257$).
 
 %%%%%%%%%%%%%%%%%
 %\begin{wrapfigure}{r}{0.2\textwidth}
@@ -1324,7 +1336,7 @@ we can't answer today. We have been studying numbers for over two
 millenia and yet we are indeed in the infancy of our understanding.
 
 
-So we'll continue our discussion by returning to the simplest counting
+We'll continue our discussion by returning to the simplest counting
 question about prime numbers.
 
 \chapter{How many primes are there?}
