@@ -159,7 +159,7 @@ sensitive=true}
 What is Riemann's Hypothesis?\\
 \vspace{1em}
 \large
-(October 2014 Draft)}
+(November 2014 Draft)}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
 %\begin{center}
@@ -1359,7 +1359,8 @@ There are 78,498 primes less than a million (so we might say that
 the chances that a random choice among the first million numbers is
 prime have dropped to roughly $1$ in $13$).
 
-\illtwo{proportion_primes_1000}{proportion_primes_10000}{0.46}{Proportion of primes for $X$ up to $1{,}000$ (left) and $10{,}000$ (right)}
+\ill{proportion_primes_1000}{1}{Proportion of primes for $X$ up to $1{,}000$}
+\ill{proportion_primes_10000}{1}{Proportion of primes for $X$ up to $10{,}000$}
 
 There are 455,052,512 primes less than ten billion; i.e.,
 10{,}000{,}000{,}000 (so we might say that the chances are down to roughly
@@ -1440,7 +1441,8 @@ the eye. How strange and wonderful to watch, as our viewpoint zooms
 out to larger ranges of numbers, the accumulation of primes taking on
 such a smooth and elegant shape.
 
-\illtwo{prime_pi_1000}{prime_pi_10000}{0.4}{Staircases of primes up to 1,000 and 10{,}000\label{fig:staircases2}}
+\ill{prime_pi_1000}{.8}{Staircases of primes up to 1,000\label{fig:staircases2}}
+\ill{prime_pi_10000}{.8}{Staircases of primes up to  10{,}000\label{fig:staircases2b}}
 
 \ill{prime_pi_100000}{.8}{Primes up to 100{,}000\label{fig:pn100000}.
 Note that the axis label ``6e4'' means $6 \times 10^4$.}
@@ -1536,7 +1538,7 @@ But to describe Gauss's guess precisely we need to discuss the {\it natural loga
 
 \ill{log}{.8}{Plot of the natural logarithm $\log(X)$}
 
-
+%NB: the sequence below converges very, very slowly to e.
  Euler's famous constant $e=2.71828182\ldots$, which is the limit
  of the sequence
  $$\left(1+{\frac{1}{2}}\right)^2,
@@ -1550,7 +1552,7 @@ Before electronic calculators, logarithms were frequently used to
 speed up calculations, since logarithms translate difficult multiplication
 problems into easier addition problems which can be done mechanically.
 Such calculations use that the logarithm of a product is the sum of the logarithms
-of the factors; that is, $$\log(X\cdot Y) = \log(X) + \log(Y).$$
+of the factors; that is, $$\log(X Y) = \log(X) + \log(Y).$$
 %FROM -- YURI TSCHINKEL's: ''ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES ''
 
 % From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
@@ -1642,20 +1644,7 @@ Again, for short, call this a {\em good approximation.} So, when Gauss
 thought his curve missed by $226$ in estimating the number of primes
 less than three million, it was well within the margin we have given
 for a ``good approximation.''
-\bibnote{If $f(x)$ and
-$g(x)$ are real-valued functions of a real variable $x$ such that
-for any
-$\epsilon >0$ both of them take their values between $ x^{1-\epsilon}$
-and $ x^{1+\epsilon}$ for
-$x$
-sufficiently large, then say that $f(x)$ and $g(x)$ are {\bf good
-approximations of one another} if,
-for any positive $\epsilon$ the absolute values of their difference
-is less than $ x^{{1\over
-2}+\epsilon}$ for
-$x$
-sufficiently large. The functions $\Li(X)$ and $R(X)$ of are good approximations of
-one another.}
+
 
 More generally, if you are trying to estimate a number that has $D$
 digits and you get it almost right, but with an error that has no more
@@ -1688,7 +1677,20 @@ of a {\em single} error term,
  $X$ raised to that exponent (e.g. $< X^{0.501}$, $<
  X^{0.5001}$, etc.). Readers who know calculus and wish to have a
  technical formulation of this definition of {\em good approximation}
- might turn to the endnote $^2$ for a precise statement.
+ might turn to the endnote \bibnote{If $f(x)$ and
+$g(x)$ are real-valued functions of a real variable $x$ such that
+for any
+$\epsilon >0$ both of them take their values between $ x^{1-\epsilon}$
+and $ x^{1+\epsilon}$ for
+$x$
+sufficiently large, then say that $f(x)$ and $g(x)$ are {\bf good
+approximations of one another} if,
+for any positive $\epsilon$ the absolute values of their difference
+is less than $ x^{{1\over
+2}+\epsilon}$ for
+$x$
+sufficiently large. The functions $\Li(X)$ and $R(X)$ of are good approximations of
+one another.} for a precise statement.
 If you found the above confusing, don't worry: again, a
 square-root accurate approximation is one in which at least roughly
 half the digits are correct.
@@ -1711,7 +1713,7 @@ half the digits are correct.
   would count the number of primes by doing nothing more than
   considering each number, in turn, on their list and tallying them
   up, much like a canvasser counting votes; the committee members  needn't even know that these numbers are prime, they just think of these numbers as items on their list. But since they are human,
-  they will indeed be making mistakes, say $0.001\%$ of the time.
+  they will indeed be making mistakes, say $1\%$ of the time.
   Assume further that it is just as likely for them to make the
   mistake of undercounting or overcounting.  If many people are
   engaged in such pursuit, some of them might over-count $\pi(X)$;
