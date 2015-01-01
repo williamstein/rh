@@ -1895,10 +1895,11 @@ $$ and it is proven that at some  values of $X$ fairly close to the upper bound 
 
 \chapter{The Prime Number Theorem\label{sec:pnt}}
 
-Take a look at Figure~\ref{fig:threeplots} again.  All three functions, $X/\log(X)$,
-$\Li(X)$ and $\pi(X)$ are ``going to infinity with $X$'' (this means
-that for any real number $R$, if $X$ is taken to be sufficiently
-large, the values of these functions at $X$ will exceed $R$).
+Take a look at Figure~\ref{fig:threeplots} again.
+All three functions, $\Li(X)$, $\pi(X)$ and $X/\log(X)$
+are ``going to infinity with $X$'' (this means
+that for any real number $R$, for all sufficiently large $X$,
+the values of these functions at $X$ exceed $R$).
 
 Are these functions ``going to infinity'' at {\it the same rate}?
 
@@ -1911,7 +1912,12 @@ tends to $1$ as $X$ goes to infinity.
 
 If for example  two functions, $A(X)$ and $B(X)$ that take positive whole number values, have the same number of digits for large $X$  and if,  for any
 number you give us, say: a million (or a billion, or a trillion) and if $X$ is large enough, then the
-``leftmost'' million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same,  then  $A(X)$ and $B(X)$  {\it go to infinity at the same rate}.
+``leftmost'' million (or billion, or trillion) digits of $A(X)$ and $B(X)$ are the same,  then  $A(X)$ and $B(X)$  {\it go to infinity at the same rate}.  For example,
+$$
+\frac{A(X)}{B(X)} =
+\frac{{\color{dredcolor}2810675971}83743525105611755423}{{\color{dredcolor}2810675971}61361511527766294585}
+= 1.00000000007963213762060\ldots
+$$
 
 
 While we're defining things, let us say that two functions, $A(X)$
@@ -1949,11 +1955,11 @@ between the derivatives of $\Li(x)$ and of  $x/\log x$. The answer
 is $1/\log^2(x)$.  So you must show that the ratio of
 $\int_2^X dx/\log^2(x)$ to $\Li(x)= \int_2^Xdx/\log(x)$
 tends to zero as~$x$ goes to infinity, and this is a good
-Calculus exercise.})
+Calculus exercise.}).
 
 
-Recall (on page 10 above)  that
-if $X = 10^{23}$, the top eleven digits of $\pi(X)$ and $\Li(X)$ are the same: $19253203916.$ Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
+Recall (on page~\pageref{pili_vals} above in Chapter~\ref{sec:rh1})  that
+if $X = 10^{24}$, the top twelve digits of $\pi(X)$ and $\Li(X)$ are the same: $18{,}435{,}599{,}767{,}3$. Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
 
 The \RH{}, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
@@ -2015,7 +2021,7 @@ formulations being provably equivalent to any of the others.
 \ill{riemann}{.3}{Bernhard Riemann (1826--1866)}
 
 
-This \RH{} remains unproved to this day, and therefore is ``only a
+The \RH{} remains unproved to this day, and therefore is ``only a
 hypothesis,'' as Osiander said of Copernicus's theory, but one for
 which we have overwhelming theoretical and numerical evidence in its
 support.  It is the kind of conjecture that contemporary Dutch
