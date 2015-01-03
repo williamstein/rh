@@ -3369,8 +3369,8 @@ example, the equation
      on the complement of any proper subset of $S$.
 
    Given the mission of our book, it may be less important for us to  elaborate on  the construction
-   of  $\Phi(t)$  than it is to {\bf (a)} note that $\Phi(t)$  contains all the valuable information
-   that  $\psi(X)$ has and {\bf (b)} pay close attention to the spike values of the trigonometric
+   of  $\Phi(t)$  than it is  {\bf (a)} to note that $\Phi(t)$  contains all the valuable information
+   that  $\psi(X)$ has and {\bf (b)} to pay close attention to the spike values of the trigonometric
    series that is the Fourier transform of $\Phi(t)$.
 
      For the definition  of the distribution $\Phi(t)$ see the end-note
@@ -3850,8 +3850,7 @@ $G_C(x)$.
 
 
   The answer to this is yes (given the \RH{}), and is discussed very
-  beautifully by Bernhard Riemann himself in his famous 1859 article
-  cited above.
+  beautifully by Bernhard Riemann himself in his famous 1859 article.
 
   Bernhard Riemann used the spectrum of the prime numbers to provide
   an exact analytic formula that analyzes and/or synthesizes the
@@ -3862,7 +3861,7 @@ $G_C(x)$.
   as a candidate smooth function approximating the staircase of
   primes.  Recall from Chapter~\ref{sec:rh1} that Gauss's guess is
   $\Li(X)= \int_2^{X}dt/{\rm log}(t).$ Riemann's guess for a better
-  approximation to $\pi(X)$ is obtained from Gauss's using the Moebius
+  approximation to $\pi(X)$ is obtained from Gauss's, using the Moebius
   function $\mu(n)$, which is defined by
 $$
  \mu(n) = \begin{cases}
@@ -3891,7 +3890,7 @@ where $\mu(n)$ is the Moebius function introduced above.
 
 In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem, which
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for
-$\pi(X)$, in the sense that both go to infinity at the same rate.
+$\pi(X)$, in the sense that both go to infinity at the same rate.  That is, the ratio of any two of these three functions tends to $1$ as $X$ goes to $\infty$.
 Our first formulation of the \RH{} (see page~\pageref{rh:first}) was
 that $\Li(X)$ is an essentially square root accurate approximation of
 $\pi(X)$.  Figures~\ref{fig:guess100}--\ref{fig:guess10000} illustrate
@@ -4047,10 +4046,10 @@ ${1\over k+1}N^{k+1}$, and a famous linear term.  The coefficient of
 the linear term of the polynomial $S_k(N)$ is the {\it Bernoulli
   number} $B_{k}$:
 \begin{align*}
-S_1(n) &= 1+2+3+ \dots + (n-1) \ = \ {n(n-1)\over 2}  \ = \  {n^2\over 2}\ -\  {1\over 2}\cdot n,\\
-S_2(n) &= 1^2+2^2+3^2+ \dots + (n-1)^2 \ = \   {n^3\over 3} +\cdots -\ {1\over 6}\cdot n,\\
-S_3(n) &= 1^3+2^3+3^3+ \dots + (n-1)^3 \ = \  {n^4\over 4} +\cdots  -\ 0\cdot n,\\
-S_4(n) &= 1^4+2^4+3^4+ \dots + (n-1)^4 \ = \  {n^5\over 5} +\cdots  -\ {1\over 30}\cdot n,
+S_1(N) &= 1+2+3+ \dots + (N-1) \ = \ {N(N-1)\over 2}  \ = \  {N^2\over 2}\ -\  {1\over 2}\cdot N,\\
+S_2(N) &= 1^2+2^2+3^2+ \dots + (N-1)^2 \ = \   {N^3\over 3} +\cdots -\ {1\over 6}\cdot N,\\
+S_3(N) &= 1^3+2^3+3^3+ \dots + (N-1)^3 \ = \  {N^4\over 4} +\cdots  -\ 0\cdot N,\\
+S_4(N) &= 1^4+2^4+3^4+ \dots + (N-1)^4 \ = \  {N^5\over 5} +\cdots  -\ {1\over 30}\cdot N,
 \end{align*}
 etc.
 For odd integers $k
@@ -4058,7 +4057,7 @@ For odd integers $k
 $B_{2k}$ is the rational number given by the coefficient of ${x^{2k}\over {2k}!}$ in the power series expansion
 \    \newline \bigskip \     \newline
 $${x\over e^x-1} \ = \  1 - {x\over 2} +  \sum_{k=1}^{\infty}
-(-1)^{k+1}B_{2k}{x^{2k}\over {2k}!}.$$
+(-1)^{k+1}B_{2k}{x^{2k}\over{(2k)}!}.$$
 \    \newline \bigskip \     \newline
 So
   $$ B_2 = {1\over 6},\ \ \ \ \ \ \ \   B_4 = {1\over 30},\ \ \ \ \ \ \ \   B_6 = {1\over 42},\ \ \ \ \ \ \
@@ -4113,7 +4112,8 @@ and, in general,
   the ratio of $\pi(x)$ and $x/\log(x)$ is bounded above and below by
   two explicitly given constants. He also proved that there exists a
   prime number in the interval bounded by $n$ and $2n$ for any positive
-  integer $n$ (this was called {\it Bertrand's postulate}).\vskip20pt
+  integer $n$ (this was called {\it Bertrand's postulate}; see \url{http://en.wikipedia.org/wiki/Proof_of_Bertrand%27s_postulate}).
+  \vskip20pt
 
   {\bf Riemann's idea (1859):} It is in the third step of the
   evolution of $\zeta(s)$ that something quite surprising
@@ -4166,7 +4166,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
   consider these facts:
 
   \begin{enumerate}\item {\bf Riemann's zeta function codes the
-      placement of prime powers among all numbers} The key here is to
+      placement of prime powers among all numbers.} The key here is to
     take the logarithm and then the derivative of $\zeta(s)$ (this boils
     down to forming ${\frac{d{\zeta}}{ds}}(s)/\zeta(s)$). Assuming
     that the real part of $s$ is $>1$, taking the logarithm of
@@ -4185,7 +4185,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
  \vskip20pt
 
 \item {\bf You know lots about a function if you know its zeroes and
-    poles} This is certainly true, for example for polynomials, or
+    poles.} This is certainly true, for example for polynomials, or
   even rational functions: if someone told you, for example, that a
   certain function $f(s)$ vanishes to order $1$ at $0$ and at
   $\infty$; and that it has a double pole at $s=2$ and at all other
@@ -4224,7 +4224,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
 
        All the nontrivial zeroes of $\zeta(s)$ lie on the vertical
        line in the complex plane given by ${\rm real\ part\ of\ } s\ =
-       {\frac{1}{2}},$ and these zeroes are none other than
+       {\frac{1}{2}}.$ These zeroes are none other than
        ${\frac{1}{2}}+i\theta_1,{\frac{1}{2}}+i\theta_2,
        {\frac{1}{2}}+i\theta_3,\dots,$ where $\theta_1, \theta_2,
        \theta_3, \dots$ comprise the spectrum of primes we talked
@@ -4302,7 +4302,7 @@ For example---instead of the ordinary integers---consider the {\it
  i$ and if we multiply any Gaussian integer $a+bi$ by any of these
  four units, we get the collection $\{a+bi, -a-bi, -b+ai, b -ai\}$.
  We measure the {\it size} of Gaussian integer by the square of its
- distance to the origin, i.e., $$|a+bi|^2 = {a^2+b^2}.$$   This size function  is called the {\bf norm} of the Gaussian integer $a+bi$ and can also be thought of as  the product of $a+bi$ and its ``conjugate'' $a-bi$.   note that
+ distance to the origin, i.e., $$|a+bi|^2 = {a^2+b^2}.$$   This size function  is called the {\bf norm} of the Gaussian integer $a+bi$ and can also be thought of as  the product of $a+bi$ and its ``conjugate'' $a-bi$.   Note that
  the norm is a nice multiplicative function on the set of Gaussian
  integers, in that the norm of a product of two Gaussian integers is
  the product of the norms of each of them.
