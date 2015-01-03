@@ -1,4 +1,3 @@
-set -e
 git commit -a -v
 git push
 chmod a+r -R rh
