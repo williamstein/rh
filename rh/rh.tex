@@ -3640,11 +3640,11 @@ Riemann defined this sequence of numbers in his 1859 article in a
 manner somewhat different from the treatment we have given (in that
 article these $\theta_i$ appear as the ``imaginary parts of the
 nontrivial zeroes of his $\zeta$-function;'' we will discuss this
-briefly in Chapter~\ref{ch:envision} below).
+briefly in Part \ref{part4}, Chapter~\ref{ch:envision} below.
 
-Given a smooth (analytic) function $f(s)$  of a complex variable $s$ one says that a complex number $\rho$ is a {\bf zero} of $f(s)$  if the value of the function $f$ at $s=\rho$ is zero, i.e., if $f(\rho)=0$. Equivalently, $\rho$ is a zero of $f(s)$ if the limit of $f(s)/(s-\rho)$ exists and is finite as $s$ tends to $\rho$.  One says that it is a zero of multiplicity $m$ for $m$ a positive number if $f(s)/(s-\rho)^m$ exists and is finite as $s$ tends to $\rho$, and $m$ is the largest positive number for which this is true. One calls it a {\bf simple zero} if it is a zero of multiplicity $m=1$.
+Given a smooth (analytic) function $f(s)$  of a complex variable $s$ one says that a complex number $\rho$ is a {\bf zero} of $f(s)$  if the value of the function $f$ at $s=\rho$ is zero, i.e., if $f(\rho)=0$. Equivalently, $\rho$ is a zero of $f(s)$ if the limit of $f(s)/(s-\rho)$ exists and is finite as $s$ tends to $\rho$.  One says that it is a zero of multiplicity $m$, for $m$ a positive number, if $f(s)/(s-\rho)^m$ exists and is finite as $s$ tends to $\rho$, and $m$ is the largest positive number for which this is true. One calls it a {\bf simple zero} if it is a zero of multiplicity $m=1$. If, for a positive integer $n$, $f(s)\cdot(s-\rho)^n$ tends to a nonzero finite limit as $s$ tends to $\rho$, then the function  $f(s)$ is said to have a {\bf pole} of multiplicity $n$ at $s = \rho$. It is called a simple pole if $n=1$.
 
-In the case of the $\zeta$-function, $\zeta(s)$ has simple zeroes  at all negative even numbers $s=-2,-4,-6,\dots$ these being called the {\bf trivial zeroes} of $\zeta(s)$. All of its other zeroes in the complex plane---conditional on RH---are given by  the complex numbers
+In the case of the $\zeta$-function, $\zeta(s)$ has a {\it simple} pole at $s=1$ and simple zeroes  at all negative even numbers $s=-2,-4,-6,\dots$ these being called the {\bf trivial zeroes} of $\zeta(s)$. All of its other zeroes in the complex plane---conditional on RH---are given by  the complex numbers
 $$
 \frac{1}{2}  \pm{} i\theta_1,\quad
 \frac{1}{2}  \pm{} i\theta_2,\quad
@@ -3663,7 +3663,7 @@ Riemann wrote:
   my investigation.''
 \end{quote}
 
- In the above quotation, Riemann's roots are the $\theta_i$'s and the statement that they are ``real" is equivalent to RH, as we will be discussing further in Chapter~\ref{ch:envision} below.
+ In the above quotation, Riemann's roots are the $\theta_i$'s and the statement that they are ``real" is equivalent to RH, as we will be discussing further in Chapter~\ref{ch:envision} below}.
 
 
 \chapter{ How many $\theta_i$'s are there?}
@@ -4054,7 +4054,7 @@ S_4(N) &= 1^4+2^4+3^4+ \dots + (N-1)^4 \ = \  {N^5\over 5} +\cdots  -\ {1\over 3
 etc.
 For odd integers $k
 > 1$ this linear term vanishes.  For even integers $2k$ the  Bernoulli number
-$B_{2k}$ is the rational number given by the coefficient of ${x^{2k}\over {2k}!}$ in the power series expansion
+$B_{2k}$ is the rational number given by the coefficient of ${x^{2k}\over({(2k))}!}$ in the power series expansion
 \    \newline \bigskip \     \newline
 $${x\over e^x-1} \ = \  1 - {x\over 2} +  \sum_{k=1}^{\infty}
 (-1)^{k+1}B_{2k}{x^{2k}\over{(2k)}!}.$$
@@ -4184,7 +4184,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
 
  \vskip20pt
 
-\item {\bf You know lots about a function if you know its zeroes and
+\item {\bf You know lots about an analytic function if you know its zeroes and
     poles.} This is certainly true, for example for polynomials, or
   even rational functions: if someone told you, for example, that a
   certain function $f(s)$ vanishes to order $1$ at $0$ and at
