@@ -344,7 +344,7 @@ that can be used to recreate every diagram in this book.
 More adventurous readers can try
 to experiment with the parameters for
 the ranges of data illustrated, so as to get an even more
-vivid sense of how the numbers ``behave.''} in hopes that readers themselves become inspired to make some numerical experimentation. This will surely become easier for people to do  as mathematical software
+vivid sense of how the numbers ``behave''} in hopes that readers themselves become inspired to make some numerical experimentation. This will surely become easier for people to do  as mathematical software
 advances\footnote{See \url{http://wstein.org/rh} for information about
 how to reproduce all plots in this book.}.
 
@@ -1460,7 +1460,7 @@ build-up of primes, somehow, using a {\em smooth curve}.  But {\em
 
 
 % NOTE about myriad below: After reading http://english.stackexchange.com/questions/20133/what-is-the-correct-usage-of-myriad, I'm not changing "myriad of smooth" to "myriad smooth".   The of version, which we use, is correct when myriad is used as a noun, which is now a legal usage in english, according to the above page.
-That last question is {\em not} rhetorical. If I draw a curve with
+That last question is {\em not} rhetorical. If you draw a curve with
 chalk on the blackboard, this can signify a myriad of smooth
 (mathematical) curves all encompassed within the thickness of the
 chalk-line, all--if you wish--reasonable approximations of one
@@ -1691,6 +1691,8 @@ is less than $ x^{{1\over
 $x$
 sufficiently large. The functions $\Li(X)$ and $R(X)$ of are good approximations of
 one another.} for a precise statement.
+
+
 If you found the above confusing, don't worry: again, a
 square-root accurate approximation is one in which at least roughly
 half the digits are correct.
@@ -2561,12 +2563,12 @@ $$f(x) = \begin{cases}1 & x \leq 3\\ 2 & x > 3.\end{cases}$$
 
 The most comfortable way to deal with the graph of such a function is
 to just approximate it by a differentiable function as in
-Figure~\ref{fig:jumpsmooth}.  Note that the function in
-Figure~\ref{fig:jumpsmooth} is not smooth, since the
-derivative is continuous but not differentiable; in our
-discussion all
-we will need is that our approximating function is once
-differentiable.
+Figure~\ref{fig:jumpsmooth}. % Note that the function in
+%Figure~\ref{fig:jumpsmooth} is not smooth, since the
+%derivative is continuous but not differentiable; in our
+%discussion all
+%we will need is that our approximating function is once
+%differentiable.
 
 
 \ill{jump-smooth}{0.5}{A picture of a smooth graph approximating the
@@ -2696,8 +2698,7 @@ Calculus relating a function to its derivative:
  ``generalized functions'' are called {\it distributions} in
  Schwartz's theory \bibnote{ See
    \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29}
-   for more about distributions.  Also, Schwartz's explains on page 238
-   of his autobiography: ``Why did we choose the name distribution?
+   for more about distributions.  Here is Schwartz's explanation for his choice of the word {\it distribution:} \begin{quote}``Why did we choose the name distribution?
    Because, if $\mu$ is a measure, i.e., a particular kind of
    distribution, it can be considered as a distribution of electric
    charges in the universe.  Distributions give more general types of
@@ -2712,7 +2713,7 @@ Calculus relating a function to its derivative:
    different aspects: they are a generalization of the notion of
    function, and a generalization of the notion of distribution of
    electric charges in space. [...] Both these interpretations of
-   distributions are currently used.''}.
+   distributions are currently used.''\end{quote}}.
 
 
 
@@ -3150,12 +3151,11 @@ is the Fourier transform of the distribution
 $$
  D(t,C):=\sum_{s_k \le C}a_kd_{s_k}(t).
 $$
-Given the discreteness of the set of spectral values $s_k$ ($k=1,2,\dots$)  and
-given the efficacy of  the theory of distributions, we can perfectly well
+Given the discreteness of the set of spectral values $s_k$ ($k=1,2,\dots$)    we can 
 consider the infinite sum
 $$
  D(t):=\sum_{k=1}^{\infty}a_kd_{s_k}(t),
-$$ viewed as distribution, and playing the role of
+$$ viewed as distribution playing the role of
 the `inverse Fourier transform' of our trigonometric
 series $F(t)$.
 
@@ -4066,15 +4066,14 @@ $$
 where the infinite sum on the left and the infinite product on the
 right both converge (and are equal) if $s > 1$. He also evaluated these
 sums at even positive integers, where---surprise---the Bernoulli
-numbers come in again; and they and $\pi$ play a combined, fascinating
-role:
+numbers come in again; and they and $\pi$ combine to yield the values of the zeta-function at even positive integers:
 
 \begin{align*}
 \zeta(2) &= {\frac{1}{1^2}}+{\frac{1}{2^2}}+\cdots = \pi^2/6 \simeq 1.65\dots\\
 \zeta(4) &= {\frac{1}{1^4}}+{\frac{1}{2^4}}+\cdots = \pi^4/90\simeq 1.0823\dots
 \end{align*}
 and, in general,
-  $$\zeta(2n) = {\frac{1}{1^{2n}}}+{\frac{1}{2^{2n}}}+\cdots \ \ \ = \ \ \ (-1)^{n+1}B_{2n}\pi^{2n}\cdot {\frac{2^{2n-1}}{2n!}}.$$
+  $$\zeta(2n) = {\frac{1}{1^{2n}}}+{\frac{1}{2^{2n}}}+\cdots \ \ \ = \ \ \ (-1)^{n+1}B_{2n}\pi^{2n}\cdot {\frac{2^{2n-1}}{(2n)!}}.$$
 
   A side note to Euler's formulas comes from the fact (only known much
   later) that no power of $\pi$ is rational: do you see how to use
