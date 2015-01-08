@@ -609,21 +609,24 @@ def fig_prime_pi_aspect1(dir,ext):
         p = plot(lambda x: prime_pi(floor(x)), 1,n,
                  plot_points=10000,rgbcolor='red',
                  fillcolor=(.9,.9,.9),fill=True)
-        file = dir + '/prime_pi_%s_aspect1.%s'%(n,ext)
-        p.save(file, aspect_ratio=1)
+        file = dir + '/prime_pi_%s_aspect1.%s'%(n, ext)
+        p.save(file, aspect_ratio=1, fontsize=16)
 
 def fig_prime_pi(dir,ext):
     for n in [1000, 10000, 100000]:
         p = plot(lambda x: prime_pi(floor(x)), 1,n,
                  plot_points=10000,rgbcolor='red',
                  fillcolor=(.9,.9,.9),fill=True)
-        file = dir + '/prime_pi_%s.%s'%(n,ext)
-        p.save(file)
+        file = dir + '/prime_pi_%s.%s'%(n, ext)
+        p.save(file, fontsize=16)
 
 def fig_prime_pi_nofill(dir,ext):
-    for n in [25,38,100,1000,10000,100000]:
-        g = plot_prime_pi(n, rgbcolor='red', thickness=2)
+    for n in [25,38,100,1000,10000]:
+        g = plot_prime_pi(n, rgbcolor='red', thickness=2, fontsize=20)
         g.save(dir + '/PN_%s.%s'%(n,ext))
+    n = 100000
+    g = plot_prime_pi(n, rgbcolor='red', thickness=1, fontsize=16, ticks=[[20000,60000,100000],[2000,5000,8000]], tick_formatter=['latex','latex'])
+    g.save(dir + '/PN_%s.%s'%(n,ext))
 
 def plot_prime_pi(n = 25, **args):
     v = [(0,0)]
@@ -817,9 +820,9 @@ def fig_psi(dir,ext):
     for m in [9,38,100,200]:
         g = plot_psi(m, thickness=2)
         g.save(dir+'/psi_%s.%s'%(m,ext), aspect_ratio=1, gridlines=True,
-               fontsize=20)
-    g = plot(lambda x:x,1,1000,rgbcolor='red')+plot_psi(1000,alpha=0.8)
-    g.save(dir+'/psi_diag_%s.%s'%(1000,ext),aspect_ratio=1, fontsize=20)
+               fontsize=16, figsize=4)
+    g = plot(lambda x:x,1,1000,rgbcolor='red', thickness=.7) + plot_psi(1000,alpha=0.8, thickness=.7)
+    g.save(dir+'/psi_diag_%s.%s'%(1000,ext),aspect_ratio=1, gridlines=True, fontsize=12, figsize=4)
 
 def plot_Psi(xmax, **kwds):
     v = psi_data(xmax)
@@ -886,48 +889,48 @@ def fig_Phi(dir=0, ext=0):
 
 def fig_waves(dir,ext):
     g = plot(sin, -2.1*pi, 2.1*pi, thickness=2)
-    g.save(dir+'/sin.%s'%ext)
+    g.save(dir+'/sin.%s'%ext, fontsize=20)
 
     x = var('x')
     c = 5
     # See for why this is right http://www.phy.mtu.edu/~suits/notefreqs.html
     g = plot(sin(x), 0, c*pi) + plot(sin(329.0/261*x), 0, c*pi, color='red')
-    g.save(dir+'/sin-twofreq.%s'%ext)
+    g.save(dir+'/sin-twofreq.%s'%ext, fontsize=20)
 
     g = plot(sin(x) + sin(329.0/261*x), 0, c*pi)
-    g.save(dir+'/sin-twofreq-sum.%s'%ext)
+    g.save(dir+'/sin-twofreq-sum.%s'%ext, fontsize=20)
 
     c=5
     g = plot(sin(x), -2, c*pi) + plot(sin(x + 1.5), -2, c*pi, color='red')
     g += text("Phase", (-2.5,.5), fontsize=14, rgbcolor='black')
     g += arrow((-2.5,.4), (-1.5,0), width=1, rgbcolor='black')
     g += arrow((-2,.4), (0,0), width=1, rgbcolor='black')
-    g.save(dir+'/sin-twofreq-phase.%s'%ext)
+    g.save(dir+'/sin-twofreq-phase.%s'%ext, fontsize=20)
 
     g = plot(sin(x) + sin(329.0/261*x + 0.4), 0, c*pi)
-    g.save(dir+'/sin-twofreq-phase-sum.%s'%ext)
+    g.save(dir+'/sin-twofreq-phase-sum.%s'%ext, fontsize=20)
 
     f(x) = sin(x) + sin(329.0/261*x + 0.4)
     g = points([(i,f(i)) for i in [0,0.1,..,5*pi]])
-    g.save(dir+'/sin-twofreq-phase-sum-points.%s'%ext)
+    g.save(dir+'/sin-twofreq-phase-sum-points.%s'%ext, fontsize=20)
 
     g = points([(i,f(i)) for i in [0,0.1,..,5*pi]])
     g += plot(f, (0, 5*pi), rgbcolor='black')
-    g.save(dir+'/sin-twofreq-phase-sum-fill.%s'%ext)
+    g.save(dir+'/sin-twofreq-phase-sum-fill.%s'%ext, fontsize=20)
 
     f(x) = 0.7*sin(x) + sin(329.0/261*x + 0.4)
     g = plot(f, (0, 5*pi))
-    g.save(dir+'/sound-ce-general_sum.%s'%ext)
+    g.save(dir+'/sound-ce-general_sum.%s'%ext, fontsize=20)
 
     B = bar_chart([0,0,0,0.7, 0, 1])
     B += text("C", (3.2,-0.05), rgbcolor='black', fontsize=18)
     B += text("D", (4.2,-0.05), rgbcolor='black', fontsize=18)
     B += text("E", (5.2,-0.05), rgbcolor='black', fontsize=18)
-    B.save(dir+'/sound-ce-general_sum-blips.%s'%ext, axes=False, xmin=0)
+    B.save(dir+'/sound-ce-general_sum-blips.%s'%ext, axes=False, xmin=0, fontsize=20)
 
     f(x) = 0.7*sin(x) + sin(329.0/261*x + 0.4) +  0.5*sin(300.0/261*x + 0.7) + 0.3*sin(1.5*x + 0.2) + 1.1*sin(4*x+0.1)
     g = plot(f, (0, 5*pi))
-    g.save(dir + '/complicated-wave.%s'%ext)
+    g.save(dir + '/complicated-wave.%s'%ext, fontsize=20)
 
 ##############################################################
 # Sawtooth
@@ -935,10 +938,10 @@ def fig_waves(dir,ext):
 
 def fig_sawtooth(dir,ext):
     g = plot_sawtooth(3)
-    g.save(dir+'/sawtooth.%s'%ext, figsize=[10,2])
+    g.save(dir+'/sawtooth.%s'%ext, figsize=[8,3], fontsize=20)
 
     g = plot_sawtooth_spectrum(18)
-    g.save(dir+'/sawtooth-spectrum.%s'%ext, figsize=[8,3])
+    g.save(dir+'/sawtooth-spectrum.%s'%ext, figsize=[8,3], fontsize=20)
 
 def plot_sawtooth(xmax):
     v = []
@@ -950,6 +953,26 @@ def plot_sawtooth_spectrum(xmax):
     # the spectrum is a spike of height 1/k at k
     return sum([line([(k,0),(k,1/k)],thickness=3) for k in [1..xmax]])
 
+
+##############################################################
+# Pure tone
+##############################################################
+def fig_pure_tone(dir,ext):
+    t = var('t')
+    g = plot(2 * cos(1+t/2), -15, 15, thickness=2)
+    g.save(dir+'/pure_tone.%s'%ext, figsize=[8,3], fontsize=20)
+
+
+
+##############################################################
+# Mixed tone
+##############################################################
+def fig_mixed_tone(dir,ext):
+    t = var('t')
+    f = 5 *cos(-t - 2) + 2 * cos(t/2 + 1) + 3 *cos(2 *t + 4)
+    g = plot(f, -15, 15, thickness=2)
+    g.save(dir+'/mixed_tone3.%s'%ext, figsize=[8,3], fontsize=20)
+
 ##############################################################
 # Fourier Transforms: second visit
 ##############################################################
@@ -959,14 +982,14 @@ def fig_even_function(dir, ext):
     def g(z):
         return f(x=abs(z))
     h = plot(g,-4,4)
-    h.save(dir + '/even_function.%s'%ext, figsize=[9,3])
+    h.save(dir + '/even_function.%s'%ext, figsize=[9,3], fontsize=18)
 
 def fig_even_pi(dir, ext):
     g1 = prime_pi.plot(0,50, rgbcolor='red')
     g2 = prime_pi.plot(0,50, rgbcolor='red')
     g2[0].xdata = [-a for a in g2[0].xdata]
     g = g1 + g2
-    g.save(dir + '/even_pi.%s'%ext, figsize=[10,3],xmin=-49,xmax=49)
+    g.save(dir + '/even_pi.%s'%ext, figsize=[10,3],xmin=-49,xmax=49, fontsize=18)
 
 def fig_oo_integral(dir, ext):
     t = var('t')
@@ -983,8 +1006,8 @@ def fig_oo_integral(dir, ext):
     g.save(dir+'/oo_integral.%s'%ext, figsize=[9,3], xmin=-10,xmax=10)
 
 def fig_fourier_machine(dir, ext):
-    g  = text("$f(t)$", (-1/2,1/2), fontsize=20, rgbcolor='black')
-    g += text(r"$\hat{f}(\theta)$", (3/2,1/2), fontsize=20, rgbcolor='black')
+    g  = text("$f(t)$", (-1/2,1/2), fontsize=30, rgbcolor='black')
+    g += text(r"$\hat{f}(\theta)$", (3/2,1/2), fontsize=30, rgbcolor='black')
     g += line([(0,0),(0,1),(1,1),(1,0),(0,0)],rgbcolor='black',thickness=3)
     g += arrow((-1/2+1/9,1/2), (-1/16,1/2), rgbcolor='black')
     g += arrow((1+1/16,1/2), (1+1/2-1/9,1/2), rgbcolor='black')
@@ -1000,7 +1023,7 @@ def fig_fourier_machine(dir, ext):
 def fig_simple_staircase(dir,ext):
     v = [(-1,0), (0,1), (1,3), (2,3)]
     g = plot_step_function(v, thickness=3, vertical_lines=True)
-    g.save(dir+'/simple_staircase.%s'%ext)
+    g.save(dir+'/simple_staircase.%s'%ext, fontsize=20)
 
 
 ##############################################################
@@ -1009,13 +1032,13 @@ def fig_simple_staircase(dir,ext):
 
 def fig_mini_phihat_even(dir,ext):
     G = plot_symbolic_phihat(5, 1, 100, 10000, zeros=False)
-    G.save(dir + "/mini_phihat_even.%s"%ext, figsize=[9,3], ymin=0)
+    G.save(dir + "/mini_phihat_even.%s"%ext, figsize=[9,3], ymin=0, fontsize=18)
 
 def fig_phihat_even(dir,ext):
     for bound in [5, 20, 50, 500]:
         G = plot_symbolic_phihat(bound, 2, 100,
                             plot_points=10^5)
-        G.save(dir+'/phihat_even-%s.%s'%(bound,ext), figsize=[9,3], ymin=0)
+        G.save(dir+'/phihat_even-%s.%s'%(bound,ext), figsize=[9,3], ymin=0, fontsize=18)
 
 def fig_phihat_even_all(dir, ext):
     p = [plot_symbolic_phihat(n, 2,100) for n in [5,20,50,500]]
@@ -1053,7 +1076,7 @@ def plot_symbolic_phihat(bound, xmin, xmax, plot_points=1000, zeros=True):
 def fig_aplusone(dir,ext):
     a = var('a')
     g = plot(a+1, -5,8, thickness=3)
-    g.save(dir + '/graph_aplusone.%s'%ext, gridlines=True, frame=True)
+    g.save(dir + '/graph_aplusone.%s'%ext, gridlines=True, frame=True, fontsize=20)
 
 def fig_calculus(dir,ext):
     x = var('x')
@@ -1070,13 +1093,13 @@ def fig_calculus(dir,ext):
     g += point((4,fprime(x=4)),rgbcolor='black', pointsize=20)
     g += text("How to compute the slope?  This is Calculus.", (4.3, -0.5),
                   fontsize=fontsize, rgbcolor='black')
-    g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True)
+    g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True, fontsize=20)
 
 def fig_jump(dir,ext):
     # straight jump
     v = line( [(0,1), (3,1), (3,2), (6,2)], thickness=2)
     v.ymin(0)
-    v.save(dir + '/jump.%s'%ext)
+    v.save(dir + '/jump.%s'%ext, fontsize=20)
 
     # smooth approximation to a jump
     e = .7
@@ -1084,12 +1107,12 @@ def fig_jump(dir,ext):
     v.ymin(0)
     S = spline( [(3-e,1), (3-e+e/20, 1), (3,1.5), (3+e-e/20, 2), (3+e,2)] )
     v += plot(S, (3-e, 3+e), thickness=2)
-    v.save(dir + '/jump-smooth.%s'%ext)
+    v.save(dir + '/jump-smooth.%s'%ext, fontsize=20)
 
     # derivatives of smooth jumps
     for e in ['7', '2', '05', '01']:
         g = smoothderiv(float('.'+e))
-        g.save(dir + '/jump-smooth-deriv-%s.%s'%(e,ext))
+        g.save(dir + '/jump-smooth-deriv-%s.%s'%(e,ext), fontsize=20)
 
 
 def smoothderiv(e):
@@ -1116,7 +1139,7 @@ def fig_dirac(dir,ext):
     g += arrow((0,-1),(0,50), width=3)
     g += line([(-1.2,0), (1.25,0)], thickness=3)
     g.save(dir+'/dirac_delta.%s'%ext,
-           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)
+           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True, fontsize=20)
 
 def fig_two_delta(dir,ext):
     g = line([(0,0),(0,100)], rgbcolor='black')
@@ -1126,7 +1149,7 @@ def fig_two_delta(dir,ext):
     g += text("$-x$", (-1/2-1/20,-4), rgbcolor='black', fontsize=35, horizontal_alignment='center')
     g += text("$x$", (1/2,-4), rgbcolor='black', fontsize=35, horizontal_alignment='center')
     g.save(dir+'/two_delta.%s'%ext,
-           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True)
+           frame=False, xmin=-1, xmax=1, ymax=50, axes=False, gridlines=True, fontsize=20)
 
 ##############################################################
 # Cosine sums
@@ -1245,9 +1268,9 @@ def plot_pi_riemann_gauss(xmin, xmax, terms):
 def fig_pi_riemann_gauss(dir,ext):
     for m in [100,1000]:
         g = plot_pi_riemann_gauss(2,m, 100)
-        g.save(dir+'/pi_riemann_gauss_%s.%s'%(m,ext))
+        g.save(dir+'/pi_riemann_gauss_%s.%s'%(m,ext), fontsize=20)
     g = plot_pi_riemann_gauss(10000,11000, 100)
-    g.save(dir +'/pi_riemann_gauss_10000-11000.%s'%ext, axes=False, frame=True)
+    g.save(dir +'/pi_riemann_gauss_10000-11000.%s'%ext, axes=False, frame=True, fontsize=20)
 
 
 class RiemannPiApproximation:
@@ -1454,7 +1477,7 @@ def plot_theta_C(C, xmax):
 
 def fig_theta_C(dir, ext):
     def f(C,xmax):
-        plot_theta_C(C,xmax).save(dir+'/theta_C-%s.%s'%(C,ext))
+        plot_theta_C(C,xmax).save(dir+'/theta_C-%s.%s'%(C,ext), fontsize=20)
     f(3, 40)
     f(5, 40)
     f(10, 40)
@@ -1479,7 +1502,7 @@ def fig_theta_C_intro(dir, ext):
                                                (30, 33), (33,36), (36, 38), (38,42)]]
 
     save(plot(h, 5, 40) + plot(h.derivative(),5,40,color='grey') +  points(roots, color='red', pointsize=50, zorder=10),
-         "%s/theta_3_intro-2.%s"%(dir, ext))
+         "%s/theta_3_intro-2.%s"%(dir, ext), fontsize=18)
 
 
 ##############################################################
@@ -1518,9 +1541,9 @@ def fig_zero_spacing(dir, ext):
         w = [rmod(a,per) for a in v]
         return stats.TimeSeries(w).plot_histogram()
 
-    f(2*pi).save('%s/zero-spacing-mod2pi.%s'%(dir, ext))
+    f(2*pi).save('%s/zero-spacing-mod2pi.%s'%(dir, ext), fontsize=24)
 
-    f(1).save('%s/zero-spacing-mod1.%s'%(dir, ext))
+    f(1).save('%s/zero-spacing-mod1.%s'%(dir, ext), fontsize=24)
 
 
 ##############################################################
@@ -1540,10 +1563,10 @@ def fig_staircase_riemann_spectrum(dir, ext):
             T = var('T')
             p += plot(T/(2*pi) * log(T/(2*pi*e)), 1, n, thickness=.5)
         return p
-    g(30, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext))
-    g(50, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext))
-    g(100, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-100.%s'%(dir, ext))
-    g(1000, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext))
+    g(30, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-30.%s'%(dir, ext), fontsize=18)
+    g(50, curve=False, thickness=3).save('%s/staircase-riemann-spectrum-50.%s'%(dir, ext), fontsize=18)
+    g(100, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-100.%s'%(dir, ext), fontsize=18)
+    g(1000, curve=True, thickness=3).save('%s/staircase-riemann-spectrum-1000.%s'%(dir, ext), fontsize=18)
 
 
 ##############################################################
@@ -1553,7 +1576,7 @@ def fig_staircase_riemann_spectrum(dir, ext):
 def fig_riemann_spectrum_gaps(dir, ext):
     t = stats.TimeSeries(zeta_zeros())
     g = t.diffs().plot_histogram(bins=500, normalize=False)
-    g.save("%s/riemann_spectrum_gaps.%s"%(dir, ext), xmax=2.3, frame=True, gridlines=True, axes=False)
+    g.save("%s/riemann_spectrum_gaps.%s"%(dir, ext), xmax=2.3, frame=True, gridlines=True, axes=False, fontsize=18)
 
 
 

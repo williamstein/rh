@@ -1,5 +1,60 @@
-︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
+︠ad5c219e-2930-4a4a-988e-911196d0b32fs︠
 %load code.sage
+︡ddab07af-2542-4650-a2ce-fe04b11752fd︡
+︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cbs︠
+%load code.sage
+draw('psi')
+︡11aa8a4b-b57a-4476-a81c-8bdc1e278ffe︡{"stdout":"Drawing psi... "}︡{"stdout":" "}︡{"stdout":" (time = 1.65290188789 seconds)\n"}︡
+︠13dbbb3d-6df7-4483-88c7-3c99bf046584s︠
+%load code.sage
+draw('waves')
+︡329bd0dc-4a60-4c2f-9e08-c76e3ff12cc5︡{"stdout":"Drawing waves... "}︡{"stdout":" "}︡{"stdout":" (time = 4.01206207275 seconds)\n"}︡
+︠8ff70ebd-7f3d-455a-baf8-09b76c133df9s︠
+%load code.sage
+draw('sawtooth')
+︡b29ba323-b13d-4bed-9a87-c11c552428f7︡{"stdout":"Drawing sawtooth... "}︡{"stdout":" "}︡{"stdout":" (time = 0.904992103577 seconds)\n"}︡
+︠5db05cb1-39ed-4065-84cc-814cb8c7e460s︠
+%load code.sage
+draw('pure_tone')
+draw('mixed_tone')
+︡581b01fd-95ff-435e-a66f-e17631bbab7b︡{"stdout":"Drawing pure_tone... "}︡{"stdout":" "}︡{"stdout":" (time = 0.395801067352 seconds)\n"}︡{"stdout":"Drawing mixed_tone... "}︡{"stdout":" "}︡{"stdout":" (time = 0.772159099579 seconds)\n"}︡
+︠919342ad-b2b8-484c-9a14-a0be4e68db05s︠
+%load code.sage
+draw('prime_pi')
+draw('prime_pi_aspect1')
+︡04880d6c-545a-4b60-99ae-bb102d5023ae︡{"stdout":"Drawing prime_pi... "}︡{"stdout":" "}︡{"stdout":" (time = 13.0921411514 seconds)\n"}︡{"stdout":"Drawing prime_pi_aspect1... "}︡{"stdout":" "}︡{"stdout":" (time = 4.44406914711 seconds)\n"}︡
+︠08dbc5ca-8ed9-4dfd-8510-8cc591c91975s︠
+%load code.sage
+for a in 'aplusone calculus jump dirac two_delta'.split():
+    draw(a)
+︡c52be874-8dfd-4634-9faa-b26d8b34cd19︡{"stdout":"Drawing aplusone... "}︡{"stdout":" "}︡{"stdout":" (time = 0.605562925339 seconds)\nDrawing calculus... "}︡{"stdout":" "}︡{"stdout":" (time = 0.686944007874 seconds)\nDrawing jump... "}︡{"stdout":" "}︡{"stdout":" (time = 2.55016493797 seconds)\nDrawing dirac... "}︡{"stdout":"  (time = 0.0844738483429 seconds)\nDrawing two_delta... "}︡{"stdout":" "}︡{"stdout":" (time = 0.150384902954 seconds)\n"}︡
+︠1145fb3e-e974-48c5-bd4c-6f1c0f04ff9fs︠
+%load code.sage
+draw('simple_staircase')
+︡0d0def1a-f90b-4ac4-a2af-2cca50a4da5a︡{"stdout":"Drawing simple_staircase... "}︡{"stdout":" "}︡{"stdout":" (time = 0.414288043976 seconds)\n"}︡
+︠e2f85837-a8e9-423d-8fbd-7022e3720286s︠
+%load code.sage
+draw('even_function')
+draw('even_pi')
+︡7e463c76-1a12-41d7-8db1-bce6848b9cbf︡{"stdout":"Drawing even_function... "}︡{"stdout":" "}︡{"stdout":" (time = 0.670686006546 seconds)\n"}︡{"stdout":"Drawing even_pi... "}︡{"stdout":" "}︡{"stdout":" (time = 0.580007076263 seconds)\n"}︡
+︠017680ba-44b9-4241-ba43-a6fdc71eae18sr︠
+%load code.sage
+draw('mini_phihat_even'),draw('phihat_even')
+︡33b8bea2-7ee1-46b1-a143-8d72345d5a46︡{"stdout":"Drawing mini_phihat_even... "}︡{"stdout":" "}︡{"stdout":" (time = 49.5483169556 seconds)\nDrawing phihat_even... "}︡
+︠eeac45d3-89b8-40f1-9de5-9fa62b361014sr︠
+%load code.sage
+draw('theta_C_intro')
+︡41be3fda-ea80-498f-abce-685ef46ad1b5︡
+︠6381d9e5-99de-4a7d-87f9-4eaba8a45b8csr︠
+%load code.sage
+draw('zero_spacing')
+︡55923137-b1f8-4364-a815-07b5dcc30f69︡
+︠a3e4cb47-78e9-414e-bcdd-5d8729c821f2s︠
+plot?
+︠1aee8e1e-a26f-45e2-a0e8-241a153aa917︠
+
+︠c81b67a4-6391-4bd3-a743-8c4ba24cd6ab︠
+
 draw('Psiprime')
 ︡ac42395b-8377-4f29-813b-30d626d86e16︡{"stdout":"Drawing Psiprime... "}︡{"stdout":" "}︡{"stdout":" (time = 0.26216506958 seconds)\n"}︡
 ︠81c1fcff-67ca-419b-8a63-77c91960d11c︠

@@ -85,6 +85,20 @@ sensitive=true}
    \caption{#5}%
     \end{figure}}
 
+\newcommand{\illtwoh}[4]{%
+   \begin{figure}[H]\centering%
+   \includegraphics[height=#3\textheight]{illustrations/#1}$\qquad$\includegraphics[height=#3\textheight]{illustrations/#2}%
+   \caption{#4}%
+    \end{figure}}
+
+\newcommand{\illthreeh}[5]{%
+   \begin{figure}[H]%
+\centering%
+   \includegraphics[height=#4\textheight]{illustrations/#1}$\qquad$\includegraphics[height=#4\textheight]{illustrations/#2}$\qquad$\includegraphics[height=#4\textheight]{illustrations/#3}%
+   \caption{#5}%
+    \end{figure}}
+
+
 %%%% Theoremstyles
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2067,7 +2081,7 @@ different ranges.
 \includegraphics[width=.4\textwidth]{illustrations/PN_1000}
 \includegraphics[width=.4\textwidth]{illustrations/PN_10000}\\
 
-\includegraphics[width=.6\textwidth]{illustrations/PN_100000}
+\includegraphics[width=.8\textwidth]{illustrations/PN_100000}
 
 
 \caption{The Staircase of Primes\label{fig:staircases}}
@@ -2137,9 +2151,9 @@ but is constructed according to the following architectural plan.
   of {\em information}.
 
    Although we are not quite done with our architectural work, Figure~\ref{fig:psi} shows
-   what our staircase looks like, so far.
+   what our new staircase looks like, so far.
 
-\illtwo{psi_9}{psi_100}{.45}{The newly constructed staircase that counts prime powers\label{fig:psi}}
+\illtwoh{psi_9}{psi_100}{.27}{The newly constructed staircase that counts tprime powers\label{fig:psi}}
 
 
   \end{itemize}
@@ -2168,7 +2182,7 @@ close to the function $f(X)=X$.
    \end{minipage}}
 \end{center}
 
-\ill{psi_diag_1000}{0.5}{The newly constructed staircase is close to the 45 degree line.}
+\ill{psi_diag_1000}{0.75}{The newly constructed staircase is close to the 45 degree line.}
 
 Do not worry if you do not understand why our first and second
 formulations of Riemann's Hypothesis are equivalent. Our aim, in
@@ -2202,7 +2216,7 @@ and measured air pressure due to this sound at that position, the
 peaks correspond to the times when the varying air pressure is maximal
 or minimal and the zeroes to the times when it is normal pressure.
 
-\ill{sin}{.6}{Graph of a Sine Wave\label{fig:sine}}
+\ill{sin}{.7}{Graph of a Sine Wave\label{fig:sine}}
 
 You'll notice that there are two features to the graph in Figure~\ref{fig:sine}.
 
@@ -2298,7 +2312,7 @@ So our CE chord would have the spectral picture in
 Figure~\ref{fig:ce-spectral}.
 
 
-\illtwo{sound-ce-general_sum}{sound-ce-general_sum-blips}{.4}
+\illtwo{sound-ce-general_sum}{sound-ce-general_sum-blips}{.45}
        {Spectral Picture of a CE chord\label{fig:ce-spectral}}
 
 
@@ -2335,12 +2349,12 @@ pure tones.
 The {\em sawtooth} wave in Figure~\ref{fig:sawtooth} has a spectral picture, its Fourier transform, given in Figure~\ref{fig:sawtooth-spectrum}:
 
    \ill{sawtooth}{.7}{Graph of Sawtooth Wave\label{fig:sawtooth}}
-   \ill{sawtooth-spectrum}{.6}{The Spectrum of the Sawtooth Wave Has a Spike of Height $1/k$ at
+   \ill{sawtooth-spectrum}{.7}{The Spectrum of the Sawtooth Wave Has a Spike of Height $1/k$ at
 each integer $k$\label{fig:sawtooth-spectrum}}
 
 
 
- \ill{complicated-wave}{.6}{A Complicated Sound Wave\label{fig:complicated-wave}}
+ \ill{complicated-wave}{.7}{A Complicated Sound Wave\label{fig:complicated-wave}}
 
 Suppose you have a complicated sound wave, say as in
 Figure~\ref{fig:complicated-wave}, and you want to record it.
@@ -2929,7 +2943,7 @@ distributions---of the function in Figure~\ref{fig:simple_staircase}.
 {\bf Answer} $\delta_0 + 2 \delta_1$.
 
 
-\ill{simple_staircase}{.5}{The staircase function that is $0$ for $t
+\ill{simple_staircase}{.6}{The staircase function that is $0$ for $t
   \le 0$, $1$ for $0 <t \le 1$ and $3$ for $1< t \le 2$ has derivative
   $\delta_0 + 2\delta_1$.\label{fig:simple_staircase}}
 
@@ -3360,7 +3374,7 @@ example, the equation
  pattern. Our initial strategy was to focus attention on the {\it
    staircase of primes} which gives us a vivid portrait, if you wish,
  of the order of appearance of primes among all numbers.
-\ill{PN_38}{.45}{Prime Numbers up to $37$}
+\ill{PN_38}{.5}{Prime Numbers up to $37$}
 
  As we have already hinted in the previous sections, however, there
  are various ways open to us to tinker with---and significantly
