@@ -206,6 +206,14 @@ What is Riemann's Hypothesis?\\
 
 \newcommand{\todo}[1]{\par\vspace{1em}{\small---------\\{{\bf To be done:} #1}\\-----------}\par\vspace{1em}}
 
+
+% More space between footnotes -- see
+% http://www.latex-community.org/forum/viewtopic.php?f=44&t=22437
+\setlength{\footnotesep}{1.2\baselineskip}
+
+
+
+
 \begin{document}
 
 \maketitle
@@ -1228,8 +1236,7 @@ $10^{8}$ & 440312 & 440257 & 768752 & 334180 & 878 & 0\\\hline
 
 \ill{primegapdist}{1}{Frequency histogram showing the distribution of
   prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
-  the most popular gap in this data.  The vertical axis labels
-  such as ``6e4'' mean $6\cdot 10^4=60{,}000$.
+  the most popular gap in this data.
 \label{fig:primegapdist}}
 
 
@@ -1323,26 +1330,26 @@ m. even & 1 & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hli
 
  \begin{figure}[H]
 \centering
-\includegraphics[width=.4\textwidth]{illustrations/liouville-17}
-\includegraphics[width=.4\textwidth]{illustrations/liouville-100}\\
-\includegraphics[width=.4\textwidth]{illustrations/liouville-1000}
-\includegraphics[width=.4\textwidth]{illustrations/liouville-10000}\\
-\includegraphics[width=.4\textwidth]{illustrations/liouville-100000}
-\includegraphics[width=.4\textwidth]{illustrations/liouville-1000000}\\
+\includegraphics[width=.45\textwidth]{illustrations/liouville-17}
+\includegraphics[width=.45\textwidth]{illustrations/liouville-100}\\
+\includegraphics[width=.45\textwidth]{illustrations/liouville-1000}
+\includegraphics[width=.45\textwidth]{illustrations/liouville-10000}\\
+\includegraphics[width=.45\textwidth]{illustrations/liouville-100000}
+\includegraphics[width=.45\textwidth]{illustrations/liouville-1000000}\\
 \caption{Racing Multiplicatively Even and Odd Numbers.\label{fig:liouville}}
 \end{figure}
 
 A {\em negative} response to this question---i.e., a proof that any
 plot as drawn in Figure~\ref{fig:liouville} never crosses
 the $X$-axis---would imply the Riemann Hypothesis!  In contrast to the list of
-previous questions, the answer to this question is known (see \footnote{For more
+previous questions, the answer to this question is known\footnote{For more
   details, see P.~Borwein, {\em Sign changes in sums of the Liouville
     Function} and the nice short paper of Norbert Wiener {\em Notes on
     Polya's and Turan's hypothesis concerning Liouville's factor}
   (page 765 of volume II of Wiener's Collected Works); see also:
   G. Polya {\em Vershiedene Bemerkungen zur Zahlentheorie}
   Jahresbericht de Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
-  31--40.}): alas, there is such an $X$.  In 1960, Lehman showed that
+  31--40.}: alas, there is such an $X$.  In 1960, Lehman showed that
 for $X=906{,}400{,}000$ there are $708$ more multiplicatively even numbers
 up to $X$ than multiplicatively odd numbers (Tanaka found in 1980 that
 the smallest $X$ such that there are more multiplicative even than odd
@@ -1411,8 +1418,8 @@ even less.  And so it goes: with each move in our
 sieving process we are winnowing the field more extensively, reducing
 the chances that the later numbers are prime.
 
-\ill{sieve_2_100}{.8}{Sieving by removing multiples of $2$ up to $100$\label{fig:sieve_2_100}}
-\ill{sieve1000}{.8}{Sieving for primes up to $1000$}
+\ill{sieve_2_100}{.9}{Sieving by removing multiples of $2$ up to $100$\label{fig:sieve_2_100}}
+\ill{sieve1000}{.9}{Sieving for primes up to $1000$}
 
 The red curve in these figures actually counts the primes: it is the
 beguilingly irregular {\em staircase of primes.}  Its height above any
@@ -1467,8 +1474,7 @@ such a smooth and elegant shape.
 \ill{prime_pi_1000}{.8}{Staircases of primes up to 1,000\label{fig:staircases2}}
 \ill{prime_pi_10000}{.8}{Staircases of primes up to  10{,}000\label{fig:staircases2b}}
 
-\ill{prime_pi_100000}{.8}{Primes up to 100{,}000\label{fig:pn100000}.
-Note that the axis label ``6e4'' means $6 \times 10^4$.}
+\ill{prime_pi_100000}{.8}{Primes up to 100{,}000\label{fig:pn100000}.}
 
 
 
@@ -1544,7 +1550,7 @@ ago when Carl Friedrich Gauss defined a certain beautiful curve that,
 experimentally, seemed to be an exceptionally good fit for the
 staircase of primes.
 
-\ill{pi_Li}{.7}{Plot of $\pi(X)$ and Gauss's smooth curve $G(X)$}
+\ill{pi_Li}{.8}{Plot of $\pi(X)$ and Gauss's smooth curve $G(X)$}
 
 Let us denote Gauss's curve $G(X)$; it has an
 elegant simple formula comprehensible to anyone who has had a tiny bit

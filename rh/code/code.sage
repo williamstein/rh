@@ -369,7 +369,7 @@ def similar_rates():
 
 def fig_log(dir, ext):
     g = plot(log, 1/3, 100, thickness=2)
-    g.save(dir + '/log.%s'%ext, figsize=[8,3], gridlines=True)
+    g.save(dir + '/log.%s'%ext, figsize=[8,3], gridlines=True, fontsize=18)
 
 def fig_proportion_primes(dir,ext):
     for bound in [100,1000,10000]:
@@ -465,8 +465,8 @@ def prime_gap_distribution(maxp):
 
 def fig_primegapdist(dir,ext):
     v = prime_gap_distribution(10^7)[:50]
-    bar_chart(v).save(dir+"/primegapdist.%s"%ext, figsize=[9,3])
-
+    b = bar_chart(v)
+    b.save(dir+"/primegapdist.%s"%ext, fontsize=18, figsize=[9,3], ticks=[[2,4,6,8]+[10,20,..,40]+[48],[20000,60000,90000]], tick_formatter=['latex','latex'])
 
 """
 # The table in the book...
@@ -513,14 +513,14 @@ def mult_even_odd_count(bound):
     return v
 
 def fig_multpar(dir,ext):
-    for n in [10^k for k in reversed([1,2,3,4,5,6])]:
+    for n in [10^k for k in reversed([1,2,3,4,5,6])] + [17]:
         file = dir + '/liouville-%s.%s'%(n,ext)
         if n >= 1000:
             time_series = True
         else:
             time_series = False
         g = race_mult_parity(n, time_series=time_series)
-        g.save(file, frame=True)
+        g.save(file, frame=True, fontsize=20)
 
 def race_mult_parity(bound, time_series=False, **kwds):
     """
@@ -618,7 +618,10 @@ def fig_prime_pi(dir,ext):
                  plot_points=10000,rgbcolor='red',
                  fillcolor=(.9,.9,.9),fill=True)
         file = dir + '/prime_pi_%s.%s'%(n, ext)
-        p.save(file, fontsize=16)
+        if n <100000:
+            p.save(file, fontsize=16)
+        else:
+            p.save(file, fontsize=16, ticks=[[n/2, n], None], tick_formatter=['latex', None])
 
 def fig_prime_pi_nofill(dir,ext):
     for n in [25,38,100,1000,10000]:
@@ -642,12 +645,12 @@ def plot_prime_pi(n = 25, **args):
 ##############################################################
 
 def fig_sieves(dir,ext):
-    plot_three_sieves(100, shade=False).save(dir + '/sieve_2_100.%s'%ext, figsize=[9,3])
-    plot_all_sieves(1000, shade=True).save(dir + '/sieve1000.%s'%ext,figsize=[9,3])
+    plot_three_sieves(100, shade=False).save(dir + '/sieve_2_100.%s'%ext, figsize=[9,3], fontsize=18)
+    plot_all_sieves(1000, shade=True).save(dir + '/sieve1000.%s'%ext,figsize=[9,3], fontsize=18)
 
     m=100
     for z in [3,7]:
-        save(plot_multiple_sieves(m,k=[z]) ,dir+'/sieves%s_100.%s'%(z,ext), xmax=m, figsize=[9,3])
+        save(plot_multiple_sieves(m,k=[z]) ,dir+'/sieves%s_100.%s'%(z,ext), xmax=m, figsize=[9,3], fontsize=18)
 
 def plot_sieve(n, x, poly={}, lin={}, label=True, shade=True):
     """
@@ -690,7 +693,7 @@ def plot_sieve(n, x, poly={}, lin={}, label=True, shade=True):
     if shade:
         F += polygon(w, **poly)
     if label:
-        F += text(t, pos, horizontal_alignment="right", rgbcolor='black')
+        F += text(t, pos, horizontal_alignment="right", rgbcolor='black', fontsize=18)
     F.set_aspect_ratio('automatic')
     return F
 
@@ -1435,11 +1438,11 @@ def random_walks(path, ext, B, n=1000, seed=1):
     path = path + '-%s'%B
     v = [random_walk(n) for i in range(B)]
     g = sum([z.plot(thickness=.3) for z in v])
-    g.save(path + '.' + ext)
+    g.save(path + '.' + ext, fontsize=18)
     s = sum([z.abs().vector()/B for z in v])
     avg = stats.TimeSeries(list(s))
     h = avg.plot() + plot(sqrt(2/pi)*sqrt(x), (0,g.xmax()), color='red', thickness=2)
-    h.save(path + '-mean.' + ext)
+    h.save(path + '-mean.' + ext, fontsize=18)
 
 def fig_random_walks(dir, ext):
     random_walks(dir + '/random_walks', ext, 3)
@@ -1619,7 +1622,7 @@ def fig_li_minus_pi(dir, ext):
     li_minus_pi = stats.TimeSeries([0,0] + [li(i,offset=True)-v[i] for i in range(2,B)])
     v2 = running_average(li_minus_pi)
     g = li_minus_pi.plot(plot_points=B) + v2.plot(color='red', plot_points=B) + plot(sqrt(2/pi)*sqrt(x/log(x)), (2, B), color='purple')
-    g.save('%s/li-minus-pi-250000.%s'%(dir, ext))
+    g.save('%s/li-minus-pi-250000.%s'%(dir, ext), fontsize=18, ticks=[[10000, 100000, 250000], None], tick_formatter=['latex', None])
 
 
 
