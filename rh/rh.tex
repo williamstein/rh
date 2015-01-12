@@ -325,7 +325,7 @@ to find that key.
 \end{minipage}\end{minipage}}
       \end{center}
 
-      % I got this from http://www.math.harvard.edu/history/bott/
+% I got this from http://www.math.harvard.edu/history/bott/
 % Barry says there  is a good picture in the book
 % ''the Index Theorem'' that Yau published.
 \ill{raoulbott}{0.35}{Raoul Bott (1923--2005)\label{fig:bott}}
@@ -363,7 +363,13 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 \end{quote}
 
 
-Our exposition is meant to explain the--often quite intuitive--motivations that have led to the development the fundamental ideas of the subject, as buttressed by numerical experiments, often displayed as graphs. As a result, our book is profusely illustrated, containing over 125 figures,
+ Mathematics is flourishing.  Each year sees new exciting initiatives that extend and sharpen the applications of our subject,   new directions for  deep  exploration---and finer understanding---of  classical as well as very contemporary mathematical domains. We are aided in such explorations by the development of more and more powerful tools. We  see resolutions of centrally important questions.  And through all this, we are treated to surprises, dramatic changes of viewpoint; in short: marvels.
+
+ And what an array of wonderful techniques  allow mathematicians to do their work:  framing {\it definitions;} producing {\it constructions;  }formulating {\it analogies relating disparate concepts, and disparate  mathematical fields}; posing {\it  conjectures,} that cleanly shape a possible way forward; and, the keystone: providing unassailable {\it proofs} of what is asserted,  the idea of doing such a thing being itself one of the great glories of mathematics.
+
+    Number Theory has its share of this bounty. Along with all these modes of theoretical work,  number theory also offers the pure joy of numerical experimentation, which---when it is going well---allows you to witness the intricacy of numbers and  profound inter-relations that cry out for explanation. It is striking how little you actually have to know, to appreciate the  revelations offered by numerical exploration.
+
+    Our book is meant to be an introduction to these pleasures. We take an experimental view of the fundamental ideas of the subject  buttressed by numerical computations, often displayed as graphs. As a result, our book is profusely illustrated, containing over 125 figures,
 diagrams, and pictures that accompany the text \footnote{We created all of the
   figures were created using the free Sage mathematical
   software \bibnote{The computations for this book were done using
@@ -375,7 +381,7 @@ that can be used to recreate every diagram in this book.
 More adventurous readers can try
 to experiment with the parameters for
 the ranges of data illustrated, so as to get an even more
-vivid sense of how the numbers ``behave''} in hopes that readers themselves become inspired to make some numerical experimentation. This will surely become easier for people to do  as mathematical software
+vivid sense of how the numbers ``behave.''} in hopes that readers themselves become inspired to make some numerical experimentation. This will surely become easier for people to do  as mathematical software
 advances\footnote{See \url{http://wstein.org/rh} for information about
 how to reproduce all plots in this book.}.
 
@@ -392,7 +398,7 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
 
       The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.
 
-      We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers. We therefore accumulated much important feedback, corrections, and requests from readers. We thank them infinitely.
+      We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A--- about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers. We thank them infinitely.
 %In particular, Dennis Stein suggested the book title,
 %Andrew Solomon carefully read a nearly final draft providing
 %numerous corrections,
@@ -3197,11 +3203,9 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
  In the chapters that follow we will be exhibiting graphs of trigonometric functions, cutoff at various values of $C$, that (in our opinion) strongly hint that as $C$ goes to infinity, one gets convergence to certain (discrete) sequences of very interesting {\it spike values}. To be sure, no finite computation, exhibited by a graph, can {\it prove} that this is in fact the case. But on the one hand, the vividness of those spikes is in itself worth experiencing, and on the other hand, given RH, there is justification that the {\it strong hints} are not misleading; for some theoretical background see the endnotes.
 
 
-\part{The Riemann Spectrum of the Prime Numbers\label{part3}}
+\chapter{ A sneak preview of Part III}\label{snpr}
 
-\chapter{ A sneak preview}\label{snpr}
-
-To get a sense of what we're in for, let us consider two infinite trigonometric sums---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
+We will be considering two infinite trigonometric sums---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
 
 \begin{enumerate}\item The first infinite trigonometric sum is a sum of pure cosine waves with frequencies given by {\it logarithms of powers of primes} and with amplitudes that will be described below. The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
 
@@ -3342,12 +3346,13 @@ This passage---thanks to the Riemann Hypothesis--- from spectrum to
 prime powers and back again via consideration of the ``high peaks'' in
 the graphs of the appropriate trigonometric sums provides a kind of
 visual duality emphasizing, for us, that the information inherent in
-the wild spacing of prime powers, is somehow ``packaged'' in the series
-of mysterious numbers we have called the Riemann Spectrum, and reciprocally,
+the wild spacing of prime powers, is somehow ``packaged'' in the Riemann Spectrum, and reciprocally,
 the information given in that series of mysterious numbers is
 obtainable from the sequence of prime powers.
 
 
+
+\part{The Riemann Spectrum of the Prime Numbers\label{part3}}
 
 
 \chapter{On losing no information\label{sec:loseno}}
@@ -3561,7 +3566,7 @@ As we shall see in subsequent figures of this chapter, there seems to be an even
 
 
 
-We give a further sample of graphs for a few higher cutoff values $C$ (introducing a few more primes into the game!). Watch how the `high-peak' $\theta$-values of ${\hat \Phi}_{\leq C}(\theta)$ seem to converge to the values of  $\theta$ at the end of the red vertical lines.
+We give a further sample of graphs for a few higher cutoff values $C$ (introducing a few more primes into the game!).
 
  Plot of
 Figures~\ref{fig:theta_C-5-10}--\ref{fig:theta_C-200-500}
@@ -3572,6 +3577,10 @@ which we've indicated with red vertical arrows.
 
 
  \illtwo{theta_C-5}{theta_C-10}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=5$ and $10$\label{fig:theta_C-5-10}}
+
+ Given the numerical-experimental approach we have been adopting in this book, it is  a particularly fortunate (and to us: surprising) thing that the convergence to those vertical red lines can already be illustrated using {\it such small} cutoff values $C$.  One might almost imagine making hand computations that exhibit this phenomenon! Following in this spirit, see David Mumford's blog post {\url{http://www.dam.brown.edu/people/mumford/blog/2014/RiemannZeta.html}}.
+
+  To continue:
 
 \illtwo{theta_C-20}{theta_C-100}{0.45}{Plot of ${\hat \Phi}_{\leq C}(\theta)$ for $C=10$ and $100$\label{fig:theta_C-10-100}}
 
@@ -3684,8 +3693,8 @@ briefly in Part \ref{part4}, Chapter~\ref{ch:envision} below.
 
 \chapter{ How many $\theta_i$'s are there?}
 
-  The Riemann spectrum, $\theta_1, \theta_2, \theta_3, \dots$, an infinite discrete collection of
-positive real numbers, constitute a fascinating structure about which we have only fragmentary knowledge.
+  The Riemann spectrum, $\theta_1, \theta_2, \theta_3, \dots$ clearly deserves to be well understood!  What do we know about this sequence of positive real numbers?
+
 Just as we did with the prime numbers before, we can count
 these numbers $\theta_1=14.1347\ldots$,
 $\theta_2=21.0220\ldots$, etc., and form the staircase
@@ -4169,7 +4178,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
  Those ubiquitous Bernoulli numbers reappear yet again as
  values of this {\it extended} zeta function at negative integers:
 
-  $$\zeta(-n) = -B_{n+1}/n+1$$
+  $$\zeta(-n) = -B_{n+1}/(n+1)$$
 
   so since the Bernoulli numbers indexed by odd integers $>1$ all
   vanish, the extended zeta function $\zeta(s)$ actually vanishes at
