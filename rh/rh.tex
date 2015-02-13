@@ -3210,7 +3210,7 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
 
 
 
-\chapter{ Illustrating the type of phenomena that will be studied in Part~\ref{part3}}\label{snpr}
+\chapter{A sneak preview of Part~\ref{part3}}\label{snpr}
 
    In this chapter, as a striking illustration of the type of phenomena that will be studied in Part~\ref{part3}, we will consider two infinite trigonometric sums ---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
 
@@ -3223,10 +3223,10 @@ $$ the summation being over all powers $p^n$ of all prime numbers $p$.
 
 The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
 
-\item  In contrast, the second infinite trigonometric sum $G(t)$ is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$.
+\item  In contrast, the second infinite trigonometric sum $H(t)$ is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$.
 
 $$
-  G(t):=1+\sum_{\theta}\cos(\theta t).
+  H(s):=1+\sum_{\theta}\cos(\theta \log(s)).
  $$ These graphs will have ``higher and higher peaks" concentrated more and more accurately at {\bf the logarithms of powers of primes} indicated in our pictures below (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
 
                \end{enumerate}
@@ -3348,14 +3348,18 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
  $$
  where the summation is over the spectrum, $\theta=\theta_1, \theta_2,
  \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this
- infinite trigonometric sum,
+ infinite trigonometric sum (on a logarithmic scale),
  $$
- G{\le C}(t):== 1+\sum_{\theta\ \leq C}\cos(\theta t)
+ H_{\le C}(s):= 1+\sum_{i \leq C}\cos(\log(s) \theta_i)
  $$
- and plot their graphs, over various ranges.
+ and we plot one of their graphs.
 
- \ill{phihat_even_all}{1}{Plots of $ G{\le C}(t)$ for
- $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phihat}}
+ \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000}
+   \cos(\log(s)\theta_i)$, where $\theta_1 \sim 14.13, \ldots$ are the
+   first $1000$ contributions to the spectrum.  The red dots
+   are at the prime powers $p^n$, whose size is proportional to
+   $\log(p)$.}
+
 \end{enumerate}
 
 This passage---thanks to the Riemann Hypothesis--- from spectrum to
@@ -3661,7 +3665,7 @@ This has the effect of forcing the oscillatory term to be bounded as $C$ tends t
  This implies that for any fixed $\theta$,
 \begin{itemize}
  \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$  is bounded independent of $C$  if  $\theta$ is not the imaginary part of a nontrivial zero of $\zeta(s)$  and
- \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$ grows as $m\cdot \log C +O(1)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$,
+ \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$ grows as ${\frac{m}{2}}\cdot (\log C)^2 +O(\log C)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$,
  % WARNING: above item is wrong; grows as should be different: ``we replace "m log(C)+O(1)" by "m/2  log(C)^2 + m gamma log(C)"?''
 \end{itemize}
 giving a theoretical confirmation of the striking feature of the
