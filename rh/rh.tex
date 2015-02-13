@@ -3209,13 +3209,25 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
  In the chapters that follow we will be exhibiting graphs of trigonometric functions, cutoff at various values of $C$, that (in our opinion) strongly hint that as $C$ goes to infinity, one gets convergence to certain (discrete) sequences of very interesting {\it spike values}. To be sure, no finite computation, exhibited by a graph, can {\it prove} that this is in fact the case. But on the one hand, the vividness of those spikes is in itself worth experiencing, and on the other hand, given RH, there is justification that the {\it strong hints} are not misleading; for some theoretical background see the endnotes.
 
 
-\chapter{ A sneak preview of Part III}\label{snpr}
 
-We will be considering two infinite trigonometric sums---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
+\chapter{ Illustrating the type of phenomena that will be studied in Part~\ref{part3}}\label{snpr}
 
-\begin{enumerate}\item The first infinite trigonometric sum is a sum of pure cosine waves with frequencies given by {\it logarithms of powers of primes} and with amplitudes that will be described below. The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
+   In this chapter, as a striking illustration of the type of phenomena that will be studied in Part~\ref{part3}, we will consider two infinite trigonometric sums ---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
 
-\item  In contrast, the second infinite trigonometric sum is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$. These graphs will have ``higher and higher peaks" concentrated more and more accurately at {\bf the logarithms of powers of primes} indicated in our pictures below (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
+\begin{enumerate}\item The first infinite trigonometric sum $F(t)$  is a sum{\footnote{Here we
+    make use of the Greek symbol $\sum$ as a shorthand way of
+    expressing a sum of many terms.  We are not requesting this sum to
+    converge.}}  of pure cosine waves with frequencies given by {\it logarithms of powers of primes} and with amplitudes given by the formula $$F(t):=
+-\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
+$$ the summation being over all powers $p^n$ of all prime numbers $p$.
+
+The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
+
+\item  In contrast, the second infinite trigonometric sum $G(t)$ is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$.
+
+$$
+  G(t):=1+\sum_{\theta}\cos(\theta t).
+ $$ These graphs will have ``higher and higher peaks" concentrated more and more accurately at {\bf the logarithms of powers of primes} indicated in our pictures below (see Figure~\ref{fig:phihat}) by the series of vertical blue lines.
 
                \end{enumerate}
 
@@ -3246,20 +3258,15 @@ frequencies equal to (logs of) powers of the primes:}
 
 
 Look at the peaks of this graph. There is nothing very impressive
-about them, you might think; but wait, for this is just a very ``early
-'' piece of an expression that consists of a sum{\footnote{Here we
-    make use of the Greek symbol $\sum$ as a shorthand way of
-    expressing a sum of many terms.  We are not requesting this sum to
-    converge.}}  of infinitely many (co-)sine waves:
-$$
--\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
-$$
-the summation being over all powers $p^n$ of all prime numbers $p$.
+about them, you might think; but wait, for $f(t)$ is just a very ``early
+'' piece of  the infinite trigonometric sum $F(t)$ described above.
 
-Let us cut this infinite sum off taking only finitely many terms, by
+
+
+Let us truncate the infinite sum $F(t)$ taking only finitely many terms, by
 choosing various ``cutoff values'' $C$ and forming the finite sums
 $$
--\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
+F_{\le C}(t):= -\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$
 and plotting their positive
 values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show what we get
@@ -3333,21 +3340,21 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
   \theta_2, \theta_3, \dots$$ comprising what we called the {\it
     spectrum}. We consider the infinite trigonometric series
   $$
-  1 + \cos(\theta_1t)+\cos(\theta_2t)+\cos(\theta_3t)+\dots
+  G(t):= 1 + \cos(\theta_1t)+\cos(\theta_2t)+\cos(\theta_3t)+\dots
   $$
   or, using the $\sum$ notation,
  $$
-  1+\sum_{\theta}\cos(\theta t)
+ G(t):=  1+\sum_{\theta}\cos(\theta t)
  $$
  where the summation is over the spectrum, $\theta=\theta_1, \theta_2,
  \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this
  infinite trigonometric sum,
  $$
- {\hat \Phi}_{\le C}(\theta) = 1+\sum_{\theta\ \leq C}\cos(\theta t)
+ G{\le C}(t):== 1+\sum_{\theta\ \leq C}\cos(\theta t)
  $$
  and plot their graphs, over various ranges.
 
- \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
+ \ill{phihat_even_all}{1}{Plots of $ G{\le C}(t)$ for
  $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phihat}}
 \end{enumerate}
 
