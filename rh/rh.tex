@@ -2968,12 +2968,12 @@ distributions---of the function in Figure~\ref{fig:simple_staircase}.
 
 We'll be dealing with much more complicated staircase functions in the
 next section, but the general principles discussed here will nicely
-apply there \bibnote{ From Wikipedia:
-  \begin{quote} ``Generalized functions'' were introduced by Sergei
-    Sobolev in 1935. They were independently introduced in the late
-    1940s by Laurent Schwartz, who developed a comprehensive theory of
-    distributions.
-\end{quote}
+apply there \bibnote{As discussed in\\ \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29},
+``generalized functions'' were introduced by Sergei
+Sobolev in the 1930s, then later
+independently introduced in the late
+1940s by Laurent Schwartz, who developed a comprehensive theory of
+distributions.
 }.
 
 
@@ -3341,7 +3341,10 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
  $$
  where the summation is over the spectrum, $\theta=\theta_1, \theta_2,
  \theta_3, \dots$. Again we will consider finite cutoffs $C$ of this
- infinite trigonometric sum, $${\hat \Phi}_{\le C}(\theta) = 1+\sum_{\theta\ \leq C}\cos(\theta t)$$
+ infinite trigonometric sum,
+ $$
+ {\hat \Phi}_{\le C}(\theta) = 1+\sum_{\theta\ \leq C}\cos(\theta t)
+ $$
  and plot their graphs, over various ranges.
 
  \ill{phihat_even_all}{1}{Plots of ${\hat \Phi}_{\le C}(\theta)$ for
@@ -3529,8 +3532,8 @@ where $\Phi_{\le C}(t)$  is the following finite linear
 combination of (symmetrized) $\delta$-functions  $d_x(t)$:
  $$\Phi_{\le C}(t)\quad :=\quad  2\sum_{{\rm prime\ powers \ }p^n  \le C} p^{-n/2}\log(p)d_{n\log(p)}(t).$$
  Since the Fourier transform of $d_x(t)$ is  $\cos(x\theta)$, the Fourier transform of  each $d_{n\log(p)}(t)$ is
- $\cos(n\log(p)\theta)$, so the Fourier transform of $\Phi_{\le
-   C}(t)$ is
+ $\cos(n\log(p)\theta)$, so the Fourier transform of
+ $\Phi_{\le C}(t)$ is
 
   $${\hat \Phi}_{\leq C}(\theta):= 2\sum_{{\rm prime\ powers\ }p^n  \leq{} C} p^{-n/2} \log(p)\cos(n\log(p)\theta).$$
 
@@ -3604,12 +3607,12 @@ For a theoretical discussion of these spikes, see endnote~\bibnote{
 Here, we assume that $\sigma_o$ is sufficiently large and $C$ is not a prime power.
 
 One proceeds, as  is standard in the derivation of Explicit Formulae, by moving the line of integration to the left, picking up residues along the way. Fix the value of $w= {\frac{1}{2}}+i\theta$ and consider $ {\frac{1}{2\pi i }}$ times the integrand,
- $$K_w(s,C):=\ \   {\frac{1}{2\pi i }}\left(\frac{\zeta'}{\zeta}\right)(w+s){\frac{C^{s}}{s}},$$   which has poles at $$s= 0, \ \ \ 1-w,\ \ \ {\rm and }\ \ \ \rho-w, $$  for $\rho$ a zero of $\zeta(s)$.
+ $$K_w(s,C):=\ \   {\frac{1}{2\pi i }}\left(\frac{\zeta'}{\zeta}\right)(w+s){\frac{C^{s}}{s}},$$   which has poles at $$s= 0, \ \ \ 1-w,\ \ \ {\rm and }\ \ \ \rho-w, $$  for every zero $\rho$ of $\zeta(s)$.
  We distinguish four cases, giving descriptive names to each:
 
  \begin{itemize} \item {\it Singular pole:} $s= 1-w$.
                         \item {\it Trivial poles:}  $s= \rho-w$ with $\rho$ a trivial zero of $\zeta(s)$.
-                        \item  {\it Oscillatory poles:} $s= \rho-w = i(\gamma-\theta) \ne 0$ with $\rho(\ne w)$ a nontrivial zero of $\zeta(s)$. (Recall that we are assuming the Riemann Hypothesis, and our variable $w= {\frac{1}{2}}+i\theta$ runs through complex numbers of real part equal to ${\frac{1}{2}}$. So, in this case, $s$ is purely imaginary.)
+                        \item  {\it Oscillatory poles:} $s= \rho-w = i(\gamma-\theta) \ne 0$ with $\rho= 1/2 + i \gamma (\ne w)$ a nontrivial zero of $\zeta(s)$. (Recall that we are assuming the Riemann Hypothesis, and our variable $w= {\frac{1}{2}}+i\theta$ runs through complex numbers of real part equal to ${\frac{1}{2}}$. So, in this case, $s$ is purely imaginary.)
                         \item {\it Elementary pole:} $s=0$ when  $ w$ is not a nontrivial zero of $\zeta(s)$---i.e., when $0=s\ne\rho-w$ for any nontrivial zero $\rho$.
                         \item {\it Double pole:}  $s=0$ when  $ w$ is a nontrivial zero of $\zeta(s)$---i.e., when $0=s=\rho-w$ for some nontrivial zero $\rho$. This, when it occurs, is indeed a double pole, and the residue is given by $m\cdot \log C +\epsilon$.  Here $m$ is the multiplicity of the zero $\rho$  (which we expect always---or at least usually---to be equal to $1$) and $\epsilon$ is a constant (depending on $\rho$, but not on $C$).
 
@@ -3624,7 +3627,7 @@ One proceeds, as  is standard in the derivation of Explicit Formulae, by moving 
 
            $${\bf(2)}\ \ \ {\hat \Phi}_{\le C}(\theta) = {\Sing}_{\le C}(\theta) + {\Triv}_{\le C}(\theta) +  {\Osc}_{\le C}(\theta) +  {\Double}_{\le C}(\theta),$$
 
-           \noindent the first if $w$ is not a nontrivial zero and the second if it is.
+           \noindent the first if $w$ is not a nontrivial zero of $\zeta(s)$ and the second if it is.
 
                      The good news is that  the functions ${\Sing}_{\le C}(\theta),  {\Triv}_{\le C}(\theta)$ (and also ${\Elem}_{\le C}(\theta)$ when it exists) are smooth (easily describable) functions of the two variables $C$ and $\theta$; for us, this means that they are
 not that related to the essential information-laden {\it discontinuous} structure of  $ {\hat \Phi}_{\le C}(\theta)$. Let us bunch these three contributions together and call the sum ${\Smooth}(C,\theta)$, and rewrite the above two formulae as:
@@ -3638,13 +3641,24 @@ not that related to the essential information-laden {\it discontinuous} structur
 
 
  We now focus our attention on the Oscillatory term,  ${\Osc}_{\le C}(\theta) $, approximating it by a truncation:  $$\Osc_w(C,X):=  2\sum_{|\gamma| <
- X} {{\frac{e^{i\log C\cdot (\gamma-\theta)}}{i(\gamma-\theta)}}}.$$ In this formula we have relegated the ``$\theta$" to the status of  a subscript (i.e., $w = {\frac{1}{2}} +i\theta$) since we are keeping it constant, and we view the two variables $X$ and $C$ as linked in that we want the cutoff ``$X$" to be sufficiently large, say $X \gg C^2$, so that the error term can be controlled.
+ X} {{\frac{e^{i\log C\cdot (\gamma-\theta)}}{i(\gamma-\theta)}}}.$$
+Here if a zero has multiplicity $m$, then we count it $m$ times in the sum.
+Also, in this formula we have relegated the ``$\theta$" to the status of  a subscript
+(i.e., $w = {\frac{1}{2}} +i\theta$) since we are keeping it constant, and we view the
+two variables $X$ and $C$ as linked in that we want the cutoff ``$X$" to be sufficiently
+large, say $X \gg C^2$, so that the error term can be controlled.
 
  At this point, we can perform a `multiplicative version' of  a C{\'e}saro summation ---i.e.,  the operator $F(c) \mapsto ({\Ces} F)(C):= \int_1^CF(c) dc/c.$
 This has the effect of forcing the oscillatory term to be bounded as $C$ tends to infinity.
 
- This implies that for any fixed $\theta$,  \begin{itemize} \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$  is bounded independent of $C$  if  $\theta$ is not the imaginary part of a nontrivial zero of $\zeta(s)$  and
- \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$ grows as $m\cdot \log C +O(1)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$, \end{itemize} giving a theoretical confirmation of the striking feature of the graphs of our Chapter~\ref{ch:prime-to-spectrum}.}.
+ This implies that for any fixed $\theta$,
+\begin{itemize}
+ \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$  is bounded independent of $C$  if  $\theta$ is not the imaginary part of a nontrivial zero of $\zeta(s)$  and
+ \item ${\Ces}{\hat \Phi}_{\le C}(\theta)$ grows as $m\cdot \log C +O(1)$ if $\theta$ is the imaginary part of a nontrivial zero of $\zeta(s)$ of multiplicity $m$,
+ % WARNING: above item is wrong; grows as should be different: ``we replace "m log(C)+O(1)" by "m/2  log(C)^2 + m gamma log(C)"?''
+\end{itemize}
+giving a theoretical confirmation of the striking feature of the
+graphs of our Chapter~\ref{ch:prime-to-spectrum}.}.
 
 
    %  \ill{phihat_even_all}{1}{Plots of $-\frac{1}{2}{\hat \Phi}_{\le C}(\theta)$ for $C=5$ (top), 20, 50, and 500 (bottom).\label{fig:phic}}
