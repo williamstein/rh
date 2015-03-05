@@ -467,7 +467,7 @@ grant the imperviousness of the number $17$ to division.
 {\em Seventeen} is indeed a prime number: there is no way of factoring
 it as the product of smaller numbers, and this accounts---people tell
 us---for its occurrence in some phenomena of nature, as when
-the $17$-year cicadas all emerged to celebrate a ``reunion'' of some
+the seventeen-year cicadas all emerged to celebrate a ``reunion'' of some
 sort in our fields and valleys.
 
 \ill{cicada}{.35}{Cicadas emerge every 17 years}
@@ -541,7 +541,7 @@ for rearranging the order of the primes.
 
 
 For example, if you try to factor $12$ as a product of
-smaller numbers---ignoring the order of the factors---there are two
+two smaller numbers---ignoring the order of the factors---there are two
 ways to begin to do this:
 $$
   12 = 2 \times 6 \qquad\text{ and }\qquad   12 = 3 \times 4
@@ -827,7 +827,7 @@ though it is not the largest prime currently known.
 
 Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
-number!'' (which it is not) how might you convince that person that
+number!'' (which it is not). How might you convince that person that
 he or she is wrong without explicitly exhibiting a larger prime?
 \bibnote{We can use Sage (at \url{http://sagemath.org}) to quickly compute the ``hefty
 number'' $p = 2^{43,112,609}-1$.  Simply type
@@ -843,7 +843,7 @@ To compute the sum $58416637$ of the digits of $p$ type {\tt sum(p.digits())}.
 
 
 Here is a neat---and, we hope, convincing---strategy to show there are
-prime numbers even larger than $p = 2^{43,112,609} - 1$. Imagine
+prime numbers larger than $p = 2^{43,112,609} - 1$. Imagine
 forming the following humongous number: let $M$ be the product of all
 prime numbers up to and including $p = 2^{43,11,2609} - 1$.  Now go
 one further than $M$ by taking the next number $N=M+1$.
@@ -877,12 +877,13 @@ You can think of this strategy as a simple game that you can
 play. Start with any finite bag of prime numbers (say the bag that
 only contains one prime, the prime $2$). Now each ``move'' of the game
 consists of multiplying together all the primes you have in your bag
-to get a number $M$, then adding $1$ to $M$ to get the even larger
+to get a number $M$, then adding $1$ to $M$ to get the larger
 number $N=M+1$, then factoring $N$ into prime number factors, and then
 including all those new prime numbers in your bag. Euclid's proof
 gives us that we will---with each move of this game---be finding more
-prime numbers: the bag will increase. After, say, a million moves our
-bag will be guaranteed to contain more than a million prime numbers.
+prime numbers: the contents of the bag will increase. After, say,
+a million moves our bag will be guaranteed to contain more than
+a million prime numbers.
 
 For example, starting the game with your bag containing
 only one prime number $2$, here is how your bag grows with
@@ -909,7 +910,7 @@ $\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051, 29881, 670
 procedure is discussed in more detail with references
 in the Online Encyclopedia of Integer Sequences \url{http://oeis.org/A126263}.}
 
-Though there are infinitely many primes, actually finding them is a
+Though there are infinitely many primes, explicitly finding large primes is a
 major challenge.  In the 1990s, the Electronic Frontier Foundation
 \url{http://www.eff.org/awards/coop} offered a \$100{,}000 cash reward
 to the first group to find a prime with at least 10{,}000{,}000 decimal
@@ -967,7 +968,7 @@ encounter with primes that differ from a power of $2$ by $1$:
   primes, but $2^4-1=15$ is not.  So {\it Mersenne primes} are numbers
   that are
   \begin{itemize}
-    \item of the form $$2^{\rm prime\ number} -1,$$ and
+    \item of the form $\displaystyle 2^\text{prime number} -1,$ and
     \item are themselves prime numbers.
   \end{itemize}
 
@@ -976,7 +977,7 @@ encounter with primes that differ from a power of $2$ by $1$:
   but $2^3+1= 9$ is not.  So {\it Fermat primes} are numbers that
   are
   \begin{itemize}
-     \item of the form $$2^{\rm power\ of\ two} +1,$$ and
+     \item of the form $\displaystyle 2^\text{power of two} + 1,$ and
      \item are themselves prime numbers.
   \end{itemize}
 \end{enumerate}
@@ -1899,10 +1900,10 @@ the previous chapter.
 
  Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$ over a time interval, say from $0$ to $T${\footnote{ For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.}.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
-   This new function $F(T)$, called the {\bf Ces\'aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
+   This new function $F(T)$, called the {\bf Ces\'aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to ``smooth out" some of the volatile local behavior of the original function, as can be seen in the figure below.
 
 
-\ill{cesaro}{.8}{The red plot is the Ces\'aro smoothing of the blue plot}
+\ill{cesaro}{.9}{The red plot is the Ces\'aro smoothing of the blue plot}
 \chapter{ A view of $|\Li(X) - \pi(X)|$}
  Returning to our mysterious error term,  consider Figure \ref{fig:li-minus-pi-250000} where the volatile blue curve in the middle
  is $\Li(X) - \pi(X)$, its Ces\'aro smoothing is the red relatively smooth curve on the bottom, and the curve on the top
@@ -4090,7 +4091,7 @@ discussion so far.
  \begin{enumerate}
  \item John Derbyshire's {\it Prime Obsession: Bernhard Riemann and
      the Greatest Unsolved Problem in Mathematics} (2003).  We have already
-   mentioned this book in our forward, but feel that it is so
+   mentioned this book in our forword, but feel that it is so
    good, that it is worth a second mention here.
  \item The Wikipedia entry for Riemann's Zeta Function
    (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function}) It is

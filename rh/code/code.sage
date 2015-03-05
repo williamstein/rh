@@ -1526,7 +1526,7 @@ def fig_cesaro(dir, ext):
     assume(T>0)
     g(T) = 1/T * k.integrate(theta, 0, T)
     h = plot(g, 0, 40, color='red') + plot(k,0,40)
-    h.save('%s/cesaro.%s'%(dir, ext))
+    h.save('%s/cesaro.%s'%(dir, ext), fontsize=16)
 
 
 ##############################################################

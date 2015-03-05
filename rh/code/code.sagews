@@ -1,9 +1,9 @@
 ︠2683353c-4139-4cc6-9bb4-a0b197690fb0s︠
 %load code.sage
-︡4cba2d01-33d0-45fa-b1a3-4e63bc3636bb︡
+︡1acbb6ff-f779-433b-a214-55433455ab32︡
 ︠e2f7abd7-d6ee-4117-8f71-bb5b038917bcs︠
-draw("calculus")
-︡80f75b6d-d3fd-4bcb-af52-b6812f175df7︡{"stdout":"Drawing calculus... "}︡{"stdout":" "}︡{"stdout":" (time = 0.691792011261 seconds)\n"}︡
+draw("cesaro")
+︡fc9764de-1e73-4bb7-af19-772196864977︡{"stdout":"Drawing cesaro... "}︡{"stdout":" "}︡{"stdout":" (time = 161.922121048 seconds)\n"}︡
 ︠79c97531-5200-4075-8a6a-a3c05e7061efs︠
 draw('theta_C_intro')
 ︡ac1e2917-9ea9-402a-b6cd-c7f00fa04a8c︡{"stdout":"Drawing theta_C_intro... "}︡{"stdout":" "}︡{"stdout":" (time = 41.996740818 seconds)\n"}︡
