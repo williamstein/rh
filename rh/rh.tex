@@ -717,7 +717,7 @@ of many people:
   the second largest being $2^{1040}+1$ at 183.7 digits.
 \item Two independent runs of the filtering and linear algebra were done: one by Greg
   Childers with msieve (\url{http://www.boo.net/~jasonp/qs.html}) using a 48-core
-  cluster made available by Bill Hart, one by Emmanuel Thomé and Paul
+  cluster made available by Bill Hart, one by Emmanuel Thom\'{e} and Paul
   Zimmermann with CADO-NFS (\url{http://cado-nfs.gforge.inria.fr/}), using the Grid
   5000 platform.
 \item The first linear algebra run to complete was the one with CADO-NFS, thus we
@@ -981,7 +981,7 @@ encounter with primes that differ from a power of $2$ by $1$:
 
 
 Not all numbers of the form $2^{\rm prime\ number} -1$ or of the form
-$2^{\rm power\ of\ two} +1$ are prime. We currently know only finite
+$2^{\rm power\ of\ two} +1$ are prime. We currently know only finitely
 many primes of either of these forms. How we have come to know what we
 know is an interesting tale.  See, for example, \url{http://www.mersenne.org/}.
 
@@ -1325,8 +1325,8 @@ m. even & 1 & 1 & 1 & 2 & 2  & 3 & 3 & 3 & 4 & 5 & 5 & 5 & 5 & 6 & 7 & 8 \\ \hli
      multiplicatively odd ones?}
 
    Each plot in Figure~\ref{fig:liouville} gives the number of
-   multiplicatively odd numbers between $2$ and $X$ minus the number
-   of multiplicatively even numbers between $2$ and $X$, for $X$ equal
+   multiplicatively even numbers between $2$ and $X$ minus the number
+   of multiplicatively odd numbers between $2$ and $X$, for $X$ equal
    to 10, 100, 1000, 10000, 100000, and 1000000. The above question
    asks whether these graphs would, for sufficiently large $X$, ever
    cross the $X$-axis.
@@ -1796,7 +1796,7 @@ the area of the region from $2$ to $X$ under the graph of
 $1/\log(X)$, a quantity sometimes referred to as $\Li(X)$.
 ``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral},
 because the area of the region from $2$ to $X$ under $1/\log(X)$
-is the {\em integral} $\int_2^t 1/\log(X) dt$.
+is the {\em integral} $\int_2^X 1/\log(t) dt$.
 
 
 
@@ -3952,7 +3952,7 @@ where $\mu(n)$ is the Moebius function introduced above.
 \ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript}
 
 In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem, which
-asserts that $X/\log(X)$ and $\Li(X)$ are both approximation for
+asserts that $X/\log(X)$ and $\Li(X)$ are both approximations for
 $\pi(X)$, in the sense that both go to infinity at the same rate.  That is, the ratio of any two of these three functions tends to $1$ as $X$ goes to $\infty$.
 Our first formulation of the \RH{} (see page~\pageref{rh:first}) was
 that $\Li(X)$ is an essentially square root accurate approximation of
@@ -4101,7 +4101,7 @@ discussion so far.
 As readers of Jacob Bernoulli's {\it Ars Conjectandi} (or of the works
 of John Wallis) know, there was already a rich mathematical theory of
 finite sums of (non-negative $k$-th powers) of consecutive integers.
-This sum, $$S_k(N) = 1^k+2^k+3^k+\cdots +N^k,$$ is a polynomial
+This sum, $$S_k(N) = 1^k+2^k+3^k+\cdots +(N-1)^k,$$ is a polynomial
 in $N$ of degree $k+1$ with no constant term, a leading term equal to
 ${1\over k+1}N^{k+1}$, and a famous linear term.  The coefficient of
 the linear term of the polynomial $S_k(N)$ is the {\it Bernoulli
