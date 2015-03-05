@@ -230,17 +230,19 @@ What is Riemann's Hypothesis?\\
 
 \chapter*{\label{foreword}Foreword}
 The \RH{} is one of the great unsolved problems of
-mathematics and the reward of \$1{,}000{,}000 of {\em Clay Mathematics
+mathematics, and the reward of \$1{,}000{,}000 of {\em Clay Mathematics
   Institute} prize money awaits the person who solves it. But---with
 or without money---its resolution is crucial for our understanding of
 the nature of numbers.
 
 
-There are at least four full-length books recently published, written
+There are several full-length books recently published, written
 for a general audience, that have the \RH{} as their main
 topic.  A reader of these books will get a fairly rich picture of the
 personalities engaged in the pursuit, and of related mathematical and
-historical issues.\footnote{See, e.g., {\em The Music of the Primes} by Marcus du Sautoy (2003).}
+historical issues.\footnote{See, e.g., {\em The Music of the Primes} by Marcus du Sautoy (2003)
+and {\em Prime Obsession: Bernhard Riemann and
+     the Greatest Unsolved Problem in Mathematics} by John Derbyshire (2003).}
 
 This is {\em not} the mission of the book that you now hold in your
 hands. We aim---instead---to explain, in as direct a manner as
@@ -337,8 +339,8 @@ should aim to come home with something very specific (it can be small,
 but should be {\em specific}) that has application to a wider class of
 mathematical problem than was the focus of the text or lecture.  If we
 were to suggest some possible {\em specific} items to come home with,
-after reading our book, three key phrases -- {\bf prime numbers}, {\bf
-  square-root accurate}, and {\bf spectrum} -- would head the
+after reading our book, three key phrases---{\bf prime numbers}, {\bf
+  square-root accurate}, and {\bf spectrum}---would head the
 list. As for words of encouragement to think hard about the first of
 these, i.e., prime numbers, we can do no better than to quote a
 paragraph of Don Zagier's classic 12-page exposition, {\em The First
@@ -362,7 +364,7 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 \end{quote}
 
 
- Mathematics is flourishing.  Each year sees new exciting initiatives that extend and sharpen the applications of our subject,   new directions for  deep  exploration---and finer understanding---of  classical as well as very contemporary mathematical domains. We are aided in such explorations by the development of more and more powerful tools. We  see resolutions of centrally important questions.  And through all this, we are treated to surprises, dramatic changes of viewpoint; in short: marvels.
+ Mathematics is flourishing.  Each year sees new exciting initiatives that extend and sharpen the applications of our subject,   new directions for  deep  exploration---and finer understanding---of  classical as well as very contemporary mathematical domains. We are aided in such explorations by the development of more and more powerful tools. We  see resolutions of centrally important questions.  And through all of this, we are treated to surprises, dramatic changes of viewpoint; in short: marvels.
 
  And what an array of wonderful techniques  allow mathematicians to do their work:  framing {\it definitions;} producing {\it constructions;  }formulating {\it analogies relating disparate concepts, and disparate  mathematical fields}; posing {\it  conjectures,} that cleanly shape a possible way forward; and, the keystone: providing unassailable {\it proofs} of what is asserted,  the idea of doing such a thing being itself one of the great glories of mathematics.
 
@@ -381,7 +383,7 @@ the ranges of data illustrated, so as to get an even more
 vivid sense of how the numbers ``behave.''
 We hope that readers become inspired to carry out numerical experimentation,
 which is becoming easier  as mathematical software
-advances.}
+advances.}.
 
   There are  few
 mathematical equations in Part~\ref{part1}.  This first portion of our book is intended for readers who are generally interested in, or curious about, mathematical ideas, but who may not have studied any advanced topics. Part~\ref{part1} is devoted to conveying the essence of the Riemann Hypothesis and explaining why it is so intensely pursued. It requires a minimum of mathematical knowledge, and does not,  for example, use calculus, although it would be helpful to know---or to learn on the run---the meaning of  the concept of {\it function}. Given its mission, Part I is meant to be complete, in that it has a beginning, middle, and end.  We hope that our readers who only read Part I will have enjoyed the excitement  of this important piece of mathematics.
@@ -424,7 +426,7 @@ So, how far along are we in our thoughts about numbers?
 % This is from http://en.wikipedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg
 % There is a higher resolution scan available there
 
-\ill{descartes}{.35}{Ren\'e Descartes}
+\ill{descartes}{.35}{Ren\'e Descartes (1596--1650)}
 
 The French philosopher and mathematician Ren\'e Descartes, almost four
 centuries ago, expressed the hope that there soon would be ``almost
@@ -1119,7 +1121,7 @@ It is possible that there are infinitely many Mersenne primes
 but we're far from being able to answer such questions.
 
 % from http://www.york.ac.uk/depts/maths/histstat/people/mersenne.gif
-\ill{mersenne}{.3}{Mersenne}
+\ill{mersenne}{.3}{Marin Mersenne (1588--1648)}
 
 
 
@@ -1374,7 +1376,7 @@ question about prime numbers.
 
 \chapter{How many primes are there?}
 
-\ill{sieve200}{.8}{Sieving Primes up to 200}
+\ill{sieve200}{.8}{Sieving primes up to 200}
 
 Slow as we are to understand primes, at the very least we can try to
 count them. You can see that there are $10$ primes less than $30$, so
@@ -1495,7 +1497,7 @@ build-up of primes, somehow, using a {\em smooth curve}.  But {\em
 That last question is {\em not} rhetorical. If you draw a curve with
 chalk on the blackboard, this can signify a myriad of smooth
 (mathematical) curves all encompassed within the thickness of the
-chalk-line, all--if you wish--reasonable approximations of one
+chalk-line, all---if you wish---reasonable approximations of one
 another. So, there are many smooth curves that fit the chalk-curve.
 With this warning, but very much fortified by the data of Figure~\ref{fig:pn100000},
 let us ask: {\em what is a smooth curve that is a reasonable
@@ -1689,27 +1691,25 @@ This rough account almost suffices for what we will be discussing
 below, but to be more precise, the specific {\em gauge of accuracy}
 that will be important to us is not for a mere {\em single} estimate
 of a {\em single} error term,
-
- \centerline{Error term\ \  =\ \    Exact value\ \   $-$\ \   Our ``good  approximation''}
-
-
-
- \noindent but rather for {\em infinite sequences} of estimates of
- error terms. Generally, if you are interested in a numerical quantity
- $q(X)$ that depends on the real number parameter $X$ (e.g., $q(X)$
- could be $\pi(X)$, ``the number of primes $< X$'') and if you have an
- explicit candidate ``approximation,'' $q_{\rm approx}(X)$, to this
- quantity, let us say that $q_{\rm approx}(X)$ is {\bf essentially a
-   square-root accurate approximation to $q(X)$} if for {\em any}
- given exponent greater than $0.5$ (you choose it: $0.501$, $0.5001$,
- $0.50001$, $\dots$ for example) and for large enough $X$---where the
- phrase ``large enough'' depends on your choice of exponent---the {\bf
-   error term}---i.e., the difference between $q_{\rm approx}(X)$ and
- the {\em true} quantity, $q(X)$, is, in absolute value, less than
- $X$ raised to that exponent (e.g. $< X^{0.501}$, $<
- X^{0.5001}$, etc.). Readers who know calculus and wish to have a
- technical formulation of this definition of {\em good approximation}
- might turn to the endnote \bibnote{If $f(x)$ and
+$$
+\text{ Error term } = \text{ Exact value } - \text{  Our ``good  approximation" }
+$$
+but rather for {\em infinite sequences} of estimates of
+error terms. Generally, if you are interested in a numerical quantity
+$q(X)$ that depends on the real number parameter $X$ (e.g., $q(X)$
+could be $\pi(X)$, ``the number of primes $< X$'') and if you have an
+explicit candidate ``approximation,'' $q_{\rm approx}(X)$, to this
+quantity, let us say that $q_{\rm approx}(X)$ is {\bf essentially a
+  square-root accurate approximation to $q(X)$} if for {\em any}
+given exponent greater than $0.5$ (you choose it: $0.501$, $0.5001$,
+$0.50001$, $\dots$ for example) and for large enough $X$---where the
+phrase ``large enough'' depends on your choice of exponent---the {\bf
+  error term}---i.e., the difference between $q_{\rm approx}(X)$ and
+the {\em true} quantity, $q(X)$, is, in absolute value, less than
+$X$ raised to that exponent (e.g. $< X^{0.501}$, $<
+X^{0.5001}$, etc.). Readers who know calculus and wish to have a
+technical formulation of this definition of {\em good approximation}
+might turn to the endnote \bibnote{If $f(x)$ and
 $g(x)$ are real-valued functions of a real variable $x$ such that
 for any
 $\epsilon >0$ both of them take their values between $ x^{1-\epsilon}$
@@ -1817,7 +1817,7 @@ evaluate $\pi(X)$ for large values of $X$.
 For example, let $X=10^{24}$.
 Then \label{pili_vals} (see \bibnote{This computation of $\pi(X)$ was done by David J. Platt in 2012,
 and is the largest value of $\pi(X)$ ever computed.  See
-\url{http://arxiv.org/abs/1203.5712} for more details.})
+\url{http://arxiv.org/abs/1203.5712} for more details.}) we have:
 \begin{align*}
   \pi(X) &= {\color{dredcolor} 18{,}435{,}599{,}767{,}3}49{,}200{,}867{,}866\\
   \Li(X) &= {\color{dredcolor}18{,}435{,}599{,}767{,}3}66{,}347{,}775{,}143.10580\ldots \\
@@ -1828,7 +1828,8 @@ and is the largest value of $\pi(X)$ ever computed.  See
   \sqrt{X}\cdot \log(X) &= \hspace{5.2em}
      55{,}262{,}042{,}231{,}857.096416 \ldots
 \end{align*}
-
+Note that several of the left-most digits of $\pi(X)$ and $\Li(X)$ are the
+same (as indicated in red), a point we will return to on page~\pageref{page:leftmost}.
 
 
 More fancifully, we can think of the error in this approximation to $\pi(X)$, i.e., $|\Li(X)-\pi(X)|$, (the absolute value) of the difference between $\Li(X)$ and $\pi(X)$, as (approximately) the result of  a walk having roughly $X$ steps where you move by the following rule:  go  east by a distance of $1/\log N$ feet if $N$ is not a prime and west by a distance of $1-\frac{1}{\log N}$ feet if $N$ is a prime. Your distance, then, from home base after $X$ steps is approximately $|\Li(X)-\pi(X)|$ feet.
@@ -1911,17 +1912,19 @@ the previous chapter.
 $\sqrt{\frac{2}{\pi}}\cdot \sqrt{X/\log(X)}$ (top), all for $X\leq 250{,}000$\label{fig:li-minus-pi-250000}}
 
 % TODO: this is from http://seriesdivergentes.wordpress.com/2011/07/21/john-e-littlewood/
-\begin{wrapfigure}{r}{0.23\textwidth}
-    \includegraphics[width=0.23\textwidth]{illustrations/littlewood}\\
-    Littlewood
-\end{wrapfigure}
-Data such as this graph can be revealing and misleading at the same time.  For example, the volatile blue graph (of $\Li(X)-\pi(X)$) {\it seems} to be roughly sandwiched between two rising functions, but this will not continue for all values of $X$.  The Cambridge University mathematician, John Edensor Littlewood, proved in 1914 that there {\it exists} a real number $X$ for which the quantity $\Li(X)-\pi(X)$ vanishes, and then for slightly larger $X$ crosses over into negative values.  This theorem attracted lots of attention at the time (and continues to do so) because of the inaccessibility of achieving good estimates (upper or lower bounds) for the first such number.  That `first' $X$ for which   $\Li(X) =\pi(X)$ is called {\bf Skewes Number} in honor of the South African mathematician (a student of Littlewood)  Stanley Skewes, who (in 1933) gave the  first---fearfully large----upper bound for that number (conditional on RH!).  Despite a steady stream of subsequent improvements, we currently can only  locate Skewes Number  as being in the range:
+Data such as this graph can be revealing and misleading at the same time.  For example, the volatile blue graph (of $\Li(X)-\pi(X)$) {\it seems} to be roughly sandwiched between two rising functions, but this will not continue for all values of $X$.  The Cambridge University mathematician, John Edensor Littlewood (see
+Figure~\ref{fig:littlewood}), proved in 1914 that there {\it exists} a real number $X$ for which the quantity $\Li(X)-\pi(X)$ vanishes, and then for slightly larger $X$ crosses over into negative values.  This theorem attracted lots of attention at the time (and continues to do so) because of the inaccessibility of achieving good estimates (upper or lower bounds) for the first such number.  That `first' $X$ for which   $\Li(X) =\pi(X)$ is called {\bf Skewes Number} in honor of the South African mathematician (a student of Littlewood)  Stanley Skewes, who (in 1933) gave the  first---fearfully large---upper bound for that number (conditional on RH!).  Despite a steady stream of subsequent improvements, we currently can only  locate Skewes Number  as being in the range:
 
 $$
 10^{14}\ \ \ \le\ \ \ {\rm Skewes\ Number}\ \ \ <\ \ \    10^{317},
 $$ and it is proven that at some  values of $X$ fairly close to the upper bound $10^{317}$   $\pi(X)$ is greater than $\Li(X)$. So  the trend suggested in Figure \ref{fig:li-minus-pi-250000} will not continue indefinitely.
 
+%\begin{wrapfigure}{l}{0.3\textwidth}
+%    \includegraphics[width=0.3\textwidth]{illustrations/littlewood}\\
+%    John Edensor Littlewood (1885--1977)
+%\end{wrapfigure}
 
+\ill{littlewood}{0.35}{John Edensor Littlewood (1885--1977)\label{fig:littlewood}}
 
 
 
@@ -1992,7 +1995,7 @@ Calculus exercise.}).
 
 
 Recall (on page~\pageref{pili_vals} above in Chapter~\ref{sec:rh1})  that
-if $X = 10^{24}$, the left-most
+if $X = 10^{24}$, the left-most\label{page:leftmost}
 twelve digits of $\pi(X)$ and $\Li(X)$ are the same:
 both numbers start
 $18{,}435{,}599{,}767{,}3\ldots$. Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``left-most'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
@@ -2041,7 +2044,7 @@ published in 1859
 for for the original German version and an English translation.}).
 
 
-\ill{riemann_zoom}{1}{From Riemann's 1859 Manuscript\label{fig:riemamn}}
+\ill{riemann_zoom}{1}{From Riemann's 1859 manuscript\label{fig:riemamn}}
 
 
 
@@ -2062,7 +2065,7 @@ hypothesis,'' as Osiander said of Copernicus's theory, but one for
 which we have overwhelming theoretical and numerical evidence in its
 support.  It is the kind of conjecture that contemporary Dutch
 mathematician Frans Oort might label a {\em suffusing conjecture} in
-that it has unusually broad implications: many many results are now
+that it has unusually broad implications: many, many results are now
 known to follow, if the conjecture, familiarly known as RH, is true.
 A proof of RH would, therefore, fall into the {\em applied} category,
 given our discussion above in Chapter~\ref{ch:pureapplied}.  But
@@ -2076,7 +2079,7 @@ statements in all of mathematics.
 
 
 We have borrowed the phrase ``staircase of primes'' from the popular
-book {\em The Music of Primes} by Marcus du Sautoi, for we feel that
+book {\em The Music of the Primes} by Marcus du Sautoy, for we feel that
 it captures the sense that there is a deeply hidden architecture to
 the graphs that compile the number of primes (up to $N$) and also
 because---in a bit---we will be tinkering with this carpentry.  Before
@@ -2227,7 +2230,7 @@ and measured air pressure due to this sound at that position, the
 peaks correspond to the times when the varying air pressure is maximal
 or minimal and the zeroes to the times when it is normal pressure.
 
-\ill{sin}{.7}{Graph of a Sine Wave\label{fig:sine}}
+\ill{sin}{.7}{Graph of a sine wave\label{fig:sine}}
 
 You'll notice that there are two features to the graph in Figure~\ref{fig:sine}.
 
@@ -2249,9 +2252,9 @@ graph would be just the {\em sum} of the graphs of each of the pure
 notes (see Figures~\ref{fig:sinetwofreq} and \ref{fig:sinetwofreqsum}).
 
 
-\ill{sin-twofreq}{0.6}{Graph of Two Sine Waves with Different Frequencies\label{fig:sinetwofreq}}
+\ill{sin-twofreq}{0.6}{Graph of two sine waves with different frequencies\label{fig:sinetwofreq}}
 
-\ill{sin-twofreq-sum}{.6}{Graph of Sum of the Two Sine Waves with Different Frequencies\label{fig:sinetwofreqsum}}
+\ill{sin-twofreq-sum}{.6}{Graph of sum of the two sine waves with different frequencies\label{fig:sinetwofreqsum}}
 
 So the picture of the changing frequencies of this chord would be
 already a pretty complicated configuration.  What we have described in
@@ -2324,7 +2327,7 @@ Figure~\ref{fig:ce-spectral}.
 
 
 \illtwo{sound-ce-general_sum}{sound-ce-general_sum-blips}{.45}
-       {Spectral Picture of a CE chord\label{fig:ce-spectral}}
+       {Spectral picture of a CE chord\label{fig:ce-spectral}}
 
 
 This spectral picture ignores the phase but is nevertheless a very
@@ -2359,13 +2362,13 @@ pure tones.
 
 The {\em sawtooth} wave in Figure~\ref{fig:sawtooth} has a spectral picture, its Fourier transform, given in Figure~\ref{fig:sawtooth-spectrum}:
 
-   \ill{sawtooth}{.7}{Graph of Sawtooth Wave\label{fig:sawtooth}}
-   \ill{sawtooth-spectrum}{.7}{The Spectrum of the Sawtooth Wave has a Spike of Height $1/k$ at
+   \ill{sawtooth}{.7}{Graph of sawtooth wave\label{fig:sawtooth}}
+   \ill{sawtooth-spectrum}{.7}{The Spectrum of the sawtooth wave has a spike of height $1/k$ at
 each integer $k$\label{fig:sawtooth-spectrum}}
 
 
 
- \ill{complicated-wave}{.7}{A Complicated Sound Wave\label{fig:complicated-wave}}
+ \ill{complicated-wave}{.7}{A Complicated sound wave\label{fig:complicated-wave}}
 
 Suppose you have a complicated sound wave, say as in
 Figure~\ref{fig:complicated-wave}, and you want to record it.
@@ -2391,13 +2394,13 @@ MP3 player, instead of just a few of your favorite CDs.
 
 \begin{quote} Used to classify something, or suggest that it can be classified, in terms of its position on a scale between two extreme or opposite points.\end{quote}
 
-This works well for the color spectrum, as initiation by Newton (as in the figure above, sunlight is separated by a prism into a rainbow  continuum of colors): an analysis of white light into its components. Or in mass spectrometry, where
+This works well for the color spectrum, as initiated by Newton (as in the figure above, sunlight is separated by a prism into a rainbow  continuum of colors): an analysis of white light into its components. Or in mass spectrometry, where
  beams of ions are separated (analyzed) according to their
 mass/charge ratio and the mass spectrum is recorded on a photographic plate or film.  Or in the recording of the various component frequencies, with their  corresponding intensities of some audible phenomenon.
 
  In mathematics the word  has found its use in many different fields, the most basic use occurring in Fourier analysis, which has as its goal the aim of either {\it analyzing}  a function $f(t)$ as being  comprised of simpler (specifically: sine and cosine) functions, or {\it synthesizing} such a function by combining simpler functions to produce it. The understanding here and in the previous chapter, is that  an analysis of $f(t)$ as built up of simpler functions is meant to provide a significantly clearer image of the constitution of $f(t)$.  If, to take a very particular example, the simpler functions  that are needed for the synthesis of $f(t)$ are of the form $a\cos(\theta t)$  (for $a$ some real number which is the {\it amplitude} or size of the peaks of this periodic function)---and  if $f(t)$ is given as the limit of $$a_1\cos(\theta_1t) +  a_2\cos(\theta_2t) + a_3cos(\theta_3t) \dots$$  for a sequence of real numbers $\theta_1, \theta_2,
  \theta_3,
- \dots$  (i.e., these simpler functions are functions of {\it periods} ${\frac{2\pi}{\theta_1}}, {\frac{2\pi}{\theta_2}}, {\frac{2\pi}{\theta_3}}, \dots$) it is natural to call the these $\theta_i$ the  {\bf spectrum} of $f(t)$.
+ \dots$  (i.e., these simpler functions are functions of {\it periods} ${\frac{2\pi}{\theta_1}}, {\frac{2\pi}{\theta_2}}, {\frac{2\pi}{\theta_3}}, \dots$) it is natural to call the $\theta_i$ the  {\bf spectrum} of $f(t)$.
    This will eventually show up in our discussion  below of trigonometric sums and the {\it Riemann Spectrum}.
 
 
@@ -2438,7 +2441,7 @@ well. Again, for these more general trigonometric sums, their {\it
 
 \chapter{The spectrum and the staircase of primes\label{sec:fourier_staircase}}
 
-\ill{prime_pi_100_aspect1}{0.95}{The Staircase of Primes\label{fig:staircase100}}
+\ill{prime_pi_100_aspect1}{0.95}{The Staircase of primes\label{fig:staircase100}}
 
 
 In view of the amazing data-compression virtues of Fourier analysis,
@@ -2570,12 +2573,12 @@ a {\it function} is, and what its {\it graph} is.
  that interest us.
 
 
- \ill{graph_slope_deriv}{0.7}{\label{fig:graph_slope_deriv}Calculus}
+ \ill{graph_slope_deriv}{1}{\label{fig:graph_slope_deriv}Calculus}
 
 
 
  Figure~\ref{fig:graph_slope_deriv} illustrates a function (blue), the
- slope at a point (black straight line), and the derivative (red) of
+ slope at a point (green straight line), and the derivative (red) of
  the function; the red derivative is the function whose value at a point
  is the slope of the blue function at that point.  Differential
  Calculus explains to us how to calculate slopes of graphs, and
@@ -2723,7 +2726,7 @@ Calculus relating a function to its derivative:
  and taking their derivatives to get the blip-functions as we have
  just seen in the red graphs above was eventually given a
  mathematically rigorous foundation; notably, by the French
- mathematician, Laurent Schwartz who provide a beautiful theory that
+ mathematician, Laurent Schwartz who provided a beautiful theory that
  we will not go into here, that made perfect sense of ``generalized
  functions'' such as our limit of the series of red graphs, and that
  allows mathematicians to work with these concepts with ease. These
@@ -3031,12 +3034,12 @@ amplitude by ${\hat f}(\theta)$, and refer to it as {\bf the Fourier
 set of all frequencies $\theta$ where the amplitude is nonzero.
 
 
-\ill{fourier_machine}{.6}{The Fourier Transform Machine, which transforms $f(t)$ into ${\hat f}(\theta)$\label{fig:fourier_machine}}
+\ill{fourier_machine}{.6}{The Fourier transform machine, which transforms $f(t)$ into ${\hat f}(\theta)$\label{fig:fourier_machine}}
 
 
 Now in certain easy circumstances---specifically, if
-$\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ (exists, and) is finite---the
-Integral Calculus provides us with an easy construction of that
+$\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ (exists, and)
+is finite---Integral Calculus provides us with an easy construction of that
 machine (see Figure~\ref{fig:fourier_machine}); namely:
 
     $${\hat f}(\theta) = \int_{-{\infty}}^{+{\infty}}f(t)\cos(-\theta t)dt.$$
@@ -3210,7 +3213,11 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
 
 
 
-\chapter{A sneak preview of Part~\ref{part3}}\label{snpr}
+% WARNING: I had to hard-code the III in the title, since
+% otherwise it would be ?? in some places!! (Maybe due to limitations
+% of latex.)
+%\chapter{A sneak preview of Part~\ref{part3}}\label{snpr}
+\chapter{A sneak preview of Part~III}\label{snpr}
 
    In this chapter, as a striking illustration of the type of phenomena that will be studied in Part~\ref{part3}, we will consider two infinite trigonometric sums---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
 
@@ -3221,7 +3228,7 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
 -\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ the summation being over all powers $p^n$ of all prime numbers $p$.
 
-The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that what we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500}) by the series of vertical red lines.
+The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}--\ref{fig:pnsum500}) by the series of vertical red lines.
 
 \item  In contrast, the second infinite trigonometric sum $H(t)$ is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$.
 
@@ -3269,14 +3276,14 @@ $$
 F_{\le C}(t):= -\sum_{p^n\leq C}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$
 and plotting their positive
-values. Figures~\ref{fig:pnsum5}-\ref{fig:pnsum500} show what we get
+values. Figures~\ref{fig:pnsum5}--\ref{fig:pnsum500} show what we get
 for a few values of $C$.
 
 
 In each of the graphs, we have indicated by red vertical arrows the
 real numbers that give the values of the {\it Riemann spectrum} that we will
 be discussing. These numbers at the red
-vertical arrows in Figures~\ref{fig:pnsum5}--\ref{fig:phihat},
+vertical arrows in Figures~\ref{fig:pnsum5}--\ref{fig:pnsum500},
 $$
 \theta_1, \theta_2, \theta_3, \dots
 $$
@@ -3399,13 +3406,13 @@ example, the equation
   been---in effect---to understand the pattern, if we can call it
   that, given by the placement of prime numbers among the natural
   line-up of all whole numbers.
-\ill{primes_line}{1}{Prime Numbers up to $37$}
+\ill{primes_line}{1}{Prime numbers up to $37$}
 
  There are, of course, many ways for us to present this basic
  pattern. Our initial strategy was to focus attention on the {\it
    staircase of primes} which gives us a vivid portrait, if you wish,
  of the order of appearance of primes among all numbers.
-\ill{PN_38}{.5}{Prime Numbers up to $37$}
+\ill{PN_38}{.5}{Prime numbers up to $37$}
 
  As we have already hinted in the previous sections, however, there
  are various ways open to us to tinker with---and significantly
@@ -3459,7 +3466,7 @@ example, the equation
   at all nonnegative integral multiples of logs of prime numbers.
 
  \vskip20pt
- \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a (weighted) sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and by $\log(2\pi)$ at $0$).  The more red the arrow, the larger the  weight.}
+ \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a (weighted) sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and by $\log(2\pi)$ at $0$).  The taller the arrow, the larger the  weight.}
 
 \item Now---for normalization purposes---multiply $\Psi'(t)$ by the
   function $e^{-t/2}$ which has no effect whatsoever on the support.
@@ -3500,7 +3507,8 @@ described, that end up with the distribution $\Phi(t)$.
 
 
 
-\chapter{Going from the primes to the Riemann Spectrum}
+\chapter[From Primes to the Riemann Spectrum]{Going from
+the primes to the Riemann Spectrum}
 \label{ch:prime-to-spectrum}
 %\todo{This chapter has not been fully written, there are some
 %  mathematical issues that we don't yet explain, and we will need to
@@ -3750,9 +3758,9 @@ curve  $${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}},$$ (the error term being bounde
 
 
 
-\illtwo{staircase-riemann-spectrum-50}{staircase-riemann-spectrum-100}{0.45}{The staircase of the Riemann Spectrum and the curve ${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}}$\label{fig:staircase-riemann-spectrum-50}}
+\illtwo{staircase-riemann-spectrum-50}{staircase-riemann-spectrum-100}{0.45}{The staircase of the Riemann spectrum and the curve ${\frac{T}{2\pi}}\log {\frac{T}{2\pi e}}$\label{fig:staircase-riemann-spectrum-50}}
 
-\ill{staircase-riemann-spectrum-1000}{0.95}{The staircase of the Riemann Spectrum looks like a smooth curve\label{fig:staircase-riemann-spectrum-1000}}
+\ill{staircase-riemann-spectrum-1000}{0.95}{The staircase of the Riemann spectrum looks like a smooth curve\label{fig:staircase-riemann-spectrum-1000}}
 
 
 
@@ -3823,7 +3831,8 @@ It has been conjectured that there are no infinite arithmetic progressions among
 \ill{riemann_spectrum_gaps}{0.95}{Frequency histogram of the
 first 99{,}999 gaps in the Riemann spectrum\label{fig:riemann_spectrum_gaps}}
 
-\chapter{Going from the Riemann Spectrum to the primes}
+\chapter[From the Riemann Spectrum to Primes]{Going
+from the Riemann Spectrum to the primes}
 
 To justify the name {\it Riemann spectrum of primes} we will
 investigate graphically whether in an analogous manner we can use this
@@ -3869,7 +3878,7 @@ applicable to the graphs we are constructing since we cannot naively
 take ${\hat \phi}$ to be a function forcing the left hand side to be
 $G_C(x)$.
 
-   See also Exercise 7 on page 112,  which discusses the sums $$x - \sum_{|\theta| \le C} {\frac{x^{{\frac{1}{2}} +i\theta}-1}{{\frac{1}{2}} +i\theta}}.$$}.
+   See also Exercise 7 on page 112,  which discusses the sums $$x - \sum_{|\theta| \le C} {\frac{x^{{\frac{1}{2}} +i\theta}-1}{{\frac{1}{2}} +i\theta}}.$$}
 
 
  \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000}
@@ -3885,7 +3894,7 @@ $G_C(x)$.
 
  \ill{phi_cos_sum_1010_1026_15000}{.7}{Fourier series from $1,000$ to
    $1,030$ using 15,000 of the numbers $\theta_i$.  Note the twin
-   primes $1019$ and $1021$ and that $1024=2^{10}$.}
+   primes $1{,}019$ and $1{,}021$ and that $1{,}024=2^{10}$.}
 
 
 \part{Back to Riemann\label{part4}}
@@ -4080,8 +4089,8 @@ discussion so far.
 
  \begin{enumerate}
  \item John Derbyshire's {\it Prime Obsession: Bernhard Riemann and
-     the Greatest Unsolved Problem in Mathematics}.  We have already
-   mentioned this book in our introduction, but feel that it is so
+     the Greatest Unsolved Problem in Mathematics} (2003).  We have already
+   mentioned this book in our forward, but feel that it is so
    good, that it is worth a second mention here.
  \item The Wikipedia entry for Riemann's Zeta Function
    (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function}) It is
@@ -4319,18 +4328,18 @@ Here is how Riemann phrased RH:
 That a simple geometric property of these zeroes (lying on a line!) is
 directly equivalent to such profound (and more difficult to express)
 regularities among prime numbers suggests that these zeroes and the
-parade of Riemann's corrections governed by them--when we truly
-comprehend their message--may have lots more to teach us, may
+parade of Riemann's corrections governed by them---when we truly
+comprehend their message---may have lots more to teach us, may
 eventually allow us a more powerful understanding of arithmetic.  This
 infinite collection of complex numbers, i.e., the nontrivial zeroes of
 the Riemann zeta function, plays a role with respect to $\pi(X)$ rather
 like the role the {\em spectrum} of the Hydrogen atom, plays in
 Fourier's theory.  Are the primes themselves no more than an
-epiphenomenon, behind which there lies, still veiled from us--a
+epiphenomenon, behind which there lies, still veiled from us, a
 yet-to-be-discovered, yet-to-be-hypothesized, profound conceptual key
-to their perplexing orneriness.  Are the many innocently posed, yet
-unanswered, phenomenological questions about numbers--such as in the
-ones listed earlier-- waiting for our discovery of this deeper level
+to their perplexing orneriness?  Are the many innocently posed, yet
+unanswered, phenomenological questions about numbers---such as in the
+ones listed earlier---waiting for our discovery of this deeper level
 of arithmetic?  Or for layers deeper still?  Are we, in fact, just at
 the beginning?
 
@@ -4339,18 +4348,18 @@ the beginning?
 
 These are not completely idle thoughts, for a tantalizing analogy
 relates the number theory we have been discussing to an already
-established branch of mathematics--due, largely, to the work of
-Alexander Grothendieck, and Pierre Deligne--where the corresponding
+established branch of mathematics---due, largely, to the work of
+Alexander Grothendieck, and Pierre Deligne---where the corresponding
 analogue of Riemann's hypothesis has indeed been proved\ldots.
 
 
 
-\chapter{Companions to the zeta function}
+\chapter{Companions to the zeta function}\label{ch:companions}
 
 Our book, so far, has been exclusively about Riemann's $\zeta(s)$ and
-its zeroes. We have been discussing how the (placement of) the zeroes
+its zeroes. We have been discussing how (the placement of) the zeroes
 of $\zeta(s)$ in the complex plane contains the information needed to
-understand the (placement of) the primes in the set of all whole
+understand (the placement of) the primes in the set of all whole
 numbers; and conversely.
 
 It would be wrong---we think---if we don't even mention that
@@ -4403,7 +4412,8 @@ primes as they display themselves amongst complex numbers:
 \ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000}
 
 The natural question to ask, then, is: how are the Gaussian prime numbers distributed? Can one provide as close an estimate to their distribution and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with an analogue to the Riemann zeta function playing  a role similar to the prototype $\zeta(s)$.  And, it seems as if its ``nontrivial zeroes'' behave similarly: as far as things have been computed, they  all have the property that
-their real part is equal to ${\frac{1}{2}}$.  That is, we have  companion Riemann Hypothesis.
+their real part is equal to ${\frac{1}{2}}$.  That is, we
+have a companion to the Riemann Hypothesis.
 
  This is just the beginning of a much larger story related to what has been come to be called  the ``Grand Riemann Hypotheses" and connects to analogous problems, some of them actually solved, that give some measure of evidence for the truth of these hypotheses.  For example, for any system
 of polynomials in a fixed number of variables (with integer

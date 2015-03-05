@@ -1,6 +1,12 @@
-︠ad5c219e-2930-4a4a-988e-911196d0b32f︠
+︠2683353c-4139-4cc6-9bb4-a0b197690fb0s︠
 %load code.sage
-︡ddab07af-2542-4650-a2ce-fe04b11752fd︡
+︡4cba2d01-33d0-45fa-b1a3-4e63bc3636bb︡
+︠e2f7abd7-d6ee-4117-8f71-bb5b038917bcs︠
+draw("calculus")
+︡80f75b6d-d3fd-4bcb-af52-b6812f175df7︡{"stdout":"Drawing calculus... "}︡{"stdout":" "}︡{"stdout":" (time = 0.691792011261 seconds)\n"}︡
+︠79c97531-5200-4075-8a6a-a3c05e7061efs︠
+draw('theta_C_intro')
+︡ac1e2917-9ea9-402a-b6cd-c7f00fa04a8c︡{"stdout":"Drawing theta_C_intro... "}︡{"stdout":" "}︡{"stdout":" (time = 41.996740818 seconds)\n"}︡
 ︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cb︠
 %load code.sage
 draw('psi')

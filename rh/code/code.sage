@@ -1084,19 +1084,19 @@ def fig_aplusone(dir,ext):
 def fig_calculus(dir,ext):
     x = var('x')
     t = 8; f = log(x); fprime = f.diff()
-    fontsize = 14
-    g = plot(f, (0.5,t))
-    g += plot(x*fprime(x=4)+(f(x=4)-4*fprime(x=4)), (.5,t), rgbcolor='black')
-    g += point((4,f(x=4)), pointsize=20, rgbcolor='black')
-    g += plot(fprime, (0.5,t), rgbcolor='red')
+    fontsize = 16
+    g = plot(f, (0.5,t), thickness=2)
+    g += plot(x*fprime(x=4)+(f(x=4)-4*fprime(x=4)), (-.5,t), rgbcolor='green', thickness=2, zorder=10)
+    g += point((4,f(x=4)), pointsize=50, rgbcolor='black', zorder=20)
+    g += plot(fprime, (0.5,t), rgbcolor='red', thickness=2, zorder=15)
     g += text("What is the slope of the tangent line?", (3.5,2.2),
                   fontsize=fontsize, rgbcolor='black')
-    g += text("Here it is!",(5,.9), fontsize=fontsize, rgbcolor='black')
-    g += arrow((4.7,.76), (4, fprime(x=4)), rgbcolor='black')
-    g += point((4,fprime(x=4)),rgbcolor='black', pointsize=20)
-    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.5),
+    g += text("Here it is!",(5,.8), fontsize=fontsize, rgbcolor='black')
+    g += arrow((4.7,.64), (4.05, fprime(x=4.05)+.08), rgbcolor='black')
+    g += point((4,fprime(x=4)),rgbcolor='black', pointsize=50, zorder=20)
+    g += text("How to compute the slope?  This is Calculus.", (4.3, -0.3),
                   fontsize=fontsize, rgbcolor='black')
-    g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True, fontsize=20)
+    g.save(dir + '/graph_slope_deriv.%s'%ext, gridlines=True, frame=True, fontsize=16)
 
 def fig_jump(dir,ext):
     # straight jump
@@ -1501,7 +1501,7 @@ def fig_theta_C_intro(dir, ext):
     h = f(3)
     plot(h, 5, 40).save("%s/theta_3_intro-1.%s"%(dir, ext))
 
-    roots = [(h.derivative().find_root(a,b),0) for a,b in [(7,9), (10,12), (13,15), (18,21), (21,25), (27,30),
+    roots = [(h.derivative().find_root(a,b),0) for a,b in [(5,7), (7,9), (10,12), (13,15), (16,17.8), (18,21), (21,24), (24.5,26), (27,30),
                                                (30, 33), (33,36), (36, 38), (38,42)]]
 
     save(plot(h, 5, 40) + plot(h.derivative(),5,40,color='grey') +  points(roots, color='red', pointsize=50, zorder=10),
