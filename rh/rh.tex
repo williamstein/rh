@@ -561,17 +561,18 @@ continue the factorization (``climbing down'' any one of the possible
 ``factoring trees'') to the bottom, where every factor is a prime
 number as in Figure~\ref{fig:factor300}, you always end up with the
 same collection of prime numbers\footnote{See Section~1.1 of
-Stein's book {\em Elementary Number Theory: Primes, Congruences, and Secrets} (2008)
+Stein's {\em Elementary Number Theory: Primes, Congruences, and Secrets} (2008) at \url{http://wstein.org/ent/}
 for a proof of the ``fundamental theorem of arithmetic'',
-which is the statement that every positive
-whole number factors uniquely as a product of primes.
-This book is freely available at \url{http://wstein.org/ent/}.}:
+which asserts that every positive
+whole number factors uniquely as a product of primes.}:
                  $$300 = 2^2\times 3\times 5^2.$$
 
 \illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
 {Factor trees that illustrates the factorization of 300 as a product of primes.\label{fig:factor300}}
 
-\ill{factor_tree_big}{1}{Factorization tree for the product of the primes up to $29$.\label{factor.tree.big}}
+\ill{factor_tree_big}{1}{Factorization tree for the product of the primes up to $29$.\label{factor.tree.big}}%NOTE: in our version of the book there is an annoying
+%battle between the footnote and this figure.  Maybe won't matter in
+% CUP version.
 
 
 The \RH{} probes the question: how intimately can we know
@@ -609,8 +610,8 @@ One of us (Barry Mazur) in the recent article {\em How can we
 found himself dealing (for various reasons) with the fraction
 $-B_{200}/400$, where $B_{200}$ is the two-hundredth Bernoulli number.
 The numerator of this fraction is quite large: it is---hold your
-breath---\ $$389\cdot 691\cdot5370056528687 \ \ \ \ {\rm times\ this\
-}204-{\rm digit \ number:}
+breath---\ $$389\cdot 691\cdot5370056528687 \ \ \ \ \text{times this
+204-digit number:}
 $$\vskip 10pt
 $N:=3452690329392158031464109281736967404068448156842396721012$\newline
 $\mbox{}\,\,\,\qquad 9920642145194459192569415445652760676623601087497272415557$\newline
@@ -1174,9 +1175,10 @@ difference equal to $2$ (these being called {\em twin primes}) for it
 has long been guessed that there are infinitely many such pairs of
 primes, but no one has been able to prove this yet.
 
+%NOTE: I omitted the commas in the numbers in the displayed formula.
 \begin{quote} As of 2014, the largest known twin primes are
 $$3756801695685\cdot 2^{666669} \pm 1$$
-These enormous primes, which were found in 2011, have $200700$ digits each\footnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+These enormous primes, which were found in 2011, have $200{,}700$ digits each\footnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
 largest known twin primes.}.
 \end{quote}
 
@@ -1538,11 +1540,11 @@ marvelous, has a cornucopia of applications, and we will be telling it
 below. But our curiosity here is driven by a question that is pure,
 and less amenable to precise formulation: are there mathematical
 concepts at the root of, and more basic than (and ``prior to,'' to
-borrow Aristotle's use of the phrase,) {\em prime numbers}--concepts
+borrow Aristotle's use of the phrase) {\em prime numbers}---concepts
 that account for the apparent complexity of the nature of primes?
 
 
-\chapter{A probabilistic ``first'' guess\label{sec:firstguess} }
+\chapter{A probabilistic first guess\label{sec:firstguess} }
 
 \ill{gauss}{.3}{Gauss}
 
@@ -1688,7 +1690,7 @@ below, but to be more precise, the specific {\em gauge of accuracy}
 that will be important to us is not for a mere {\em single} estimate
 of a {\em single} error term,
 
- \centerline{Error term\ \  =\ \    Exact Value\ \   -\ \   Our ``good  approximation''}
+ \centerline{Error term\ \  =\ \    Exact value\ \   $-$\ \   Our ``good  approximation''}
 
 
 
@@ -1760,7 +1762,7 @@ half the digits are correct.
 
 \chapter{Square root error and random walks}
 
- To take a random walk along a (straight) East-West path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either East or West. After $X$ minutes, how far are you from your home base?
+ To take a random walk along a (straight) East--West path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either East or West. After $X$ minutes, how far are you from your home base?
 
   The answer to this {\it cannot} be a specific number, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. It is more reasonable to ask a statistical version of that question. Namely, if you took {\it many} random walks $X$ minutes long, then---on the average---how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after (sufficiently many of) these excursion is proportional to ${\sqrt X}$. (In fact, the average is equal to $\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
 
@@ -1990,7 +1992,10 @@ Calculus exercise.}).
 
 
 Recall (on page~\pageref{pili_vals} above in Chapter~\ref{sec:rh1})  that
-if $X = 10^{24}$, the top twelve digits of $\pi(X)$ and $\Li(X)$ are the same: $18{,}435{,}599{,}767{,}3$. Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``top'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
+if $X = 10^{24}$, the left-most
+twelve digits of $\pi(X)$ and $\Li(X)$ are the same:
+both numbers start
+$18{,}435{,}599{,}767{,}3\ldots$. Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``left-most'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
 
 The \RH{}, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
@@ -2211,7 +2216,7 @@ data compression, and prime numbers have to do with each other?\label{sec:fourie
 
 
 Sounds of all sorts---and in particular the sounds of music---travel
-as vibrations of air molecules at roughly 768 miles an hour. These
+as vibrations of air molecules at roughly 768 miles per hour. These
 vibrations---fluctuations of pressure---are often represented, or
 ``pictured,'' by a graph where the horizontal axis corresponds to
 time, and the vertical axis corresponds to pressure at that time.  The
@@ -2355,7 +2360,7 @@ pure tones.
 The {\em sawtooth} wave in Figure~\ref{fig:sawtooth} has a spectral picture, its Fourier transform, given in Figure~\ref{fig:sawtooth-spectrum}:
 
    \ill{sawtooth}{.7}{Graph of Sawtooth Wave\label{fig:sawtooth}}
-   \ill{sawtooth-spectrum}{.7}{The Spectrum of the Sawtooth Wave Has a Spike of Height $1/k$ at
+   \ill{sawtooth-spectrum}{.7}{The Spectrum of the Sawtooth Wave has a Spike of Height $1/k$ at
 each integer $k$\label{fig:sawtooth-spectrum}}
 
 
@@ -2364,14 +2369,14 @@ each integer $k$\label{fig:sawtooth-spectrum}}
 
 Suppose you have a complicated sound wave, say as in
 Figure~\ref{fig:complicated-wave}, and you want to record it.
-Standard audio CD's record their data by intensive sampling as we
-mentioned. In contrast, current mp3 audio compression technology uses
+Standard audio CDs record their data by intensive sampling as we
+mentioned. In contrast, current MP3 audio compression technology uses
 Fourier transforms plus sophisticated algorithms based on
 knowledge of which frequencies the human ear can hear.
-With this, mp3 technology manages to
+With this, MP3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality, so that you can fit your entire music collection on your
-mp3 player, instead of just a few of your favorite CD's.
+MP3 player, instead of just a few of your favorite CDs.
 
 \chapter{The word `Spectrum'}
 
@@ -2417,7 +2422,7 @@ $$F(t)  = a_1\cdot \cos(b_1 +\theta_1 t) + a_2\cdot \cos(b_2 +\theta_2 t) + a_3\
 \ill{mixed_tone3}{.7}{Plot of the sum $5  \cos\left(-t - 2\right) + 2 \cos\left(t/2 + 1\right) + 3  \cos\left(2  t + 4\right)$}
 
 We'll refer to such functions $F(t)$ as {\it finite trigonometric
-  sums}, because ---well---they are.  In this example, there are three
+  sums}, because---well---they are.  In this example, there are three
 frequencies involved---i.e., $\theta_1,\theta_2,\theta_3$---and we'll
 say that {\it the spectrum of $F(t)$} is the set of these frequencies,
 i.e.,
@@ -2490,7 +2495,7 @@ For readers who have at some point studied Differential Calculus, in
 Part~\ref{part2} we shall discuss Fourier analysis, a fundamental tool that will be used in Part~\ref{part3}
 where we show how
 Riemann's hypothesis provides a key to some deeper structure of the
-prime numbers, and to the nature of the laws that they obey. We will ---if not explain--at least
+prime numbers, and to the nature of the laws that they obey. We will---if not explain---at least
 hint at how the above series of questions have been answered so far,
 and how the \RH{} offers a surprise for the last question in this
 series.
@@ -2527,7 +2532,7 @@ series.
 \chapter[Slopes of graphs that have no slopes]{How Calculus manages to
   find the slopes of graphs that have no slopes}
 
-Differential Calculus, initially the creation of Newton and/or Leibniz
+Differential Calculus, initially the creation of Newton and Leibniz
 in the 1680s, acquaints us with {\it slopes} of graphs of functions of
 a real variable.  So, to discuss this we should say a word about what
 a {\it function} is, and what its {\it graph} is.
@@ -2645,7 +2650,7 @@ Calculus relating a function to its derivative:
   under the graph of the derivative of $F(x)$ over that interval is
   equal to $F(b)-F(a)$.
   \end{quote}
-    What happens if we take the series of figures \ref{fig:djump1}--\ref{fig:djump4}, etc.
+    What happens if we take the series of figures \ref{fig:djump1}--\ref{fig:djump4}, etc.,
     {\it to the limit}?  This is quite curious:
 
   \begin{itemize}
@@ -2882,7 +2887,7 @@ additivity relation
 
  For example, for the Dirac $\delta$-function we have been discussing
  (i.e., the limit of the red graphs of the previous section) {\it is}
- an honest function away from $t=0$ and ---in fact---is the ``trivial
+ an honest function away from $t=0$ and---in fact---is the ``trivial
  function'' zero away from the origin.  And at $0$, we may {\it say}
  that it has the ``value'' infinity, in honor of it being the limit of
  blip functions getting taller and taller at $0$ but the feature that
@@ -3207,7 +3212,7 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
 
 \chapter{A sneak preview of Part~\ref{part3}}\label{snpr}
 
-   In this chapter, as a striking illustration of the type of phenomena that will be studied in Part~\ref{part3}, we will consider two infinite trigonometric sums ---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
+   In this chapter, as a striking illustration of the type of phenomena that will be studied in Part~\ref{part3}, we will consider two infinite trigonometric sums---that seem to be related one to the other in that the {\it frequencies} of the terms in the one trigonometric sum give the {\it spike values} of the other, and vice versa:   the {\it frequencies} of the other give the {\it spike values} of the one: a kind of duality as in the theory of Fourier transforms. We show this duality by exhibiting the graphs of more and more accurate finite approximations (cutoffs) of these infinite sums. More specifically,
 
 \begin{enumerate}\item The first infinite trigonometric sum $F(t)$  is a sum{\footnote{Here we
     make use of the Greek symbol $\sum$ as a shorthand way of
@@ -3659,7 +3664,7 @@ Also, in this formula we have relegated the ``$\theta$" to the status of  a subs
 two variables $X$ and $C$ as linked in that we want the cutoff ``$X$" to be sufficiently
 large, say $X \gg C^2$, so that the error term can be controlled.
 
- At this point, we can perform a `multiplicative version' of  a C{\'e}saro summation ---i.e.,  the operator $F(c) \mapsto ({\Ces} F)(C):= \int_1^CF(c) dc/c.$
+ At this point, we can perform a `multiplicative version' of  a C{\'e}saro summation---i.e.,  the operator $F(c) \mapsto ({\Ces} F)(C):= \int_1^CF(c) dc/c.$
 This has the effect of forcing the oscillatory term to be bounded as $C$ tends to infinity.
 
  This implies that for any fixed $\theta$,
@@ -4226,7 +4231,7 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
     take the logarithm and then the derivative of $\zeta(s)$ (this boils
     down to forming ${\frac{d{\zeta}}{ds}}(s)/\zeta(s)$). Assuming
     that the real part of $s$ is $>1$, taking the logarithm of
-    $\zeta(s)$ ---using Euler's infinite product formulation---gives
+    $\zeta(s)$---using Euler's infinite product formulation---gives
     us $$\log\zeta(s)= \sum_{p \ {\rm
         prime}}-\log{\big(1-p^{-s}\big)},$$ and we can do this
     term-by-term, since the real part of $s$ is $>1$.  Then taking the
@@ -4336,7 +4341,7 @@ These are not completely idle thoughts, for a tantalizing analogy
 relates the number theory we have been discussing to an already
 established branch of mathematics--due, largely, to the work of
 Alexander Grothendieck, and Pierre Deligne--where the corresponding
-analogue of Riemann's hypothesis has indeed been proved$\dots$
+analogue of Riemann's hypothesis has indeed been proved\ldots.
 
 
 
