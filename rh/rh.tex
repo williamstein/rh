@@ -500,7 +500,7 @@ Prime numbers do occur, in earnest, in  Euclid's  {\it Elements}!
 There is an extraordinary wealth of established truths about whole
 numbers; these truths provoke sheer awe for the beautiful complexity
 of prime numbers. But each of the important new discoveries we make
-give rise to a further richness of questions, educated guesses,
+gives rise to a further richness of questions, educated guesses,
 heuristics, expectations, and unsolved problems.
 
 
@@ -570,7 +570,7 @@ whole number factors uniquely as a product of primes.}:
                  $$300 = 2^2\times 3\times 5^2.$$
 
 \illtwo{factor_tree_300_a}{factor_tree_300_b}{.47}
-{Factor trees that illustrates the factorization of 300 as a product of primes.\label{fig:factor300}}
+{Factor trees that illustrate the factorization of 300 as a product of primes.\label{fig:factor300}}
 
 \ill{factor_tree_big}{1}{Factorization tree for the product of the primes up to $29$.\label{factor.tree.big}}%NOTE: in our version of the book there is an annoying
 %battle between the footnote and this figure.  Maybe won't matter in
@@ -1445,7 +1445,7 @@ $2$, and the multiples of $3$ greater than $3$ itself.
 
 
 From this graph you can see that if you go ``out a way'' the
-likelihood that a number is a prime is less that $1$ in $3
+likelihood that a number is a prime is less than $1$ in $3
 $. Figure~\ref{fig:sieve7_100} contains a graph of what Eratosthenes
 sieve looks like up to 100 after sifting $2,3,5,$ and $7$.
 
@@ -1882,7 +1882,7 @@ a computational perspective}.}.
    To get a feel for this error term, we shall smooth it out a bit, and look at a few of its graphs.
 
 
-\chapter {C{\'e}saro smoothing}\label{ces}
+\chapter{Ces\'aro smoothing}\label{ces}
 
 Often when you hop in a car and reset the trip counter, the car
 will display information about your trip.  For instance, it might show you the
@@ -1890,7 +1890,7 @@ average speed up until now during your trip; this number
 is ``sticky'', changing much less erratically than your
 actual speed, and you might use it to make a rough estimate of
 how long until you will reach your destination.
-Your car is computing the {\em C{\'e}saro smoothing }of your speed.
+Your car is computing the {\em Ces\'aro smoothing }of your speed.
 We can use this same idea to better understand the behavior
 of other things, such as the sums appearing in
 the previous chapter.
@@ -1899,16 +1899,16 @@ the previous chapter.
 
  Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$ over a time interval, say from $0$ to $T${\footnote{ For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.}.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
-   This new function $F(T)$, called the {\bf C{\'e}saro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
+   This new function $F(T)$, called the {\bf Ces\'aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to `smooth out' some of the volatile local behavior of the original function, as can be seen in the figure below.
 
 
-\ill{cesaro}{.8}{The red plot is the C{\'e}saro smoothing of the blue plot}
+\ill{cesaro}{.8}{The red plot is the Ces\'aro smoothing of the blue plot}
 \chapter{ A view of $|\Li(X) - \pi(X)|$}
  Returning to our mysterious error term,  consider Figure \ref{fig:li-minus-pi-250000} where the volatile blue curve in the middle
- is $\Li(X) - \pi(X)$, its C{\'e}saro smoothing is the red relatively smooth curve on the bottom, and the curve on the top
+ is $\Li(X) - \pi(X)$, its Ces\'aro smoothing is the red relatively smooth curve on the bottom, and the curve on the top
  is the graph of $\sqrt{\frac{2}{\pi}}\cdot \sqrt{X/\log(X)}$ over the range of $X\le 250{,}000$.
 
-\ill{li-minus-pi-250000}{.9}{$\Li(X)-\pi(X)$ (blue middle), its C{\'e}saro smoothing (red bottom), and
+\ill{li-minus-pi-250000}{.9}{$\Li(X)-\pi(X)$ (blue middle), its Ces\'aro smoothing (red bottom), and
 $\sqrt{\frac{2}{\pi}}\cdot \sqrt{X/\log(X)}$ (top), all for $X\leq 250{,}000$\label{fig:li-minus-pi-250000}}
 
 % TODO: this is from http://seriesdivergentes.wordpress.com/2011/07/21/john-e-littlewood/
@@ -2167,7 +2167,7 @@ but is constructed according to the following architectural plan.
    Although we are not quite done with our architectural work, Figure~\ref{fig:psi} shows
    what our new staircase looks like, so far.
 
-\illtwoh{psi_9}{psi_100}{.27}{The newly constructed staircase that counts tprime powers\label{fig:psi}}
+\illtwoh{psi_9}{psi_100}{.27}{The newly constructed staircase that counts prime powers\label{fig:psi}}
 
 
   \end{itemize}
@@ -3672,7 +3672,7 @@ Also, in this formula we have relegated the ``$\theta$" to the status of  a subs
 two variables $X$ and $C$ as linked in that we want the cutoff ``$X$" to be sufficiently
 large, say $X \gg C^2$, so that the error term can be controlled.
 
- At this point, we can perform a `multiplicative version' of  a C{\'e}saro summation---i.e.,  the operator $F(c) \mapsto ({\Ces} F)(C):= \int_1^CF(c) dc/c.$
+ At this point, we can perform a `multiplicative version' of  a Ces\'aro summation---i.e.,  the operator $F(c) \mapsto ({\Ces} F)(C):= \int_1^CF(c) dc/c.$
 This has the effect of forcing the oscillatory term to be bounded as $C$ tends to infinity.
 
  This implies that for any fixed $\theta$,
