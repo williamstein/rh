@@ -253,14 +253,15 @@ getting familiar with it and with some of the the ideas behind it, is
 exciting.  Moreover, this hypothesis is of crucial importance in a
 wide range of mathematical fields; for example, it is a
 confidence-booster for computational mathematics: even if the Riemann
-Hypothesis is never proved, assuming its truth gives us an excellent sense of
+Hypothesis is never proved, assuming its truth (and that of closely
+related hypotheses) gives us an excellent sense of
 how long certain computer programs will take to run, which, in some
 cases, gives us the assurance we need to initiate a computation that
 might take weeks or even months to complete.
 
 
 % I (William Stein) took this very picture in the Princeton common room in 2001!
-\ill{sarnak}{0.35}{Peter Sarnak}
+\ill{sarnak}{0.4}{Peter Sarnak}
 
 
 
@@ -272,7 +273,9 @@ Riemann Hypothesis has had\footnote{See page 222 of
 ``The Riemann hypothesis is the central problem and it implies many,
 many things. One thing that makes it rather unusual in mathematics
 today is that there must be over five hundred papers---somebody should
-go and count---which start `Assume the Riemann hypothesis,' and
+go and count---which start `Assume the Riemann hypothesis\footnote{Technically,
+a generalized version of the Riemann hypothesis (see
+Chapter~\ref{ch:companions} below).},' and
 the conclusion is fantastic. And those [conclusions] would then become
 theorems ... With this one solution you would have proven five hundred
 theorems or more at once.''
@@ -364,11 +367,11 @@ paragraph of Don Zagier's classic 12-page exposition, {\em The First
 \end{quote}
 
 
- Mathematics is flourishing.  Each year sees new exciting initiatives that extend and sharpen the applications of our subject,   new directions for  deep  exploration---and finer understanding---of  classical as well as very contemporary mathematical domains. We are aided in such explorations by the development of more and more powerful tools. We  see resolutions of centrally important questions.  And through all of this, we are treated to surprises, dramatic changes of viewpoint; in short: marvels.
+ Mathematics is flourishing.  Each year sees new exciting initiatives that extend and sharpen the applications of our subject,   new directions for  deep  exploration---and finer understanding---of  classical as well as very contemporary mathematical domains. We are aided in such explorations by the development of more and more powerful tools. We  see resolutions of centrally important questions.  And through all of this, we are treated to surprises and dramatic changes of viewpoint; in short: marvels.
 
  And what an array of wonderful techniques  allow mathematicians to do their work:  framing {\it definitions;} producing {\it constructions;  }formulating {\it analogies relating disparate concepts, and disparate  mathematical fields}; posing {\it  conjectures,} that cleanly shape a possible way forward; and, the keystone: providing unassailable {\it proofs} of what is asserted,  the idea of doing such a thing being itself one of the great glories of mathematics.
 
-    Number Theory has its share of this bounty. Along with all these modes of theoretical work,  number theory also offers the pure joy of numerical experimentation, which---when it is going well---allows you to witness the intricacy of numbers and  profound inter-relations that cry out for explanation. It is striking how little you actually have to know, to appreciate the  revelations offered by numerical exploration.
+    Number theory has its share of this bounty. Along with all these modes of theoretical work,  number theory also offers the pure joy of numerical experimentation, which---when it is going well---allows you to witness the intricacy of numbers and  profound inter-relations that cry out for explanation. It is striking how little you actually have to know in order to appreciate the  revelations offered by numerical exploration.
 
     Our book is meant to be an introduction to these pleasures. We take an experimental view of the fundamental ideas of the subject  buttressed by numerical computations, often displayed as graphs. As a result, our book is profusely illustrated, containing over 125 figures,
 diagrams, and pictures that accompany the text\footnote{We created all of the
@@ -386,7 +389,7 @@ which is becoming easier  as mathematical software
 advances.}.
 
   There are  few
-mathematical equations in Part~\ref{part1}.  This first portion of our book is intended for readers who are generally interested in, or curious about, mathematical ideas, but who may not have studied any advanced topics. Part~\ref{part1} is devoted to conveying the essence of the Riemann Hypothesis and explaining why it is so intensely pursued. It requires a minimum of mathematical knowledge, and does not,  for example, use calculus, although it would be helpful to know---or to learn on the run---the meaning of  the concept of {\it function}. Given its mission, Part I is meant to be complete, in that it has a beginning, middle, and end.  We hope that our readers who only read Part I will have enjoyed the excitement  of this important piece of mathematics.
+mathematical equations in Part~\ref{part1}.  This first portion of our book is intended for readers who are generally interested in, or curious about, mathematical ideas, but who may not have studied any advanced topics. Part~\ref{part1} is devoted to conveying the essence of the Riemann Hypothesis and explaining why it is so intensely pursued. It requires a minimum of mathematical knowledge, and does not,  for example, use calculus, although it would be helpful to know---or to learn on the run---the meaning of  the concept of {\it function}. Given its mission, Part~\ref{part1}  is meant to be complete, in that it has a beginning, middle, and end.  We hope that our readers who only read Part~\ref{part1} will have enjoyed the excitement  of this important piece of mathematics.
 
 
 
@@ -396,7 +399,7 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
 
     Part~\ref{part4} requires some familiarity with complex analytic functions, and returns to Riemann's original viewpoint.  In particular it  relates the ``Riemann Spectrum'' that we discuss in Part~\ref{part3} to the {\it nontrivial zeroes of the Riemann zeta-function}. We also provide a brief sketch of the more standard route taken by published expositions of the Riemann Hypothesis.
 
-      The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.
+      The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.  References to the end notes will be in brackets.
 
       We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A--- about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers. We thank them infinitely.
 %In particular, Dennis Stein suggested the book title,
@@ -2382,7 +2385,7 @@ get a compression factor of 8--12 with little {\em perceived} loss in
 quality, so that you can fit your entire music collection on your
 MP3 player, instead of just a few of your favorite CDs.
 
-\chapter{The word `Spectrum'}
+\chapter{The word ``Spectrum"}
 
 % TODO: this is from wikipedia -- requires attribution.
 \begin{wrapfigure}{r}{0.2\textwidth}
@@ -3508,8 +3511,8 @@ described, that end up with the distribution $\Phi(t)$.
 
 
 
-\chapter[From Primes to the Riemann Spectrum]{Going from
-the primes to the Riemann Spectrum}
+\chapter[From primes to the Riemann spectrum]{Going from
+the primes to the Riemann spectrum}
 \label{ch:prime-to-spectrum}
 %\todo{This chapter has not been fully written, there are some
 %  mathematical issues that we don't yet explain, and we will need to
@@ -3832,8 +3835,8 @@ It has been conjectured that there are no infinite arithmetic progressions among
 \ill{riemann_spectrum_gaps}{0.95}{Frequency histogram of the
 first 99{,}999 gaps in the Riemann spectrum\label{fig:riemann_spectrum_gaps}}
 
-\chapter[From the Riemann Spectrum to Primes]{Going
-from the Riemann Spectrum to the primes}
+\chapter[From the Riemann spectrum to primes]{Going
+from the Riemann spectrum to the primes}
 
 To justify the name {\it Riemann spectrum of primes} we will
 investigate graphically whether in an analogous manner we can use this

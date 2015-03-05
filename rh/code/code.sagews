@@ -1,10 +1,10 @@
-︠2683353c-4139-4cc6-9bb4-a0b197690fb0s︠
+︠2683353c-4139-4cc6-9bb4-a0b197690fb0︠
 %load code.sage
 ︡1acbb6ff-f779-433b-a214-55433455ab32︡
-︠e2f7abd7-d6ee-4117-8f71-bb5b038917bcs︠
+︠e2f7abd7-d6ee-4117-8f71-bb5b038917bc︠
 draw("cesaro")
 ︡fc9764de-1e73-4bb7-af19-772196864977︡{"stdout":"Drawing cesaro... "}︡{"stdout":" "}︡{"stdout":" (time = 161.922121048 seconds)\n"}︡
-︠79c97531-5200-4075-8a6a-a3c05e7061efs︠
+︠79c97531-5200-4075-8a6a-a3c05e7061ef︠
 draw('theta_C_intro')
 ︡ac1e2917-9ea9-402a-b6cd-c7f00fa04a8c︡{"stdout":"Drawing theta_C_intro... "}︡{"stdout":" "}︡{"stdout":" (time = 41.996740818 seconds)\n"}︡
 ︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cb︠
