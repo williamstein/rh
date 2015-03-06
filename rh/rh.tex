@@ -249,7 +249,7 @@ hands. We aim---instead---to explain, in as direct a manner as
 possible and with the least mathematical background required, what
 this problem is all about and why it is so important. For even before
 anyone proves this {\em hypothesis} to be true (or false!), just
-getting familiar with it, and with some of the the ideas behind it, is
+getting familiar with it, and with some of the ideas behind it, is
 exciting.  Moreover, this hypothesis is of crucial importance in a
 wide range of mathematical fields; for example, it is a
 confidence-booster for computational mathematics: even if the Riemann
@@ -459,7 +459,7 @@ Toboso, the first letters of each line spelling out her name. The
   letters too few...''
 \end{quote}
 
-``It must fit in, however, you do it,'' pleaded Quixote, not willing to
+``It must fit in, however you do it,'' pleaded Quixote, not willing to
 grant the imperviousness of the number $17$ to division.
 
 % http://www.jus.uio.no/sisu/don_quixote.miguel_de_cervantes/60.html#2068
@@ -640,10 +640,10 @@ alliteratively distinguish it from you-know-what.
 If $p$ is a prime number, and $a$ is any number relatively prime to $p$ then $a^{p-1} - 1$ is divisible by $p$.
 \end{theorem}
 A good exercise is to try to prove this, and a one-word hint that might lead you to one of the many proofs of it is
-{\em induction}.\footnote{Here's the proof:
+{\em induction}\footnote{Here's the proof:
 $$(N+1)^p \equiv N^p +1 \equiv (N+1)\ \mod p,$$
 where the first equality is the binomial theorem and the second
-equality is induction.}
+equality is induction.}.
 
  Now we are going to use this as a criterion, by---in effect---restating it in what logicians would call  its {\it contrapositive}:
  \begin{theorem}[The Fermat $a$-test]
@@ -651,9 +651,9 @@ If $M$ is a positive integer, and $a$ is any number relatively prime to $M$ such
 \end{theorem}
 
 Well, Naskr\c{e}cki computed $2^{N-1}-1$  (for the $204$-digit $N$ above)   and saw that
-it is {\it not} divisible by $N$.{\footnote{and has a residue of $3334581100595953025153969739282790317394606677381970645616725285996925
-66100005682$\newline$92727335792620957159782739813115005451450864072425835484898
-5651127636929707992693354028195076056916221$\newline$73717318335512037458$ after division by $N$.}}
+it is {\it not} divisible\footnote{It has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\textbackslash\newline$
+ 6610000568292727335792620957159782739813115005451450864072425835484898$\textbackslash\newline$
+ 565112763692970799269335402819507605691622173717318335512037458$.} by $N$.
 Ergo, our $N$ fails the  Fermat $2$-test so is {\it not} prime.
 
 But then, given that it is so ``easy'' to see that $N$ is not prime, a
@@ -698,30 +698,31 @@ p_{115} &= 230988849487852221315416645031371036732923661613\\
 The factorization of the 204-digit composite was made possible with the help
 of many people:
 \begin{itemize}
-\item William Stein and Barry Mazur challenged us to factor this number
+\item William Stein and Barry Mazur challenged us to factor this number.
 \item Sam Wagstaff maintains a table of factorizations of numerators of Bernoulli
   numbers at \url{http://homes.cerias.purdue.edu/~ssw/bernoulli/bnum}. According
   to this table, the 200th Bernoulli number is the 2nd smallest index with
-  unfactored numerator (the first being the 188th Bernoulli number)
+  unfactored numerator (the first being the 188th Bernoulli number).
 \item Cyril Bouvier tried to factor the c204 by ECM up to 60-digit level, using
-  the TALC cluster at Inria Nancy - Grand Est
+  the TALC cluster at Inria Nancy - Grand Est.
 \item {\sf yoyo@home} tried to factor the c204 by ECM up to 65-digit level, using the
   help of many volunteers of the distributed computing platform
   \url{http://www.rechenkraft.net/yoyo/}.
- after ECM was unsuccessful, we decided to factor the c204 by GNFS
-\item Many people at mersenne forum helped for the polynomial selection. The best
+ After ECM was unsuccessful, we decided to factor the c204 by GNFS.
+\item Many people at the Mersenne forum helped for the polynomial selection. The best
   polynomial was found by Shi Bai, using his implementation of Kleinjung's
   algorithm in CADO-NFS:
-  \url{http://www.mersenneforum.org/showthread.php?p=298264#post298264}
- sieving was performed by many volunteers {\sf NFS@home}, thanks to Greg
-  Childers. See \url{http://escatter11.fullerton.edu/nfs} for more details {\sf NFS@home}
+  \url{http://www.mersenneforum.org/showthread.php?p=298264#post298264}.
+ Sieving was performed by many volunteers using {\sf NFS@home}, thanks to Greg
+  Childers. See \url{http://escatter11.fullerton.edu/nfs} for more details
+  about {\sf NFS@home}.
   This factorization showed that such a distributed effort might be feasible for a
   new record GNFS factorization, in particular for the polynomial selection.
   This was the largest GNFS factorization performed by {\sf NFS@home} to date,
   the second largest being $2^{1040}+1$ at 183.7 digits.
 \item Two independent runs of the filtering and linear algebra were done: one by Greg
   Childers with msieve (\url{http://www.boo.net/~jasonp/qs.html}) using a 48-core
-  cluster made available by Bill Hart, one by Emmanuel Thom\'{e} and Paul
+  cluster made available by Bill Hart, and one by Emmanuel Thom\'{e} and Paul
   Zimmermann with CADO-NFS (\url{http://cado-nfs.gforge.inria.fr/}), using the Grid
   5000 platform.
 \item The first linear algebra run to complete was the one with CADO-NFS, thus we
@@ -731,7 +732,7 @@ of many people:
 Bill Hart
 \end{quote}
 
-Verify the above in Sage as follows: \\
+We verify the factorization above in Sage as follows: \\
 
 {\sf
 sage: p90 = 1494743290443435945287842503336459830794974542928382\textbackslash\\
@@ -1353,7 +1354,7 @@ previous questions, the answer to this question is known\footnote{For more
     Function} and the nice short paper of Norbert Wiener {\em Notes on
     Polya's and Turan's hypothesis concerning Liouville's factor}
   (page 765 of volume II of Wiener's Collected Works); see also:
-  G. P\'{o}lya {\em Vershiedene Bemerkungen zur Zahlentheorie}
+  G. P\'{o}lya {\em Verschiedene Bemerkungen zur Zahlentheorie}
   Jahresbericht der Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
   31--40.}: alas, there is such an $X$.  In 1960, Lehman showed that
 for $X=906{,}400{,}000$ there are $708$ more multiplicatively even numbers
@@ -1876,13 +1877,13 @@ a computational perspective}.}).
 
 \chapter{The mystery moves to  the error term}
 
- Let's think of what happens when you have a {\it mysterious quantity} (say,  a function of a real number $X$) you wish to understand. Suppose you manage to approximate that quantity by  an easy to understand  expression---which we'll call the  ``dominant term,"---that is also simple to compute, but only approximates your mysterious quantity. The approximation is not exact; it has a possible error, which happily is significantly smaller than the size of the dominant term. `Dominant' here just means exactly that: it  is of size significantly larger than the error of approximation.
+ Let's think of what happens when you have a {\it mysterious quantity} (say,  a function of a real number $X$) you wish to understand. Suppose you manage to approximate that quantity by  an easy to understand  expression---which we'll call the  ``dominant term"---that is also simple to compute, but only approximates your mysterious quantity. The approximation is not exact; it has a possible error, which happily is significantly smaller than the size of the dominant term. `Dominant' here just means exactly that: it  is of size significantly larger than the error of approximation.
 
  $${\it Mysterious\  quantity}(X)\ \ = \ \ {\it Simple, \ but \ dominant\ quantity}(X) \ + \ {\it Error}(X).$$
 
  If all you are after is a general estimate of {\it size}  your job is done. You might declare victory and ignore ${\it Error}(X)$ as being---in size---negligible. But if you are interested in the deep structure of your {\it mysterious quantity} perhaps all you have done is to manage to transport most questions about it to  ${\it Error}(X)$. In conclusion, ${\it Error}(X)$ is now your new mysterious quantity.
 
- Returning to the issue of $\pi(X)$ (our {\it mysterious quantity}) and $\Li(X)$ (our {\it dominant term}) the first formulation of the Riemann Hypothesis  (as in Chapter \ref{sec:rh1} above)  puts the spotlight on the {\it Error\ term}, $|\Li(X) - \pi(X)|$ which therefore deserves our scrutiny, since---after all---we're not interested in merely counting the primes: we want to understand as much as we can of their structure.
+ Returning to the issue of $\pi(X)$ (our {\it mysterious quantity}) and $\Li(X)$ (our {\it dominant term}) the first formulation of the Riemann Hypothesis  (as in Chapter \ref{sec:rh1} above)  puts the spotlight on the {\it Error\ term} $|\Li(X) - \pi(X)|$, which therefore deserves our scrutiny, since---after all---we're not interested in merely counting the primes: we want to understand as much as we can of their structure.
 
    To get a feel for this error term, we shall smooth it out a bit, and look at a few of its graphs.
 
@@ -1902,7 +1903,7 @@ the previous chapter.
 \ill{camaro}{.7}{The dashboard of the 2013 Camaro SS car that one of us was driving during the writing of this chapter.}
 %I took this picture of my rental car -- William Stein.
 
- Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of `time' $t$.  The first natural impulse might be to take some sort of `average value' of  $f(t)$ over a time interval, say from $0$ to $T${\footnote{ For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.}.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
+ Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of ``time'' $t$.  The first natural impulse might be to take some sort of ``average value''\footnote{For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.} of  $f(t)$ over a time interval, say from $0$ to $T$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
    This new function $F(T)$, called the {\bf Ces\'aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to ``smooth out" some of the volatile local behavior of the original function, as can be seen in the figure below.
 
@@ -2033,7 +2034,7 @@ known for over a century. It goes under the name of
    in 1896 independently by Jacques Hadamard and Charles de la Vall\'{e}e Poussin.
 
 
-   A milestone in the history leading up to the proof of Prime Number
+   A milestone in the history leading up to the proof of the Prime Number
    Theorem is the earlier work of Pafnuty Lvovich  Chebyshev (see
    \url{http://en.wikipedia.org/wiki/Chebyshev_function}) showing that
    (to use the terminology we introduced) $X/\log(X)$ and $\pi(X)$ go
@@ -2843,7 +2844,7 @@ number and for every interval $[a,b]$ we may consider the quantity
 $\int_a^bf(t)dt$. BUT when we are given a generalized function $D(t)$
 we {\it only} have at our disposal the latter quantities.  In fact, a
 generalized function of a real variable $D(t)$ is (formally) nothing
-more than a {\it rule} that assigns to any finite interval $[a,b]$ ($a
+more than a {\it rule} that assigns to any finite interval $(a,b]$ ($a
 \le b$) a quantity that we might denote $\int_a^bD(t)dt$ and that {\it
   behaves as if it were the integral of a function} and in
 particular---for three real numbers $a\le b\le c$ we have the
@@ -3098,7 +3099,7 @@ Well, the general formula would give us:
   and as we mentioned in section 18, for any nice function $c(t)$ we
   have that the integral of the product of $c(t)$ by the distribution
   $\delta_x(t)$ is given by the {\it value} of the function $c(t)$ at
-  $t=x$.  SO:
+  $t=x$.  So:
 
 $$ {\hat \delta_0}(\theta) = \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_0(t)dt = \cos(0) = 1.$$
 
@@ -3239,7 +3240,7 @@ if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive numb
 -\sum_{p^n}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
 $$ the summation being over all powers $p^n$ of all prime numbers $p$.
 
-The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that we will be referring to as {\bf the Riemann spectrum} indicated in our pictures below (Figures~\ref{fig:pnsum5}--\ref{fig:pnsum500}) by the series of vertical red lines.
+The graphs of longer and longer finite truncations of these trigonometric sums, as you will see, have ``higher and higher peaks" concentrated more and more accurately at a  {\it certain infinite discrete set of real numbers} that we will be referring to as {\bf the Riemann spectrum}, indicated in our pictures below (Figures~\ref{fig:pnsum5}--\ref{fig:pnsum500}) by the series of vertical red lines.
 
 \item  In contrast, the second infinite trigonometric sum $H(t)$ is a sum of pure cosine waves with frequencies given by what we have dubbed above {\it the Riemann spectrum} and with amplitudes all equal to $1$.
 
@@ -3253,7 +3254,7 @@ $$
 
 
 That the series of {\it blue lines} (i.e., the logarithms of powers of
-primes) in our pictures below determines---via the the trigonometric
+primes) in our pictures below determines---via the trigonometric
 sums we describe---the series of {\it red lines} (i.e., what we are
 calling the spectrum) and conversely is a consequence of the Riemann
 Hypothesis.
@@ -3276,8 +3277,8 @@ frequencies equal to (logs of) powers of the primes:}
 
 
 Look at the peaks of this graph. There is nothing very impressive
-about them, you might think; but wait, for $f(t)$ is just a very ``early
-'' piece of  the infinite trigonometric sum $F(t)$ described above.
+about them, you might think; but wait, for $f(t)$ is just a very ``early''
+piece of  the infinite trigonometric sum $F(t)$ described above.
 
 
 
@@ -3497,8 +3498,8 @@ In summary: The generalized function that resulted from the above carpentry:
 
 
 A distribution that has a discrete set of real numbers as its
-  support---as $\Phi(t)$ does, we sometimes like to call {\bf spike
-    distributions} since the pictures of functions approximating them
+  support---as $\Phi(t)$ does---we sometimes like to call {\bf spike
+    distributions} since the pictures of functions approximating it
   tend to look like a series of spikes.
 
   We have then before us a spike distribution with support at integral
@@ -4006,7 +4007,7 @@ and that the sequence of these better and better approximations converge to give
 for $\pi(X)$.
 
 Thus not only did Riemann provide a ``fundamental'' (that is, a smooth curve
-that is an astoundingly close to $\pi(X)$) but he viewed this as just a
+that is astoundingly close to $\pi(X)$) but he viewed this as just a
 starting point, for he gave the recipe for providing an infinite
 sequence of corrective terms---call them Riemann's {\em harmonics}; we
 will denote the first of these ``harmonics'' $C_1(X)$, the second
@@ -4042,7 +4043,7 @@ $$
    C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}),
 $$
 where $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$, etc.,
-are the spectrum of the prime numbers \bibnote{You may well ask how we propose to order these correction terms if RH
+is the spectrum of the prime numbers \bibnote{You may well ask how we propose to order these correction terms if RH
   is false. Order them in terms of
   (the absolute value of) their imaginary part, and in the unlikely
   situation that there is more than one zero with the same imaginary
@@ -4107,7 +4108,7 @@ discussion so far.
    mentioned this book in our forword, but feel that it is so
    good, that it is worth a second mention here.
  \item The Wikipedia entry for Riemann's Zeta Function
-   (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function}) It is
+   (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function}). It is
    difficult to summarize who wrote this, but we feel that it is a
    gift to the community in its clarity. Thanks authors!
  \item Enrico Bombieri's article \bibnote{Bombieri, {\em The Riemann
@@ -4186,7 +4187,7 @@ and, in general,
   in fact, for the formulas for $\zeta(2n)$ for {\it any} $n$ you
   choose?
 
-  {\bf Pafnuty Lvovich Chebyshev's ($\simeq$1845):} The second moment
+  {\bf Pafnuty Lvovich Chebyshev's idea ($\simeq$1845):} The second moment
   in the history of evolution of this function $\zeta(s)$ is when
   Chebyshev used the {\it same formula} as above in the extended range
   where $s$ is allowed now to be a real variable---not just an
@@ -4295,7 +4296,7 @@ In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
   So here is the score:
 
   \begin{itemize} \item As for poles, $\zeta(s)$ has only one pole. It
-    is at $s=1$ and is of order $1$ ( a ``simple pole'').\item As for
+    is at $s=1$ and is of order $1$ (a ``simple pole'').\item As for
     zeroes, we have already mentioned the trivial zeroes (at negative
     even integers), but $\zeta(s)$ also has infinitely many {\it
       nontrivial} zeroes. These nontrivial zeroes are known to lie in
@@ -4408,7 +4409,7 @@ For example---instead of the ordinary integers---consider the {\it
  inverse is again a Gaussian integer) are the four numbers $\pm 1, \pm
  i$ and if we multiply any Gaussian integer $a+bi$ by any of these
  four units, we get the collection $\{a+bi, -a-bi, -b+ai, b -ai\}$.
- We measure the {\it size} of Gaussian integer by the square of its
+ We measure the {\it size} of a Gaussian integer by the square of its
  distance to the origin, i.e., $$|a+bi|^2 = {a^2+b^2}.$$   This size function  is called the {\bf norm} of the Gaussian integer $a+bi$ and can also be thought of as  the product of $a+bi$ and its ``conjugate'' $a-bi$.   Note that
  the norm is a nice multiplicative function on the set of Gaussian
  integers, in that the norm of a product of two Gaussian integers is
@@ -4418,7 +4419,7 @@ For example---instead of the ordinary integers---consider the {\it
  with $a>0$ and $b\geq 0$ that cannot be factored as the product of
  two Gaussian integers of smaller size.  Given what we have just
  discussed, can you prove that if a Gaussian integer is a prime
- Gaussian integer, then it size must either be an ordinary prime
+ Gaussian integer, then its size must either be an ordinary prime
  number, or the square of an ordinary prime number?
 
   Here is a plot of a large number of Gaussian

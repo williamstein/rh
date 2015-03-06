@@ -10,7 +10,16 @@
 
 - (Nicola Dunn <djonma@gmail.com>) Page 134, third paragraph. - I'm mostly assuming that you know about this, but just in case; there's a 'To be done' section here awaiting a picture. There's a lovely picture here too: http://mathworld.wolfram.com/GaussianPrime.html Though as you're using SageMath and Wolfram is a competing product, perhaps you won't like that. Sage Code is here: http://sagecell.sagemath.org/?q=vqqecj
 
-- People to thank: Will Hearst, Nicola Dunn, David Mumford, James Prop, Keith Conrad, Chris Swenson, Karl Crisman, Robert Harron,  Bill Gosper, Dan Asimov, Andrew Granville, Harald Bögeholz, Keren Binyaminov, G+ thread people? Who else??
+- People to thank: Will Hearst, Nicola Dunn, David Mumford, James Prop, Keith Conrad, Chris Swenson, Karl Crisman, Robert Harron,  Bill Gosper, Dan Asimov, Andrew Granville, Harald Bögeholz, Keren Binyaminov, Michael J. Gruber, G+ thread people? Who else??
+
+- double check this residue claim:
+        It has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\textbackslash\newline$
+         6610000568292727335792620957159782739813115005451450864072425835484898$\textbackslash\newline$
+         565112763692970799269335402819507605691622173717318335512037458$.
+
+
+- Very Serious concern by an analyst (Michael J Gruber): Here I suggest to at least use clopen intervals (a,b] so that the splitting formula for the integral later on is correct.  This becomes visible again when the Dirac distribution is defined through integrals over intervals - but not when one endpoint is 0. Form the point of view of an analyst, the whole section worries me a bit: it is a description of Stieltjes measures, not of distributions. It suffices for \delta, of course, but not for \delta', and I'm wondering whether it gives the right impression of the nature of distributions. [[I did make the change.]]
+
 
 ## Might be nice to do (not critical)
 
