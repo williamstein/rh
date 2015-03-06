@@ -1,16 +1,17 @@
 ## Critical TODO (_not_ just trivial typos)
 
-- (easy) We use "Riemann Spectrum" half the time and "Riemann spectrum" the other half.
+- (DONE) (easy) We use "Riemann Spectrum" half the time and "Riemann spectrum" the other half. [[Changed to "Riemann spectrum" since that was used 18 times, but "Riemann Spectrum" only 12 times.  Also, this doesn't quite raise to the level of "Riemann Hypothesis", which we always capitalize when it is not a quote.]]
+
+- (DONE) People to thank: Will Hearst, Nicola Dunn, David Mumford, James Prop, Keith Conrad, Chris Swenson, Karl Crisman, Robert Harron,  Bill Gosper, Dan Asimov, Andrew Granville, Harald Bögeholz, Keren Binyaminov, Michael J. Gruber, G+ thread people? Who else??  [[I added a footnote on page 9 with everybody I could find -- \footnote{Including
+Dan Asimov, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}"]]
+
+- (DONE -- we don't agree) (Nicola Dunn <djonma@gmail.com>) Page 70, First paragraph. "the older form being specere and the later form spectare". I'm fairly certain that spectare is incorrect, and specere could be seen as being incorrect as well, as specere is the present infinitive of the word specio.  Spectrum is the word you're looking for instead of spectare. Spectare is the present infinitive of specto, which has the same root as spectrum (Latin not English), but our word spectrum comes from Latin spectrum, not specto. This is, however, my view of rather little Latin study and lots of looking it up online, where all of the etymology sites I normally use have our spectrum coming from Latin spectrum.
 
 - P. 98, 99: "Figure ??"
 
-- (Nicola Dunn <djonma@gmail.com>) There is no index, so it is not necessary to renumber it, though I must say I am a little disappointed to see no index.
-
-- (Nicola Dunn <djonma@gmail.com>) Page 70, First paragraph. "the older form being specere and the later form spectare". I'm fairly certain that spectare is incorrect, and specere could be seen as being incorrect as well, as specere is the present infinitive of the word specio.  Spectrum is the word you're looking for instead of spectare. Spectare is the present infinitive of specto, which has the same root as spectrum (Latin not English), but our word spectrum comes from Latin spectrum, not specto. This is, however, my view of rather little Latin study and lots of looking it up online, where all of the etymology sites I normally use have our spectrum coming from Latin spectrum.
-
 - (Nicola Dunn <djonma@gmail.com>) Page 134, third paragraph. - I'm mostly assuming that you know about this, but just in case; there's a 'To be done' section here awaiting a picture. There's a lovely picture here too: http://mathworld.wolfram.com/GaussianPrime.html Though as you're using SageMath and Wolfram is a competing product, perhaps you won't like that. Sage Code is here: http://sagecell.sagemath.org/?q=vqqecj
 
-- People to thank: Will Hearst, Nicola Dunn, David Mumford, James Prop, Keith Conrad, Chris Swenson, Karl Crisman, Robert Harron,  Bill Gosper, Dan Asimov, Andrew Granville, Harald Bögeholz, Keren Binyaminov, Michael J. Gruber, G+ thread people? Who else??
+
 
 - double check this residue claim:
         It has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\textbackslash\newline$
@@ -27,7 +28,8 @@
 
 - Your choice of whether to put commas in numbers over 1,000 is inconsistent.  [[William: should we just remove all commas? We could.]]
 
-- (Karl Crisman) page 35 and elsewhere: I wonder if you might want to LaTeX the ticks for the various graphs.  They look weird being in a different typeface.
+- (Nicola Dunn <djonma@gmail.com>) There is no index, so it is not necessary to renumber it, though I must say I am a little disappointed to see no index.
+
 
 
 ## Complaints that I want to ignore
@@ -60,6 +62,7 @@ Lots of people don't like certain technical details about the cover:
 
 Issues, which need to get fixed in production:
 
+
 - From a reader:
 > Page numbering system: Whilst this works for a pdf, or other electronic version of the book, if the book is to be published as a physical version, counting the cover as page one will not work. In fact the foreword should be numbered using roman numerals and page one should be the first actual page of the text. This varies depending on the publisher, but these are the generally accepted rules. As such, it may be necessary to renumber the contents section.
 
@@ -78,4 +81,6 @@ Issues, which need to get fixed in production:
 - One reader was concerned because the figures have a different typeface than the text.
 
 - "zeros" vs "zeroes"?  We are consistent, but which should we use?
+
+- (Karl Crisman) page 35 and elsewhere: I wonder if you might want to LaTeX the ticks for the various graphs.  They look weird being in a different typeface.  Use  tick_formatter="latex".  [[Question for production department: how do you want us to re-do all text in figures?]]
 
