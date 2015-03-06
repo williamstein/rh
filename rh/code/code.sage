@@ -1422,7 +1422,31 @@ def fig_Rk(dir, ext):
     #
     g = R.plot_Rk(50, 350, 400, plot_points=200)
     g += plot(Li,350,400,rgbcolor='green')
-    g.save(dir + '/Rk_50_350_400.%s'%ext)
+    g.save(dir + '/Rk_50_350_400.%s'%ext, aspect_ratio=1)
+
+
+##############################################################
+# Gaussian Primes
+##############################################################
+
+def gaussian_primes(B):
+    K.<i> = QuadraticField(-1)
+    v = K.primes_of_bounded_norm(2*B*B)
+    w = []
+    for I in v:
+        a = I.gens_reduced()[0]
+        if abs(a[0])<=B and abs(a[1]) <= B:
+            w.extend([a,-a,i*a,-i*a])
+    w = [z for z in w if z[0]>0 and z[1]>=0]
+    return w
+
+def fig_gaussian_primes(dir, ext):
+    w = gaussian_primes(10)
+    save(points(w, pointsize=90, zorder=10), "%s/gaussian_primes-10.%s"%(dir,ext), aspect_ratio=1, gridlines=True, ticks=[[-1..B],[-1..B]], xmin=-.5, ymin=-.5)
+    w = gaussian_primes(100)
+    p1 = points(w, pointsize=10, zorder=10)
+    p2 = points(list(cartesian_product_iterator([[0..B],[0..B]])), pointsize=1, color='grey', zorder=15)
+    save(p1+p2, "%s/gaussian_primes-100.%s"%(dir,ext), aspect_ratio=1, frame=True, axes=False)
 
 
 

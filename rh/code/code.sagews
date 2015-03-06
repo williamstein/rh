@@ -1,13 +1,61 @@
-︠2683353c-4139-4cc6-9bb4-a0b197690fb0︠
+︠79debb46-c93c-4b25-8436-1a1c68a123b5︠
+︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cbs︠
+%time
 %load code.sage
-︡1acbb6ff-f779-433b-a214-55433455ab32︡
+draw('gaussian_primes')
+︡dbe2d435-2812-4fb0-9733-51d61d54318e︡{"stdout":"Drawing gaussian_primes... "}︡{"stdout":" "}︡{"stdout":" (time = 18.4877309799 seconds)\n"}︡{"stdout":"CPU time: 16.05 s, Wall time: 18.74 s\n"}︡
+︠b8181ae5-05af-4118-b18a-1f5f9e26a48es︠
+gaussian_primes(10)
+︡06813547-b113-46ab-afc7-8869610ca51a︡{"stdout":"[i + 1, i + 2, 2*i + 1, 3, 3*i + 2, 2*i + 3, i + 4, 4*i + 1, 5*i + 2, 2*i + 5, i + 6, 6*i + 1, 5*i + 4, 4*i + 5, 7, 7*i + 2, 2*i + 7, 6*i + 5, 5*i + 6, 3*i + 8, 8*i + 3, 8*i + 5, 5*i + 8, 9*i + 4, 4*i + 9, i + 10, 10*i + 1, 10*i + 3, 3*i + 10, 8*i + 7, 7*i + 8, 7*i + 10, 10*i + 7, 10*i + 9, 9*i + 10]\n"}︡
+︠cc406e71-2649-46e9-a3e0-ba5e7194d60ds︠
+K.<i> = QuadraticField(-1)
+︡7ba4d22d-f39e-44d9-8596-443c6da38d2f︡
+︠0a5ff1a2-b004-479a-91bd-d95667f9ba92s︠
+i^2
+︡e300e934-e6ba-4168-b9e1-f7e149a0028a︡{"stdout":"-1\n"}︡
+︠bd41a692-7a1d-413e-b258-9ad26e1747a0︠
+
+︠3b1dda8f-a711-462e-95b9-5e78e8a146c5s︠
+B = 10
+%time v = K.primes_of_bounded_norm(2*B*B)
+w = []
+for I in v:
+    a = I.gens_reduced()[0]
+    if abs(a[0])<=B and abs(a[1]) <= B:
+        w.extend([a,-a,i*a,-i*a])
+w = [z for z in w if z[0]>0 and z[1]>=0]
+︡fc27a788-9a5e-412b-8884-cdd85e5c2608︡{"stdout":"CPU time: 0.05 s, Wall time: 0.05 s\n"}︡
+︠7c1f73ca-d8c9-47f5-ae20-53f7a10752f4︠
+g.save?
+︠1571ab06-a964-4d30-80a9-866cfb019b51s︠
+%time show(points(w, pointsize=90, zorder=10), aspect_ratio=1, svg=True, figsize=7, fontsize=16, gridlines=True, ticks=[[-1..B],[-1..B]], xmin=-.5, ymin=-.5)
+︡34d2614b-53eb-43e8-b3f4-de9df7641a45︡{"once":false,"file":{"show":true,"uuid":"afb062d7-9f31-4c45-b18a-5f2d81652710","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute7dc2/19235/tmp_eaRoRJ.svg"}}︡{"html":"<div align='center'></div>"}︡{"stdout":"CPU time: 0.30 s, Wall time: 0.72 s"}︡{"stdout":"\n"}︡
+︠24893c47-c03b-4813-9ffc-de6cdd6c7bc6s︠
+B = 100
+%time v = K.primes_of_bounded_norm(2*B*B)
+w = []
+for I in v:
+    a = I.gens_reduced()[0]
+    if abs(a[0])<=B and abs(a[1]) <= B:
+        w.extend([a,-a,i*a,-i*a])
+w = [z for z in w if z[0]>0 and z[1]>=0]
+︡35645813-355d-4b04-a436-b49abb385fd0︡{"stdout":"CPU time: 2.71 s, Wall time: 2.71 s"}︡{"stdout":"\n"}︡
+︠6a824a3f-65a3-4b29-b6af-b2a2bb6101eas︠
+cartesian_product([[1..3], [1..3]])
+︡41a9d5c8-8df1-4151-88de-c98819ae7f0e︡{"stderr":"Error in lines 1-1\nTraceback (most recent call last):\n  File \"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sagemathcloud/sage_server.py\", line 873, in execute\n    exec compile(block+'\\n', '', 'single') in namespace, locals\n  File \"\", line 1, in <module>\n  File \"/usr/local/sage/sage-6.5/local/lib/python2.7/site-packages/sage/categories/covariant_functorial_construction.py\", line 218, in __call__\n    assert(all( hasattr(arg, self._functor_name) for arg in args))\nAssertionError\n"}︡
+︠97882374-4057-4e6b-9475-646dda4a3cf2s︠
+p1 = points(w, pointsize=20, zorder=10)
+p2 = points(list(cartesian_product_iterator([[0..B],[0..B]])), pointsize=3, color='grey', zorder=15)
+%time show(p1+p2, aspect_ratio=1, svg=True, frame=True, axes=False, figsize=10)
+︡bed38cd3-298a-4072-99df-379be405cb46︡{"once":false,"file":{"show":true,"uuid":"ccd8a5c0-f1a6-4d09-99ff-795f1720c3e5","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute7dc2/19235/tmp_FgL3I4.svg"}}︡{"html":"<div align='center'></div>"}︡{"stdout":"CPU time: 4.57 s, Wall time: 9.05 s"}︡{"stdout":"\n"}︡
+︠c00b61f9-259f-4b4d-aaf4-0f03fbc95208︠
 ︠e2f7abd7-d6ee-4117-8f71-bb5b038917bc︠
 draw("cesaro")
 ︡fc9764de-1e73-4bb7-af19-772196864977︡{"stdout":"Drawing cesaro... "}︡{"stdout":" "}︡{"stdout":" (time = 161.922121048 seconds)\n"}︡
 ︠79c97531-5200-4075-8a6a-a3c05e7061ef︠
 draw('theta_C_intro')
 ︡ac1e2917-9ea9-402a-b6cd-c7f00fa04a8c︡{"stdout":"Drawing theta_C_intro... "}︡{"stdout":" "}︡{"stdout":" (time = 41.996740818 seconds)\n"}︡
-︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cb︠
+︠e9fc4f8c-eeee-4fdc-aa1b-e69b12b4bd72︠
 %load code.sage
 draw('psi')
 ︡11aa8a4b-b57a-4476-a81c-8bdc1e278ffe︡{"stdout":"Drawing psi... "}︡{"stdout":" "}︡{"stdout":" (time = 1.65290188789 seconds)\n"}︡

@@ -649,10 +649,11 @@ equality is induction.}.
 If $M$ is a positive integer, and $a$ is any number relatively prime to $M$ such that  $a^{M-1} - 1$ is {\it not} divisible by $M$, then $M$ is {\it not} a prime.
 \end{theorem}
 
+% sage: N =345269032939215803146410928173696740406844815684239672101299206421451944591925694154456527606766236010874972724155570842527652727868776362959519620872735612200601036506871681124610986596878180738901486527; z = Mod(2, N)^(N-1) - 1; z
 Well, Naskr\c{e}cki computed $2^{N-1}-1$  (for the $204$-digit $N$ above)   and saw that
-it is {\it not} divisible\footnote{It has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\textbackslash\newline$
+it is {\it not} divisible\footnote{The number $2^{N-1}-1$ has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\textbackslash\newline$
  6610000568292727335792620957159782739813115005451450864072425835484898$\textbackslash\newline$
- 565112763692970799269335402819507605691622173717318335512037458$.} by $N$.
+ 565112763692970799269335402819507605691622173717318335512037457$.} by $N$.
 Ergo, our $N$ fails the  Fermat $2$-test so is {\it not} prime.
 
 But then, given that it is so ``easy'' to see that $N$ is not prime, a
@@ -4421,17 +4422,22 @@ For example---instead of the ordinary integers---consider the {\it
  Gaussian integer, then its size must either be an ordinary prime
  number, or the square of an ordinary prime number?
 
-  Here is a plot of a large number of Gaussian
+Figure~\ref{fig:gaussian-10} contains a plot of the first few Gaussian
 primes as they display themselves amongst complex numbers:
 
+\ill{gaussian_primes-10}{.8}{Gaussian primes with coordinates up to 10\label{fig:gaussian-10}}
 
+Figure~\ref{fig:gaussian-100} plots a much larger number of Gaussian primes:
 
-\todo{Possibly a picture of the primes in the Gaussian integers.  Here is an example: \newline http://en.wikipedia.org/wiki/File:Gauss-primes-768x768.png}
+\ill{gaussian_primes-100}{1}{Gaussian primes with coordinates up to 100\label{fig:gaussian-100}}
 
-\ill{gaussian_staircase_14}{.8}{Staircase of Gaussian primes of norm up to 14}
+  Figures~\ref{fig:gaussian-staircase-14}--\ref{fig:gaussian-staircase-10000} plot the number
+  of Gaussian primes up to each norm:
+  
+\ill{gaussian_staircase_14}{.8}{Staircase of Gaussian primes of norm up to 14\label{fig:gaussian-staircase-14}}
 \ill{gaussian_staircase_100}{.8}{Staircase of Gaussian primes of norm up to 100}
 \ill{gaussian_staircase_1000}{.8}{Staircase of Gaussian primes of norm up to 1000}
-\ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000}
+\ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000\label{fig:gaussian-staircase-10000}}
 
 The natural question to ask, then, is: how are the Gaussian prime numbers distributed? Can one provide as close an estimate to their distribution and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with an analogue to the Riemann zeta function playing  a role similar to the prototype $\zeta(s)$.  And, it seems as if its ``nontrivial zeroes'' behave similarly: as far as things have been computed, they  all have the property that
 their real part is equal to ${\frac{1}{2}}$.  That is, we
