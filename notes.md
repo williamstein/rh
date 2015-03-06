@@ -10,6 +10,7 @@
 
 - (Nicola Dunn <djonma@gmail.com>) Page 134, third paragraph. - I'm mostly assuming that you know about this, but just in case; there's a 'To be done' section here awaiting a picture. There's a lovely picture here too: http://mathworld.wolfram.com/GaussianPrime.html Though as you're using SageMath and Wolfram is a competing product, perhaps you won't like that. Sage Code is here: http://sagecell.sagemath.org/?q=vqqecj
 
+- People to thank: Will Hearst, Nicola Dunn, David Mumford, James Prop, Keith Conrad, Chris Swenson, Karl Crisman, Robert Harron,  Bill Gosper, Dan Asimov, Andrew Granville, Harald Bögeholz, Keren Binyaminov, G+ thread people? Who else??
 
 ## Might be nice to do (not critical)
 
@@ -44,15 +45,6 @@ Lots of people don't like certain technical details about the cover:
 
 > As for the cover, go more minimalistic, stronger Zeta function colors and center the text in the red area.  Perhaps make the Zeta 1/3 of the total cover space. Drop the picture and blue wave and use a font with more geometric features (uniform element thickness throughout the characters' elements).
 
-
-## TODO: People to thank?
-
-Will Hearst, Nicola Dunn, David Mumford, James Prop, Keith Conrad, Chris Swenson, Karl Crisman, Robert Harron,  Bill Gosper, Dan Asimov, Andrew Granville, ??
-
-Keren Binyaminov,
-
-
-(github people), g+ thread people?
 
 
 ## To the copy editor /production people
