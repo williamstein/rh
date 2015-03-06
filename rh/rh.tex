@@ -249,7 +249,7 @@ hands. We aim---instead---to explain, in as direct a manner as
 possible and with the least mathematical background required, what
 this problem is all about and why it is so important. For even before
 anyone proves this {\em hypothesis} to be true (or false!), just
-getting familiar with it and with some of the the ideas behind it, is
+getting familiar with it, and with some of the the ideas behind it, is
 exciting.  Moreover, this hypothesis is of crucial importance in a
 wide range of mathematical fields; for example, it is a
 confidence-booster for computational mathematics: even if the Riemann
@@ -266,7 +266,7 @@ might take weeks or even months to complete.
 
 
 Here is how the
-Princeton mathematician Peter Sarnak described the broad impact the
+Princeton mathematician Peter Sarnak describes the broad impact the
 Riemann Hypothesis has had\footnote{See page 222 of
 {\em The Riemann hypothesis: the greatest unsolved problem in mathematics} by Karl Sabbagh (2002).}:
 \begin{quote}
@@ -401,7 +401,7 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
 
       The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.  References to the end notes will be in brackets.
 
-      We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A--- about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers. We thank them infinitely.
+      We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A---about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers. We thank them infinitely.
 %In particular, Dennis Stein suggested the book title,
 %Andrew Solomon carefully read a nearly final draft providing
 %numerous corrections,
@@ -1182,11 +1182,10 @@ has long been guessed that there are infinitely many such pairs of
 primes, but no one has been able to prove this yet.
 
 %NOTE: I omitted the commas in the numbers in the displayed formula.
-\begin{quote} As of 2014, the largest known twin primes are
-$$3756801695685\cdot 2^{666669} \pm 1$$
+As of 2014, the largest known twin primes are
+$$3756801695685\cdot 2^{666669} \pm 1.$$
 These enormous primes, which were found in 2011, have $200{,}700$ digits each\footnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
 largest known twin primes.}.
-\end{quote}
 
 
 Similarly, it is interesting to consider primes $p$ and $q$
@@ -1651,13 +1650,13 @@ up to $999{,}999$.
 
 Gauss was an inveterate computer:
 he wrote in his 1849 letter  that
-there are $216{,}745$ prime numbers less than three million (This is
-wrong: the actual number of these primes is $216{,}816$). Gauss's curve $G(X)$
+there are $216{,}745$ prime numbers less than three million.  This is
+wrong: the actual number of these primes is $216{,}816$. Gauss's curve $G(X)$
 predicted that there would be $216{,}970$ primes---a miss, Gauss
 thought, by
-$$225 = 216{,}970 - 216{,}745$$
-(but actually he was closer than he thought: the
-prediction of the curve $G(X)$ missed by a mere $154 = 216{,}970  - 216{,}816$)
+$$225 = 216970 - 216745.$$
+But actually he was closer than he thought: the
+prediction of the curve $G(X)$ missed by a mere $154 = 216970  - 216816$.
 %; not as close as the 2004 US
 %elections, but pretty close nevertheless).
 Gauss's computation brings up two queries: will this spectacular ``good
@@ -1744,7 +1743,7 @@ half the digits are correct.
   people with the task of finding values of $\pi(X)$ for various large
   numbers $X$.  This he did in the following manner, having already
   worked out which numbers are prime himself. Since the devil is, as
-  everyone knows, {\em into the details,} he has made no mistakes: his
+  everyone knows, {\em in the details,} he has made no mistakes: his
   work is entirely correct.  He gives each committee member a copy of
   the list of all {\em prime numbers} between $1$ and one of the large
   numbers $X$ in which he was interested.  Now each committee member
@@ -1798,9 +1797,10 @@ $\pi(X)$, the number of primes $< X$, is given by the function
 $X/\log(X)$. Recall, as well, that a refinement of that guess, offered by Gauss, stems from this curious thought:  the `probability' that a number $N$ is a prime  is proportional to the reciprocal of its number of digits; more precisely, the probability is $1/\log(N)$.  This would lead us to  guess that the approximate value of $\pi(X)$ would be
 the area of the region from $2$ to $X$ under the graph of
 $1/\log(X)$, a quantity sometimes referred to as $\Li(X)$.
-``Li'' (pronounced L$\overline{\rm i}$) is short for {\em logarithmic integral},
+``Li'' (pronounced L$\overline{\rm i}$, so the same as ``lie" in ``lie down")
+is short for {\em logarithmic integral},
 because the area of the region from $2$ to $X$ under $1/\log(X)$
-is the {\em integral} $\int_2^X 1/\log(t) dt$.
+is (by definition) the {\em integral} $\int_2^X 1/\log(t) dt$.
 
 
 
@@ -1865,8 +1865,8 @@ Hypothesis says yes:
 
 For any real number $X$ the number of prime numbers less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate. See \bibnote{In fact, the Riemann Hypothesis is equivalent to $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
-a computational perspective}.}.
+root accurate (see \bibnote{In fact, the Riemann Hypothesis is equivalent to $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
+a computational perspective}.}).
 \label{rh:first}
 
 \vspace{1ex}
@@ -1875,7 +1875,7 @@ a computational perspective}.}.
 
 \chapter{The mystery moves to  the error term}
 
- Let's think of what happens when you have a {\it mysterious quantity} (say,  a function of a real number $X$) you wish to understand. Suppose you manage to approximate that quantity by  an easy to understand  expression---which we'll call the  ``dominant term,"--- that is also simple to compute, but only approximates your mysterious quantity. The approximation is not exact; it has a possible error, which happily is significantly smaller than the size of the dominant term. `Dominant' here just means exactly that: it  is of size significantly larger than the error of approximation.
+ Let's think of what happens when you have a {\it mysterious quantity} (say,  a function of a real number $X$) you wish to understand. Suppose you manage to approximate that quantity by  an easy to understand  expression---which we'll call the  ``dominant term,"---that is also simple to compute, but only approximates your mysterious quantity. The approximation is not exact; it has a possible error, which happily is significantly smaller than the size of the dominant term. `Dominant' here just means exactly that: it  is of size significantly larger than the error of approximation.
 
  $${\it Mysterious\  quantity}(X)\ \ = \ \ {\it Simple, \ but \ dominant\ quantity}(X) \ + \ {\it Error}(X).$$
 
@@ -1988,7 +1988,7 @@ at the same rate.\label{fig:samerate}}
 
 Now a theorem from elementary calculus tells us that the ratio of
 $\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
-That is---using the definition we've just introduced--- $\Li(X)$ and
+That is---using the definition we've just introduced---$\Li(X)$ and
 $X/\log(X)$ go to infinity at the same rate (see
 \bibnote{For a proof of this here's a hint. Compute the difference
 between the derivatives of $\Li(x)$ and of  $x/\log x$. The answer
@@ -2029,11 +2029,11 @@ known for over a century. It goes under the name of
 
 
    This fact is a very hard-won piece of mathematics!  It was proved
-   in 1896 independently by Hadamard and de la Vall\'{e}e Poussin.
+   in 1896 independently by Jacques Hadamard and Charles de la Vall\'{e}e Poussin.
 
 
    A milestone in the history leading up to the proof of Prime Number
-   Theorem is the earlier work of Chebyshev (see
+   Theorem is the earlier work of Pafnuty Lvovich  Chebyshev (see
    \url{http://en.wikipedia.org/wiki/Chebyshev_function}) showing that
    (to use the terminology we introduced) $X/\log(X)$ and $\pi(X)$ go
    to infinity at similar rates.
@@ -2207,7 +2207,7 @@ formulations of Riemann's Hypothesis are equivalent. Our aim, in
 offering the second formulation---a way of phrasing Riemann's guess
 that mathematicians know to be equivalent to the first one---is to
 celebrate the variety of equivalent ways we have to express Riemann's
-proposed answers to the question ``How many primes are there?'' and to
+proposed answers to the question ``How many primes are there?'', and to
 point out that some formulations would reveal a startling
 simplicity---not immediately apparent---to the behavior of prime
 numbers, no matter how erratic primes initially appear to us to
@@ -2410,7 +2410,7 @@ mass/charge ratio and the mass spectrum is recorded on a photographic plate or f
 
  \chapter{Spectra and trigonometric sums \label{sec:trigsums}}
 
-As we saw in Chapter~\ref{sec:fourier1}, a pure tone can be represented by a periodic {\it sine wave}---a function of  time $f(t)$--- the equation of which might be:
+As we saw in Chapter~\ref{sec:fourier1}, a pure tone can be represented by a periodic {\it sine wave}---a function of  time $f(t)$---the equation of which might be:
 $$f(t)\ \ = \ \ a\cdot \cos(b +\theta t).$$
 
 \ill{pure_tone}{.7}{Plot of the periodic sine wave $f(t) = 2\cdot \cos(1+t/2)$}
@@ -2537,7 +2537,7 @@ series.
 
 
 \chapter[Slopes of graphs that have no slopes]{How Calculus manages to
-  find the slopes of graphs that have no slopes}
+  find the slopes of graphs that have no slopes}\label{ch:calculusmanages}
 
 Differential Calculus, initially the creation of Newton and Leibniz
 in the 1680s, acquaints us with {\it slopes} of graphs of functions of
@@ -2653,8 +2653,10 @@ This is a manifestation of one of the fundamental facts of life of
 Calculus relating a function to its derivative:
 
 \begin{quote} Given any real-valued function $F(x)$---that has a
-  derivative---for any interval of real numbers $[a,b]$ the total area
-  under the graph of the derivative of $F(x)$ over that interval is
+  derivative---for any interval of real numbers $[a,b]$ the total
+  signed\footnote{When $F(x)<0$ we count that area as negative.} area
+  between the graph and the horizontal axis
+  of the derivative of $F(x)$ over that interval is
   equal to $F(b)-F(a)$.
   \end{quote}
     What happens if we take the series of figures \ref{fig:djump1}--\ref{fig:djump4}, etc.,
@@ -2819,9 +2821,7 @@ $$\int_a^bf(t)dt.$$
       positive.}
 
 
-In contrast, a {\it generalized function}  or  {\it distribution}
-
-\begin{itemize}
+In contrast, a {\it generalized function}  or  {\it distribution}~\begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it
   is not an honest function, nevertheless:
 
@@ -2860,7 +2860,10 @@ additivity relation
  D_3(t),\dots$ is a {\bf Cauchy sequence} if for every interval
  $[a,b]$ the quantities $$\int_a^bD_1(t)dt,\quad
  \int_a^bD_2(t)dt,\quad\int_a^bD_3(t)dt,\dots$$ form a Cauchy sequence
- of real numbers. Now, any Cauchy sequence of distributions {\it
+ of real numbers (so for any $\varepsilon>0$ eventually all terms
+ in the sequence of real numbers
+ are within $\varepsilon$ of each other).
+ Now, any Cauchy sequence of distributions {\it
    converges to a limiting distribution} $D(t)$ which is defined by
  the rule that for every interval $[a,b]$,
 
@@ -2892,21 +2895,23 @@ additivity relation
    distribution), where we draw a vertical arrow to illustrate the
    delta function with support at a given point.}
 
- For example, for the Dirac $\delta$-function we have been discussing
- (i.e., the limit of the red graphs of the previous section) {\it is}
- an honest function away from $t=0$ and---in fact---is the ``trivial
- function'' zero away from the origin.  And at $0$, we may {\it say}
+ For example, the Dirac $\delta$-function we have been discussing
+ (i.e., the limit of the red graphs of Chapter~\ref{ch:calculusmanages}) {\it is}
+ an honest function away from $t=3$ and---in fact---is the ``trivial
+ function'' zero away from $3$.  And at $3$, we may {\it say}
  that it has the ``value'' infinity, in honor of it being the limit of
- blip functions getting taller and taller at $0$ but the feature that
+ blip functions getting taller and taller at $3$. The feature that
  pins it down as a distribution is given by its behavior relative to
  the second feature above, the area of its graph over the open
- interval between $a$ and $b$:
+ interval $(a,b)$ between $a$ and $b$:
 
 \begin{itemize}
-\item If both $a$ and $b$ have the same sign (i.e., if the origin is
-  not in the open interval spanned by $a$ and $b$) then the ``area
-  under the graph of our Dirac $\delta$-function'' is $0$.
-\item If $a$ is negative and $b$ is positive then the ``area under the
+\item If $3$ is
+  not in the open interval spanned by $a$ and $b$, then the ``area
+  under the graph of our Dirac $\delta$-function'' over
+  the interval $(a,b)$
+  is $0$.
+\item If $3$ is in the open interval $(a,b)$, then the ``area under the
   graph of our Dirac $\delta$-function'' is $1$---in
   notation $$\int_a^b\delta = 1.$$
 \end{itemize}
@@ -2914,20 +2919,19 @@ additivity relation
 
 
 
-We sometimes summarize the fact that these areas vanish so long as the
-origin is not included in the interval we are considering by saying
-that the {\bf support} of this $\delta$-function is ``at the origin.''
+We sometimes summarize the fact that these areas vanish so long as $3$
+is not included in the interval we are considering by saying
+that the {\bf support} of this $\delta$-function is ``at $3$.''
 
 
 Once you're happy with {\it this} Dirac $\delta$-function, you'll also
 be happy with a Dirac $\delta$-function---call it $\delta_x$---with
-support concentrated at any specific real number $x$ gotten by
-``translating'' the one we've been talking about appropriately;
-$\delta_x$ vanishes for $t \ne x$ and intuitively speaking, has an
+support concentrated at any specific real number~$x$.
+This $\delta_x$ vanishes for $t \ne x$ and intuitively speaking, has an
 {\it infinite blip} at $t=x$.
 
 So, the original delta-function we were discussing, i.e., $\delta(t)$
-would be denoted $\delta_0(t)$.
+would be denoted $\delta_3(t)$.
 
  \noindent {\bf A question:} If you've never seen distributions
  before, but know the Riemann integral, can you guess at what the
@@ -2936,7 +2940,7 @@ would be denoted $\delta_0(t)$.
  definite meaning?
 
 
-\noindent {\bf A second question:} if you have not seen distributions
+\noindent {\bf A second question:} If you have not seen distributions
 before, and have answered the first question above, let
 $c(t)$ be an honest function for which your definition
 of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
@@ -2964,7 +2968,7 @@ $$\int_a^bF'(t)dt \ = \ F(b) -F(a).$$
 
 Let us practice this with simple staircase functions. For example,
 what is the {\it derivative}---in the sense of the theory of
-distributions---of the function in Figure~\ref{fig:simple_staircase}.
+distributions---of the function in Figure~\ref{fig:simple_staircase}?
 {\bf Answer} $\delta_0 + 2 \delta_1$.
 
 
@@ -3007,7 +3011,7 @@ In Chapter~\ref{sec:fourier1} above we wrote:
 
   When we get to apply this discussion to the {\it staircase of
     primes} $\pi(t)$ or the {\it tinkered staircase of primes}
-  $\psi(t)$ both of which being defined only for positive values of
+  $\psi(t)$, both of which being defined only for positive values of
   $t$, then we would ``lose little information'' in our quest to
   understand them if we simply ``symmetrized their graphs'' by
   defining their values on negative numbers $-t$ via the formulas
@@ -3162,7 +3166,7 @@ we think of as functions of two variables, $\theta$ and $C$ (the
 ``cutoff'') where $$F(\theta,C): = \sum_{s_k\le C} a_k\cos(s_k\cdot \theta).$$ These functions $F(\theta,C)$ are finite trigonometric series and therefore ``honest functions" having finite values everywhere.
 
 
-\section{Trigonometric Series as Fourier Transforms}
+%\section{Trigonometric Series as Fourier Transforms}
 
 
 Recall, as in Chapter \ref{sec:ftdelta}, that for any real number $x$, we considered
@@ -3197,7 +3201,9 @@ series $F(t)$.
 
 
 
-\section{\bf Spike values} \begin{definition} Say
+%\section{\bf Spike values}
+
+\begin{definition} Say
   that a trigonometric series $F(\theta)$ has a {\bf spike} at the real number $\theta=\tau \in {\bf R}$
 if the set of absolute values $|F(\tau,C)|$  as $C$ ranges through positive number cutoffs is
   unbounded.  A real number $\tau \in {\bf R}$ is, in contrast, a {\bf
@@ -3373,7 +3379,7 @@ arrows pointing to the spectrum of the primes\label{fig:pnsum5}}
 
 \end{enumerate}
 
-This passage---thanks to the Riemann Hypothesis--- from spectrum to
+This passage---thanks to the Riemann Hypothesis---from spectrum to
 prime powers and back again via consideration of the ``high peaks'' in
 the graphs of the appropriate trigonometric sums provides a kind of
 visual duality emphasizing, for us, that the information inherent in
@@ -3731,7 +3737,7 @@ By tabulating these peaks we compute---at least very approximately---$\dots$
 \end{eqnarray*}
 
 Riemann defined this sequence of numbers in his 1859 article in a
-manner somewhat different from the treatment we have given (in that
+manner somewhat different from the treatment we have given.  In that
 article these $\theta_i$ appear as the ``imaginary parts of the
 nontrivial zeroes of his $\zeta$-function;'' we will discuss this
 briefly in Part \ref{part4}, Chapter~\ref{ch:envision} below.
@@ -3801,15 +3807,18 @@ $14.134725141734693790457251983562470270784257115699243175685567460149\newline
 $2{,}001{,}052$
  of these $\theta_i$'s calculated to an accuracy
 within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
+\begin{center}
 \url{http://www.dtc.umn.edu/~odlyzko/zeta_tables}
+\end{center}
 
 
 
 \chapter{ Further questions about the Riemann Spectrum}
 
-Since people have already computed at least $1{,}029.9 $
-billion $\theta$'s (as of Feb. 18, 2005) and have never found one with
-multiplicity $>1$; it is generally expected that the multiplicity of all
+Since people have already computed\footnote{See \url{http://numbers.computation.free.fr/Constants/constants.html} for details.}
+the first $10$ trillion $\theta$'s
+and have never found one with
+multiplicity $>1$, it is generally expected that the multiplicity of all
 the $\theta$'s in the Riemann Spectrum is $1$.
 
   But, independent of
@@ -4180,7 +4189,7 @@ and, in general,
   in the history of evolution of this function $\zeta(s)$ is when
   Chebyshev used the {\it same formula} as above in the extended range
   where $s$ is allowed now to be a real variable---not just an
-  integer--- greater than $1$.  Making use of this extension of the
+  integer---greater than $1$.  Making use of this extension of the
   range of definition of Euler's sum of reciprocals of powers of
   consecutive whole numbers, Chebyshev could prove that for large $x$
   the ratio of $\pi(x)$ and $x/\log(x)$ is bounded above and below by
@@ -4224,20 +4233,19 @@ to extend Euler's function to the entire complex plane except for the
 point $s=1$, thereby defining what we now call {\it Riemann's zeta
   function}.  \vskip20pt
 
- Those ubiquitous Bernoulli numbers reappear yet again as
- values of this {\it extended} zeta function at negative integers:
+Those ubiquitous Bernoulli numbers reappear yet again as
+values of this {\it extended} zeta function at negative integers:
+$$\zeta(-n) = -B_{n+1}/(n+1)$$
+so since the Bernoulli numbers indexed by odd integers $>1$ all
+vanish, the extended zeta function $\zeta(s)$ actually vanishes at
+{\it all} even negative integers.
 
-  $$\zeta(-n) = -B_{n+1}/(n+1)$$
-
-  so since the Bernoulli numbers indexed by odd integers $>1$ all
-  vanish, the extended zeta function $\zeta(s)$ actually vanishes at
-  {\it all} even integers.
-
-  The even integers $-2, -4, -6, \dots$ are often called the {\bf
-    trivial zeroes} of the Riemann zeta function.  There are indeed
-  other zeroes of the zeta function, and those other zeroes could---in no way---be
-  dubbed ``trivial,'' as we shall shortly see.\vskip20pt It is time to
-  consider these facts:
+The even integers $-2, -4, -6, \dots$ are often called the {\bf
+trivial zeroes} of the Riemann zeta function.  There are indeed
+other zeroes of the zeta function, and those other zeroes could---in no way---be
+dubbed ``trivial,'' as we shall shortly see.
+\vskip20pt
+It is time to consider these facts:
 
   \begin{enumerate}\item {\bf Riemann's zeta function codes the
       placement of prime powers among all numbers.} The key here is to
@@ -4251,7 +4259,16 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
     derivative gives us:
 
   \vskip20pt
-   $${\frac{d{\zeta}}{ds}}(s)/\zeta(s)= -\sum_{n=1}^{\infty}\Lambda(n)n^{-s}$$ where  $$\Lambda(n): = \log p$$ if $n= p^k$ for $p$ a prime number and $k >0$;  and  $$\Lambda(n): = 0$$ if $n$ is not a power of a prime number.  In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
+$${\frac{d{\zeta}}{ds}}(s)/\zeta(s)= -\sum_{n=1}^{\infty}\Lambda(n)n^{-s}$$
+where
+$$
+    \Lambda(n) :=
+    \begin{cases}
+     \log(p) & \text{when $n= p^k$ for $p$ a prime number and $k >0$, and}\\
+       0     & \text{if $n$ is not a power of a prime number.}
+    \end{cases}
+$$
+In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
 
 %\todo{Put in log deriv of zeta.}
 %$$ {\frac{d{\zeta}}{ds}}(s)/\zeta(s)=-\sum_{p \ {\rm prime}}\log(p)p^{-s}.$$  For any particular $s$ this is an infinite sum which tallies the primes  $p$, each weighted by the quantity  $\log(p)p^{-s}$ and is absolutely convergent if the real part of $s$ is $>1$.   % note : this forgets the prime powers.
@@ -4475,4 +4492,4 @@ Is this yet another reason to believe the Grand Riemann Hypothesis?
 \end{document}
 
 
-%sagemathcloud={"zoom_width":115,"latex_command":"pdflatex -synctex=1 -interact=nonstopmode rh.tex;  bibtex rh; pdflatex -synctex=1 -interact=nonstopmode rh.tex"}
+%sagemathcloud={"zoom_width":115,"latex_command":"killall pdflatex; pdflatex -synctex=1 -interact=nonstopmode rh.tex;  bibtex rh"}
