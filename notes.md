@@ -1,6 +1,6 @@
 ## Critical TODO (_not_ just trivial typos)
 
-- (0:15?) P. 98, 99: "Figure ??"
+- (0:15?) (done) P. 98, 99: "Figure ??"
 
 - (DONE) (easy) We use "Riemann Spectrum" half the time and "Riemann spectrum" the other half. [[Changed to "Riemann spectrum" since that was used 18 times, but "Riemann Spectrum" only 12 times.  Also, this doesn't quite raise to the level of "Riemann Hypothesis", which we always capitalize when it is not a quote.]]
 
