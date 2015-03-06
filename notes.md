@@ -83,3 +83,4 @@ Issues, which need to get fixed in production:
 
 - (Karl Crisman) page 35 and elsewhere: I wonder if you might want to LaTeX the ticks for the various graphs.  They look weird being in a different typeface.  Use  tick_formatter="latex".  [[Question for production department: how do you want us to re-do all text in figures?]]
 
+- Weird period at the very end of endnote 20.
