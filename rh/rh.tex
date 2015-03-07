@@ -651,8 +651,8 @@ If $M$ is a positive integer, and $a$ is any number relatively prime to $M$ such
 
 % sage: N =345269032939215803146410928173696740406844815684239672101299206421451944591925694154456527606766236010874972724155570842527652727868776362959519620872735612200601036506871681124610986596878180738901486527; z = Mod(2, N)^(N-1) - 1; z
 Well, Naskr\c{e}cki computed $2^{N-1}-1$  (for the $204$-digit $N$ above)   and saw that
-it is {\it not} divisible\footnote{The number $2^{N-1}-1$ has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\textbackslash\newline$
- 6610000568292727335792620957159782739813115005451450864072425835484898$\textbackslash\newline$
+it is {\it not} divisible\footnote{The number $2^{N-1}-1$ has a residue after division by $N$ of\\ $3334581100595953025153969739282790317394606677381970645616725285996925$\newline$
+ 6610000568292727335792620957159782739813115005451450864072425835484898$\newline$
  565112763692970799269335402819507605691622173717318335512037457$.} by $N$.
 Ergo, our $N$ fails the  Fermat $2$-test so is {\it not} prime.
 
@@ -3871,7 +3871,7 @@ spectrum (as discussed in the previous two chapters).
 
    The theoretical story behind the phenomena that we will
      see graphically in this chapter is a manifestation of
-     Riemann's explicit formula.  For modern text references that discuss this general subject, see endnote \bibnote{ A reference for this is:
+     Riemann's explicit formula.  For modern text references that discuss this general subject, see endnote \bibnote{  A reference for this is:
 
 \vskip10pt
  {\bf [I-K]:  }H. Iwaniec; E. Kowalski,  {\bf Analytic Number Theory}, American Mathematical Society Colloquium Publications {\bf 53} (2004).
@@ -3890,6 +3890,7 @@ where \begin{itemize} \item $\phi$ is any smooth complex-valued
   \int_0^{\infty}\phi(x)x^{s-1}dx,$$ \item the last term on the right,
   $I(\phi)$, is just
  $$I(\phi):= \int_1^{\infty}(1-{\frac{1}{x^3-x}})\phi(x)dx$$ (coming from the pole at $s=1$ and the ``trivial zeroes''). \item The more serious  summation on the left hand side of the equation is over the nontrivial zeroes $\rho$, noting that if $\rho$ is a nontrivial zero so is ${\bar \rho}$. \end{itemize}
+
 
 
 Of course, this ``explicit formulation'' is not {\it immediately}
