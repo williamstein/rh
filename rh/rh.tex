@@ -178,12 +178,7 @@ sensitive=true}
 
 \newcommand{\RH}{Riemann Hypothesis\index{Riemann Hypothesis}}
 
-\title{\Huge PRIMES\\
-\LARGE
-What is Riemann's Hypothesis?\\
-\vspace{1em}
-\large
-(January 2015 Draft)}
+\title{Prime Numbers and the Riemann Hypothesis}
 \date{}
 \author{\Large Barry Mazur \and \Large William Stein \and \vspace{20ex}\\
 %\begin{center}
@@ -402,7 +397,7 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
       The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.  References to the end notes will be in brackets.
 
       We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A---about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers\footnote{Including
-Dan Asimov, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Shaun Griffith, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}.
+Dan Asimov, Bret Benesh, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Shaun Griffith, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}.
 We thank them infinitely.
 
 
@@ -1052,8 +1047,8 @@ This is much faster since it uses some clever counting tricks to find the
 number of primes without actually listing them all.
 
 In Chapter~\ref{sec:tinkering} we tinkered with the staircase of
-primes by first counting both primes and prime powers.    It turns out
-that there are comparatively few prime powers that are not prime.
+primes by first counting both primes and prime powers.
+There are comparatively few prime powers that are not prime.
 Up to $10^8$, only $1{,}405$ of the $5{,}762{,}860$ prime powers are not themselves primes.
 To see this, first enter
 {\tt a~=~prime\_pi(10\^{}8); pp~=~len(prime\_powers(10\^{}8))}.
@@ -1279,8 +1274,8 @@ that the pairs of primes be consecutive.}
 Here is a curious question that you can easily begin to check out for
 small numbers. We know, of course, that the {\em even} numbers and the
 {\em odd} numbers are nicely and simply distributed: after every odd
-number comes an even number, after every even, an odd, there are an
-equal number of positive odd numbers as positive
+number comes an even number, after every even, an odd. There are an
+equal number of positive odd numbers and positive
 even numbers less than any given odd
 number, and there may be nothing else of interest to say about the
 matter.  Things change considerably, though, if we focus our
@@ -1414,15 +1409,15 @@ angle, counts all numbers up to and including~$X$.
 Following Eratosthenes, we have sifted those numbers, to pan for
 primes. Our first move was to throw out roughly half the numbers (the
 even ones!) after the number $2$. The cross-hatched bar graph in this
-figure which is, with one hiccup, a regular staircase climbing at a
-smaller angle, each step twice the lengths of each riser, illustrates
+figure that is, with one hiccup, a regular staircase climbing at a
+smaller angle, each step twice the length of each riser, illustrates
 the numbers that are left after one pass through Eratosthenes' sieve,
 which includes, of course, all the primes. So, the chances that a
 number bigger than $2$ is prime is {\em at most} $1$ in $2$.  Our
 second move was to throw out a good bunch of numbers bigger than $3$.
 So, the chances that a number bigger than $3$ is prime is going to be
 even less.  And so it goes: with each move in our
-sieving process we are winnowing the field more extensively, reducing
+sieving process, we are winnowing the field more extensively, reducing
 the chances that the later numbers are prime.
 
 \ill{sieve_2_100}{.9}{Sieving by removing multiples of $2$ up to $100$\label{fig:sieve_2_100}}
@@ -1473,7 +1468,7 @@ and \ref{fig:staircase100a}.
 \chapter{Prime numbers viewed from a distance}
 The striking thing about these figures is that as the numbers get
 large enough, the jagged accumulation of primes, those
-quintessentially discrete entities, becomes smoother and smoother, to
+quintessentially discrete entities, becomes smoother and smoother to
 the eye. How strange and wonderful to watch, as our viewpoint zooms
 out to larger ranges of numbers, the accumulation of primes taking on
 such a smooth and elegant shape.
@@ -2004,7 +1999,7 @@ Recall (on page~\pageref{pili_vals} above in Chapter~\ref{sec:rh1})  that
 if $X = 10^{24}$, the left-most\label{page:leftmost}
 twelve digits of $\pi(X)$ and $\Li(X)$ are the same:
 both numbers start
-$18{,}435{,}599{,}767{,}3\ldots$. Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``left-most'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same? I.e., that these two functions go to infinity at the same rate?
+$18{,}435{,}599{,}767{,}3\ldots$. Well, that's a good start. Can we guarantee that for  $X$ large enough, the ``left-most'' million (or billion, or trillion) digits of $\pi(X)$ and $\Li(X)$ are the same, i.e., that these two functions go to infinity at the same rate?
 
 The \RH{}, as we have just formulated it, would tell us
 that the {\it difference} between $\Li(X)$ and $\pi(X)$ is pretty small
@@ -2825,7 +2820,7 @@ $$\int_a^bf(t)dt.$$
 
 In contrast, a {\it generalized function}  or  {\it distribution}~\begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it
-  is not an honest function, nevertheless:
+  is not an honest function. Nevertheless,
 
 \item {\bf It has well-defined areas under portions of its ``graph.''}
   If we are given any interval of real numbers, say the (open)
@@ -3030,7 +3025,7 @@ reconstruct $f(t)$ as a {\it sum} (with coefficients) of cosine
 functions (if only finitely many frequencies occur in the spectrum of
 our function) or more generally, as an {\it integral} if the spectrum
 is more elaborate.  For this work, we need a little machine that tells
-us, for each real number $\theta$ whether or not $\theta$ is in the
+us, for each real number $\theta$, whether or not $\theta$ is in the
 spectrum of $f(t)$, and if so, what the amplitude is of the cosine
 function $\cos(\theta t)$ that occurs in the Fourier expansion of
 $f(t)$---this amplitude answers the awkwardly phrased question:
@@ -3110,7 +3105,7 @@ colloquially as saying that the delta-function is a perfect example of
 {\it white noise} in that {\it every} frequency occurs in its Fourier
 analysis and they all occur in equal amounts.
 
-To generalize this computation let us consider for any real number $x$
+To generalize this computation, let us consider for any real number $x$
 the symmetrized delta-function with support at $x$ and $-x$, given
 by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
 
@@ -3511,7 +3506,7 @@ support), being at  integral multiples of logs of prime numbers, would allow us 
 numbers among all numbers. Of course there are many other ways to package this vital information, so we
 must explain our motivation for subjecting our poor initial staircase
 to the particular series of brutal acts of distortion that we
-described, that end up with the distribution $\Phi(t)$.
+described, which ends up with the distribution $\Phi(t)$.
 
 
 
@@ -4128,7 +4123,7 @@ discussion so far.
    what you have read.
 \end{enumerate}
 \vskip20pt
-{\bf Leonhardt Euler's idea ($\simeq$1740):}
+{\bf Leonhard Euler's idea ($\simeq$1740):}
 
 As readers of Jacob Bernoulli's {\it Ars Conjectandi} (or of the works
 of John Wallis) know, there was already a rich mathematical theory of
@@ -4364,7 +4359,7 @@ comprehend their message---may have lots more to teach us, may
 eventually allow us a more powerful understanding of arithmetic.  This
 infinite collection of complex numbers, i.e., the nontrivial zeroes of
 the Riemann zeta function, plays a role with respect to $\pi(X)$ rather
-like the role the {\em spectrum} of the Hydrogen atom, plays in
+like the role the {\em spectrum} of the Hydrogen atom plays in
 Fourier's theory.  Are the primes themselves no more than an
 epiphenomenon, behind which there lies, still veiled from us, a
 yet-to-be-discovered, yet-to-be-hypothesized, profound conceptual key
