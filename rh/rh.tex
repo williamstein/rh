@@ -370,7 +370,7 @@ paragraph of Don Zagier's\index{Zagier} classic 12-page exposition, {\em The Fir
 
     Our book is meant to be an introduction to these pleasures. We take an experimental view of the fundamental ideas of the subject  buttressed by numerical computations, often displayed as graphs. As a result, our book is profusely illustrated, containing over 125 figures,
 diagrams, and pictures that accompany the text\footnote{We created all of the
-  figures using the free SageMath\index{SageMath}
+  figures using the free SageMath
   software (see \url{http://www.sagemath.org}).
 Complete source code is available, which
 can be used to recreate every diagram in this book
@@ -392,7 +392,7 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
 
     Part~\ref{part3} is for readers who wish to see, more vividly, the link between the placement of prime numbers\index{prime number} and (what we call there) the {\it Riemann spectrum}.\index{Riemann spectrum}
 
-    Part~\ref{part4} requires some familiarity with complex analytic functions, and returns to Riemann's original viewpoint.  In particular it  relates the ``Riemann spectrum'' that we discuss in Part~\ref{part3} to the {\it nontrivial zeroes of the Riemann zeta-function}. We also provide a brief sketch of the more standard route taken by published expositions of the Riemann Hypothesis.
+    Part~\ref{part4} requires some familiarity with complex analytic functions, and returns to Riemann's original viewpoint.  In particular it  relates the ``Riemann spectrum'' that we discuss in Part~\ref{part3} to the {\it nontrivial zeroes\index{nontrivial zeroes} of the Riemann zeta function}.\index{zeta function} We also provide a brief sketch of the more standard route taken by published expositions of the Riemann Hypothesis.
 
       The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.  References to the end notes will be in brackets.
 
@@ -442,7 +442,7 @@ be explored as endless as the human soul, and {\it never} a final theory.
 Numbers are obstreperous things. Don Quixote\index{Quixote} encountered this when he
 requested that the ``bachelor'' compose a poem to his lady Dulcinea del
 Toboso, the first letters of each line spelling out her name. The
-``bachelor'' found\footnote{See Chapter IV of the Second Part of the Ingenious Gentleman Don Quixote\index{Quixote} of La Mancha.}
+``bachelor'' found\footnote{See Chapter IV of the Second Part of the Ingenious Gentleman Don Quixote of La Mancha.}
 
 \begin{quote}
   ``a great difficulty in their composition because the number of
@@ -654,7 +654,7 @@ Ergo, our $N$ fails the  Fermat $2$-test so is {\it not} prime.
 But then, given that it is so ``easy'' to see that $N$ is not prime, a
 natural question to ask is: what, in fact, is its prime factorization?
 This---it turns out---isn't so easy to determine;
-Naskr\c{e}cki devoted $24$ hours of computer time setting standard \index{factor}factorization
+Naskr\c{e}cki devoted $24$ hours of computer time setting standard  factorization
 algorithms on the task, and that was not sufficient time to resolve
 the issue.  The factorization of the numerators of general Bernoulli
 numbers is the subject of a very interesting web site of Samuel
@@ -670,7 +670,7 @@ record challenge factorization, and one challenge that was completed
 in 2009 involves a difficult-to-factor number with 232 digits; its
 factorization was completed by a large team of researchers and took around
 2000 years of CPU time.  This convinced us that
-with sufficient motivation  it would be possible to \index{factor}factor $N$, and so we
+with sufficient motivation  it would be possible to factor $N$, and so we
 asked some leaders in the field to try.   They succeeded!
 \begin{quote}\sf
 Factorisation of B200
@@ -690,10 +690,10 @@ p_{115} &= 230988849487852221315416645031371036732923661613\\
         &= 2629703896050377709
 \end{align*}
 
-The \index{factor}factorization of the 204-digit composite was made possible with the help
+The factorization of the 204-digit composite was made possible with the help
 of many people:
 \begin{itemize}
-\item William Stein and Barry Mazur challenged us to factor\index{factor} this number.
+\item William Stein and Barry Mazur challenged us to factor this number.
 \item Sam Wagstaff maintains a table of factorizations of numerators of Bernoulli
   numbers at \url{http://homes.cerias.purdue.edu/~ssw/bernoulli/bnum}. According
   to this table, the 200th Bernoulli number is the 2nd smallest index with
@@ -727,7 +727,7 @@ of many people:
 Bill Hart
 \end{quote}
 
-We verify the factorization above in SageMath\index{SageMath} as follows: \\
+We verify the factorization above in SageMath as follows: \\
 
 {\sf
 sage: p90 = 1494743290443435945287842503336459830794974542928382\textbackslash\\
@@ -745,17 +745,17 @@ Given an integer $n$, there are
 many algorithms available for trying to write $n$ as a product of
 prime numbers.  First we can apply {\em trial division}, where we
 simply divide $n$ by each prime $2, 3, 5, 7, 11, 13, \ldots$ in turn,
-and see what small prime factors\index{factor} we find (up to a few digits).  After
+and see what small prime factors  we find (up to a few digits).  After
 using this method to eliminate as many primes as we have patience to
 eliminate, we typically next turn to a technique called {\em Lenstra's
   elliptic curve method}, which allows us to check $n$ for
 divisibility by bigger primes (e.g., around 10--15 digits).  Once
 we've exhausted our patience using the elliptic curve method, we would
 next hit our number with something called the {\em quadratic sieve},
-which works well for factoring\index{factor} numbers of the form $n=pq$, with $p$
+which works well for factoring numbers of the form $n=pq$, with $p$
 and $q$ primes of roughly equal size, and $n$ having less than 100
 digits (say, though the 100 depends greatly on the implementation).
-All of the above algorithms---and then some---are implemented in SageMath\index{SageMath},
+All of the above algorithms---and then some---are implemented in SageMath,
 and used by default when you type {\tt factor(n)} into SageMath. Try
 typing {\tt factor(some number, verbose=8)} to see for yourself.
 
@@ -783,7 +783,7 @@ q = 367460436667995904282446337996279526322791581643430876426760322838\\
 15739666511279233373417143396810270092798736308917.
 $
 \par\noindent{}We encourage you to try to
-factor\index{factor} $n$ in SageMath\index{SageMath}, and see that it fails.
+factor $n$ in SageMath, and see that it fails.
 SageMath does not yet include an implementation of the
 number field sieve algorithm, though there are some free implementations
 currently available (see \url{http://www.boo.net/~jasonp/qs.html}).
@@ -807,7 +807,7 @@ currently available (see \url{http://www.boo.net/~jasonp/qs.html}).
 % \end{lstlisting}}.
 The safety of much
 encryption depends upon this ``guaranteed'' failure!\footnote{Nobody has ever
-  published a {\em proof} that there is no fast way to factor\index{factor}
+  published a {\em proof} that there is no fast way to factor
   integers.  This is an article of ``faith'' among some
   cryptographers.}
 
@@ -826,7 +826,7 @@ Now $2^{43,112,609}-1$ is quite a hefty number! Suppose someone came
 up to you saying ``surely $p = 2^{43,112,609}-1$ is the largest prime
 number!'' (which it is not). How might you convince that person that
 he or she is wrong without explicitly exhibiting a larger prime?
-\bibnote{We can use SageMath\index{SageMath} (at \url{http://sagemath.org}) to quickly compute the ``hefty
+\bibnote{We can use SageMath (at \url{http://sagemath.org}) to quickly compute the ``hefty
 number'' $p = 2^{43,112,609}-1$.  Simply type
 {\tt p = 2\^{}43112609 - 1} to instantly compute $p$.
 In what sense have we {\em computed} $p$?  Internally, $p$ is now
@@ -905,7 +905,7 @@ $\mbox{}\qquad\{2,3, 7, 43, 13, 139, 3263443,  547, 607, 1033, 31051, 29881, 670
 \newline
 \mbox{}\qquad{}etc.\footnote{The sequence of prime numbers we find by this
 procedure is discussed in more detail with references
-in the Online Encyclopedia of Integer Sequences\index{Online Encyclopedia of Integer Sequences} \url{http://oeis.org/A126263}.}
+in the Online Encyclopedia of Integer Sequences \url{http://oeis.org/A126263}.}
 
 Though there are infinitely many primes, explicitly finding large primes is a
 major challenge.  In the 1990s, the Electronic Frontier Foundation\index{Electronic Frontier Foundation}
@@ -939,7 +939,7 @@ accident that the largest ``currently known'' prime number\index{prime number} h
 form.  This is because there are special techniques we can draw on to
 show primality of a number, if it is one less than a power of $2$
 and---of course---if it also happens to be prime.  The primes of that
-form have a name, {\it Mersenne Primes},\index{Mersenne Primes} as do the primes that are
+form have a name, {\it Mersenne Primes},\index{Mersenne primes} as do the primes that are
 {\it one more than a power of $2$}, those being called {\it Fermat
   Primes}.
 \bibnote{
@@ -947,12 +947,12 @@ In contrast to the situation with factorization, testing integers of
 this size (e.g., the primes $p$ and $q$) for primality is relatively
 easy.  There are fast algorithms that can tell whether or not any
 random thousand digit number is prime in a fraction of
-second. Try for yourself using the SageMath\index{SageMath} command {\tt is\_prime}.
+second. Try for yourself using the SageMath  command {\tt is\_prime}.
 For example, if $p$ and $q$ are as in endnote~\ref{bibnote:factor}, then
 {\tt is\_prime(p)} and {\tt is\_prime(q)} quickly output True
 and {\tt is\_prime(p*q)} outputs False.  However, if you type
-{\tt factor(p*q, verbose=8)}  you can watch as SageMath\index{SageMath} tries
-forever and fails to factor\index{factor} $pq$.}
+{\tt factor(p*q, verbose=8)}  you can watch as SageMath tries
+forever and fails to factor $pq$.}
 
 Here are two exercises that you might try to do, if this is your first
 encounter with primes that differ from a power of $2$ by $1$:
@@ -1036,7 +1036,7 @@ outputs the primes up to $50$
 and {\tt prime\_range(50,100)}
 outputs the primes between $50$ and $100$.
 Typing {\tt prime\_range(10\^{}8)}
-in SageMath\index{SageMath} enumerates the primes up to a hundred million in around a second.
+in SageMath enumerates the primes up to a hundred million in around a second.
 You can also enumerate primes up to a billion by typing {\tt v=prime\_range(10\^{}9)}, but this will use
 a large amount of memory, so be careful not to crash your computer
 if you try this.  Notice that there are $\pi(10^9) = 50{,}847{,}534$ primes up to a billion
@@ -1254,7 +1254,7 @@ numbers that we do not know the answer to:
   $\Gap_4(X)$,
   $\Gap_6(X),$ or $\Gap_8(X)$ do you think will grow faster? How
   much would you bet on the truth of your guess? \bibnote{%
-    Hardy and Littlewood\index{Littlewood} give a nice conjectural answer to such
+    Hardy and Littlewood give a nice conjectural answer to such
     questions about gaps between primes.  See Problem {\bf A8} of
     Guy's book {\em Unsolved Problems in Number Theory} (2004).
 Note that Guy's book discusses counting the number $P_k(X)$ of pairs of
@@ -1347,7 +1347,7 @@ the $X$-axis---would imply the Riemann Hypothesis!  In contrast to the list of
 previous questions, the answer to this question is known\footnote{For more
   details, see P.~Borwein, {\em Sign changes in sums of the Liouville
     Function} and the nice short paper of Norbert Wiener {\em Notes on
-    Polya's and Turan's hypothesis concerning Liouville's factor\index{factor}}
+    Polya's and Turan's hypothesis concerning Liouville's factor}
   (page 765 of volume II of Wiener's Collected Works); see also:
   G. P\'{o}lya {\em Verschiedene Bemerkungen zur Zahlentheorie}
   Jahresbericht der Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
@@ -2770,12 +2770,12 @@ sense of Laurent Schwartz.\index{Schwartz}
 
 This particular {\it limit of the red graphs} also goes by another
 name (it is officially called a
-Dirac\index{Dirac} $\delta$-function\index{$\delta$-function} (see \bibnote{
+Dirac $\delta$-function\index{$\delta$-function} (see \bibnote{
 David Mumford suggested that we offer the following paragraph from\\
 \url{http://en.wikipedia.org/wiki/Dirac_delta_function}\\
-on the Dirac\index{Dirac} delta function:
+on the Dirac  delta function:
 \begin{quote}
-An infinitesimal formula for an infinitely tall, unit impulse delta function (infinitesimal version of Cauchy distribution) explicitly appears in an 1827 text of Augustin Louis Cauchy. Sim\'{e}on Denis Poisson considered the issue in connection with the study of wave propagation as did Gustav Kirchhoff somewhat later. Kirchhoff and Hermann von Helmholtz also introduced the unit impulse as a limit of Gaussians, which also corresponded to Lord Kelvin's notion of a point heat source. At the end of the 19th century, Oliver Heaviside used formal Fourier series to manipulate the unit impulse. The Dirac delta function as such was introduced as a ``convenient notation'' by Paul Dirac\index{Dirac} in his influential 1930 book {\em Principles of Quantum Mechanics}. He called it the ``delta function'' since he used it as a continuous analogue of the discrete Kronecker delta.
+An infinitesimal formula for an infinitely tall, unit impulse delta function (infinitesimal version of Cauchy distribution) explicitly appears in an 1827 text of Augustin Louis Cauchy. Sim\'{e}on Denis Poisson considered the issue in connection with the study of wave propagation as did Gustav Kirchhoff somewhat later. Kirchhoff and Hermann von Helmholtz also introduced the unit impulse as a limit of Gaussians, which also corresponded to Lord Kelvin's notion of a point heat source. At the end of the 19th century, Oliver Heaviside used formal Fourier series to manipulate the unit impulse. The Dirac delta function as such was introduced as a ``convenient notation'' by Paul Dirac in his influential 1930 book {\em Principles of Quantum Mechanics}. He called it the ``delta function'' since he used it as a continuous analogue of the discrete Kronecker delta.
 \end{quote}}),
 the adjective ``Dirac''\index{Dirac} being in honor of the physicist who first worked with this
 concept, the ``$\delta$'' being the symbol he assigned to these
@@ -2980,7 +2980,7 @@ apply there \bibnote{As discussed in\\ \url{http://en.wikipedia.org/wiki/Distrib
 ``generalized functions'' were introduced by Sergei
 Sobolev in the 1930s, then later
 independently introduced in the late
-1940s by Laurent Schwartz,\index{Schwartz} who developed a comprehensive theory of
+1940s by Laurent Schwartz,  who developed a comprehensive theory of
 distributions.
 }.
 
@@ -3180,7 +3180,7 @@ $$
 where we draw vertical arrows to illustrate the Dirac\index{Dirac} delta functions.}
 
 It follows, of course, that a cutoff finite trigonometric series,
-$F(\theta,C)$ associated to an infinite trigonometric series
+$F(\theta,C)$ associated to an infinite trigonometric series\index{infinite trigonometric series}
 $$
  F(\theta) = \sum_{k=1}^{\infty} a_k\cos(s_k\cdot \theta)
 $$
@@ -3195,7 +3195,6 @@ $$
 $$ viewed as distribution playing the role of
 the ``inverse Fourier transform" of our trigonometric
 series $F(t)$.
-
 
 
 %\section{\bf Spike values}
@@ -3294,14 +3293,14 @@ vertical arrows in Figures~\ref{fig:pnsum5}--\ref{fig:pnsum500},
 $$
 \theta_1, \theta_2, \theta_3, \dots
 $$
-are  {\it spike values}---as described in Chapter~\ref{ch:trigseries}---of the infinite trigonometric series
+are  {\it spike values}---as described in Chapter~\ref{ch:trigseries}---of the infinite trigonometric series\index{infinite trigonometric series}
 $$
   -\sum_{p^n<C}{\frac{\log(p)}{p^{n/2}}} \cos(t \log(p^n)).
 $$
 They constitute what we are calling the Riemann spectrum\index{Riemann spectrum} and are key to the staircase of primes
 \bibnote{If the \RH{} holds
 they are precisely the  {\it imaginary parts of the
-  ``nontrivial'' zeroes of the Riemann zeta-function}.}.
+  ``nontrivial'' zeroes of the Riemann zeta function}.}.
 
 \begin{itemize}
 \item {\bf The sum with $p^n \le C=5$}
@@ -3352,7 +3351,7 @@ arrows pointing to the spectrum\index{spectrum} of the primes\label{fig:pnsum5}}
 
   Here we will be making use of the series of numbers $$\theta_1,
   \theta_2, \theta_3, \dots$$ comprising what we called the {\it
-    spectrum}\index{spectrum}. We consider the infinite trigonometric series
+    spectrum}\index{spectrum}. We consider the infinite trigonometric series\index{infinite trigonometric series}
   $$
   G(t):= 1 + \cos(\theta_1t)+\cos(\theta_2t)+\cos(\theta_3t)+\dots
   $$
@@ -3470,10 +3469,10 @@ example, the equation
 \item Now we'll do something that might seem a bit more brutal: {\it
     take the derivative of this distorted staircase $\Psi(t)$.}  This
   derivative $\Psi'(t)$ is a {\it generalized} function with support
-  at all nonnegative integral multiples of logs of prime numbers\index{prime number}.
+  at all nonnegative integral multiples of logs of prime numbers.
 
  \vskip20pt
- \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a (weighted) sum of Dirac\index{Dirac} delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and by $\log(2\pi)$ at $0$).  The taller the arrow, the larger the  weight.}
+ \ill{bigPsi_prime}{1}{$\Psi'(t)$ is a (weighted) sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $\log(p)$ (and by $\log(2\pi)$ at $0$).  The taller the arrow, the larger the  weight.}
 
 \item Now---for normalization purposes---multiply $\Psi'(t)$ by the
   function $e^{-t/2}$ which has no effect whatsoever on the support.
@@ -3483,7 +3482,7 @@ example, the equation
 %So what happens when we take the derivative---in the sense of
 %distributions---of a complicated staircase?  For example, see
 %%Figure~\ref{fig:psi_200}.  Well, we would have blip-functions (alias:
-%%Dirac\index{Dirac} $\delta$-functions)\index{$\delta$-function} at each point of discontinuity of $\Psi(X)$;
+%%Dirac $\delta$-functions) at each point of discontinuity of $\Psi(X)$;
 %that is, at $X=$ any power of a prime.
 
 
@@ -3736,7 +3735,7 @@ By tabulating these peaks we compute---at least very approximately---$\dots$
 Riemann defined this sequence of numbers in his 1859 article in a
 manner somewhat different from the treatment we have given.  In that
 article these $\theta_i$ appear as the ``imaginary parts of the
-nontrivial zeroes of his $\zeta$-function;'' we will discuss this
+nontrivial zeroes\index{nontrivial zeroes} of his zeta function;''\index{zeta function} we will discuss this
 briefly in Part \ref{part4}, Chapter~\ref{ch:envision} below.
 
 
@@ -3832,7 +3831,7 @@ It has been conjectured that there are no infinite arithmetic progressions among
 
 \illtwo{zero-spacing-mod2pi}{zero-spacing-mod1}{0.4}{Frequency histogram of Odlyzko's computation of the Riemann spectrum\index{Riemann spectrum} modulo $2\pi$ (left) and modulo 1 (right)\label{fig:zero-spacing}}
 
-        In analogy with the discussion of prime gaps in Chapter~\ref{ch:further}, we might compute {\it pair correlation functions} and the statistics of gaps between successive $\theta$'s in the Riemann spectrum\index{Riemann spectrum} (see {\url{http://www.baruch.cuny.edu/math/Riemann_Hypothesis/zeta.zero.spacing.pdf}). This study was  begun by H.L. Montgmery and F.J. Dyson. As  Dyson noticed, the distributions one gets from the Riemann spectrum\index{Riemann spectrum} bears a similarity to the distributions of eigenvalues of a random unitary matrix{\footnote{ Any connection of the Riemann spectrum\index{Riemann spectrum} to eigenvalues of matrices would indeed be exciting for our understanding of the \RH{}, in view of what is known as the {\it Hilbert-P{\'o}lya Conjecture}  (see {\url{http://en.wikipedia.org/wiki/Hilbert\%E2\%80\%93P\%C3\%B3lya_conjecture}}).}}. This has given rise to what is know as the {\it random matrix heuristics},  a powerful source of conjectures for number theory and other branches of mathematics.
+        In analogy with the discussion of prime gaps in Chapter~\ref{ch:further}, we might compute {\it pair correlation functions} and the statistics of gaps between successive $\theta$'s in the Riemann spectrum\index{Riemann spectrum} (see {\url{http://www.baruch.cuny.edu/math/Riemann_Hypothesis/zeta.zero.spacing.pdf}). This study was  begun by H.L. Montgmery and F.J. Dyson. As  Dyson noticed, the distributions one gets from the Riemann spectrum\index{Riemann spectrum} bears a similarity to the distributions of eigenvalues of a random unitary matrix{\footnote{ Any connection of the Riemann spectrum to eigenvalues of matrices would indeed be exciting for our understanding of the \RH{}, in view of what is known as the {\it Hilbert-P{\'o}lya Conjecture}  (see {\url{http://en.wikipedia.org/wiki/Hilbert\%E2\%80\%93P\%C3\%B3lya_conjecture}}).}}. This has given rise to what is know as the {\it random matrix heuristics},  a powerful source of conjectures for number theory and other branches of mathematics.
 
         Here is a histogram of the distribution of differences $\theta_{i+1}-\theta_i$:
 \
@@ -3965,16 +3964,16 @@ $$
     0 & \mbox{if $n$ is not square-free.}
  \end{cases}
  $$
- See Figure~\ref{fig:moebius} for a plot of the Moebius function.
+ See Figure~\ref{fig:moebius} for a plot of the Moebius function.\index{Moebius function}
 
-\ill{moebius}{1}{The blue dots plot the values of the Moebius function $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
+\ill{moebius}{1}{The blue dots plot the values of the Moebius function\index{Moebius function} $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
 
 
 Riemann's guess is
 $$
 R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \Li(X^{1\over n}),
 $$
-where $\mu(n)$ is the Moebius function introduced above.
+where $\mu(n)$ is the Moebius function\index{Moebius function} introduced above.
 
 \ill{riemann_RX}{0.8}{Riemann defining $R(X)$ in his manuscript}
 
@@ -4108,9 +4107,9 @@ discussion so far.
  \begin{enumerate}
  \item John Derbyshire's {\it Prime Obsession: Bernhard Riemann and
      the Greatest Unsolved Problem in Mathematics} (2003).  We have already
-   mentioned this book in our forword, but feel that it is so
+   mentioned this book in our foreword, but feel that it is so
    good, that it is worth a second mention here.
- \item The Wikipedia entry for Riemann's Zeta Function
+ \item The Wikipedia entry for Riemann's Zeta Function\index{zeta function}
    (\url{http://en.wikipedia.org/wiki/Riemann\_zeta\_function}). It is
    difficult to summarize who wrote this, but we feel that it is a
    gift to the community in its clarity. Thanks authors!
@@ -4159,7 +4158,7 @@ integers, then when $k= -1$, $$S_{-1}(N)= {\frac{1}{1}}+
 {\frac{1}{2}}+ {\frac{1}{3}}+ \cdots+ {\frac{1}{N}}$$ tends to infinity
 like $\log(N)$, but for $k < -1$ we are facing the sum of reciprocals
 of powers (of exponent $>1$) of consecutive whole numbers, and
-$S_k(N)$ converges. This is the first appearance of the zeta function
+$S_k(N)$ converges. This is the first appearance of the zeta function\index{zeta function}
 $\zeta(s)$ for arguments $s=2,3,4,\dots$ So let us denote these limits
 by notation that has been standard, after Riemann:
 $$\zeta(s):=  {\frac{1}{1^s}}+ {\frac{1}{2^s}}+ {\frac{1}{3^s}}+ \cdots$$
@@ -4173,7 +4172,7 @@ $$
 where the infinite sum on the left and the infinite product on the
 right both converge (and are equal) if $s > 1$. He also evaluated these
 sums at even positive integers, where---surprise---the Bernoulli
-numbers come in again; and they and $\pi$ combine to yield the values of the zeta-function at even positive integers:
+numbers come in again; and they and $\pi$ combine to yield the values of the zeta function\index{zeta function} at even positive integers:
 
 \begin{align*}
 \zeta(2) &= {\frac{1}{1^2}}+{\frac{1}{2^2}}+\cdots = \pi^2/6 \simeq 1.65\dots\\
@@ -4239,20 +4238,20 @@ point $s=1$, thereby defining what we now call {\it Riemann's zeta
   function}.  \vskip20pt
 
 Those ubiquitous Bernoulli numbers reappear yet again as
-values of this {\it extended} zeta function at negative integers:
+values of this {\it extended} zeta function\index{zeta function} at negative integers:
 $$\zeta(-n) = -B_{n+1}/(n+1)$$
 so since the Bernoulli numbers indexed by odd integers $>1$ all
-vanish, the extended zeta function $\zeta(s)$ actually vanishes at
+vanish, the extended zeta function\index{zeta function} $\zeta(s)$ actually vanishes at
 {\it all} even negative integers.
 
 The even integers $-2, -4, -6, \dots$ are often called the {\bf
-trivial zeroes} of the Riemann zeta function.  There are indeed
-other zeroes of the zeta function, and those other zeroes could---in no way---be
+trivial zeroes} of the Riemann zeta function.\index{zeta function}  There are indeed
+other zeroes of the zeta function,\index{zeta function} and those other zeroes could---in no way---be
 dubbed ``trivial,'' as we shall shortly see.
 \vskip20pt
 It is time to consider these facts:
 
-  \begin{enumerate}\item {\bf Riemann's zeta function codes the
+  \begin{enumerate}\item {\bf Riemann's zeta function\index{zeta function} codes the
       placement of prime powers among all numbers.} The key here is to
     take the logarithm and then the derivative of $\zeta(s)$ (this boils
     down to forming ${\frac{d{\zeta}}{ds}}(s)/\zeta(s)$). Assuming
@@ -4289,7 +4288,7 @@ In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
   this mystery function is a nonzero constant times $s/(s-2)^2$.
 
   Knowing the zeroes and poles (in the complex plane) alone of the
-  Riemann zeta function doesn't entirely pin it down---you have to
+  Riemann zeta function\index{zeta function} doesn't entirely pin it down---you have to
   know more about its behavior at infinity since---for example,
   multiplying a function by $e^z$ doesn't change the structure of its
   zeroes and poles in the finite plane.  But a complete understanding
@@ -4302,7 +4301,7 @@ In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
     is at $s=1$ and is of order $1$ (a ``simple pole'').\item As for
     zeroes, we have already mentioned the trivial zeroes (at negative
     even integers), but $\zeta(s)$ also has infinitely many {\it
-      nontrivial} zeroes. These nontrivial zeroes are known to lie in
+      nontrivial} zeroes. These nontrivial zeroes\index{nontrivial zeroes} are known to lie in
     the vertical strip $$0\ < \ {\rm real\ part\ of\ } s\ < \
     1.$$\end{itemize}
 
@@ -4318,7 +4317,7 @@ In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
        \begin{center}{\bf\large The {\bf \RH{}} (fourth formulation)}\end{center}
        \medskip
 
-       All the nontrivial zeroes of $\zeta(s)$ lie on the vertical
+       All the nontrivial zeroes\index{nontrivial zeroes} of $\zeta(s)$ lie on the vertical
        line in the complex plane given by ${\rm real\ part\ of\ } s\ =
        {\frac{1}{2}}.$ These zeroes are none other than
        ${\frac{1}{2}}+i\theta_1,{\frac{1}{2}}+i\theta_2,
@@ -4346,7 +4345,7 @@ Here is how Riemann phrased RH:
 
  In the above quotation, Riemann's roots are the $\theta_i$'s and the statement that they are ``real" is equivalent to RH.
 
-      The zeta function, then, is the vise, that so elegantly clamps
+      The zeta function,\index{zeta function} then, is the vise, that so elegantly clamps
       together information about the placement of primes and their
       spectrum\index{spectrum}!
 
@@ -4357,8 +4356,8 @@ regularities among prime numbers\index{prime number} suggests that these zeroes 
 parade of Riemann's corrections governed by them---when we truly
 comprehend their message---may have lots more to teach us, may
 eventually allow us a more powerful understanding of arithmetic.  This
-infinite collection of complex numbers, i.e., the nontrivial zeroes of
-the Riemann zeta function, plays a role with respect to $\pi(X)$ rather
+infinite collection of complex numbers, i.e., the nontrivial zeroes\index{nontrivial zeroes} of
+the Riemann zeta function,\index{zeta function} plays a role with respect to $\pi(X)$ rather
 like the role the {\em spectrum}\index{spectrum} of the Hydrogen atom plays in
 Fourier's theory.  Are the primes themselves no more than an
 epiphenomenon, behind which there lies, still veiled from us, a
@@ -4375,12 +4374,12 @@ the beginning?
 These are not completely idle thoughts, for a tantalizing analogy
 relates the number theory we have been discussing to an already
 established branch of mathematics---due, largely, to the work of
-Alexander Grothendieck, and Pierre Deligne---where the corresponding
+Alexander Grothendieck,\index{Grothendieck} and Pierre Deligne\index{Deligne}---where the corresponding
 analogue of Riemann's hypothesis has indeed been proved\ldots.
 
 
 
-\chapter{Companions to the zeta function}\label{ch:companions}
+\chapter{Companions to the zeta function\index{zeta function}}\label{ch:companions}
 
 Our book, so far, has been exclusively about Riemann's $\zeta(s)$ and
 its zeroes. We have been discussing how (the placement of) the zeroes
@@ -4397,30 +4396,30 @@ $\zeta(s)$ fits into a broad family of similar functions that connect to other p
 %expansion of the form $$L(K,s)= \sum_{N=1}^{\infty} a_n(K)\cdot
 %n^{-s}$$ convergent for complex numbers $s$ with real part $> 1$---and
 %where the coefficients $a_n(K)$ are either $0$ or $\pm 1$.  The
-%product $\zeta(s)\cdot L(K,s)$ is called the {\it zeta function of
+%product $\zeta(s)\cdot L(K,s)$ is called the {\it zeta function\index{zeta function} of
 %  $K$} and is sometimes denoted $\zeta_K(s)$ to distinguish it from
-%the Riemann zeta-function.  The ``nontrivial zeroes'' of $\zeta_K(s)$
+%the Riemann zeta function.\index{zeta function}  The ``nontrivial zeroes''\index{nontrivial zeroes} of $\zeta_K(s)$
 %contains the information needed to understand the (placement of) the
 %norms of prime ideals of the ring of integers of $K$.
 
 For example---instead of the ordinary integers---consider the {\it
-  Gaussian integers}. This is the collection of numbers
+  Gaussian integers}.\index{Gaussian integers} This is the collection of numbers
  $$ \{ a+bi\}$$
  where $i = {\sqrt{-1}}$ and $a,b$ are ordinary integers. We can add
  and multiply two such numbers and get another of the same form. The
- only ``units'' among the Gaussian integers (i.e., numbers whose
+ only ``units'' among the Gaussian integers\index{Gaussian integers} (i.e., numbers whose
  inverse is again a Gaussian integer) are the four numbers $\pm 1, \pm
  i$ and if we multiply any Gaussian integer $a+bi$ by any of these
  four units, we get the collection $\{a+bi, -a-bi, -b+ai, b -ai\}$.
  We measure the {\it size} of a Gaussian integer by the square of its
  distance to the origin, i.e., $$|a+bi|^2 = {a^2+b^2}.$$   This size function  is called the {\bf norm} of the Gaussian integer $a+bi$ and can also be thought of as  the product of $a+bi$ and its ``conjugate'' $a-bi$.   Note that
  the norm is a nice multiplicative function on the set of Gaussian
- integers, in that the norm of a product of two Gaussian integers is
+ integers, in that the norm of a product of two Gaussian integers\index{Gaussian integers} is
  the product of the norms of each of them.
 
  We have a natural notion of {\bf prime Gaussian integer}, i.e., one
  with $a>0$ and $b\geq 0$ that cannot be factored\index{factor} as the product of
- two Gaussian integers of smaller size.  Given what we have just
+ two Gaussian integers\index{Gaussian integers} of smaller size.  Given what we have just
  discussed, can you prove that if a Gaussian integer is a prime
  Gaussian integer, then its size must either be an ordinary prime
  number, or the square of an ordinary prime number?\index{prime number}
@@ -4442,7 +4441,7 @@ Figure~\ref{fig:gaussian-100} plots a much larger number of Gaussian primes:
 \ill{gaussian_staircase_1000}{.8}{Staircase of Gaussian primes of norm up to 1000}
 \ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000\label{fig:gaussian-staircase-10000}}
 
-The natural question to ask, then, is: how are the Gaussian prime numbers\index{prime number} distributed? Can one provide as close an estimate to their distribution and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with an analogue to the Riemann zeta function playing  a role similar to the prototype $\zeta(s)$.  And, it seems as if its ``nontrivial zeroes'' behave similarly: as far as things have been computed, they  all have the property that
+The natural question to ask, then, is: how are the Gaussian prime numbers\index{prime number} distributed? Can one provide as close an estimate to their distribution and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with an analogue to the Riemann zeta function\index{zeta function} playing  a role similar to the prototype $\zeta(s)$.  And, it seems as if its ``nontrivial zeroes''\index{nontrivial zeroes} behave similarly: as far as things have been computed, they  all have the property that
 their real part is equal to ${\frac{1}{2}}$.  That is, we
 have a companion to the \RH{}.
 
@@ -4475,7 +4474,7 @@ Is this yet another reason to believe the Grand \RH{}?
 %  $\pi(X)= \pi_0(X)$, $Q(X)= \psi_0(X)$, $\log, \exp$, $\delta$,
 %  distributions, RSA cryptography, Mersenne prime, $\Li(x)$, random
 %  walk, spectrum, harmonic, fundamental, frequency, phase, amplitude,
-%  band-pass, complex numbers, complex plane, Riemann Zeta function,
+%  band-pass, complex numbers, complex plane, Riemann Zeta function\index{zeta function},
 %  zeroes of zeta.
 %
 %
