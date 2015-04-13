@@ -349,7 +349,7 @@ paragraph of Don Zagier's\index{Zagier} classic 12-page exposition, {\em The Fir
 
 
 \begin{quote}
-  ``There are two facts about the distribution of prime numbers of
+  ``There are two facts about the distribution\index{distribution} of prime numbers of
   which I hope to convince you so overwhelmingly that they will be
   permanently engraved in your hearts. The first is that, [they are]
   the most arbitrary and ornery objects studied by mathematicians:
@@ -1204,7 +1204,7 @@ $(3,5)$ and $(5,7)$ are the pairs less than $10$ with gap $2$,
 and $\Gap_{4}(10)=0$ because despite $3$ and $7$ being separated
 by $4$, they are not consecutive primes.
 See Table~\ref{tab:gap} for various values of $\Gap_{k}(X)$ and
-Figure~\ref{fig:primegapdist} for the distribution of prime gaps for
+Figure~\ref{fig:primegapdist} for the distribution\index{distribution} of prime gaps for
 $X=10^7$.
 
 
@@ -1236,7 +1236,7 @@ $10^{8}$ & 440312 & 440257 & 768752 & 334180 & 878 & 0\\\hline
 % gaps = [v[i]-v[i-1] for i in range(1,len(v))]
 % max(gaps)
 
-\ill{primegapdist}{1}{Frequency histogram showing the distribution of
+\ill{primegapdist}{1}{Frequency histogram showing the distribution\index{distribution} of
   prime gaps of size $\leq 50$ for all primes up to $10^7$.  Six is
   the most popular gap in this data.
 \label{fig:primegapdist}}
@@ -1587,7 +1587,7 @@ speed up calculations, since logarithms translate difficult multiplication
 problems into easier addition problems which can be done mechanically.
 Such calculations use that the logarithm of a product is the sum of the logarithms
 of the factors\index{factor}; that is, $$\log(X Y) = \log(X) + \log(Y).$$
-%FROM -- YURI TSCHINKEL's: ''ABOUT THE COVER: ON THE DISTRIBUTION OF PRIMESÑGAUSSÕ TABLES ''
+%FROM -- YURI TSCHINKEL's: ''ABOUT THE COVER: ON THE DISTRIBUTION\index{distribution} OF PRIMESÑGAUSSÕ TABLES ''
 
 % From: http://en.wikipedia.org/wiki/File:Slide_rule_scales_back.jpg
 \ill{slide_rule}{.8}{A slide rule  computes $2X$ by using that $\log(2X)=\log(2)+\log(X)$\label{fig:slide_rule}}
@@ -2530,7 +2530,7 @@ series.
 %prime numbers, and to the nature of the laws that they obey.
 
 
-\part{Distributions\label{part2}}
+\part{Distribution\index{distribution}s\label{part2}}
 
 
 \chapter[Slopes of graphs that have no slopes]{How Calculus manages to
@@ -2733,7 +2733,7 @@ Calculus relating a function to its derivative:
  we will not go into here, that made perfect sense of ``generalized
  functions'' such as our limit of the series of red graphs, and that
  allows mathematicians to work with these concepts with ease. These
- ``generalized functions'' are called {\it distributions} in
+ ``generalized functions'' are called {\it distributions}\index{distribution} in
  Schwartz's\index{Schwartz} theory \bibnote{
    \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29}
    contains a more formal definition and treatment of distributions.  Here is Schwartz's explanation for his choice of the word {\it distribution:} \begin{quote}``Why did we choose the name distribution?
@@ -2756,7 +2756,7 @@ Calculus relating a function to its derivative:
 
 
 
-\chapter[Distributions]{Distributions: sharpening our approximating functions even if
+\chapter[Distributions]{Distributions:\index{distribution} sharpening our approximating functions even if
   we have to let them shoot out to infinity\label{sec:dist}}
 
 
@@ -2765,7 +2765,7 @@ The curious {\it limit of the red graphs} of the previous section,
 which you might be tempted to think of as a ``blip-function'' that
 vanishes for $t$ nonzero and is somehow ``infinite'' (whatever that
 means) at $0$ is an example of a {\it generalized function} (in the
-sense of the earlier mathematicians) or a {\it distribution} in the
+sense of the earlier mathematicians) or a {\it distribution}\index{distribution} in the
 sense of Laurent Schwartz.\index{Schwartz}
 
 This particular {\it limit of the red graphs} also goes by another
@@ -2781,14 +2781,14 @@ the adjective ``Dirac''\index{Dirac} being in honor of the physicist who first w
 concept, the ``$\delta$'' being the symbol he assigned to these
 objects). The noun ``function'' should be in quotation marks for,
 properly speaking, the Dirac\index{Dirac} $\delta$-function\index{$\delta$-function} is not---as we have
-explained above---a bona fide function but rather a distribution.
+explained above---a bona fide function but rather a distribution\index{distribution}.
 
       \ill{dirac}{0.3}{Paul\index{Dirac} Adrien Maurice Dirac (1902--1984)}
 
 
       Now may be a good time to summarize what the major difference is
       between {\it honest functions} and {\it generalized functions}
-      or {\it distributions}.
+      or {\it distribution\index{distribution}s}.
 
       An honest (by which we mean {\it integrable}) function of a real
       variable $f(t)$ possesses two ``features.''
@@ -2818,7 +2818,7 @@ $$\int_a^bf(t)dt.$$
       positive.}
 
 
-In contrast, a {\it generalized function}  or  {\it distribution}~\begin{itemize}
+In contrast, a {\it generalized function}  or  {\it distribution\index{distribution}}~\begin{itemize}
 \item {\bf may not have ``definite values''} at all real numbers if it
   is not an honest function. Nevertheless,
 
@@ -2832,7 +2832,7 @@ $$\int_a^bD(t)dt.$$
 \end{itemize}
 
 This description is important to bear in mind and it gives us a handy
-way of thinking about ``generalized functions'' (i.e., distributions)
+way of thinking about ``generalized functions'' (i.e., distribution\index{distribution}s)
 as opposed to functions: when we consider an (integrable) function of
 a real variable, $f(t)$, we may invoke its {\it value} at every real
 number and for every interval $[a,b]$ we may consider the quantity
@@ -2847,21 +2847,21 @@ additivity relation
  $$  \int_a^cD(t)dt \ = \ \int_a^bD(t)dt \ + \ \int_b^cD(t)dt.$$
 
  SO, any honest function integrable over finite intervals clearly {\it
-   is} a distribution (forget about its values!) but $\dots$ there are
+   is} a distribution\index{distribution} (forget about its values!) but $\dots$ there are
  many more generalized functions, and including them in our sights
  gives us a very important tool.
 
 
  It is natural to talk, as well, of Cauchy sequences, and limits, of
- distributions. We'll say that such a sequence $D_1(t), D_2(t),
+ distributions.\index{distribution} We'll say that such a sequence $D_1(t), D_2(t),
  D_3(t),\dots$ is a {\bf Cauchy sequence} if for every interval
  $[a,b]$ the quantities $$\int_a^bD_1(t)dt,\quad
  \int_a^bD_2(t)dt,\quad\int_a^bD_3(t)dt,\dots$$ form a Cauchy sequence
  of real numbers (so for any $\varepsilon>0$ eventually all terms
  in the sequence of real numbers
  are within $\varepsilon$ of each other).
- Now, any Cauchy sequence of distributions {\it
-   converges to a limiting distribution} $D(t)$ which is defined by
+ Now, any Cauchy sequence of distributions\index{distribution} {\it
+   converges to a limiting distribution}\index{distribution} $D(t)$ which is defined by
  the rule that for every interval $[a,b]$,
 
   $$ \int_a^bD(t)dt\ =\ \lim_{i \to \infty} \int_a^bD_i(t)dt.$$
@@ -2884,12 +2884,12 @@ additivity relation
 
 
 
-  The integral notation for distribution is very useful, and allows us
+  The integral notation for distribution\index{distribution} is very useful, and allows us
   the flexibility to define, for nice enough---and honest---functions
   $c(t)$ useful expressions such as $$\int_a^bc(t)D(t).$$
 
  \ill{dirac_delta}{0.5}{The Dirac\index{Dirac} $\delta$-``function'' (actually
-   distribution), where we draw a vertical arrow to illustrate the
+   distribution),\index{distribution} where we draw a vertical arrow to illustrate the
    delta function with support at a given point.}
 
  For example, the Dirac\index{Dirac} $\delta$-function\index{$\delta$-function} we have been discussing
@@ -2898,7 +2898,7 @@ additivity relation
  function'' zero away from $3$.  And at $3$, we may {\it say}
  that it has the ``value'' infinity, in honor of it being the limit of
  blip functions getting taller and taller at $3$. The feature that
- pins it down as a distribution is given by its behavior relative to
+ pins it down as a distribution\index{distribution} is given by its behavior relative to
  the second feature above, the area of its graph over the open
  interval $(a,b)$ between $a$ and $b$:
 
@@ -2930,14 +2930,14 @@ This $\delta_x$ vanishes for $t \ne x$ and intuitively speaking, has an
 So, the original delta-function we were discussing, i.e., $\delta(t)$
 would be denoted $\delta_3(t)$.
 
- \noindent {\bf A question:} If you've never seen distributions
+ \noindent {\bf A question:} If you've never seen distribution\index{distribution}s
  before, but know the Riemann integral, can you guess at what the
  definition of $\int_a^bc(t)D(t)$ is, and can you formulate hypotheses
  on $c(t)$ that would allow you to endow this expression with a
  definite meaning?
 
 
-\noindent {\bf A second question:} If you have not seen distributions
+\noindent {\bf A second question:} If you have not seen distribution\index{distribution}s
 before, and have answered the first question above, let
 $c(t)$ be an honest function for which your definition
 of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
@@ -2949,7 +2949,7 @@ of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
  $\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)=c(x).$ This will be useful in the later sections!
 
 
-The theory of distributions gives a partial answer to the following funny question:
+The theory of distributions\index{distribution} gives a partial answer to the following funny question:
 
 
 \begin{quote} How in the world can you ``take the derivative'' of a
@@ -2957,15 +2957,15 @@ The theory of distributions gives a partial answer to the following funny questi
 \end{quote}
 
 The short answer to this question is that {\it this derivative $F'(t)$
-  which doesn't exist as a function may exist as a distribution.}
-What then is the integral of that distribution? Well, it is given by
+  which doesn't exist as a function may exist as a distribution\index{distribution}.}
+What then is the integral of that distribution?\index{distribution} Well, it is given by
 the original function!
 
 $$\int_a^bF'(t)dt \ = \ F(b) -F(a).$$
 
 Let us practice this with simple staircase functions. For example,
 what is the {\it derivative}---in the sense of the theory of
-distributions---of the function in Figure~\ref{fig:simple_staircase}?
+distributions---of\index{distribution} the function in Figure~\ref{fig:simple_staircase}?
 {\bf Answer} $\delta_0 + 2 \delta_1$.
 
 
@@ -3074,7 +3074,7 @@ $\int_{-{\infty}}^{+{\infty}}|{\hat f}(\theta)|d\theta$ (exists, and) is finite,
 Consider the $\delta$-function\index{$\delta$-function} that we denoted $\delta(t)$ (or
 $\delta_0(t)$). This is also the ``generalized function'' that we
 thought of as the ``limit of the red graphs'' in Chapter~\ref{sec:dist}
-above. Even though $\delta(t)$ is a distribution and {\it not} a bona
+above. Even though $\delta(t)$ is a distribution\index{distribution} and {\it not} a bona
 fide function, it is symmetric about the origin, and
 also $$\int_{-{\infty}}^{+{\infty}}|\delta(t)|dt$$ exists, and is
 finite (its value is, in fact, $1$). All this means that,
@@ -3092,7 +3092,7 @@ functions.
 Well, the general formula would give us:
   $$ {\hat \delta_0}(\theta) = \int_{-\infty}^{+\infty}\cos(-\theta t)\delta_0(t)dt$$
   and as we mentioned in section 18, for any nice function $c(t)$ we
-  have that the integral of the product of $c(t)$ by the distribution
+  have that the integral of the product of $c(t)$ by the distribution\index{distribution}
   $\delta_x(t)$ is given by the {\it value} of the function $c(t)$ at
   $t=x$.  So:
 
@@ -3144,7 +3144,7 @@ Can we synthesize them---i.e., build them up again---from their Fourier transfor
 %(to be written)
 
 % Here is where we will
-% be really justifying our heavy discussion of distributions,
+% be really justifying our heavy discussion of distribution\index{distribution}s,
 % trigonometric sums, etc.
 
 \chapter{Trigonometric series}\label{ch:trigseries}
@@ -3184,7 +3184,7 @@ $F(\theta,C)$ associated to an infinite trigonometric series\index{infinite trig
 $$
  F(\theta) = \sum_{k=1}^{\infty} a_k\cos(s_k\cdot \theta)
 $$
-is the Fourier transform of the distribution
+is the Fourier transform of the distribution\index{distribution}
 $$
  D(t,C):=\sum_{s_k \le C}a_kd_{s_k}(t).
 $$
@@ -3192,7 +3192,7 @@ Given the discreteness of the set of spectral values $s_k$ ($k=1,2,\dots$)    we
 consider the infinite sum
 $$
  D(t):=\sum_{k=1}^{\infty}a_kd_{s_k}(t),
-$$ viewed as distribution playing the role of
+$$ viewed as distribution\index{distribution} playing the role of
 the ``inverse Fourier transform" of our trigonometric
 series $F(t)$.
 
@@ -3437,10 +3437,10 @@ example, the equation
 
    At this point we'll do some further carpentry on $\psi(X)$ {\it without destroying the valuable
    information it contains}. We will be replacing  $\psi(X)$ by a generalized function, i.e., a
-   distribution, which we denote $\Phi(t)$ that has support at all positive integral multiples
+   distribution,\index{distribution} which we denote $\Phi(t)$ that has support at all positive integral multiples
      of logs of prime numbers,\index{prime number} and is  zero on the complement of that discrete set.  Recall that
      by definition, a discrete subset $S$ of real numbers is  the  {\bf support} of a function,
-     or of a distribution, if the function vanishes on the complement of  $S$ and doesn't vanish
+     or of a distribution,\index{distribution} if the function vanishes on the complement of  $S$ and doesn't vanish
      on the complement of any proper subset of $S$.
 
    Given the mission of our book, it may be less important for us to  elaborate on  the construction
@@ -3448,7 +3448,7 @@ example, the equation
    that  $\psi(X)$ has and {\bf (b)} to pay close attention to the spike values of the trigonometric
    series that is the Fourier transform of $\Phi(t)$.
 
-     For the definition  of the distribution $\Phi(t)$ see the end-note
+     For the definition  of the distribution\index{distribution} $\Phi(t)$ see the end-note
      \bibnote{
  {\it The construction of  $ \Phi(t)$ from $\psi(X)$:}
 
@@ -3491,21 +3491,21 @@ In summary: The generalized function that resulted from the above carpentry:
 }.% end bibnote
 
 
-A distribution that has a discrete set of real numbers as its
+A distribution\index{distribution} that has a discrete set of real numbers as its
   support---as $\Phi(t)$ does---we sometimes like to call {\bf spike
-    distributions} since the pictures of functions approximating it
+    distributions}\index{distribution} since the pictures of functions approximating it
   tend to look like a series of spikes.
 
-  We have then before us a spike distribution with support at integral
+  We have then before us a spike distribution\index{distribution} with support at integral
   multiples of logarithms of prime numbers\index{prime number}, and this generalized
   function retains the essential information about the placement of
   prime numbers among all whole numbers, and will be playing a major
-  role in our story: knowledge of the placement of the ``blips'' constituting this distribution (its
+  role in our story: knowledge of the placement of the ``blips'' constituting this distribution\index{distribution} (its
 support), being at  integral multiples of logs of prime numbers, would allow us to reconstruct the position of the prime
 numbers among all numbers. Of course there are many other ways to package this vital information, so we
 must explain our motivation for subjecting our poor initial staircase
 to the particular series of brutal acts of distortion that we
-described, which ends up with the distribution $\Phi(t)$.
+described, which ends up with the distribution\index{distribution} $\Phi(t)$.
 
 
 
@@ -3551,7 +3551,7 @@ by the equation
 \ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac\index{Dirac} delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).}
 
 
-We may want to think of $\Phi(t)$ as a limit of this sequence of distributions,
+We may want to think of $\Phi(t)$ as a limit of this sequence of distribution\index{distribution}s,
  $$\Phi(t)\ = \ \lim_{C \to {\infty}}\Phi_{\le C}(t)$$
 where $\Phi_{\le C}(t)$  is the following finite linear
 combination of (symmetrized) $\delta$-functions\index{$\delta$-function}  $d_x(t)$:
@@ -3825,15 +3825,15 @@ occurs with multiplicity two, we view the Riemann spectrum\index{Riemann spectru
 the series of numbers
   $$\theta_1, \theta_2, \dots, \theta_{n-1}, \theta_n, \theta_n, \theta_{n+1}, \dots$$
 
-It has been conjectured that there are no infinite arithmetic progressions among these numbers.  More broadly, one might expect that there is no visible  correlation between the $\theta_i$'s and translation, i.e., that the distribution of $\theta_i$'s modulo any positive number $T$ is random, as in Figure~\ref{fig:zero-spacing}.
+It has been conjectured that there are no infinite arithmetic progressions among these numbers.  More broadly, one might expect that there is no visible  correlation between the $\theta_i$'s and translation, i.e., that the distribution\index{distribution} of $\theta_i$'s modulo any positive number $T$ is random, as in Figure~\ref{fig:zero-spacing}.
 
 
 
 \illtwo{zero-spacing-mod2pi}{zero-spacing-mod1}{0.4}{Frequency histogram of Odlyzko's computation of the Riemann spectrum\index{Riemann spectrum} modulo $2\pi$ (left) and modulo 1 (right)\label{fig:zero-spacing}}
 
-        In analogy with the discussion of prime gaps in Chapter~\ref{ch:further}, we might compute {\it pair correlation functions} and the statistics of gaps between successive $\theta$'s in the Riemann spectrum\index{Riemann spectrum} (see {\url{http://www.baruch.cuny.edu/math/Riemann_Hypothesis/zeta.zero.spacing.pdf}). This study was  begun by H.L. Montgmery and F.J. Dyson. As  Dyson noticed, the distributions one gets from the Riemann spectrum\index{Riemann spectrum} bears a similarity to the distributions of eigenvalues of a random unitary matrix{\footnote{ Any connection of the Riemann spectrum to eigenvalues of matrices would indeed be exciting for our understanding of the \RH{}, in view of what is known as the {\it Hilbert-P{\'o}lya Conjecture}  (see {\url{http://en.wikipedia.org/wiki/Hilbert\%E2\%80\%93P\%C3\%B3lya_conjecture}}).}}. This has given rise to what is know as the {\it random matrix heuristics},  a powerful source of conjectures for number theory and other branches of mathematics.
+        In analogy with the discussion of prime gaps in Chapter~\ref{ch:further}, we might compute {\it pair correlation functions} and the statistics of gaps between successive $\theta$'s in the Riemann spectrum\index{Riemann spectrum} (see {\url{http://www.baruch.cuny.edu/math/Riemann_Hypothesis/zeta.zero.spacing.pdf}). This study was  begun by H.L. Montgmery and F.J. Dyson. As  Dyson noticed, the distributions\index{distribution} one gets from the Riemann spectrum\index{Riemann spectrum} bears a similarity to the distributions of eigenvalues of a random unitary matrix{\footnote{ Any connection of the Riemann spectrum to eigenvalues of matrices would indeed be exciting for our understanding of the \RH{}, in view of what is known as the {\it Hilbert-P{\'o}lya Conjecture}  (see {\url{http://en.wikipedia.org/wiki/Hilbert\%E2\%80\%93P\%C3\%B3lya_conjecture}}).}}. This has given rise to what is know as the {\it random matrix heuristics},  a powerful source of conjectures for number theory and other branches of mathematics.
 
-        Here is a histogram of the distribution of differences $\theta_{i+1}-\theta_i$:
+        Here is a histogram of the distribution\index{distribution} of differences $\theta_{i+1}-\theta_i$:
 \
 
 
@@ -3921,7 +3921,7 @@ $$}
 
 
   We have been dealing in Part~\ref{part3} of our book with $\Phi(t)$ a
-  distribution that---we said---contains all the essential information
+  distribution\index{distribution} that---we said---contains all the essential information
   about the placement of primes among numbers. We have given a clean
   restatement of Riemann's hypothesis, the third restatement so far,
   in term of this $\Phi(t)$.  But $\Phi(t)$ was the effect of a series
@@ -4011,7 +4011,7 @@ for $\pi(X)$.
 Thus not only did Riemann provide a ``fundamental'' (that is, a smooth curve
 that is astoundingly close to $\pi(X)$) but he viewed this as just a
 starting point, for he gave the recipe for providing an infinite
-sequence of corrective terms---call them Riemann's {\em harmonics}; we
+sequence of corrective terms---call them Riemann's {\em harmonics}\index{harmonics}; we
 will denote the first of these ``harmonics'' $C_1(X)$, the second
 $C_2(X)$, etc.  Riemann gets his first corrected curve, $R_1(X)$, from
 $R(X)$ by adding this first harmonic to the fundamental, $$R_1(X) =
@@ -4053,11 +4053,11 @@ is the spectrum\index{spectrum} of the prime numbers\index{prime number} \bibnot
   going from right to left.}.
 
 Riemann provided an extraordinary recipe that allows us to work
-out the harmonics, $$C_1(X),\quad C_2(X),\quad C_3(X),\quad \dots$$ without our having
+out the harmonics\index{harmonics}, $$C_1(X),\quad C_2(X),\quad C_3(X),\quad \dots$$ without our having
 to consult, or compute with, the actual staircase of primes. As with
 Fourier's modus operandi where both {\em fundamental} and all {\em
-  harmonics} are modeled on the sine wave, but appropriately
-calibrated, Riemann fashioned his higher harmonics, modeling them all
+  harmonics}\index{harmonics} are modeled on the sine wave, but appropriately
+calibrated, Riemann fashioned his higher harmonics\index{harmonics}, modeling them all
 on a single function, namely his initial guess $R(X)$.
 
 The convergence of $R_k(X)$ to $\pi(X)$ is strikingly illustrated
@@ -4441,7 +4441,7 @@ Figure~\ref{fig:gaussian-100} plots a much larger number of Gaussian primes:
 \ill{gaussian_staircase_1000}{.8}{Staircase of Gaussian primes of norm up to 1000}
 \ill{gaussian_staircase_10000}{.8}{Staircase of Gaussian primes of norm up to 10000\label{fig:gaussian-staircase-10000}}
 
-The natural question to ask, then, is: how are the Gaussian prime numbers\index{prime number} distributed? Can one provide as close an estimate to their distribution and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with an analogue to the Riemann zeta function\index{zeta function} playing  a role similar to the prototype $\zeta(s)$.  And, it seems as if its ``nontrivial zeroes''\index{nontrivial zeroes} behave similarly: as far as things have been computed, they  all have the property that
+The natural question to ask, then, is: how are the Gaussian prime numbers\index{prime number} distributed? Can one provide as close an estimate to their distribution\index{distribution} and structure, as one has for ordinary primes?  The answer, here is yes: there is a companion theory,  with an analogue to the Riemann zeta function\index{zeta function} playing  a role similar to the prototype $\zeta(s)$.  And, it seems as if its ``nontrivial zeroes''\index{nontrivial zeroes} behave similarly: as far as things have been computed, they  all have the property that
 their real part is equal to ${\frac{1}{2}}$.  That is, we
 have a companion to the \RH{}.
 
@@ -4472,7 +4472,7 @@ Is this yet another reason to believe the Grand \RH{}?
 %  expand.
 %
 %  $\pi(X)= \pi_0(X)$, $Q(X)= \psi_0(X)$, $\log, \exp$, $\delta$,
-%  distributions, RSA cryptography, Mersenne prime, $\Li(x)$, random
+%  distributions,\index{distribution} RSA cryptography, Mersenne prime, $\Li(x)$, random
 %  walk, spectrum, harmonic, fundamental, frequency, phase, amplitude,
 %  band-pass, complex numbers, complex plane, Riemann Zeta function\index{zeta function},
 %  zeroes of zeta.
