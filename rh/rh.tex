@@ -384,11 +384,11 @@ which is becoming easier  as mathematical software
 advances.}.
 
   There are  few
-mathematical equations in Part~\ref{part1}.  This first portion of our book is intended for readers who are generally interested in, or curious about, mathematical ideas, but who may not have studied any advanced topics. Part~\ref{part1} is devoted to conveying the essence of the Riemann Hypothesis and explaining why it is so intensely pursued. It requires a minimum of mathematical knowledge, and does not,  for example, use calculus, although it would be helpful to know---or to learn on the run---the meaning of  the concept of {\it function}\index{function}. Given its mission, Part~\ref{part1}  is meant to be complete, in that it has a beginning, middle, and end.  We hope that our readers who only read Part~\ref{part1} will have enjoyed the excitement  of this important piece of mathematics.
+mathematical equations in Part~\ref{part1}.  This first portion of our book is intended for readers who are generally interested in, or curious about, mathematical ideas, but who may not have studied any advanced topics. Part~\ref{part1} is devoted to conveying the essence of the Riemann Hypothesis and explaining why it is so intensely pursued. It requires a minimum of mathematical knowledge, and does not,  for example, use calculus,\index{calculus} although it would be helpful to know---or to learn on the run---the meaning of  the concept of {\it function}\index{function}. Given its mission, Part~\ref{part1}  is meant to be complete, in that it has a beginning, middle, and end.  We hope that our readers who only read Part~\ref{part1} will have enjoyed the excitement  of this important piece of mathematics.
 
 
 
-    Part~\ref{part2} is for readers who have taken at least one class in calculus, possibly a long time ago.  It is meant as a general preparation for the type of Fourier analysis\index{Fourier analysis} that will occur in the later parts. The notion of spectrum\index{spectrum} is key.
+    Part~\ref{part2} is for readers who have taken at least one class in calculus,\index{calculus} possibly a long time ago.  It is meant as a general preparation for the type of Fourier analysis\index{Fourier analysis} that will occur in the later parts. The notion of spectrum\index{spectrum} is key.
 
     Part~\ref{part3} is for readers who wish to see, more vividly, the link between the placement of prime numbers\index{prime number} and (what we call there) the {\it Riemann spectrum}.\index{Riemann spectrum}
 
@@ -1556,7 +1556,7 @@ staircase of primes.
 
 Let us denote Gauss's curve $G(X)$; it has an
 elegant simple formula comprehensible to anyone who has had a tiny bit
-of calculus.  If you make believe that the chances that a number $X$ is
+of calculus.\index{calculus}  If you make believe that the chances that a number $X$ is
 a prime is inversely proportional to the number of digits of $X$ you
 might well hit upon Gauss's curve.
 That is,
@@ -1707,7 +1707,7 @@ phrase ``large enough'' depends on your choice of exponent---the {\bf
   error term}---i.e., the difference between $q_{\rm approx}(X)$ and
 the {\em true} quantity, $q(X)$, is, in absolute value, less than
 $X$ raised to that exponent (e.g. $< X^{0.501}$, $<
-X^{0.5001}$, etc.). Readers who know calculus and wish to have a
+X^{0.5001}$, etc.). Readers who know calculus\index{calculus} and wish to have a
 technical formulation of this definition of {\em good approximation}
 might turn to the endnote \bibnote{If $f(x)$ and
 $g(x)$ are real-valued functions of a real variable $x$ such that
@@ -1898,7 +1898,7 @@ the previous chapter.
 \ill{camaro}{.7}{The dashboard of the 2013 Camaro SS car that one of us was driving during the writing of this chapter.}
 %I took this picture of my rental car -- William Stein.
 
- Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of ``time'' $t$.  The first natural impulse might be to take some sort of ``average value''\footnote{For readers who know calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.} of  $f(t)$ over a time interval, say from $0$ to $T$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
+ Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of ``time'' $t$.  The first natural impulse might be to take some sort of ``average value''\footnote{For readers who know Calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.} of  $f(t)$ over a time interval, say from $0$ to $T$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
    This new function $F(T)$, called the {\bf Ces\'aro Smoothing}\index{Ces\'aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to ``smooth out" some of the volatile local behavior of the original function, as can be seen in the figure below.
 
@@ -1983,7 +1983,7 @@ at the same rate.\label{fig:samerate}}
 
 
 
-Now a theorem from elementary calculus tells us that the ratio of
+Now a theorem from elementary calculus\index{calculus} tells us that the ratio of
 $\Li(X)$ to $X/\log(X)$ tends to $1$ as $X$ gets larger and larger.
 That is---using the definition we've just introduced---$\Li(X)$ and
 $X/\log(X)$ go to infinity at the same rate (see
@@ -2495,7 +2495,7 @@ book, and is largely the end of our main mission, to explain---in
 elementary terms---{\em what is Riemann's Hypothesis?}
 
 
-For readers who have at some point studied Differential Calculus, in
+For readers who have at some point studied Differential Calculus,\index{calculus} in
 Part~\ref{part2} we shall discuss Fourier analysis\index{Fourier analysis}, a fundamental tool that will be used in Part~\ref{part3}
 where we show how
 Riemann's hypothesis provides a key to some deeper structure of the
@@ -2523,7 +2523,7 @@ series.
 %elementary terms---{\em what is Riemann's Hypothesis?}
 
 
-%For readers who have at some point studied Differential Calculus, in
+%For readers who have at some point studied Differential Calculus,\index{calculus} in
 %Part~\ref{part2} we shall
 %go further and explain how the pursuit of
 %Riemann's hypothesis may provide a key to some deeper structure of the
@@ -2533,15 +2533,15 @@ series.
 \part{Distribution\index{distribution}s\label{part2}}
 
 
-\chapter[Slopes of graphs that have no slopes]{How Calculus manages to
+\chapter[Slopes of graphs that have no slopes]{How Calculus\index{calculus} manages to
   find the slopes of graphs that have no slopes}\label{ch:calculusmanages}
 
-Differential Calculus, initially the creation of Newton and Leibniz
+Differential Calculus,\index{calculus} initially the creation of Newton and Leibniz
 in the 1680s, acquaints us with {\it slopes} of graphs of functions of
 a real variable.  So, to discuss this we should say a word about what
 a {\it function} is, and what its {\it graph} is.
 
- \illtwo{newton}{leibniz}{0.25}{Isaac Newton and Gottfried Leibniz created Calculus}
+ \illtwo{newton}{leibniz}{0.25}{Isaac Newton and Gottfried Leibniz created Calculus\index{calculus}}
 
 
  A {\bf function} (let us refer to it in this discussion as $f$) is
@@ -2574,7 +2574,7 @@ a {\it function} is, and what its {\it graph} is.
  that interest us.
 
 
- \ill{graph_slope_deriv}{1}{\label{fig:graph_slope_deriv}Calculus}
+ \ill{graph_slope_deriv}{1}{\label{fig:graph_slope_deriv}Calculus\index{calculus}}
 
 
 
@@ -2582,14 +2582,14 @@ a {\it function} is, and what its {\it graph} is.
  slope at a point (green straight line), and the derivative (red) of
  the function; the red derivative is the function whose value at a point
  is the slope of the blue function at that point.  Differential
- Calculus explains to us how to calculate slopes of graphs, and
+ Calculus\index{calculus} explains to us how to calculate slopes of graphs, and
  finally, shows us the power that we then have to answer problems we
  could not answer if we couldn't compute those slopes.
 
-Usually, in elementary Calculus classes we are called upon to compute
+Usually, in elementary Calculus\index{calculus} classes we are called upon to compute
 slopes only of smooth graphs, i.e., graphs that actually {\em have}
 slopes at each of their points, such as in the illustration just
-above.  What could Calculus possibly do if confronted with a graph
+above.  What could Calculus\index{calculus} possibly do if confronted with a graph
 that has {\em jumps}, such as in Figure~\ref{fig:jump}:
 $$f(x) = \begin{cases}1 & x \leq 3\\ 2 & x > 3.\end{cases}$$
 (Note that for purely aesthetic reasons, we draw a vertical line at the point where the jump occurs, though technically that vertical line is not part of the graph of the function.)
@@ -2647,7 +2647,7 @@ minus\\
 {\it  the height of the blue graph  at $x=a$}.
 \end{center}
 This is a manifestation of one of the fundamental facts of life of
-Calculus relating a function to its derivative:
+Calculus\index{calculus} relating a function to its derivative:
 
 \begin{quote} Given any real-valued function $F(x)$---that has a
   derivative---for any interval of real numbers $[a,b]$ the total
@@ -2804,8 +2804,8 @@ explained above---a bona fide function but rather a distribution\index{distribut
   of real numbers, say the interval between $a$ and $b$, we can talk
   unambiguously about the area ``under'' the graph of the function
   $f(t)$ over the interval between $a$ and $b$.  That is, in the
-  terminology of Integral Calculus, we can talk of {\it the integral of $f(t)$
-    from $a$ to $b$}.  And in the notation of Calculus, this---thanks
+  terminology of Integral Calculus,\index{calculus} we can talk of {\it the integral of $f(t)$
+    from $a$ to $b$}.  And in the notation of Calculus,\index{calculus} this---thanks
   to Leibniz---is elegantly denoted
 $$\int_a^bf(t)dt.$$
 
@@ -2827,7 +2827,7 @@ In contrast, a {\it generalized function}  or  {\it distribution\index{distribut
   interval between $a$ and $b$, we can still talk unambiguously about
   the {\it area ``under'' the graph of the generalized function $D(t)$
     over the interval between $a$ and~$b$} and we will denote
-  this--extending what we do in ordinary calculus---by the symbol
+  this--extending what we do in ordinary calculus---by\index{calculus} the symbol
 $$\int_a^bD(t)dt.$$
 \end{itemize}
 
@@ -2893,7 +2893,7 @@ additivity relation
    delta function with support at a given point.}
 
  For example, the Dirac\index{Dirac} $\delta$-function\index{$\delta$-function} we have been discussing
- (i.e., the limit of the red graphs of Chapter~\ref{ch:calculusmanages}) {\it is}
+ (i.e., the limit of the red graphs of Chapter~\ref{ch:calculusmanages})\index{calculus} {\it is}
  an honest function away from $t=3$ and---in fact---is the ``trivial
  function'' zero away from $3$.  And at $3$, we may {\it say}
  that it has the ``value'' infinity, in honor of it being the limit of
@@ -3038,13 +3038,12 @@ amplitude by ${\hat f}(\theta)$, and refer to it as {\bf the Fourier
   transform} of $f(t)$.  The {\bf spectrum},\index{spectrum} then, of $f(t)$ is the
 set of all frequencies $\theta$ where the amplitude is nonzero.
 
-
 \ill{fourier_machine}{.6}{The Fourier transform machine, which transforms $f(t)$ into ${\hat f}(\theta)$\label{fig:fourier_machine}}
 
 
 Now in certain easy circumstances---specifically, if
 $\int_{-{\infty}}^{+{\infty}}|f(t)|dt$ (exists, and)
-is finite---Integral Calculus provides us with an easy construction of that
+is finite---Integral Calculus\index{calculus} provides us with an easy construction of that
 machine (see Figure~\ref{fig:fourier_machine}); namely:
 
     $${\hat f}(\theta) = \int_{-{\infty}}^{+{\infty}}f(t)\cos(-\theta t)dt.$$
