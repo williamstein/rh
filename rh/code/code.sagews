@@ -1,21 +1,60 @@
+︠2ac979b9-025c-4446-9498-01f0db38f5fes︠
+%load code.sage
+︡421239b0-4df9-4412-89fb-faa83a1676da︡
+︠cbad7a2a-e720-4523-885f-69aa28af95f5︠
+%time
+%load code.sage
+%time draw()
+︠5cee7c63-955c-4c55-bf31-df93d0fea32es︠
+['_'.join(x.split('_')[1:]) for x in globals() if x.startswith('fig_')]
+︡211526b2-8a46-428b-9e76-de26126b4959︡{"stdout":"['primegapdist', 'inverse_of_log', 'pi_riemann_gauss', 'moebius', 'log', 'li_pi_loginv', 'logXoverX', 'pure_tone', 'questions', 'zero_spacing', 'proportion_primes', 'prime_pi_aspect1', 'Psiprime', 'theta_C_intro', 'psi', 'Phi', 'waves', 'mini_phihat_even', 'phi', 'calculus', 'jump', 'primegap_race', 'phihat_even_all', 'prime_pi', 'primes_line', 'staircase_riemann_spectrum', 'simple_staircase', 'even_function', 'fourier_machine', 'mixed_tone', 'multpar', 'riemann_spectrum_gaps', 'aplusone', 'cesaro', 'random_walks', 'Rk', 'Psi', 'simrates', 'sieves', 'two_delta', 'sawtooth', 'dirac', 'prime_pi_nofill', 'oo_integral', 'theta_C', 'psi_waves', 'phihat_even', 'li_minus_pi', 'factor_tree', 'even_pi', 'gaussian_primes', 'erat']\n"}︡
+︠d2cc0e3d-0386-4884-9b5a-7720fb69f584s︠
+for x in ['li_minus_pi', 'factor_tree', 'even_pi', 'gaussian_primes', 'erat']:
+    %time draw(x)
+︠d4106eed-9996-4cba-880a-9379a323db4es︠
+%load code.sage
+draw('phi')
+︡efac8c90-14a6-4070-82b6-9892b3f7ae5f︡{"stdout":"Drawing phi... "}︡{"stdout":" "}︡{"stdout":" (time = 22.0821690559 seconds)\n"}︡
+︠32cc8b55-b791-45ef-80e0-5670795ce196s︠
+%load code.sage
+draw('moebius')
+︡17e2edf3-69d7-4a59-b673-44f1f3a49ec5︡{"stdout":"Drawing moebius... "}︡{"stdout":" "}︡{"stdout":" (time = 7.25760006905 seconds)\n"}︡
+︠fabfa366-8c3a-4cc0-a3ef-a5cb3cfd08fe︠
+reset()
+︠4a2685c6-fdc3-4cb2-812b-d78f28917eb3s︠
+%load code.sage
+draw("li_minus_pi")
+︡aab8c38f-d3da-45b9-ad04-e3df5ee87e34︡{"stdout":"Drawing li_minus_pi... "}︡{"stdout":" "}︡{"stdout":" (time = 39.5458168983 seconds)\n"}︡
+︠1dcd7049-a8b5-4903-9f25-341193f6ab59s︠
+%time
+%load code.sage
+draw('theta_C_intro')
+︡9b5c3321-7dde-4741-ae2e-bb1c13440fc3︡{"stdout":"Drawing theta_C_intro... "}︡{"stdout":" "}︡{"stdout":" (time = 8.55938410759 seconds)\n"}︡{"stdout":"CPU time: 7.83 s, Wall time: 8.77 s\n"}︡
+︠04b2e0ed-b4be-4b9f-89ef-4eb770a430b6s︠
+%load code.sage
+g = fig_pi_Li(0,0)
+︡e7815d27-a074-4e47-a15e-5e0b32414b44︡
+︠3a0a8ddb-d721-4f67-b84f-1eecbfc34aa6s︠
+g
+︡2443b123-0f66-4b4e-9303-646bddcabcec︡{"once":false,"file":{"show":true,"uuid":"6110109a-fe89-4d12-928d-71c4c4f74373","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute2dc1/31086/tmp_2PqFnq.svg"}}︡{"html":"<div align='center'></div>"}︡
 ︠79debb46-c93c-4b25-8436-1a1c68a123b5︠
-︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cbs︠
+︠83dda20b-e4c9-4f8a-bc87-0e174ed8b0cb︠
 %time
 %load code.sage
 draw('gaussian_primes')
 ︡dbe2d435-2812-4fb0-9733-51d61d54318e︡{"stdout":"Drawing gaussian_primes... "}︡{"stdout":" "}︡{"stdout":" (time = 18.4877309799 seconds)\n"}︡{"stdout":"CPU time: 16.05 s, Wall time: 18.74 s\n"}︡
-︠b8181ae5-05af-4118-b18a-1f5f9e26a48es︠
+︠b8181ae5-05af-4118-b18a-1f5f9e26a48e︠
 gaussian_primes(10)
 ︡06813547-b113-46ab-afc7-8869610ca51a︡{"stdout":"[i + 1, i + 2, 2*i + 1, 3, 3*i + 2, 2*i + 3, i + 4, 4*i + 1, 5*i + 2, 2*i + 5, i + 6, 6*i + 1, 5*i + 4, 4*i + 5, 7, 7*i + 2, 2*i + 7, 6*i + 5, 5*i + 6, 3*i + 8, 8*i + 3, 8*i + 5, 5*i + 8, 9*i + 4, 4*i + 9, i + 10, 10*i + 1, 10*i + 3, 3*i + 10, 8*i + 7, 7*i + 8, 7*i + 10, 10*i + 7, 10*i + 9, 9*i + 10]\n"}︡
-︠cc406e71-2649-46e9-a3e0-ba5e7194d60ds︠
+︠cc406e71-2649-46e9-a3e0-ba5e7194d60d︠
 K.<i> = QuadraticField(-1)
 ︡7ba4d22d-f39e-44d9-8596-443c6da38d2f︡
-︠0a5ff1a2-b004-479a-91bd-d95667f9ba92s︠
+︠0a5ff1a2-b004-479a-91bd-d95667f9ba92︠
 i^2
 ︡e300e934-e6ba-4168-b9e1-f7e149a0028a︡{"stdout":"-1\n"}︡
 ︠bd41a692-7a1d-413e-b258-9ad26e1747a0︠
 
-︠3b1dda8f-a711-462e-95b9-5e78e8a146c5s︠
+︠3b1dda8f-a711-462e-95b9-5e78e8a146c5︠
 B = 10
 %time v = K.primes_of_bounded_norm(2*B*B)
 w = []
@@ -27,10 +66,10 @@ w = [z for z in w if z[0]>0 and z[1]>=0]
 ︡fc27a788-9a5e-412b-8884-cdd85e5c2608︡{"stdout":"CPU time: 0.05 s, Wall time: 0.05 s\n"}︡
 ︠7c1f73ca-d8c9-47f5-ae20-53f7a10752f4︠
 g.save?
-︠1571ab06-a964-4d30-80a9-866cfb019b51s︠
+︠1571ab06-a964-4d30-80a9-866cfb019b51︠
 %time show(points(w, pointsize=90, zorder=10), aspect_ratio=1, svg=True, figsize=7, fontsize=16, gridlines=True, ticks=[[-1..B],[-1..B]], xmin=-.5, ymin=-.5)
 ︡34d2614b-53eb-43e8-b3f4-de9df7641a45︡{"once":false,"file":{"show":true,"uuid":"afb062d7-9f31-4c45-b18a-5f2d81652710","filename":"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sage/temp/compute7dc2/19235/tmp_eaRoRJ.svg"}}︡{"html":"<div align='center'></div>"}︡{"stdout":"CPU time: 0.30 s, Wall time: 0.72 s"}︡{"stdout":"\n"}︡
-︠24893c47-c03b-4813-9ffc-de6cdd6c7bc6s︠
+︠24893c47-c03b-4813-9ffc-de6cdd6c7bc6︠
 B = 100
 %time v = K.primes_of_bounded_norm(2*B*B)
 w = []
@@ -40,10 +79,10 @@ for I in v:
         w.extend([a,-a,i*a,-i*a])
 w = [z for z in w if z[0]>0 and z[1]>=0]
 ︡35645813-355d-4b04-a436-b49abb385fd0︡{"stdout":"CPU time: 2.71 s, Wall time: 2.71 s"}︡{"stdout":"\n"}︡
-︠6a824a3f-65a3-4b29-b6af-b2a2bb6101eas︠
+︠6a824a3f-65a3-4b29-b6af-b2a2bb6101ea︠
 cartesian_product([[1..3], [1..3]])
 ︡41a9d5c8-8df1-4151-88de-c98819ae7f0e︡{"stderr":"Error in lines 1-1\nTraceback (most recent call last):\n  File \"/projects/54949eee-57da-4bd7-bb43-c2602b429f9a/.sagemathcloud/sage_server.py\", line 873, in execute\n    exec compile(block+'\\n', '', 'single') in namespace, locals\n  File \"\", line 1, in <module>\n  File \"/usr/local/sage/sage-6.5/local/lib/python2.7/site-packages/sage/categories/covariant_functorial_construction.py\", line 218, in __call__\n    assert(all( hasattr(arg, self._functor_name) for arg in args))\nAssertionError\n"}︡
-︠97882374-4057-4e6b-9475-646dda4a3cf2s︠
+︠97882374-4057-4e6b-9475-646dda4a3cf2︠
 p1 = points(w, pointsize=20, zorder=10)
 p2 = points(list(cartesian_product_iterator([[0..B],[0..B]])), pointsize=3, color='grey', zorder=15)
 %time show(p1+p2, aspect_ratio=1, svg=True, frame=True, axes=False, figsize=10)
