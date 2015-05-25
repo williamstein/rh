@@ -49,6 +49,7 @@ sensitive=true}
 
 \DeclareMathOperator{\Gap}{Gap}
 \DeclareMathOperator{\Li}{Li}
+\DeclareMathOperator{\li}{li}
 
 \DeclareMathOperator{\Sing}{Sing}
 \DeclareMathOperator{\Triv}{Triv}
@@ -397,7 +398,7 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
       The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.  References to the end notes will be in brackets.
 
       We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A---about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers\footnote{Including
-Dan Asimov, Bret Benesh, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Shaun Griffith, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}.
+Dan Asimov, Bret Benesh, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Shaun Griffith, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, Jim Markovitch, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}.
 We thank them infinitely.
 
 
@@ -3917,8 +3918,6 @@ $$}
 
 
 \chapter[Building $\pi(X)$ knowing the spectrum]{How to build $\pi(X)$ knowing the spectrum (Riemann's way)}
-
-
   We have been dealing in Part~\ref{part3} of our book with $\Phi(t)$ a
   distribution\index{distribution} that---we said---contains all the essential information
   about the placement of primes among numbers. We have given a clean
@@ -3943,14 +3942,24 @@ $$}
   Bernhard Riemann used the spectrum\index{spectrum} of the prime numbers\index{prime number} to provide
   an exact analytic formula that analyzes and/or synthesizes the
   staircase of primes.  This formula is motivated by Fourier's
-  analysis of functions as constituted out of cosines.  Riemann\index{Riemann, Bernhard} started
-  with a specific smooth function, which we will refer to as $R(X)$, a
-  function that Riemann offered, just as Gauss\index{Gauss, Carl Friedrich} offered his $\Li(X)$,
-  as a candidate smooth function approximating the staircase of
-  primes.  Recall from Chapter~\ref{sec:rh1} that Gauss's guess is
-  $\Li(X)= \int_2^{X}dt/{\rm log}(t).$ Riemann's guess for a better
-  approximation to $\pi(X)$ is obtained from Gauss's, using the Moebius
-  function $\mu(n)$, which is defined by
+  analysis of functions as constituted out of cosines.
+  %Riemann\index{Riemann, Bernhard} started
+  %with a specific smooth function, which we will refer to as $R(X)$, a
+ % function that Riemann offered, just as Gauss\index{Gauss, Carl Friedrich} offered his $\Li(X)$,
+ % as a candidate smooth function approximating the staircase of
+  %primes.
+  Recall from Chapter~\ref{sec:rh1} that Gauss's guess is
+  $\Li(X)= \int_2^{X}dt/{\rm log}(t).$ To continue this discussion, we do need some familiarity with complex numbers, for the definition of Riemann's\index{Riemann, Bernhard} exact formula
+requires extending
+the definition of the function $\Li(X)$ to make sense when given
+complex numbers $X=a+bi$. In fact, more naturally, one might work with the path integral $\li(X):= \int_0^{X}dt/{\rm log}(t).$
+
+  Riemann \index{Riemann, Bernhard} begins his discussion by defining
+$$
+R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \li(X^{1\over n})= \lim_{N\to \infty} R^{(N)}(X):= \lim_{N\to \infty} \sum_{n=1}^{N}{\mu(n)\over n} \li(X^{1\over n})$$  where  $R^{(N)}(X)$ denotes the truncated sum, which one can compute as an approximation.  In all the discussion of this section the order of summation is important, and for such considerations, and  issues regarding actual computation we refer to Riesel-Gohl (see \url{http://wstein.org/rh/rg.pdf}).
+
+Here $\mu(n)$ is the Moebius function\index{Moebius function}
+ which is defined by
 $$
  \mu(n) = \begin{cases}
     1 &
@@ -3967,12 +3976,6 @@ $$
 
 \ill{moebius}{1}{The blue dots plot the values of the Moebius function\index{Moebius function} $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
 
-
-Riemann's\index{Riemann, Bernhard} guess is
-$$
-R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \Li(X^{1\over n}),
-$$
-where $\mu(n)$ is the Moebius function\index{Moebius function} introduced above.
 
 \ill{riemann_RX}{0.8}{Riemann\index{Riemann, Bernhard} defining $R(X)$ in his manuscript}
 
@@ -3995,12 +3998,14 @@ Think of Riemann's smooth curve $R(X)$ as the {\em fundamental}
 approximation to $\pi(X)$.
 Riemann\index{Riemann, Bernhard} offered much more than just a (conjecturally) better
 approximation to $\pi(X)$ in his wonderful 1859 article.
-He found a way to construct what looks like a Fourier series,
+He found a way to construct what looks vaguely like a Fourier series,
 but with $\sin(X)$ replaced by $R(X)$ and spectrum\index{spectrum} the $\theta_i$, which
 conjecturally exactly equals $\pi(X)$.
-He gave an infinite sequence of improved guesses,
+In this manner, Riemann gave an infinite sequence of improved guesses, beginning with $R_0(X)$ (see equation (18)  of Riesel-Gohl at  \url{http://wstein.org/rh/rg.pdf})  a modification of $R(X)$ that takes account of the pole and the trivial zeroes of the Riemann zeta-function, and then considered a series:
+
+
 $$
-R(X) = R_0(X),\quad R_1(X), \quad R_2(X), \quad R_3(X), \quad \ldots
+R_0(X),\quad R_1(X), \quad R_2(X), \quad R_3(X), \quad \ldots
 $$
 and he hypothesized that one and all of them were all
 essentially square root approximations to $\pi(X)$,
@@ -4013,8 +4018,8 @@ starting point, for he gave the recipe for providing an infinite
 sequence of corrective terms---call them Riemann's {\em harmonics}\index{harmonics}; we
 will denote the first of these ``harmonics'' $C_1(X)$, the second
 $C_2(X)$, etc.  Riemann\index{Riemann, Bernhard} gets his first corrected curve, $R_1(X)$, from
-$R(X)$ by adding this first harmonic to the fundamental, $$R_1(X) =
-R(X) + C_1(X),$$ he gets the second by correcting $R_1(X)$ by adding
+$R_0(X)$ by adding this first harmonic to the fundamental, $$R_1(X) =
+R_0(X) + C_1(X),$$ he gets the second by correcting $R_1(X)$ by adding
 the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
 = R_2 (X) + C_3(X),$$ and in the limit provides us with an exact fit.
 
@@ -4022,11 +4027,11 @@ the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
 
 The \RH{}, if true, would tell us that these correction
 terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small},
-and all the successively corrected smooth curves $$R(X), R_1(X),
-R_2(X),R_3(X),\dots$$ are good approximations to $\pi(X)$.
+and all the successively corrected smooth curves $$R_0(X), R_1(X),
+R_2(X), R_3(X),\dots$$ are good approximations to $\pi(X)$.
 Moreover,
 $$
- \pi(X) = R(X) + \sum_{k=1}^{\infty} C_k(X).
+ \pi(X) = R_0(X) + \sum_{k=1}^{\infty} C_k(X).
 $$
 
 The elegance of Riemann's\index{Riemann, Bernhard} treatment of this problem is that the
@@ -4035,13 +4040,10 @@ $R(X)$ and are completely described if you know the sequence of real
 numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
 
 
-To continue this discussion, we do need some familiarity with complex numbers, for the definition of Riemann's\index{Riemann, Bernhard} $C_k(X)$
-requires extending
-the definition of the function $\Li(X)$ to make sense when given
-complex numbers $X=a+bi$.  Assuming the \RH{}, the Riemann\index{Riemann, Bernhard} correction
+.  Assuming the \RH{}, the Riemann\index{Riemann, Bernhard} correction
 terms $C_k(X)$ are then
 $$
-   C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}),
+   C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}) -R(X^{\frac{1}{2} - i\theta_k}),
 $$
 where $\theta_1 = 14.134725\dots, \theta_2 = 21.022039\dots$, etc.,
 is the spectrum\index{spectrum} of the prime numbers\index{prime number} \bibnote{You may well ask how we propose to order these correction terms if RH
@@ -4051,13 +4053,13 @@ is the spectrum\index{spectrum} of the prime numbers\index{prime number} \bibnot
   part, order zeroes of the same imaginary part by their real parts,
   going from right to left.}.
 
-Riemann\index{Riemann, Bernhard} provided an extraordinary recipe that allows us to work
+In sum, Riemann\index{Riemann, Bernhard} provided an extraordinary recipe that allows us to work
 out the harmonics\index{harmonics}, $$C_1(X),\quad C_2(X),\quad C_3(X),\quad \dots$$ without our having
 to consult, or compute with, the actual staircase of primes. As with
 Fourier's modus operandi where both {\em fundamental} and all {\em
   harmonics}\index{harmonics} are modeled on the sine wave, but appropriately
 calibrated, Riemann\index{Riemann, Bernhard} fashioned his higher harmonics\index{harmonics}, modeling them all
-on a single function, namely his initial guess $R(X)$.
+on a single function, namely his initial guess $R_0(X)$.
 
 The convergence of $R_k(X)$ to $\pi(X)$ is strikingly illustrated
 in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various values of $k$.
