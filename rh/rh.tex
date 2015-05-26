@@ -4000,8 +4000,8 @@ Riemann\index{Riemann, Bernhard} offered much more than just a (conjecturally) b
 approximation to $\pi(X)$ in his wonderful 1859 article.
 He found a way to construct what looks vaguely like a Fourier series,
 but with $\sin(X)$ replaced by $R(X)$ and spectrum\index{spectrum} the $\theta_i$, which
-conjecturally exactly equals $\pi(X)$.
-In this manner, Riemann gave an infinite sequence of improved guesses, beginning with $R_0(X)$ (see equation (18)  of Riesel-Gohl at  \url{http://wstein.org/rh/rg.pdf})  a modification of $R(X)$ that takes account of the pole and the trivial zeroes of the Riemann zeta-function, and then considered a series:
+conjecturally  equals $\pi(X)$ (with a slight correction if the number $X$ is itself a prime).
+In this manner, Riemann gave an infinite sequence of improved guesses, beginning with $R_0(X)$ (see equation (18)  of Riesel-Gohl at  \url{http://wstein.org/rh/rg.pdf})  a modification of $R(X)$ that takes account of the pole and the trivial zeroes of the Riemann zeta-function, and then considered a sequence:
 
 
 $$
@@ -4026,13 +4026,14 @@ the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
 \ill{riemann_Rk}{0.8}{Riemann\index{Riemann, Bernhard} analytic formula for $\pi(X)$.}
 
 The \RH{}, if true, would tell us that these correction
-terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small},
-and all the successively corrected smooth curves $$R_0(X), R_1(X),
-R_2(X), R_3(X),\dots$$ are good approximations to $\pi(X)$.
-Moreover,
-$$
- \pi(X) = R_0(X) + \sum_{k=1}^{\infty} C_k(X).
-$$
+terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small}
+%,
+%and all the successively corrected smooth curves $$R_0(X), R_1(X),
+%R_2(X), R_3(X),\dots$$ are good approximations to $\pi(X)$.
+%Moreover,
+%$$
+ %\pi(X) = R_0(X) + \sum_{k=1}^{\infty} C_k(X).
+%$$
 
 The elegance of Riemann's\index{Riemann, Bernhard} treatment of this problem is that the
 corrective terms $C_k(X)$ are all {\em modeled on} the fundamental
@@ -4040,8 +4041,8 @@ $R(X)$ and are completely described if you know the sequence of real
 numbers $\theta_1, \theta_2, \theta_3,\dots$ of the last section.
 
 
-.  Assuming the \RH{}, the Riemann\index{Riemann, Bernhard} correction
-terms $C_k(X)$ are then
+  Assuming the \RH{}, the Riemann\index{Riemann, Bernhard} correction
+terms $C_k(X)$ are defined to be
 $$
    C_k(X)= -R(X^{\frac{1}{2} + i\theta_k}) -R(X^{\frac{1}{2} - i\theta_k}),
 $$
@@ -4059,7 +4060,7 @@ to consult, or compute with, the actual staircase of primes. As with
 Fourier's modus operandi where both {\em fundamental} and all {\em
   harmonics}\index{harmonics} are modeled on the sine wave, but appropriately
 calibrated, Riemann\index{Riemann, Bernhard} fashioned his higher harmonics\index{harmonics}, modeling them all
-on a single function, namely his initial guess $R_0(X)$.
+on a single function, namely  $R(X)$.
 
 The convergence of $R_k(X)$ to $\pi(X)$ is strikingly illustrated
 in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various values of $k$.
