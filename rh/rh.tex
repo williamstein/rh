@@ -225,6 +225,7 @@ sensitive=true}
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 
 \chapter*{\label{foreword}Foreword}
+\addcontentsline{toc}{chapter}{Preface}
 The \RH{} is one of the great unsolved problems of
 mathematics, and the reward of \$1{,}000{,}000 of {\em Clay Mathematics
   Institute} prize money awaits the person who solves it. But---with
@@ -370,7 +371,7 @@ paragraph of Don Zagier's\index{Zagier, Don} classic 12-page exposition, {\em Th
     Number theory has its share of this bounty. Along with all these modes of theoretical work,  number theory also offers the pure joy of numerical experimentation, which---when it is going well---allows you to witness the intricacy of numbers and  profound inter-relations that cry out for explanation. It is striking how little you actually have to know in order to appreciate the  revelations offered by numerical exploration.
 
     Our book is meant to be an introduction to these pleasures. We take an experimental view of the fundamental ideas of the subject  buttressed by numerical computations, often displayed as graphs. As a result, our book is profusely illustrated, containing over 125 figures,
-diagrams, and pictures that accompany the text\footnote{We created all of the
+diagrams, and pictures that accompany the text.\footnote{We created all of the
   figures using the free SageMath
   software (see \url{http://www.sagemath.org}).
 Complete source code is available, which
@@ -382,7 +383,7 @@ the ranges of data illustrated, so as to get an even more
 vivid sense of how the numbers ``behave.''
 We hope that readers become inspired to carry out numerical experimentation,
 which is becoming easier  as mathematical software
-advances.}.
+advances.}
 
   There are  few
 mathematical equations in Part~\ref{part1}.  This first portion of our book is intended for readers who are generally interested in, or curious about, mathematical ideas, but who may not have studied any advanced topics. Part~\ref{part1} is devoted to conveying the essence of the Riemann Hypothesis and explaining why it is so intensely pursued. It requires a minimum of mathematical knowledge, and does not,  for example, use calculus,\index{calculus} although it would be helpful to know---or to learn on the run---the meaning of  the concept of {\it function}\index{function}. Given its mission, Part~\ref{part1}  is meant to be complete, in that it has a beginning, middle, and end.  We hope that our readers who only read Part~\ref{part1} will have enjoyed the excitement  of this important piece of mathematics.
@@ -397,8 +398,8 @@ mathematical equations in Part~\ref{part1}.  This first portion of our book is i
 
       The end-notes are meant to link the text to references, but also to provide  more technical commentary with an increasing dependence on mathematical background in the later chapters.  References to the end notes will be in brackets.
 
-      We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A---about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers\footnote{Including
-Dan Asimov, Bret Benesh, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Shaun Griffith, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, Jim Markovitch, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}.
+      We wrote our book over the past decade, but devoted only one week to it each year (a week in August).    At the end of our work-week for the book, each year, we put our draft (mistakes and all) on line to get response from readers.{\footnote{See  {\url{http://library.fora.tv/2014/04/25/Riemann_Hypothesis_The_Million_Dollar_Challenge}} which is a lecture---and Q \& A---about the composition of this book.}} We therefore accumulated much important feedback, corrections, and requests from readers.\footnote{Including
+Dan Asimov, Bret Benesh, Keren Binyaminov, Harald B\"{o}geholz, Louis-Philippe Chiasson, Keith Conrad, Karl-Dieter Crisman, Nicola Dunn, Thomas Egense, Bill Gosper,  Andrew Granville, Shaun Griffith, Michael J. Gruber, Robert Harron,  William R. Hearst III, David Jao, Fredrik Johansson, Jim Markovitch, David Mumford, James Propp, Andrew Solomon, Dennis Stein, and Chris Swenson.}
 We thank them infinitely.
 
 
@@ -429,9 +430,9 @@ So, how far along are we in our thoughts about numbers?
 The French philosopher and mathematician Ren\'e Descartes,\index{Descartes, Ren\'{e}} almost four
 centuries ago, expressed the hope that there soon would be ``almost
 nothing more to discover in geometry.'' Contemporary physicists dream
-of a final theory\footnote{See Weinberg's book {\em Dreams of a
+of a final theory.\footnote{See Weinberg's book {\em Dreams of a
     Final Theory: The Search for the Fundamental Laws of Nature}, by
-  Steven Weinberg (New York: Pantheon Books, 1992)}.  But despite its
+  Steven Weinberg (New York: Pantheon Books, 1992)}  But despite its
 venerability and its great power and beauty, the pure mathematics of
 numbers may still be in the infancy of its development, with depths to
 be explored as endless as the human soul, and {\it never} a final theory.
@@ -443,7 +444,7 @@ be explored as endless as the human soul, and {\it never} a final theory.
 Numbers are obstreperous things. Don Quixote\index{Don Quixote} encountered this when he
 requested that the ``bachelor'' compose a poem to his lady Dulcinea del
 Toboso, the first letters of each line spelling out her name. The
-``bachelor'' found\footnote{See Chapter IV of the Second Part of the Ingenious Gentleman Don Quixote of La Mancha.}
+``bachelor'' found\footnote{See Chapter IV of the Second Part of the {\em Ingenious Gentleman Don Quixote of La Mancha}.}
 
 \begin{quote}
   ``a great difficulty in their composition because the number of
@@ -635,10 +636,10 @@ alliteratively distinguish it from you-know-what.
 If $p$ is a prime number, and $a$ is any number relatively prime to $p$ then $a^{p-1} - 1$ is divisible by $p$.
 \end{theorem}
 A good exercise is to try to prove this, and a one-word hint that might lead you to one of the many proofs of it is
-{\em induction}\footnote{Here's the proof:
+{\em induction}.\footnote{Here's the proof:
 $$(N+1)^p \equiv N^p +1 \equiv (N+1)\ \mod p,$$
 where the first equality is the binomial theorem and the second
-equality is induction.}.
+equality is induction.}
 
  Now we are going to use this as a criterion, by---in effect---restating it in what logicians would call  its {\it contrapositive}:
  \begin{theorem}[The Fermat $a$-test]
@@ -819,7 +820,7 @@ $$
 $$
 is a prime number\index{prime number}, this number having $12{,}978{,}189$ digits!  This
 prime, which was discovered on August 23, 2008 by the
-GIMPS project\footnote{The GIMPS project website is \url{http://www.mersenne.org/}.},
+GIMPS project,\footnote{The GIMPS project website is \url{http://www.mersenne.org/}.}
 is the first prime ever found with more than ten million digits,
 though it is not the largest prime currently known.
 
@@ -872,8 +873,8 @@ Given primes $p_1, \ldots, p_m$, let $n=p_1 p_2 \cdots p_m +
 so there are more than $m$ primes.
 
 You can think of this strategy as a simple game that you can
-play. Start with any finite bag of prime numbers\index{prime number} (say the bag that
-only contains one prime, the prime $2$). Now each ``move'' of the game
+play. Start with the bag of prime numbers\index{prime number}
+that contains just the two primes $2$ and $3$. Now each ``move'' of the game
 consists of multiplying together all the primes you have in your bag
 to get a number $M$, then adding $1$ to $M$ to get the larger
 number $N=M+1$, then factoring $N$\index{factor} into prime number factors, and then
@@ -914,7 +915,7 @@ major challenge.  In the 1990s, the Electronic Frontier Foundation\index{Electro
 to the first group to find a prime with at least 10{,}000{,}000 decimal
 digits (the group that found the record prime $p$ above won this prize\footnote{%
 See \url{http://www.eff.org/press/archives/2009/10/14-0}.
-Also the 46th Mersenne prime was declared by Time Magazine to be
+Also the 46th Mersenne prime was declared by {\em Time Magazine} to be
 one of the top 50 best ``inventions'' of 2008: \url{http://www.time.com/time/specials/packages/article/0,28804,1852747_1854195_1854157,00.html}.}), and offers
 another \$150{,}000 cash prize to the first group to find a prime with
 at least 100{,}000{,}000 decimal digits.
@@ -1026,10 +1027,10 @@ three numbers (49, 77, and 91) up to 100 we have
 (after sieving by 2,3, and 5) determined
 which are primes and which composite.
 
-\ill{sieve100-7}{.8}{Using the primes 2,3,5, and 7 to sieve for primes up to 100\label{fig:erat2357}}
+\ill{sieve100-7}{.8}{Using the primes 2, 3, 5, and 7 to sieve for primes up to 100\label{fig:erat2357}}
 
 Finally, we see in Figure~\ref{fig:erat2357} that
-sieving by 2,3,5, and 7 determines  all primes up to $100$.
+sieving by 2, 3, 5, and 7 determines  all primes up to $100$.
 See \bibnote{In Sage, the
 function {\tt prime\_range} enumerates primes in a range, e.g.,
 {\tt prime\_range(50)}
@@ -1179,8 +1180,8 @@ primes, but no one has been able to prove this yet.
 %NOTE: I omitted the commas in the numbers in the displayed formula.
 As of 2014, the largest known twin primes are
 $$3756801695685\cdot 2^{666669} \pm 1.$$
-These enormous primes, which were found in 2011, have $200{,}700$ digits each\footnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
-largest known twin primes.}.
+These enormous primes, which were found in 2011, have $200{,}700$ digits each.\footnote{See \url{http://primes.utm.edu/largest.html\#twin} for the top ten
+largest known twin primes.}
 
 
 Similarly, it is interesting to consider primes $p$ and $q$
@@ -1346,12 +1347,13 @@ A {\em negative} response to this question---i.e., a proof that any
 plot as drawn in Figure~\ref{fig:liouville} never crosses
 the $X$-axis---would imply the Riemann Hypothesis!  In contrast to the list of
 previous questions, the answer to this question is known\footnote{For more
-  details, see P.~Borwein, {\em Sign changes in sums of the Liouville
-    Function} and the nice short paper of Norbert Wiener {\em Notes on
-    Polya's and Turan's hypothesis concerning Liouville's factor}
+  details, see P.~Borwein, ``Sign changes in sums of the Liouville
+    Function'' and the nice short paper of Norbert Wiener ``Notes on
+    Polya's and Turan's hypothesis concerning Liouville's factor''
   (page 765 of volume II of Wiener's Collected Works); see also:
-  G. P\'{o}lya {\em Verschiedene Bemerkungen zur Zahlentheorie}
-  Jahresbericht der Deutschen Mathematiker-Vereinigung, {\bf 28} (1919)
+  G. P\'{o}lya ``Verschiedene Bemerkungen zur Zahlentheorie,''
+  {\em Jahresbericht der Deutschen Mathematiker-Vereinigung},
+  {\bf 28} (1919)
   31--40.}: alas, there is such an $X$.  In 1960, Lehman showed that
 for $X=906{,}400{,}000$ there are $708$ more multiplicatively even numbers
 up to $X$ than multiplicatively odd numbers (Tanaka found in 1980 that
@@ -1403,7 +1405,7 @@ Primes, then, seem to be thinning out.  We return to the sifting process
 we carried out earlier, and take a look at a few graphs, to get a sense of why
 that might be so. There are a $100$ numbers less than or equal to
 $100$, a thousand numbers less than or equal to $1000$, etc.: the
-shaded graph in Figure~\ref{fig:sieve_2_100} that looks like a regular staircase, each step the
+graph in Figure~\ref{fig:sieve_2_100} that looks like a regular staircase, each step the
 same length as each riser, climbing up at, so to speak, a 45 degree
 angle, counts all numbers up to and including~$X$.
 
@@ -1566,7 +1568,7 @@ $$G(X)\hskip40pt  {\rm is\ roughly\ proportional\ to} \hskip40pt  {\frac{X}{{\rm
 \vskip10pt
 But to describe Gauss's\index{Gauss, Carl Friedrich} guess precisely we need to discuss the {\it natural logarithm}\footnote{In advanced mathematics, ``common'' logarithms are sufficiently uncommon that ``log'' almost always denotes natural
 log and the notation $\ln(X)$ is not used.} ``$\log(X)$'' which is an elegant
-smooth function of real numbers $X$ that is roughly proportional
+smooth function of a real number $X$ that is roughly proportional
 to the number of digits of the whole number part of $X$.
 
 
@@ -1763,7 +1765,7 @@ half the digits are correct.
 
 \chapter{Square root error and random walk\index{random walk}s}
 
- To take a random walk\index{random walk} along a (straight) East--West path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either East or West. After $X$ minutes, how far are you from your home base?
+ To take a random walk\index{random walk} along a (straight) east--west path  you would start at your home base, but every minute, say, take a step along the path, each step being of the same length, but randomly either east or west. After $X$ minutes, how far are you from your home base?
 
   The answer to this {\it cannot} be a specific number, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. It is more reasonable to ask a statistical version of that question. Namely, if you took {\it many} random walks\index{random walk} $X$ minutes long, then---on the average---how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after (sufficiently many of) these excursions is proportional to ${\sqrt X}$. (In fact, the average is equal to $\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
 
@@ -1976,7 +1978,7 @@ For example, two polynomials in $X$ with positive leading coefficient
 {\it go to infinity at the same rate} if and only if they have the
 same degrees and the same leading coefficient; they {\it go to
   infinity at similar rates} if they have the same degree.
-See Figure~\ref{fig:simrates}. %where we may take $c=1/2$ and $C=1$.
+See Figures~\ref{fig:simrates} and~\ref{fig:samerate}. %where we may take $c=1/2$ and $C=1$.
 
  \ill{same_rates}{1.0}{The polynomials $A(X)=X^{2} + 3 X - 5$ (top)
 and $B(X)= X^{2} - 2 X + 1$ (bottom) go to infinity
@@ -2193,12 +2195,12 @@ powers $p^n$ that are $\le X$.}).
 
        This new staircase is essentially square root close to the 45 degree
 straight line; i.e., the function $\psi(X)$ is essentially square root
-close to the function $f(X)=X$.
+close to the function $f(X)=X$. See Figure~\ref{fig:psi_diag_1000}.
           \vspace{1ex}
    \end{minipage}}
 \end{center}
 
-\ill{psi_diag_1000}{0.75}{The newly constructed staircase is close to the 45 degree line.}
+\ill{psi_diag_1000}{0.75}{The newly constructed staircase is close to the 45 degree line.\label{fig:psi_diag_1000}}
 
 Do not worry if you do not understand why our first and second
 formulations of Riemann's Hypothesis are equivalent. Our aim, in
@@ -2266,10 +2268,10 @@ also ``delay'' the onset of the E note and play them with some
 different phase relationship, for example, as illustrated
 in Figures~\ref{fig:sin-twofreq-phase} and \ref{fig:sum-sin-phase}.
 
-\ill{sin-twofreq-phase}{.6}{\label{fig:sin-twofreq-phase}Graph of two ``sine'' waves with different phase.}
+\ill{sin-twofreq-phase}{.6}{\label{fig:sin-twofreq-phase}Graph of two ``sine'' waves with different phases.}
 
-\ill{sin-twofreq-phase-sum}{.6}{Graph of the sum of the two ``sine'' waves with different frequency
-and phase.\label{fig:sum-sin-phase}}
+\ill{sin-twofreq-phase-sum}{.6}{Graph of the sum of the two ``sine'' waves with different frequencies
+and phases.\label{fig:sum-sin-phase}}
 
 
   So, {\em all you need} to reconstruct the chord graphed above is to
@@ -2301,12 +2303,12 @@ get a reasonable quality of sound.
 
 Another way is to simply record the {\em five} numbers: the {\em
   spectrum\index{spectrum}, amplitudes,} and {\em phase}.  Surprisingly, this seems to
-be roughly the way our ear processes such a sound when we hear it\footnote{%
+be roughly the way our ear processes such a sound when we hear it.\footnote{%
 We recommend downloading Dave Benson's marvelous book
 {\em Music: A Mathematical Offering} from
 \url{https://homepages.abdn.ac.uk/mth192/pages/html/maths-music.html}.
 This is free, and gives a beautiful account of the superb
-mechanism of hearing, and of the mathematics of music.}.
+mechanism of hearing, and of the mathematics of music.}
 
   Even in this simplest of examples (our pure chord: the pure note C
   played simultaneously with pure note E) the {\em efficiency of data
@@ -2381,7 +2383,7 @@ knowledge of which frequencies the human ear can hear.
 With this, MP3 technology manages to
 get a compression factor of 8--12 with little {\em perceived} loss in
 quality, so that you can fit your entire music collection on your
-MP3 player, instead of just a few of your favorite CDs.
+phone, instead of just a few of your favorite CDs.
 
 \chapter{The word ``Spectrum"}
 
@@ -2424,11 +2426,12 @@ sum of pure tones, for example three of them:
 
 $$F(t)  = a_1\cdot \cos(b_1 +\theta_1 t) + a_2\cdot \cos(b_2 +\theta_2 t) + a_3\cdot \cos(b_3 +\theta_3 t)$$
 
-\ill{mixed_tone3}{.7}{Plot of the sum $5  \cos\left(-t - 2\right) + 2 \cos\left(t/2 + 1\right) + 3  \cos\left(2  t + 4\right)$}
+\ill{mixed_tone3}{.7}{Plot of the sum $5  \cos\left(-t - 2\right) + 2 \cos\left(t/2 + 1\right) + 3  \cos\left(2  t + 4\right)$\label{fig:mixed_tone3}}
 
-We'll refer to such functions $F(t)$ as {\it finite trigonometric
+We refer to such functions $F(t)$ as in Figure~\ref{fig:mixed_tone3}
+as {\it finite trigonometric
   sums}, because---well---they are.  In this example, there are three
-frequencies involved---i.e., $\theta_1,\theta_2,\theta_3$---and we'll
+frequencies involved---i.e., $\theta_1,\theta_2,\theta_3$---and we
 say that {\it the spectrum\index{spectrum} of $F(t)$} is the set of these frequencies,
 i.e.,
 
@@ -2875,7 +2878,7 @@ additivity relation
   functions are viewed as generalized functions. BUT, there are many
   important occasions where your sequence of honest continuous
   functions doesn't have that convergence property and {\it yet} when
-  they are viewed as generalized functions they do converge to some
+  these continuous functions are viewed as generalized functions they do converge to some
   generalized function as a limit. We will see this soon when we get
   back to the ``sequence of the red graphs.'' This sequence {\bf does}
   converge (in the above sense) to the Dirac $\delta$-function\index{$\delta$-function} when
@@ -2946,7 +2949,7 @@ of $$\int_a^bc(t)D(t)$$ applies. Now let $x$ be a real number.
 
  $$\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)?$$
 
- The answer, by the way, is:
+ The answer to this second question, by the way, is:
  $\int_{-{\infty}}^{+{\infty}}c(t)\delta_x(t)=c(x).$ This will be useful in the later sections!
 
 
@@ -2976,7 +2979,7 @@ distributions---of\index{distribution} the function in Figure~\ref{fig:simple_st
 
 
 We'll be dealing with much more complicated staircase functions in the
-next section, but the general principles discussed here will nicely
+next chapter, but the general principles discussed here will nicely
 apply there \bibnote{As discussed in\\ \url{http://en.wikipedia.org/wiki/Distribution_\%28mathematics\%29},
 ``generalized functions'' were introduced by Sergei
 Sobolev in the 1930s, then later
@@ -3108,9 +3111,9 @@ analysis and they all occur in equal amounts.
 To generalize this computation, let us consider for any real number $x$
 the symmetrized delta-function with support at $x$ and $-x$, given
 by $$d_x(t) \ = \ (\delta_x(t) + \delta_{-x}(t))/2$$
+in Figure~\ref{fig:two_delta}.
 
-
-    \ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$, where we draw vertical arrows to illustrate the Dirac delta functions.}
+    \ill{two_delta}{0.4}{The sum $(\delta_x(t) + \delta_{-x}(t))/2$, where we draw vertical arrows to illustrate the Dirac delta functions.\label{fig:two_delta}}
 
     What is the Fourier transform of this $d_x(t)$?  The answer is
     given by making the same computation as we've just made:
@@ -3254,7 +3257,7 @@ calling the spectrum)\index{spectrum} and conversely is a consequence of the Rie
 Hypothesis.
 \begin{enumerate}
 
-\item {\bf Getting the Riemann spectrum as the spike values of a trigonometric series with
+\item {\bf Viewing the Riemann spectrum as the spike values of a trigonometric series with
 frequencies equal to (logs of) powers of the primes:}
 
   To get warmed up, let's plot the positive values of the following
@@ -3305,7 +3308,7 @@ they are precisely the  {\it imaginary parts of the
 \begin{itemize}
 \item {\bf The sum with $p^n \le C=5$}
 
-Here is the function $f(t)$ we displayed above; it consists in the sum of the first four terms of our infinite sum, and doesn't yet show very much ``structure'':
+In Figure~\ref{fig:pnsum5} we plot the function $f(t)$ displayed above; it consists of the sum of the first four terms of our infinite sum, and doesn't yet show very much ``structure'':
 
 \ill{phihat_even-5}{1}{Plot of $-\sum_{p^n\leq 5}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with
 arrows pointing to the spectrum\index{spectrum} of the primes\label{fig:pnsum5}}
@@ -3314,15 +3317,17 @@ arrows pointing to the spectrum\index{spectrum} of the primes\label{fig:pnsum5}}
 \item {\bf The sum with $p^n \le C=20$}
 
  Something,
- (don't you agree?)  is already beginning to happen here:
-\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum\index{spectrum} of the primes}\vskip20pt
+ (don't you agree?)  is already beginning to happen
+ in the graph in Figure~\ref{phihat_even-20}:
+\ill{phihat_even-20}{1}{Plot of $-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum\index{spectrum} of the primes\label{phihat_even-20}}\vskip20pt
 \item {\bf The sum with $p^n \le C=50$}
 
-  Note that the high peaks seem to be lining up more accurately with
+  Note that the high peaks in Figure~\ref{fig:phihat_even-50}
+  seem to be lining up more accurately with
   the vertical red lines. Note also that the $y$-axis has been
   rescaled.
 
-\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum\index{spectrum} of the primes}\vskip20pt
+\ill{phihat_even-50}{1}{Plot of $-\sum_{p^n\leq 50}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))$ with arrows pointing to the spectrum\index{spectrum} of the primes\label{fig:phihat_even-50}}\vskip20pt
 \item {\bf The sum with $p^n \le C=500$}
 
   Here, the peaks are even sharper, and note that again they are
@@ -3335,13 +3340,13 @@ arrows pointing to the spectrum\index{spectrum} of the primes\label{fig:pnsum5}}
   We will pay attention to:
 
 \begin{itemize}
-\item how this ``plays out'' as we take the sums of longer and longer
+\item how the spikes ``play out'' as we take the sums of longer and longer
   pieces of the infinite sum of cosine waves above, given by larger
   and larger cutoffs $C$,
 \item how this spectrum\index{spectrum} of red lines more closely matches the high
   peaks of the graphs of the positive values of these finite sums,
 \item how these peaks are climbing higher and higher,
-\item what relationship this has to the Fourier analysis\index{Fourier analysis} of the
+\item what relationship these peaks have to the Fourier analysis\index{Fourier analysis} of the
   staircase of primes,
 \item and, equally importantly, what these mysterious red lines
   signify.
@@ -3365,7 +3370,8 @@ arrows pointing to the spectrum\index{spectrum} of the primes\label{fig:pnsum5}}
  $$
  H_{\le C}(s):= 1+\sum_{i \leq C}\cos(\log(s) \theta_i)
  $$
- and we plot one of their graphs.
+ and to see the spikes in $H_{\le 1000}(s)$
+ consider Figure~\ref{fig:phihat}.
 
  \ill{phi_cos_sum_2_30_1000}{.8}{Illustration of $-\sum_{i=1}^{1000}
    \cos(\log(s)\theta_i)$, where $\theta_1 \sim 14.13, \ldots$ are the
@@ -3452,7 +3458,9 @@ example, the equation
      \bibnote{
  {\it The construction of  $ \Phi(t)$ from $\psi(X)$:}
 
- Succinctly, for positive real numbers $t$, $$\Phi(t): \ = \ e^{- t/2}\Psi'(t),$$ where  $\Psi(t) = \psi(e^t)$,  and $\Psi'$ is the derivative of $\Psi(t)$ viewed as distribution. We extend this function to all real arguments $t$ by requiring $\Phi(t)$ to be an even function of $t$, i.e., $\Phi(-t)= \Phi(t)$. But, to review this in a more leisurely pace,
+ Succinctly, for positive real numbers $t$, $$\Phi(t): \ = \ e^{- t/2}\Psi'(t),$$ where  $\Psi(t) = \psi(e^t)$
+ (see Figure~\ref{fig:psi_200}),  and $\Psi'$ is the derivative of $\Psi(t)$, viewed as a distribution. We extend this function to all real arguments $t$ by requiring $\Phi(t)$ to be an even function of $t$, i.e., $\Phi(-t)= \Phi(t)$.
+ But, to review this in a more leisurely pace,
    \begin{enumerate}
 
    \item Distort the $X$-axis of our staircase by replacing the
@@ -3477,7 +3485,7 @@ example, the equation
 \item Now---for normalization purposes---multiply $\Psi'(t)$ by the
   function $e^{-t/2}$ which has no effect whatsoever on the support.
   \end{enumerate}
-  \vskip20pt\ill{psi_200}{.6}{Illustration of the  staircase $\psi(X)$  constructed in Chapter~\ref{sec:tinkering} that counts weighted prime powers.\label{fig:psi_200}}
+  \vskip20pt\ill{psi_200}{.4}{Illustration of the  staircase $\psi(X)$  constructed in Chapter~\ref{sec:tinkering} that counts weighted prime powers.\label{fig:psi_200}}
 
 %So what happens when we take the derivative---in the sense of
 %distributions---of a complicated staircase?  For example, see
@@ -3545,10 +3553,10 @@ $t$-axis) which means that we can define it on negative real numbers
 by the equation
   $$\Phi(-t) = \Phi(t).$$
   Let us make that convention, thereby turning $\Phi(t)$ into an {\it
-    even} generalized function. (An {\bf even} function on the real line is a function that takes the same value on any real number and its negative as in the formula above.)
+    even} generalized function, as illustrated in Figure~\ref{fig:bigPhi}. (An {\bf even} function on the real line is a function that takes the same value on any real number and its negative as in the formula above.)
 
 %\vskip20pt{\bf William: sum of Dirac delta functions  Figure goes here}\vskip20pt
-\ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).}
+\ill{bigPhi}{1}{$\Phi(t)$ is a sum of Dirac delta functions at the logarithms of prime powers $p^n$ weighted by $p^{-n/2}\log(p)$ (and $\log(2\pi)$ at $0$).\label{fig:bigPhi}}
 
 
 We may want to think of $\Phi(t)$ as a limit of this sequence of distribution\index{distribution}s,
@@ -3592,7 +3600,7 @@ We will be interested in the values of $\theta$ that correspond to higher and hi
 
 \ill{theta_3_intro-2}{.85}{Plot of ${\hat \Phi}_{\leq 3}(\theta)$ in blue and its derivative in grey\label{fig:theta4}}
 
-As we shall see in subsequent figures of this chapter, there seems to be an eventual convergence of the values of $\theta$ that correspond to higher and higher {\it peaks}, the red dots in the figure above,  as $C$ tends to $\infty$. These ``limit" $\theta$-values we now insert as the end-points of red vertical lines into Figure~\ref{fig:theta4} comparing them with the red dots for our humble cutoff $C=3$.
+As we shall see in subsequent figures of this chapter, there seems to be an eventual convergence of the values of $\theta$ that correspond to higher and higher {\it peaks}, the red dots in the figure above,  as $C$ tends to $\infty$. These ``limit" $\theta$-values we now insert as the endpoints of red vertical lines into Figure~\ref{fig:theta5} comparing them with the red dots for our humble cutoff $C=3$.
 
 
 
@@ -3602,11 +3610,10 @@ As we shall see in subsequent figures of this chapter, there seems to be an even
 
 We give a further sample of graphs for a few higher cutoff values $C$ (introducing a few more primes into the game!).
 
- Plot of
 Figures~\ref{fig:theta_C-5-10}--\ref{fig:theta_C-200-500}
-are graphs of various cutoffs of ${\hat \Phi}_{\leq C}(\theta)$.
+contain graphs of various cutoffs of ${\hat \Phi}_{\leq C}(\theta)$.
 As $C$ increases a sequence of spikes down emerge
-which we've indicated with red vertical arrows.
+which we indicate with red vertical arrows.
 
 
 
@@ -3638,15 +3645,15 @@ Here, we assume that $\sigma_o$ is sufficiently large and $C$ is not a prime pow
 
 One proceeds, as  is standard in the derivation of Explicit Formulae, by moving the line of integration to the left, picking up residues along the way. Fix the value of $w= {\frac{1}{2}}+i\theta$ and consider
  $$K_w(s,C):=\ \   {\frac{1}{2\pi i }}\left(\frac{\zeta'}{\zeta}\right)(w+s){\frac{C^{s}}{s}},$$   which has poles at $$s= 0, \ \ \ 1-w,\ \ \ {\rm and }\ \ \ \rho-w, $$  for every zero $\rho$ of $\zeta(s)$.
- We distinguish four cases, giving descriptive names to each:
+ We distinguish five cases, giving descriptive names to each:
 
- \begin{itemize} \item {\it Singular pole:} $s= 1-w$.
+ \begin{enumerate} \item {\it Singular pole:} $s= 1-w$.
                         \item {\it Trivial poles:}  $s= \rho-w$ with $\rho$ a trivial zero of $\zeta(s)$.
                         \item  {\it Oscillatory poles:} $s= \rho-w = i(\gamma-\theta) \ne 0$ with $\rho= 1/2 + i \gamma (\ne w)$ a nontrivial zero of $\zeta(s)$. (Recall that we are assuming the \RH{}, and our variable $w= {\frac{1}{2}}+i\theta$ runs through complex numbers of real part equal to ${\frac{1}{2}}$. So, in this case, $s$ is purely imaginary.)
                         \item {\it Elementary pole:} $s=0$ when  $ w$ is not a nontrivial zero of $\zeta(s)$---i.e., when $0=s\ne\rho-w$ for any nontrivial zero $\rho$.
                         \item {\it Double pole:}  $s=0$ when  $ w$ is a nontrivial zero of $\zeta(s)$---i.e., when $0=s=\rho-w$ for some nontrivial zero $\rho$. This, when it occurs, is indeed a double pole, and the residue is given by $m\cdot \log C +\epsilon$.  Here $m$ is the multiplicity of the zero $\rho$  (which we expect always---or at least usually---to be equal to $1$) and $\epsilon$ is a constant (depending on $\rho$, but not on $C$).
 
-\end{itemize}
+\end{enumerate}
 
            The standard technique for the ``Explicit formula'' will provide us with a formula for our function of interest  ${\hat \Phi}_{\le C}(\theta)$. The formula has terms resulting from the residues of each of the first three types of poles, and of the {\it Elementary} or  the  {\it Double} pole---whichever exists.  Here is the shape of the formula, given with terminology that is meant to be  evocative:
 
@@ -3741,7 +3748,7 @@ briefly in Part \ref{part4}, Chapter~\ref{ch:envision} below.
 
 
 
-\chapter{ How many $\theta_i$'s are there?}
+\chapter{How many $\theta_i$'s are there?}
 
   The Riemann spectrum\index{Riemann spectrum}, $\theta_1, \theta_2, \theta_3, \dots$ clearly deserves to be well understood!  What do we know about this sequence of positive real numbers?
 
@@ -3809,7 +3816,7 @@ within $3\cdot 10^{-9}$, consult Andrew Odlyzko's tables:
 
 
 
-\chapter{ Further questions about the Riemann spectrum\index{Riemann spectrum}}
+\chapter{Further questions about the Riemann spectrum\index{Riemann spectrum}}
 
 Since people have already computed\footnote{See \url{http://numbers.computation.free.fr/Constants/constants.html} for details.}
 the first $10$ trillion $\theta$'s
@@ -3831,7 +3838,9 @@ It has been conjectured that there are no infinite arithmetic progressions among
 
 \illtwo{zero-spacing-mod2pi}{zero-spacing-mod1}{0.4}{Frequency histogram of Odlyzko's computation of the Riemann spectrum\index{Riemann spectrum} modulo $2\pi$ (left) and modulo 1 (right)\label{fig:zero-spacing}}
 
-        In analogy with the discussion of prime gaps in Chapter~\ref{ch:further}, we might compute {\it pair correlation functions} and the statistics of gaps between successive $\theta$'s in the Riemann spectrum\index{Riemann spectrum} (see {\url{http://www.baruch.cuny.edu/math/Riemann_Hypothesis/zeta.zero.spacing.pdf}). This study was  begun by H.L. Montgmery and F.J. Dyson. As  Dyson noticed, the distributions\index{distribution} one gets from the Riemann spectrum\index{Riemann spectrum} bears a similarity to the distributions of eigenvalues of a random unitary matrix{\footnote{ Any connection of the Riemann spectrum to eigenvalues of matrices would indeed be exciting for our understanding of the \RH{}, in view of what is known as the {\it Hilbert-P{\'o}lya Conjecture}  (see {\url{http://en.wikipedia.org/wiki/Hilbert\%E2\%80\%93P\%C3\%B3lya_conjecture}}).}}. This has given rise to what is know as the {\it random matrix heuristics},  a powerful source of conjectures for number theory and other branches of mathematics.
+        In analogy with the discussion of prime gaps in Chapter~\ref{ch:further}, we might compute {\it pair correlation functions} and the statistics of gaps between successive $\theta$'s in the Riemann spectrum\index{Riemann spectrum} (see {\url{http://www.baruch.cuny.edu/math/Riemann_Hypothesis/zeta.zero.spacing.pdf}). This study was  begun by H.\thinspace{}L. Montgmery and
+F.\thinspace{}J. Dyson.
+As  Dyson noticed, the distributions\index{distribution} one gets from the Riemann spectrum\index{Riemann spectrum} bears a similarity to the distributions of eigenvalues of a random unitary matrix.{\footnote{Any connection of the Riemann spectrum to eigenvalues of matrices would indeed be exciting for our understanding of the \RH{}, in view of what is known as the {\it Hilbert-P{\'o}lya Conjecture}  (see {\url{http://en.wikipedia.org/wiki/Hilbert\%E2\%80\%93P\%C3\%B3lya_conjecture}}).}} This has given rise to what is know as the {\it random matrix heuristics},  a powerful source of conjectures for number theory and other branches of mathematics.
 
         Here is a histogram of the distribution\index{distribution} of differences $\theta_{i+1}-\theta_i$:
 \
@@ -3868,7 +3877,7 @@ spectrum\index{spectrum} (as discussed in the previous two chapters).
      Riemann's explicit formula.  For modern text references that discuss this general subject, see endnote \bibnote{  A reference for this is:
 
 \vskip10pt
- {\bf [I-K]:  }H. Iwaniec; E. Kowalski,  {\bf Analytic Number Theory}, American Mathematical Society Colloquium Publications {\bf 53} (2004).
+ {\bf [I-K]:  }H. Iwaniec; E. Kowalski,  {\bf Analytic Number Theory}, {\em American Mathematical Society Colloquium Publications} {\bf 53} (2004).
 
       (See also the bibliography there.)
       \vskip10pt
@@ -3954,9 +3963,14 @@ requires extending
 the definition of the function $\Li(X)$ to make sense when given
 complex numbers $X=a+bi$. In fact, more naturally, one might work with the path integral $\li(X):= \int_0^{X}dt/{\rm log}(t).$
 
-  Riemann \index{Riemann, Bernhard} begins his discussion by defining
-$$
-R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \li(X^{1\over n})= \lim_{N\to \infty} R^{(N)}(X):= \lim_{N\to \infty} \sum_{n=1}^{N}{\mu(n)\over n} \li(X^{1\over n})$$  where  $R^{(N)}(X)$ denotes the truncated sum, which one can compute as an approximation.  In all the discussion of this section the order of summation is important, and for such considerations, and  issues regarding actual computation we refer to Riesel-Gohl (see \url{http://wstein.org/rh/rg.pdf}).
+  Riemann \index{Riemann, Bernhard} begins his discussion
+  (see Figure~\ref{fig:riemann_RX}) by defining
+  $$
+     R(X) = \sum_{n=1}^{\infty}{\mu(n)\over n} \li(X^{1\over n})= \lim_{N\to \infty} R^{(N)}(X):= \lim_{N\to \infty} \sum_{n=1}^{N}{\mu(n)\over n} \li(X^{1\over n}),
+  $$
+where  $R^{(N)}(X)$ denotes the truncated sum, which one can compute as an approximation.
+\ill{riemann_RX}{1}{Riemann\index{Riemann, Bernhard} defining $R(X)$ in his manuscript\label{fig:riemann_RX}}
+In all the discussion of this section the order of summation is important, and for such considerations, and  issues regarding actual computation we refer to Riesel-Gohl (see \url{http://wstein.org/rh/rg.pdf}).
 
 Here $\mu(n)$ is the Moebius function\index{Moebius function}
  which is defined by
@@ -3977,8 +3991,6 @@ $$
 \ill{moebius}{1}{The blue dots plot the values of the Moebius function\index{Moebius function} $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
 
 
-\ill{riemann_RX}{0.8}{Riemann\index{Riemann, Bernhard} defining $R(X)$ in his manuscript}
-
 In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem,\index{prime number} which
 asserts that $X/\log(X)$ and $\Li(X)$ are both approximations for
 $\pi(X)$, in the sense that both go to infinity at the same rate.  That is, the ratio of any two of these three functions tends to $1$ as $X$ goes to $\infty$.
@@ -3991,16 +4003,18 @@ approximation to $\pi(X)$ than anything we have seen before.
 \illtwo{pi_riemann_gauss_100}{pi_riemann_gauss_1000}{0.47}{Comparisons of $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess100}}
 
 
-\ill{pi_riemann_gauss_10000-11000}{0.5}{Closeup comparison of  $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess10000}}
+\ill{pi_riemann_gauss_10000-11000}{0.8}{Closeup comparison of  $\Li(X)$ (top), $\pi(X)$ (middle), and $R(X)$ (bottom, computed using 100 terms)\label{fig:guess10000}}
 
 
 Think of Riemann's smooth curve $R(X)$ as the {\em fundamental}
 approximation to $\pi(X)$.
 Riemann\index{Riemann, Bernhard} offered much more than just a (conjecturally) better
-approximation to $\pi(X)$ in his wonderful 1859 article.
+approximation to $\pi(X)$ in his wonderful 1859 article
+(see Figure~\ref{fig:riemann_Rk}).
 He found a way to construct what looks vaguely like a Fourier series,
-but with $\sin(X)$ replaced by $R(X)$ and spectrum\index{spectrum} the $\theta_i$, which
+but with $\sin(X)$ replaced by $R(X)$ and its spectrum\index{spectrum} the $\theta_i$, which
 conjecturally  equals $\pi(X)$ (with a slight correction if the number $X$ is itself a prime).
+\ill{riemann_Rk}{1}{Riemann's\index{Riemann, Bernhard} analytic formula for $\pi(X)$\label{fig:riemann_Rk}}
 In this manner, Riemann gave an infinite sequence of improved guesses, beginning with $R_0(X)$ (see equation (18)  of Riesel-Gohl at  \url{http://wstein.org/rh/rg.pdf})  a modification of $R(X)$ that takes account of the pole and the trivial zeroes of the Riemann zeta-function, and then considered a sequence:
 
 
@@ -4023,7 +4037,6 @@ R_0(X) + C_1(X),$$ he gets the second by correcting $R_1(X)$ by adding
 the second harmonic $$R_2(X) = R_1 (X) + C_2(X),$$ and so on $$R_3(X)
 = R_2 (X) + C_3(X),$$ and in the limit provides us with an exact fit.
 
-\ill{riemann_Rk}{0.8}{Riemann\index{Riemann, Bernhard} analytic formula for $\pi(X)$.}
 
 The \RH{}, if true, would tell us that these correction
 terms $C_1(X), C_2(X), C_3(X),\dots$ are all {\em square-root small}
@@ -4080,7 +4093,7 @@ in the plots in Figures~\ref{fig:rkfirst}--\ref{fig:rklast} of $R_k$ for various
 \ill{Rk_50_350_400}{.9}{The function $\Li(X)$ (top, green), the function $R_{50}(X)$ (in blue), and the staircase of primes on the interval from 350 to 400.\label{fig:rklast}}
 
 
-\chapter[As Riemann envisioned it]{As Riemann envisioned it, complex analysis relates the staircase of primes to its Riemann\index{Riemann, Bernhard} spectrum\index{Riemann spectrum}\label{ch:envision}}
+\chapter[As Riemann envisioned it]{As Riemann envisioned it, the zeta function relates the staircase of primes to its Riemann\index{Riemann, Bernhard} spectrum\index{Riemann spectrum}\label{ch:envision}}
 In the previous chapters we have described---using Riemann's
 Hypothesis---how to obtain the {\it
   spectrum}\index{spectrum} $$\theta_1,\theta_2,\theta_3,\dots$$ from the staircase of
@@ -4125,9 +4138,9 @@ discussion so far.
 \end{enumerate}
 \vskip20pt
 {\bf Leonhard Euler's\index{Euler, Leonhard} idea ($\simeq$1740):}
-
 As readers of Jacob Bernoulli's {\it Ars Conjectandi} (or of the works
-of John Wallis) know, there was already a rich mathematical theory of
+of John Wallis) know, there was in the early 18th century
+already a rich mathematical theory of
 finite sums of (non-negative $k$-th powers) of consecutive integers.
 This sum, $$S_k(N) = 1^k+2^k+3^k+\cdots +(N-1)^k,$$ is a polynomial
 in $N$ of degree $k+1$ with no constant term, a leading term equal to
@@ -4320,8 +4333,9 @@ In particular,  $\Lambda(n)$ ``records" the placement of prime powers.
        \medskip
 
        All the nontrivial zeroes\index{nontrivial zeroes} of $\zeta(s)$ lie on the vertical
-       line in the complex plane given by ${\rm real\ part\ of\ } s\ =
-       {\frac{1}{2}}.$ These zeroes are none other than
+       line in the complex plane consisting of the
+       complex numbers with real part equal to $1/2$.
+       These zeroes are none other than
        ${\frac{1}{2}}+i\theta_1,{\frac{1}{2}}+i\theta_2,
        {\frac{1}{2}}+i\theta_3,\dots,$ where $\theta_1, \theta_2,
        \theta_3, \dots$ comprise the spectrum\index{spectrum} of primes we talked
@@ -4494,6 +4508,11 @@ Is this yet another reason to believe the Grand \RH{}?
 %\printindex
 
 %\label{lastpage}
+
+% no longer in previous chapter, so we increase the counter
+% so that figure and other labels aren't for the previous chapter.
+\stepcounter{chapter}
+\addcontentsline{toc}{chapter}{Endnotes}
 
 \renewcommand\bibname{Endnotes}
 
