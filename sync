@@ -1,3 +1,8 @@
+set -e
+set -v
+cd rh
+pdflatex rh; bibtex rh; pdflatex rh; bibtex rh; pdflatex rh; pdflatex rh 
+cd ..
 rm -rf rh/rh.tar.bz2
 chmod a+r -R rh
 tar jcf rh.tar.bz2 rh
