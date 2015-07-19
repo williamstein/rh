@@ -8,4 +8,4 @@ chmod a+r -R rh
 tar jcf rh.tar.bz2 rh
 chmod a+r rh.tar.bz2
 mv rh.tar.bz2 rh/
-rsync -axvH --delete rh/ wstein@boxen.math.washington.edu:www/rh/
+rsync -axvH --delete rh/ wstein@wstein.org:www/rh/
