@@ -1700,7 +1700,7 @@ $$
 but rather for {\em infinite sequences} of estimates of
 error terms. Generally, if you are interested in a numerical quantity
 $q(X)$ that depends on the real number parameter $X$ (e.g., $q(X)$
-could be $\pi(X)$, ``the number of primes $< X$'') and if you have an
+could be $\pi(X)$, ``the number of primes $\leq{}X$'') and if you have an
 explicit candidate ``approximation,'' $q_{\rm approx}(X)$, to this
 quantity, let us say that $q_{\rm approx}(X)$ is {\bf essentially a
   square-root accurate\index{square-root accurate} approximation to $q(X)$} if for {\em any}
@@ -1793,7 +1793,7 @@ better and better approximates the average distance.
 
 
 Recall from Chapter~\ref{sec:firstguess} that a rough guess for an approximation to
-$\pi(X)$, the number of primes $< X$, is given by the function
+$\pi(X)$, the number of primes $\leq{} X$, is given by the function
 $X/\log(X)$. Recall, as well, that a refinement of that guess, offered by Gauss\index{Gauss, Carl Friedrich}, stems from this curious thought:  the ``probability'' that a number $N$ is a prime  is proportional to the reciprocal of its number of digits; more precisely, the probability is $1/\log(N)$.  This would lead us to  guess that the approximate value of $\pi(X)$ would be
 the area of the region from $2$ to $X$ under the graph of
 $1/\log(X)$, a quantity sometimes referred to as $\Li(X)$.
@@ -1902,10 +1902,11 @@ the previous chapter.
 
  Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of ``time'' $t$.  The natural impulse might be to take some sort of ``average value''\footnote{For readers who know Calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.} of  $f(t)$ over a time interval, say from $0$ to $T$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
-   This new function $F(T)$, called the {\bf Ces\`aro Smoothing}\index{Ces\`aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to ``smooth out" some of the volatile local behavior of the original function, as can be seen in the figure below.
+   This new function $F(T)$, called the {\bf Ces\`aro Smoothing}\index{Ces\`aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to ``smooth out" some of the volatile local behavior of the original function, as can be seen in
+Figure~\ref{fig:cesaro-smoothing}.
 
 
-\ill{cesaro}{.9}{The red plot is the Ces\`aro smoothing\index{Ces\`aro Smoothing} of the blue plot}
+\ill{cesaro}{.9}{The red plot is the Ces\`aro smoothing\index{Ces\`aro Smoothing} of the blue plot\label{fig:cesaro-smoothing}}
 \chapter{ A view of $|\Li(X) - \pi(X)|$}
  Returning to our mysterious error term,  consider Figure \ref{fig:li-minus-pi-250000} where the volatile blue curve in the middle
  is $\Li(X) - \pi(X)$, its Ces\`aro smoothing\index{Ces\`aro Smoothing} is the red relatively smooth curve on the bottom, and the curve on the top
