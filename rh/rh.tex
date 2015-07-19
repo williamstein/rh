@@ -1889,18 +1889,18 @@ root accurate (see \bibnote{In fact, the Riemann Hypothesis is equivalent to $|\
 
 Often when you hop in a car and reset the trip counter, the car
 will display information about your trip.  For instance, it might show you the
-average speed up until now during your trip; this number
-is ``sticky'', changing much less erratically than your
+average speed up until now, a number that is
+``sticky'', changing much less erratically than your
 actual speed, and you might use it to make a rough estimate of
 how long until you will reach your destination.
 Your car is computing the {\em Ces\`aro smoothing\index{Ces\`aro Smoothing} }of your speed.
 We can use this same idea to better understand the behavior
 of other things, such as the sums appearing in
 the previous chapter.
-\ill{camaro}{.7}{The dashboard of the 2013 Camaro SS car that one of us was driving during the writing of this chapter.}
+\ill{camaro}{.7}{The ``Average Vehicle Speed,'' as displayed on the dashboard of the 2013 Camaro SS car that one of us drove during the writing of this chapter.}
 %I took this picture of my rental car -- William Stein.
 
- Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of ``time'' $t$.  The first natural impulse might be to take some sort of ``average value''\footnote{For readers who know Calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.} of  $f(t)$ over a time interval, say from $0$ to $T$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
+ Suppose you are trying to say something intelligent about the behavior of a certain quantity that varies with time in what seems to be a somewhat erratic, volatile pattern. Call the quantity $f(t)$ and think of it as a function defined for positive real values of ``time'' $t$.  The natural impulse might be to take some sort of ``average value''\footnote{For readers who know Calculus: that  average would be ${\frac{1}{T}}\int_0^Tf(t)dt$.} of  $f(t)$ over a time interval, say from $0$ to $T$.   This would indeed be an intelligent thing to do if this average stabilized and depended relatively little on  the interval of time over which one is computing this average, e.g., if that interval were large enough.  Sometimes, of course, these averages themselves are relatively sensitive to the times $T$ that are chosen, and don't stabilize. In such a case, it usually pays to consider {\it all} these averages  as  your chosen $T$ varies, as a function (of $T$) in its own right{\footnote{ For readers who know calculus: this is
   $$F(T):= {\frac{1}{T}}\int_0^Tf(t)dt.$$}.
    This new function $F(T)$, called the {\bf Ces\`aro Smoothing}\index{Ces\`aro Smoothing} of the function $f(t)$, is a good indicator of certain eventual trends of the original function $f(t)$ that is less visible directly from the function $f(t)$.  The effect of passing from $f(t)$ to $F(T)$ is to ``smooth out" some of the volatile local behavior of the original function, as can be seen in the figure below.
 
