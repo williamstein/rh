@@ -659,7 +659,7 @@ This---it turns out---isn't so easy to determine;
 Naskr\c{e}cki devoted $24$ hours of computer time setting standard  factorization
 algorithms on the task, and that was not sufficient time to resolve
 the issue.  The factorization of the numerators of general Bernoulli
-numbers is the subject of a very interesting web site of Samuel
+numbers is the subject of a very interesting web site run by Samuel
 Wagstaff (\url{http://homes.cerias.purdue.edu/~ssw/bernoulli}).
 Linked to this web page one finds
 (\url{http://homes.cerias.purdue.edu/~ssw/bernoulli/composite}) which gives
@@ -1032,7 +1032,7 @@ which are primes and which composite.
 Finally, we see in Figure~\ref{fig:erat2357} that
 sieving by 2, 3, 5, and 7 determines  all primes up to $100$.
 See \bibnote{In Sage, the
-function {\tt prime\_range} enumerates primes in a range, e.g.,
+function {\tt prime\_range} enumerates primes in a range. For example,
 {\tt prime\_range(50)}
 outputs the primes up to $50$
 and {\tt prime\_range(50,100)}
@@ -1041,7 +1041,7 @@ Typing {\tt prime\_range(10\^{}8)}
 in SageMath enumerates the primes up to a hundred million in around a second.
 You can also enumerate primes up to a billion by typing {\tt v=prime\_range(10\^{}9)}, but this will use
 a large amount of memory, so be careful not to crash your computer
-if you try this.  Notice that there are $\pi(10^9) = 50{,}847{,}534$ primes up to a billion
+if you try this.  You can see that there are $\pi(10^9) = 50{,}847{,}534$ primes up to a billion
 by then typing {\tt len(v)}.
 You can also compute $\pi(10^9)$ directly, without enumerating all primes,
 using the command {\tt prime\_pi(10\^{}9)}.
@@ -1720,11 +1720,11 @@ and $ x^{1+\epsilon}$ for
 $x$
 sufficiently large, then say that $f(x)$ and $g(x)$ are {\bf good
 approximations of one another} if,
-for any positive $\epsilon$ the absolute values of their difference
+for any positive $\epsilon$ the absolute value of their difference
 is less than $ x^{{1\over
 2}+\epsilon}$ for
 $x$
-sufficiently large. The functions $\Li(X)$ and $R(X)$ of are good approximations of
+sufficiently large. The functions $\Li(X)$ and $R(X)$ are good approximations of
 one another.} for a precise statement.
 
 
@@ -1865,8 +1865,7 @@ Hypothesis says yes:
 
 For any real number $X$ the number of prime numbers\index{prime number} less than $X$ is
 approximately $\Li(X)$ and this approximation is essentially square
-root accurate (see \bibnote{In fact, the Riemann Hypothesis is equivalent to $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall-Pomerance's book {\em Prime numbers,
-a computational perspective}.}).
+root accurate (see \bibnote{In fact, the Riemann Hypothesis is equivalent to $|\Li(X) - \pi(X)| \leq \sqrt{X}\log(X)$ for all $X\geq 2.01$.  See Section 1.4.1 of Crandall and Pomerance's book {\em Prime Numbers: A Computational Perspective}.}).
 \label{rh:first}
 
 \vspace{1ex}
@@ -3459,7 +3458,7 @@ example, the equation
 
  Succinctly, for positive real numbers $t$, $$\Phi(t): \ = \ e^{- t/2}\Psi'(t),$$ where  $\Psi(t) = \psi(e^t)$
  (see Figure~\ref{fig:psi_200}),  and $\Psi'$ is the derivative of $\Psi(t)$, viewed as a distribution. We extend this function to all real arguments $t$ by requiring $\Phi(t)$ to be an even function of $t$, i.e., $\Phi(-t)= \Phi(t)$.
- But, to review this in a more leisurely pace,
+ But, to review this at a more leisurely pace,
    \begin{enumerate}
 
    \item Distort the $X$-axis of our staircase by replacing the
@@ -3888,10 +3887,10 @@ $$\sum_{\rho}{\hat \phi}(\rho) = -\sum_{n \ge 1}\Lambda(n)\phi(n) + I(\phi),$$
 
 where \begin{itemize} \item $\phi$ is any smooth complex-valued
   function on $[1,+\infty)$  with compact support,\item ${\hat \phi}$ is
-  its Mellin transform: $${\hat \phi}(s):=
+  its Mellin transform $${\hat \phi}(s):=
   \int_0^{\infty}\phi(x)x^{s-1}dx,$$ \item the last term on the right,
   $I(\phi)$, is just
- $$I(\phi):= \int_1^{\infty}(1-{\frac{1}{x^3-x}})\phi(x)dx$$ (coming from the pole at $s=1$ and the ``trivial zeroes''). \item The more serious  summation on the left hand side of the equation is over the nontrivial zeroes $\rho$, noting that if $\rho$ is a nontrivial zero so is ${\bar \rho}$. \end{itemize}
+ $$I(\phi):= \int_1^{\infty}(1-{\frac{1}{x^3-x}})\phi(x)dx$$ (coming from the pole at $s=1$ and the ``trivial zeroes''). \item The more serious  summation on the left hand side of the equation is over the nontrivial zeroes $\rho$; but note that if $\rho$ is a nontrivial zero so is~${\bar \rho}$. \end{itemize}
 
 
 
