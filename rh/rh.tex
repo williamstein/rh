@@ -1753,11 +1753,11 @@ half the digits are correct.
   they will indeed be making mistakes, say $1\%$ of the time.
   Assume further that it is just as likely for them to make the
   mistake of undercounting or overcounting.  If many people are
-  engaged in such pursuit, some of them might over-count $\pi(X)$;
-  some of them might under-count it. The average error (over-counted
+  engaged in such pursuit, some of them might overcount $\pi(X)$;
+  some of them might undercount it. The average error (overcounted
   or undercounted) would be proportional to~${\sqrt X}$.
 
-  In the next chapter we'll view these under-counts and over-counts as analogous to a random walk\index{random walk}.
+  In the next chapter we'll view these undercounts and overcounts as analogous to a random walk\index{random walk}.
 
 
 \end{remark}
@@ -1769,7 +1769,7 @@ half the digits are correct.
 
   The answer to this {\it cannot} be a specific number, precisely because you're making a random decision that affects that number for each of the $X$ minutes of your journey. It is more reasonable to ask a statistical version of that question. Namely, if you took {\it many} random walks\index{random walk} $X$ minutes long, then---on the average---how far would you be from your home base?  The answer, as is illustrated by the figures below, is that the average distance you will find yourself from home base after (sufficiently many of) these excursions is proportional to ${\sqrt X}$. (In fact, the average is equal to $\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$.)
 
-  To connect this with the committee members' histories of errors, described in the fable in Chapter~\ref{sec:sqrterror}, imagine  every  error (under-count or over-count by $1$) the committee member makes, as a ``step" East for under-count and West for over-count. Then if such errors were made, at a constant frequency over the duration of time spent counting, and if the over- and under-counts were equally likely and random, then one can model the committee members' computational  accuracy by a random walk.\index{random walk} It would be---in the terminology we have already discussed---no better than {\it square-root accurate}\index{square-root accurate}; it would be subject to {\it square-root error\index{square-root error}}.
+  To connect this with the committee members' histories of errors, described in the fable in Chapter~\ref{sec:sqrterror}, imagine  every  error (undercount or overcount by $1$) the committee member makes, as a ``step" East for undercount and West for overcount. Then if such errors were made, at a constant frequency over the duration of time spent counting, and if the over- and undercounts were equally likely and random, then one can model the committee members' computational  accuracy by a random walk.\index{random walk} It would be---in the terminology we have already discussed---no better than {\it square-root accurate}\index{square-root accurate}; it would be subject to {\it square-root error\index{square-root error}}.
 
    To get a real sense of how constrained random walks\index{random walk} are by this ``square-root law," here are a few numerical experiments of random walks. The left-hand squiggly (blue) graphs in Figures~\ref{fig:random_walks_3}--\ref{fig:random_walks_1000} below are computer-obtained random walk trials (three, ten, a hundred, and a thousand random walks). The blue curve in the right-hand graphs of those four figures is the average distance from home-base of the corresponding (three, ten, a hundred, and a thousand) random walks.
 The red curve in each figure below is the graph of the quantity $\sqrt{\frac{2}{\pi}}\cdot {\sqrt X}$ over the $X$-axis.
@@ -2088,8 +2088,7 @@ it captures the sense that there is a deeply hidden architecture to
 the graphs that compile the number of primes (up to $N$) and also
 because---in a bit---we will be tinkering with this carpentry.  Before
 we do so, though, let us review in Figure~\ref{fig:staircases}
-what this staircase looks like, for
-different ranges.
+what this staircase looks like for different ranges.
 
 \begin{figure}[H]
 \centering
@@ -3974,7 +3973,7 @@ In all the discussion of this section the order of summation is
 important. For such considerations and issues regarding actual
 computation we refer to Riesel-Gohl (see \url{http://wstein.org/rh/rg.pdf}).
 
-Here $\mu(n)$ is the Moebius function\index{Moebius function}
+Here $\mu(n)$ is the M\"{o}bius function\index{M\"{o}bius function}
  which is defined by
 $$
  \mu(n) = \begin{cases}
@@ -3988,9 +3987,9 @@ $$
     0 & \mbox{if $n$ is not square-free.}
  \end{cases}
  $$
- See Figure~\ref{fig:moebius} for a plot of the Moebius function.\index{Moebius function}
+ See Figure~\ref{fig:moebius} for a plot of the M\"{o}bius function.\index{M\"{o}bius function}
 
-\ill{moebius}{1}{The blue dots plot the values of the Moebius function\index{Moebius function} $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
+\ill{moebius}{1}{The blue dots plot the values of the M\"{o}bius function\index{M\"{o}bius function} $\mu(n)$, which is only defined at integers.\label{fig:moebius}}
 
 
 In Chapter~\ref{sec:pnt} we encountered the Prime Number Theorem,\index{prime number} which
