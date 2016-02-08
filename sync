@@ -1,11 +1,11 @@
 set -e
 set -v
 cd rh
-pdflatex rh; bibtex rh; pdflatex rh; bibtex rh; pdflatex rh; pdflatex rh 
+pdflatex rh; bibtex rh; pdflatex rh; bibtex rh; pdflatex rh; pdflatex rh
 cd ..
 rm -rf rh/rh.tar.bz2
 chmod a+r -R rh
 tar jcf rh.tar.bz2 rh
 chmod a+r rh.tar.bz2
 mv rh.tar.bz2 rh/
-rsync -axvH --delete rh/ wstein@wstein.org:www/rh/
+rsync -axvH --delete rh/ dc174776a5f1446589c9c723ef069ed6@compute4-us.sagemath.com:www/rh/
